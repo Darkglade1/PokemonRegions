@@ -1,10 +1,12 @@
 package code;
 
+import actlikeit.RazIntent.CustomIntent;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import code.CustomIntent.MassAttackIntent;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -37,7 +39,8 @@ public class PokemonRegions implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        AddAudioSubscriber {
+        AddAudioSubscriber,
+        PostInitializeSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -107,12 +110,21 @@ public class PokemonRegions implements
         return modID + "Resources/images/ui/" + resourcePath;
     }
 
+    public static String makeMonsterPath(String resourcePath) {
+        return modID + "Resources/images/monsters/" + resourcePath;
+    }
+
     public static String makeCardPath(String resourcePath) {
         return modID + "Resources/images/cards/" + resourcePath;
     }
 
     public static void initialize() {
         PokemonRegions thismod = new PokemonRegions();
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        CustomIntent.add(new MassAttackIntent());
     }
 
     @Override

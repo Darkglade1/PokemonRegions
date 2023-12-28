@@ -1,7 +1,13 @@
 {
-  "${ModID}:Strike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+  "${ModID}:Charmander": {
+    "NAME": "Charmander",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Ember",
+      "Deal !D! damage.",
+      "Flame Spin",
+      "Deal !${ModID}:d2! damage to ALL enemies."
+    ]
   },
   "${ModID}:Defend": {
     "NAME": "Defend",

@@ -52,7 +52,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         this.addMove(moveCode, intent, -1);
     }
     protected void addMove(byte moveCode, Intent intent, int baseDamage) {
-        this.addMove(moveCode, intent, baseDamage, 0);
+        this.addMove(moveCode, intent, baseDamage, 0, false);
     }
     protected void addMove(byte moveCode, Intent intent, int baseDamage, int multiplier) {
         this.addMove(moveCode, intent, baseDamage, multiplier, true);

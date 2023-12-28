@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -27,6 +28,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public boolean massAttackHitsPlayer = false;
 
     public ArrayList<AllyMove> allyMoves = new ArrayList<>();
+    public AbstractMonster target;
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
@@ -56,6 +58,14 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 this.isDone = true;
             }
         });
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                AbstractPokemonAlly.this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
+                this.isDone = true;
+            }
+        });
+
     }
 
     @Override
@@ -64,6 +74,16 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             @Override
             public void update() {
                 halfDead = false;
+                this.isDone = true;
+            }
+        });
+    }
+
+    public void postTurn() {
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                halfDead = true;
                 this.isDone = true;
             }
         });
@@ -176,6 +196,17 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         }
     }
 
+    @Override
+    public void getMove(int num) {}
+
+    @Override
+    public void applyPowers() {
+        if (this.nextMove == -1) {
+            return;
+        }
+        applyPowers(target);
+    }
+
     public void disappear() {
         hideHealthBar();
         this.currentHealth = 0;
@@ -192,5 +223,15 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     public void setAnimationFlip(boolean horizontal, boolean vertical) {
         animation.setFlip(horizontal, vertical);
+    }
+
+    public int[] calcMassAttack(DamageInfo info) {
+        int[] damageArray = new int[AbstractDungeon.getMonsters().monsters.size()];
+        for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
+            AbstractMonster mo = AbstractDungeon.getMonsters().monsters.get(i);
+            info.applyPowers(this, mo);
+            damageArray[i] = info.output;
+        }
+        return damageArray;
     }
 }
