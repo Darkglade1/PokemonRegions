@@ -1,5 +1,6 @@
 package code.actions;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,13 +13,10 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class AllyDamageAllEnemiesAction extends AbstractGameAction {
     public int[] damage;
-    private int baseDamage;
     private boolean firstFrame;
-    private boolean utilizeBaseDamage;
 
     public AllyDamageAllEnemiesAction(AbstractCreature source, int[] amount, DamageType type, AttackEffect effect, boolean isFast) {
         this.firstFrame = true;
-        this.utilizeBaseDamage = false;
         this.source = source;
         this.damage = amount;
         this.actionType = ActionType.DAMAGE;
@@ -37,21 +35,16 @@ public class AllyDamageAllEnemiesAction extends AbstractGameAction {
     }
 
     public void update() {
-        int i;
         if (this.firstFrame) {
             boolean playedMusic = false;
-            i = AbstractDungeon.getCurrRoom().monsters.monsters.size();
-            if (this.utilizeBaseDamage) {
-                this.damage = DamageInfo.createDamageMatrix(this.baseDamage);
-            }
-
-            for(i = 0; i < i; ++i) {
-                if (!((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).isDying && ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).currentHealth > 0 && !((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).isEscaping) {
+            for(int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); ++i) {
+                AbstractMonster mo = AbstractDungeon.getMonsters().monsters.get(i);
+                if (!mo.isDeadOrEscaped() && mo != source) {
                     if (playedMusic) {
-                        AbstractDungeon.effectList.add(new FlashAtkImgEffect(((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cX, ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cY, this.attackEffect, true));
+                        AbstractDungeon.effectList.add(new FlashAtkImgEffect(mo.hb.cX, mo.hb.cY, this.attackEffect, true));
                     } else {
                         playedMusic = true;
-                        AbstractDungeon.effectList.add(new FlashAtkImgEffect(((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cX, ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cY, this.attackEffect));
+                        AbstractDungeon.effectList.add(new FlashAtkImgEffect(mo.hb.cX, mo.hb.cY, this.attackEffect));
                     }
                 }
             }
@@ -61,12 +54,16 @@ public class AllyDamageAllEnemiesAction extends AbstractGameAction {
 
         this.tickDuration();
         if (this.isDone && !source.isDeadOrEscaped()) {
-
-            int temp = AbstractDungeon.getMonsters().monsters.size();
-
-            for(i = 0; i < temp; ++i) {
+            for(int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); ++i) {
                 AbstractMonster mo = AbstractDungeon.getMonsters().monsters.get(i);
                 if (!mo.isDeadOrEscaped() && mo != source) {
+                    if (this.attackEffect == AttackEffect.POISON) {
+                        mo.tint.color.set(Color.CHARTREUSE.cpy());
+                        mo.tint.changeColor(Color.WHITE.cpy());
+                    } else if (this.attackEffect == AttackEffect.FIRE) {
+                        mo.tint.color.set(Color.RED);
+                        mo.tint.changeColor(Color.WHITE.cpy());
+                    }
                     mo.damage(new DamageInfo(this.source, this.damage[i], this.damageType));
                 }
             }

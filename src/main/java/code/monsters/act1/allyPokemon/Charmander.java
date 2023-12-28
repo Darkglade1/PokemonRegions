@@ -102,7 +102,7 @@ public class Charmander extends AbstractPokemonAlly
         }
         switch (this.nextMove) {
             case MOVE_1: {
-                dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
+                dmg(target, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
                 break;
             }
             case MOVE_2: {
