@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import code.cards.AbstractEasyCard;
 
-import static code.ModFile.makeID;
+import static code.PokemonRegions.makeID;
 
 public class TwoTypesOfDamage extends AbstractEasyCard {
     public final static String ID = makeID(TwoTypesOfDamage.class.getSimpleName());

@@ -1,0 +1,30 @@
+{
+  "${ModID}:AllyStrings": {
+    "TEXT": [
+      "Your #gally intends to #yAttack ",
+      " for #b",
+      " damage.",
+      " damage #b",
+      " times.",
+      "Your #gally intends to inflict a #yNegative #yeffect on ",
+      ".",
+      "Your #gally intends to use a #yBuff.",
+      "Your #gally intends to #yDefend.",
+      "#yClick to activate any number of times: #ytransfer up to #b",
+      " #yBlock from you to this #yAlly.",
+      "Coordination",
+      "I have no Block to transfer!",
+      "Your #gally intends to deal #b",
+      " damage to ALL other characters (including you)",
+      ".",
+      " times.",
+      " damage to ALL enemies"
+    ]
+  },
+  "${ModID}:MassAttackIntent": {
+    "TEXT": [
+      "Mass Attack",
+      "This enemy intends to deal #b", " damage to ALL other characters", ".", " times."
+    ]
+  }
+}

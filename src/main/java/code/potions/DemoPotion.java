@@ -1,21 +1,19 @@
 package code.potions;
 
 import basemod.BaseMod;
-import code.CharacterFile;
-import code.ModFile;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import static code.ModFile.makeID;
+import static code.PokemonRegions.makeID;
 import static code.util.Wiz.*;
 
 public class DemoPotion extends AbstractEasyPotion {
     public static String ID = makeID("DemoPotion");
 
     public DemoPotion() {
-        super(ID, PotionRarity.COMMON, PotionSize.ANVIL, new Color(0.2f, 0.4f, 0.9f, 1f), new Color(0.6f, 0.8f, 1.0f, 1f), null, CharacterFile.Enums.THE_TODO, ModFile.characterColor);
+        super(ID, PotionRarity.COMMON, PotionSize.ANVIL, new Color(0.2f, 0.4f, 0.9f, 1f), new Color(0.6f, 0.8f, 1.0f, 1f), null);
     }
 
     public int getPotency(int ascensionlevel) {

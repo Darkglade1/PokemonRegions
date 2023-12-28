@@ -1,0 +1,6 @@
+{
+  "${ModID}:NextTurnPower": {
+    "NAME": "Next Turn ",
+    "DESCRIPTIONS": ["Next turn, gain #b", " ", "."]
+  }
+}

@@ -8,7 +8,7 @@
 "import com.megacrit.cardcrawl.characters.AbstractPlayer;",
 "import com.megacrit.cardcrawl.monsters.AbstractMonster;",
 "",
-"import static code.ModFile.makeID;",
+"import static code.PokemonRegions.makeID;",
 "import static code.util.Wiz.*;",
 "",
 "public class $TM_FILENAME_BASE extends AbstractEasyCard {",

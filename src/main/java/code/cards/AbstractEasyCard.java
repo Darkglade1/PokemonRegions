@@ -1,6 +1,7 @@
 package code.cards;
 
 import basemod.abstracts.CustomCard;
+import code.PokemonRegions;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
@@ -15,11 +16,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import code.CharacterFile;
 import code.util.CardArtRoller;
 
-import static code.ModFile.makeImagePath;
-import static code.ModFile.modID;
+import static code.PokemonRegions.makeImagePath;
+import static code.PokemonRegions.modID;
 import static code.util.Wiz.atb;
 import static code.util.Wiz.att;
 
@@ -75,7 +75,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     private boolean needsArtRefresh = false;
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, cost, type, rarity, target, CharacterFile.Enums.TODO_COLOR);
+        this(cardID, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
     }
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {

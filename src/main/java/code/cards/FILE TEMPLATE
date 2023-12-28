@@ -2,7 +2,7 @@ Settings -> Editor -> File and Code Templates and add the following!
 
 import code.cards.AbstractEasyCard;
 
-import static code.ModFile.makeID;
+import static code.PokemonRegions.makeID;
 import static code.util.Wiz.*;
 
 public class ${NAME} extends AbstractEasyCard {

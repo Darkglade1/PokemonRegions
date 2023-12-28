@@ -1,5 +1,7 @@
 package code.util;
 
+import code.powers.AbstractUnremovablePower;
+import code.powers.NextTurnPowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -26,7 +28,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static code.ModFile.makeID;
+import static code.PokemonRegions.makeID;
 
 public class Wiz {
     //The wonderful Wizard of Oz allows access to most easy compilations of data, or functions.
@@ -218,5 +220,63 @@ public class Wiz {
 
     public static void playAudio(ProAudio a) {
         CardCrawlGame.sound.play(makeID(a.name()));
+    }
+
+    public static void intoDrawMo(AbstractCard c, int i, AbstractMonster source) {
+        atb(new MakeTempCardInDrawPileAction(c, i, true, true));
+    }
+
+    public static void intoDiscardMo(AbstractCard c, int i, AbstractMonster source) {
+        //because for some reason the action is HARDCODED to only take up to FIVE
+        if (i > 5) {
+            int times = i / 5;
+            int remainder = i % 5;
+            for (int count = 0; count < times; count++) {
+                atb(new MakeTempCardInDiscardAction(c, 5));
+            }
+            atb(new MakeTempCardInDiscardAction(c, remainder));
+        } else {
+            atb(new MakeTempCardInDiscardAction(c, i));
+        }
+    }
+
+    public static void applyToTarget(AbstractCreature target, AbstractCreature source, AbstractPower po) {
+        atb(new ApplyPowerAction(target, source, po, po.amount));
+    }
+    public static void applyToTargetTop(AbstractCreature target, AbstractCreature source, AbstractPower po) {
+        att(new ApplyPowerAction(target, source, po, po.amount));
+    }
+
+    public static void applyToTargetNextTurn(AbstractCreature target, AbstractCreature source, AbstractPower po) {
+        atb(new ApplyPowerAction(target, source, new NextTurnPowerPower(target, po)));
+    }
+
+    public static void applyToTargetNextTurnTop(AbstractCreature target, AbstractCreature source, AbstractPower po) {
+        att(new ApplyPowerAction(target, source, new NextTurnPowerPower(target, po)));
+    }
+
+    public static void dmg(AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
+        atb(new DamageAction(target, info, effect));
+    }
+
+    public static void dmg(AbstractCreature target, DamageInfo info) {
+        dmg(target, info, AbstractGameAction.AttackEffect.NONE);
+    }
+
+    public static void block(AbstractCreature target, int amount) {
+        atb(new GainBlockAction(target, amount));
+    }
+
+    public static void makePowerRemovable(AbstractCreature owner, String powerID) {
+        AbstractPower power = owner.getPower(powerID);
+        if (power instanceof AbstractUnremovablePower) {
+            ((AbstractUnremovablePower) power).isUnremovable = false;
+        }
+    }
+
+    public static void makePowerRemovable(AbstractPower power) {
+        if (power instanceof AbstractUnremovablePower) {
+            ((AbstractUnremovablePower) power).isUnremovable = false;
+        }
     }
 }
