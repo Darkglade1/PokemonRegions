@@ -9,6 +9,10 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     public int staminaCost2;
     public int currentStamina;
     public int maxStamina;
+    public String move1Name;
+    public String move2Name;
+    public String move1Description;
+    public String move2Description;
 
     public AbstractAllyPokemonCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         super(cardID, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
@@ -21,5 +25,10 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
         c.currentStamina = currentStamina;
         c.maxStamina = maxStamina;
         return c;
+    }
+
+    public void initializeDescriptionFromMoves() {
+        this.rawDescription = "*" + move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + "*" + move2Name + " (" + staminaCost2 + ") " + move2Description;
+        this.initializeDescription();
     }
 }

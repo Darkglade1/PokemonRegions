@@ -2,6 +2,7 @@ package code.monsters;
 
 import basemod.ReflectionHacks;
 import code.CustomIntent.IntentEnums;
+import code.cards.AbstractAllyPokemonCard;
 import code.util.AllyMove;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -28,6 +29,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public boolean massAttackHitsPlayer = false;
 
     public ArrayList<AllyMove> allyMoves = new ArrayList<>();
+    public AbstractAllyPokemonCard allyCard;
     public AbstractMonster target;
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {

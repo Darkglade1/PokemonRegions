@@ -27,11 +27,6 @@ public class Charmander extends AbstractPokemonAlly
     public static final String ID = PokemonRegions.makeID(Charmander.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
-    public static final String move1Name = cardStrings.EXTENDED_DESCRIPTION[0];
-    public static final String move1Description = cardStrings.EXTENDED_DESCRIPTION[1];
-    public static final String move2Name = cardStrings.EXTENDED_DESCRIPTION[2];
-    public static final String move2Description = cardStrings.EXTENDED_DESCRIPTION[3];
-
     private static final byte MOVE_1 = 0;
     private static final byte MOVE_2 = 1;
 
@@ -44,7 +39,7 @@ public class Charmander extends AbstractPokemonAlly
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Charmander/Charmander.scml"));
         this.animation.setFlip(true, false);
 
-        AbstractAllyPokemonCard allyCard = (AbstractAllyPokemonCard) CardLibrary.getCard(ID);
+        allyCard = (AbstractAllyPokemonCard) CardLibrary.getCard(ID);
 
         this.setHp(allyCard.currentStamina);
 
@@ -56,7 +51,7 @@ public class Charmander extends AbstractPokemonAlly
     public void usePreBattleAction() {
         super.usePreBattleAction();
 
-        AllyMove move1 = new AllyMove(move1Name, this, new Texture(makeUIPath("attackIcon.png")), move1Description, () -> {
+        AllyMove move1 = new AllyMove(allyCard.move1Name, this, new Texture(makeUIPath("attackIcon.png")), allyCard.move1Description, () -> {
             setMoveShortcut(MOVE_1);
             createIntent();
             AbstractDungeon.onModifyPower();
@@ -65,7 +60,7 @@ public class Charmander extends AbstractPokemonAlly
         move1.setY(this.intentHb.cY - ((32.0f - 80.0f) * Settings.scale));
         allyMoves.add(move1);
 
-        AllyMove move2 = new AllyMove(move2Name, this, new Texture(makeUIPath("areaIntent.png")), move2Description, () -> {
+        AllyMove move2 = new AllyMove(allyCard.move2Name, this, new Texture(makeUIPath("areaIntent.png")), allyCard.move2Description, () -> {
             setMoveShortcut(MOVE_2);
             createIntent();
             AbstractDungeon.onModifyPower();
@@ -111,6 +106,7 @@ public class Charmander extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                // add vfx of shooting fire bolts at each enemy
                 atb(new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
                 break;
             }
