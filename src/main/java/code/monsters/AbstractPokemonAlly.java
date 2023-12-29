@@ -2,6 +2,7 @@ package code.monsters;
 
 import basemod.ReflectionHacks;
 import code.CustomIntent.IntentEnums;
+import code.actions.UpdateStaminaOnCardAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.util.AllyMove;
 import com.badlogic.gdx.graphics.Color;
@@ -22,8 +23,7 @@ import java.util.ArrayList;
 
 import static code.PokemonRegions.makeID;
 import static code.PokemonRegions.makeUIPath;
-import static code.util.Wiz.adp;
-import static code.util.Wiz.atb;
+import static code.util.Wiz.*;
 
 public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("AllyStrings"));
@@ -40,6 +40,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public Intent move2Intent;
     public boolean move1RequiresTarget = false;
     public boolean move2RequiresTarget = false;
+    public int move1StaminaCost;
+    public int move2StaminaCost;
     public static final float X_POSITION = -700.0f;
     public static final float Y_POSITION = 0.0f;
 
@@ -149,6 +151,25 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public void postTurn() {
+        int newCurrentStamina = allyCard.currentStamina;
+        System.out.println("CURRENT STAMINA");
+        System.out.println(newCurrentStamina);
+        switch (this.nextMove) {
+            case MOVE_1: {
+                newCurrentStamina -= move1StaminaCost;
+                System.out.println("LOWERING STAMINA");
+                System.out.println(move1StaminaCost);
+                break;
+            }
+            case MOVE_2: {
+                newCurrentStamina -= move2StaminaCost;
+                System.out.println("LOWERING STAMINA");
+                System.out.println(move2StaminaCost);
+                System.out.println(newCurrentStamina);
+                break;
+            }
+        }
+        atb(new UpdateStaminaOnCardAction(allyCard, newCurrentStamina));
         atb(new AbstractGameAction() {
             @Override
             public void update() {
@@ -156,6 +177,14 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 this.isDone = true;
             }
         });
+    }
+
+    public void setStaminaInfo(AbstractAllyPokemonCard allyCard) {
+        this.currentHealth = allyCard.currentStamina;
+        this.maxHealth = allyCard.maxStamina;
+        this.healthBarUpdatedEvent();
+        this.move1StaminaCost = allyCard.staminaCost1;
+        this.move2StaminaCost = allyCard.staminaCost2;
     }
 
     @Override
@@ -263,6 +292,12 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         for (AllyMove allyMove : allyMoves) {
             allyMove.update();
         }
+        if (this.currentHealth != allyCard.currentStamina || this.maxHealth != allyCard.maxStamina) {
+            System.out.println("HEALTH DIFFERS FROM SOURCE OF TRUTH");
+            this.currentHealth = allyCard.currentStamina;
+            this.maxHealth = allyCard.maxStamina;
+            this.healthBarUpdatedEvent();
+        }
     }
 
     @Override
@@ -274,15 +309,6 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             return;
         }
         applyPowers(target);
-    }
-
-    public void disappear() {
-        hideHealthBar();
-        this.currentHealth = 0;
-        this.loseBlock();
-        this.isDead = true;
-        this.isDying = true;
-        this.healthBarUpdatedEvent();
     }
 
     @Override

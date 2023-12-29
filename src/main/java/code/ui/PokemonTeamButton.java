@@ -2,6 +2,7 @@ package code.ui;
 
 import basemod.TopPanelItem;
 import basemod.abstracts.CustomSavable;
+import code.cards.AbstractAllyPokemonCard;
 import code.patches.PlayerSpireFields;
 import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
@@ -58,6 +59,8 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         ArrayList<CardSave> retVal = new ArrayList<>();
         for (AbstractCard card : pokemonTeam.group) {
+            System.out.println("SAVING POKEMON");
+            System.out.println(card.misc);
             retVal.add(new CardSave(card.cardID, card.timesUpgraded, card.misc));
         }
         return retVal;
@@ -68,7 +71,14 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         //BaseMod.addTopPanelItem(this);
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         for (CardSave s : cardSaves) {
-            pokemonTeam.addToBottom(CardLibrary.getCopy(s.id, s.upgrades, s.misc));
+            System.out.println("LOADING POKEMON");
+            System.out.println(s.misc);
+            AbstractCard card = CardLibrary.getCopy(s.id, s.upgrades, s.misc);
+            if (card instanceof AbstractAllyPokemonCard) {
+                ((AbstractAllyPokemonCard) card).currentStamina = s.misc;
+                ((AbstractAllyPokemonCard) card).initializeDescriptionFromMoves();
+            }
+            pokemonTeam.addToBottom(card);
         }
     }
 

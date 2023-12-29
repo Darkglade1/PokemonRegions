@@ -9,7 +9,6 @@ import code.monsters.AbstractPokemonAlly;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 import static code.PokemonRegions.makeMonsterPath;
@@ -22,17 +21,13 @@ public class Charmander extends AbstractPokemonAlly
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
 
-    public Charmander() {
-        this(0.0f, 0.0f);
-    }
-
-    public Charmander(final float x, final float y) {
+    public Charmander(final float x, final float y, AbstractAllyPokemonCard allyCard) {
         super(NAME, ID, 100, -5.0F, 0, 150.0f, 100.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Charmander/Charmander.scml"));
         this.animation.setFlip(true, false);
 
-        allyCard = (AbstractAllyPokemonCard) CardLibrary.getCard(ID);
-        this.setHp(allyCard.currentStamina);
+        this.allyCard = allyCard;
+        setStaminaInfo(allyCard);
 
         move1Intent = Intent.ATTACK;
         move2Intent = IntentEnums.MASS_ATTACK;

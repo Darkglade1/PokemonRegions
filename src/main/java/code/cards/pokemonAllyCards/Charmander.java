@@ -24,8 +24,7 @@ public class Charmander extends AbstractAllyPokemonCard {
         this.secondDamage = MOVE_2_DAMAGE;
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
-        this.maxStamina = MAX_STAMINA;
-        this.currentStamina = MAX_STAMINA;
+        this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Name = cardStrings.EXTENDED_DESCRIPTION[0];
         this.move2Name = cardStrings.EXTENDED_DESCRIPTION[1];
         this.move1Description = cardStrings.EXTENDED_DESCRIPTION[2] + MOVE_1_DAMAGE + cardStrings.EXTENDED_DESCRIPTION[3];
@@ -39,6 +38,6 @@ public class Charmander extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new code.monsters.act1.allyPokemon.Charmander(x, y);
+        return new code.monsters.act1.allyPokemon.Charmander(x, y, this);
     }
 }
