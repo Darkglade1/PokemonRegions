@@ -39,6 +39,7 @@ public class Charmander extends AbstractPokemonAlly
         addMove(MOVE_1, Intent.ATTACK, allyCard.damage);
         addMove(MOVE_2, IntentEnums.MASS_ATTACK, allyCard.secondDamage);
         defaultMove = MOVE_1;
+        move1RequiresTarget = true;
     }
 
     @Override

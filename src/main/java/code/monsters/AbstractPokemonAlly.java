@@ -38,6 +38,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public byte defaultMove;
     public Intent move1Intent;
     public Intent move2Intent;
+    public boolean move1RequiresTarget = false;
+    public boolean move2RequiresTarget = false;
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
@@ -78,7 +80,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             setMoveShortcut(MOVE_1);
             createIntent();
             AbstractDungeon.onModifyPower();
-        });
+        }, move1RequiresTarget);
         move1.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
         move1.setY(this.intentHb.cY - ((32.0f - 80.0f) * Settings.scale));
         allyMoves.add(move1);
@@ -88,7 +90,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             setMoveShortcut(MOVE_2);
             createIntent();
             AbstractDungeon.onModifyPower();
-        });
+        }, move2RequiresTarget);
         move2.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
         move2.setY(this.intentHb.cY - ((32.0f - 160.0f) * Settings.scale));
         allyMoves.add(move2);
