@@ -2,6 +2,7 @@ package code.monsters;
 
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -22,6 +23,8 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
 
     protected Map<Byte, EnemyMoveInfo> moves;
     protected boolean firstMove = true;
+    protected DamageInfo info;
+    protected int multiplier;
     private static final float ASCENSION_DAMAGE_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_TANK_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_SPECIAL_BUFF_PERCENT = 1.5f;
@@ -41,6 +44,11 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         setUpMisc();
     }
 
+    @Override
+    public void takeTurn() {
+        this.info = getInfoFromMove(this.nextMove);
+        this.multiplier = getMultiplierFromMove(this.nextMove);
+    }
 
     protected void setUpMisc() {
         moves = new HashMap<>();
@@ -139,6 +147,24 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
             ((BetterSpriterAnimation)this.animation).startDying();
         }
         super.die(triggerRelics);
+    }
+
+    protected DamageInfo getInfoFromMove(byte nextMove) {
+        if(moves.containsKey(this.nextMove)) {
+            EnemyMoveInfo emi = moves.get(this.nextMove);
+            return new DamageInfo(this, emi.baseDamage, DamageInfo.DamageType.NORMAL);
+        } else {
+            return new DamageInfo(this, 0, DamageInfo.DamageType.NORMAL);
+        }
+    }
+
+    protected int getMultiplierFromMove(byte nextMove) {
+        int multiplier = 0;
+        if(moves.containsKey(this.nextMove)) {
+            EnemyMoveInfo emi = moves.get(this.nextMove);
+            multiplier = emi.multiplier;
+        }
+        return multiplier;
     }
 
     //Runs a specific animation

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 import static code.PokemonRegions.makeID;
+import static code.PokemonRegions.makeUIPath;
 import static code.util.Wiz.adp;
 import static code.util.Wiz.atb;
 
@@ -31,6 +33,11 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public ArrayList<AllyMove> allyMoves = new ArrayList<>();
     public AbstractAllyPokemonCard allyCard;
     public AbstractMonster target;
+    public static final byte MOVE_1 = 0;
+    public static final byte MOVE_2 = 1;
+    public byte defaultMove;
+    public Intent move1Intent;
+    public Intent move2Intent;
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
@@ -47,12 +54,6 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-//        AllyMove blockMove = new AllyMove(TEXT[11], this, new Texture(makeUIPath("defend.png")), TEXT[9] + BLOCK_TRANSFER + TEXT[10], () -> {
-//            atb(new TransferBlockToAllyAction(BLOCK_TRANSFER, this));
-//        });
-//        blockMove.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
-//        blockMove.setY(this.intentHb.cY - (32.0f * Settings.scale));
-//        allyMoves.add(blockMove);
         atb(new AbstractGameAction() {
             @Override
             public void update() {
@@ -67,11 +68,73 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 this.isDone = true;
             }
         });
+        populateAllyMoves();
+        setDefaultMove();
+    }
 
+    public void populateAllyMoves() {
+        Texture move1Texture = getTextureForIntent(move1Intent);
+        AllyMove move1 = new AllyMove(allyCard.move1Name, this, move1Texture, allyCard.move1Description, () -> {
+            setMoveShortcut(MOVE_1);
+            createIntent();
+            AbstractDungeon.onModifyPower();
+        });
+        move1.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
+        move1.setY(this.intentHb.cY - ((32.0f - 80.0f) * Settings.scale));
+        allyMoves.add(move1);
+
+        Texture move2Texture = getTextureForIntent(move2Intent);
+        AllyMove move2 = new AllyMove(allyCard.move2Name, this, move2Texture, allyCard.move2Description, () -> {
+            setMoveShortcut(MOVE_2);
+            createIntent();
+            AbstractDungeon.onModifyPower();
+        });
+        move2.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
+        move2.setY(this.intentHb.cY - ((32.0f - 160.0f) * Settings.scale));
+        allyMoves.add(move2);
+
+        //changeToGuard.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
+        //changeToGuard.setY(this.intentHb.cY - ((32.0f - 240.0f) * Settings.scale));
+    }
+
+    public Texture getTextureForIntent(Intent intent) {
+        if (intent == IntentEnums.MASS_ATTACK) {
+            return new Texture(makeUIPath("areaIntent.png"));
+        }
+        switch (intent) {
+            case ATTACK:
+                return new Texture(makeUIPath("attackIcon.png"));
+            case ATTACK_BUFF:
+                return new Texture(makeUIPath("attackBuffIcon.png"));
+            case ATTACK_DEBUFF:
+                return new Texture(makeUIPath("attackDebuffIcon.png"));
+            case ATTACK_DEFEND:
+                return new Texture(makeUIPath("attackBlockIcon.png"));
+            case BUFF:
+                return new Texture(makeUIPath("BuffIcon.png"));
+            case DEBUFF:
+                return new Texture(makeUIPath("DebuffIcon.png"));
+            case DEFEND:
+                return new Texture(makeUIPath("BlockIcon.png"));
+            default:
+                return new Texture(makeUIPath("missing.png"));
+        }
+    }
+
+    public void setDefaultMove() {
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                setMoveShortcut(defaultMove);
+                createIntent();
+                this.isDone = true;
+            }
+        });
     }
 
     @Override
     public void takeTurn() {
+        super.takeTurn();
         atb(new AbstractGameAction() {
             @Override
             public void update() {
