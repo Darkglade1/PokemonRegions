@@ -83,7 +83,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             createIntent();
             AbstractDungeon.onModifyPower();
         }, move1RequiresTarget);
-        move1.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
+        move1.setX(this.intentHb.x);
         move1.setY(this.intentHb.cY - ((32.0f - 80.0f) * Settings.scale));
         allyMoves.add(move1);
 
@@ -93,7 +93,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             createIntent();
             AbstractDungeon.onModifyPower();
         }, move2RequiresTarget);
-        move2.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
+        move2.setX(this.intentHb.x);
         move2.setY(this.intentHb.cY - ((32.0f - 160.0f) * Settings.scale));
         allyMoves.add(move2);
 

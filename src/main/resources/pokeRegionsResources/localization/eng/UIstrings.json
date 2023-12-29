@@ -36,7 +36,9 @@
     "TEXT": [
       "Your Pokemon (Max ",
       ")",
-      "Return"
+      "Return",
+      "Your Team",
+      "View your team of Pokemon."
     ]
   }
 }

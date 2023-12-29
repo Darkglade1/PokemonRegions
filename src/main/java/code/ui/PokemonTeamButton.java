@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
@@ -76,6 +77,9 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         super.onHover();
         if (this.hitbox.justHovered) {
             CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
+        }
+        if (this.hitbox.hovered) {
+            TipHelper.renderGenericTip(1550.0F * Settings.scale, (float)Settings.HEIGHT - 120.0F * Settings.scale, TEXT[3], TEXT[4]);
         }
     }
 }
