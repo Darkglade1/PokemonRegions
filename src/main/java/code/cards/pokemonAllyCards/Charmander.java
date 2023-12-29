@@ -18,7 +18,7 @@ public class Charmander extends AbstractAllyPokemonCard {
     public static final int MAX_STAMINA = 5;
 
     public Charmander() {
-        super(ID, -2, CardType.ATTACK, CardRarity.BASIC, CardTarget.NONE);
+        super(ID, CardRarity.BASIC);
         tags.add(Tags.STARTER_POKEMON);
         this.damage = MOVE_1_DAMAGE;
         this.secondDamage = MOVE_2_DAMAGE;

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,10 @@ import static code.util.Wiz.adp;
 public class PokemonTeamButton extends TopPanelItem implements CustomSavable<List<CardSave>> {
     private static final Texture IMG = TexLoader.getTexture(makeUIPath("PokemonTeamButton.png"));
     public static final String ID = makeID(PokemonTeamButton.class.getSimpleName());
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
+    private static final String[] TEXT = uiStrings.TEXT;
+
+    public static final int MAX_TEAM_SIZE = 6;
 
     public PokemonTeamButton() {
         super(IMG, ID);
@@ -35,8 +40,9 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     protected void onClick() {
         CardCrawlGame.sound.play("DECK_OPEN");
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
-        AbstractDungeon.gridSelectScreen.open(pokemonTeam, 999, "Your Pokemon", false, false, false, false);
-        AbstractDungeon.overlayMenu.cancelButton.show("Return");
+        String tipMsg = TEXT[0] + MAX_TEAM_SIZE + TEXT[1];
+        AbstractDungeon.gridSelectScreen.open(pokemonTeam, 999, tipMsg, false, false, false, false);
+        AbstractDungeon.overlayMenu.cancelButton.show(TEXT[2]);
     }
 
     @Override

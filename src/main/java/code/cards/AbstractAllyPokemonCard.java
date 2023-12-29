@@ -2,9 +2,16 @@ package code.cards;
 
 import code.PokemonRegions;
 import code.monsters.AbstractPokemonAlly;
+import code.patches.TypeOverridePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.UIStrings;
+
+import static code.PokemonRegions.makeID;
 
 public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("PokemonType"));
+    public static final String TYPE = uiStrings.TEXT[0];
 
     public int staminaCost1;
     public int staminaCost2;
@@ -15,8 +22,9 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     public String move1Description;
     public String move2Description;
 
-    public AbstractAllyPokemonCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        super(cardID, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
+    public AbstractAllyPokemonCard(final String cardID, final CardRarity rarity) {
+        super(cardID, -2, CardType.SKILL, rarity, CardTarget.NONE, PokemonRegions.Enums.Pokedex);
+        TypeOverridePatch.TypeOverrideField.typeOverride.set(this, TYPE);
     }
 
     public AbstractCard makeStatEquivalentCopy() {

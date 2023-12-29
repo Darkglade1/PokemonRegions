@@ -26,5 +26,17 @@
       "Mass Attack",
       "This enemy intends to deal #b", " damage to ALL other characters", ".", " times."
     ]
+  },
+  "${ModID}:PokemonType": {
+    "TEXT": [
+      "Pokemon"
+    ]
+  },
+  "${ModID}:PokemonTeamButton": {
+    "TEXT": [
+      "Your Pokemon (Max ",
+      ")",
+      "Return"
+    ]
   }
 }

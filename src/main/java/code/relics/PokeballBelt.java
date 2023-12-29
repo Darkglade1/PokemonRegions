@@ -25,11 +25,4 @@ public class PokeballBelt extends AbstractEasyRelic {
         CardGroup team = PlayerSpireFields.pokemonTeam.get(adp());
         team.addToBottom(card);
     }
-
-    @Override
-    public void atBattleStart() {
-//        Charmander ally = new Charmander(-700.0f, 0.0f);
-//        atb(new SpawnMonsterAction(ally, false));
-//        atb(new UsePreBattleActionAction(ally));
-    }
 }
