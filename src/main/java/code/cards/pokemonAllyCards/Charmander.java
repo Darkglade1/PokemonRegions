@@ -1,6 +1,8 @@
 package code.cards.pokemonAllyCards;
 
 import code.cards.AbstractAllyPokemonCard;
+import code.monsters.AbstractPokemonAlly;
+import code.util.Tags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -17,6 +19,7 @@ public class Charmander extends AbstractAllyPokemonCard {
 
     public Charmander() {
         super(ID, -2, CardType.ATTACK, CardRarity.BASIC, CardTarget.NONE);
+        tags.add(Tags.STARTER_POKEMON);
         this.damage = MOVE_1_DAMAGE;
         this.secondDamage = MOVE_2_DAMAGE;
         this.staminaCost1 = MOVE_1_STAMINA_COST;
@@ -32,5 +35,10 @@ public class Charmander extends AbstractAllyPokemonCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+    }
+
+    @Override
+    public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
+        return new code.monsters.act1.allyPokemon.Charmander(x, y);
     }
 }

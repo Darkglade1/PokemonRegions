@@ -40,6 +40,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public Intent move2Intent;
     public boolean move1RequiresTarget = false;
     public boolean move2RequiresTarget = false;
+    public static final float X_POSITION = -700.0f;
+    public static final float Y_POSITION = 0.0f;
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);

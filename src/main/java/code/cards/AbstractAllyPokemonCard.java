@@ -1,6 +1,7 @@
 package code.cards;
 
 import code.PokemonRegions;
+import code.monsters.AbstractPokemonAlly;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
@@ -31,4 +32,6 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
         this.rawDescription = "*" + move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + "*" + move2Name + " (" + staminaCost2 + ") " + move2Description;
         this.initializeDescription();
     }
+
+    public abstract AbstractPokemonAlly getAssociatedPokemon(float x, float y);
 }

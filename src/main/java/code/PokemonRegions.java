@@ -7,6 +7,7 @@ import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import code.CustomIntent.MassAttackIntent;
+import code.ui.PokemonTeamButton;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -125,6 +126,7 @@ public class PokemonRegions implements
     @Override
     public void receivePostInitialize() {
         CustomIntent.add(new MassAttackIntent());
+        BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
     }
 
     @Override

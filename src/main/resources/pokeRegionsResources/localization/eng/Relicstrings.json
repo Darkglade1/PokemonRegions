@@ -1,9 +1,9 @@
 {
-  "${ModID}:TodoItem": {
-    "NAME": "Todo Item",
-    "FLAVOR": "TODO: make this a sweet relic.",
+  "${ModID}:PokeballBelt": {
+    "NAME": "Pokeball Belt",
+    "FLAVOR": "Watch out for the tall grass.",
     "DESCRIPTIONS": [
-      "Has no effect."
+      "You have some Pokeballs."
     ]
   }
 }
