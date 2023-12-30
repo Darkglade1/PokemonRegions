@@ -1,17 +1,21 @@
 package code;
 
 import actlikeit.RazIntent.CustomIntent;
-import basemod.AutoAdd;
-import basemod.BaseMod;
+import basemod.*;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import code.CustomIntent.MassAttackIntent;
+import code.cards.AbstractEasyCard;
+import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.Kanto;
+import code.relics.AbstractEasyRelic;
+import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
+import code.util.ProAudio;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -21,20 +25,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.localization.PotionStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.localization.StanceStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import code.cards.AbstractEasyCard;
-import code.cards.cardvars.AbstractEasyDynamicVariable;
-import code.relics.AbstractEasyRelic;
-import code.util.ProAudio;
+
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+
+import static code.util.Wiz.adp;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -44,7 +41,8 @@ public class PokemonRegions implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        StartGameSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -118,6 +116,10 @@ public class PokemonRegions implements
         return modID + "Resources/images/monsters/" + resourcePath;
     }
 
+    public static String makeEventPath(String resourcePath) {
+        return modID + "Resources/images/events/" + resourcePath;
+    }
+
     public static String makeCardPath(String resourcePath) {
         return modID + "Resources/images/cards/" + resourcePath;
     }
@@ -159,7 +161,7 @@ public class PokemonRegions implements
                 BaseMod.addDynamicVariable(var));
         new AutoAdd(modID)
                 .packageFilter(AbstractEasyCard.class)
-                .setDefaultSeen(true)
+                .setDefaultSeen(false)
                 .cards();
     }
 
@@ -169,7 +171,7 @@ public class PokemonRegions implements
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/" + getLangString() + "/Relicstrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/" + getLangString() + "/Powerstrings.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/" + getLangString() + "/UIstrings.json");
-        BaseMod.loadCustomStringsFile(OrbStrings.class, modID + "Resources/localization/" + getLangString() + "/Eventstrings.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, modID + "Resources/localization/" + getLangString() + "/Eventstrings.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
     }
 
@@ -188,6 +190,22 @@ public class PokemonRegions implements
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
+    }
+
+    @Override
+    public void receiveStartGame() {
+        if (!adp().hasRelic(PokeballBelt.ID)) {
+            ArrayList<TopPanelItem> itemsToRemove = new ArrayList<>();
+            ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
+            for (TopPanelItem item : topPanelItems) {
+                if (item instanceof PokemonTeamButton) {
+                    itemsToRemove.add(item);
+                }
+            }
+            for (TopPanelItem item : itemsToRemove) {
+                BaseMod.removeTopPanelItem(item);
             }
         }
     }

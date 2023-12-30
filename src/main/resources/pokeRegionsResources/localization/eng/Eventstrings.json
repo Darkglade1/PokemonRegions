@@ -1,3 +1,17 @@
 {
-    
+  "${ModID}:ProfessorOak": {
+    "NAME": "Professor Oak",
+    "DESCRIPTIONS": [
+      "Oh, a new trainer about to start their journey?",
+      "You look a bit old to be just starting out, but no matter. Here's some Pokeballs to get you started.",
+      "Now choose a companion to begin your journey with.",
+      "I hope you make many fond memories together."
+    ],
+    "OPTIONS": [
+      "[Continue] ",
+      "Receive Pokeballs ",
+      "Choose a Starter Pokemon",
+      "[Leave]"
+    ]
+  }
 }

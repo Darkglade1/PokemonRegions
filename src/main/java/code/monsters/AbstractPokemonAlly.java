@@ -5,6 +5,7 @@ import code.CustomIntent.IntentEnums;
 import code.actions.UpdateStaminaOnCardAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.util.AllyMove;
+import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -105,25 +106,25 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     public Texture getTextureForIntent(Intent intent) {
         if (intent == IntentEnums.MASS_ATTACK) {
-            return new Texture(makeUIPath("areaIntent.png"));
+            return TexLoader.getTexture(makeUIPath("areaIntent.png"));
         }
         switch (intent) {
             case ATTACK:
-                return new Texture(makeUIPath("attackIcon.png"));
+                return TexLoader.getTexture(makeUIPath("attackIcon.png"));
             case ATTACK_BUFF:
-                return new Texture(makeUIPath("attackBuffIcon.png"));
+                return TexLoader.getTexture(makeUIPath("attackBuffIcon.png"));
             case ATTACK_DEBUFF:
-                return new Texture(makeUIPath("attackDebuffIcon.png"));
+                return TexLoader.getTexture(makeUIPath("attackDebuffIcon.png"));
             case ATTACK_DEFEND:
-                return new Texture(makeUIPath("attackBlockIcon.png"));
+                return TexLoader.getTexture(makeUIPath("attackBlockIcon.png"));
             case BUFF:
-                return new Texture(makeUIPath("BuffIcon.png"));
+                return TexLoader.getTexture(makeUIPath("BuffIcon.png"));
             case DEBUFF:
-                return new Texture(makeUIPath("DebuffIcon.png"));
+                return TexLoader.getTexture(makeUIPath("DebuffIcon.png"));
             case DEFEND:
-                return new Texture(makeUIPath("BlockIcon.png"));
+                return TexLoader.getTexture(makeUIPath("BlockIcon.png"));
             default:
-                return new Texture(makeUIPath("missing.png"));
+                return TexLoader.getTexture(makeUIPath("missing.png"));
         }
     }
 

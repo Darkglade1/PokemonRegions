@@ -2,6 +2,7 @@ package code.dungeons;
 
 import actlikeit.dungeons.CustomDungeon;
 import code.PokemonRegions;
+import code.events.ProfessorOak;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -22,7 +23,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
 
     public Kanto() {
         super(NAME, ID, "images/ui/event/panel.png", false, 3, 12, 10);
-        //this.onEnterEvent(NeowAngela.class);
+        this.onEnterEvent(ProfessorOak.class);
     }
 
     public Kanto(CustomDungeon cd, AbstractPlayer p, ArrayList<String> emptyList) {
