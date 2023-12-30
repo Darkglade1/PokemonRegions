@@ -17,6 +17,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -57,7 +58,7 @@ public class PokemonRegions implements
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
-    public static Color color = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1); // This should be changed eventually
+    public static Color color = CardHelper.getColor(255, 30, 30);
     private static final String ATTACK_S_ART = makeImagePath("512/attack.png");
     private static final String SKILL_S_ART = makeImagePath("512/skill.png");
     private static final String POWER_S_ART = makeImagePath("512/power.png");

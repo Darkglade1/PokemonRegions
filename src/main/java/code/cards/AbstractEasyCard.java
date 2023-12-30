@@ -73,10 +73,6 @@ public abstract class AbstractEasyCard extends CustomCard {
     private boolean upgradedRetain;
 
     private boolean needsArtRefresh = false;
-    public int staminaCost1;
-    public int staminaCost2;
-    public int currentStamina;
-    public int maxStamina;
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
         this(cardID, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);

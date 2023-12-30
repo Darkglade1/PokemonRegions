@@ -1,5 +1,6 @@
 package code.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import code.PokemonRegions;
 import code.monsters.AbstractPokemonAlly;
 import code.patches.TypeOverridePatch;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import static code.PokemonRegions.makeID;
 
+@NoPools
 public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("PokemonType"));
     public static final String TYPE = uiStrings.TEXT[0];
