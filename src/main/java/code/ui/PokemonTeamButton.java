@@ -63,8 +63,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         ArrayList<CardSave> retVal = new ArrayList<>();
         for (AbstractCard card : pokemonTeam.group) {
-            System.out.println("SAVING POKEMON");
-            System.out.println(card.misc);
             retVal.add(new CardSave(card.cardID, card.timesUpgraded, card.misc));
         }
         return retVal;
@@ -74,8 +72,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     public void onLoad(List<CardSave> cardSaves) {
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         for (CardSave s : cardSaves) {
-            System.out.println("LOADING POKEMON");
-            System.out.println(s.misc);
             AbstractCard card = CardLibrary.getCopy(s.id, s.upgrades, s.misc);
             if (card instanceof AbstractAllyPokemonCard) {
                 ((AbstractAllyPokemonCard) card).currentStamina = s.misc;

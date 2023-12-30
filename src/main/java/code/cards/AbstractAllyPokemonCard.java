@@ -42,13 +42,6 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
         this.initializeDescription();
     }
 
-    @Override
-    public void update() {
-        super.update();
-        //because misc gets set after the card is constructed somewhere and I'm too lazy to track down where and patch there
-        this.currentStamina = misc;
-    }
-
     public void updateStamina (int newStamina) {
         this.currentStamina = misc = newStamina;
     }

@@ -152,20 +152,13 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     public void postTurn() {
         int newCurrentStamina = allyCard.currentStamina;
-        System.out.println("CURRENT STAMINA");
-        System.out.println(newCurrentStamina);
         switch (this.nextMove) {
             case MOVE_1: {
                 newCurrentStamina -= move1StaminaCost;
-                System.out.println("LOWERING STAMINA");
-                System.out.println(move1StaminaCost);
                 break;
             }
             case MOVE_2: {
                 newCurrentStamina -= move2StaminaCost;
-                System.out.println("LOWERING STAMINA");
-                System.out.println(move2StaminaCost);
-                System.out.println(newCurrentStamina);
                 break;
             }
         }
@@ -293,7 +286,6 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             allyMove.update();
         }
         if (this.currentHealth != allyCard.currentStamina || this.maxHealth != allyCard.maxStamina) {
-            System.out.println("HEALTH DIFFERS FROM SOURCE OF TRUTH");
             this.currentHealth = allyCard.currentStamina;
             this.maxHealth = allyCard.maxStamina;
             this.healthBarUpdatedEvent();
