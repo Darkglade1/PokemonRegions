@@ -2,6 +2,7 @@ package code.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import code.util.TexLoader;
 
@@ -23,5 +24,12 @@ public abstract class AbstractEasyRelic extends CustomRelic {
 
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
+    }
+
+    public void fixDescription() {
+        description = getUpdatedDescription();
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
     }
 }

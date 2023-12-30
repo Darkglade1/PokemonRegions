@@ -3,7 +3,7 @@
     "NAME": "Pokeball Belt",
     "FLAVOR": "Watch out for the tall grass.",
     "DESCRIPTIONS": [
-      "You have some Pokeballs."
+      "You have #b", " #yPokeballs. NL [#2aecd7]Right [#2aecd7]click[] this relic to add a #yPokeball to your hand. NL Captured #yPokemon are obtained at the end of combat."
     ]
   }
 }
