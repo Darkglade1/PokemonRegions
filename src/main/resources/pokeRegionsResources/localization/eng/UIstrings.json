@@ -1,4 +1,12 @@
 {
+  "${ModID}:Kanto": {
+    "TEXT": [
+      "Kanto",
+      "Act 1",
+      "You see tall grass in the distance.",
+      "Gotta go catch them all."
+    ]
+  },
   "${ModID}:AllyStrings": {
     "TEXT": [
       "Your #gPokemon intends to #yAttack ",

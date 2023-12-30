@@ -7,6 +7,7 @@ import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import code.CustomIntent.MassAttackIntent;
+import code.dungeons.Kanto;
 import code.ui.PokemonTeamButton;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -17,6 +18,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -128,6 +130,9 @@ public class PokemonRegions implements
     public void receivePostInitialize() {
         CustomIntent.add(new MassAttackIntent());
         BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
+
+        Kanto kanto = new Kanto();
+        kanto.addAct(Exordium.ID);
     }
 
     @Override
