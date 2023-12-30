@@ -1,7 +1,11 @@
 package code.ui;
 
+import basemod.BaseMod;
+import basemod.ReflectionHacks;
+import basemod.TopPanelGroup;
 import basemod.TopPanelItem;
 import basemod.abstracts.CustomSavable;
+import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import code.cards.AbstractAllyPokemonCard;
 import code.patches.PlayerSpireFields;
 import code.util.TexLoader;
@@ -68,7 +72,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
 
     @Override
     public void onLoad(List<CardSave> cardSaves) {
-        //BaseMod.addTopPanelItem(this);
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         for (CardSave s : cardSaves) {
             System.out.println("LOADING POKEMON");
@@ -80,6 +83,13 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             }
             pokemonTeam.addToBottom(card);
         }
+        ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
+        for (TopPanelItem item : topPanelItems) {
+            if (item instanceof PokemonTeamButton) {
+                return;
+            }
+        }
+        BaseMod.addTopPanelItem(this);
     }
 
     @Override
