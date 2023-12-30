@@ -40,5 +40,11 @@
       "Your Team",
       "View your team of Pokemon."
     ]
+  },
+  "${ModID}:StaminaCost": {
+    "TEXT": [
+      "Costs ",
+      " Stamina."
+    ]
   }
 }

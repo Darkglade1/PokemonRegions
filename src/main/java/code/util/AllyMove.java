@@ -2,6 +2,7 @@ package code.util;
 
 import basemod.BaseMod;
 import basemod.ClickableUIElement;
+import code.monsters.AbstractPokemonAlly;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,22 +15,23 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
-import code.monsters.AbstractPokemonAlly;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import java.util.Iterator;
-
+import static code.PokemonRegions.makeID;
+import static code.monsters.AbstractPokemonAlly.MOVE_1;
+import static code.monsters.AbstractPokemonAlly.MOVE_2;
 import static code.util.Wiz.adp;
 
 
 public class AllyMove extends ClickableUIElement {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("StaminaCost"));
+    private static final String[] TEXT = uiStrings.TEXT;
 
     private String ID;
     private String moveDescription;
@@ -37,6 +39,7 @@ public class AllyMove extends ClickableUIElement {
     private Runnable moveActions;
     private AbstractPokemonAlly owner;
     private boolean requiresTarget;
+    private byte moveNum;
 
     public boolean targetMode = false;
     private Vector2[] points = new Vector2[20];
@@ -45,7 +48,7 @@ public class AllyMove extends ClickableUIElement {
     private float arrowScaleTimer = 0.0F;
     private AbstractMonster hoveredMonster = null;
 
-    public AllyMove(String ID, AbstractPokemonAlly owner, Texture moveImage, String moveDescription, Runnable moveActions, boolean requiresTarget) {
+    public AllyMove(String ID, AbstractPokemonAlly owner, Texture moveImage, String moveDescription, Runnable moveActions, boolean requiresTarget, byte moveNum) {
         super(moveImage, 0, 0, 64.0f, 64.0f);
         this.moveImage = moveImage;
         this.moveActions = moveActions;
@@ -53,13 +56,10 @@ public class AllyMove extends ClickableUIElement {
         this.moveDescription = moveDescription;
         this.owner = owner;
         this.requiresTarget = requiresTarget;
+        this.moveNum = moveNum;
         for(int i = 0; i < this.points.length; ++i) {
             this.points[i] = new Vector2();
         }
-    }
-
-    public AllyMove(String ID, AbstractPokemonAlly owner, Texture moveImage, String moveDescription, Runnable moveActions) {
-        this(ID, owner, moveImage, moveDescription, moveActions, false);
     }
 
     private void doMove() {
@@ -70,33 +70,32 @@ public class AllyMove extends ClickableUIElement {
                 moveActions.run();
             }
         } else {
-            BaseMod.logger.info("MinionMove: " + this.ID + " had no actions!");
+            BaseMod.logger.info("Pokemon Move: " + this.ID + " had no actions!");
         }
-    }
-
-    public Hitbox getHitbox() {
-        return this.hitbox;
-    }
-
-    public Texture getMoveImage(){
-        return this.moveImage;
-    }
-
-    public void setMoveImage(Texture moveImage){
-        this.moveImage = moveImage;
     }
 
     public String getID(){
         return this.ID;
     }
 
-    public String getMoveDescription(){
-        return this.moveDescription;
-    }
-
     @Override
     protected void onHover() {
-        TipHelper.renderGenericTip(this.x, this.y - 15f * Settings.scale, this.ID, this.moveDescription);
+        String descrption = this.moveDescription;
+        int staminaCost = 0;
+        if (this.moveNum == MOVE_1) {
+            staminaCost = owner.move1StaminaCost;
+        }
+        if (this.moveNum == MOVE_2) {
+            staminaCost = owner.move2StaminaCost;
+        }
+        if (staminaCost != 0) {
+            descrption += " " + TEXT[0] + staminaCost + TEXT[1];
+        }
+        TipHelper.renderGenericTip(this.x, this.y - 15f * Settings.scale, this.ID, descrption);
+
+        if (this.hitbox.justHovered) {
+            CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
+        }
     }
 
     @Override
@@ -107,6 +106,7 @@ public class AllyMove extends ClickableUIElement {
     @Override
     protected void onClick() {
         if(!AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard){
+            CardCrawlGame.sound.play("UI_CLICK_1");
             this.doMove();
         }
     }
@@ -115,6 +115,8 @@ public class AllyMove extends ClickableUIElement {
     public void render(SpriteBatch sb) {
         if(AbstractDungeon.actionManager.turnHasEnded){
             super.render(sb, Color.GRAY);
+        } else if (this.hitbox.hovered) {
+            super.render(sb, Color.GOLD);
         } else {
             super.render(sb);
         }
