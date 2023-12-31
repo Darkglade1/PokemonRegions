@@ -64,7 +64,7 @@ public class AllyMove extends ClickableUIElement {
 
     private void doMove() {
         if(moveActions != null) {
-            if (requiresTarget) {
+            if (requiresTarget && Wiz.getEnemies().size() > 1) {
                 targetMode = true;
             } else {
                 moveActions.run();

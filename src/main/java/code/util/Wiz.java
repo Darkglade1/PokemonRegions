@@ -1,5 +1,6 @@
 package code.util;
 
+import code.monsters.AbstractPokemonAlly;
 import code.powers.AbstractUnremovablePower;
 import code.powers.NextTurnPowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -65,6 +66,7 @@ public class Wiz {
     public static ArrayList<AbstractMonster> getEnemies() {
         ArrayList<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
         monsters.removeIf(AbstractCreature::isDeadOrEscaped);
+        monsters.removeIf(mo -> mo instanceof AbstractPokemonAlly);
         return monsters;
     }
 

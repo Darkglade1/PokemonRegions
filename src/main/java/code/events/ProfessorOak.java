@@ -3,6 +3,7 @@ package code.events;
 import basemod.animations.AbstractAnimation;
 import code.BetterSpriterAnimation;
 import code.PokemonRegions;
+import code.cards.pokemonAllyCards.Bulbasaur;
 import code.cards.pokemonAllyCards.Charmander;
 import code.relics.PokeballBelt;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -29,8 +30,8 @@ public class ProfessorOak extends AbstractEvent {
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    private static float DIALOG_X = 1200.0F * Settings.xScale;
-    private static float DIALOG_Y = AbstractDungeon.floorY + 60.0F * Settings.yScale;
+    private static final float DIALOG_X = 1200.0F * Settings.xScale;
+    private static final float DIALOG_Y = AbstractDungeon.floorY + 60.0F * Settings.yScale;
     private final AbstractAnimation oak;
 
     private int screenNum = 0;
@@ -86,7 +87,8 @@ public class ProfessorOak extends AbstractEvent {
                     case 2:
                         this.pickStarter = true;
                         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                        group.addToBottom(new Charmander());
+                        group.addToTop(new Bulbasaur());
+                        group.addToTop(new Charmander());
                         for (AbstractCard c : group.group) {
                             UnlockTracker.markCardAsSeen(c.cardID);
                         }

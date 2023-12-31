@@ -2,5 +2,9 @@
   "${ModID}:NextTurnPower": {
     "NAME": "Next Turn ",
     "DESCRIPTIONS": ["Next turn, gain #b", " ", "."]
+  },
+  "${ModID}:ToxicPower": {
+    "NAME": "Toxic",
+    "DESCRIPTIONS": ["At the end of the round, loses #b", " HP."]
   }
 }

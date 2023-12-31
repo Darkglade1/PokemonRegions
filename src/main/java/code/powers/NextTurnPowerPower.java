@@ -19,7 +19,7 @@ public class NextTurnPowerPower extends AbstractEasyPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public NextTurnPowerPower(AbstractCreature owner, AbstractPower powerToGrant) {
-        super(NAME + powerToGrant.name, POWER_ID + powerToGrant.name, powerToGrant.type, false, owner, powerToGrant.amount);
+        super(POWER_ID + powerToGrant.name, NAME + powerToGrant.name, powerToGrant.type, false, owner, powerToGrant.amount);
         this.img = powerToGrant.img;
         this.region48 = powerToGrant.region48;
         this.region128 = powerToGrant.region128;
