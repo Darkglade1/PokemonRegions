@@ -4,6 +4,7 @@ import code.monsters.AbstractPokemonMonster;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.vfx.FlexibleGiantTextEffect;
+import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -119,15 +120,15 @@ public class Pokeball extends AbstractEasyCard {
         } else if (monsterThreshold <= ZERO_CHANCE_THRESHOLD && monsterThreshold >= FIFTY_CHANCE_THRESHOLD) {
             float thresholdLength = ZERO_CHANCE_THRESHOLD - FIFTY_CHANCE_THRESHOLD;
             float progressToThreshold = 1 - (monsterThreshold - FIFTY_CHANCE_THRESHOLD) / thresholdLength;
-            captureChance = 0.5f * progressToThreshold;
+            captureChance = Interpolation.linear.apply(0, 50, progressToThreshold);
         } else if (monsterThreshold < FIFTY_CHANCE_THRESHOLD && monsterThreshold > ONE_HUNDRED_CHANCE_THRESHOLD) {
             float thresholdLength = FIFTY_CHANCE_THRESHOLD - ONE_HUNDRED_CHANCE_THRESHOLD;
             float progressToThreshold = 1 - (monsterThreshold - ONE_HUNDRED_CHANCE_THRESHOLD) / thresholdLength;
-            captureChance = progressToThreshold;
+            captureChance = Interpolation.linear.apply(50, 100, progressToThreshold);
         } else if (monsterThreshold <= ONE_HUNDRED_CHANCE_THRESHOLD) {
-            captureChance = 1.0f;
+            captureChance = 100.0f;
         }
-        return (int)(captureChance * 100);
+        return (int)(captureChance);
     }
 
     @Override
