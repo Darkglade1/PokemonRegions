@@ -6,6 +6,7 @@ import code.PokemonRegions;
 import code.actions.UpdateStaminaOnCardAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.util.AllyMove;
+import code.util.SwitchPokemonMove;
 import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -22,11 +23,11 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import static code.PokemonRegions.makeID;
 import static code.PokemonRegions.makeUIPath;
-import static code.util.Wiz.*;
+import static code.util.Wiz.adp;
+import static code.util.Wiz.atb;
 
 public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("AllyStrings"));
@@ -34,6 +35,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public boolean massAttackHitsPlayer = false;
 
     public ArrayList<AllyMove> allyMoves = new ArrayList<>();
+    public SwitchPokemonMove switchMove;
     public AbstractAllyPokemonCard allyCard;
     public AbstractMonster target;
     public static final byte MOVE_1 = 0;
@@ -106,8 +108,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         move2.setY(this.intentHb.cY - ((32.0f - 160.0f) * Settings.scale));
         allyMoves.add(move2);
 
-        //changeToGuard.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
-        //changeToGuard.setY(this.intentHb.cY - ((32.0f - 240.0f) * Settings.scale));
+        switchMove = new SwitchPokemonMove();
+        switchMove.setX(this.intentHb.x);
+        switchMove.setY(this.intentHb.cY - ((32.0f - 240.0f) * Settings.scale));
     }
 
     private String replaceModIDPrefix(String input) {
@@ -292,6 +295,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         for (AllyMove allyMove : allyMoves) {
             allyMove.render(sb);
         }
+        if (switchMove != null) {
+            switchMove.render(sb);
+        }
         super.render(sb);
     }
 
@@ -299,6 +305,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         super.update();
         for (AllyMove allyMove : allyMoves) {
             allyMove.update();
+        }
+        if (switchMove != null) {
+            switchMove.update();
         }
         if (this.currentHealth != allyCard.currentStamina || this.maxHealth != allyCard.maxStamina) {
             this.currentHealth = allyCard.currentStamina;

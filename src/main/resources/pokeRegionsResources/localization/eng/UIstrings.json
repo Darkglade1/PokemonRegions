@@ -54,5 +54,13 @@
       "Costs ",
       " Stamina."
     ]
+  },
+  "${ModID}:SwitchPokemon": {
+    "TEXT": [
+      "Switch your active Pokemon.",
+      "I have no Pokemon that can switch in.",
+      "Choose a Pokemon to send out.",
+      "Switch Pokemon"
+    ]
   }
 }
