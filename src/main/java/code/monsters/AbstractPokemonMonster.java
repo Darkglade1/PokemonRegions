@@ -1,6 +1,8 @@
 package code.monsters;
 
 import basemod.abstracts.CustomMonster;
+import com.brashmonkey.spriter.Animation;
+import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -172,6 +174,51 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         ((BetterSpriterAnimation)this.animation).myPlayer.setAnimation(animation);
     }
 
+    //Resets character back to idle animation
+    public void resetAnimation() {
+        ((BetterSpriterAnimation)this.animation).myPlayer.setAnimation("Idle");
+    }
+
+    //Prevents any further animation once the death animation is finished
+    public void stopAnimation() {
+        int time = ((BetterSpriterAnimation)this.animation).myPlayer.getAnimation().length;
+        ((BetterSpriterAnimation)this.animation).myPlayer.setTime(time);
+        ((BetterSpriterAnimation)this.animation).myPlayer.speed = 0;
+    }
+
+    public class PokemonListener implements Player.PlayerListener {
+
+        private final AbstractPokemonMonster character;
+
+        public PokemonListener(AbstractPokemonMonster character) {
+            this.character = character;
+        }
+
+        public void animationFinished(Animation animation){
+            if (animation.name.equals("Defeat")) {
+                character.stopAnimation();
+            } else if (!animation.name.equals("Idle")) {
+                character.resetAnimation();
+            }
+        }
+
+        //UNUSED
+        public void animationChanged(Animation var1, Animation var2){
+        }
+
+        //UNUSED
+        public void preProcess(Player var1){
+        }
+
+        //UNUSED
+        public void postProcess(Player var1){
+        }
+
+        //UNUSED
+        public void mainlineKeyChanged(com.brashmonkey.spriter.Mainline.Key var1, com.brashmonkey.spriter.Mainline.Key var2){
+        }
+    }
+
     protected void animationAction(String animation, String sound, AbstractCreature enemy, AbstractCreature owner) {
         atb(new AbstractGameAction() {
             @Override
@@ -228,21 +275,6 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
 
     public static void playSound(String sound) {
         playSound(sound, 1.0f);
-    }
-
-    public void resetIdle() {
-        resetIdle(0.5f);
-    }
-
-    public void resetIdle(float duration) {
-        atb(new VFXActionButItCanFizzle(this, new WaitEffect(), duration));
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                runAnim("Idle");
-                this.isDone = true;
-            }
-        });
     }
 
     public void waitAnimation() {
