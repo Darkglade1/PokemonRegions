@@ -4,17 +4,12 @@ import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.util.Tags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.PokemonRegions.makeID;
 
 public class Bulbasaur extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Bulbasaur.class.getSimpleName());
-    public static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static String NAME = cardStrings.NAME;
-
     public static final int MOVE_1_DAMAGE = 5;
     public static final int MOVE_2_TOXIC = 3;
     public static final int MOVE_2_WEAK = 1;
@@ -23,7 +18,7 @@ public class Bulbasaur extends AbstractAllyPokemonCard {
     public static final int MAX_STAMINA = 6;
 
     public Bulbasaur() {
-        super(ID, NAME, CardRarity.BASIC);
+        super(ID, CardRarity.BASIC);
         tags.add(Tags.STARTER_POKEMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;

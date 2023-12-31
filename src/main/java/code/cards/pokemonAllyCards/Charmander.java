@@ -4,17 +4,12 @@ import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.util.Tags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.PokemonRegions.makeID;
 
 public class Charmander extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Charmander.class.getSimpleName());
-    public static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static String NAME = cardStrings.NAME;
-
     public static final int MOVE_1_DAMAGE = 6;
     public static final int MOVE_2_DAMAGE = 8;
     public static final int MOVE_1_STAMINA_COST = 0;
@@ -22,7 +17,7 @@ public class Charmander extends AbstractAllyPokemonCard {
     public static final int MAX_STAMINA = 4;
 
     public Charmander() {
-        super(ID, NAME, CardRarity.BASIC);
+        super(ID, CardRarity.BASIC);
         tags.add(Tags.STARTER_POKEMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;

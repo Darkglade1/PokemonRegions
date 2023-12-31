@@ -9,7 +9,6 @@ import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
@@ -53,6 +52,7 @@ public class Diglett extends AbstractPokemonAlly
             case MOVE_1: {
                 runAnim("Dig");
                 this.burrowed = true;
+                setMoveShortcut(MOVE_2);
                 break;
             }
             case MOVE_2: {
@@ -61,6 +61,7 @@ public class Diglett extends AbstractPokemonAlly
                     this.burrowed = false;
                     atb(new VFXAction(new WaitEffect(), 0.2f));
                     dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+                    setMoveShortcut(MOVE_1);
                 }
                 break;
             }

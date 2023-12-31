@@ -73,15 +73,17 @@ public abstract class AbstractEasyCard extends CustomCard {
     private boolean upgradesRetain = false;
     private boolean upgradedRetain;
 
-    public AbstractEasyCard(final String cardID, final String name, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, name, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
+    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
+        this(cardID, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
     }
 
-    public AbstractEasyCard(final String cardID, final String name, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
-        super(cardID, name, getCardTextureString(cardID.replace(modID + ":", ""), type),
+    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
+        super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
+        name = originalName = cardStrings.NAME;
+        initializeTitle();
         initializeDescription();
         CommonKeywordIconsField.useIcons.set(this, true);
     }

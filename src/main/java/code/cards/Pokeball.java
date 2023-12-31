@@ -9,13 +9,12 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
 
 import static code.PokemonRegions.makeID;
 import static code.util.Wiz.adp;
@@ -23,11 +22,9 @@ import static code.util.Wiz.atb;
 
 public class Pokeball extends AbstractEasyCard {
     public final static String ID = makeID(Pokeball.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
 
     public Pokeball() {
-        super(ID, NAME, 1, AbstractCard.CardType.SKILL, CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY, CardColor.COLORLESS);
+        super(ID, 1, AbstractCard.CardType.SKILL, CardRarity.SPECIAL, AbstractCard.CardTarget.ENEMY, CardColor.COLORLESS);
         selfRetain = true;
         purgeOnUse = true;
     }
@@ -48,9 +45,9 @@ public class Pokeball extends AbstractEasyCard {
             atb(new SuicideAction(m));
             AbstractCard pokemonCard = ((AbstractPokemonMonster) m).getAssociatedPokemonCard();
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(pokemonCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-            atb(new VFXAction(new FlexibleGiantTextEffect(m.hb.cX, m.hb.cY, cardStrings.EXTENDED_DESCRIPTION[4]), 0.5f));
+            AbstractDungeon.effectList.add(new BlockedWordEffect(m, m.hb.cX, m.hb.cY, cardStrings.EXTENDED_DESCRIPTION[4]));
         } else {
-            atb(new VFXAction(new FlexibleGiantTextEffect(m.hb.cX, m.hb.cY, cardStrings.EXTENDED_DESCRIPTION[5]), 0.5f));
+            AbstractDungeon.effectList.add(new BlockedWordEffect(m, m.hb.cX, m.hb.cY, cardStrings.EXTENDED_DESCRIPTION[5]));
         }
     }
 
