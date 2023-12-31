@@ -336,4 +336,12 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         }
         return damageArray;
     }
+
+    public boolean canUseMove1() {
+        return allyCard.currentStamina >= this.move1StaminaCost;
+    }
+
+    public boolean canUseMove2() {
+        return allyCard.currentStamina >= this.move2StaminaCost;
+    }
 }

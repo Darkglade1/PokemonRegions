@@ -5,6 +5,7 @@ import code.PokemonRegions;
 import code.util.CardArtRoller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -82,6 +83,7 @@ public abstract class AbstractEasyCard extends CustomCard {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
+        CommonKeywordIconsField.useIcons.set(this, true);
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {

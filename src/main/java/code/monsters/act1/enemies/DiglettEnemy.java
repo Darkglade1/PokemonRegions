@@ -1,6 +1,7 @@
 package code.monsters.act1.enemies;
 
 import code.BetterSpriterAnimation;
+import code.cards.pokemonAllyCards.Diglett;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.SandVeil;
 import code.vfx.WaitEffect;
@@ -9,6 +10,7 @@ import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -107,7 +109,12 @@ public class DiglettEnemy extends AbstractPokemonMonster
         }
     }
 
-    public class DiglettListener implements Player.PlayerListener {
+    @Override
+    public AbstractCard getAssociatedPokemonCard() {
+        return new Diglett();
+    }
+
+    public static class DiglettListener implements Player.PlayerListener {
 
         private final DiglettEnemy character;
 

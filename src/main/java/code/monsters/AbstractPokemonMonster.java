@@ -1,14 +1,17 @@
 package code.monsters;
 
 import basemod.abstracts.CustomMonster;
+import basemod.helpers.CardPowerTip;
 import code.BetterSpriterAnimation;
 import code.powers.InvisibleBarricadePower;
 import code.vfx.VFXActionButItCanFizzle;
 import code.vfx.WaitEffect;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -161,6 +164,19 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         super.die(triggerRelics);
     }
 
+    @Override
+    public void renderTip(SpriteBatch sb) {
+        super.renderTip(sb);
+        AbstractCard associatedCard = getAssociatedPokemonCard();
+        if (associatedCard != null) {
+            tips.add(new CardPowerTip(associatedCard.makeStatEquivalentCopy()));
+        }
+    }
+
+    public AbstractCard getAssociatedPokemonCard() {
+        return null;
+    }
+
     protected DamageInfo getInfoFromMove(byte nextMove) {
         if(moves.containsKey(this.nextMove)) {
             EnemyMoveInfo emi = moves.get(this.nextMove);
@@ -196,7 +212,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         ((BetterSpriterAnimation)this.animation).myPlayer.speed = 0;
     }
 
-    public class PokemonListener implements Player.PlayerListener {
+    public static class PokemonListener implements Player.PlayerListener {
 
         private final AbstractPokemonMonster character;
 

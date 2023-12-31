@@ -26,7 +26,9 @@ public class AllyRetargetOnTargetDeath {
                 @Override
                 public void update() {
                     activePokemon.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
-                    AbstractDungeon.onModifyPower();
+                    if (activePokemon.target != null) {
+                        AbstractDungeon.onModifyPower();
+                    }
                     this.isDone = true;
                 }
             });
