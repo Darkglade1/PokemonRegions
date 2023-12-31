@@ -5,6 +5,7 @@ import code.BetterSpriterAnimation;
 import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Bulbasaur;
 import code.cards.pokemonAllyCards.Charmander;
+import code.cards.pokemonAllyCards.Squirtle;
 import code.relics.PokeballBelt;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -88,6 +89,7 @@ public class ProfessorOak extends AbstractEvent {
                         this.pickStarter = true;
                         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                         group.addToTop(new Bulbasaur());
+                        group.addToTop(new Squirtle());
                         group.addToTop(new Charmander());
                         for (AbstractCard c : group.group) {
                             UnlockTracker.markCardAsSeen(c.cardID);
