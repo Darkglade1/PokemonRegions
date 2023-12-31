@@ -6,5 +6,9 @@
   "${ModID}:ToxicPower": {
     "NAME": "Toxic",
     "DESCRIPTIONS": ["At the end of the round, loses #b", " HP."]
+  },
+  "${ModID}:SandVeil": {
+    "NAME": "Sand Veil",
+    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks while this creature has #yBlock."]
   }
 }

@@ -27,8 +27,10 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     public String move1Description;
     public String move2Description;
 
-    public AbstractAllyPokemonCard(final String cardID, final CardRarity rarity) {
-        super(cardID, -2, CardType.SKILL, rarity, CardTarget.NONE, PokemonRegions.Enums.Pokedex);
+    public AbstractAllyPokemonCard(final String cardID, final String name, final CardRarity rarity) {
+        super(cardID, name, -2, CardType.SKILL, rarity, CardTarget.NONE, PokemonRegions.Enums.Pokedex);
+        this.move1Name = cardStrings.EXTENDED_DESCRIPTION[0];
+        this.move2Name = cardStrings.EXTENDED_DESCRIPTION[1];
         TypeOverridePatch.TypeOverrideField.typeOverride.set(this, TYPE);
     }
 

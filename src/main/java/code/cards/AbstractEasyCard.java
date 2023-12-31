@@ -2,9 +2,9 @@ package code.cards;
 
 import basemod.abstracts.CustomCard;
 import code.PokemonRegions;
+import code.util.CardArtRoller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import code.util.CardArtRoller;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import static code.PokemonRegions.makeImagePath;
 import static code.PokemonRegions.modID;
@@ -72,36 +72,16 @@ public abstract class AbstractEasyCard extends CustomCard {
     private boolean upgradesRetain = false;
     private boolean upgradedRetain;
 
-    private boolean needsArtRefresh = false;
-
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
+    public AbstractEasyCard(final String cardID, final String name, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
+        this(cardID, name, cost, type, rarity, target, PokemonRegions.Enums.Pokedex);
     }
 
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
-        super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
+    public AbstractEasyCard(final String cardID, final String name, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
+        super(cardID, name, getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
-        name = originalName = cardStrings.NAME;
-        initializeTitle();
         initializeDescription();
-
-        if (textureImg.contains("ui/missing.png")) {
-            if (CardLibrary.cards != null && !CardLibrary.cards.isEmpty()) {
-                CardArtRoller.computeCard(this);
-            } else
-                needsArtRefresh = true;
-        }
-    }
-
-    @Override
-    protected Texture getPortraitImage() {
-        if (textureImg.contains("ui/missing.png")) {
-            return CardArtRoller.getPortraitTexture(this);
-        } else {
-            return super.getPortraitImage();
-        }
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
@@ -386,12 +366,6 @@ public abstract class AbstractEasyCard extends CustomCard {
         if (upgradesRetain)
             selfRetain = upgradedRetain;
     };
-
-    public void update() {
-        super.update();
-        if (needsArtRefresh)
-            CardArtRoller.computeCard(this);
-    }
 
     public AbstractCard makeStatEquivalentCopy() {
         AbstractEasyCard c = (AbstractEasyCard)super.makeStatEquivalentCopy();

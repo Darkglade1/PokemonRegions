@@ -1,25 +1,26 @@
 package code.monsters;
 
 import basemod.abstracts.CustomMonster;
+import code.BetterSpriterAnimation;
+import code.powers.InvisibleBarricadePower;
+import code.vfx.VFXActionButItCanFizzle;
+import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import code.BetterSpriterAnimation;
-import code.vfx.VFXActionButItCanFizzle;
-import code.vfx.WaitEffect;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static code.PokemonRegions.makeID;
-import static code.util.Wiz.atb;
-import static code.util.Wiz.att;
+import static code.util.Wiz.*;
 
 public abstract class AbstractPokemonMonster extends CustomMonster {
 
@@ -47,9 +48,18 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     }
 
     @Override
+    public void usePreBattleAction() {
+        applyToTarget(this, this, new InvisibleBarricadePower(this));
+    }
+
+    @Override
     public void takeTurn() {
         this.info = getInfoFromMove(this.nextMove);
         this.multiplier = getMultiplierFromMove(this.nextMove);
+        if (firstMove) {
+            firstMove = false;
+        }
+        atb(new RemoveAllBlockAction(this, this));
     }
 
     protected void setUpMisc() {
