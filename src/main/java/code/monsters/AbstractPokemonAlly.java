@@ -2,6 +2,7 @@ package code.monsters;
 
 import basemod.ReflectionHacks;
 import code.CustomIntent.IntentEnums;
+import code.PokemonRegions;
 import code.actions.UpdateStaminaOnCardAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.util.AllyMove;
@@ -21,6 +22,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import static code.PokemonRegions.makeID;
 import static code.PokemonRegions.makeUIPath;
@@ -80,8 +82,10 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public void populateAllyMoves() {
+        String move1Name = replaceAsterick(allyCard.move1Name);
+        String move1Description = replaceModIDPrefix(allyCard.move1Description);
         Texture move1Texture = getTextureForIntent(move1Intent);
-        AllyMove move1 = new AllyMove(allyCard.move1Name, this, move1Texture, allyCard.move1Description, () -> {
+        AllyMove move1 = new AllyMove(move1Name, this, move1Texture, move1Description, () -> {
             setMoveShortcut(MOVE_1);
             createIntent();
             AbstractDungeon.onModifyPower();
@@ -90,8 +94,10 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         move1.setY(this.intentHb.cY - ((32.0f - 80.0f) * Settings.scale));
         allyMoves.add(move1);
 
+        String move2Name = replaceAsterick(allyCard.move2Name);
+        String move2Description = replaceModIDPrefix(allyCard.move2Description);
         Texture move2Texture = getTextureForIntent(move2Intent);
-        AllyMove move2 = new AllyMove(allyCard.move2Name, this, move2Texture, allyCard.move2Description, () -> {
+        AllyMove move2 = new AllyMove(move2Name, this, move2Texture, move2Description, () -> {
             setMoveShortcut(MOVE_2);
             createIntent();
             AbstractDungeon.onModifyPower();
@@ -102,6 +108,14 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
         //changeToGuard.setX(this.intentHb.x - ((50.0F + 32.0f) * Settings.scale));
         //changeToGuard.setY(this.intentHb.cY - ((32.0f - 240.0f) * Settings.scale));
+    }
+
+    private String replaceModIDPrefix(String input) {
+        return input.replaceAll(PokemonRegions.modID.toLowerCase() + ":", "");
+    }
+
+    private String replaceAsterick(String input) {
+        return input.replaceAll("\\*", "");
     }
 
     public Texture getTextureForIntent(Intent intent) {

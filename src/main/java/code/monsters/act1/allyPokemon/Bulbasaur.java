@@ -5,15 +5,16 @@ import code.PokemonRegions;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.powers.ToxicPower;
+import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static code.PokemonRegions.makeMonsterPath;
-import static code.util.Wiz.applyToTarget;
-import static code.util.Wiz.dmg;
+import static code.util.Wiz.*;
 
 public class Bulbasaur extends AbstractPokemonAlly
 {
@@ -49,6 +50,7 @@ public class Bulbasaur extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 runAnim("Whip");
+                atb(new VFXAction(new WaitEffect(), 0.2f));
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 break;
             }

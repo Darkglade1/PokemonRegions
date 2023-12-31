@@ -1,6 +1,5 @@
 package code.cards;
 
-import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import code.PokemonRegions;
 import code.monsters.AbstractPokemonAlly;
@@ -10,9 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static code.PokemonRegions.makeID;
 
 @NoPools
@@ -20,8 +16,7 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("PokemonType"));
     public static final String TYPE = uiStrings.TEXT[0];
     private static final CardStrings staminaStrings = CardCrawlGame.languagePack.getCardStrings(makeID("StaminaKeyword"));
-    public static final String STAMINA_NAME = staminaStrings.NAME;
-    public static final String STAMINA_DESCRIPTION = staminaStrings.DESCRIPTION;
+    public static final String STAMINA_KEYWORD = staminaStrings.DESCRIPTION;
 
     public int staminaCost1;
     public int staminaCost2;
@@ -48,13 +43,6 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        ArrayList<TooltipInfo> info = new ArrayList<>();
-        info.add(new TooltipInfo(STAMINA_NAME, STAMINA_DESCRIPTION));
-        return info;
-    }
-
-    @Override
     public boolean canUpgrade() {
         return false;
     }
@@ -64,8 +52,8 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     }
 
     public void initializeDescriptionFromMoves() {
-        this.rawDescription = "*" + move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + "*" + move2Name + " (" + staminaCost2 + ") " + move2Description;
-        this.rawDescription += " NL " + currentStamina + "/" + maxStamina + " *" + STAMINA_NAME;
+        this.rawDescription = move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + move2Name + " (" + staminaCost2 + ") " + move2Description;
+        this.rawDescription += " NL " + currentStamina + "/" + maxStamina + " " + STAMINA_KEYWORD;
         this.initializeDescription();
     }
 

@@ -1,24 +1,15 @@
 package code.cards.pokemonAllyCards;
 
-import basemod.helpers.TooltipInfo;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.util.Tags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static code.PokemonRegions.makeID;
 
 public class Bulbasaur extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Bulbasaur.class.getSimpleName());
-    private static final CardStrings toxicStrings = CardCrawlGame.languagePack.getCardStrings(makeID("ToxicKeyword"));
-    public static final String TOXIC_NAME = toxicStrings.NAME;
-    public static final String TOXIC_DESCRIPTION = toxicStrings.DESCRIPTION;
 
     public static final int MOVE_1_DAMAGE = 5;
     public static final int MOVE_2_TOXIC = 3;
@@ -41,13 +32,6 @@ public class Bulbasaur extends AbstractAllyPokemonCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        ArrayList<TooltipInfo> info = (ArrayList<TooltipInfo>) super.getCustomTooltips();
-        info.add(new TooltipInfo(TOXIC_NAME, TOXIC_DESCRIPTION));
-        return info;
     }
 
     @Override
