@@ -70,12 +70,6 @@ public class PokeballBelt extends AbstractEasyRelic implements ClickableRelic {
     }
 
     @Override
-    public void renderTip(SpriteBatch sb) {
-        super.renderTip(sb);
-        tips.add(new CardPowerTip(pokeball.makeStatEquivalentCopy()));
-    }
-
-    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS[1];
     }

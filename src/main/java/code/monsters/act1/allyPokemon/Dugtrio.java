@@ -56,7 +56,8 @@ public class Dugtrio extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 runAnim("Excavate");
-                atb(new VFXAction(new WaitEffect(), 0.5f));
+                Wiz.playAudio(ProAudio.BURROW);
+                atb(new VFXAction(new WaitEffect(), 1.0f));
                 atb(new BetterDiscardPileToHandAction(code.cards.pokemonAllyCards.Dugtrio.CARDS));
                 break;
             }

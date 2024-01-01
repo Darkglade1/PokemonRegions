@@ -4,6 +4,8 @@ import code.BetterSpriterAnimation;
 import code.PokemonRegions;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
+import code.util.ProAudio;
+import code.util.Wiz;
 import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Player;
@@ -51,6 +53,7 @@ public class Diglett extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 runAnim("Dig");
+                Wiz.playAudio(ProAudio.BURROW);
                 this.burrowed = true;
                 setMoveShortcut(MOVE_2);
                 break;

@@ -4,6 +4,8 @@ import code.BetterSpriterAnimation;
 import code.cards.pokemonAllyCards.Dugtrio;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.SandVeil;
+import code.util.ProAudio;
+import code.util.Wiz;
 import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Player;
@@ -54,6 +56,10 @@ public class DugtrioEnemy extends AbstractPokemonMonster
     public void usePreBattleAction() {
         super.usePreBattleAction();
         applyToTarget(this, this, new SandVeil(this, FORTIFY_DAMAGE_REDUCTION));
+        runAnim("Dig");
+        Wiz.playAudio(ProAudio.BURROW);
+        this.burrowed = true;
+        block(this, BLOCK);
     }
 
     @Override
@@ -66,6 +72,7 @@ public class DugtrioEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case DIG: {
                 runAnim("Dig");
+                Wiz.playAudio(ProAudio.BURROW);
                 this.burrowed = true;
                 block(this, BLOCK);
                 applyToTarget(this, this, new StrengthPower(this, STR));
@@ -99,10 +106,10 @@ public class DugtrioEnemy extends AbstractPokemonMonster
 
     @Override
     protected void getMove(final int num) {
-       if (lastMove(DIG)) {
-            setMoveShortcut(FURY_SWIPES, MOVES[FURY_SWIPES]);
-        } else {
+       if (lastMove(FURY_SWIPES)) {
             setMoveShortcut(DIG, MOVES[DIG]);
+        } else {
+            setMoveShortcut(FURY_SWIPES, MOVES[FURY_SWIPES]);
         }
     }
 

@@ -109,7 +109,7 @@
                 </key>
             </timeline>
         </animation>
-        <animation id="3" name="Excavate" length="800" interval="100">
+        <animation id="3" name="Excavate" length="1200" interval="100">
             <mainline>
                 <key id="0">
                     <object_ref id="0" timeline="0" key="0" z_index="0"/>
@@ -123,16 +123,16 @@
                 <key id="3" time="300">
                     <object_ref id="0" timeline="3" key="0" z_index="0"/>
                 </key>
-                <key id="4" time="400">
+                <key id="4" time="801">
                     <object_ref id="0" timeline="4" key="0" z_index="0"/>
                 </key>
-                <key id="5" time="500">
+                <key id="5" time="900">
                     <object_ref id="0" timeline="5" key="0" z_index="0"/>
                 </key>
-                <key id="6" time="601">
+                <key id="6" time="1001">
                     <object_ref id="0" timeline="6" key="0" z_index="0"/>
                 </key>
-                <key id="7" time="701">
+                <key id="7" time="1103">
                     <object_ref id="0" timeline="7" key="0" z_index="0"/>
                 </key>
             </mainline>
@@ -157,23 +157,23 @@
                 </key>
             </timeline>
             <timeline id="4" name="4_001">
-                <key id="0" time="400" spin="0">
-                    <object folder="1" file="3" x="-53" y="84"/>
+                <key id="0" time="801" spin="0">
+                    <object folder="1" file="3" x="-53" y="84" angle="0"/>
                 </key>
             </timeline>
             <timeline id="5" name="5_000">
-                <key id="0" time="500" spin="0">
-                    <object folder="1" file="4" x="-55" y="84"/>
+                <key id="0" time="900" spin="0">
+                    <object folder="1" file="4" x="-55" y="84" angle="0"/>
                 </key>
             </timeline>
             <timeline id="6" name="6_000">
-                <key id="0" time="601" spin="0">
-                    <object folder="1" file="5" x="-59" y="84"/>
+                <key id="0" time="1001" spin="0">
+                    <object folder="1" file="5" x="-59" y="84" angle="0"/>
                 </key>
             </timeline>
             <timeline id="7" name="7_000">
-                <key id="0" time="701" spin="0">
-                    <object folder="1" file="6" x="-58" y="84"/>
+                <key id="0" time="1103" spin="0">
+                    <object folder="1" file="6" x="-58" y="84" angle="0"/>
                 </key>
             </timeline>
         </animation>

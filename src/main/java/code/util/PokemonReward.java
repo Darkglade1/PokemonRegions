@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,7 @@ public class PokemonReward extends CustomReward {
     public boolean claimReward() {
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         pokemonTeam.addToTop(card);
+        UnlockTracker.markCardAsSeen(card.cardID);
         if (pokemonTeam.size() > PokemonTeamButton.MAX_TEAM_SIZE) {
             ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
             for (TopPanelItem item : topPanelItems) {

@@ -4,6 +4,8 @@ import code.BetterSpriterAnimation;
 import code.cards.pokemonAllyCards.Diglett;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.SandVeil;
+import code.util.ProAudio;
+import code.util.Wiz;
 import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Player;
@@ -58,6 +60,7 @@ public class DiglettEnemy extends AbstractPokemonMonster
         applyToTarget(this, this, new SandVeil(this, FORTIFY_DAMAGE_REDUCTION));
         if (this.attackFirst) {
             runAnim("Dig");
+            Wiz.playAudio(ProAudio.BURROW);
             this.burrowed = true;
             block(this, BLOCK);
         }
@@ -73,6 +76,7 @@ public class DiglettEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case DIG: {
                 runAnim("Dig");
+                Wiz.playAudio(ProAudio.BURROW);
                 this.burrowed = true;
                 block(this, BLOCK);
                 applyToTarget(this, this, new StrengthPower(this, STR));
