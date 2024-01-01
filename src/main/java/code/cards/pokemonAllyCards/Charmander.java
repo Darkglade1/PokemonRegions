@@ -1,10 +1,16 @@
 package code.cards.pokemonAllyCards;
 
+import basemod.helpers.TooltipInfo;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.util.Tags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static code.PokemonRegions.makeID;
 
@@ -29,6 +35,11 @@ public class Charmander extends AbstractAllyPokemonCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        return getStarterKeyword();
     }
 
     @Override

@@ -1,10 +1,16 @@
 package code.cards.pokemonAllyCards;
 
+import basemod.helpers.TooltipInfo;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.util.Tags;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static code.PokemonRegions.makeID;
 
@@ -26,6 +32,11 @@ public class Bulbasaur extends AbstractAllyPokemonCard {
         this.move1Description = cardStrings.EXTENDED_DESCRIPTION[2] + MOVE_1_DAMAGE + cardStrings.EXTENDED_DESCRIPTION[3];
         this.move2Description = cardStrings.EXTENDED_DESCRIPTION[4] + MOVE_2_TOXIC + cardStrings.EXTENDED_DESCRIPTION[5] + MOVE_2_WEAK + cardStrings.EXTENDED_DESCRIPTION[6];
         initializeDescriptionFromMoves();
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        return getStarterKeyword();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -51,6 +51,10 @@
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
   },
+  "${ModID}:StarterKeyword": {
+    "NAME": "Starter Pokemon",
+    "DESCRIPTION": "Your #yStarter #yPokemon is automatically sent out at the start of battle. If your #yStarter #yPokemon has #b0 #yStamina at the end of battle, it will regain #b1 #yStamina."
+  },
   "${ModID}:Pokeball": {
     "NAME": "Pokeball",
     "DESCRIPTION": "Decrement your number of *Pokeballs and attempt to capture the *Pokemon. Success rate increases as the *Pokemon's HP is lowered.",

@@ -42,4 +42,24 @@ public class PokemonTeamPatch {
         }
     }
 
+    @SpirePatch(
+            clz= AbstractPlayer.class,
+            method="onVictory"
+    )
+    public static class OnVictoryPatch {
+        public static void Prefix(AbstractPlayer __instance) {
+            CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
+            for (AbstractCard card : pokemonTeam.group) {
+                if (card instanceof AbstractAllyPokemonCard) {
+                    AbstractAllyPokemonCard pokemonCard = (AbstractAllyPokemonCard)card;
+                    if (pokemonCard.hasTag(Tags.STARTER_POKEMON) && pokemonCard.currentStamina <= 0) {
+                        pokemonCard.updateStamina(1);
+                        pokemonCard.initializeDescriptionFromMoves();
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
 }

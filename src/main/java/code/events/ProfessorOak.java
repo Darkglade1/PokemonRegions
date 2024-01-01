@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.scene.LevelTransitionTextOverlayEffect;
 
 import static code.PokemonRegions.makeEventPath;
+import static code.PokemonRegions.makeMonsterPath;
 
 public class ProfessorOak extends AbstractEvent {
 
@@ -32,8 +33,11 @@ public class ProfessorOak extends AbstractEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final float DIALOG_X = 1200.0F * Settings.xScale;
-    private static final float DIALOG_Y = AbstractDungeon.floorY + 60.0F * Settings.yScale;
+    private static final float DIALOG_Y = AbstractDungeon.floorY + 110.0F * Settings.yScale;
     private final AbstractAnimation oak;
+    private final AbstractAnimation starter1;
+    private final AbstractAnimation starter2;
+    private final AbstractAnimation starter3;
 
     private int screenNum = 0;
     private boolean pickStarter = false;
@@ -46,6 +50,9 @@ public class ProfessorOak extends AbstractEvent {
         this.hasDialog = true;
         this.hasFocus = true;
         oak = new BetterSpriterAnimation(makeEventPath("Oak/Oak.scml"));
+        starter1 = new BetterSpriterAnimation(makeMonsterPath("Bulbasaur/Bulbasaur.scml"));
+        starter2 = new BetterSpriterAnimation(makeMonsterPath("Squirtle/Squirtle.scml"));
+        starter3 = new BetterSpriterAnimation(makeMonsterPath("Charmander/Charmander.scml"));
         AbstractDungeon.topLevelEffects.add(new LevelTransitionTextOverlayEffect(AbstractDungeon.name, AbstractDungeon.levelNum, true));
     }
 
@@ -109,6 +116,9 @@ public class ProfessorOak extends AbstractEvent {
     public void render(SpriteBatch sb) {
         AbstractDungeon.rs = AbstractDungeon.RenderScene.NORMAL;
         oak.renderSprite(sb, 1334.0F * Settings.xScale, AbstractDungeon.floorY - 10.0F * Settings.yScale);
+        starter1.renderSprite(sb, 1184.0F * Settings.xScale, AbstractDungeon.floorY - 10.0F * Settings.yScale);
+        starter2.renderSprite(sb, 1084.0F * Settings.xScale, AbstractDungeon.floorY - 10.0F * Settings.yScale);
+        starter3.renderSprite(sb, 984.0F * Settings.xScale, AbstractDungeon.floorY - 10.0F * Settings.yScale);
     }
 
     private void talk(String msg) {

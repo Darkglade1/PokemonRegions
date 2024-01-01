@@ -1,5 +1,6 @@
 package code.cards;
 
+import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import code.PokemonRegions;
 import code.monsters.AbstractPokemonAlly;
@@ -8,6 +9,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static code.PokemonRegions.makeID;
 
@@ -61,6 +65,14 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
 
     public void updateStamina (int newStamina) {
         this.currentStamina = misc = newStamina;
+    }
+
+    public ArrayList<TooltipInfo> getStarterKeyword() {
+        ArrayList<TooltipInfo> info = new ArrayList<>();
+        CardStrings starterInfo = CardCrawlGame.languagePack.getCardStrings(makeID("StarterKeyword"));
+        TooltipInfo tip = new TooltipInfo(starterInfo.NAME, starterInfo.DESCRIPTION);
+        info.add(tip);
+        return info;
     }
 
     public abstract AbstractPokemonAlly getAssociatedPokemon(float x, float y);
