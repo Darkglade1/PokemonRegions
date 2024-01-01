@@ -3,6 +3,7 @@ package code.cards;
 import code.monsters.AbstractPokemonMonster;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
+import code.util.PokemonReward;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -42,7 +43,7 @@ public class Pokeball extends AbstractEasyCard {
             m.currentBlock = 0;
             atb(new SuicideAction(m));
             AbstractCard pokemonCard = ((AbstractPokemonMonster) m).getAssociatedPokemonCard();
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(pokemonCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+            AbstractDungeon.getCurrRoom().rewards.add(new PokemonReward(pokemonCard.cardID));
             AbstractDungeon.effectList.add(new BlockedWordEffect(m, m.hb.cX, m.hb.cY, cardStrings.EXTENDED_DESCRIPTION[4]));
         } else {
             AbstractDungeon.effectList.add(new BlockedWordEffect(m, m.hb.cX, m.hb.cY, cardStrings.EXTENDED_DESCRIPTION[5]));

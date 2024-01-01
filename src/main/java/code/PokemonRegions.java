@@ -15,6 +15,8 @@ import code.monsters.act1.enemies.DiglettEnemy;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
+import code.util.PokemonReward;
+import code.util.PokemonRewardEnum;
 import code.util.ProAudio;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -30,6 +32,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
@@ -136,6 +139,14 @@ public class PokemonRegions implements
     public void receivePostInitialize() {
         CustomIntent.add(new MassAttackIntent());
         BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
+        BaseMod.registerCustomReward(
+                PokemonRewardEnum.POKEMON_REWARD,
+                (rewardSave) -> { // this handles what to do when this quest type is loaded.
+                    return new PokemonReward(rewardSave.id);
+                },
+                (customReward) -> { // this handles what to do when this quest type is saved.
+                    return new RewardSave(customReward.type.toString(), ((PokemonReward)customReward).card.cardID, 0, 0);
+                });
 
         Kanto kanto = new Kanto();
         kanto.addAct(Exordium.ID);
