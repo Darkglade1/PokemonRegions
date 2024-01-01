@@ -21,7 +21,7 @@ public class AllyRetargetOnTargetDeath {
     @SpirePostfixPatch
     public static void triggerOnKillPowers(AbstractMonster instance, boolean triggerRelics) {
         AbstractPokemonAlly activePokemon = PlayerSpireFields.activePokemon.get(adp());
-        if (activePokemon.target == instance) {
+        if (activePokemon != null && activePokemon.target == instance) {
             atb(new AbstractGameAction() {
                 @Override
                 public void update() {

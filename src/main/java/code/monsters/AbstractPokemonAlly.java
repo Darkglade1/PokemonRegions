@@ -3,6 +3,7 @@ package code.monsters;
 import basemod.ReflectionHacks;
 import code.CustomIntent.IntentEnums;
 import code.PokemonRegions;
+import code.actions.SwitchPokemonAction;
 import code.actions.UpdateStaminaOnCardAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.util.AllyMove;
@@ -26,8 +27,7 @@ import java.util.ArrayList;
 
 import static code.PokemonRegions.makeID;
 import static code.PokemonRegions.makeUIPath;
-import static code.util.Wiz.adp;
-import static code.util.Wiz.atb;
+import static code.util.Wiz.*;
 
 public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("AllyStrings"));
@@ -185,6 +185,15 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             @Override
             public void update() {
                 halfDead = true;
+                this.isDone = true;
+            }
+        });
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (allyCard.currentStamina <= 0) {
+                    att(new SwitchPokemonAction());
+                }
                 this.isDone = true;
             }
         });
