@@ -29,8 +29,8 @@ public class Bulbasaur extends AbstractAllyPokemonCard {
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
-        this.move1Description = cardStrings.EXTENDED_DESCRIPTION[2] + MOVE_1_DAMAGE + cardStrings.EXTENDED_DESCRIPTION[3];
-        this.move2Description = cardStrings.EXTENDED_DESCRIPTION[4] + MOVE_2_TOXIC + cardStrings.EXTENDED_DESCRIPTION[5] + MOVE_2_WEAK + cardStrings.EXTENDED_DESCRIPTION[6];
+        this.move1Description = DESCRIPTIONS[2] + MOVE_1_DAMAGE + DESCRIPTIONS[3];
+        this.move2Description = DESCRIPTIONS[4] + MOVE_2_TOXIC + DESCRIPTIONS[5] + MOVE_2_WEAK + DESCRIPTIONS[6];
         initializeDescriptionFromMoves();
     }
 
