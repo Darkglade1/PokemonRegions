@@ -42,6 +42,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     private static final String[] TEXT = uiStrings.TEXT;
 
     public static final int MAX_TEAM_SIZE = 5;
+    //public static boolean gridViewOnly = false;
     private boolean releasingPokemon = false;
 
     public PokemonTeamButton() {
@@ -58,6 +59,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             AbstractDungeon.overlayMenu.cancelButton.hide();
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
+        //gridViewOnly = true;
         AbstractDungeon.gridSelectScreen.open(pokemonTeam, 999, tipMsg, false, false, true, false);
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[2]);
     }

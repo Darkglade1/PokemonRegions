@@ -62,4 +62,35 @@ public class PokemonTeamPatch {
         }
     }
 
+//    @SpirePatch(clz = GridCardSelectScreen.class, method = "update")
+//    public static class MakeViewOnlyPlease {
+//        public static ExprEditor Instrument() {
+//            return new ExprEditor() {
+//                @Override
+//                public void edit(MethodCall m) throws CannotCompileException {
+//                    if (m.getMethodName().equals("contains")) {
+//                        m.replace("$_ = $proceed($$) && !" + PokemonTeamPatch.class.getName() + ".isPokemonGridViewOnly();" );
+//                    }
+//                }
+//            };
+//        }
+//    }
+//    public static boolean isPokemonGridViewOnly() {
+//        return PokemonTeamButton.gridViewOnly;
+//    }
+//
+//    @SpirePatch(
+//            clz = AbstractDungeon.class,
+//            method = "closeCurrentScreen"
+//    )
+//    public static class SetStaticVariable {
+//        public static void Prefix() {
+//            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
+//                if (PokemonTeamButton.gridViewOnly) {
+//                    PokemonTeamButton.gridViewOnly = false;
+//                }
+//            }
+//        }
+//    }
+
 }
