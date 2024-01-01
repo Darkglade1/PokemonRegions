@@ -60,6 +60,18 @@
       " Vulnerable to ALL enemies."
     ]
   },
+  "${ModID}:Cloyster": {
+    "NAME": "Cloyster",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Withdraw",
+      "*Icicle *Spear",
+      "You gain Barricade.",
+      "Deal ",
+      " damage ",
+      " times."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

@@ -11,6 +11,7 @@ import code.cards.AbstractEasyCard;
 import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
+import code.monsters.act1.enemies.CloysterEnemy;
 import code.monsters.act1.enemies.DiglettEnemy;
 import code.monsters.act1.enemies.DugtrioEnemy;
 import code.relics.AbstractEasyRelic;
@@ -151,6 +152,9 @@ public class PokemonRegions implements
 
         Kanto kanto = new Kanto();
         kanto.addAct(Exordium.ID);
+
+        //Elites
+        BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);
 
         BaseMod.addMonster(EncounterIDs.DIGLETTS_2, "2 Digletts", () -> new MonsterGroup(
                 new AbstractMonster[]{

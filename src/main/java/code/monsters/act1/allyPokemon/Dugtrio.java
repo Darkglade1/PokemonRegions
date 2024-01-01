@@ -31,7 +31,7 @@ public class Dugtrio extends AbstractPokemonAlly
     public static final String NAME = cardStrings.NAME;
 
     public Dugtrio(final float x, final float y, AbstractAllyPokemonCard allyCard) {
-        super(NAME, ID, 100, -5.0F, 0, 150.0f, 100.0f, null, x, y);
+        super(NAME, ID, 100, -5.0F, 0, 140.0f, 100.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Dugtrio/Dugtrio.scml"));
         this.animation.setFlip(true, false);
         Player.PlayerListener listener = new PokemonListener(this);

@@ -16,5 +16,15 @@
     "NAME": "Dugtrio",
     "DIALOG": [
     ]
+  },
+  "${ModID}:CloysterEnemy": {
+    "MOVES": [
+      "Shell Smash",
+      "Razor Shell",
+      "Icicle Spear"
+    ],
+    "NAME": "Cloyster",
+    "DIALOG": [
+    ]
   }
 }

@@ -173,10 +173,16 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         switch (this.nextMove) {
             case MOVE_1: {
                 newCurrentStamina -= move1StaminaCost;
+                if (newCurrentStamina < move1StaminaCost) {
+                    setMoveShortcut(MOVE_2);
+                }
                 break;
             }
             case MOVE_2: {
                 newCurrentStamina -= move2StaminaCost;
+                if (newCurrentStamina < move2StaminaCost) {
+                    setMoveShortcut(MOVE_1);
+                }
                 break;
             }
         }

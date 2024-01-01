@@ -27,7 +27,7 @@ public class Diglett extends AbstractPokemonAlly
     public boolean burrowed = false;
 
     public Diglett(final float x, final float y, AbstractAllyPokemonCard allyCard) {
-        super(NAME, ID, 100, -5.0F, 0, 150.0f, 100.0f, null, x, y);
+        super(NAME, ID, 100, -5.0F, 0, 120.0f, 80.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Diglett/Diglett.scml"));
         this.animation.setFlip(true, false);
         Player.PlayerListener listener = new DiglettListener(this);
