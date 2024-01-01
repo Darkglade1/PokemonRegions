@@ -1,10 +1,12 @@
 package code.relics;
 
 import basemod.BaseMod;
+import basemod.helpers.CardPowerTip;
 import code.cards.Pokeball;
 import code.monsters.AbstractPokemonMonster;
 import code.ui.PokemonTeamButton;
 import code.util.Wiz;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,6 +19,7 @@ import static code.util.Wiz.atb;
 public class PokeballBelt extends AbstractEasyRelic implements ClickableRelic {
     public static final String ID = makeID(PokeballBelt.class.getSimpleName());
     public static final int STARTING_POKEBALLS = 6;
+    private AbstractCard pokeball = new Pokeball();
 
     public PokeballBelt() {
         super(ID, RelicTier.SPECIAL, LandingSound.FLAT);
@@ -64,6 +67,12 @@ public class PokeballBelt extends AbstractEasyRelic implements ClickableRelic {
     public void onEquip() {
         PokemonTeamButton pokemonTeam = new PokemonTeamButton();
         BaseMod.addTopPanelItem(pokemonTeam);
+    }
+
+    @Override
+    public void renderTip(SpriteBatch sb) {
+        super.renderTip(sb);
+        tips.add(new CardPowerTip(pokeball.makeStatEquivalentCopy()));
     }
 
     @Override

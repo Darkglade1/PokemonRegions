@@ -12,6 +12,7 @@ import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
 import code.monsters.act1.enemies.DiglettEnemy;
+import code.monsters.act1.enemies.DugtrioEnemy;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
@@ -156,6 +157,7 @@ public class PokemonRegions implements
                         new DiglettEnemy(-200.0F, 0.0F, true),
                         new DiglettEnemy(50.0F, 0.0F, false),
                 }));
+        BaseMod.addMonster(DugtrioEnemy.ID, (BaseMod.GetMonster) DugtrioEnemy::new);
     }
 
     @Override

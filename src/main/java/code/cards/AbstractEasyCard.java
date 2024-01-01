@@ -27,6 +27,7 @@ import static code.util.Wiz.att;
 public abstract class AbstractEasyCard extends CustomCard {
 
     protected final CardStrings cardStrings;
+    protected final String[] DESCRIPTIONS;
 
     public int secondMagic;
     public int baseSecondMagic;
@@ -82,6 +83,7 @@ public abstract class AbstractEasyCard extends CustomCard {
                 cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
+        DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
         name = originalName = cardStrings.NAME;
         initializeTitle();
         initializeDescription();

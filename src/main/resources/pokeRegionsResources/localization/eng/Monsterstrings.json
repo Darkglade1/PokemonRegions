@@ -7,5 +7,14 @@
     "NAME": "Diglett",
     "DIALOG": [
     ]
+  },
+  "${ModID}:DugtrioEnemy": {
+    "MOVES": [
+      "Dig",
+      "Fury Swipes"
+    ],
+    "NAME": "Dugtrio",
+    "DIALOG": [
+    ]
   }
 }
