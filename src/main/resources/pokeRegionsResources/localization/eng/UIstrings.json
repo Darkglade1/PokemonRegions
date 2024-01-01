@@ -46,7 +46,8 @@
       ")",
       "Return",
       "Your Team",
-      "View your team of Pokemon."
+      "View your team of Pokemon.",
+      "Choose a non-Starter Pokemon to release."
     ]
   },
   "${ModID}:StaminaCost": {
@@ -61,6 +62,11 @@
       "I have no Pokemon that can switch in.",
       "Choose a Pokemon to send out.",
       "Switch Pokemon"
+    ]
+  },
+  "${ModID}:ReleasePokemon": {
+    "TEXT": [
+      "Choose a non-Starter Pokemon to release."
     ]
   }
 }

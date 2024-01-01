@@ -8,6 +8,7 @@ import basemod.abstracts.CustomSavable;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import code.cards.AbstractAllyPokemonCard;
 import code.patches.PlayerSpireFields;
+import code.util.Tags;
 import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -20,8 +21,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +42,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     private static final String[] TEXT = uiStrings.TEXT;
 
     public static final int MAX_TEAM_SIZE = 6;
+    private boolean releasingPokemon = false;
 
     public PokemonTeamButton() {
         super(IMG, ID);
@@ -96,6 +102,38 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         }
         if (this.hitbox.hovered) {
             TipHelper.renderGenericTip(1550.0F * Settings.scale, (float)Settings.HEIGHT - 120.0F * Settings.scale, TEXT[3], TEXT[4]);
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        if (this.releasingPokemon && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            this.releasingPokemon = false;
+            AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+            AbstractDungeon.effectList.add(new PurgeCardEffect(c));
+            PlayerSpireFields.pokemonTeam.get(adp()).removeCard(c);
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+        }
+    }
+
+    public void releaseExcessPokemon() {
+        CardGroup releaseablePokemon =  new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
+            if (!card.hasTag(Tags.STARTER_POKEMON)) {
+                releaseablePokemon.addToTop(card);
+            }
+        }
+        if (releaseablePokemon.size() > 0) {
+            this.releasingPokemon = true;
+            if (AbstractDungeon.isScreenUp) {
+                AbstractDungeon.dynamicBanner.hide();
+                AbstractDungeon.overlayMenu.cancelButton.hide();
+                AbstractDungeon.previousScreen = AbstractDungeon.screen;
+            }
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
+            AbstractDungeon.gridSelectScreen.open(releaseablePokemon, 1, TEXT[5], false, false, false, true);
         }
     }
 }
