@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
 
 import static code.PokemonRegions.makeID;
@@ -39,7 +38,7 @@ public class Pokeball extends AbstractEasyCard {
         }
         int roll = AbstractDungeon.miscRng.random(1, 100);
         int chance = calculateCaptureChance(m);
-        if (roll <= chance && m instanceof AbstractPokemonMonster) {
+        if ((roll <= chance || Settings.isDebug) && m instanceof AbstractPokemonMonster) {
             m.currentBlock = 0;
             atb(new SuicideAction(m));
             AbstractCard pokemonCard = ((AbstractPokemonMonster) m).getAssociatedPokemonCard();

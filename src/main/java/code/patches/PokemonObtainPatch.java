@@ -1,22 +1,14 @@
 package code.patches;
 
 
-import basemod.ReflectionHacks;
-import basemod.TopPanelGroup;
-import basemod.TopPanelItem;
-import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import code.cards.AbstractAllyPokemonCard;
-import code.ui.PokemonTeamButton;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.Soul;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 import javassist.expr.MethodCall;
-
-import java.util.ArrayList;
 
 import static code.util.Wiz.adp;
 
@@ -56,25 +48,6 @@ public class PokemonObtainPatch {
                     }
                 }
             };
-        }
-    }
-
-    @SpirePatch(
-            clz = Soul.class,
-            method = "obtain"
-    )
-    public static class ReleaseExcessPokemon {
-        public static void Postfix(Soul __instance, AbstractCard card) {
-            CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
-            if (pokemonTeam.size() > PokemonTeamButton.MAX_TEAM_SIZE) {
-                ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
-                for (TopPanelItem item : topPanelItems) {
-                    if (item instanceof PokemonTeamButton) {
-                        ((PokemonTeamButton) item).releaseExcessPokemon();
-                        return;
-                    }
-                }
-            }
         }
     }
 
