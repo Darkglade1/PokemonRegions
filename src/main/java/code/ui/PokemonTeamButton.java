@@ -41,7 +41,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     private static final String[] TEXT = uiStrings.TEXT;
 
-    public static final int MAX_TEAM_SIZE = 6;
+    public static final int MAX_TEAM_SIZE = 5;
     private boolean releasingPokemon = false;
 
     public PokemonTeamButton() {
@@ -53,7 +53,12 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         CardCrawlGame.sound.play("DECK_OPEN");
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         String tipMsg = TEXT[0] + MAX_TEAM_SIZE + TEXT[1];
-        AbstractDungeon.gridSelectScreen.open(pokemonTeam, 999, tipMsg, false, false, false, false);
+        if (AbstractDungeon.isScreenUp) {
+            AbstractDungeon.dynamicBanner.hide();
+            AbstractDungeon.overlayMenu.cancelButton.hide();
+            AbstractDungeon.previousScreen = AbstractDungeon.screen;
+        }
+        AbstractDungeon.gridSelectScreen.open(pokemonTeam, 999, tipMsg, false, false, true, false);
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[2]);
     }
 

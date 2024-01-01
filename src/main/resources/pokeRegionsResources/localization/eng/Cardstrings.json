@@ -57,7 +57,7 @@
   },
   "${ModID}:Pokeball": {
     "NAME": "Pokeball",
-    "DESCRIPTION": "Decrement your number of *Pokeballs and attempt to capture the *Pokemon. Success rate increases as the *Pokemon's HP is lowered.",
+    "DESCRIPTION": "Decrement your number of *Pokeballs and attempt to capture the *Pokemon. Hover this card over the *Pokemon to preview capture chance.",
     "EXTENDED_DESCRIPTION": [
       "Capture chance: ",
       "%",

@@ -71,6 +71,7 @@ public class ProfessorOak extends AbstractEvent {
             this.dismissBubble();
             this.talk(DESCRIPTIONS[3]);
             screenNum = 3;
+            this.pickStarter = false;
         }
     }
 
