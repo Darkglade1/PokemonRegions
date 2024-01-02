@@ -13,6 +13,7 @@ import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
 import code.monsters.act1.enemies.CloysterEnemy;
 import code.monsters.act1.enemies.DiglettEnemy;
+import code.monsters.act1.enemies.DragoniteEnemy;
 import code.monsters.act1.enemies.DugtrioEnemy;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
@@ -152,6 +153,9 @@ public class PokemonRegions implements
 
         Kanto kanto = new Kanto();
         kanto.addAct(Exordium.ID);
+
+        //Bosses
+        BaseMod.addMonster(DragoniteEnemy.ID, (BaseMod.GetMonster) DragoniteEnemy::new);
 
         //Elites
         BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);

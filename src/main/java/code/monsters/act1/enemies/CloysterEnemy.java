@@ -132,7 +132,7 @@ public class CloysterEnemy extends AbstractPokemonMonster
     @Override
     protected void getMove(final int num) {
         if (lastMove(ICICLE_SPEAR)) {
-            setMoveShortcut(SHELL_SMASH);
+            setMoveShortcut(SHELL_SMASH, MOVES[SHELL_SMASH]);
         } else if (lastMove(RAZOR_SHELL)) {
             setMoveShortcut(ICICLE_SPEAR, MOVES[ICICLE_SPEAR]);
         } else {

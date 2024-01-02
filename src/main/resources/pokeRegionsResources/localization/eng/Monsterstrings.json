@@ -26,5 +26,15 @@
     "NAME": "Cloyster",
     "DIALOG": [
     ]
+  },
+  "${ModID}:DragoniteEnemy": {
+    "MOVES": [
+      "Dragon Dance",
+      "Outrage",
+      "Stunned"
+    ],
+    "NAME": "Dragonite",
+    "DIALOG": [
+    ]
   }
 }
