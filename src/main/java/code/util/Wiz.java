@@ -224,11 +224,11 @@ public class Wiz {
         CardCrawlGame.sound.play(makeID(a.name()));
     }
 
-    public static void intoDrawMo(AbstractCard c, int i, AbstractMonster source) {
+    public static void intoDrawMo(AbstractCard c, int i) {
         atb(new MakeTempCardInDrawPileAction(c, i, true, true));
     }
 
-    public static void intoDiscardMo(AbstractCard c, int i, AbstractMonster source) {
+    public static void intoDiscardMo(AbstractCard c, int i) {
         //because for some reason the action is HARDCODED to only take up to FIVE
         if (i > 5) {
             int times = i / 5;

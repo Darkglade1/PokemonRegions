@@ -36,5 +36,34 @@
     "NAME": "Dragonite",
     "DIALOG": [
     ]
+  },
+  "${ModID}:GastlyEnemy": {
+    "MOVES": [
+      "Lick",
+      "Sucker Punch",
+      "Ghost Party"
+    ],
+    "NAME": "Gastly",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:HaunterEnemy": {
+    "MOVES": [
+      "Curse",
+      "Spite",
+      "Night Shade"
+    ],
+    "NAME": "Haunter",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:GengarEnemy": {
+    "MOVES": [
+      "Nasty Plot",
+      "Shadow Ball"
+    ],
+    "NAME": "Gengar",
+    "DIALOG": [
+    ]
   }
 }

@@ -11,10 +11,7 @@ import code.cards.AbstractEasyCard;
 import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
-import code.monsters.act1.enemies.CloysterEnemy;
-import code.monsters.act1.enemies.DiglettEnemy;
-import code.monsters.act1.enemies.DragoniteEnemy;
-import code.monsters.act1.enemies.DugtrioEnemy;
+import code.monsters.act1.enemies.*;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
@@ -159,7 +156,14 @@ public class PokemonRegions implements
 
         //Elites
         BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);
+        BaseMod.addMonster(EncounterIDs.GHOST_SQUAD, "Ghost Squad", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new GastlyEnemy(-450.0F, 0.0F),
+                        new HaunterEnemy(-150.0F, 0.0F),
+                        new GengarEnemy(150.0F, 0.0F)
+                }));
 
+        // Normal encounters
         BaseMod.addMonster(EncounterIDs.DIGLETTS_2, "2 Digletts", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new DiglettEnemy(-200.0F, 0.0F, true),
