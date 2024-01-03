@@ -85,6 +85,44 @@
       "."
     ]
   },
+  "${ModID}:Gastly": {
+    "NAME": "Gastly",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Dream *Eater",
+      "*Poltergeist",
+      "You lose ",
+      " HP. ",
+      "Gains ",
+      " Stamina.",
+      "You gain ",
+      " Intangible."
+    ]
+  },
+  "${ModID}:Haunter": {
+    "NAME": "Haunter",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Curse",
+      "*Night *Shade",
+      "Apply ",
+      " Vulnerable.",
+      "Deal ",
+      " damage a number of times equal to Stamina."
+    ]
+  },
+  "${ModID}:Gengar": {
+    "NAME": "Gengar",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Nasty *Plot",
+      "*Shadow *Ball",
+      "Put ",
+      " cards from your draw pile into your hand.",
+      "Deal ",
+      " damage."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

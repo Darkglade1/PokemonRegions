@@ -169,24 +169,30 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public void postTurn() {
-        int newCurrentStamina = allyCard.currentStamina;
+        int staminaChange = 0;
         switch (this.nextMove) {
             case MOVE_1: {
-                newCurrentStamina -= move1StaminaCost;
-                if (newCurrentStamina < move1StaminaCost) {
-                    setMoveShortcut(MOVE_2);
-                }
+                staminaChange = -move1StaminaCost;
                 break;
             }
             case MOVE_2: {
-                newCurrentStamina -= move2StaminaCost;
-                if (newCurrentStamina < move2StaminaCost) {
-                    setMoveShortcut(MOVE_1);
-                }
+                staminaChange = -move2StaminaCost;
                 break;
             }
         }
-        atb(new UpdateStaminaOnCardAction(allyCard, newCurrentStamina));
+        atb(new UpdateStaminaOnCardAction(allyCard, staminaChange));
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (AbstractPokemonAlly.this.nextMove == MOVE_1 && allyCard.currentStamina < move1StaminaCost) {
+                    setMoveShortcut(defaultMove);
+                }
+                if (AbstractPokemonAlly.this.nextMove == MOVE_2 && allyCard.currentStamina < move2StaminaCost) {
+                    setMoveShortcut(defaultMove);
+                }
+                this.isDone = true;
+            }
+        });
         atb(new AbstractGameAction() {
             @Override
             public void update() {

@@ -1,11 +1,13 @@
 package code.monsters.act1.enemies;
 
 import code.BetterSpriterAnimation;
+import code.cards.pokemonAllyCards.Gastly;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.MonsterIntangiblePower;
 import code.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
@@ -89,9 +91,9 @@ public class GastlyEnemy extends AbstractPokemonMonster
         }
     }
 
-    //@Override
-   // public AbstractCard getAssociatedPokemonCard() {
-   //     return new Cloyster();
-   // }
+    @Override
+    public AbstractCard getAssociatedPokemonCard() {
+        return new Gastly();
+    }
 
 }
