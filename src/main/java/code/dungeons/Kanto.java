@@ -3,6 +3,7 @@ package code.dungeons;
 import actlikeit.dungeons.CustomDungeon;
 import code.PokemonRegions;
 import code.events.ProfessorOak;
+import code.monsters.act1.enemies.ArbokEnemy;
 import code.monsters.act1.enemies.CloysterEnemy;
 import code.monsters.act1.enemies.DugtrioEnemy;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,7 +25,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
     public static final String NAME = TEXT[0];
 
     public Kanto() {
-        super(NAME, ID, "images/ui/event/panel.png", false, 3, 12, 10);
+        super(NAME, ID, "images/ui/event/panel.png", true, 3, 12, 10);
         this.setMainMusic(PokemonRegions.makeMusicPath("Littleroot.ogg"));
         this.onEnterEvent(ProfessorOak.class);
     }
@@ -91,7 +92,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo("Lots of Slimes", 1.0F));
         monsters.add(new MonsterInfo("Exordium Thugs", 1.5F));
         monsters.add(new MonsterInfo("Exordium Wildlife", 1.5F));
-        monsters.add(new MonsterInfo("Red Slaver", 1.0F)); // arbok
+        monsters.add(new MonsterInfo(ArbokEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("3 Louse", 2.0F));
         monsters.add(new MonsterInfo("2 Fungi Beasts", 2.0F));
         MonsterInfo.normalizeWeights(monsters);
@@ -132,41 +133,4 @@ public class Kanto extends AbstractPokemonRegionDungeon {
 //        }
 //        return retVal;
 //    }
-
-    protected void initializeBoss() {
-        bossList.clear();
-        if (Settings.isDailyRun) {
-            bossList.add("The Guardian");
-            bossList.add("Hexaghost");
-            bossList.add("Slime Boss");
-            Collections.shuffle(bossList, new java.util.Random(monsterRng.randomLong()));
-        } else if (!UnlockTracker.isBossSeen("GUARDIAN")) {
-            bossList.add("The Guardian");
-        } else if (!UnlockTracker.isBossSeen("GHOST")) {
-            bossList.add("Hexaghost");
-        } else if (!UnlockTracker.isBossSeen("SLIME")) {
-            bossList.add("Slime Boss");
-        } else {
-            bossList.add("The Guardian");
-            bossList.add("Hexaghost");
-            bossList.add("Slime Boss");
-            Collections.shuffle(bossList, new java.util.Random(monsterRng.randomLong()));
-        }
-
-        if (bossList.size() == 1) {
-            bossList.add(bossList.get(0));
-        } else if (bossList.isEmpty()) {
-            logger.warn("Boss list was empty. How?");
-            bossList.add("The Guardian");
-            bossList.add("Hexaghost");
-            bossList.add("Slime Boss");
-            Collections.shuffle(bossList, new java.util.Random(monsterRng.randomLong()));
-        }
-
-        if (Settings.isDemo) {
-            bossList.clear();
-            bossList.add("Hexaghost");
-        }
-
-    }
 }

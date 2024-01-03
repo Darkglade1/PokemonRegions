@@ -174,6 +174,7 @@ public class PokemonRegions implements
                         new DiglettEnemy(50.0F, 0.0F, false),
                 }));
         BaseMod.addMonster(DugtrioEnemy.ID, (BaseMod.GetMonster) DugtrioEnemy::new);
+        BaseMod.addMonster(ArbokEnemy.ID, (BaseMod.GetMonster) ArbokEnemy::new);
     }
 
     @Override

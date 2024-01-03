@@ -65,5 +65,15 @@
     "NAME": "Gengar",
     "DIALOG": [
     ]
+  },
+  "${ModID}:ArbokEnemy": {
+    "MOVES": [
+      "Wrap",
+      "Crunch",
+      "Glare"
+    ],
+    "NAME": "Arbok",
+    "DIALOG": [
+    ]
   }
 }

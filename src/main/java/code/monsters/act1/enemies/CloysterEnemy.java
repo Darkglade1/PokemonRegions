@@ -54,7 +54,7 @@ public class CloysterEnemy extends AbstractPokemonMonster
     public CloysterEnemy(final float x, final float y) {
         super(NAME, ID, 140, 0.0F, 0, 160.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Cloyster/Cloyster.scml"));
-        setHp(calcAscensionTankiness(60));
+        setHp(calcAscensionTankiness(70));
         addMove(SHELL_SMASH, Intent.DEFEND_BUFF);
         addMove(RAZOR_SHELL, Intent.ATTACK_DEBUFF, calcAscensionDamage(7));
         addMove(ICICLE_SPEAR, Intent.ATTACK, calcAscensionDamage(5), 3);
