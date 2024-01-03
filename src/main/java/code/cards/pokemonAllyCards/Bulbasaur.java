@@ -1,6 +1,7 @@
 package code.cards.pokemonAllyCards;
 
 import basemod.helpers.TooltipInfo;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.util.Tags;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import static code.PokemonRegions.makeID;
 
+@NoPools
 public class Bulbasaur extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Bulbasaur.class.getSimpleName());
     public static final int MOVE_1_DAMAGE = 5;

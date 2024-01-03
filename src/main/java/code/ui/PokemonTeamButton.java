@@ -7,6 +7,7 @@ import basemod.TopPanelItem;
 import basemod.abstracts.CustomSavable;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import code.cards.AbstractAllyPokemonCard;
+import code.monsters.AbstractPokemonAlly;
 import code.patches.PlayerSpireFields;
 import code.util.Tags;
 import code.util.TexLoader;
@@ -21,9 +22,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
@@ -42,7 +41,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     private static final String[] TEXT = uiStrings.TEXT;
 
     public static final int MAX_TEAM_SIZE = 5;
-    //public static boolean gridViewOnly = false;
     private boolean releasingPokemon = false;
 
     public PokemonTeamButton() {
@@ -59,7 +57,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             AbstractDungeon.overlayMenu.cancelButton.hide();
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
-        //gridViewOnly = true;
         AbstractDungeon.gridSelectScreen.open(pokemonTeam, 999, tipMsg, false, false, true, false);
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[2]);
     }
@@ -141,6 +138,16 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             }
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
             AbstractDungeon.gridSelectScreen.open(releaseablePokemon, 1, TEXT[5], false, false, false, true);
+        }
+    }
+
+    public static void teamWideHeal(float percent) {
+        for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
+            if (card instanceof AbstractAllyPokemonCard) {
+                AbstractAllyPokemonCard pokemonCard = (AbstractAllyPokemonCard) card;
+                int staminaHeal = Math.round(pokemonCard.maxStamina * percent);
+                pokemonCard.updateStamina(pokemonCard.currentStamina + staminaHeal);
+            }
         }
     }
 }

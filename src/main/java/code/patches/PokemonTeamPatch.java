@@ -3,12 +3,15 @@ package code.patches;
 import code.actions.UsePreBattleActionAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
+import code.ui.PokemonTeamButton;
 import code.util.Tags;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static code.util.Wiz.adp;
 import static code.util.Wiz.atb;
@@ -62,35 +65,12 @@ public class PokemonTeamPatch {
         }
     }
 
-//    @SpirePatch(clz = GridCardSelectScreen.class, method = "update")
-//    public static class MakeViewOnlyPlease {
-//        public static ExprEditor Instrument() {
-//            return new ExprEditor() {
-//                @Override
-//                public void edit(MethodCall m) throws CannotCompileException {
-//                    if (m.getMethodName().equals("contains")) {
-//                        m.replace("$_ = $proceed($$) && !" + PokemonTeamPatch.class.getName() + ".isPokemonGridViewOnly();" );
-//                    }
-//                }
-//            };
-//        }
-//    }
-//    public static boolean isPokemonGridViewOnly() {
-//        return PokemonTeamButton.gridViewOnly;
-//    }
-//
-//    @SpirePatch(
-//            clz = AbstractDungeon.class,
-//            method = "closeCurrentScreen"
-//    )
-//    public static class SetStaticVariable {
-//        public static void Prefix() {
-//            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
-//                if (PokemonTeamButton.gridViewOnly) {
-//                    PokemonTeamButton.gridViewOnly = false;
-//                }
-//            }
-//        }
-//    }
+    @SpirePatch(clz = AbstractDungeon.class, method = "dungeonTransitionSetup")
+    public static class DungeonTransitionHeal {
+        @SpirePostfixPatch
+        public static void Postfix() {
+            PokemonTeamButton.teamWideHeal(0.5f);
+        }
+    }
 
 }

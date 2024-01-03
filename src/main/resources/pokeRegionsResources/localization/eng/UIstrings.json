@@ -63,5 +63,16 @@
       "Choose a Pokemon to send out.",
       "Switch Pokemon"
     ]
+  },
+  "${ModID}:HealPokemonCampfire": {
+    "TEXT": [
+      "Rest with your Pokemon.",
+      "Heal for ",
+      "% of your Max HP (",
+      ")",
+      "\nRecover ",
+      "% of all your Pokemons' Stamina.",
+      "Cannot Rest (Coffee Dripper)"
+    ]
   }
 }

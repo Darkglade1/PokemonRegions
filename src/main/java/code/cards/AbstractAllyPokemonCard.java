@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import static code.PokemonRegions.makeID;
 
-@NoPools
+
 public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("PokemonType"));
     public static final String TYPE = uiStrings.TEXT[0];
@@ -63,7 +63,14 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     }
 
     public void updateStamina (int newStamina) {
+        if (newStamina > maxStamina) {
+            newStamina = maxStamina;
+        }
+        if (newStamina < 0) {
+            newStamina = 0;
+        }
         this.currentStamina = misc = newStamina;
+        initializeDescriptionFromMoves();
     }
 
     public ArrayList<TooltipInfo> getStarterKeyword() {

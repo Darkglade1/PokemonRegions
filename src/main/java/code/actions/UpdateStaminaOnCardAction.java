@@ -17,15 +17,7 @@ public class UpdateStaminaOnCardAction extends AbstractGameAction {
 
     public void update() {
         int newStamina = allyCard.currentStamina + staminaChange;
-        if (newStamina < 0) {
-            newStamina = 0;
-        }
-        if (newStamina > allyCard.maxStamina) {
-            newStamina = allyCard.maxStamina;
-        }
         allyCard.updateStamina(newStamina);
-        allyCard.initializeDescriptionFromMoves();
-
         this.isDone = true;
     }
 }

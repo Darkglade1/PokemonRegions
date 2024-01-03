@@ -1,5 +1,6 @@
 package code.cards.pokemonAllyCards;
 
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.PokemonRegions.makeID;
 
+@NoPools
 public class Diglett extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Diglett.class.getSimpleName());
     public static final int MOVE_2_DAMAGE = 16;

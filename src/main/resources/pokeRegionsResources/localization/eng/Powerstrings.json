@@ -13,7 +13,7 @@
   },
   "${ModID}:CrackedShell": {
     "NAME": "Cracked Shell",
-    "DESCRIPTIONS": ["Whenever this creature receives unblocked attack damage from your #yPokemon, it loses #b", " HP and increases future HP loss by #b", "."]
+    "DESCRIPTIONS": ["When this creature receives unblocked attack damage from your #yPokemon, it loses #b", " HP and increases future HP loss by #b", ". Can only trigger once per turn."]
   },
   "${ModID}:Outrage": {
     "NAME": "Outrage",

@@ -9,13 +9,11 @@ import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
@@ -77,14 +75,21 @@ public class CloysterEnemy extends AbstractPokemonMonster
         applyToTarget(this, this, new MetallicizePower(this, METALLICIZE));
         block(this, METALLICIZE);
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_INITAL_HP_LOSS) {
+            private boolean triggered;
             @Override
             public void wasHPLost(DamageInfo info, int damageAmount) {
-                if (info.type == DamageInfo.DamageType.NORMAL && info.owner instanceof AbstractPokemonAlly && damageAmount > 0) {
+                if (info.type == DamageInfo.DamageType.NORMAL && info.owner instanceof AbstractPokemonAlly && damageAmount > 0 && !triggered) {
                     this.flash();
+                    triggered = true;
                     atb(new LoseHPAction(CloysterEnemy.this, CloysterEnemy.this, amount, AbstractGameAction.AttackEffect.POISON));
                     amount += HP_LOSS_INCREASE;
                     updateDescription();
                 }
+            }
+
+            @Override
+            public void atEndOfRound() {
+                triggered = false;
             }
 
             @Override
