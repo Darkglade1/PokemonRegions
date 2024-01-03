@@ -39,7 +39,7 @@ public class DragoniteEnemy extends AbstractPokemonMonster
     }
 
     public DragoniteEnemy(final float x, final float y) {
-        super(NAME, ID, 140, 0.0F, 0, 250.0f, 270.0f, null, x, y);
+        super(NAME, ID, 140, 0.0F, 0, 250.0f, 290.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Dragonite/Dragonite.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
         setHp(calcAscensionTankiness(300));

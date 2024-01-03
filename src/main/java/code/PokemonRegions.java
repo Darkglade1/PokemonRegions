@@ -127,6 +127,10 @@ public class PokemonRegions implements
         return modID + "Resources/images/events/" + resourcePath;
     }
 
+    public static String makeMusicPath(String resourcePath) {
+        return modID + "Resources/audio/music/" + resourcePath;
+    }
+
     public static String makeCardPath(String resourcePath) {
         return modID + "Resources/images/cards/" + resourcePath;
     }
@@ -152,7 +156,7 @@ public class PokemonRegions implements
         kanto.addAct(Exordium.ID);
 
         //Bosses
-        BaseMod.addMonster(DragoniteEnemy.ID, (BaseMod.GetMonster) DragoniteEnemy::new);
+        kanto.addBoss(DragoniteEnemy.ID, (BaseMod.GetMonster) DragoniteEnemy::new, makeMonsterPath("Dragonite/DragoniteMap.png"), makeMonsterPath("Dragonite/DragoniteMapOutline.png"));
 
         //Elites
         BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);

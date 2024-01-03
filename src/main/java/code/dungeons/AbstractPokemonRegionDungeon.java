@@ -1,11 +1,11 @@
 package code.dungeons;
 
 import actlikeit.dungeons.CustomDungeon;
+import code.scenes.PokemonScene;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
-import com.megacrit.cardcrawl.scenes.TheBottomScene;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
 
     @Override
     public AbstractScene DungeonScene() {
-        return new TheBottomScene();
+        return new PokemonScene();
     }
 
     @Override
