@@ -75,5 +75,15 @@
     "NAME": "Arbok",
     "DIALOG": [
     ]
+  },
+  "${ModID}:VulpixEnemy": {
+    "MOVES": [
+      "Will-O-Wisp",
+      "Fire Spin",
+      "Flame Charge"
+    ],
+    "NAME": "Vulpix",
+    "DIALOG": [
+    ]
   }
 }

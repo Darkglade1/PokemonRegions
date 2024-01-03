@@ -136,6 +136,20 @@
       " Weak."
     ]
   },
+  "${ModID}:Vulpix": {
+    "NAME": "Vulpix",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Fire *Spin",
+      "*Flame *Charge",
+      "Deal ",
+      " damage and apply ",
+      " pokeregions:Burn.",
+      "Deal ",
+      " damage ",
+      " times."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

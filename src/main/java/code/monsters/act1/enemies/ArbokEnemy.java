@@ -46,7 +46,7 @@ public class ArbokEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 150.0f, 160.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Arbok/Arbok.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(64), calcAscensionTankiness(68));
+        setHp(calcAscensionTankiness(70), calcAscensionTankiness(74));
         addMove(WRAP, Intent.STRONG_DEBUFF);
         addMove(CRUNCH, Intent.ATTACK_DEBUFF, calcAscensionDamage(9));
         addMove(GLARE, Intent.DEFEND_DEBUFF);

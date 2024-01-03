@@ -12,5 +12,12 @@
       "stamina"
     ],
     "DESCRIPTION": "Your #yPokemon's HP represents #yStamina. The numbers in parentheses represent the #yStamina cost of each move. #yPokemon that run out of #yStamina can no longer battle."
+  },
+  {
+    "PROPER_NAME": "Burn",
+    "NAMES": [
+      "burn"
+    ],
+    "DESCRIPTION": "#yBurned creatures receive increased damage from attacks."
   }
 ]

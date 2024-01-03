@@ -6,6 +6,7 @@ import code.events.ProfessorOak;
 import code.monsters.act1.enemies.ArbokEnemy;
 import code.monsters.act1.enemies.CloysterEnemy;
 import code.monsters.act1.enemies.DugtrioEnemy;
+import code.monsters.act1.enemies.VulpixEnemy;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -74,10 +75,10 @@ public class Kanto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Cultist", 2.0F)); // vulpix
-        monsters.add(new MonsterInfo("Jaw Worm", 2.0F));
+        monsters.add(new MonsterInfo(VulpixEnemy.ID, 2.0F)); // vulpix
+        monsters.add(new MonsterInfo("Jaw Worm", 2.0F)); // rhyhorn
         monsters.add(new MonsterInfo(EncounterIDs.DIGLETTS_2, 2.0F));
-        monsters.add(new MonsterInfo("Small Slimes", 2.0F)); // 3 rats
+        monsters.add(new MonsterInfo("Small Slimes", 2.0F)); // 2 rats
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
     }

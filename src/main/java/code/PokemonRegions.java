@@ -167,12 +167,15 @@ public class PokemonRegions implements
                         new GengarEnemy(150.0F, 0.0F)
                 }));
 
-        // Normal encounters
+        // Easy encounters
         BaseMod.addMonster(EncounterIDs.DIGLETTS_2, "2 Digletts", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new DiglettEnemy(-200.0F, 0.0F, true),
                         new DiglettEnemy(50.0F, 0.0F, false),
                 }));
+        BaseMod.addMonster(VulpixEnemy.ID, (BaseMod.GetMonster) VulpixEnemy::new);
+
+        // Normal encounters
         BaseMod.addMonster(DugtrioEnemy.ID, (BaseMod.GetMonster) DugtrioEnemy::new);
         BaseMod.addMonster(ArbokEnemy.ID, (BaseMod.GetMonster) ArbokEnemy::new);
     }
