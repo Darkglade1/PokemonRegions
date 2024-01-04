@@ -196,6 +196,7 @@ public class PokemonRegions implements
         // Normal encounters
         BaseMod.addMonster(DugtrioEnemy.ID, (BaseMod.GetMonster) DugtrioEnemy::new);
         BaseMod.addMonster(ArbokEnemy.ID, (BaseMod.GetMonster) ArbokEnemy::new);
+        BaseMod.addMonster(MachampEnemy.ID, (BaseMod.GetMonster) MachampEnemy::new);
     }
 
     @Override

@@ -86,13 +86,13 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(DugtrioEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("Gremlin Gang", 1.0F));
         monsters.add(new MonsterInfo("Looter", 2.0F));
-        monsters.add(new MonsterInfo("Large Slime", 2.0F)); // Machamp
+        monsters.add(new MonsterInfo(MachampEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("Lots of Slimes", 1.0F));
         monsters.add(new MonsterInfo("Exordium Thugs", 1.5F));
         monsters.add(new MonsterInfo("Exordium Wildlife", 1.5F));
         monsters.add(new MonsterInfo(ArbokEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("3 Louse", 2.0F));
-        monsters.add(new MonsterInfo("2 Fungi Beasts", 2.0F));
+        monsters.add(new MonsterInfo("2 Fungi Beasts", 2.0F)); // 2 tentacruel
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);

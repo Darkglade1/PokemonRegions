@@ -162,6 +162,18 @@
       " damage to ALL enemies."
     ]
   },
+  "${ModID}:Machamp": {
+    "NAME": "Machamp",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Bulk *Up",
+      "*Dynamic *Punch",
+      "You gain ",
+      " Temporary Strength next turn.",
+      "Deal ",
+      " damage."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

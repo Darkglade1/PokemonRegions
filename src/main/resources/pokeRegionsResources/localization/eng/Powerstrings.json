@@ -38,5 +38,9 @@
   "${ModID}:SuperEffective": {
     "NAME": "Super-Effective",
     "DESCRIPTIONS": ["Receives #b", "% more damage from attacks and disables the effect of #ySturdy."]
+  },
+  "${ModID}:NoGuard": {
+    "NAME": "No Guard",
+    "DESCRIPTIONS": ["When this creature is below #b", "% HP, it deals and receives #b", "% more damage from attacks."]
   }
 }

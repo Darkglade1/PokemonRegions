@@ -95,5 +95,15 @@
     "NAME": "Golem",
     "DIALOG": [
     ]
+  },
+  "${ModID}:MachampEnemy": {
+    "MOVES": [
+      "Bulk up",
+      "Cross Chop",
+      "Scary Face"
+    ],
+    "NAME": "Machamp",
+    "DIALOG": [
+    ]
   }
 }

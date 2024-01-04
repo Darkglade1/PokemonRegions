@@ -14,6 +14,7 @@ public class NastyPlot extends AbstractEasyPower {
 
     public NastyPlot(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, amount);
+        this.priority = 99;
         this.loadRegion("phantasmal");
     }
 
