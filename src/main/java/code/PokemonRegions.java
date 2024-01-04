@@ -21,6 +21,7 @@ import code.util.ProAudio;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -34,9 +35,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import static code.util.Wiz.adp;
 
@@ -56,6 +61,9 @@ public class PokemonRegions implements
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
+
+    public static SpireConfig pokemonRegionConfig;
+    private static Logger logger = LogManager.getLogger(PokemonRegions.class.getName());
 
     public static class Enums {
         @SpireEnum(name = "Pokedex")
@@ -97,6 +105,15 @@ public class PokemonRegions implements
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
+
+        Properties pokemonRegionDefaults = new Properties();
+        pokemonRegionDefaults.setProperty("Pokemon Combat Tutorial Seen", "FALSE");
+        try {
+            pokemonRegionConfig = new SpireConfig("Pokemon Regions", "PokemonRegionsMod", pokemonRegionDefaults);
+        } catch (IOException e) {
+            logger.error("PokemonRegionMod SpireConfig initialization failed:");
+            e.printStackTrace();
+        }
     }
 
     public static String makePath(String resourcePath) {
@@ -218,6 +235,7 @@ public class PokemonRegions implements
         BaseMod.loadCustomStringsFile(EventStrings.class, modID + "Resources/localization/" + getLangString() + "/Eventstrings.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, modID + "Resources/localization/" + getLangString() + "/Monsterstrings.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
+        BaseMod.loadCustomStringsFile(TutorialStrings.class, modID + "Resources/localization/" + getLangString() + "/Tutorialstrings.json");
     }
 
     @Override
