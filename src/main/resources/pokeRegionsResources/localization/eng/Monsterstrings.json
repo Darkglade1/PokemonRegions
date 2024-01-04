@@ -105,5 +105,14 @@
     "NAME": "Machamp",
     "DIALOG": [
     ]
+  },
+  "${ModID}:RattataEnemy": {
+    "MOVES": [
+      "Bite",
+      "Work Up"
+    ],
+    "NAME": "Rattata",
+    "DIALOG": [
+    ]
   }
 }

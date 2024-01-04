@@ -32,6 +32,7 @@ public class Machamp extends AbstractPokemonAlly
         addMove(MOVE_1, move1Intent);
         addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Machamp.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
+        move2RequiresTarget = true;
     }
 
     @Override

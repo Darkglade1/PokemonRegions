@@ -192,11 +192,21 @@ public class PokemonRegions implements
                         new DiglettEnemy(50.0F, 0.0F, false),
                 }));
         BaseMod.addMonster(VulpixEnemy.ID, (BaseMod.GetMonster) VulpixEnemy::new);
+        BaseMod.addMonster(EncounterIDs.RATS_2, "2 Rats", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new RattataEnemy(-200.0F, 0.0F),
+                        new RattataEnemy(50.0F, 0.0F),
+                }));
 
         // Normal encounters
         BaseMod.addMonster(DugtrioEnemy.ID, (BaseMod.GetMonster) DugtrioEnemy::new);
         BaseMod.addMonster(ArbokEnemy.ID, (BaseMod.GetMonster) ArbokEnemy::new);
         BaseMod.addMonster(MachampEnemy.ID, (BaseMod.GetMonster) MachampEnemy::new);
+        BaseMod.addMonster(EncounterIDs.FOX_AND_RAT, "Fox and Rat", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new RattataEnemy(-200.0F, 0.0F),
+                        new VulpixEnemy(50.0F, 0.0F),
+                }));
     }
 
     @Override

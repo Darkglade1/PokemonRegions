@@ -62,6 +62,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Cave");
                 } else if (mo instanceof MachampEnemy) {
                     this.bg = this.atlas.findRegion("mod/Arena");
+                } else if (mo instanceof RattataEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Forest");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

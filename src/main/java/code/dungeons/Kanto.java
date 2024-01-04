@@ -6,14 +6,11 @@ import code.events.ProfessorOak;
 import code.monsters.act1.enemies.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Kanto extends AbstractPokemonRegionDungeon {
 
@@ -75,7 +72,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(VulpixEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("Jaw Worm", 2.0F)); // rhyhorn
         monsters.add(new MonsterInfo(EncounterIDs.DIGLETTS_2, 2.0F));
-        monsters.add(new MonsterInfo("Small Slimes", 2.0F)); // 2 rats
+        monsters.add(new MonsterInfo(EncounterIDs.RATS_2, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
     }
@@ -89,10 +86,10 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(MachampEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("Lots of Slimes", 1.0F));
         monsters.add(new MonsterInfo("Exordium Thugs", 1.5F));
-        monsters.add(new MonsterInfo("Exordium Wildlife", 1.5F));
+        monsters.add(new MonsterInfo(EncounterIDs.FOX_AND_RAT, 1.5F));
         monsters.add(new MonsterInfo(ArbokEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("3 Louse", 2.0F));
-        monsters.add(new MonsterInfo("2 Fungi Beasts", 2.0F)); // 2 tentacruel
+        monsters.add(new MonsterInfo("2 Fungi Beasts", 2.0F)); // 2 tentacruel maybe
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);
@@ -108,27 +105,13 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         this.populateMonsterList(monsters, count, true);
     }
 
-//    @Override
-//    protected ArrayList<String> generateExclusions() {
-//        ArrayList<String> retVal = new ArrayList();
-//        switch ((String)monsterList.get(monsterList.size() - 1)) {
-//            case "Looter":
-//                retVal.add("Exordium Thugs");
-//            case "Jaw Worm":
-//            case "Cultist":
-//            default:
-//                break;
-//            case "Blue Slaver":
-//                retVal.add("Red Slaver");
-//                retVal.add("Exordium Thugs");
-//                break;
-//            case "2 Louse":
-//                retVal.add("3 Louse");
-//                break;
-//            case "Small Slimes":
-//                retVal.add("Large Slime");
-//                retVal.add("Lots of Slimes");
-//        }
-//        return retVal;
-//    }
+    @Override
+    protected ArrayList<String> generateExclusions() {
+        ArrayList<String> retVal = new ArrayList<>();
+        String previous = monsterList.get(monsterList.size() - 1);
+        if (previous.equals(EncounterIDs.RATS_2) || previous.equals(VulpixEnemy.ID)) {
+            retVal.add(EncounterIDs.FOX_AND_RAT);
+        }
+        return retVal;
+    }
 }
