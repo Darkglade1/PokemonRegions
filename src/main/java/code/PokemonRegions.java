@@ -166,6 +166,7 @@ public class PokemonRegions implements
                         new HaunterEnemy(-150.0F, 0.0F),
                         new GengarEnemy(150.0F, 0.0F)
                 }));
+        BaseMod.addMonster(GolemEnemy.ID, (BaseMod.GetMonster) GolemEnemy::new);
 
         // Easy encounters
         BaseMod.addMonster(EncounterIDs.DIGLETTS_2, "2 Digletts", () -> new MonsterGroup(

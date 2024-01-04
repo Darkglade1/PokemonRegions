@@ -3,10 +3,7 @@ package code.dungeons;
 import actlikeit.dungeons.CustomDungeon;
 import code.PokemonRegions;
 import code.events.ProfessorOak;
-import code.monsters.act1.enemies.ArbokEnemy;
-import code.monsters.act1.enemies.CloysterEnemy;
-import code.monsters.act1.enemies.DugtrioEnemy;
-import code.monsters.act1.enemies.VulpixEnemy;
+import code.monsters.act1.enemies.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -75,7 +72,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo(VulpixEnemy.ID, 2.0F)); // vulpix
+        monsters.add(new MonsterInfo(VulpixEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("Jaw Worm", 2.0F)); // rhyhorn
         monsters.add(new MonsterInfo(EncounterIDs.DIGLETTS_2, 2.0F));
         monsters.add(new MonsterInfo("Small Slimes", 2.0F)); // 2 rats
@@ -89,7 +86,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(DugtrioEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo("Gremlin Gang", 1.0F));
         monsters.add(new MonsterInfo("Looter", 2.0F));
-        monsters.add(new MonsterInfo("Large Slime", 2.0F)); // golem
+        monsters.add(new MonsterInfo("Large Slime", 2.0F)); // Machamp
         monsters.add(new MonsterInfo("Lots of Slimes", 1.0F));
         monsters.add(new MonsterInfo("Exordium Thugs", 1.5F));
         monsters.add(new MonsterInfo("Exordium Wildlife", 1.5F));
@@ -104,7 +101,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateElites(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        // monsters.add(new MonsterInfo("Gremlin Nob", 1.0F));
+        monsters.add(new MonsterInfo(GolemEnemy.ID, 1.0F));
         monsters.add(new MonsterInfo(CloysterEnemy.ID, 1.0F));
         monsters.add(new MonsterInfo(EncounterIDs.GHOST_SQUAD, 1.0F));
         MonsterInfo.normalizeWeights(monsters);

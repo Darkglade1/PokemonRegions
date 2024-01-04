@@ -150,6 +150,18 @@
       " times."
     ]
   },
+  "${ModID}:Golem": {
+    "NAME": "Golem",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Rock *Polish",
+      "*Earthquake",
+      "You gain ",
+      " Block.",
+      "Deal ",
+      " damage to ALL enemies."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

@@ -85,5 +85,15 @@
     "NAME": "Vulpix",
     "DIALOG": [
     ]
+  },
+  "${ModID}:GolemEnemy": {
+    "MOVES": [
+      "Rock Polish",
+      "Smack Down",
+      "Earthquake"
+    ],
+    "NAME": "Golem",
+    "DIALOG": [
+    ]
   }
 }

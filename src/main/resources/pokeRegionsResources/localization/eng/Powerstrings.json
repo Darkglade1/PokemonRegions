@@ -26,5 +26,17 @@
   "${ModID}:Burn": {
     "NAME": "Burn",
     "DESCRIPTIONS": ["#yBurned creatures receive #b", " more damage from attacks."]
+  },
+  "${ModID}:Sturdy": {
+    "NAME": "Sturdy",
+    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks."]
+  },
+  "${ModID}:TypeAdvantage": {
+    "NAME": "Type Advantage",
+    "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy next turn. Cannot be triggered again next turn."]
+  },
+  "${ModID}:SuperEffective": {
+    "NAME": "Super-Effective",
+    "DESCRIPTIONS": ["Receives #b", "% more damage from attacks and disables the effect of #ySturdy."]
   }
 }
