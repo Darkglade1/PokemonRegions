@@ -114,5 +114,15 @@
     "NAME": "Rattata",
     "DIALOG": [
     ]
+  },
+  "${ModID}:RhyhornEnemy": {
+    "MOVES": [
+      "Horn Attack",
+      "Drill Run",
+      "Endure"
+    ],
+    "NAME": "Rhyhorn",
+    "DIALOG": [
+    ]
   }
 }

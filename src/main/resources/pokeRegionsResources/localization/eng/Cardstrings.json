@@ -188,6 +188,18 @@
       " card."
     ]
   },
+  "${ModID}:Rhyhorn": {
+    "NAME": "Rhyhorn",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Bulldoze",
+      "*Endure",
+      "Deal ",
+      " damage. ",
+      "You gain ",
+      " Block."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

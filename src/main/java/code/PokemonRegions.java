@@ -197,6 +197,7 @@ public class PokemonRegions implements
                         new RattataEnemy(-200.0F, 0.0F),
                         new RattataEnemy(50.0F, 0.0F),
                 }));
+        BaseMod.addMonster(RhyhornEnemy.ID, (BaseMod.GetMonster) RhyhornEnemy::new);
 
         // Normal encounters
         BaseMod.addMonster(DugtrioEnemy.ID, (BaseMod.GetMonster) DugtrioEnemy::new);
@@ -206,6 +207,11 @@ public class PokemonRegions implements
                 new AbstractMonster[]{
                         new RattataEnemy(-200.0F, 0.0F),
                         new VulpixEnemy(50.0F, 0.0F),
+                }));
+        BaseMod.addMonster(EncounterIDs.RHYHORN_AND_DIGLETT, "Rhyhorn and Diglett", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new DiglettEnemy(-200.0F, 0.0F, true),
+                        new RhyhornEnemy(50.0F, 0.0F),
                 }));
     }
 
