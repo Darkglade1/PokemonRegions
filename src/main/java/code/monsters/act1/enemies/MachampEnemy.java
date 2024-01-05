@@ -45,6 +45,7 @@ public class MachampEnemy extends AbstractPokemonMonster
 
     private boolean justBuffed = false;
     private boolean playedSfx = false;
+    private int hpThreshold;
 
     private float particleTimer;
     private float particleTimer2;
@@ -62,12 +63,13 @@ public class MachampEnemy extends AbstractPokemonMonster
         addMove(BULK_UP, Intent.BUFF);
         addMove(CHOP, Intent.ATTACK, calcAscensionDamage(6), 2);
         addMove(SCARY, Intent.DEBUFF);
+        this.hpThreshold = calculateHPThreshold();
     }
 
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        applyToTarget(this, this, new NoGuard(this, DAMAGE_INCREASE, HP_THRESHOLD));
+        applyToTarget(this, this, new NoGuard(this, DAMAGE_INCREASE, hpThreshold));
     }
 
     @Override
@@ -113,7 +115,11 @@ public class MachampEnemy extends AbstractPokemonMonster
     }
 
     private boolean underHPThreshold() {
-        return (int)(((float)this.currentHealth / this.maxHealth) * 100) < HP_THRESHOLD;
+        return this.currentHealth < hpThreshold;
+    }
+
+    private int calculateHPThreshold() {
+        return Math.round(this.maxHealth * ((float)HP_THRESHOLD / 100));
     }
 
     @Override

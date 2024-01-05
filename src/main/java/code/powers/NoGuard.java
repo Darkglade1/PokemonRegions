@@ -1,12 +1,14 @@
 package code.powers;
 
 import code.PokemonRegions;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
-public class NoGuard extends AbstractEasyPower {
+public class NoGuard extends AbstractUnremovablePower implements HealthBarRenderPower  {
     public static final String POWER_ID = PokemonRegions.makeID(NoGuard.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -39,11 +41,21 @@ public class NoGuard extends AbstractEasyPower {
     }
 
     private boolean underHPThreshold() {
-        return (int)(((float)owner.currentHealth / owner.maxHealth) * 100) < this.amount2;
+        return owner.currentHealth < this.amount2;
     }
 
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+    }
+
+    @Override
+    public int getHealthBarAmount() {
+        return amount2;
+    }
+
+    @Override
+    public Color getColor() {
+        return Color.SKY.cpy();
     }
 }
