@@ -1,20 +1,29 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Dragonite;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.Outrage;
+import code.util.Details;
+import code.util.TexLoader;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static code.PokemonRegions.*;
 import static code.util.Wiz.*;
 
 public class DragoniteEnemy extends AbstractPokemonMonster
@@ -96,6 +105,24 @@ public class DragoniteEnemy extends AbstractPokemonMonster
         } else {
             setMoveShortcut(DRAGON_DANCE, MOVES[DRAGON_DANCE]);
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        String textureString = makeUIPath("Enrage.png");
+        Texture texture = TexLoader.getTexture(textureString);
+        switch (move.nextMove) {
+            case DRAGON_DANCE: {
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
+                details.add(powerDetail);
+                Details powerDetail2 = new Details(this, OUTRAGE_BASE_TURNS, texture);
+                details.add(powerDetail2);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

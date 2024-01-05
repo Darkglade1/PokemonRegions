@@ -1,19 +1,27 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Rhyhorn;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.BetterPlatedArmor;
 import code.powers.RockHead;
+import code.util.Details;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static code.PokemonRegions.*;
+import static code.PokemonRegions.BURN_DEBUFF_TEXTURE;
 import static code.util.Wiz.*;
 
 public class RhyhornEnemy extends AbstractPokemonMonster
@@ -93,6 +101,28 @@ public class RhyhornEnemy extends AbstractPokemonMonster
         } else {
             setMoveShortcut(HORN_ATTACK, MOVES[HORN_ATTACK]);
         }
+
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case HORN_ATTACK: {
+                Details blockDetails = new Details(this, ATTACK_BLOCK, BLOCK_TEXTURE);
+                details.add(blockDetails);
+                break;
+            }
+            case ENDURE: {
+                Details blockDetails2 = new Details(this, DEFEND_BLOCK, BLOCK_TEXTURE);
+                details.add(blockDetails2);
+                Details powerDetail = new Details(this, PLATED_ARMOR, PLATED_ARMOR_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

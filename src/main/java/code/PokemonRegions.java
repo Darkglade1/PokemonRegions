@@ -15,11 +15,11 @@ import code.monsters.act1.enemies.*;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
-import code.util.PokemonReward;
-import code.util.PokemonRewardEnum;
-import code.util.ProAudio;
+import code.util.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -27,6 +27,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -34,6 +35,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rewards.RewardSave;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,6 +43,8 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import static code.util.Wiz.adp;
@@ -54,7 +58,8 @@ public class PokemonRegions implements
         EditKeywordsSubscriber,
         AddAudioSubscriber,
         PostInitializeSubscriber,
-        StartGameSubscriber {
+        StartGameSubscriber,
+        PostBattleSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -83,6 +88,69 @@ public class PokemonRegions implements
     private static final String SKILL_L_ART = makeImagePath("1024/skill.png");
     private static final String POWER_L_ART = makeImagePath("1024/power.png");
     private static final String CARD_ENERGY_L = makeImagePath("1024/energy.png");
+
+    // Stuff for detailed intents
+    public static Map<AbstractMonster, ArrayList<Details>> intents = new HashMap<>();
+
+    public static final String WEAK = makeUIPath("Weak.png");
+    public static Texture WEAK_TEXTURE;
+
+    public static final String FRAIL = makeUIPath("Frail.png");
+    public static Texture FRAIL_TEXTURE;
+
+    public static final String VULNERABLE = makeUIPath("Vulnerable.png");
+    public static Texture VULNERABLE_TEXTURE;
+
+    public static final String STRENGTH = makeUIPath("Strength.png");
+    public static Texture STRENGTH_TEXTURE;
+
+    public static final String PLATED_ARMOR = makeUIPath("PlatedArmor.png");
+    public static Texture PLATED_ARMOR_TEXTURE;
+
+    public static final String METALLICIZE = makeUIPath("Metal.png");
+    public static Texture METALLICIZE_TEXTURE;
+
+    public static final String BURN_DEBUFF = makePowerPath("Burn32.png");
+    public static Texture BURN_DEBUFF_TEXTURE;
+
+    public static final String CONSTRICTED = makeUIPath("Constricted.png");
+    public static Texture CONSTRICTED_TEXTURE;
+
+    public static final String INTANGIBLE = makeUIPath("Intangible.png");
+    public static Texture INTANGIBLE_TEXTURE;
+
+    public static final String DRAW_DOWN = makeUIPath("DrawDown.png");
+    public static Texture DRAW_DOWN_TEXTURE;
+
+    public static final String HEAL = makeUIPath("Heal.png");
+    public static Texture HEAL_TEXTURE;
+
+    public static final String BLOCK = makeUIPath("Block.png");
+    public static Texture BLOCK_TEXTURE;
+
+    public static final String DRAW_PILE = makeUIPath("DrawPile.png");
+    public static Texture DRAW_PILE_TEXTURE;
+
+    public static final String DISCARD_PILE = makeUIPath("DiscardPile.png");
+    public static Texture DISCARD_PILE_TEXTURE;
+
+    public static final String BURN = makeUIPath("Burn.png");
+    public static Texture BURN_TEXTURE;
+
+    public static final String DAZED = makeUIPath("Dazed.png");
+    public static Texture DAZED_TEXTURE;
+
+    public static final String SLIMED = makeUIPath("Slimed.png");
+    public static Texture SLIMED_TEXTURE;
+
+    public static final String VOID = makeUIPath("Void.png");
+    public static Texture VOID_TEXTURE;
+
+    public static final String WOUND = makeUIPath("Wound.png");
+    public static Texture WOUND_TEXTURE;
+
+    public static final String PAIN = makeUIPath("Pain.png");
+    public static Texture PAIN_TEXTURE;
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -158,6 +226,30 @@ public class PokemonRegions implements
 
     @Override
     public void receivePostInitialize() {
+        WEAK_TEXTURE = TexLoader.getTexture(WEAK);
+        FRAIL_TEXTURE = TexLoader.getTexture(FRAIL);
+        VULNERABLE_TEXTURE = TexLoader.getTexture(VULNERABLE);
+        STRENGTH_TEXTURE = TexLoader.getTexture(STRENGTH);
+        PLATED_ARMOR_TEXTURE = TexLoader.getTexture(PLATED_ARMOR);
+        METALLICIZE_TEXTURE = TexLoader.getTexture(METALLICIZE);
+        BURN_DEBUFF_TEXTURE = TexLoader.getTexture(BURN_DEBUFF);
+        CONSTRICTED_TEXTURE = TexLoader.getTexture(CONSTRICTED);
+        INTANGIBLE_TEXTURE = TexLoader.getTexture(INTANGIBLE);
+        DRAW_DOWN_TEXTURE = TexLoader.getTexture(DRAW_DOWN);
+
+        HEAL_TEXTURE = TexLoader.getTexture(HEAL);
+        BLOCK_TEXTURE = TexLoader.getTexture(BLOCK);
+
+        DRAW_PILE_TEXTURE = TexLoader.getTexture(DRAW_PILE);
+        DISCARD_PILE_TEXTURE = TexLoader.getTexture(DISCARD_PILE);
+
+        BURN_TEXTURE = TexLoader.getTexture(BURN);
+        DAZED_TEXTURE = TexLoader.getTexture(DAZED);
+        SLIMED_TEXTURE = TexLoader.getTexture(SLIMED);
+        VOID_TEXTURE = TexLoader.getTexture(VOID);
+        WOUND_TEXTURE = TexLoader.getTexture(WOUND);
+        PAIN_TEXTURE = TexLoader.getTexture(PAIN);
+
         CustomIntent.add(new MassAttackIntent());
         BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
         BaseMod.registerCustomReward(
@@ -288,5 +380,10 @@ public class PokemonRegions implements
                 BaseMod.removeTopPanelItem(item);
             }
         }
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        intents.clear();
     }
 }

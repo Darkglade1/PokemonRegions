@@ -1,18 +1,24 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Haunter;
 import code.monsters.AbstractPokemonMonster;
+import code.util.Details;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static code.PokemonRegions.*;
 import static code.util.Wiz.*;
 
 public class HaunterEnemy extends AbstractPokemonMonster
@@ -84,6 +90,25 @@ public class HaunterEnemy extends AbstractPokemonMonster
         } else {
             setMoveShortcut(CURSE, MOVES[CURSE]);
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case CURSE: {
+                Details statusDetails = new Details(this, CURSE_AMT, PAIN_TEXTURE, Details.TargetType.DISCARD_PILE);
+                details.add(statusDetails);
+                break;
+            }
+            case SPITE: {
+                Details powerDetail = new Details(this, DEBUFF, FRAIL_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

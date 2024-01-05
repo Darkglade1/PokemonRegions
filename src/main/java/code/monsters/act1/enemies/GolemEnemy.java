@@ -1,12 +1,15 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Golem;
 import code.monsters.AbstractPokemonAlly;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.AbstractLambdaPower;
 import code.powers.Sturdy;
 import code.powers.SuperEffective;
+import code.util.Details;
 import code.util.ProAudio;
 import code.util.Wiz;
 import code.vfx.WaitEffect;
@@ -20,14 +23,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import java.util.ArrayList;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import static code.PokemonRegions.*;
 import static code.util.Wiz.*;
 
 public class GolemEnemy extends AbstractPokemonMonster
@@ -148,6 +152,27 @@ public class GolemEnemy extends AbstractPokemonMonster
             byte move = possibilities.get(AbstractDungeon.monsterRng.random(possibilities.size() - 1));
             setMoveShortcut(move, MOVES[move]);
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case ROCK_POLISH: {
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
+                details.add(powerDetail);
+                Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
+                details.add(blockDetail);
+                break;
+            }
+            case SMACK_DOWM: {
+                Details powerDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

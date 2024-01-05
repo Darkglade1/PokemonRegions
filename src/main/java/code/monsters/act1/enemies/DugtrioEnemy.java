@@ -1,9 +1,12 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Dugtrio;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.SandVeil;
+import code.util.Details;
 import code.util.ProAudio;
 import code.util.Wiz;
 import code.vfx.WaitEffect;
@@ -15,10 +18,14 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static code.PokemonRegions.*;
+import static code.PokemonRegions.STRENGTH_TEXTURE;
 import static code.util.Wiz.*;
 
 public class DugtrioEnemy extends AbstractPokemonMonster
@@ -111,6 +118,22 @@ public class DugtrioEnemy extends AbstractPokemonMonster
         } else {
             setMoveShortcut(FURY_SWIPES, MOVES[FURY_SWIPES]);
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case DIG: {
+                Details blockDetails = new Details(this, BLOCK, BLOCK_TEXTURE);
+                details.add(blockDetails);
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

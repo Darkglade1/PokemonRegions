@@ -1,8 +1,11 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Arbok;
 import code.monsters.AbstractPokemonMonster;
+import code.util.Details;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -11,6 +14,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -18,8 +23,7 @@ import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 
 import java.util.ArrayList;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import static code.PokemonRegions.*;
 import static code.util.Wiz.*;
 
 public class ArbokEnemy extends AbstractPokemonMonster
@@ -102,6 +106,32 @@ public class ArbokEnemy extends AbstractPokemonMonster
                 setMoveShortcut(move, MOVES[move]);
             }
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case WRAP: {
+                Details powerDetail = new Details(this, CONSTRICTED, CONSTRICTED_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+            case CRUNCH: {
+                Details powerDetail = new Details(this, DEBUFF, WEAK_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+            case GLARE: {
+                Details blockDetails = new Details(this, BLOCK, BLOCK_TEXTURE);
+                details.add(blockDetails);
+                Details powerDetail = new Details(this, DRAW_DOWN, DRAW_DOWN_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

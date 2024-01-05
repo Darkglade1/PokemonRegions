@@ -3,7 +3,10 @@ package code.monsters;
 import basemod.abstracts.CustomMonster;
 import basemod.helpers.CardPowerTip;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.powers.InvisibleBarricadePower;
+import code.util.Details;
+import code.util.Wiz;
 import code.vfx.VFXActionButItCanFizzle;
 import code.vfx.WaitEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,8 +20,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -165,6 +170,18 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     }
 
     @Override
+    public void render(SpriteBatch sb) {
+        ArrayList<Details> detailsList = PokemonRegions.intents.get(this);
+        if (detailsList != null && !this.isDead && !this.isDying && !AbstractDungeon.isScreenUp) {
+            for (int i = 0; i < detailsList.size(); i++) {
+                Details detail = detailsList.get(i);
+                detail.renderDetails(sb, i + 1);
+            }
+        }
+        super.render(sb);
+    }
+
+    @Override
     public void renderTip(SpriteBatch sb) {
         super.renderTip(sb);
         AbstractCard associatedCard = getAssociatedPokemonCard();
@@ -193,6 +210,14 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
             multiplier = emi.multiplier;
         }
         return multiplier;
+    }
+
+    protected void postGetMove() {
+        setDetailedIntents();
+    }
+
+    protected void setDetailedIntents() {
+
     }
 
     //Runs a specific animation

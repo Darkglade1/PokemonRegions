@@ -1,9 +1,12 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Machamp;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.NoGuard;
+import code.util.Details;
 import code.vfx.FlexibleStanceAuraEffect;
 import code.vfx.FlexibleWrathParticleEffect;
 import com.badlogic.gdx.Gdx;
@@ -18,12 +21,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.stances.WrathStance;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static code.PokemonRegions.*;
 import static code.util.Wiz.*;
 
 public class MachampEnemy extends AbstractPokemonMonster
@@ -137,6 +143,27 @@ public class MachampEnemy extends AbstractPokemonMonster
         } else {
             setMoveShortcut(CHOP, MOVES[CHOP]);
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case BULK_UP: {
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+            case SCARY: {
+                Details statusDetails = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DISCARD_PILE);
+                details.add(statusDetails);
+                Details powerDetail = new Details(this, DEBUFF, WEAK_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

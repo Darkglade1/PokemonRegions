@@ -1,8 +1,11 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Rattata;
 import code.monsters.AbstractPokemonMonster;
+import code.util.Details;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -10,12 +13,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import java.util.ArrayList;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import static code.PokemonRegions.*;
+import static code.PokemonRegions.STRENGTH_TEXTURE;
 import static code.util.Wiz.*;
 
 public class RattataEnemy extends AbstractPokemonMonster
@@ -80,6 +85,21 @@ public class RattataEnemy extends AbstractPokemonMonster
         }
         byte move = possibilities.get(AbstractDungeon.monsterRng.random(possibilities.size() - 1));
         setMoveShortcut(move, MOVES[move]);
+
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case WORK: {
+                Details powerDetail = new Details(this, BUFF, STRENGTH_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

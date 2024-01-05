@@ -1,9 +1,12 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Vulpix;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.Burn;
+import code.util.Details;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -11,11 +14,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 
 import java.util.ArrayList;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import static code.PokemonRegions.*;
 import static code.util.Wiz.*;
 
 public class VulpixEnemy extends AbstractPokemonMonster
@@ -97,6 +101,34 @@ public class VulpixEnemy extends AbstractPokemonMonster
         }
         byte move = possibilities.get(AbstractDungeon.monsterRng.random(possibilities.size() - 1));
         setMoveShortcut(move, MOVES[move]);
+
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case WISP: {
+                Details statusDetail;
+                if (AbstractDungeon.ascensionLevel >= 17) {
+                    statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DRAW_PILE);
+                } else {
+                    statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DISCARD_PILE);
+                }
+                details.add(statusDetail);
+
+                Details powerDetail = new Details(this, DEBUFF, BURN_DEBUFF_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+            case FIRE_SPIN: {
+                Details powerDetail2 = new Details(this, DEBUFF, BURN_DEBUFF_TEXTURE);
+                details.add(powerDetail2);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override

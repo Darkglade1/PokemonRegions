@@ -1,10 +1,13 @@
 package code.monsters.act1.enemies;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.PokemonRegions;
 import code.cards.pokemonAllyCards.Cloyster;
 import code.monsters.AbstractPokemonAlly;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.AbstractLambdaPower;
+import code.util.Details;
 import code.vfx.WaitEffect;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -18,10 +21,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
 
-import static code.PokemonRegions.makeID;
-import static code.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static code.PokemonRegions.*;
+import static code.PokemonRegions.DRAW_DOWN_TEXTURE;
 import static code.util.Wiz.*;
 
 public class CloysterEnemy extends AbstractPokemonMonster
@@ -143,6 +150,33 @@ public class CloysterEnemy extends AbstractPokemonMonster
         } else {
             setMoveShortcut(RAZOR_SHELL, MOVES[RAZOR_SHELL]);
         }
+        super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case SHELL_SMASH: {
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
+                details.add(powerDetail);
+                if (AbstractDungeon.ascensionLevel < 18) {
+                    Details vulnerableDetail = new Details(this, 1, VULNERABLE_TEXTURE, Details.TargetType.SELF);
+                    details.add(vulnerableDetail);
+                }
+                Details metalDetail = new Details(this, -METALLICIZE_LOSS, METALLICIZE_TEXTURE, Details.TargetType.SELF);
+                details.add(metalDetail);
+                break;
+            }
+            case RAZOR_SHELL: {
+                Details powerDetail = new Details(this, DEBUFF, WEAK_TEXTURE);
+                details.add(powerDetail);
+                Details powerDetail2 = new Details(this, DEBUFF, FRAIL_TEXTURE);
+                details.add(powerDetail2);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override
