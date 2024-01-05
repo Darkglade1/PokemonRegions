@@ -6,23 +6,23 @@ import code.actions.HealPokemonCampfireOption;
 import code.cards.Pokeball;
 import code.monsters.AbstractPokemonMonster;
 import code.ui.PokemonTeamButton;
+import code.util.TexLoader;
 import code.util.Wiz;
-import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.relics.RelicWithButton;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.CoffeeDripper;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import com.megacrit.cardcrawl.ui.campfire.RestOption;
 
 import java.util.ArrayList;
 
 import static code.PokemonRegions.makeID;
+import static code.PokemonRegions.makeUIPath;
 import static code.util.Wiz.adp;
-import static code.util.Wiz.atb;
 
-public class PokeballBelt extends AbstractEasyRelic implements ClickableRelic {
+public class PokeballBelt extends AbstractEasyRelic implements RelicWithButton {
     public static final String ID = makeID(PokeballBelt.class.getSimpleName());
     public static final int STARTING_POKEBALLS = 6;
 
@@ -33,21 +33,38 @@ public class PokeballBelt extends AbstractEasyRelic implements ClickableRelic {
     }
 
     @Override
-    public void onRightClick()
-    {
+    public Texture getTexture() {
+        return TexLoader.getTexture(makeUIPath("SwitchPokemonButton.png"));
+    }
+
+    @Override
+    public void onButtonPress() {
+        Wiz.makeInHand(new Pokeball());
+    }
+
+    @Override
+    public boolean isButtonDisabled() {
         if (!roomhasPokemon()) {
-            atb(new TalkAction(true, DESCRIPTIONS[2], 0.8F, 0.8F));
-            return;
+            //atb(new TalkAction(true, DESCRIPTIONS[2], 0.8F, 0.8F));
+            return true;
         }
         if (this.counter < 1) {
-            atb(new TalkAction(true, DESCRIPTIONS[3], 0.8F, 0.8F));
-            return;
+            //atb(new TalkAction(true, DESCRIPTIONS[3], 0.8F, 0.8F));
+            return true;
         }
         if (hasPokeball()) {
-            atb(new TalkAction(true, DESCRIPTIONS[4], 0.8F, 0.8F));
-            return;
+            //atb(new TalkAction(true, DESCRIPTIONS[4], 0.8F, 0.8F));
+            return true;
         }
-        Wiz.makeInHand(new Pokeball());
+        return false;
+    }
+
+    @Override
+    public ArrayList<PowerTip> getHoverTips() {
+        ArrayList<PowerTip> tips = new ArrayList<>();
+        PowerTip tip = new PowerTip(DESCRIPTIONS[2], DESCRIPTIONS[3]);
+        tips.add(tip);
+        return tips;
     }
 
     private boolean roomhasPokemon() {
