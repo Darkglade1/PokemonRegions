@@ -1,5 +1,6 @@
 package code.monsters.act1.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
 import code.PokemonRegions;
@@ -64,6 +65,11 @@ public class DragoniteEnemy extends AbstractPokemonMonster
     protected void setUpMisc() {
         super.setUpMisc();
         this.type = EnemyType.BOSS;
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        CustomDungeon.playTempMusicInstantly("Zinnia");
     }
 
     @Override
