@@ -1,6 +1,9 @@
 package code.scenes;
 
 import code.monsters.act1.enemies.*;
+import code.monsters.act1.enemies.birds.ArticunoEnemy;
+import code.monsters.act1.enemies.birds.MoltresEnemy;
+import code.monsters.act1.enemies.birds.ZapdosEnemy;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -66,6 +69,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 } else if (mo instanceof RhyhornEnemy) {
                     this.bg = this.atlas.findRegion("mod/Desert");
+                } else if (mo instanceof MoltresEnemy || mo instanceof ZapdosEnemy || mo instanceof ArticunoEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

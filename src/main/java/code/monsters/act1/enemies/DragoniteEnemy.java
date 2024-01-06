@@ -55,7 +55,7 @@ public class DragoniteEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 250.0f, 290.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Dragonite/Dragonite.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
-        setHp(calcAscensionTankiness(300));
+        setHp(calcAscensionTankiness(280));
         addMove(DRAGON_DANCE, Intent.BUFF);
         addMove(OUTRAGE, Intent.ATTACK, OUTRAGE_BASE_DAMAGE);
         addMove(STUNNED, Intent.STUN);

@@ -46,5 +46,17 @@
   "${ModID}:RockHead": {
     "NAME": "Rock Head",
     "DESCRIPTIONS": ["Deals bonus damage equal to the amount of #yPlated #yArmor this creature has."]
+  },
+  "${ModID}:RetributionMoltres": {
+    "NAME": "Retribution of Moltres",
+    "DESCRIPTIONS": ["Upon the defeat of both other #yBirds, shuffle #b", " #yBurns into your discard pile."]
+  },
+  "${ModID}:RetributionZapdos": {
+    "NAME": "Retribution of Zapdos",
+    "DESCRIPTIONS": ["Upon the defeat of both other #yBirds, gains #b", " #yPlated Armor."]
+  },
+  "${ModID}:RetributionArticuno": {
+    "NAME": "Retribution of Articuno",
+    "DESCRIPTIONS": ["Upon the defeat of both other #yBirds, gains #b", " #yStrength next turn."]
   }
 }

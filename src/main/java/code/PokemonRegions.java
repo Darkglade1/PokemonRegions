@@ -12,6 +12,9 @@ import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
 import code.monsters.act1.enemies.*;
+import code.monsters.act1.enemies.birds.ArticunoEnemy;
+import code.monsters.act1.enemies.birds.MoltresEnemy;
+import code.monsters.act1.enemies.birds.ZapdosEnemy;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
@@ -151,6 +154,9 @@ public class PokemonRegions implements
     public static final String WOUND = makeUIPath("Wound.png");
     public static Texture WOUND_TEXTURE;
 
+    public static final String FROZEN = makeUIPath("Frozen.png");
+    public static Texture FROZEN_TEXTURE;
+
     public static final String PAIN = makeUIPath("Pain.png");
     public static Texture PAIN_TEXTURE;
 
@@ -250,16 +256,17 @@ public class PokemonRegions implements
         SLIMED_TEXTURE = TexLoader.getTexture(SLIMED);
         VOID_TEXTURE = TexLoader.getTexture(VOID);
         WOUND_TEXTURE = TexLoader.getTexture(WOUND);
+        FROZEN_TEXTURE = TexLoader.getTexture(FROZEN);
         PAIN_TEXTURE = TexLoader.getTexture(PAIN);
 
         CustomIntent.add(new MassAttackIntent());
         BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
         BaseMod.registerCustomReward(
                 PokemonRewardEnum.POKEMON_REWARD,
-                (rewardSave) -> { // this handles what to do when this quest type is loaded.
+                (rewardSave) -> { // this handles what to do when this type is loaded.
                     return new PokemonReward(rewardSave.id);
                 },
-                (customReward) -> { // this handles what to do when this quest type is saved.
+                (customReward) -> { // this handles what to do when this type is saved.
                     return new RewardSave(customReward.type.toString(), ((PokemonReward)customReward).card.cardID, 0, 0);
                 });
 
@@ -268,14 +275,20 @@ public class PokemonRegions implements
 
         //Bosses
         kanto.addBoss(DragoniteEnemy.ID, (BaseMod.GetMonster) DragoniteEnemy::new, makeMonsterPath("Dragonite/DragoniteMap.png"), makeMonsterPath("Dragonite/DragoniteMapOutline.png"));
+        BaseMod.addMonster(EncounterIDs.LEGENDARY_BIRDS, "The Legendary Birds", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new ArticunoEnemy(-450.0F, 0.0F),
+                        new MoltresEnemy(-150.0F, 150.0F),
+                        new ZapdosEnemy(150.0F, 150.0F)
+                }));
 
         //Elites
         BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);
         BaseMod.addMonster(EncounterIDs.GHOST_SQUAD, "Ghost Squad", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new GastlyEnemy(-450.0F, 0.0F),
-                        new HaunterEnemy(-150.0F, 0.0F),
-                        new GengarEnemy(150.0F, 0.0F)
+                        new GastlyEnemy(-450.0F, 100.0F),
+                        new HaunterEnemy(-150.0F, 100.0F),
+                        new GengarEnemy(150.0F, 100.0F)
                 }));
         BaseMod.addMonster(GolemEnemy.ID, (BaseMod.GetMonster) GolemEnemy::new);
 

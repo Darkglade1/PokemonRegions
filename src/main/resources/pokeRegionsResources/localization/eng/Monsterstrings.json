@@ -124,5 +124,34 @@
     "NAME": "Rhyhorn",
     "DIALOG": [
     ]
+  },
+  "${ModID}:MoltresEnemy": {
+    "MOVES": [
+      "Incinerate",
+      "Heat Wave"
+    ],
+    "NAME": "Moltres",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:ZapdosEnemy": {
+    "MOVES": [
+      "Discharge",
+      "Drill Peck",
+      "Charge"
+    ],
+    "NAME": "Zapdos",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:ArticunoEnemy": {
+    "MOVES": [
+      "Powder Snow",
+      "Snowscape",
+      "Ice Shard"
+    ],
+    "NAME": "Articuno",
+    "DIALOG": [
+    ]
   }
 }

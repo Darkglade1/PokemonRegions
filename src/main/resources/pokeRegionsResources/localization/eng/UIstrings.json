@@ -91,5 +91,10 @@
       "Removes negative Strength",
       "Summons minions"
     ]
+  },
+  "${ModID}:Frozen": {
+    "TEXT": [
+      "give Retain and Exhaust."
+    ]
   }
 }

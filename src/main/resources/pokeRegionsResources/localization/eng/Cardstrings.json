@@ -230,5 +230,9 @@
       "SUCCESS",
       "FAILURE"
     ]
+  },
+  "${ModID}:Frozen": {
+    "NAME": "Frozen",
+    "DESCRIPTION": "Give a card in your hand Retain and Exhaust."
   }
 }
