@@ -64,7 +64,11 @@ public class Wiz {
     }
 
     public static ArrayList<AbstractMonster> getEnemies() {
-        ArrayList<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
+        ArrayList<AbstractMonster> monsters = new ArrayList<>();
+        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().monsters == null) {
+            return monsters;
+        }
+        monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
         monsters.removeIf(AbstractCreature::isDeadOrEscaped);
         monsters.removeIf(mo -> mo instanceof AbstractPokemonAlly);
         return monsters;

@@ -29,6 +29,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.events.exordium.*;
+import com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
@@ -305,6 +307,16 @@ public class PokemonRegions implements
                         new DiglettEnemy(-200.0F, 0.0F, true),
                         new RhyhornEnemy(50.0F, 0.0F),
                 }));
+
+        // Events
+        BaseMod.addEvent(Sssserpent.ID, Sssserpent.class, Kanto.ID);
+        BaseMod.addEvent(LivingWall.ID, LivingWall.class, Kanto.ID);
+        BaseMod.addEvent(BigFish.ID, BigFish.class, Kanto.ID);
+        BaseMod.addEvent(ScrapOoze.ID, ScrapOoze.class, Kanto.ID);
+        BaseMod.addEvent(ShiningLight.ID, ShiningLight.class, Kanto.ID);
+        BaseMod.addEvent(GoldenIdolEvent.ID, GoldenIdolEvent.class, Kanto.ID);
+        BaseMod.addEvent(GoopPuddle.ID, GoopPuddle.class, Kanto.ID);
+        BaseMod.addEvent(GoldenWing.ID, GoldenWing.class, Kanto.ID);
     }
 
     @Override

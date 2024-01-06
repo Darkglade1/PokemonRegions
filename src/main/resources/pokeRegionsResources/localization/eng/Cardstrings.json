@@ -200,6 +200,17 @@
       " Block."
     ]
   },
+  "${ModID}:Magikarp": {
+    "NAME": "Magikarp",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Splash",
+      "*Tackle",
+      "Do nothing.",
+      "Deal ",
+      " damage."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

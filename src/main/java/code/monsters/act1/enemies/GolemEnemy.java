@@ -63,7 +63,7 @@ public class GolemEnemy extends AbstractPokemonMonster
     public GolemEnemy(final float x, final float y) {
         super(NAME, ID, 140, 0.0F, 0, 160.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Golem/Golem.scml"));
-        setHp(calcAscensionTankiness(110), calcAscensionTankiness(116));
+        setHp(calcAscensionTankiness(120), calcAscensionTankiness(126));
         addMove(ROCK_POLISH, Intent.DEFEND_BUFF);
         addMove(SMACK_DOWM, Intent.ATTACK_DEBUFF, calcAscensionDamage(7));
         addMove(EARTHQUAKE, Intent.ATTACK, calcAscensionDamage(15));

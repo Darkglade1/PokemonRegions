@@ -8,6 +8,7 @@ import code.monsters.AbstractPokemonMonster;
 import code.powers.Outrage;
 import code.util.Details;
 import code.util.TexLoader;
+import code.util.Wiz;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -15,10 +16,10 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import java.util.ArrayList;
@@ -41,7 +42,9 @@ public class DragoniteEnemy extends AbstractPokemonMonster
     public final int OUTRAGE_DAMAGE_INCREASE = calcAscensionSpecial(5);
     public final int STR = 5;
     public final int OUTRAGE_BASE_TURNS = 2;
-    public final int OUTRAGE_DAMAGE_THRESHOLD = 25;
+    public final int OUTRAGE_DAMAGE_THRESHOLD = 30;
+
+    private AbstractPower outrage;
 
     public DragoniteEnemy() {
         this(0.0f, 0.0f);
@@ -73,12 +76,16 @@ public class DragoniteEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case DRAGON_DANCE: {
                 applyToTarget(this, this, new StrengthPower(this, STR));
-                applyToTarget(this, this, new Outrage(this, OUTRAGE_BASE_TURNS, OUTRAGE_DAMAGE_THRESHOLD));
+                outrage = new Outrage(this, OUTRAGE_BASE_TURNS, OUTRAGE_DAMAGE_THRESHOLD);
+                applyToTarget(this, this, outrage);
                 break;
             }
             case OUTRAGE: {
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+                if (outrage.amount == 1) {
+                    Wiz.makePowerRemovable(outrage);
+                }
                 atb(new ReducePowerAction(this, this, Outrage.POWER_ID, 1));
                 int newDamage = moves.get(OUTRAGE).baseDamage += OUTRAGE_DAMAGE_INCREASE;
                 addMove(OUTRAGE, Intent.ATTACK, newDamage);
@@ -123,6 +130,12 @@ public class DragoniteEnemy extends AbstractPokemonMonster
             }
         }
         PokemonRegions.intents.put(this, details);
+    }
+
+    @Override
+    public void die(boolean triggerRelics) {
+        super.die(triggerRelics);
+        onBossVictoryLogic();
     }
 
     @Override
