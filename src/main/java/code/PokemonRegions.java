@@ -275,12 +275,12 @@ public class PokemonRegions implements
 
         //Bosses
         kanto.addBoss(DragoniteEnemy.ID, (BaseMod.GetMonster) DragoniteEnemy::new, makeMonsterPath("Dragonite/DragoniteMap.png"), makeMonsterPath("Dragonite/DragoniteMapOutline.png"));
-        BaseMod.addMonster(EncounterIDs.LEGENDARY_BIRDS, "The Legendary Birds", () -> new MonsterGroup(
+        kanto.addBoss(EncounterIDs.LEGENDARY_BIRDS, "The Legendary Birds", () -> new MonsterGroup(
                 new AbstractMonster[]{
                         new ArticunoEnemy(-450.0F, 0.0F),
                         new MoltresEnemy(-150.0F, 150.0F),
                         new ZapdosEnemy(150.0F, 150.0F)
-                }));
+                }), makeMonsterPath("Moltres/BirdMap.png"), makeMonsterPath("Moltres/BirdMapOutline.png"));
 
         //Elites
         BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);

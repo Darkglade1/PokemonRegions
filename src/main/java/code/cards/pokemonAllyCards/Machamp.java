@@ -19,7 +19,7 @@ public class Machamp extends AbstractAllyPokemonCard {
     public static final int MAX_STAMINA = 5;
 
     public Machamp() {
-        super(ID, CardRarity.RARE);
+        super(ID, CardRarity.UNCOMMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;

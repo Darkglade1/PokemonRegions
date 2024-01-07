@@ -16,11 +16,11 @@ public class Gastly extends AbstractAllyPokemonCard {
     public static final int MOVE_2_HP_COST = 5;
     public static final int MOVE_2_INTANGIBLE = 1;
     public static final int MOVE_1_STAMINA_COST = 0;
-    public static final int MOVE_2_STAMINA_COST = 3;
-    public static final int MAX_STAMINA = 4;
+    public static final int MOVE_2_STAMINA_COST = 2;
+    public static final int MAX_STAMINA = 3;
 
     public Gastly() {
-        super(ID, CardRarity.COMMON);
+        super(ID, CardRarity.UNCOMMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;

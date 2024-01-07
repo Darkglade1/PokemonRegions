@@ -32,11 +32,11 @@
     "DESCRIPTIONS": ["Receives #b", "% less damage from attacks."]
   },
   "${ModID}:TypeAdvantage": {
-    "NAME": "Type Advantage",
+    "NAME": "Imperfect Armor",
     "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy next turn. Cannot be triggered again next turn."]
   },
   "${ModID}:SuperEffective": {
-    "NAME": "Super-Effective",
+    "NAME": "Exposed Weakness",
     "DESCRIPTIONS": ["Receives #b", "% more damage from attacks and disables the effect of #ySturdy."]
   },
   "${ModID}:NoGuard": {

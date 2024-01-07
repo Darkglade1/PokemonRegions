@@ -1,7 +1,7 @@
 {
   "${ModID}:PokemonTutorial": {
     "TEXT": [
-      "Your #yPokemon will assist you in battle. You can command them to use specific moves and attack specific targets by clicking the buttons above their intent."
+      "Your #yPokemon will assist you in battle. You can command them to use specific moves by clicking the buttons above their intent. In multi-enemy encounters, you can direct them to use single-target moves against a specific enemy."
     ],
     "LABEL": [
       "Your Pokemon"
