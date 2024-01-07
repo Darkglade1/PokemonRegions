@@ -102,5 +102,18 @@
     "TEXT": [
       "Choose cards to exhaust."
     ]
+  },
+  "${ModID}:PokeballMove": {
+    "TEXT": [
+      "Throw Pokeball",
+      "Spend [E] to use a #yPokeball and attempt to capture a #yPokemon.",
+      "There are no Pokemon to catch.",
+      "I have no Pokeballs left.",
+      "Not enough Energy.",
+      "SUCCESS",
+      "FAILURE",
+      "Capture chance: ",
+      "%"
+    ]
   }
 }

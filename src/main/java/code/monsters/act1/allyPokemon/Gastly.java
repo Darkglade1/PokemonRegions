@@ -28,7 +28,7 @@ public class Gastly extends AbstractPokemonAlly
         this.allyCard = allyCard;
         setStaminaInfo(allyCard);
 
-        move1Intent = Intent.DEBUFF;
+        move1Intent = Intent.MAGIC;
         move2Intent = Intent.BUFF;
         addMove(MOVE_1, move1Intent);
         addMove(MOVE_2, move2Intent);

@@ -3,9 +3,7 @@
     "NAME": "Pokeball Belt",
     "FLAVOR": "Watch out for the tall grass.",
     "DESCRIPTIONS": [
-      "You have #b", " #yPokeballs. NL You can add a #yPokeball to your hand during combat by #yclicking this relic's associated button. NL Captured #yPokemon are obtained at the end of combat.",
-      "Grab a Pokeball",
-      "Add a Pokeball to your hand."
+      "You have #b", " #yPokeballs. NL You can attempt to catch #yPokemon during combat by #yclicking this relic's associated button. NL Captured #yPokemon are obtained at the end of combat."
     ]
   }
 }

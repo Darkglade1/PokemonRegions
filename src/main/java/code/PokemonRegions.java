@@ -36,6 +36,7 @@ import com.megacrit.cardcrawl.events.exordium.*;
 import com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -64,7 +65,8 @@ public class PokemonRegions implements
         AddAudioSubscriber,
         PostInitializeSubscriber,
         StartGameSubscriber,
-        PostBattleSubscriber {
+        PostBattleSubscriber,
+        PostRenderSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -404,6 +406,13 @@ public class PokemonRegions implements
             for (TopPanelItem item : itemsToRemove) {
                 BaseMod.removeTopPanelItem(item);
             }
+        }
+    }
+
+    @Override
+    public void receivePostRender(SpriteBatch spriteBatch) {
+        if (!AbstractDungeon.isScreenUp && !PokeballMove.captureChanceMessage.equals("") && PokeballMove.hoveredMonster != null) {
+            FontHelper.renderFontCentered(spriteBatch, FontHelper.topPanelInfoFont, PokeballMove.captureChanceMessage, PokeballMove.hoveredMonster.intentHb.cX, PokeballMove.hoveredMonster.intentHb.cY, PokeballMove.textColor);
         }
     }
 

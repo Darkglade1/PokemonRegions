@@ -256,18 +256,6 @@
     "NAME": "Starter Pokemon",
     "DESCRIPTION": "Your #yStarter #yPokemon is automatically sent out at the start of battle. If your #yStarter #yPokemon has #b0 #yStamina at the end of battle, it will regain #b1 #yStamina."
   },
-  "${ModID}:Pokeball": {
-    "NAME": "Pokeball",
-    "DESCRIPTION": "Decrement your number of *Pokeballs and attempt to capture the *Pokemon. Hover this card over the *Pokemon to preview capture chance.",
-    "EXTENDED_DESCRIPTION": [
-      "Capture chance: ",
-      "%",
-      "I can only catch Pokemon.",
-      "I have no Pokeballs left.",
-      "SUCCESS",
-      "FAILURE"
-    ]
-  },
   "${ModID}:Frozen": {
     "NAME": "Frozen",
     "DESCRIPTION": "Give a card in your hand Retain and Exhaust."
