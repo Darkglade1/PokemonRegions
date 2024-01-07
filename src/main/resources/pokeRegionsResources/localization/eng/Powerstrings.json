@@ -49,14 +49,14 @@
   },
   "${ModID}:RetributionMoltres": {
     "NAME": "Retribution of Moltres",
-    "DESCRIPTIONS": ["Upon the defeat of both other #yBirds, shuffle #b", " #yBurns into your discard pile."]
+    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, shuffle #b", " #yBurns into your discard pile."]
   },
   "${ModID}:RetributionZapdos": {
     "NAME": "Retribution of Zapdos",
-    "DESCRIPTIONS": ["Upon the defeat of both other #yBirds, gains #b", " #yPlated Armor."]
+    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, gains #b", " #yPlated #yArmor."]
   },
   "${ModID}:RetributionArticuno": {
     "NAME": "Retribution of Articuno",
-    "DESCRIPTIONS": ["Upon the defeat of both other #yBirds, gains #b", " #yStrength next turn."]
+    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, gains #b", " #yStrength next turn."]
   }
 }

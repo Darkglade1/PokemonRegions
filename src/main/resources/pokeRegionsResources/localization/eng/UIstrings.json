@@ -26,7 +26,8 @@
       " damage to ALL other characters (including you)",
       ".",
       " times.",
-      " damage to ALL enemies"
+      " damage to ALL enemies",
+      "Your #gPokemon intends to use #ymysterious #ymagic."
     ]
   },
   "${ModID}:MassAttackIntent": {
@@ -95,6 +96,11 @@
   "${ModID}:Frozen": {
     "TEXT": [
       "give Retain and Exhaust."
+    ]
+  },
+  "${ModID}:ExhaustDrawPile": {
+    "TEXT": [
+      "Choose cards to exhaust."
     ]
   }
 }

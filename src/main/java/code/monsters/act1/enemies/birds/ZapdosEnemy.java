@@ -3,7 +3,7 @@ package code.monsters.act1.enemies.birds;
 import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
 import code.PokemonRegions;
-import code.cards.pokemonAllyCards.Dragonite;
+import code.cards.pokemonAllyCards.Zapdos;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.AbstractLambdaPower;
 import code.powers.BetterPlatedArmor;
@@ -42,7 +42,7 @@ public class ZapdosEnemy extends AbstractPokemonMonster
     private static final byte DRILL_PECK = 1;
     private static final byte CHARGE = 2;
 
-    public final int PLATED_ARMOR = 15;
+    public final int PLATED_ARMOR = 10;
     public final int BASE_STR = 1;
     public final int ALONE_STR = calcAscensionSpecial(3);
     public final int DEBUFF = 1;
@@ -64,7 +64,7 @@ public class ZapdosEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Zapdos/Zapdos.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(100));
-        addMove(DISCHARGE, Intent.ATTACK_DEBUFF, calcAscensionDamage(7));
+        addMove(DISCHARGE, Intent.ATTACK_DEBUFF, calcAscensionDamage(6));
         addMove(DRILL_PECK, Intent.ATTACK, calcAscensionDamage(10));
         addMove(CHARGE, Intent.BUFF);
     }
@@ -87,15 +87,11 @@ public class ZapdosEnemy extends AbstractPokemonMonster
             }
         }
         retributionPower = new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, PLATED_ARMOR) {
-            private boolean triggered = false;
 
             @Override
             public void onSpecificTrigger() {
-                if (!triggered) {
-                    triggered = true;
-                    flash();
-                    applyToTarget(owner, owner, new BetterPlatedArmor(owner, amount));
-                }
+                flash();
+                applyToTarget(owner, owner, new BetterPlatedArmor(owner, amount));
             }
 
             @Override
@@ -106,11 +102,9 @@ public class ZapdosEnemy extends AbstractPokemonMonster
         applyToTarget(this, this, retributionPower);
     }
 
-    public void checkBirdsDead() {
-        if (moltres.isDeadOrEscaped() && articuno.isDeadOrEscaped()) {
-            retributionPower.onSpecificTrigger();
-            setDetailedIntents();
-        }
+    public void birdsDead() {
+        retributionPower.onSpecificTrigger();
+        setDetailedIntents();
     }
 
     @Override
@@ -195,10 +189,10 @@ public class ZapdosEnemy extends AbstractPokemonMonster
     public void die(boolean triggerRelics) {
         super.die(triggerRelics);
         if (!moltres.isDeadOrEscaped()) {
-            moltres.checkBirdsDead();
+            moltres.birdsDead();
         }
         if (!articuno.isDeadOrEscaped()) {
-            articuno.checkBirdsDead();
+            articuno.birdsDead();
         }
         if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             onBossVictoryLogic();
@@ -207,7 +201,7 @@ public class ZapdosEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Zapdos();
     }
 
 }

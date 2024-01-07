@@ -4,7 +4,7 @@ import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
 import code.PokemonRegions;
-import code.cards.pokemonAllyCards.Dragonite;
+import code.cards.pokemonAllyCards.Moltres;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.AbstractLambdaPower;
 import code.util.Details;
@@ -37,7 +37,7 @@ public class MoltresEnemy extends AbstractPokemonMonster
     private static final byte INCINERATE = 0;
     private static final byte HEAT_WAVE = 1;
     public final int STATUS = 1;
-    public final int POWER_STATUS = 3;
+    public final int POWER_STATUS = 2;
 
     private final AbstractCard status;
     private ZapdosEnemy zapdos;
@@ -58,7 +58,7 @@ public class MoltresEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Moltres/Moltres.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(100));
-        addMove(INCINERATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(8));
+        addMove(INCINERATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(7));
         addMove(HEAT_WAVE, Intent.ATTACK, calcAscensionDamage(5), 2);
         status = new Burn();
         if (AbstractDungeon.ascensionLevel >= 19) {
@@ -85,15 +85,11 @@ public class MoltresEnemy extends AbstractPokemonMonster
             }
         }
         retributionPower = new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_STATUS) {
-            private boolean triggered = false;
 
             @Override
             public void onSpecificTrigger() {
-                if (!triggered) {
-                    triggered = true;
-                    flash();
-                    intoDiscardMo(status.makeStatEquivalentCopy(), amount);
-                }
+                flash();
+                intoDiscardMo(status.makeStatEquivalentCopy(), amount);
             }
 
             @Override
@@ -104,10 +100,8 @@ public class MoltresEnemy extends AbstractPokemonMonster
         applyToTarget(this, this, retributionPower);
     }
 
-    public void checkBirdsDead() {
-        if (zapdos.isDeadOrEscaped() && articuno.isDeadOrEscaped()) {
-            retributionPower.onSpecificTrigger();
-        }
+    public void birdsDead() {
+        retributionPower.onSpecificTrigger();
     }
 
     @Override
@@ -162,10 +156,10 @@ public class MoltresEnemy extends AbstractPokemonMonster
     public void die(boolean triggerRelics) {
         super.die(triggerRelics);
         if (!zapdos.isDeadOrEscaped()) {
-            zapdos.checkBirdsDead();
+            zapdos.birdsDead();
         }
         if (!articuno.isDeadOrEscaped()) {
-            articuno.checkBirdsDead();
+            articuno.birdsDead();
         }
         if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             onBossVictoryLogic();
@@ -174,7 +168,7 @@ public class MoltresEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Moltres();
     }
 
 }

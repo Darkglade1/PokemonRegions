@@ -4,18 +4,15 @@ import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
 import code.PokemonRegions;
 import code.cards.Frozen;
-import code.cards.pokemonAllyCards.Dragonite;
+import code.cards.pokemonAllyCards.Articuno;
 import code.monsters.AbstractPokemonMonster;
 import code.powers.AbstractLambdaPower;
 import code.powers.MonsterNextTurnBlockPower;
 import code.util.Details;
-import code.util.TexLoader;
 import code.util.Wiz;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -47,7 +44,7 @@ public class ArticunoEnemy extends AbstractPokemonMonster
     public final int SOLO_BLOCK = 12;
     public final int DEBUFF = 1;
     public final int STATUS = calcAscensionSpecial(2);
-    public final int POWER_STR = 3;
+    public final int POWER_STR = 2;
     private MoltresEnemy moltres;
     private ZapdosEnemy zapdos;
     private AbstractPower retributionPower;
@@ -89,15 +86,11 @@ public class ArticunoEnemy extends AbstractPokemonMonster
             }
         }
         retributionPower = new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_STR) {
-            private boolean triggered = false;
 
             @Override
             public void onSpecificTrigger() {
-                if (!triggered) {
-                    triggered = true;
-                    flash();
-                    applyToTargetNextTurn(owner, owner, new StrengthPower(owner, amount));
-                }
+                flash();
+                applyToTargetNextTurn(owner, owner, new StrengthPower(owner, amount));
             }
 
             @Override
@@ -108,11 +101,9 @@ public class ArticunoEnemy extends AbstractPokemonMonster
         applyToTarget(this, this, retributionPower);
     }
 
-    public void checkBirdsDead() {
-        if (moltres.isDeadOrEscaped() && zapdos.isDeadOrEscaped()) {
-            retributionPower.onSpecificTrigger();
-            setDetailedIntents();
-        }
+    public void birdsDead() {
+        retributionPower.onSpecificTrigger();
+        setDetailedIntents();
     }
 
     @Override
@@ -198,10 +189,10 @@ public class ArticunoEnemy extends AbstractPokemonMonster
     public void die(boolean triggerRelics) {
         super.die(triggerRelics);
         if (!moltres.isDeadOrEscaped()) {
-            moltres.checkBirdsDead();
+            moltres.birdsDead();
         }
         if (!zapdos.isDeadOrEscaped()) {
-            zapdos.checkBirdsDead();
+            zapdos.birdsDead();
         }
         if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             onBossVictoryLogic();
@@ -210,7 +201,7 @@ public class ArticunoEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Articuno();
     }
 
 }

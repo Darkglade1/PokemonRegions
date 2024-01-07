@@ -211,6 +211,43 @@
       " damage."
     ]
   },
+  "${ModID}:Articuno": {
+    "NAME": "Articuno",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Snowscape",
+      "*Future *Sight",
+      "Channel ",
+      " Frost.",
+      "Scry ",
+      "."
+    ]
+  },
+  "${ModID}:Zapdos": {
+    "NAME": "Zapdos",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Charge",
+      "*U-turn",
+      "Channel ",
+      " Lightning.",
+      "Put a card from your discard pile on top of your draw pile ",
+      " times."
+    ]
+  },
+  "${ModID}:Moltres": {
+    "NAME": "Moltres",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Heat *Wave",
+      "*Incinerate",
+      "Deal ",
+      " damage and apply ",
+      " pokeregions:Burn.",
+      "Exhaust up to ",
+      " cards from your draw pile."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
