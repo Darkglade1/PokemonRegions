@@ -38,9 +38,6 @@ public class Zapdos extends AbstractPokemonAlly
     @Override
     public void takeTurn() {
         super.takeTurn();
-        if(info.base > -1) {
-            info.applyPowers(this, target);
-        }
         switch (this.nextMove) {
             case MOVE_1: {
                 for(int i = 0; i < code.cards.pokemonAllyCards.Zapdos.MOVE_1_ORBS; ++i) {

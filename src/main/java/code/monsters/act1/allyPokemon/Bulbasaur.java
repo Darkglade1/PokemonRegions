@@ -44,9 +44,6 @@ public class Bulbasaur extends AbstractPokemonAlly
     @Override
     public void takeTurn() {
         super.takeTurn();
-        if(info.base > -1) {
-            info.applyPowers(this, target);
-        }
         switch (this.nextMove) {
             case MOVE_1: {
                 runAnim("Whip");

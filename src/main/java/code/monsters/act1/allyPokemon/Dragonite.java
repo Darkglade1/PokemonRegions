@@ -37,9 +37,6 @@ public class Dragonite extends AbstractPokemonAlly
     @Override
     public void takeTurn() {
         super.takeTurn();
-        if(info.base > -1) {
-            info.applyPowers(this, target);
-        }
         switch (this.nextMove) {
             case MOVE_1: {
                 applyToTarget(adp(), this, new StrengthPower(adp(), code.cards.pokemonAllyCards.Dragonite.MOVE_1_BUFF));

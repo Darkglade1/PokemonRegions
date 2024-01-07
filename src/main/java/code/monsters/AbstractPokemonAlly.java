@@ -170,6 +170,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 this.isDone = true;
             }
         });
+        if(info != null && target != null && info.base > -1) {
+            info.applyPowers(this, target);
+        }
     }
 
     public void postTurn() {

@@ -38,9 +38,6 @@ public class Gengar extends AbstractPokemonAlly
     @Override
     public void takeTurn() {
         super.takeTurn();
-        if(info.base > -1) {
-            info.applyPowers(this, target);
-        }
         switch (this.nextMove) {
             case MOVE_1: {
                 atb(new BetterDrawPileToHandAction(code.cards.pokemonAllyCards.Gengar.MOVE_1_CARDS));

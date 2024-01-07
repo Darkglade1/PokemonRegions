@@ -43,9 +43,6 @@ public class Arbok extends AbstractPokemonAlly
     @Override
     public void takeTurn() {
         super.takeTurn();
-        if(info.base > -1) {
-            info.applyPowers(this, target);
-        }
         switch (this.nextMove) {
             case MOVE_1: {
                 applyToTarget(target, this, new ToxicPower(target,  code.cards.pokemonAllyCards.Arbok.MOVE_1_TOXIC));
