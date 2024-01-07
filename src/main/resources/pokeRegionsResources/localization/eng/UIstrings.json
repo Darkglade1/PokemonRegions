@@ -62,7 +62,8 @@
       "Switch your active Pokemon.",
       "I have no Pokemon that can switch in.",
       "Choose a Pokemon to send out.",
-      "Switch Pokemon"
+      "Switch Pokemon",
+      "Cancel"
     ]
   },
   "${ModID}:HealPokemonCampfire": {

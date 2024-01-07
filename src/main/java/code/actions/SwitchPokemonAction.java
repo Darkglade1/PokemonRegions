@@ -37,7 +37,8 @@ public class SwitchPokemonAction extends AbstractGameAction {
                 }
             }
             if (availablePokemon.size() > 0) {
-                AbstractDungeon.gridSelectScreen.open(availablePokemon, 1, TEXT[2], false);
+                AbstractDungeon.gridSelectScreen.open(availablePokemon, 1,  TEXT[2], false, false, true, false);
+                AbstractDungeon.overlayMenu.cancelButton.show(TEXT[4]);
                 this.tickDuration();
             } else {
                 atb(new RemoveMonsterAction(PlayerSpireFields.activePokemon.get(adp())));

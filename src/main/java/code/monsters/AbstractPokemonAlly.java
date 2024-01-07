@@ -356,7 +356,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         if (this.nextMove == -1) {
             return;
         }
-        applyPowers(target);
+        if (target != null) {
+            applyPowers(target);
+        }
     }
 
     @Override

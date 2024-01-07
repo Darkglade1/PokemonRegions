@@ -48,8 +48,8 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     public PokemonTeamButton() {
         super(IMG, ID);
         pokeballMove = new PokeballMove();
-        pokeballMove.setX(1775.0f * Settings.scale);
-        pokeballMove.setY(150.0f * Settings.scale);
+        pokeballMove.setX(1750.0f * Settings.scale);
+        pokeballMove.setY(125.0f * Settings.scale);
     }
 
     @Override
