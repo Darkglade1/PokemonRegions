@@ -11,7 +11,7 @@ import static code.PokemonRegions.makeID;
 @NoPools
 public class Vulpix extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Vulpix.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 4;
+    public static final int MOVE_1_DAMAGE = 6;
     public static final int MOVE_1_BURN = 1;
     public static final int MOVE_2_DAMAGE = 5;
     public static final int MOVE_2_HITS = 2;
