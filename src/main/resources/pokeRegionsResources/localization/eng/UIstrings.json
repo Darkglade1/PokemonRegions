@@ -43,9 +43,6 @@
   },
   "${ModID}:PokemonTeamButton": {
     "TEXT": [
-      "Your Pokemon (Max ",
-      ")",
-      "Return",
       "Your Team",
       "View your team of Pokemon.",
       "Your team is full. Choose a non-Starter Pokemon to release."

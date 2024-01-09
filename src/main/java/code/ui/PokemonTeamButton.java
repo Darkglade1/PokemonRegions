@@ -49,8 +49,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
     @Override
     protected void onClick() {
         CardCrawlGame.sound.play("DECK_OPEN");
-        CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
-        String tipMsg = TEXT[0] + MAX_TEAM_SIZE + TEXT[1];
         if (AbstractDungeon.isScreenUp) {
             AbstractDungeon.dynamicBanner.hide();
             AbstractDungeon.overlayMenu.cancelButton.hide();
@@ -103,7 +101,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
         }
         if (this.hitbox.hovered) {
-            TipHelper.renderGenericTip(1550.0F * Settings.scale, (float)Settings.HEIGHT - 120.0F * Settings.scale, TEXT[3], TEXT[4]);
+            TipHelper.renderGenericTip(1550.0F * Settings.scale, (float)Settings.HEIGHT - 120.0F * Settings.scale, TEXT[0], TEXT[1]);
         }
     }
 
@@ -135,7 +133,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
                 AbstractDungeon.previousScreen = AbstractDungeon.screen;
             }
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-            AbstractDungeon.gridSelectScreen.open(releaseablePokemon, 1, TEXT[5], false, false, false, true);
+            AbstractDungeon.gridSelectScreen.open(releaseablePokemon, 1, TEXT[2], false, false, false, true);
         }
     }
 
