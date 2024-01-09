@@ -6,6 +6,7 @@ import code.BetterSpriterAnimation;
 import code.PokemonRegions;
 import code.powers.InvisibleBarricadePower;
 import code.util.Details;
+import code.util.PokeballMove;
 import code.util.Wiz;
 import code.vfx.VFXActionButItCanFizzle;
 import code.vfx.WaitEffect;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,6 +38,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     protected boolean firstMove = true;
     protected DamageInfo info;
     protected int multiplier;
+    protected PokeballMove pokeballMove;
     private static final float ASCENSION_DAMAGE_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_TANK_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_SPECIAL_BUFF_PERCENT = 1.5f;
@@ -58,6 +61,11 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     @Override
     public void usePreBattleAction() {
         applyToTarget(this, this, new InvisibleBarricadePower(this));
+        if (!(this instanceof AbstractPokemonAlly)) {
+            pokeballMove = new PokeballMove(this);
+            pokeballMove.setX(this.intentHb.cX - ((32.0f - 80.0f) * Settings.scale));
+            pokeballMove.setY(this.intentHb.y);
+        }
     }
 
     @Override
@@ -179,6 +187,17 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
             }
         }
         super.render(sb);
+        if (pokeballMove != null && !this.isDeadOrEscaped()) {
+            pokeballMove.render(sb);
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        if (pokeballMove != null && !this.isDeadOrEscaped()) {
+            pokeballMove.update();
+        }
     }
 
     @Override

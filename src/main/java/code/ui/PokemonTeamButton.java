@@ -7,9 +7,7 @@ import basemod.TopPanelItem;
 import basemod.abstracts.CustomSavable;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import code.cards.AbstractAllyPokemonCard;
-import code.monsters.AbstractPokemonAlly;
 import code.patches.PlayerSpireFields;
-import code.util.PokeballMove;
 import code.util.Tags;
 import code.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
@@ -43,13 +41,9 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
 
     public static final int MAX_TEAM_SIZE = 5;
     private boolean releasingPokemon = false;
-    public final PokeballMove pokeballMove;
 
     public PokemonTeamButton() {
         super(IMG, ID);
-        pokeballMove = new PokeballMove();
-        pokeballMove.setX(1750.0f * Settings.scale);
-        pokeballMove.setY(125.0f * Settings.scale);
     }
 
     @Override
@@ -71,9 +65,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         super.render(sb);
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelAmountFont, Integer.toString(pokemonTeam.size()), this.x + 58.0f * Settings.scale, this.y + 25.0f * Settings.scale, Color.WHITE.cpy());
-        if (pokeballMove != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            pokeballMove.render(sb);
-        }
     }
 
     @Override
@@ -127,9 +118,6 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             PlayerSpireFields.pokemonTeam.get(adp()).removeCard(c);
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-        }
-        if (pokeballMove != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            pokeballMove.update();
         }
     }
 

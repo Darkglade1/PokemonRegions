@@ -65,8 +65,7 @@ public class PokemonRegions implements
         AddAudioSubscriber,
         PostInitializeSubscriber,
         StartGameSubscriber,
-        PostBattleSubscriber,
-        PostRenderSubscriber {
+        PostBattleSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -406,13 +405,6 @@ public class PokemonRegions implements
             for (TopPanelItem item : itemsToRemove) {
                 BaseMod.removeTopPanelItem(item);
             }
-        }
-    }
-
-    @Override
-    public void receivePostRender(SpriteBatch spriteBatch) {
-        if (!AbstractDungeon.isScreenUp && !PokeballMove.captureChanceMessage.equals("") && PokeballMove.hoveredMonster != null) {
-            FontHelper.renderFontCentered(spriteBatch, FontHelper.topPanelInfoFont, PokeballMove.captureChanceMessage, PokeballMove.hoveredMonster.intentHb.cX, PokeballMove.hoveredMonster.intentHb.cY, PokeballMove.textColor);
         }
     }
 

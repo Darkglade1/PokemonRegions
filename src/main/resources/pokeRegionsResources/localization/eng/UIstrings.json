@@ -106,8 +106,8 @@
   },
   "${ModID}:PokeballMove": {
     "TEXT": [
-      "Throw Pokeball",
-      "Spend [E] to use a #yPokeball and attempt to capture a #yPokemon.",
+      "Throw a Pokeball at ",
+      "Spend [E] to use a #yPokeball and attempt to capture this #yPokemon.",
       "There are no Pokemon to catch.",
       "I have no Pokeballs left.",
       "Not enough Energy.",
