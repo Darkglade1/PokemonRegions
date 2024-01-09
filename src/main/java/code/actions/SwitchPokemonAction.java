@@ -64,6 +64,7 @@ public class SwitchPokemonAction extends AbstractGameAction {
                     if (pokemon != null) {
                         atb(new RemoveMonsterAction(PlayerSpireFields.activePokemon.get(adp())));
                         PlayerSpireFields.activePokemon.set(adp(), pokemon);
+                        PlayerSpireFields.mostRecentlyUsedPokemonCard.set(adp(), pokemonCard);
                         atb(new SpawnMonsterAction(pokemon, false));
                         atb(new UsePreBattleActionAction(pokemon));
                     }

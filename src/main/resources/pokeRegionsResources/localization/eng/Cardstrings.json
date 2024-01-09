@@ -254,7 +254,7 @@
   },
   "${ModID}:StarterKeyword": {
     "NAME": "Starter Pokemon",
-    "DESCRIPTION": "Your #yStarter #yPokemon is automatically sent out at the start of battle. If your #yStarter #yPokemon has #b0 #yStamina at the end of battle, it will regain #b1 #yStamina."
+    "DESCRIPTION": "If your #yStarter #yPokemon has #b0 #yStamina at the end of battle, it will regain #b1 #yStamina."
   },
   "${ModID}:Frozen": {
     "NAME": "Frozen",

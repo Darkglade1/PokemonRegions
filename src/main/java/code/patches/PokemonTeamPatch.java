@@ -16,9 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static code.util.Wiz.adp;
 import static code.util.Wiz.atb;
 
-
 public class PokemonTeamPatch {
-
     @SpirePatch(
             clz = AbstractPlayer.class,
             method = "preBattlePrep"
@@ -27,13 +25,18 @@ public class PokemonTeamPatch {
         public static void Postfix(AbstractPlayer __instance) {
             CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
             AbstractPokemonAlly pokemon = null;
-            for (AbstractCard card : pokemonTeam.group) {
-                AbstractAllyPokemonCard pokemonCard;
-                if (card instanceof AbstractAllyPokemonCard) {
-                    pokemonCard = (AbstractAllyPokemonCard)card;
-                    if (pokemonCard.hasTag(Tags.STARTER_POKEMON)) {
-                        pokemon = pokemonCard.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
-                        break;
+            AbstractAllyPokemonCard mostRecent = PlayerSpireFields.mostRecentlyUsedPokemonCard.get(adp());
+            if (mostRecent != null && mostRecent.currentStamina > 0) {
+                pokemon = mostRecent.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
+            } else {
+                for (AbstractCard card : pokemonTeam.group) {
+                    AbstractAllyPokemonCard pokemonCard;
+                    if (card instanceof AbstractAllyPokemonCard) {
+                        pokemonCard = (AbstractAllyPokemonCard)card;
+                        if (pokemonCard.hasTag(Tags.STARTER_POKEMON)) {
+                            pokemon = pokemonCard.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
+                            break;
+                        }
                     }
                 }
             }
