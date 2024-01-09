@@ -51,6 +51,13 @@
       "Your team is full. Choose a non-Starter Pokemon to release."
     ]
   },
+  "${ModID}:PokemonTeamViewScreen": {
+    "TEXT": [
+      "Your Pokemon (Max ",
+      ")",
+      "Return"
+    ]
+  },
   "${ModID}:StaminaCost": {
     "TEXT": [
       "Costs ",

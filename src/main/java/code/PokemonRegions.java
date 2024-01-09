@@ -18,6 +18,7 @@ import code.monsters.act1.enemies.birds.ZapdosEnemy;
 import code.relics.AbstractEasyRelic;
 import code.relics.PokeballBelt;
 import code.ui.PokemonTeamButton;
+import code.ui.PokemonTeamViewScreen;
 import code.util.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -271,6 +272,7 @@ public class PokemonRegions implements
                 (customReward) -> { // this handles what to do when this type is saved.
                     return new RewardSave(customReward.type.toString(), ((PokemonReward)customReward).card.cardID, 0, 0);
                 });
+        BaseMod.addCustomScreen(new PokemonTeamViewScreen());
 
         Kanto kanto = new Kanto();
         kanto.addAct(Exordium.ID);
