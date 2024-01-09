@@ -4,14 +4,13 @@ import code.BetterSpriterAnimation;
 import code.PokemonRegions;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.orbs.Frost;
+import com.megacrit.cardcrawl.powers.MetallicizePower;
 
 import static code.PokemonRegions.makeMonsterPath;
-import static code.util.Wiz.atb;
+import static code.util.Wiz.*;
 
 public class Articuno extends AbstractPokemonAlly
 {
@@ -27,7 +26,7 @@ public class Articuno extends AbstractPokemonAlly
         this.allyCard = allyCard;
         setStaminaInfo(allyCard);
 
-        move1Intent = Intent.MAGIC;
+        move1Intent = Intent.DEFEND_BUFF;
         move2Intent = Intent.BUFF;
         addMove(MOVE_1, move1Intent);
         addMove(MOVE_2, move2Intent);
@@ -39,9 +38,8 @@ public class Articuno extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                for(int i = 0; i < code.cards.pokemonAllyCards.Articuno.MOVE_1_ORBS; ++i) {
-                    atb(new ChannelAction(new Frost()));
-                }
+                block(adp(), code.cards.pokemonAllyCards.Articuno.MOVE_1_METAL);
+                applyToTarget(adp(), this, new MetallicizePower(adp(), code.cards.pokemonAllyCards.Articuno.MOVE_1_METAL));
                 break;
             }
             case MOVE_2: {

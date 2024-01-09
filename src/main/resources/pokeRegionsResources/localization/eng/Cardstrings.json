@@ -217,8 +217,8 @@
     "EXTENDED_DESCRIPTION": [
       "*Snowscape",
       "*Future *Sight",
-      "Channel ",
-      " Frost.",
+      "You gain ",
+      " Block and Metallicize.",
       "Scry ",
       "."
     ]
@@ -227,10 +227,10 @@
     "NAME": "Zapdos",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Charge",
+      "*Chain *Lightning",
       "*U-turn",
-      "Channel ",
-      " Lightning.",
+      "Deal ",
+      " damage to ALL enemies for each enemy in combat.",
       "Put a card from your discard pile on top of your draw pile ",
       " times."
     ]
@@ -243,7 +243,8 @@
       "*Incinerate",
       "Deal ",
       " damage and apply ",
-      " pokeregions:Burn.",
+      " pokeregions:Burn ",
+      " times.",
       "Exhaust up to ",
       " cards from your draw pile."
     ]

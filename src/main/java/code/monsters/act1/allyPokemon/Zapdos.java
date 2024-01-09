@@ -1,14 +1,20 @@
 package code.monsters.act1.allyPokemon;
 
+import basemod.ReflectionHacks;
 import code.BetterSpriterAnimation;
+import code.CustomIntent.IntentEnums;
 import code.PokemonRegions;
+import code.actions.AllyDamageAllEnemiesAction;
+import code.actions.ZapdosMassAttackAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import code.util.Wiz;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.orbs.Lightning;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static code.PokemonRegions.makeMonsterPath;
 import static code.util.Wiz.adp;
@@ -28,9 +34,14 @@ public class Zapdos extends AbstractPokemonAlly
         this.allyCard = allyCard;
         setStaminaInfo(allyCard);
 
-        move1Intent = Intent.MAGIC;
+        move1Intent = IntentEnums.MASS_ATTACK;
         move2Intent = Intent.BUFF;
-        addMove(MOVE_1, move1Intent);
+        int numEnemies = Wiz.getEnemies().size();
+        if (numEnemies > 1) {
+            addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE, numEnemies);
+        } else {
+            addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE);
+        }
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_2;
     }
@@ -40,8 +51,14 @@ public class Zapdos extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                for(int i = 0; i < code.cards.pokemonAllyCards.Zapdos.MOVE_1_ORBS; ++i) {
-                    atb(new ChannelAction(new Lightning()));
+                if (multiplier > 0) {
+                    for(int i = 0; i < multiplier; ++i) {
+                        AllyDamageAllEnemiesAction massAttack = new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE);
+                        atb(new ZapdosMassAttackAction(massAttack));
+                    }
+                } else {
+                    AllyDamageAllEnemiesAction massAttack = new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE);
+                    atb(new ZapdosMassAttackAction(massAttack));
                 }
                 break;
             }
@@ -53,6 +70,23 @@ public class Zapdos extends AbstractPokemonAlly
             }
         }
         postTurn();
+    }
+
+    @Override
+    public void applyPowers() {
+        int numEnemies = Wiz.getEnemies().size();
+        if (numEnemies == 1) {
+            addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE);
+            setMoveShortcut(MOVE_1);
+            ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", -1);
+            ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", false);
+        } else {
+            addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE, numEnemies);
+            setMoveShortcut(MOVE_1);
+            ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", numEnemies);
+            ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", true);
+        }
+        super.applyPowers();
     }
 
 }

@@ -29,7 +29,7 @@ public class Moltres extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK_DEBUFF;
         move2Intent = Intent.BUFF;
-        addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Moltres.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Moltres.MOVE_1_DAMAGE, code.cards.pokemonAllyCards.Moltres.MOVE_1_HITS);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_2;
         move1RequiresTarget = true;
@@ -40,8 +40,12 @@ public class Moltres extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
-                applyToTarget(target, this, new Burn(target,  code.cards.pokemonAllyCards.Moltres.MOVE_1_BURN));
+                for (int i = 0; i < multiplier; i++) {
+                    dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
+                }
+                for (int i = 0; i < multiplier; i++) {
+                    applyToTarget(target, this, new Burn(target,  code.cards.pokemonAllyCards.Moltres.MOVE_1_BURN));
+                }
                 break;
             }
             case MOVE_2: {

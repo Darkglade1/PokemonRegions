@@ -12,7 +12,7 @@ import static code.PokemonRegions.makeID;
 public class Golem extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Golem.class.getSimpleName());
     public static final int MOVE_1_BLOCK = 10;
-    public static final int MOVE_2_DAMAGE = 14;
+    public static final int MOVE_2_DAMAGE = 15;
 
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 2;

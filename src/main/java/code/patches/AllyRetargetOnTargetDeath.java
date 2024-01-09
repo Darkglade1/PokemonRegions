@@ -1,6 +1,7 @@
 package code.patches;
 
 import code.monsters.AbstractPokemonAlly;
+import code.monsters.act1.allyPokemon.Zapdos;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -32,6 +33,8 @@ public class AllyRetargetOnTargetDeath {
                     this.isDone = true;
                 }
             });
+        } else if (activePokemon instanceof Zapdos) {
+            AbstractDungeon.onModifyPower();
         }
     }
 }
