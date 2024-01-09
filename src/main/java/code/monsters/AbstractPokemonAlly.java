@@ -211,7 +211,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             @Override
             public void update() {
                 if (allyCard.currentStamina <= 0) {
-                    att(new SwitchPokemonAction());
+                    att(new SwitchPokemonAction(false));
                 }
                 this.isDone = true;
             }

@@ -19,10 +19,16 @@ import static code.util.Wiz.atb;
 public class SwitchPokemonAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("SwitchPokemon"));
     private static final String[] TEXT = uiStrings.TEXT;
+    private final boolean canCancel;
 
-    public SwitchPokemonAction() {
+    public SwitchPokemonAction(boolean canCancel) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
+        this.canCancel = canCancel;
+    }
+
+    public SwitchPokemonAction() {
+        this(true);
     }
 
     public void update() {
@@ -37,8 +43,12 @@ public class SwitchPokemonAction extends AbstractGameAction {
                 }
             }
             if (availablePokemon.size() > 0) {
-                AbstractDungeon.gridSelectScreen.open(availablePokemon, 1,  TEXT[2], false, false, true, false);
-                AbstractDungeon.overlayMenu.cancelButton.show(TEXT[4]);
+                if (canCancel) {
+                    AbstractDungeon.gridSelectScreen.open(availablePokemon, 1,  TEXT[2], false, false, true, false);
+                    AbstractDungeon.overlayMenu.cancelButton.show(TEXT[4]);
+                } else {
+                    AbstractDungeon.gridSelectScreen.open(availablePokemon, 1, TEXT[2], false);
+                }
                 this.tickDuration();
             } else {
                 atb(new RemoveMonsterAction(PlayerSpireFields.activePokemon.get(adp())));
