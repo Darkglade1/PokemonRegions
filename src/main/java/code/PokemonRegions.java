@@ -185,6 +185,7 @@ public class PokemonRegions implements
 
         Properties pokemonRegionDefaults = new Properties();
         pokemonRegionDefaults.setProperty("Pokemon Combat Tutorial Seen", "FALSE");
+        pokemonRegionDefaults.setProperty("Pokemon Catch Tutorial Seen", "FALSE");
         try {
             pokemonRegionConfig = new SpireConfig("Pokemon Regions", "PokemonRegionsMod", pokemonRegionDefaults);
         } catch (IOException e) {
