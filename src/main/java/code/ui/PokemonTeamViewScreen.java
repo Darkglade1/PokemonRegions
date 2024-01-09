@@ -73,12 +73,6 @@ public class PokemonTeamViewScreen extends CustomScreen {
 		AbstractDungeon.overlayMenu.proceedButton.hide();
 		this.hideCards();
 		AbstractDungeon.overlayMenu.cancelButton.show(TEXT[2]);
-
-		for (AbstractCard c : this.targetGroup.group) {
-			c.targetDrawScale = 0.75F;
-			c.drawScale = 0.75F;
-			c.lighten(false);
-		}
     }
 
     @Override
