@@ -12,6 +12,7 @@ import code.cards.AbstractEasyCard;
 import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
+import code.events.act1.BerryBush;
 import code.events.act1.CeladonGym;
 import code.events.act1.FuchsiaGym;
 import code.events.act1.PokemonCenter;
@@ -336,7 +337,7 @@ public class PokemonRegions implements
                 .dungeonID(Kanto.ID)
                 .create());
         BaseMod.addEvent(FuchsiaGym.ID, FuchsiaGym.class, Kanto.ID);
-        BaseMod.addEvent(BigFish.ID, BigFish.class, Kanto.ID);
+        BaseMod.addEvent(BerryBush.ID, BerryBush.class, Kanto.ID);
         BaseMod.addEvent(ScrapOoze.ID, ScrapOoze.class, Kanto.ID);
         BaseMod.addEvent(ShiningLight.ID, ShiningLight.class, Kanto.ID);
         BaseMod.addEvent(GoldenIdolEvent.ID, GoldenIdolEvent.class, Kanto.ID);

@@ -146,4 +146,13 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             }
         }
     }
+
+    public static void teamWideHeal(int amount) {
+        for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
+            if (card instanceof AbstractAllyPokemonCard) {
+                AbstractAllyPokemonCard pokemonCard = (AbstractAllyPokemonCard) card;
+                pokemonCard.updateStamina(pokemonCard.currentStamina + amount);
+            }
+        }
+    }
 }
