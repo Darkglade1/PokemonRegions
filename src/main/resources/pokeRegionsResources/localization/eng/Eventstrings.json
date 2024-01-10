@@ -85,5 +85,20 @@
       " Stamina to all of your Pokemon.",
       "[Leave]"
     ]
+  },
+  "${ModID}:SaffronGym": {
+    "NAME": "Saffron Gym",
+    "DESCRIPTIONS": [
+      "Up ahead, you hear a loud commotion. NL \"Sabrina! Today is the day that the Fighting Dojo is victorious and we become the official 6th Gym of Kanto!\" NL Across from the #yboisterous young man, a long-haired woman sighed. \"That's what you said the last dozen times you challenged me. What makes you think this time will be any different?\" NL \"I've put far more effort into training! This time, it will be my victory!\" NL The nearby crowd murmured, gauging the challenger's chances. Perhaps you could take the opportunity to #yobserve the upcoming battle and learn some new #ytricks yourself.",
+      "Sabrina's fighting style is smooth and efficient. Her #yPokemon weaved one attack directly into another, carefully dancing from side to side and always maintaining its distance from the opponent's bulky Fighting-type #yPokemon. NL There is no wasted energy whatsoever. All that saved energy is #ytransformed directly into #rbrutal attacks against the opponent. NL Soon enough, the challenger's #yPokemon falls amidst cheers from the crowd. NL You have learned much from this encounter.",
+      "The challenger's fighting style is simple, predictable, and repetitive. But there was a certain elegance to it all the same, a type of grace that could only be achieved from practicing the same strike over and over again for thousands of repetitions. Alas, the most #yperfect strike would still mean little if it could never connect with the opponent. NL Soon enough, the challenger's #yPokemon falls amidst cheers from the crowd. NL You have learned much from this encounter."
+    ],
+    "OPTIONS": [
+      "[Observe Sabrina and her Pokemon] ",
+      "[Observe the challenger and his Pokemon] ",
+      "Transform a card.",
+      "Duplicate a card.",
+      "[Leave]"
+    ]
   }
 }
