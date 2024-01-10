@@ -10,7 +10,7 @@
     "NAME": "Rainbow Badge",
     "FLAVOR": "It dazzles your eyes like a thousand shining rainbows.",
     "DESCRIPTIONS": [
-      "The first time you switch-in a #yPokemon with missing #yStamina each combat, the switched-in #yPokemon gains #b", " #ypokeregions:Stamina."
+      "The first time you switch-in a #yPokemon with missing #yStamina each combat, the switched-in #yPokemon restores #b", " #ypokeregions:Stamina."
     ]
   }
 }

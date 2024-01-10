@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Circlet;
 
 import static code.PokemonRegions.makeID;
 import static code.util.Wiz.adp;
@@ -27,6 +28,7 @@ public class CeladonGym extends PhasedEvent {
     private static final float HEALTH_LOSS_PERCENTAGE = 0.15F;
     private static final float HEALTH_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.20F;
     private final int hpLoss;
+    private final AbstractRelic relic;
 
     public CeladonGym() {
         super(ID, title, PokemonRegions.makeEventPath("CeladonGym.png"));
@@ -35,7 +37,11 @@ public class CeladonGym extends PhasedEvent {
         } else {
             hpLoss = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_HIGH_ASCENSION);
         }
-        AbstractRelic relic = RelicLibrary.getRelic(RainbowBadge.ID).makeCopy();
+        if (adp().hasRelic(RainbowBadge.ID)) {
+            relic = RelicLibrary.getRelic(Circlet.ID).makeCopy();
+        } else {
+            relic = RelicLibrary.getRelic(RainbowBadge.ID).makeCopy();
+        }
         registerPhase(0, new TextPhase(DESCRIPTIONS[0]).
                 addOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + hpLoss + OPTIONS[3], "r") + " " + FontHelper.colorString(OPTIONS[4], "g"), relic, (i)->{
                     CardCrawlGame.sound.play("BLUNT_FAST");

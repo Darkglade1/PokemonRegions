@@ -31,5 +31,24 @@
       " Max HP.",
       "[Leave]"
     ]
+  },
+  "${ModID}:PokemonCenter": {
+    "NAME": "Pokemon Center",
+    "DESCRIPTIONS": [
+      "You find yourself inside a large, crowded building with people constantly going in and out. A large welcome poster on the nearby wall indicates that this place is known as a \"Pokemon Center\" where your companions can have their strength #grestored. NL \"Excuse me, everyone!\" A nearby figure in a nurse's uniform called out. \"We're running a bit low on supplies. If anyone has any extras, we'd be happy to buy them off you!\" NL Although, a little extra #ycurrency in your pocket certainly wouldn't hurt either.",
+      "You hand over one of your spare potions, and the nurse hands you some currency with a #ysmile on her face. NL \"Thank you very much! I'm sure someone will appreciate this very soon.\" NL You hope that you don't end up missing that potion very soon.",
+      "You hand over your Pokeballs to one of the nurses at a counter, and you settle in for a long wait. NL After what feels like an eternity, your team is returned to you, and you continue on your #yjourney."
+    ],
+    "OPTIONS": [
+      "[Sell excess supplies] ",
+      "[Heal your Pokemon] ",
+      "Lose ",
+      ".",
+      "Gain ",
+      " Gold.",
+      "Fully restore the Stamina of all your Pokemon.",
+      "[Leave]",
+      "[Locked] Requires: Potion"
+    ]
   }
 }

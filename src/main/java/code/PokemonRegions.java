@@ -3,6 +3,7 @@ package code;
 import actlikeit.RazIntent.CustomIntent;
 import basemod.*;
 import basemod.abstracts.DynamicVariable;
+import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
@@ -12,6 +13,7 @@ import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
 import code.events.act1.CeladonGym;
+import code.events.act1.PokemonCenter;
 import code.monsters.act1.enemies.*;
 import code.monsters.act1.enemies.birds.ArticunoEnemy;
 import code.monsters.act1.enemies.birds.MoltresEnemy;
@@ -328,6 +330,10 @@ public class PokemonRegions implements
 
         // Events
         BaseMod.addEvent(CeladonGym.ID, CeladonGym.class, Kanto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(PokemonCenter.ID, PokemonCenter.class)
+                .bonusCondition(PokemonCenter::canSpawn)
+                .dungeonID(Kanto.ID)
+                .create());
         BaseMod.addEvent(LivingWall.ID, LivingWall.class, Kanto.ID);
         BaseMod.addEvent(BigFish.ID, BigFish.class, Kanto.ID);
         BaseMod.addEvent(ScrapOoze.ID, ScrapOoze.class, Kanto.ID);
