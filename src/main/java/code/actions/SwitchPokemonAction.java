@@ -3,6 +3,7 @@ package code.actions;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import code.patches.PlayerSpireFields;
+import code.relics.OnPokemonSwitchRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static code.PokemonRegions.makeID;
 import static code.util.Wiz.adp;
@@ -67,6 +69,11 @@ public class SwitchPokemonAction extends AbstractGameAction {
                         PlayerSpireFields.mostRecentlyUsedPokemonCard.set(adp(), pokemonCard);
                         atb(new SpawnMonsterAction(pokemon, false));
                         atb(new UsePreBattleActionAction(pokemon));
+                        for (AbstractRelic relic : adp().relics) {
+                            if (relic instanceof OnPokemonSwitchRelic) {
+                                ((OnPokemonSwitchRelic) relic).onPokemonSwitch(pokemon);
+                            }
+                        }
                     }
                 }
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();

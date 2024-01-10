@@ -11,7 +11,7 @@ import static code.PokemonRegions.makeID;
 @NoPools
 public class Dugtrio extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Dugtrio.class.getSimpleName());
-    public static final int MOVE_2_DAMAGE = 5;
+    public static final int MOVE_2_DAMAGE = 6;
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 4;

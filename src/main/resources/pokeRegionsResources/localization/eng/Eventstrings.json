@@ -13,5 +13,23 @@
       "Choose a Starter Pokemon",
       "[Leave]"
     ]
+  },
+  "${ModID}:CeladonGym": {
+    "NAME": "Celadon Gym",
+    "DESCRIPTIONS": [
+      "As you're walking through a #yrainbow-colored city, you suddenly hear the panicked cries of nearby people. NL \"Someone help! The gym is on #rfire!\" NL You find the building in question, and it is indeed very much on #rfire. You see that some #yPokemon are trapped inside - perhaps you could help? On the other hand, the #pcrisis has left the nearby storerooms unattended, and you ARE feeling awfully hungry . . .",
+      "You let your conscience guide your actions, and with a heroic leap, you dive into the flames and come out with a few #rburns and a #rsinged #yPokemon in your arms. NL \"Gloom! You're safe!\" NL A woman in a kimono rushes up to you, and the #yPokemon in your arms jumps into hers. NL \"Thank you so much for saving Gloom. Here, take this #yRainbow #yBadge as thanks for your bravery.\" NL You slip the badge into your pocket and carry onward with your head held high.",
+      "Inside the storeroom, you find a variety of delectable fruits. Although you feel slightly guilty over your actions, your survival was a far higher priority than keeping a clean conscience."
+    ],
+    "OPTIONS": [
+      "[Rescue Pokemon] ",
+      "[Steal some fruit] ",
+      "Lose ",
+      " HP.",
+      "Obtain a Special Relic.",
+      "Gain ",
+      " Max HP.",
+      "[Leave]"
+    ]
   }
 }

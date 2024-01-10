@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "You have #b", " #yPokeballs. NL You can attempt to catch #yPokemon during combat by #yclicking the #yThrow #yPokeball button next to a #yPokemon's intent. NL Captured #yPokemon are obtained at the end of combat."
     ]
+  },
+  "${ModID}:RainbowBadge": {
+    "NAME": "Rainbow Badge",
+    "FLAVOR": "It dazzles your eyes like a thousand shining rainbows.",
+    "DESCRIPTIONS": [
+      "The first time you switch-in a #yPokemon with missing #yStamina each combat, the switched-in #yPokemon gains #b", " #ypokeregions:Stamina."
+    ]
   }
 }

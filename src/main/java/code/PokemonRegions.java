@@ -11,6 +11,7 @@ import code.cards.AbstractEasyCard;
 import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
+import code.events.act1.CeladonGym;
 import code.monsters.act1.enemies.*;
 import code.monsters.act1.enemies.birds.ArticunoEnemy;
 import code.monsters.act1.enemies.birds.MoltresEnemy;
@@ -326,7 +327,7 @@ public class PokemonRegions implements
                 }));
 
         // Events
-        BaseMod.addEvent(Sssserpent.ID, Sssserpent.class, Kanto.ID);
+        BaseMod.addEvent(CeladonGym.ID, CeladonGym.class, Kanto.ID);
         BaseMod.addEvent(LivingWall.ID, LivingWall.class, Kanto.ID);
         BaseMod.addEvent(BigFish.ID, BigFish.class, Kanto.ID);
         BaseMod.addEvent(ScrapOoze.ID, ScrapOoze.class, Kanto.ID);
@@ -345,9 +346,6 @@ public class PokemonRegions implements
                         BaseMod.addRelic(relic, RelicType.SHARED);
                     } else {
                         BaseMod.addRelicToCustomPool(relic, relic.color);
-                    }
-                    if (!info.seen) {
-                        UnlockTracker.markRelicAsSeen(relic.relicId);
                     }
                 });
     }
