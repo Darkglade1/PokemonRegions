@@ -13,6 +13,7 @@ import code.cards.cardvars.AbstractEasyDynamicVariable;
 import code.dungeons.EncounterIDs;
 import code.dungeons.Kanto;
 import code.events.act1.CeladonGym;
+import code.events.act1.FuchsiaGym;
 import code.events.act1.PokemonCenter;
 import code.monsters.act1.enemies.*;
 import code.monsters.act1.enemies.birds.ArticunoEnemy;
@@ -334,7 +335,7 @@ public class PokemonRegions implements
                 .bonusCondition(PokemonCenter::canSpawn)
                 .dungeonID(Kanto.ID)
                 .create());
-        BaseMod.addEvent(LivingWall.ID, LivingWall.class, Kanto.ID);
+        BaseMod.addEvent(FuchsiaGym.ID, FuchsiaGym.class, Kanto.ID);
         BaseMod.addEvent(BigFish.ID, BigFish.class, Kanto.ID);
         BaseMod.addEvent(ScrapOoze.ID, ScrapOoze.class, Kanto.ID);
         BaseMod.addEvent(ShiningLight.ID, ShiningLight.class, Kanto.ID);

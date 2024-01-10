@@ -260,5 +260,9 @@
   "${ModID}:Frozen": {
     "NAME": "Frozen",
     "DESCRIPTION": "Give a card in your hand Retain and Exhaust."
+  },
+  "${ModID}:FightAsOne": {
+    "NAME": "Fight as One",
+    "DESCRIPTION": "Deal !D! damage. NL Your currently active *Pokemon immediately takes a turn."
   }
 }

@@ -50,5 +50,23 @@
       "[Leave]",
       "[Locked] Requires: Potion"
     ]
+  },
+  "${ModID}:FuchsiaGym": {
+    "NAME": "Fuchsia Gym",
+    "DESCRIPTIONS": [
+      "The mansion in front of you looks plain, unassuming - a casual eye would easily gloss over the building entirely. As you enter, a man wound as tight as a coil, like a #pserpent about to strike, greets you. NL \"A new challenger! You have a #rwarrior's look about you, unlike those other fresh-faced trainers.\" He grins at you. \"What say you to challenging my gym's #yobstacle #ycourse? I guarantee that both you and your #yPokemon will come out stronger on the other side!\" NL The man looks sincere, but you can't help but cast a #pdubious look around the room, wondering what exactly would be in store for you.",
+      "\"A fine choice!\" The man declares. \"Now, brace yourselves!\" NL Vents pop out from the walls, billowing smoke into the room. You hear the creak of walls turning and moving, but with all the smoke in the way, you can't tell what's happening. NL \"Good luck reaching the end! Oh, and watch out for all the #rexploding Voltorbs!\" NL There were, in fact, ~many~ #rexploding Voltorbs. By the time you got past all the invisible barriers, collapsing walls, and slanting rooms, you felt like you had lost several years off your life. NL Your #yPokemon seemed inclined to agree.",
+      "Your gut told you that perhaps this \"obstacle course\" would prove far more harrowing than you might suspect. NL As the man laughs at your retreating back, you think that perhaps your gut had been right after all."
+    ],
+    "OPTIONS": [
+      "[Challenge the course] ",
+      "[Discretion is the better part of valor] ",
+      "Lose ",
+      " Max HP.",
+      "Obtain ",
+      ".",
+      "Remove a card from your deck.",
+      "[Leave]"
+    ]
   }
 }
