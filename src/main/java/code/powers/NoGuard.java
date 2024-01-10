@@ -46,7 +46,7 @@ public class NoGuard extends AbstractUnremovablePower implements HealthBarRender
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        this.description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
     }
 
     @Override
