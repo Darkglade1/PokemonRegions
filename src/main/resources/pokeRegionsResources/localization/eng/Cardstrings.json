@@ -208,7 +208,20 @@
       "*Tackle",
       "Do nothing.",
       "Deal ",
-      " damage."
+      " damage. If Fatal, permanently evolves into Gyarados."
+    ]
+  },
+  "${ModID}:Gyarados": {
+    "NAME": "Gyarados",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Waterfall",
+      "*Roar",
+      "Deal ",
+      " damage. If this defeats an enemy, restores ",
+      " Stamina.",
+      "Apply ",
+      " Weak and Vulnerable to ALL enemies."
     ]
   },
   "${ModID}:Articuno": {

@@ -2,15 +2,15 @@ package code.monsters.act1.allyPokemon;
 
 import code.BetterSpriterAnimation;
 import code.PokemonRegions;
+import code.actions.MagikarpDamageAction;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
-import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 import static code.PokemonRegions.makeMonsterPath;
-import static code.util.Wiz.dmg;
+import static code.util.Wiz.atb;
 
 public class Magikarp extends AbstractPokemonAlly
 {
@@ -18,12 +18,12 @@ public class Magikarp extends AbstractPokemonAlly
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
 
+    public boolean evolving = false;
+
     public Magikarp(final float x, final float y, AbstractAllyPokemonCard allyCard) {
         super(NAME, ID, 100, -5.0F, 0, 130.0f, 100.0f, null, x, y);
-        this.animation = new BetterSpriterAnimation(makeMonsterPath("Rattata/Rattata.scml"));
+        this.animation = new BetterSpriterAnimation(makeMonsterPath("Magikarp/Magikarp.scml"));
         this.animation.setFlip(true, false);
-        Player.PlayerListener listener = new PokemonListener(this);
-        ((BetterSpriterAnimation)this.animation).myPlayer.addListener(listener);
 
         this.allyCard = allyCard;
         setStaminaInfo(allyCard);
@@ -44,11 +44,19 @@ public class Magikarp extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+                atb(new MagikarpDamageAction(target, info, allyCard, this));
                 break;
             }
         }
-        postTurn();
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (!evolving) {
+                    postTurn();
+                }
+                this.isDone = true;
+            }
+        });
     }
 
 }

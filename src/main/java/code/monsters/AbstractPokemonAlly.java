@@ -144,6 +144,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 return TexLoader.getTexture(makeUIPath("blockBuffIcon.png"));
             case MAGIC:
                 return TexLoader.getTexture(makeUIPath("magic.png"));
+            case UNKNOWN:
+                return TexLoader.getTexture(makeUIPath("UnknownIcon.png"));
             default:
                 return TexLoader.getTexture(makeUIPath("missing.png"));
         }
@@ -302,6 +304,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                     }
                     if (this.intent == AbstractMonster.Intent.MAGIC) {
                         intentTip.body = TEXT[18];
+                    }
+                    if (this.intent == Intent.UNKNOWN) {
+                        intentTip.body = TEXT[19];
                     }
                 }
             } else {

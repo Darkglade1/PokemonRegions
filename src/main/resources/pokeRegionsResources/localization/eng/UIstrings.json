@@ -27,7 +27,8 @@
       ".",
       " times.",
       " damage to ALL enemies",
-      "Your #gPokemon intends to use #ymysterious #ymagic."
+      "Your #gPokemon intends to use #ymysterious #ymagic.",
+      "Your #gPokemon intends to do something . . . #ystrange."
     ]
   },
   "${ModID}:MassAttackIntent": {

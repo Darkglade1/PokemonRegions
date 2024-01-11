@@ -9,23 +9,24 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static code.PokemonRegions.makeID;
 
 @NoPools
-public class Magikarp extends AbstractAllyPokemonCard {
-    public final static String ID = makeID(Magikarp.class.getSimpleName());
+public class Gyarados extends AbstractAllyPokemonCard {
+    public final static String ID = makeID(Gyarados.class.getSimpleName());
 
-    public static final int MOVE_2_DAMAGE = 4;
-    public static final int MOVE_1_STAMINA_COST = 0;
+    public static final int MOVE_1_DAMAGE = 12;
+    public static final int MOVE_1_STAMINA_HEAL = 1;
+    public static final int MOVE_2_DEBUFF = 2;
+    public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 2;
+    public static final int MAX_STAMINA = 5;
 
-    public Magikarp() {
-        super(ID, CardRarity.COMMON);
+    public Gyarados() {
+        super(ID, CardRarity.RARE);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
-        this.move1Description = DESCRIPTIONS[2];
-        this.move2Description = DESCRIPTIONS[3] + MOVE_2_DAMAGE + DESCRIPTIONS[4];
+        this.move1Description = DESCRIPTIONS[2] + MOVE_1_DAMAGE + DESCRIPTIONS[3] + MOVE_1_STAMINA_HEAL + DESCRIPTIONS[4];
+        this.move2Description = DESCRIPTIONS[5] + MOVE_2_DEBUFF + DESCRIPTIONS[6];
         initializeDescriptionFromMoves();
-        this.cardsToPreview = new Gyarados();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -33,6 +34,6 @@ public class Magikarp extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new code.monsters.act1.allyPokemon.Magikarp(x, y, this);
+        return new code.monsters.act1.allyPokemon.Gyarados(x, y, this);
     }
 }
