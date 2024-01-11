@@ -1,5 +1,6 @@
 package code.patches;
 
+import code.monsters.AbstractPokemonAlly;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
-import code.monsters.AbstractPokemonAlly;
 
 import java.util.ArrayList;
 
