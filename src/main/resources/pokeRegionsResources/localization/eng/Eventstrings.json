@@ -100,5 +100,26 @@
       "Duplicate a card.",
       "[Leave]"
     ]
+  },
+  "${ModID}:MagikarpSalesman": {
+    "NAME": "Magikarp Salesman",
+    "DESCRIPTIONS": [
+      "\"Hey! You there!\" NL You turn to see an old man waving at you, some kind of fish #yPokemon in his arms. NL \"You're a #yPokemon #yTrainer, right? Well, have I got a deal for you! This here is #yMagikarp, one of the #yPokemon with the @highest@ potential in the world! And I'd be willing to part with it for a mere pittance - I'm sure a trainer like you would be more than enough to bring out its #ystrength!\" NL You stare at the fish, and the fish stares back with its dull, fish eyes. NL You can't help but feel you're being #pscammed.",
+      "\"Many thanks for your patronage, friend!\" NL The salesman saunters away, whistling a #yjaunty tune. You heft your new fish friend in your arms, staring at it. NL It stares back with its #pdead fish gaze. NL Suddenly, it flops out of your arms, flailing around on the ground helplessly. NL You sigh. Hopefully, it would come in handy at some point.",
+      "Quick as lightning, you whip your fist around and knock the salesman out cold. The fish flops to the ground, flailing around helplessly, but you ignore it in favor of rifling through the man's pockets, searching for anything of worth. NL After a minute of searching, you find some kind of #ytrinket. NL As you walk away, you can't help but feel a tinge of #pshame at your actions.",
+      "You don't want to have anything to do with this salesman."
+    ],
+    "OPTIONS": [
+      "[Accept the deal anyway] ",
+      "[Rob the salesman] ",
+      "Lose ",
+      " Gold.",
+      "Obtain ",
+      ".",
+      "Obtain a Relic.",
+      "Become Cursed - ",
+      "[Locked] Requires: Gold",
+      "[Leave]"
+    ]
   }
 }
