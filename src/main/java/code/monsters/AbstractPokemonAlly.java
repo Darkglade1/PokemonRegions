@@ -86,6 +86,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public void populateAllyMoves() {
         String move1Name = replaceAsterick(allyCard.move1Name);
         String move1Description = replaceModIDPrefix(allyCard.move1Description);
+        move1Description = replaceAsterick(move1Description);
         Texture move1Texture = getTextureForIntent(move1Intent);
         AllyMove move1 = new AllyMove(move1Name, this, move1Texture, move1Description, () -> {
             setMoveShortcut(MOVE_1);
@@ -98,6 +99,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
         String move2Name = replaceAsterick(allyCard.move2Name);
         String move2Description = replaceModIDPrefix(allyCard.move2Description);
+        move2Description = replaceAsterick(move2Description);
         Texture move2Texture = getTextureForIntent(move2Intent);
         AllyMove move2 = new AllyMove(move2Name, this, move2Texture, move2Description, () -> {
             setMoveShortcut(MOVE_2);

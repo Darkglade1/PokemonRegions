@@ -42,7 +42,7 @@
     "EXTENDED_DESCRIPTION": [
       "*Dig",
       "*Emerge",
-      "Allows the use of Emerge next turn.",
+      "Allows the use of *Emerge next turn.",
       "Deal ",
       " damage."
     ]
@@ -66,7 +66,7 @@
     "EXTENDED_DESCRIPTION": [
       "*Withdraw",
       "*Icicle *Spear",
-      "You gain Barricade.",
+      "You gain *Barricade.",
       "Deal ",
       " damage ",
       " times."
@@ -82,7 +82,7 @@
       " Strength.",
       "Deal ",
       " damage. Increase this move's damage by ",
-      "."
+      " until switched out."
     ]
   },
   "${ModID}:Gastly": {
@@ -94,7 +94,7 @@
       "You lose ",
       " HP. ",
       "Restores ",
-      " Stamina.",
+      " *Stamina.",
       "You gain ",
       " Intangible."
     ]
@@ -108,7 +108,7 @@
       "Apply ",
       " Vulnerable.",
       "Deal ",
-      " damage a number of times equal to Stamina."
+      " damage a number of times equal to *Stamina."
     ]
   },
   "${ModID}:Gengar": {
@@ -169,7 +169,7 @@
       "*Bulk *Up",
       "*Dynamic *Punch",
       "You gain ",
-      " Temporary Strength next turn.",
+      " *Temporary Strength next turn.",
       "Deal ",
       " damage."
     ]
@@ -208,7 +208,7 @@
       "*Tackle",
       "Do nothing.",
       "Deal ",
-      " damage. If Fatal, permanently evolves into Gyarados."
+      " damage. If Fatal, permanently evolves into *Gyarados."
     ]
   },
   "${ModID}:Gyarados": {
@@ -219,7 +219,7 @@
       "*Roar",
       "Deal ",
       " damage. If this defeats an enemy, restores ",
-      " Stamina.",
+      " *Stamina.",
       "Apply ",
       " Weak and Vulnerable to ALL enemies."
     ]
@@ -231,7 +231,7 @@
       "*Snowscape",
       "*Future *Sight",
       "You gain ",
-      " Block and Metallicize.",
+      " Block and *Metallicize.",
       "Scry ",
       "."
     ]
