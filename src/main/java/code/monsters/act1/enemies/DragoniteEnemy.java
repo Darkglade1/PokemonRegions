@@ -69,6 +69,7 @@ public class DragoniteEnemy extends AbstractPokemonMonster
 
     @Override
     public void usePreBattleAction() {
+        super.usePreBattleAction();
         CustomDungeon.playTempMusicInstantly("Zinnia");
     }
 
