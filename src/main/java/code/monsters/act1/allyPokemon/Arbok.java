@@ -49,6 +49,7 @@ public class Arbok extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.POISON);
                 applyToTarget(target, this, new WeakPower(target, code.cards.pokemonAllyCards.Arbok.MOVE_2_WEAK, false));
                 break;

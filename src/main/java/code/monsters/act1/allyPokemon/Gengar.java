@@ -44,6 +44,7 @@ public class Gengar extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.POISON);
                 break;
             }

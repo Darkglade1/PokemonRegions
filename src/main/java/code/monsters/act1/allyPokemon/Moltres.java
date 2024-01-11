@@ -40,6 +40,7 @@ public class Moltres extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                useFastAttackAnimation();
                 for (int i = 0; i < multiplier; i++) {
                     dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
                 }

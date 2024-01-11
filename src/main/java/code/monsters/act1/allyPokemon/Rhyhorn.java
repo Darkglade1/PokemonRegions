@@ -41,6 +41,7 @@ public class Rhyhorn extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 block(adp(), code.cards.pokemonAllyCards.Rhyhorn.MOVE_1_BLOCK);
                 break;

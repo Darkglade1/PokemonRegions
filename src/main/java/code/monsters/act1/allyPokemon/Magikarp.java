@@ -44,6 +44,7 @@ public class Magikarp extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 atb(new MagikarpDamageAction(target, info, allyCard, this));
                 break;
             }

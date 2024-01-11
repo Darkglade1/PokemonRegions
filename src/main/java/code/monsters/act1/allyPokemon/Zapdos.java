@@ -51,6 +51,7 @@ public class Zapdos extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                useFastAttackAnimation();
                 if (multiplier > 0) {
                     for(int i = 0; i < multiplier; ++i) {
                         AllyDamageAllEnemiesAction massAttack = new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE);

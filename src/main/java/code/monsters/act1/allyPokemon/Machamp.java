@@ -45,6 +45,7 @@ public class Machamp extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                 break;
             }

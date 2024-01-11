@@ -43,6 +43,7 @@ public class Dragonite extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                 int newDamage = moves.get(MOVE_2).baseDamage += code.cards.pokemonAllyCards.Dragonite.MOVE_2_DAMAGE_INCREASE;
                 addMove(MOVE_2, Intent.ATTACK, newDamage);

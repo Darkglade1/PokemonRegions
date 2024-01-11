@@ -43,11 +43,13 @@ public class Vulpix extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
                 applyToTarget(target, this, new Burn(target,  code.cards.pokemonAllyCards.Vulpix.MOVE_1_BURN));
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 for (int i = 0; i < multiplier; i++) {
                     dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
                 }

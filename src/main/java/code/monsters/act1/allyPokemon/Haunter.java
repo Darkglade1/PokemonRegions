@@ -44,6 +44,7 @@ public class Haunter extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 for (int i = 0; i < multiplier; i++) {
                     dmg(target, info, AbstractGameAction.AttackEffect.POISON);
                 }

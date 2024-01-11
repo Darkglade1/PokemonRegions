@@ -49,6 +49,7 @@ public class Golem extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
+                useFastAttackAnimation();
                 Wiz.playAudio(ProAudio.EARTHQUAKE);
                 CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.XLONG, false);
                 atb(new VFXAction(new WaitEffect(), 0.3f));

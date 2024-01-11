@@ -42,6 +42,7 @@ public class Rattata extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
                 atb(new DrawCardAction(adp(), code.cards.pokemonAllyCards.Rattata.MOVE_1_DRAW));
                 break;

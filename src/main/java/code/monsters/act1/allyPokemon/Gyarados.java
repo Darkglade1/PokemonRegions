@@ -47,6 +47,7 @@ public class Gyarados extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                useFastAttackAnimation();
                 atb(new GyaradosWaterfallAction(target, info, code.cards.pokemonAllyCards.Gyarados.MOVE_1_STAMINA_HEAL, allyCard));
                 break;
             }
