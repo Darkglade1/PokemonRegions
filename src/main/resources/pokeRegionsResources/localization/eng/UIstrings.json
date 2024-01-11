@@ -121,5 +121,11 @@
       "Capture chance: ",
       "%"
     ]
+  },
+  "${ModID}:PokemonHealthBar": {
+    "TEXT": [
+      " Stamina",
+      "Fainted"
+    ]
   }
 }
