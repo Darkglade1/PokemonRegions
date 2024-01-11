@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static code.PokemonRegions.makeID;
@@ -64,7 +65,7 @@ public class AllyMove extends ClickableUIElement {
 
     private void doMove() {
         if(moveActions != null) {
-            if (requiresTarget && Wiz.getEnemies().size() > 1) {
+            if (requiresTarget && (Wiz.getEnemies().size() > 1 || hasDarklings())) {
                 targetMode = true;
             } else {
                 moveActions.run();
@@ -72,6 +73,16 @@ public class AllyMove extends ClickableUIElement {
         } else {
             BaseMod.logger.info("Pokemon Move: " + this.ID + " had no actions!");
         }
+    }
+
+    // jank hardcode for darklings
+    private boolean hasDarklings() {
+        for (AbstractMonster mo : Wiz.getEnemies()) {
+            if (mo instanceof Darkling) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getID(){
@@ -155,7 +166,7 @@ public class AllyMove extends ClickableUIElement {
 
         this.hoveredMonster = null;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (m.hb.hovered && !m.isDying && !(m instanceof AbstractPokemonAlly)) {
+            if (m.hb.hovered && !m.isDeadOrEscaped() && !(m instanceof AbstractPokemonAlly)) {
                 this.hoveredMonster = m;
                 break;
             }
