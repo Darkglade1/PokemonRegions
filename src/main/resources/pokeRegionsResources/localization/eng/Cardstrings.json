@@ -262,6 +262,31 @@
       " cards from your draw pile."
     ]
   },
+  "${ModID}:Jolteon": {
+    "NAME": "Jolteon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Agility",
+      "*Charge",
+      "You gain ",
+      " Dexterity.",
+      " [E] next turn."
+    ]
+  },
+  "${ModID}:Flareon": {
+    "NAME": "Flareon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "*Flare *Blitz",
+      "*Burning *Spark",
+      "Deal ",
+      " damage. Add ",
+      " Burn to your hand.",
+      "Draw ",
+      " cards. Exhaust ",
+      " card."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
