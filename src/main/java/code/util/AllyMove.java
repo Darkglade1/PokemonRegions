@@ -65,7 +65,7 @@ public class AllyMove extends ClickableUIElement {
 
     private void doMove() {
         if(moveActions != null) {
-            if (requiresTarget && (Wiz.getEnemies().size() > 1 || hasDarklings())) {
+            if (requiresTarget && (Wiz.getEnemies().size() > 1 || hasHalfDeadEnemies())) {
                 targetMode = true;
             } else {
                 moveActions.run();
@@ -75,10 +75,10 @@ public class AllyMove extends ClickableUIElement {
         }
     }
 
-    // jank hardcode for darklings
-    private boolean hasDarklings() {
-        for (AbstractMonster mo : Wiz.getEnemies()) {
-            if (mo instanceof Darkling) {
+    // jank hardcode for darklings and the like
+    private boolean hasHalfDeadEnemies() {
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
+            if (mo.halfDead && !(mo instanceof AbstractPokemonAlly)) {
                 return true;
             }
         }

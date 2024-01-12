@@ -121,5 +121,21 @@
       "[Locked] Requires: Gold",
       "[Leave]"
     ]
+  },
+  "${ModID}:TradeOffer": {
+    "NAME": "Trade Offer",
+    "DESCRIPTIONS": [
+      "As you're trekking along one of the many routes that make up this region, you hear a voice call out behind you. Turning, you see a young boy with a few #yPokemon besides him. NL He eyes you and your #yPokemon before giving an #yapproving nod. \"Your #yPokemon look pretty strong. How would you like to trade for one of mine?\" NL You look over his #yPokemon in turn, concluding that they too look fairly diverse and #ypowerful. Perhaps it wouldn't be a bad idea to take the offer.",
+      "The two of you exchange #yPokeballs, concluding the trade. NL The boy nods in satisfaction. \"This was a worthwhile endeavor. Perhaps we'll again someday, stranger.\" NL The two of you part, heading your separate ways.",
+      "\"Oh? That's shame. Very well then.\" The boy seems disappointed by your response. \"Perhaps if we ever meet again, you'll have changed your mind.\" NL The two of you part, heading your separate ways."
+    ],
+    "OPTIONS": [
+      "[Trade] ",
+      "[Decline] ",
+      "Lose ",
+      ".",
+      "Obtain ",
+      "[Leave]"
+    ]
   }
 }

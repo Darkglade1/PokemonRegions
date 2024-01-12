@@ -340,9 +340,10 @@ public class PokemonRegions implements
                 .bonusCondition(MagikarpSalesman::canSpawn)
                 .dungeonID(Kanto.ID)
                 .create());
-        BaseMod.addEvent(GoldenIdolEvent.ID, GoldenIdolEvent.class, Kanto.ID);
-        BaseMod.addEvent(GoopPuddle.ID, GoopPuddle.class, Kanto.ID);
-        BaseMod.addEvent(GoldenWing.ID, GoldenWing.class, Kanto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(TradeOffer.ID, TradeOffer.class)
+                .bonusCondition(TradeOffer::canSpawn)
+                .dungeonID(Kanto.ID)
+                .create());
     }
 
     @Override
