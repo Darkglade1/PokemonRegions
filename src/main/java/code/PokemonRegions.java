@@ -336,7 +336,10 @@ public class PokemonRegions implements
         BaseMod.addEvent(FuchsiaGym.ID, FuchsiaGym.class, Kanto.ID);
         BaseMod.addEvent(BerryBush.ID, BerryBush.class, Kanto.ID);
         BaseMod.addEvent(SaffronGym.ID, SaffronGym.class, Kanto.ID);
-        BaseMod.addEvent(MagikarpSalesman.ID, MagikarpSalesman.class, Kanto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(MagikarpSalesman.ID, MagikarpSalesman.class)
+                .bonusCondition(MagikarpSalesman::canSpawn)
+                .dungeonID(Kanto.ID)
+                .create());
         BaseMod.addEvent(GoldenIdolEvent.ID, GoldenIdolEvent.class, Kanto.ID);
         BaseMod.addEvent(GoopPuddle.ID, GoopPuddle.class, Kanto.ID);
         BaseMod.addEvent(GoldenWing.ID, GoldenWing.class, Kanto.ID);

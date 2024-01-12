@@ -124,7 +124,7 @@
   },
   "${ModID}:PokemonHealthBar": {
     "TEXT": [
-      " Stamina",
+      " STA",
       "Fainted"
     ]
   }

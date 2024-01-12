@@ -45,14 +45,16 @@ public class MagikarpSalesman extends PhasedEvent {
         if (!hasEnoughGold()) {
             cardOption = new TextPhase.OptionInfo(OPTIONS[8]).enabledCondition(this::hasEnoughGold);
         }
+        TextPhase.OptionInfo curseOption = createCardPreviewOption(OPTIONS[1] + FontHelper.colorString(OPTIONS[6], "g") + " " + FontHelper.colorString(OPTIONS[7] + curse.name + OPTIONS[5], "r"), curse, (i)->{
+            AbstractRelic relic = AbstractDungeon.returnRandomScreenlessRelic(AbstractDungeon.returnRandomRelicTier());
+            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(this.drawX, this.drawY, relic);
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(curse, (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));
+            transitionKey("Rob");
+        });
         registerPhase(0, new TextPhase(DESCRIPTIONS[0]).
                 addOption(cardOption).
-                addOption(OPTIONS[1] + FontHelper.colorString(OPTIONS[6], "g") + " " + FontHelper.colorString(OPTIONS[7] + curse.name + OPTIONS[5], "r"), (i)->{
-                    AbstractRelic relic = AbstractDungeon.returnRandomScreenlessRelic(AbstractDungeon.returnRandomRelicTier());
-                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain(this.drawX, this.drawY, relic);
-                    AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(curse, (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));
-                    transitionKey("Rob");
-                }).addOption(OPTIONS[9], (i)->{
+                addOption(curseOption).
+                addOption(OPTIONS[9], (i)->{
                     transitionKey("Leave");
                 }));
 
@@ -68,5 +70,9 @@ public class MagikarpSalesman extends PhasedEvent {
 
     public TextPhase.OptionInfo createCardPreviewOption(String optionText, AbstractCard previewCard, Consumer<Integer> onClick) {
         return new TextPhase.OptionInfo(optionText, previewCard).setOptionResult(onClick);
+    }
+
+    public static boolean canSpawn() {
+        return adp().gold >= GOLD_COST;
     }
 }
