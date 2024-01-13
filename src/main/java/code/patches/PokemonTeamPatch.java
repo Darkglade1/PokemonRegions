@@ -50,6 +50,7 @@ public class PokemonTeamPatch {
                 PlayerSpireFields.activePokemon.set(adp(), pokemon);
                 atb(new SpawnMonsterAction(pokemon, false));
                 atb(new UsePreBattleActionAction(pokemon));
+                pokemon.onSwitchIn();
             }
         }
     }

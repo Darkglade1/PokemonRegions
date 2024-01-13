@@ -29,6 +29,7 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     public String move2Name;
     public String move1Description;
     public String move2Description;
+    public boolean overrideWithDescription;
 
     public AbstractAllyPokemonCard(final String cardID, final CardRarity rarity) {
         super(cardID, -2, CardType.SKILL, rarity, CardTarget.NONE, PokemonRegions.Enums.Pokedex);
@@ -57,7 +58,11 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     }
 
     public void initializeDescriptionFromMoves() {
-        this.rawDescription = move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + move2Name + " (" + staminaCost2 + ") " + move2Description;
+        if (overrideWithDescription) {
+            this.rawDescription = cardStrings.DESCRIPTION;
+        } else {
+            this.rawDescription = move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + move2Name + " (" + staminaCost2 + ") " + move2Description;
+        }
         this.rawDescription += " NL " + currentStamina + "/" + maxStamina + " " + STAMINA_KEYWORD;
         this.initializeDescription();
     }

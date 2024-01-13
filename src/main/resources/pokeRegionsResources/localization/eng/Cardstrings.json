@@ -286,6 +286,14 @@
       " card."
     ]
   },
+  "${ModID}:Mew": {
+    "NAME": "Mew",
+    "DESCRIPTION": "Upon switching in, choose another one of your *Pokemon. *Mew *Transforms into the chosen *Pokemon.",
+    "EXTENDED_DESCRIPTION": [
+      "",
+      ""
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

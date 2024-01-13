@@ -237,7 +237,6 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     }
 
     protected void setDetailedIntents() {
-
     }
 
     //Runs a specific animation

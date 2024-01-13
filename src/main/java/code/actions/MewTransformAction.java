@@ -1,6 +1,7 @@
 package code.actions;
 
 import code.cards.AbstractAllyPokemonCard;
+import code.cards.pokemonAllyCards.Mew;
 import code.monsters.AbstractPokemonAlly;
 import code.patches.PlayerSpireFields;
 import code.relics.OnPokemonSwitchRelic;
@@ -18,19 +19,15 @@ import static code.PokemonRegions.makeID;
 import static code.util.Wiz.adp;
 import static code.util.Wiz.atb;
 
-public class SwitchPokemonAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("SwitchPokemon"));
+public class MewTransformAction extends AbstractGameAction {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("MewTransformAction"));
     private static final String[] TEXT = uiStrings.TEXT;
-    private final boolean canCancel;
+    private final AbstractAllyPokemonCard mewCard;
 
-    public SwitchPokemonAction(boolean canCancel) {
+    public MewTransformAction(AbstractAllyPokemonCard mewCard) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
-        this.canCancel = canCancel;
-    }
-
-    public SwitchPokemonAction() {
-        this(true);
+        this.mewCard = mewCard;
     }
 
     public void update() {
@@ -38,23 +35,15 @@ public class SwitchPokemonAction extends AbstractGameAction {
             CardGroup availablePokemon =  new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
                 if (card instanceof AbstractAllyPokemonCard) {
-                    int stamina = ((AbstractAllyPokemonCard) card).currentStamina;
-                    if (stamina > 0 && PlayerSpireFields.activePokemon.get(adp()).allyCard != card) {
+                    if (!card.cardID.equals(Mew.ID)) {
                         availablePokemon.addToTop(card);
                     }
                 }
             }
             if (availablePokemon.size() > 0) {
-                if (canCancel) {
-                    AbstractDungeon.gridSelectScreen.open(availablePokemon, 1,  TEXT[2], false, false, true, false);
-                    AbstractDungeon.overlayMenu.cancelButton.show(TEXT[4]);
-                } else {
-                    AbstractDungeon.gridSelectScreen.open(availablePokemon, 1, TEXT[2], false);
-                }
+                AbstractDungeon.gridSelectScreen.open(availablePokemon, 1, TEXT[0], false);
                 this.tickDuration();
             } else {
-                atb(new RemoveMonsterAction(PlayerSpireFields.activePokemon.get(adp())));
-                PlayerSpireFields.activePokemon.set(adp(), null);
                 this.isDone = true;
             }
         } else {
@@ -64,9 +53,17 @@ public class SwitchPokemonAction extends AbstractGameAction {
                     AbstractAllyPokemonCard pokemonCard = (AbstractAllyPokemonCard)selectedPokemon;
                     AbstractPokemonAlly pokemon = pokemonCard.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
                     if (pokemon != null) {
+                        mewCard.move1Name = pokemon.allyCard.move1Name;
+                        mewCard.move2Name = pokemon.allyCard.move2Name;
+                        mewCard.move1Description = pokemon.allyCard.move1Description;
+                        mewCard.move2Description = pokemon.allyCard.move2Description;
+                        pokemon.allyCard = mewCard;
+                        pokemon.name = mewCard.name;
+                        pokemon.currentHealth = mewCard.currentStamina;
+                        pokemon.maxHealth = mewCard.maxStamina;
                         atb(new RemoveMonsterAction(PlayerSpireFields.activePokemon.get(adp())));
                         PlayerSpireFields.activePokemon.set(adp(), pokemon);
-                        PlayerSpireFields.mostRecentlyUsedPokemonCardID.set(adp(), pokemonCard.cardID);
+                        PlayerSpireFields.mostRecentlyUsedPokemonCardID.set(adp(), mewCard.cardID);
                         atb(new SpawnMonsterAction(pokemon, false));
                         atb(new UsePreBattleActionAction(pokemon));
                         for (AbstractRelic relic : adp().relics) {
@@ -74,7 +71,6 @@ public class SwitchPokemonAction extends AbstractGameAction {
                                 ((OnPokemonSwitchRelic) relic).onPokemonSwitch(pokemon);
                             }
                         }
-                        pokemon.onSwitchIn();
                     }
                 }
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();

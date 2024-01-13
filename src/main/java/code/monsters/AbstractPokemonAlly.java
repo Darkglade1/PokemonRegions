@@ -394,4 +394,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public boolean canUseMove2() {
         return allyCard.currentStamina >= this.move2StaminaCost;
     }
+
+    public void onSwitchIn() {
+
+    }
 }

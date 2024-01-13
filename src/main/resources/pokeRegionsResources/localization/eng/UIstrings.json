@@ -128,5 +128,10 @@
       "Fainted",
       "Captured!"
     ]
+  },
+  "${ModID}:MewTransformAction": {
+    "TEXT": [
+      "Choose a Pokemon to Transform into."
+    ]
   }
 }
