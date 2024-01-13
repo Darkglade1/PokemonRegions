@@ -7,6 +7,7 @@ import code.patches.PlayerSpireFields;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -33,6 +34,11 @@ public class SwitchPokemonMove extends ClickableUIElement {
     }
 
     private void doMove() {
+        for (AbstractGameAction action : AbstractDungeon.actionManager.actions) {
+            if (action instanceof SwitchPokemonAction) {
+                return;
+            }
+        }
         atb(new SwitchPokemonAction());
     }
 
