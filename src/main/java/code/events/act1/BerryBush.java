@@ -23,23 +23,29 @@ public class BerryBush extends PhasedEvent {
     private static final float A15_HEAL = 0.20F;
     private final int heal;
 
+    private static final float ALT_HEAL = 0.15F;
+    private static final float A15_ALT_HEAL = 0.125F;
+    private final int altHeal;
+
     private final static int STAMINA_HEAL = 2;
 
     public BerryBush() {
         super(ID, title, PokemonRegions.makeEventPath("BerryBush.png"));
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.heal = (int)((float)adp().maxHealth * A15_HEAL);
+            this.altHeal = (int)((float)adp().maxHealth * A15_ALT_HEAL);
         } else {
             this.heal = (int)((float)adp().maxHealth * HEAL);
+            this.altHeal = (int)((float)adp().maxHealth * ALT_HEAL);
         }
         registerPhase(0, new TextPhase(DESCRIPTIONS[0]).
                 addOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + heal + OPTIONS[3], "g"), (i)->{
                     adp().heal(this.heal, true);
                     transitionKey("Yourself");
                 }).
-                addOption(OPTIONS[1] + FontHelper.colorString(OPTIONS[4] + STAMINA_HEAL + OPTIONS[5], "g"), (i)->{
+                addOption(OPTIONS[1] + FontHelper.colorString(OPTIONS[2] + altHeal + OPTIONS[3] + " " + OPTIONS[4] + STAMINA_HEAL + OPTIONS[5], "g"), (i)->{
+                    adp().heal(this.altHeal, true);
                     PokemonTeamButton.teamWideHeal(STAMINA_HEAL);
-                    AbstractDungeon.topPanel.panelHealEffect();
                     transitionKey("Pokemon");
                 }));
 

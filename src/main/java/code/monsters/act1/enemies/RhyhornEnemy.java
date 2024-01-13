@@ -47,7 +47,7 @@ public class RhyhornEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 130.0f, 100.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Rhyhorn/Rhyhorn.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(58), calcAscensionTankiness(62));
+        setHp(calcAscensionTankiness(52), calcAscensionTankiness(56));
         addMove(HORN_ATTACK, Intent.ATTACK_DEFEND, calcAscensionDamage(5));
         addMove(DRILL_RUN, Intent.ATTACK, calcAscensionDamage(10));
         addMove(ENDURE, Intent.DEFEND_BUFF);

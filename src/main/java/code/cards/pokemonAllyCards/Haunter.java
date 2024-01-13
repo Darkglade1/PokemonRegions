@@ -11,7 +11,7 @@ import static code.PokemonRegions.makeID;
 @NoPools
 public class Haunter extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Haunter.class.getSimpleName());
-    public static final int MOVE_1_DEBUFF = 3;
+    public static final int MOVE_1_DEBUFF = 2;
     public static final int MOVE_2_DAMAGE = 4;
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;

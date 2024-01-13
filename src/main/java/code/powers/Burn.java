@@ -14,6 +14,7 @@ public class Burn extends AbstractEasyPower {
 
     public Burn(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.DEBUFF, false, owner, amount);
+        this.priority = 0; //make it apply before vulnerable
     }
 
     @Override

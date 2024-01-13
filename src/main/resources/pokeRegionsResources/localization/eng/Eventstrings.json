@@ -74,15 +74,15 @@
     "DESCRIPTIONS": [
       "In the #gforest, you spot several plump #gberries growing on a nearby bush. Their delicious scent draws you closer, and you can't help but feel suddenly famished. NL Some cries draw your attention, and you turn to see that your #yPokemon also seem quite interested in the prize in front of you.",
       "Your hunger would not be denied. Chomping down into the #yberries, you fill your stomach with their #ydelicious interior amidst cries of disappointment from your companions. NL Feeling mildly #pguilty over the situation, you resolve to do something nice for your #yPokemon later down the line.",
-      "Your #yPokemon cry out in joy as you pass the #yberries to them. Watching them chow down, you manage to just barely suppress the pangs of hunger in your own stomach. NL This was a necessary #rsacrifice. After all, you wouldn't survive without their help."
+      "Your #yPokemon cry out in joy as you share the #yberries with them. Watching them chow down, you manage to just barely suppress the pangs of hunger in your not-yet-satisfied stomach. NL This was a necessary #rsacrifice. After all, you wouldn't survive without their help."
     ],
     "OPTIONS": [
       "[Eat the berries yourself] ",
-      "[Give the berries to your Pokemon] ",
+      "[Share the berries] ",
       "Heal ",
       " HP.",
-      "Restore ",
-      " Stamina to all of your Pokemon.",
+      "All your Pokemon restore ",
+      " Stamina.",
       "[Leave]"
     ]
   },

@@ -103,10 +103,10 @@
     "NAME": "Haunter",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Curse",
+      "*Will-O-Wisp",
       "*Night *Shade",
       "Apply ",
-      " Vulnerable.",
+      " Vulnerable and pokeregions:Burn.",
       "Deal ",
       " damage a number of times equal to *Stamina."
     ]
@@ -244,8 +244,7 @@
       "*U-turn",
       "Deal ",
       " damage to ALL enemies for each enemy in combat.",
-      "Put a card from your discard pile on top of your draw pile ",
-      " times."
+      "Put a card from your discard pile on top of your draw pile."
     ]
   },
   "${ModID}:Moltres": {

@@ -4,6 +4,7 @@ import code.BetterSpriterAnimation;
 import code.PokemonRegions;
 import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
+import code.powers.Burn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -41,6 +42,7 @@ public class Haunter extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 applyToTarget(target, this, new VulnerablePower(target, code.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF, true));
+                applyToTarget(target, this, new Burn(target, code.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF));
                 break;
             }
             case MOVE_2: {

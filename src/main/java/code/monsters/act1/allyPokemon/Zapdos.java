@@ -64,9 +64,7 @@ public class Zapdos extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                for(int i = 0; i < code.cards.pokemonAllyCards.Zapdos.MOVE_2_EFFECT; ++i) {
-                    atb(new DiscardPileToTopOfDeckAction(adp()));
-                }
+                atb(new DiscardPileToTopOfDeckAction(adp()));
                 break;
             }
         }

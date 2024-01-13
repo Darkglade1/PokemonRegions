@@ -18,7 +18,7 @@ public class Flareon extends AbstractAllyPokemonCard {
 
     public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 4;
+    public static final int MAX_STAMINA = 5;
 
     public Flareon() {
         super(ID, CardRarity.RARE);
