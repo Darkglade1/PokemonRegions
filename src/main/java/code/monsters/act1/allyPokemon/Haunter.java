@@ -7,6 +7,7 @@ import code.monsters.AbstractPokemonAlly;
 import code.powers.Burn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
@@ -30,7 +31,11 @@ public class Haunter extends AbstractPokemonAlly
         move1Intent = Intent.DEBUFF;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
+        if (allyCard.currentStamina == 1) {
+            addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE);
+        } else {
+            addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
+        }
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
         move2RequiresTarget = true;
@@ -41,7 +46,7 @@ public class Haunter extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(target, this, new VulnerablePower(target, code.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF, true));
+                applyToTarget(target, this, new VulnerablePower(target, code.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 applyToTarget(target, this, new Burn(target, code.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF));
                 break;
             }
@@ -57,8 +62,15 @@ public class Haunter extends AbstractPokemonAlly
         atb(new AbstractGameAction() {
             @Override
             public void update() {
-                addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
-                setMoveShortcut(MOVE_2);
+                if (allyCard.currentStamina == 1) {
+                    addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE);
+                } else {
+                    addMove(MOVE_2, move2Intent, code.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
+                }
+                if (Haunter.this.nextMove == MOVE_2) {
+                    setMoveShortcut(MOVE_2);
+                    createIntent();
+                }
                 this.isDone = true;
             }
         });

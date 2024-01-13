@@ -87,7 +87,7 @@ public class GolemEnemy extends AbstractPokemonMonster
                 if (info.type == DamageInfo.DamageType.NORMAL && info.owner instanceof AbstractPokemonAlly && !triggered && !owner.hasPower(SuperEffective.POWER_ID)) {
                     this.flash();
                     triggered = true;
-                    applyToTarget(owner, owner, new SuperEffective(owner, amount));
+                    applyToTarget(owner, owner, new SuperEffective(owner, amount, AbstractDungeon.actionManager.turnHasEnded));
                 }
                 return damageAmount;
             }

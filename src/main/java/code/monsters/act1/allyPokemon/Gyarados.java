@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -61,7 +62,7 @@ public class Gyarados extends AbstractPokemonAlly
 
                 for (AbstractMonster mo : Wiz.getEnemies()) {
                     applyToTarget(mo, this, new WeakPower(mo, code.cards.pokemonAllyCards.Gyarados.MOVE_2_DEBUFF, false));
-                    applyToTarget(mo, this, new VulnerablePower(mo, code.cards.pokemonAllyCards.Gyarados.MOVE_2_DEBUFF, true));
+                    applyToTarget(mo, this, new VulnerablePower(mo, code.cards.pokemonAllyCards.Gyarados.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 }
                 break;
             }

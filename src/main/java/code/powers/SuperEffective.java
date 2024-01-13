@@ -12,11 +12,12 @@ public class SuperEffective extends AbstractEasyPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private boolean justApplied = true;
+    private boolean justApplied;
 
-    public SuperEffective(AbstractCreature owner, int amount) {
+    public SuperEffective(AbstractCreature owner, int amount, boolean justApplied) {
         super(POWER_ID, NAME, PowerType.DEBUFF, false, owner, amount);
         this.priority = 99;
+        this.justApplied = justApplied;
         this.loadRegion("doubleDamage");
     }
 

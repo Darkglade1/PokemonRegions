@@ -77,14 +77,18 @@ public class Zapdos extends AbstractPokemonAlly
             int numEnemies = Wiz.getEnemies().size();
             if (numEnemies == 1) {
                 addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE);
-                setMoveShortcut(MOVE_1);
-                ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", -1);
-                ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", false);
+                if (this.nextMove == MOVE_1) {
+                    setMoveShortcut(MOVE_1);
+                    ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", -1);
+                    ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", false);
+                }
             } else {
                 addMove(MOVE_1, move1Intent, code.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE, numEnemies);
-                setMoveShortcut(MOVE_1);
-                ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", numEnemies);
-                ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", true);
+                if (this.nextMove == MOVE_1) {
+                    setMoveShortcut(MOVE_1);
+                    ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", numEnemies);
+                    ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", true);
+                }
             }
         }
         super.applyPowers();

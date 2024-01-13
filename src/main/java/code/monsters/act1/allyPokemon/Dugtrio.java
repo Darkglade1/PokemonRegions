@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -64,7 +65,7 @@ public class Dugtrio extends AbstractPokemonAlly
                 atb(new VFXAction(new WaitEffect(), 0.3f));
                 atb(new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
                 for (AbstractMonster mo : Wiz.getEnemies()) {
-                    applyToTarget(mo, this, new VulnerablePower(mo, code.cards.pokemonAllyCards.Dugtrio.DEBUFF, true));
+                    applyToTarget(mo, this, new VulnerablePower(mo, code.cards.pokemonAllyCards.Dugtrio.DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 }
                 break;
             }
