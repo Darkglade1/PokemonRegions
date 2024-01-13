@@ -46,7 +46,7 @@ public class MagikarpDamageAction extends AbstractGameAction {
                 AbstractPokemonAlly gyaradosPokemon = gyaradosCard.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
                 atb(new RemoveMonsterAction(PlayerSpireFields.activePokemon.get(adp())));
                 PlayerSpireFields.activePokemon.set(adp(), gyaradosPokemon);
-                PlayerSpireFields.mostRecentlyUsedPokemonCard.set(adp(), gyaradosCard);
+                PlayerSpireFields.mostRecentlyUsedPokemonCardID.set(adp(), gyaradosCard.cardID);
                 atb(new SpawnMonsterAction(gyaradosPokemon, false));
                 atb(new UsePreBattleActionAction(gyaradosPokemon));
             }

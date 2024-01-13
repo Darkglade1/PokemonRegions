@@ -1,8 +1,12 @@
 package code.relics;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import code.actions.HealPokemonCampfireOption;
+import code.cards.AbstractAllyPokemonCard;
+import code.patches.PlayerSpireFields;
 import code.ui.PokemonTeamButton;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.CoffeeDripper;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
@@ -12,7 +16,7 @@ import java.util.ArrayList;
 import static code.PokemonRegions.makeID;
 import static code.util.Wiz.adp;
 
-public class PokeballBelt extends AbstractEasyRelic {
+public class PokeballBelt extends AbstractEasyRelic implements CustomSavable<String> {
     public static final String ID = makeID(PokeballBelt.class.getSimpleName());
     public static final int STARTING_POKEBALLS = 6;
 
@@ -44,7 +48,7 @@ public class PokeballBelt extends AbstractEasyRelic {
     @Override
     public boolean canUseCampfireOption(AbstractCampfireOption option) {
         if (option instanceof HealPokemonCampfireOption && adp().hasRelic(CoffeeDripper.ID)) {
-            ((HealPokemonCampfireOption)option).updateUsability(false);
+            ((HealPokemonCampfireOption) option).updateUsability(false);
             return false;
         } else {
             return true;
@@ -54,5 +58,15 @@ public class PokeballBelt extends AbstractEasyRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS[1];
+    }
+
+    @Override
+    public String onSave() {
+        return PlayerSpireFields.mostRecentlyUsedPokemonCardID.get(adp());
+    }
+
+    @Override
+    public void onLoad(String cardID) {
+        PlayerSpireFields.mostRecentlyUsedPokemonCardID.set(adp(), cardID);
     }
 }

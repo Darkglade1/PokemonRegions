@@ -1,6 +1,5 @@
 package code.patches;
 
-import code.cards.AbstractAllyPokemonCard;
 import code.monsters.AbstractPokemonAlly;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -15,5 +14,5 @@ public class PlayerSpireFields
 {
     public static SpireField<CardGroup> pokemonTeam = new SpireField<CardGroup>(() -> new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
     public static SpireField<AbstractPokemonAlly> activePokemon = new SpireField<>(() -> null);
-    public static SpireField<AbstractAllyPokemonCard> mostRecentlyUsedPokemonCard = new SpireField<>(() -> null);
+    public static SpireField<String> mostRecentlyUsedPokemonCardID = new SpireField<>(() -> null);
 }

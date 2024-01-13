@@ -25,20 +25,26 @@ public class PokemonTeamPatch {
         public static void Postfix(AbstractPlayer __instance) {
             CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
             AbstractPokemonAlly pokemon = null;
-            AbstractAllyPokemonCard mostRecent = PlayerSpireFields.mostRecentlyUsedPokemonCard.get(adp());
-            if (mostRecent != null && mostRecent.currentStamina > 0) {
-                pokemon = mostRecent.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
-            } else {
-                for (AbstractCard card : pokemonTeam.group) {
-                    AbstractAllyPokemonCard pokemonCard;
-                    if (card instanceof AbstractAllyPokemonCard) {
-                        pokemonCard = (AbstractAllyPokemonCard)card;
-                        if (pokemonCard.hasTag(Tags.STARTER_POKEMON)) {
-                            pokemon = pokemonCard.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
-                            break;
-                        }
+
+            String mostRecentID = PlayerSpireFields.mostRecentlyUsedPokemonCardID.get(adp());
+            AbstractAllyPokemonCard mostRecent = null;
+            AbstractAllyPokemonCard starter = null;
+            for (AbstractCard card : pokemonTeam.group) {
+                AbstractAllyPokemonCard pokemonCard;
+                if (card instanceof AbstractAllyPokemonCard) {
+                    pokemonCard = (AbstractAllyPokemonCard)card;
+                    if (pokemonCard.hasTag(Tags.STARTER_POKEMON)) {
+                        starter = pokemonCard;
+                    }
+                    if (pokemonCard.cardID.equals(mostRecentID)) {
+                        mostRecent = pokemonCard;
                     }
                 }
+            }
+            if (mostRecent != null && mostRecent.currentStamina > 0) {
+                pokemon = mostRecent.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
+            } else if (starter != null && starter.currentStamina > 0){
+                pokemon = starter.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
             }
             if (pokemon != null) {
                 PlayerSpireFields.activePokemon.set(adp(), pokemon);
