@@ -39,6 +39,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     protected DamageInfo info;
     protected int multiplier;
     protected PokeballMove pokeballMove;
+    public boolean captured = false;
     private static final float ASCENSION_DAMAGE_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_TANK_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_SPECIAL_BUFF_PERCENT = 1.5f;

@@ -57,6 +57,7 @@ public class PokeballMove extends ClickableUIElement {
         int roll = AbstractDungeon.miscRng.random(1, 100);
         int chance = calculateCaptureChance(owner);
         if (roll <= chance || Settings.isDebug) {
+            owner.captured = true;
             owner.currentBlock = 0;
             atb(new SuicideAction(owner));
             AbstractCard pokemonCard = owner.getAssociatedPokemonCard();
