@@ -62,5 +62,13 @@
   "${ModID}:FiredUp": {
     "NAME": "Fired Up!",
     "DESCRIPTIONS": ["Deals #b", "% more damage with attacks."]
+  },
+  "${ModID}:MindOverMatter": {
+    "NAME": "Mind Over Matter",
+    "DESCRIPTIONS": ["At the end of every other round, triggers a #yFuture #ySight, then increases the damage of subsequent #yFuture #ySights by #b", ". NL Current #yFuture #ySight values: ", " damage."]
+  },
+  "${ModID}:FutureSight": {
+    "NAME": "Future Sight",
+    "DESCRIPTIONS": ["At the end of ", "this", "next", " round, you take #b", " damage."]
   }
 }

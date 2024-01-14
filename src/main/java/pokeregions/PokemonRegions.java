@@ -281,6 +281,7 @@ public class PokemonRegions implements
                         new MoltresEnemy(-150.0F, 150.0F),
                         new ZapdosEnemy(150.0F, 150.0F)
                 }), makeMonsterPath("Moltres/BirdMap.png"), makeMonsterPath("Moltres/BirdMapOutline.png"));
+        kanto.addBoss(MewtwoEnemy.ID, (BaseMod.GetMonster) MewtwoEnemy::new, makeMonsterPath("Mewtwo/MewtwoMap.png"), makeMonsterPath("Mewtwo/MewtwoMapOutline.png"));
 
         //Elites
         BaseMod.addMonster(CloysterEnemy.ID, (BaseMod.GetMonster) CloysterEnemy::new);

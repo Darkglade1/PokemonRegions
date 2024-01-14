@@ -153,5 +153,15 @@
     "NAME": "Articuno",
     "DIALOG": [
     ]
+  },
+  "${ModID}:MewtwoEnemy": {
+    "MOVES": [
+      "Calm Mind",
+      "Recover",
+      "Confusion"
+    ],
+    "NAME": "Mewtwo",
+    "DIALOG": [
+    ]
   }
 }

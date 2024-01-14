@@ -294,6 +294,18 @@
       ""
     ]
   },
+  "${ModID}:Mewtwo": {
+    "NAME": "Mewtwo",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Stored[] [#FFA500]Power[]",
+      "[#FFA500]Expanding[] [#FFA500]Force[]",
+      "Channel 1 Dark. It grows ",
+      "% faster.",
+      "Evoke your next Orb ",
+      " times."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
@@ -334,5 +346,13 @@
   "${ModID}:Prank": {
     "NAME": "Prank",
     "DESCRIPTION": "When matched, add a *Clumsy to your deck."
+  },
+  "${ModID}:FutureSight": {
+    "NAME": "Future Sight",
+    "DESCRIPTION": "You take !M! damage immediately.",
+    "EXTENDED_DESCRIPTION": [
+      "You take !M! damage at the end of next round.",
+      "You take !M! damage at the end of 2 rounds from now."
+    ]
   }
 }

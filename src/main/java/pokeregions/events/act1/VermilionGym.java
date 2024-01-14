@@ -62,7 +62,7 @@ public class VermilionGym extends PhasedEvent {
         } else {
             relic = RelicLibrary.getRelic(ThunderBadge.ID).makeCopy();
         }
-        curse = CardLibrary.getCard(Regret.ID);
+        curse = CardLibrary.getCard(Regret.ID).makeCopy();
         potion = adp().getRandomPotion();
 
         TextPhase.OptionInfo agreeOption = createCardPreviewOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + UPGRADE_AMT + OPTIONS[3], "g") + " " + FontHelper.colorString(OPTIONS[4] + curse.name + OPTIONS[5], "r"), curse, (i)->{
