@@ -309,5 +309,30 @@
   "${ModID}:FightAsOne": {
     "NAME": "Fight as One",
     "DESCRIPTION": "Deal !D! damage. NL Your currently active *Pokemon immediately takes a turn."
+  },
+  "${ModID}:Riches": {
+    "NAME": "Minor Riches",
+    "DESCRIPTION": "When matched, gain !M! Gold.",
+    "EXTENDED_DESCRIPTION": [
+      "Major Riches"
+    ]
+  },
+  "${ModID}:Health": {
+    "NAME": "Minor Health",
+    "DESCRIPTION": "When matched, heal !M! HP.",
+    "EXTENDED_DESCRIPTION": [
+      "Major Health"
+    ]
+  },
+  "${ModID}:Theft": {
+    "NAME": "Minor Theft",
+    "DESCRIPTION": "When matched, lose !M! Gold.",
+    "EXTENDED_DESCRIPTION": [
+      "Major Theft"
+    ]
+  },
+  "${ModID}:Prank": {
+    "NAME": "Prank",
+    "DESCRIPTION": "When matched, add a *Clumsy to your deck."
   }
 }

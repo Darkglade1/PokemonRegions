@@ -344,6 +344,7 @@ public class PokemonRegions implements
                 .bonusCondition(TradeOffer::canSpawn)
                 .dungeonID(Kanto.ID)
                 .create());
+        BaseMod.addEvent(MewsGame.ID, MewsGame.class, Kanto.ID);
     }
 
     @Override

@@ -137,5 +137,23 @@
       "Obtain ",
       "[Leave]"
     ]
+  },
+  "${ModID}:MewsGame": {
+    "NAME": "Mew's Game",
+    "DESCRIPTIONS": [
+      "As you're hiking through mountains, a small bipedal pink #yPokemon suddenly floats up next to you. NL \"Hey! Play with me!\" NL The words did not travel through the air, but instead transmitted themselves directly into your #ymind. NL \"If you win, I'll join you on your journey!\"",
+      "\"Yay!\" The #yPokemon flips through the air in #gcelebration. As it completes several revolutions, a deck of cards suddenly manifests and began shuffling itself. NL \"Let's play Match Two! If you can match enough pairs, you win!\" NL The deck stops shuffling and spread itself out out before you. NL \"But be warned! These cards will have certain #yeffects when you match them, so choose carefully!\"",
+      "The game is over and the result is your victory. The #yPokemon flips through the air, seemingly #gdelighted by this outcome. NL \"You won! That's great!\" NL It hovers closer to you, beaming. NL \"Let's have some fun adventures together, alright?\" NL You find this #yPokemon's enthusiasm to be rather over-the-top, but perhaps it wasn't such a bad thing.",
+      "\"Aww, you ran out of attempts. Too bad!\" NL The #yPokemon twirls through the air, seemingly unbothered by this outcome. NL \"That's okay! Maybe next time.\" NL With a flicker of #ylight, it #pvanishes, disappearing just as suddenly as it had arrived.",
+      "\"You don't want to play? That's too bad.\" NL The #yPokemon seems rather disappointed by your response. NL \"That's okay! Maybe next time.\" NL With a flicker of #ylight, it #pvanishes, disappearing just as suddenly as it had arrived."
+    ],
+    "OPTIONS": [
+      "[Agree]",
+      "[Decline]",
+      "[Play]",
+      "[Leave]",
+      "Attempts Left: ",
+      "Mew's Challenge: "
+    ]
   }
 }
