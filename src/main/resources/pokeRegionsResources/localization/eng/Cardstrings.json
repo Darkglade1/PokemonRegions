@@ -304,11 +304,11 @@
   },
   "${ModID}:Frozen": {
     "NAME": "Frozen",
-    "DESCRIPTION": "Give a card in your hand Retain and Exhaust."
+    "DESCRIPTION": "Exhaust !M! card."
   },
   "${ModID}:FightAsOne": {
     "NAME": "Fight as One",
-    "DESCRIPTION": "Deal !D! damage. NL Your currently active [#FFA500]Pokemon immediately takes a turn."
+    "DESCRIPTION": "Deal !D! damage. NL Your currently active *Pokemon immediately takes a turn."
   },
   "${ModID}:Riches": {
     "NAME": "Minor Riches",
@@ -333,6 +333,6 @@
   },
   "${ModID}:Prank": {
     "NAME": "Prank",
-    "DESCRIPTION": "When matched, add a [#FFA500]Clumsy to your deck."
+    "DESCRIPTION": "When matched, add a *Clumsy to your deck."
   }
 }

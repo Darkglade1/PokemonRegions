@@ -99,11 +99,6 @@
       "Summons minions"
     ]
   },
-  "${ModID}:Frozen": {
-    "TEXT": [
-      "give Retain and Exhaust."
-    ]
-  },
   "${ModID}:ExhaustDrawPile": {
     "TEXT": [
       "Choose cards to exhaust."
