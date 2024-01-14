@@ -339,6 +339,7 @@ public class PokemonRegions implements
                 .dungeonID(Kanto.ID)
                 .create());
         BaseMod.addEvent(MewsGame.ID, MewsGame.class, Kanto.ID);
+        BaseMod.addEvent(VermilionGym.ID, VermilionGym.class, Kanto.ID);
     }
 
     @Override

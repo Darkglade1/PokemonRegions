@@ -261,8 +261,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                                 intentTip.body = TEXT[13] + info.output + TEXT[14] + TEXT[15];
                             }
                         } else {
-                            // info.applyPowers(this, target);
-                            info.output = info.base;
+                            // Apply powers against self since that should be good enough to calc massattack damage with only self damage mods
+                            info.applyPowers(this, this);
                             if (additionalMultiplier > 0) {
                                 info.output = (int)(info.output * additionalMultiplier);
                             }

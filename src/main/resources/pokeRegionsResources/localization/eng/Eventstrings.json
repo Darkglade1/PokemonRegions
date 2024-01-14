@@ -155,5 +155,37 @@
       "Attempts Left: ",
       "Mew's Challenge: "
     ]
+  },
+  "${ModID}:VermilionGym": {
+    "NAME": "Vermilion Gym",
+    "DESCRIPTIONS": [
+      "You poke your head into the gym, but it's oddly empty. Curious, you make your way to the backrooms, where you see many #yPokemon trapped in cages, seemingly distressed at their predicament. NL \"Do I smell a rat scurrying around?\" NL A gruff man in a military uniform turns the corner. You demand an explanation from him. \"These #pcowardly chumps? I @rescued@ them from their #psoft masters, that's what happened!\" He sneers. \"In time, they will make for a fine #rfighting #rforce under my tuition.\" NL He eyes you carefully. \"You seem like a strong one. Tell you what, don't say a word to anyone of what's happening here, and I'll give you a run through my #yspecial #ytraining #ycourse, free of charge!\"",
+      "You take his #yoffer. The training is grueling, difficult, and #rhellish. But it did make you #ystronger, just as the man had advertised. NL As you leave, you spare one final glance for the kidnapped #yPokemon with a tinge of #pregret in your heart.",
+      "\"Spurning my generous offer? You won't get away with this!\" NL The man surges forward, several ball-like #yPokemon following in his wake. You . . .",
+      "You throw a potion in his face. The man cries out in agony as he writhes on the ground. His #yPokemon pause next to him, and you take the opportunity to sprint out of the gym and to the nearest authorities.",
+      "You command your #yPokemon to make a distraction. One furious exchange of moves later, one of the ball-like #yPokemon flashes, then suddenly explodes with a tremendous @BOOM@ and covering the entire room in smoke. You take the opportunity to sprint out of the gym and to the nearest authorities.",
+      "You decide to make a distraction yourself. Rushing toward one of the ball-like #yPokemon, you grab it and throw it directly at your opponent. NL @BOOM!@ The resulting explosion knocks you both away from each other. Groggily, you get up and take the opportunity to sprint out of the gym and to the nearest authorities.",
+      " NL Soon afterward, the man is detained, and an officer approaches you. \"Thank you for your assistance. A lot of the townspeople were worried about their missing #yPokemon.\" She rifles in her pocket and gives you a #ybadge. \"Here, take this. The former Gym leader certainly doesn't deserve to be handing these out anymore, and I think you've more than earned it.\" NL You accept the badge, its weight in your pocket a reminder of the #ggood #gdeed you've done today."
+    ],
+    "OPTIONS": [
+      "[Agree to keep silent] ",
+      "[Run away and report him] ",
+      "Upgrade ",
+      " random cards.",
+      "Become Cursed - ",
+      ".",
+      "Obtain a special Relic.",
+      "Make a distraction.",
+      "[Leave]",
+      "[Throw a potion to distract him] ",
+      "Lose ",
+      "[Have a Pokemon distract him] ",
+      "Choose a non-Starter Pokemon to lose ",
+      " Stamina.",
+      "[Distract him yourself] ",
+      " HP.",
+      "[Locked] Requires: Potion",
+      "[Locked] Requires: non-Starter Pokemon with enough Stamina"
+    ]
   }
 }

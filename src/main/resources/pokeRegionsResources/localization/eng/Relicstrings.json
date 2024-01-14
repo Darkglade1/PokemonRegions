@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "The first time you switch-in a #yPokemon with missing #yStamina each combat, the switched-in #yPokemon restores #b", " #ypokeregions:Stamina."
     ]
+  },
+  "${ModID}:ThunderBadge": {
+    "NAME": "Thunder Badge",
+    "FLAVOR": "It sparks in your hands like the unconstrained rage of a thunderstorm.",
+    "DESCRIPTIONS": [
+      "Your #yPokemon deal #b", "% more damage with their attacks."
+    ]
   }
 }
