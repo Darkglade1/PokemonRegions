@@ -3,8 +3,8 @@
     "NAME": "Charmander",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Scratch",
-      "*Ember",
+      "[#FFA500]Scratch[]",
+      "[#FFA500]Ember[]",
       "Deal ",
       " damage.",
       "Deal ",
@@ -15,8 +15,8 @@
     "NAME": "Bulbasaur",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Vine *Whip",
-      "*Poison *Powder",
+      "[#FFA500]Vine[] [#FFA500]Whip[]",
+      "[#FFA500]Poison[] [#FFA500]Powder[]",
       "Deal ",
       " damage.",
       "Apply ",
@@ -28,8 +28,8 @@
     "NAME": "Squirtle",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Water *Gun",
-      "*Defense *Curl",
+      "[#FFA500]Water[] [#FFA500]Gun[]",
+      "[#FFA500]Defense[] [#FFA500]Curl[]",
       "Deal ",
       " damage.",
       "You gain ",
@@ -40,9 +40,9 @@
     "NAME": "Diglett",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Dig",
-      "*Emerge",
-      "Allows the use of *Emerge next turn.",
+      "[#FFA500]Dig[]",
+      "[#FFA500]Emerge[]",
+      "Allows the use of [#FFA500]Emerge[] next turn.",
       "Deal ",
       " damage."
     ]
@@ -51,8 +51,8 @@
     "NAME": "Dugtrio",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Excavate",
-      "*Magnitude",
+      "[#FFA500]Excavate[]",
+      "[#FFA500]Magnitude[]",
       "Put ",
       " cards from your discard into your hand.",
       "Deal ",
@@ -64,8 +64,8 @@
     "NAME": "Cloyster",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Withdraw",
-      "*Icicle *Spear",
+      "[#FFA500]Withdraw[]",
+      "[#FFA500]Icicle[] [#FFA500]Spear[]",
       "You gain *Barricade.",
       "Deal ",
       " damage ",
@@ -76,8 +76,8 @@
     "NAME": "Dragonite",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Dragon *Dance",
-      "*Outrage",
+      "[#FFA500]Dragon[] [#FFA500]Dance[]",
+      "[#FFA500]Outrage[]",
       "You gain ",
       " Strength.",
       "Deal ",
@@ -89,8 +89,8 @@
     "NAME": "Gastly",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Dream *Eater",
-      "*Poltergeist",
+      "[#FFA500]Dream[] [#FFA500]Eater[]",
+      "[#FFA500]Poltergeist[]",
       "You lose ",
       " HP. ",
       "Restores ",
@@ -103,8 +103,8 @@
     "NAME": "Haunter",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Will-O-Wisp",
-      "*Night *Shade",
+      "[#FFA500]Will-O-Wisp[]",
+      "[#FFA500]Night[] [#FFA500]Shade[]",
       "Apply ",
       " Vulnerable and pokeregions:Burn.",
       "Deal ",
@@ -115,8 +115,8 @@
     "NAME": "Gengar",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Nasty *Plot",
-      "*Shadow *Ball",
+      "[#FFA500]Nasty[] [#FFA500]Plot[]",
+      "[#FFA500]Shadow[] [#FFA500]Ball[]",
       "Put ",
       " cards from your draw pile into your hand.",
       "Deal ",
@@ -127,8 +127,8 @@
     "NAME": "Arbok",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Toxic",
-      "*Sucker *Punch",
+      "[#FFA500]Toxic[]",
+      "[#FFA500]Sucker[] [#FFA500]Punch[]",
       "Apply ",
       " pokeregions:Toxic.",
       "Deal ",
@@ -140,8 +140,8 @@
     "NAME": "Vulpix",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Fire *Spin",
-      "*Flame *Charge",
+      "[#FFA500]Fire[] [#FFA500]Spin[]",
+      "[#FFA500]Flame[] [#FFA500]Charge[]",
       "Deal ",
       " damage and apply ",
       " pokeregions:Burn.",
@@ -154,8 +154,8 @@
     "NAME": "Golem",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Rock *Polish",
-      "*Earthquake",
+      "[#FFA500]Rock[] [#FFA500]Polish[]",
+      "[#FFA500]Earthquake[]",
       "You gain ",
       " Block.",
       "Deal ",
@@ -166,8 +166,8 @@
     "NAME": "Machamp",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Bulk *Up",
-      "*Dynamic *Punch",
+      "[#FFA500]Bulk[] [#FFA500]Up[]",
+      "[#FFA500]Dynamic[] [#FFA500]Punch[]",
       "You gain ",
       " *Temporary Strength next turn.",
       "Deal ",
@@ -178,8 +178,8 @@
     "NAME": "Rattata",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Cut",
-      "*Double *Team",
+      "[#FFA500]Cut[]",
+      "[#FFA500]Double[] [#FFA500]Team[]",
       "Deal ",
       " damage and draw ",
       " card.",
@@ -192,8 +192,8 @@
     "NAME": "Rhyhorn",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Bulldoze",
-      "*Endure",
+      "[#FFA500]Bulldoze[]",
+      "[#FFA500]Endure[]",
       "Deal ",
       " damage. ",
       "You gain ",
@@ -204,8 +204,8 @@
     "NAME": "Magikarp",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Splash",
-      "*Tackle",
+      "[#FFA500]Splash[]",
+      "[#FFA500]Tackle[]",
       "Do nothing.",
       "Deal ",
       " damage. If Fatal, permanently evolves into *Gyarados."
@@ -215,8 +215,8 @@
     "NAME": "Gyarados",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Waterfall",
-      "*Roar",
+      "[#FFA500]Waterfall[]",
+      "[#FFA500]Roar[]",
       "Deal ",
       " damage. If this defeats an enemy, restores ",
       " *Stamina.",
@@ -228,8 +228,8 @@
     "NAME": "Articuno",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Snowscape",
-      "*Future *Sight",
+      "[#FFA500]Snowscape[]",
+      "[#FFA500]Future[] [#FFA500]Sight[]",
       "You gain ",
       " Block and *Metallicize.",
       "Scry ",
@@ -240,8 +240,8 @@
     "NAME": "Zapdos",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Chain *Lightning",
-      "*U-turn",
+      "[#FFA500]Chain[] [#FFA500]Lightning[]",
+      "[#FFA500]U-turn[]",
       "Deal ",
       " damage to ALL enemies for each enemy in combat.",
       "Put a card from your discard pile on top of your draw pile."
@@ -251,8 +251,8 @@
     "NAME": "Moltres",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Heat *Wave",
-      "*Incinerate",
+      "[#FFA500]Heat[] [#FFA500]Wave[]",
+      "[#FFA500]Incinerate[]",
       "Deal ",
       " damage and apply ",
       " pokeregions:Burn ",
@@ -265,8 +265,8 @@
     "NAME": "Jolteon",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Agility",
-      "*Charge",
+      "[#FFA500]Agility[]",
+      "[#FFA500]Charge[]",
       "You gain ",
       " Dexterity.",
       " [E] next turn."
@@ -276,8 +276,8 @@
     "NAME": "Flareon",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "*Flare *Blitz",
-      "*Burning *Spark",
+      "[#FFA500]Flare[] [#FFA500]Blitz[]",
+      "[#FFA500]Burning[] [#FFA500]Spark[]",
       "Deal ",
       " damage. Add ",
       " Burn to your hand.",
@@ -308,7 +308,7 @@
   },
   "${ModID}:FightAsOne": {
     "NAME": "Fight as One",
-    "DESCRIPTION": "Deal !D! damage. NL Your currently active *Pokemon immediately takes a turn."
+    "DESCRIPTION": "Deal !D! damage. NL Your currently active [#FFA500]Pokemon immediately takes a turn."
   },
   "${ModID}:Riches": {
     "NAME": "Minor Riches",
@@ -333,6 +333,6 @@
   },
   "${ModID}:Prank": {
     "NAME": "Prank",
-    "DESCRIPTION": "When matched, add a *Clumsy to your deck."
+    "DESCRIPTION": "When matched, add a [#FFA500]Clumsy to your deck."
   }
 }
