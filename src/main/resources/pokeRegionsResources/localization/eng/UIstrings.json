@@ -112,14 +112,15 @@
   "${ModID}:PokeballMove": {
     "TEXT": [
       "Throw a Pokeball at ",
-      "Spend [E] to use a #yPokeball and attempt to capture this #yPokemon.",
+      "Spend [E] to use a #yPokeball and attempt to capture this #yPokemon. NL #b100% Capture chance when this #yPokemon is at or below #b",
       "There are no Pokemon to catch.",
       "I have no Pokeballs left.",
       "Not enough Energy.",
       "SUCCESS",
       "FAILURE",
       "Capture chance: ",
-      "%"
+      "%",
+      " HP."
     ]
   },
   "${ModID}:PokemonHealthBar": {

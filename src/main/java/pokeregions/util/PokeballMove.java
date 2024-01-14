@@ -27,10 +27,21 @@ import static pokeregions.PokemonRegions.makeUIPath;
 import static pokeregions.util.Wiz.adp;
 import static pokeregions.util.Wiz.atb;
 
-
 public class PokeballMove extends ClickableUIElement {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("PokeballMove"));
     private static final String[] TEXT = uiStrings.TEXT;
+
+    public static final float ELITE_ZERO_CHANCE_THRESHOLD = 0.3f;
+    public static final float ELITE_FIFTY_CHANCE_THRESHOLD = 0.2f;
+    public static final float ELITE_ONE_HUNDRED_CHANCE_THRESHOLD = 0.1f;
+
+    public static final float BOSS_ZERO_CHANCE_THRESHOLD = 0.15f;
+    public static final float BOSS_FIFTY_CHANCE_THRESHOLD = 0.10f;
+    public static final float BOSS_ONE_HUNDRED_CHANCE_THRESHOLD = 0.05f;
+
+    public static final float NORMAL_ZERO_CHANCE_THRESHOLD = 0.5f;
+    public static final float NORMAL_FIFTY_CHANCE_THRESHOLD = 0.35f;
+    public static final float NORMAL_ONE_HUNDRED_CHANCE_THRESHOLD = 0.2f;
 
     private final String ID;
     private final String moveDescription;
@@ -41,8 +52,20 @@ public class PokeballMove extends ClickableUIElement {
     public PokeballMove(AbstractPokemonMonster owner) {
         super(TexLoader.getTexture(makeUIPath("CatchPokemonButton.png")), 0, 0, 76.0f, 64.0f);
         this.ID = TEXT[0] + owner.name;
-        this.moveDescription = TEXT[1];
         this.owner = owner;
+        int hpThreshold;
+        switch (owner.type) {
+            case ELITE:
+                hpThreshold = (int)(ELITE_ONE_HUNDRED_CHANCE_THRESHOLD * owner.maxHealth);
+                break;
+            case BOSS:
+                hpThreshold = (int)(BOSS_ONE_HUNDRED_CHANCE_THRESHOLD * owner.maxHealth);
+                break;
+            default:
+                hpThreshold = (int)(NORMAL_ONE_HUNDRED_CHANCE_THRESHOLD * owner.maxHealth);
+                break;
+        }
+        this.moveDescription = TEXT[1] + hpThreshold + TEXT[9];
     }
 
     private void doMove() {
@@ -144,19 +167,19 @@ public class PokeballMove extends ClickableUIElement {
 
         switch (mo.type) {
             case ELITE:
-                ZERO_CHANCE_THRESHOLD = 0.3f;
-                FIFTY_CHANCE_THRESHOLD = 0.2f;
-                ONE_HUNDRED_CHANCE_THRESHOLD = 0.1f;
+                ZERO_CHANCE_THRESHOLD = ELITE_ZERO_CHANCE_THRESHOLD;
+                FIFTY_CHANCE_THRESHOLD = ELITE_FIFTY_CHANCE_THRESHOLD;
+                ONE_HUNDRED_CHANCE_THRESHOLD = ELITE_ONE_HUNDRED_CHANCE_THRESHOLD;
                 break;
             case BOSS:
-                ZERO_CHANCE_THRESHOLD = 0.15f;
-                FIFTY_CHANCE_THRESHOLD = 0.10f;
-                ONE_HUNDRED_CHANCE_THRESHOLD = 0.05f;
+                ZERO_CHANCE_THRESHOLD = BOSS_ZERO_CHANCE_THRESHOLD;
+                FIFTY_CHANCE_THRESHOLD = BOSS_FIFTY_CHANCE_THRESHOLD;
+                ONE_HUNDRED_CHANCE_THRESHOLD = BOSS_ONE_HUNDRED_CHANCE_THRESHOLD;
                 break;
             default:
-                ZERO_CHANCE_THRESHOLD = 0.5f;
-                FIFTY_CHANCE_THRESHOLD = 0.35f;
-                ONE_HUNDRED_CHANCE_THRESHOLD = 0.2f;
+                ZERO_CHANCE_THRESHOLD = NORMAL_ZERO_CHANCE_THRESHOLD;
+                FIFTY_CHANCE_THRESHOLD = NORMAL_FIFTY_CHANCE_THRESHOLD;
+                ONE_HUNDRED_CHANCE_THRESHOLD = NORMAL_ONE_HUNDRED_CHANCE_THRESHOLD;
                 break;
 
         }
