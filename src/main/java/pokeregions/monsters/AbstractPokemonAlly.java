@@ -125,7 +125,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     public Texture getTextureForIntent(Intent intent) {
         if (intent == IntentEnums.MASS_ATTACK) {
-            return TexLoader.getTexture(makeUIPath("areaIntent.png"));
+            return TexLoader.getTexture(makeUIPath("areaAttackIcon.png"));
         }
         switch (intent) {
             case ATTACK:
@@ -145,7 +145,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             case DEFEND_BUFF:
                 return TexLoader.getTexture(makeUIPath("blockBuffIcon.png"));
             case MAGIC:
-                return TexLoader.getTexture(makeUIPath("magic.png"));
+                return TexLoader.getTexture(makeUIPath("magicIcon.png"));
             case UNKNOWN:
                 return TexLoader.getTexture(makeUIPath("UnknownIcon.png"));
             default:

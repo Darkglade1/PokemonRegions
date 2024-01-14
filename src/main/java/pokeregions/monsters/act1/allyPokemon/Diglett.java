@@ -60,6 +60,13 @@ public class Diglett extends AbstractPokemonAlly
                     runAnim("Emerge");
                     this.burrowed = false;
                     atb(new VFXAction(new WaitEffect(), 0.2f));
+                    atb(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            useFastAttackAnimation();
+                            this.isDone = true;
+                        }
+                    });
                     dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                     setMoveShortcut(MOVE_1);
                 }
