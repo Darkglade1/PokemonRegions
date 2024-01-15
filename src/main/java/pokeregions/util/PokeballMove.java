@@ -102,11 +102,11 @@ public class PokeballMove extends ClickableUIElement {
             CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
             int chance = calculateCaptureChance(owner);
             if (chance >= 100) {
-                textColor = Color.GREEN.cpy();
+                textColor = new Color(0, 255, 0, 1);
             } else if (chance <= 0) {
-                textColor = Color.RED.cpy();
+                textColor = new Color(255, 0, 0, 1);
             } else {
-                textColor = Color.YELLOW.cpy();
+                textColor = new Color(255, 255, 0, 1); //downfall fucks up Color.Yellow :upside_down:
             }
             captureChanceMessage = TEXT[7] + chance + TEXT[8];
         }
