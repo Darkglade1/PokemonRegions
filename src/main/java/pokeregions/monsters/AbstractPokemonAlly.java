@@ -1,6 +1,7 @@
 package pokeregions.monsters;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.Gdx;
 import pokeregions.CustomIntent.IntentEnums;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.SwitchPokemonAction;
@@ -8,6 +9,7 @@ import pokeregions.actions.UpdateStaminaOnCardAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.util.AllyMove;
 import pokeregions.util.SwitchPokemonMove;
+import pokeregions.util.TargetArrow;
 import pokeregions.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -49,6 +51,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public int move2StaminaCost;
     public static final float X_POSITION = -700.0f;
     public static final float Y_POSITION = 0.0f;
+    private float arrowTime = 0.0f;
+    private float alpha = 0.0f;
+    private float alphaSpeed = 3.0f;
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
@@ -338,6 +343,15 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             switchMove.render(sb);
         }
         super.render(sb);
+
+        alpha += Gdx.graphics.getDeltaTime() * alphaSpeed / 4;
+        if (alpha > 0.7f) {
+            alpha = 0.7f;
+        }
+        if (target != null && ((this.nextMove == MOVE_1 && move1RequiresTarget) || (this.nextMove == MOVE_2 && move2RequiresTarget))) {
+            TargetArrow.drawTargetArrow(sb, this.intentHb, target.hb, TargetArrow.CONTROL_HEIGHT * Settings.scale, arrowTime, alpha, null);
+        }
+        arrowTime += Gdx.graphics.getDeltaTime();
     }
 
     public void update() {
