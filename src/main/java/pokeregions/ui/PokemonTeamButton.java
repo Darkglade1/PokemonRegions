@@ -6,6 +6,7 @@ import basemod.TopPanelGroup;
 import basemod.TopPanelItem;
 import basemod.abstracts.CustomSavable;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.util.Tags;
@@ -48,13 +49,10 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
 
     @Override
     protected void onClick() {
-        CardCrawlGame.sound.play("DECK_OPEN");
-        if (AbstractDungeon.isScreenUp) {
-            AbstractDungeon.dynamicBanner.hide();
-            AbstractDungeon.overlayMenu.cancelButton.hide();
-            AbstractDungeon.previousScreen = AbstractDungeon.screen;
+        if (!CardCrawlGame.isPopupOpen) {
+            CardCrawlGame.sound.play("DECK_OPEN");
+            toggleScreen();
         }
-        BaseMod.openCustomScreen(PokemonTeamViewScreen.Enum.POKEMON_TEAM_VIEW_SCREEN);
     }
 
     @Override
@@ -154,5 +152,60 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
                 pokemonCard.updateStamina(pokemonCard.currentStamina + amount);
             }
         }
+    }
+
+    private static void toggleScreen() {
+        if (AbstractDungeon.screen == PokemonTeamViewScreen.Enum.POKEMON_TEAM_VIEW_SCREEN) {
+            AbstractDungeon.closeCurrentScreen();
+        } else {
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
+                AbstractDungeon.closeCurrentScreen();
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
+            } else if (!AbstractDungeon.isScreenUp) {
+            } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MASTER_DECK_VIEW) {
+                if (AbstractDungeon.previousScreen != null) {
+                    AbstractDungeon.screenSwap = true;
+                }
+
+                AbstractDungeon.closeCurrentScreen();
+            } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.DEATH) {
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.DEATH;
+                AbstractDungeon.deathScreen.hide();
+            } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.BOSS_REWARD) {
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.BOSS_REWARD;
+                AbstractDungeon.bossRelicScreen.hide();
+            } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.SHOP) {
+                AbstractDungeon.overlayMenu.cancelButton.hide();
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
+            } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.MAP && !AbstractDungeon.dungeonMapScreen.dismissable) {
+                AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.MAP;
+            } else if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.SETTINGS && AbstractDungeon.screen != AbstractDungeon.CurrentScreen.MAP) {
+                if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.INPUT_SETTINGS) {
+                    if (AbstractDungeon.previousScreen != null) {
+                        AbstractDungeon.screenSwap = true;
+                    }
+
+                    AbstractDungeon.closeCurrentScreen();
+                } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD) {
+                    AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.CARD_REWARD;
+                    AbstractDungeon.dynamicBanner.hide();
+                } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
+                    AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.GRID;
+                    AbstractDungeon.gridSelectScreen.hide();
+                } else if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT) {
+                    AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.HAND_SELECT;
+                }
+            } else {
+                if (AbstractDungeon.previousScreen != null) {
+                    AbstractDungeon.screenSwap = true;
+                }
+
+                AbstractDungeon.closeCurrentScreen();
+            }
+            if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.VICTORY) {
+                BaseMod.openCustomScreen(PokemonTeamViewScreen.Enum.POKEMON_TEAM_VIEW_SCREEN);
+            }
+        }
+        InputHelper.justClickedLeft = false;
     }
 }
