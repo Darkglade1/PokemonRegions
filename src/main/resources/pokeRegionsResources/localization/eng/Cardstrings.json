@@ -306,6 +306,32 @@
       " times."
     ]
   },
+  "${ModID}:Caterpie": {
+    "NAME": "Caterpie",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]String[] [#FFA500]Shot[]",
+      "[#FFA500]Bug[] [#FFA500]Bite[]",
+      "Enemy loses ",
+      " Strength this turn.",
+      "Deal ",
+      " damage. Apply ",
+      " Weak."
+    ]
+  },
+  "${ModID}:Weedle": {
+    "NAME": "Weedle",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]String[] [#FFA500]Shot[]",
+      "[#FFA500]Poison[] [#FFA500]Sting[]",
+      "Enemy loses ",
+      " Strength this turn.",
+      "Deal ",
+      " damage. Apply ",
+      " pokeregions:Toxic."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

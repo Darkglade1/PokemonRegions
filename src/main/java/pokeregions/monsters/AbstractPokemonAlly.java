@@ -348,7 +348,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         if (alpha > 0.7f) {
             alpha = 0.7f;
         }
-        if (target != null && ((this.nextMove == MOVE_1 && move1RequiresTarget) || (this.nextMove == MOVE_2 && move2RequiresTarget))) {
+        if (target != null && !AbstractDungeon.actionManager.turnHasEnded && ((this.nextMove == MOVE_1 && move1RequiresTarget) || (this.nextMove == MOVE_2 && move2RequiresTarget))) {
             TargetArrow.drawTargetArrow(sb, this.intentHb, target.hb, TargetArrow.CONTROL_HEIGHT * Settings.scale, arrowTime, alpha, null);
         }
         arrowTime += Gdx.graphics.getDeltaTime();

@@ -7,6 +7,7 @@ import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.CustomIntent.MassAttackIntent;
 import pokeregions.cards.AbstractEasyCard;
 import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
@@ -45,10 +46,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 import static pokeregions.util.Wiz.adp;
 
@@ -321,6 +319,7 @@ public class PokemonRegions implements
                         new DiglettEnemy(-200.0F, 0.0F, true),
                         new RhyhornEnemy(50.0F, 0.0F),
                 }));
+        BaseMod.addMonster(EncounterIDs.BUG_SWARM, "Bug Swarm", () -> new MonsterGroup(generateBugSwarmGroup()));
 
         // Events
         BaseMod.addEvent(CeladonGym.ID, CeladonGym.class, Kanto.ID);
@@ -341,6 +340,22 @@ public class PokemonRegions implements
                 .create());
         BaseMod.addEvent(MewsGame.ID, MewsGame.class, Kanto.ID);
         BaseMod.addEvent(VermilionGym.ID, VermilionGym.class, Kanto.ID);
+    }
+
+    private AbstractMonster[] generateBugSwarmGroup() {
+        int groupSize = 5;
+        float[] groupPositionsSize = {-450.0F, -300.0F, -150.0F, 0.0F, 150.0F};
+        AbstractMonster[] monsters = new AbstractMonster[groupSize];
+        monsters[0] = new CaterpieEnemy(groupPositionsSize[0], 0.0F);
+        monsters[1] = new WeedleEnemy(groupPositionsSize[1], 0.0F);
+        for (int i = 2; i < groupSize; i++) {
+            if (AbstractDungeon.monsterRng.randomBoolean()) {
+                monsters[i] = new CaterpieEnemy(groupPositionsSize[i], 0.0F);
+            } else {
+                monsters[i] = new WeedleEnemy(groupPositionsSize[i], 0.0F);
+            }
+        }
+        return monsters;
     }
 
     @Override

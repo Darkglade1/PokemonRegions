@@ -163,5 +163,23 @@
     "NAME": "Mewtwo",
     "DIALOG": [
     ]
+  },
+  "${ModID}:CaterpieEnemy": {
+    "MOVES": [
+      "String Shot",
+      "Bug Bite"
+    ],
+    "NAME": "Caterpie",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:WeedleEnemy": {
+    "MOVES": [
+      "Poison Sting",
+      "Bug Bite"
+    ],
+    "NAME": "Weedle",
+    "DIALOG": [
+    ]
   }
 }
