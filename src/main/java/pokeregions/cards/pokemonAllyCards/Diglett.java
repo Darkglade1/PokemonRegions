@@ -14,7 +14,7 @@ public class Diglett extends AbstractAllyPokemonCard {
     public static final int MOVE_2_DAMAGE = 18;
     public static final int MOVE_1_STAMINA_COST = 0;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 3;
+    public static final int MAX_STAMINA = 4;
 
     public Diglett() {
         super(ID, CardRarity.COMMON);
