@@ -70,5 +70,9 @@
   "${ModID}:FutureSight": {
     "NAME": "Future Sight",
     "DESCRIPTIONS": ["At the end of ", "this", "next", " round, you take #b", " damage."]
+  },
+  "${ModID}:WeakArmor": {
+    "NAME": "Weak Armor",
+    "DESCRIPTIONS": ["After being attacked #b", " more times with attacks, becomes #yStunned for #b1 turn."]
   }
 }

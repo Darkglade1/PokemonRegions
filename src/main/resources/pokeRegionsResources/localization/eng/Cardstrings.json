@@ -332,6 +332,19 @@
       " pokeregions:Toxic."
     ]
   },
+  "${ModID}:Omastar": {
+    "NAME": "Omastar",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Rollout[]",
+      "[#FFA500]Protect[]",
+      "Deal ",
+      " damage. Double this move's base damage until switched out.",
+      "You gain ",
+      " Block and draw ",
+      " cards."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

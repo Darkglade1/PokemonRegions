@@ -181,5 +181,14 @@
     "NAME": "Weedle",
     "DIALOG": [
     ]
+  },
+  "${ModID}:OmastarEnemy": {
+    "MOVES": [
+      "Rollout",
+      "Stunned"
+    ],
+    "NAME": "Omastar",
+    "DIALOG": [
+    ]
   }
 }

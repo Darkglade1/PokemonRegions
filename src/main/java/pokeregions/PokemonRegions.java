@@ -320,6 +320,11 @@ public class PokemonRegions implements
                         new RhyhornEnemy(50.0F, 0.0F),
                 }));
         BaseMod.addMonster(EncounterIDs.BUG_SWARM, "Bug Swarm", () -> new MonsterGroup(generateBugSwarmGroup()));
+        BaseMod.addMonster(EncounterIDs.OMASTAR_2, "2 Omastars", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new OmastarEnemy(-200.0F, 0.0F),
+                        new OmastarEnemy(50.0F, 0.0F),
+                }));
 
         // Events
         BaseMod.addEvent(CeladonGym.ID, CeladonGym.class, Kanto.ID);

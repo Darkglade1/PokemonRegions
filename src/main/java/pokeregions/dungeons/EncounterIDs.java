@@ -10,5 +10,6 @@ public class EncounterIDs {
     public static final String RHYHORN_AND_DIGLETT = PokemonRegions.makeID("Rhyhorn_and_Diglett");
     public static final String LEGENDARY_BIRDS = PokemonRegions.makeID("Legendary_Birds");
     public static final String BUG_SWARM = PokemonRegions.makeID("Bug_Swarm");
+    public static final String OMASTAR_2 = PokemonRegions.makeID("2_Omastars");
 
 }

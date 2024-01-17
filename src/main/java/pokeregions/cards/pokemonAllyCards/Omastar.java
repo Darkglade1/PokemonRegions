@@ -9,22 +9,22 @@ import pokeregions.monsters.AbstractPokemonAlly;
 import static pokeregions.PokemonRegions.makeID;
 
 @NoPools
-public class Caterpie extends AbstractAllyPokemonCard {
-    public final static String ID = makeID(Caterpie.class.getSimpleName());
-    public static final int MOVE_1_EFFECT = 6;
-    public static final int MOVE_2_DAMAGE = 8;
-    public static final int MOVE_2_WEAK = 1;
+public class Omastar extends AbstractAllyPokemonCard {
+    public final static String ID = makeID(Omastar.class.getSimpleName());
+    public static final int MOVE_1_DAMAGE = 4;
+    public static final int MOVE_2_BLOCK = 5;
+    public static final int MOVE_2_DRAW = 2;
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 5;
 
-    public Caterpie() {
-        super(ID, CardRarity.COMMON);
+    public Omastar() {
+        super(ID, CardRarity.UNCOMMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
-        this.move1Description = DESCRIPTIONS[2] + MOVE_1_EFFECT + DESCRIPTIONS[3];
-        this.move2Description = DESCRIPTIONS[4] + MOVE_2_DAMAGE + DESCRIPTIONS[5] + MOVE_2_WEAK + DESCRIPTIONS[6];
+        this.move1Description = DESCRIPTIONS[2] + MOVE_1_DAMAGE + DESCRIPTIONS[3];
+        this.move2Description = DESCRIPTIONS[4] + MOVE_2_BLOCK + DESCRIPTIONS[5] + MOVE_2_DRAW + DESCRIPTIONS[6];
         initializeDescriptionFromMoves();
     }
 
@@ -33,6 +33,6 @@ public class Caterpie extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Caterpie(x, y, this);
+        return new pokeregions.monsters.act1.allyPokemon.Omastar(x, y, this);
     }
 }
