@@ -74,5 +74,9 @@
   "${ModID}:WeakArmor": {
     "NAME": "Weak Armor",
     "DESCRIPTIONS": ["After being attacked #b", " more times with attacks, becomes #yStunned for #b1 turn."]
+  },
+  "${ModID}:MagicGuard": {
+    "NAME": "Magic Guard",
+    "DESCRIPTIONS": ["#yNegate the effects of the first card played each turn."]
   }
 }

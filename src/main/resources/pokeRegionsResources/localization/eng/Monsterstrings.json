@@ -190,5 +190,15 @@
     "NAME": "Omastar",
     "DIALOG": [
     ]
+  },
+  "${ModID}:AlakazamEnemy": {
+    "MOVES": [
+      "Kinesis",
+      "Focus",
+      "Focus Blast"
+    ],
+    "NAME": "Alakazam",
+    "DIALOG": [
+    ]
   }
 }

@@ -83,7 +83,7 @@ public class Kanto extends AbstractPokemonRegionDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(DugtrioEnemy.ID, 2.0F));
         //monsters.add(new MonsterInfo("Gremlin Gang", 1.5F));
-        //monsters.add(new MonsterInfo("Looter", 2.0F));
+        monsters.add(new MonsterInfo(AlakazamEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(MachampEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(EncounterIDs.BUG_SWARM, 1.5F));
         monsters.add(new MonsterInfo(EncounterIDs.RHYHORN_AND_DIGLETT, 1.0F));

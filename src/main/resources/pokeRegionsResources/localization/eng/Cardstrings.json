@@ -345,6 +345,20 @@
       " cards."
     ]
   },
+  "${ModID}:Alakazam": {
+    "NAME": "Alakazam",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Psychic[]",
+      "[#FFA500]Calm[] [#FFA500]Mind[]",
+      "Deal ",
+      " damage. Apply ",
+      " Vulnerable.",
+      "Scry ",
+      ". Draw ",
+      " cards."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

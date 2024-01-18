@@ -325,6 +325,7 @@ public class PokemonRegions implements
                         new OmastarEnemy(-200.0F, 0.0F),
                         new OmastarEnemy(50.0F, 0.0F),
                 }));
+        BaseMod.addMonster(AlakazamEnemy.ID, (BaseMod.GetMonster) AlakazamEnemy::new);
 
         // Events
         BaseMod.addEvent(CeladonGym.ID, CeladonGym.class, Kanto.ID);
