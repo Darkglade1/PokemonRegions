@@ -187,5 +187,22 @@
       "[Locked] Requires: Potion",
       "[Locked] Requires: non-Starter Pokemon with enough Stamina"
     ]
+  },
+  "${ModID}:TeamRocket": {
+    "NAME": "Team Rocket",
+    "DESCRIPTIONS": [
+      "\"Prepare for trouble!\" NL \"And make it double!\" NL Those words are the only warning you receive before a net flies in out of nowhere and #rsnatches one of your #yPokemon. A man and woman jump into the scene, striking dramatic poses. NL \"We'll be taking that with us!\" NL \"And if you know what's good for you, you'll run before we take anything else from you!\"",
+      "You send the goons and their #yPokemon flying away. In the distance, you vaguely hear them yelling something about \"blasting off again\", but you soon put that out of your mind. NL You pick up a #ytrinket and some #ymoney they dropped and continue on your way.",
+      "Although it leaves you with a tinge of #pregret, you abandon your #yPokemon to the duo's clutches. NL Sometimes, sacrifices had to be made for the greater good."
+    ],
+    "OPTIONS": [
+      "[Rescue your Pokemon] ",
+      "[Run away] ",
+      "Fight.",
+      "Obtain a Relic.",
+      "Lose ",
+      ".",
+      "[Leave]"
+    ]
   }
 }

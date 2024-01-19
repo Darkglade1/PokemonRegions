@@ -353,6 +353,10 @@ public class PokemonRegions implements
                 .create());
         BaseMod.addEvent(MewsGame.ID, MewsGame.class, Kanto.ID);
         BaseMod.addEvent(VermilionGym.ID, VermilionGym.class, Kanto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(TeamRocket.ID, TeamRocket.class)
+                .bonusCondition(TeamRocket::canSpawn)
+                .dungeonID(Kanto.ID)
+                .create());
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
