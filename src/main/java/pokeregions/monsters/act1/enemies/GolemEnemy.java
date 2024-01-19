@@ -45,7 +45,7 @@ public class GolemEnemy extends AbstractPokemonMonster
     private static final byte SMACK_DOWM = 1;
     private static final byte EARTHQUAKE = 2;
 
-    public final int STR = 3;
+    public final int STR = calcAscensionSpecialSmall(3);
     public final int BLOCK = 6;
     public final int DEBUFF = calcAscensionSpecial(1);
     public final int DAMAGE_REDUCTION = 50;

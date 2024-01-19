@@ -41,6 +41,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     private static final float ASCENSION_DAMAGE_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_TANK_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_SPECIAL_BUFF_PERCENT = 1.5f;
+    private static final float ASCENSION_SPECIAL_SMALL_BUFF_PERCENT = 1.2f;
 
     public AbstractPokemonMonster(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
@@ -161,6 +162,27 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
             case NORMAL:
                 if(AbstractDungeon.ascensionLevel >= 17) {
                     base *= ASCENSION_SPECIAL_BUFF_PERCENT;
+                }
+                break;
+        }
+        return Math.round(base);
+    }
+
+    protected int calcAscensionSpecialSmall(float base) {
+        switch (this.type) {
+            case BOSS:
+                if(AbstractDungeon.ascensionLevel >= 19) {
+                    base *= ASCENSION_SPECIAL_SMALL_BUFF_PERCENT;
+                }
+                break;
+            case ELITE:
+                if(AbstractDungeon.ascensionLevel >= 18) {
+                    base *= ASCENSION_SPECIAL_SMALL_BUFF_PERCENT;
+                }
+                break;
+            case NORMAL:
+                if(AbstractDungeon.ascensionLevel >= 17) {
+                    base *= ASCENSION_SPECIAL_SMALL_BUFF_PERCENT;
                 }
                 break;
         }

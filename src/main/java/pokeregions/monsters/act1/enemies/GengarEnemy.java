@@ -32,7 +32,7 @@ public class GengarEnemy extends AbstractPokemonMonster
     private static final byte NASTY_PLOT = 0;
     private static final byte SHADOW_BALL = 1;
 
-    public final int BUFF_AMT = 5;
+    public final int BUFF_AMT = calcAscensionSpecialSmall(5);
 
     public GengarEnemy() {
         this(0.0f, 0.0f);
