@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 // Stop ally pokemon from getting philosopher stoned
 public class AllyPokemonPowersPatch {
     @SpirePrefixPatch()
-    public static SpireReturn<Void> StopPokemonBlock(AbstractCreature instance, AbstractPower power) {
+    public static SpireReturn<Void> StopPokemonPower(AbstractCreature instance, AbstractPower power) {
         if (instance instanceof AbstractPokemonAlly && !(power instanceof AbstractEasyPower)) {
             return SpireReturn.Return(null);
         }
