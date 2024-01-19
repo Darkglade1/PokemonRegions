@@ -1,6 +1,7 @@
 package pokeregions.monsters.act1.enemies;
 
 import basemod.ReflectionHacks;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.Arbok;
@@ -43,13 +44,18 @@ public class ArbokEnemy extends AbstractPokemonMonster
     public final int CONSTRICTED = calcAscensionDamage(5);
 
     public ArbokEnemy() {
-        this(0.0f, 0.0f);
+        this(0.0f, 0.0f, true);
     }
 
     public ArbokEnemy(final float x, final float y) {
+        this(x, y, true);
+    }
+
+    public ArbokEnemy(final float x, final float y, boolean isCatchable) {
         super(NAME, ID, 140, 0.0F, 0, 150.0f, 160.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Arbok/Arbok.scml"));
         this.type = EnemyType.NORMAL;
+        this.isCatchable = isCatchable;
         setHp(calcAscensionTankiness(70), calcAscensionTankiness(74));
         addMove(WRAP, Intent.STRONG_DEBUFF);
         addMove(CRUNCH, Intent.ATTACK_DEBUFF, calcAscensionDamage(9));
@@ -107,6 +113,12 @@ public class ArbokEnemy extends AbstractPokemonMonster
             }
         }
         super.postGetMove();
+    }
+
+    @Override
+    public void die(boolean triggerRelics) {
+        super.die(triggerRelics);
+        atb(new RemoveSpecificPowerAction(adp(), adp(), ConstrictedPower.POWER_ID));
     }
 
     protected void setDetailedIntents() {

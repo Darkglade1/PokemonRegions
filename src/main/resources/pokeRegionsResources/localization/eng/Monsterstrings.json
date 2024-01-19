@@ -200,5 +200,15 @@
     "NAME": "Alakazam",
     "DIALOG": [
     ]
+  },
+  "${ModID}:VictreebelEnemy": {
+    "MOVES": [
+      "Rage Powder",
+      "Razor Leaf",
+      "Stun Spore"
+    ],
+    "NAME": "Victreebel",
+    "DIALOG": [
+    ]
   }
 }

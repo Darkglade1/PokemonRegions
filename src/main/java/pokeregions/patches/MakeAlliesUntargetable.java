@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import javassist.CtBehavior;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act1.enemies.VictreebelEnemy;
+import pokeregions.util.Wiz;
 
 @SpirePatch(
         clz = AbstractPlayer.class,
@@ -17,6 +19,16 @@ public class MakeAlliesUntargetable {
     @SpireInsertPatch(locator = Locator.class, localvars = {"hoveredMonster"})
     public static void MakeHoveredMonsterNull(AbstractPlayer instance, @ByRef AbstractMonster[] hoveredMonster) {
         if (hoveredMonster[0] instanceof AbstractPokemonAlly) {
+            hoveredMonster[0] = null;
+        }
+        AbstractMonster tauntingMonster = null;
+        for (AbstractMonster mo : Wiz.getEnemies()) {
+            if (mo.hasPower(VictreebelEnemy.POWER_ID)) {
+                tauntingMonster = mo;
+                break;
+            }
+        }
+        if (tauntingMonster != null && hoveredMonster[0] != tauntingMonster) {
             hoveredMonster[0] = null;
         }
     }

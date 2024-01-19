@@ -37,6 +37,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     protected int multiplier;
     protected PokeballMove pokeballMove;
     public boolean captured = false;
+    protected boolean isCatchable = true;
     private static final float ASCENSION_DAMAGE_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_TANK_BUFF_PERCENT = 1.10f;
     private static final float ASCENSION_SPECIAL_BUFF_PERCENT = 1.5f;
@@ -59,7 +60,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     @Override
     public void usePreBattleAction() {
         applyToTarget(this, this, new InvisibleBarricadePower(this));
-        if (!(this instanceof AbstractPokemonAlly)) {
+        if (!(this instanceof AbstractPokemonAlly) && isCatchable) {
             pokeballMove = new PokeballMove(this);
             pokeballMove.setX(this.intentHb.cX - ((32.0f - 80.0f) * Settings.scale));
             pokeballMove.setY(this.intentHb.y);
@@ -202,7 +203,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     public void renderTip(SpriteBatch sb) {
         super.renderTip(sb);
         AbstractCard associatedCard = getAssociatedPokemonCard();
-        if (associatedCard != null) {
+        if (associatedCard != null && isCatchable) {
             tips.add(new CardPowerTip(associatedCard.makeStatEquivalentCopy()));
         }
     }

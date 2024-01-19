@@ -78,5 +78,9 @@
   "${ModID}:MagicGuard": {
     "NAME": "Magic Guard",
     "DESCRIPTIONS": ["#yNegate the effects of the first card played each turn."]
+  },
+  "${ModID}:Taunt": {
+    "NAME": "Taunt",
+    "DESCRIPTIONS": ["This turn, #ycards that target must select this creature."]
   }
 }

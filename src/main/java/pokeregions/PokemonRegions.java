@@ -327,6 +327,13 @@ public class PokemonRegions implements
                 }));
         BaseMod.addMonster(AlakazamEnemy.ID, (BaseMod.GetMonster) AlakazamEnemy::new);
 
+        // Event encounter
+        BaseMod.addMonster(EncounterIDs.TEAM_ROCKET, "Team Rocket", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new VictreebelEnemy(-200.0F, 0.0F, false),
+                        new ArbokEnemy(50.0F, 0.0F, false),
+                }));
+
         // Events
         BaseMod.addEvent(CeladonGym.ID, CeladonGym.class, Kanto.ID);
         BaseMod.addEvent(new AddEventParams.Builder(PokemonCenter.ID, PokemonCenter.class)
