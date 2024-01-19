@@ -376,25 +376,24 @@
     "DESCRIPTION": "Deal !D! damage. NL Your currently active *Pokemon immediately takes a turn."
   },
   "${ModID}:Riches": {
-    "NAME": "Minor Riches",
-    "DESCRIPTION": "When matched, gain !M! Gold.",
-    "EXTENDED_DESCRIPTION": [
-      "Major Riches"
-    ]
+    "NAME": "Riches",
+    "DESCRIPTION": "When matched, gain !M! Gold."
   },
   "${ModID}:Health": {
-    "NAME": "Minor Health",
-    "DESCRIPTION": "When matched, heal !M! HP.",
-    "EXTENDED_DESCRIPTION": [
-      "Major Health"
-    ]
+    "NAME": "Health",
+    "DESCRIPTION": "When matched, heal !M! HP."
+  },
+  "${ModID}:Knowledge": {
+    "NAME": "Knowledge",
+    "DESCRIPTION": "When matched, obtain a card reward."
   },
   "${ModID}:Theft": {
-    "NAME": "Minor Theft",
-    "DESCRIPTION": "When matched, lose !M! Gold.",
-    "EXTENDED_DESCRIPTION": [
-      "Major Theft"
-    ]
+    "NAME": "Theft",
+    "DESCRIPTION": "When matched, lose !M! Gold."
+  },
+  "${ModID}:Harm": {
+    "NAME": "Harm",
+    "DESCRIPTION": "When matched, lose !M! HP."
   },
   "${ModID}:Prank": {
     "NAME": "Prank",

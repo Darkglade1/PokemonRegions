@@ -1,22 +1,18 @@
 package pokeregions.cards.mewsGameCards;
 
 import basemod.AutoAdd;
-import pokeregions.PokemonRegions;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import static pokeregions.util.Wiz.adp;
+import pokeregions.PokemonRegions;
 
 @AutoAdd.Ignore
-public class Riches extends AbstractMatchedCard {
+public class Knowledge extends AbstractMatchedCard {
 
-    public static final String ID = PokemonRegions.makeID(Riches.class.getSimpleName());
+    public static final String ID = PokemonRegions.makeID(Knowledge.class.getSimpleName());
 
-    private static final int GOLD = 40;
-
-    public Riches() {
+    public Knowledge() {
         super(ID, CardType.SKILL, CardColor.COLORLESS);
-        setMagic(GOLD);
     }
 
     @Override
@@ -25,6 +21,6 @@ public class Riches extends AbstractMatchedCard {
 
     @Override
     public void onMatched() {
-        adp().gainGold(magicNumber);
+        AbstractDungeon.getCurrRoom().addCardToRewards();
     }
 }

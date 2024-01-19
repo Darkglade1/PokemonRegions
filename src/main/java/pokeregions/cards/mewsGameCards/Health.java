@@ -12,23 +12,15 @@ public class Health extends AbstractMatchedCard {
 
     public static final String ID = PokemonRegions.makeID(Health.class.getSimpleName());
 
-    private static final int HEAL = 5;
-    private static final int UP_HEAL = 10;
+    private static final int HEAL = 9;
 
     public Health() {
         super(ID, CardType.SKILL, CardColor.COLORLESS);
-        setMagic(HEAL, UP_HEAL);
+        setMagic(HEAL);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
-    @Override
-    public void upgrade() {
-        super.upgrade();
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     @Override

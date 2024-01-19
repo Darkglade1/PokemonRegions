@@ -64,28 +64,20 @@ public class MewsGame extends AbstractImageEvent {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         ArrayList<AbstractCard> retVal2 = new ArrayList<>();
 
-        AbstractCard minorRiches = new Riches();
-        AbstractCard minorHealth = new Health();
-        AbstractCard majorBenefit;
-        if (AbstractDungeon.eventRng.randomBoolean()) {
-            majorBenefit = new Riches();
-            majorBenefit.upgrade();
-        } else {
-            majorBenefit = new Health();
-            majorBenefit.upgrade();
-        }
-        retVal.add(minorRiches);
-        retVal.add(minorHealth);
-        retVal.add(majorBenefit);
+        AbstractCard riches = new Riches();
+        AbstractCard health = new Health();
+        AbstractCard knowledge = new Knowledge();
 
-        AbstractCard minorTheft = new Theft();
-        AbstractCard majorTheft = new Theft();
-        majorTheft.upgrade();
+        retVal.add(riches);
+        retVal.add(health);
+        retVal.add(knowledge);
 
-        retVal.add(minorTheft);
-        retVal.add(majorTheft);
-
+        AbstractCard theft = new Theft();
+        AbstractCard harm = new Harm();
         AbstractCard prank = new Prank();
+
+        retVal.add(theft);
+        retVal.add(harm);
         retVal.add(prank);
 
         for (AbstractCard c : retVal) {
@@ -129,6 +121,9 @@ public class MewsGame extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         this.imageEventText.setDialogOption(OPTIONS[3]);
+                        if (matchedCards.contains(Knowledge.ID)) {
+                            AbstractDungeon.combatRewardScreen.open();
+                        }
                     }
                 }
             }
@@ -170,7 +165,7 @@ public class MewsGame extends AbstractImageEvent {
                                 this.chosenCard = this.hoveredCard;
                             } else {
                                 this.cardFlipped = false;
-                                if (this.chosenCard.cardID.equals(this.hoveredCard.cardID) && this.chosenCard.upgraded == this.hoveredCard.upgraded) {
+                                if (this.chosenCard.cardID.equals(this.hoveredCard.cardID)) {
                                     this.waitTimer = 1.0F;
                                     this.chosenCard.targetDrawScale = 0.7F;
                                     this.chosenCard.target_x = (float)Settings.WIDTH / 2.0F;
@@ -196,7 +191,7 @@ public class MewsGame extends AbstractImageEvent {
             this.waitTimer -= Gdx.graphics.getDeltaTime();
             if (this.waitTimer < 0.0F && !this.gameDone) {
                 this.waitTimer = 0.0F;
-                if (this.chosenCard.cardID.equals(this.hoveredCard.cardID) && this.chosenCard.upgraded == this.hoveredCard.upgraded) {
+                if (this.chosenCard.cardID.equals(this.hoveredCard.cardID)) {
                     ++this.cardsMatched;
                     this.cards.group.remove(this.chosenCard);
                     this.cards.group.remove(this.hoveredCard);

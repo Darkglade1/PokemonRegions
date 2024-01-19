@@ -31,14 +31,16 @@ public class Haunter extends AbstractPokemonAlly
         move1Intent = Intent.DEBUFF;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        if (allyCard.currentStamina == 1) {
-            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE);
-        } else {
-            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
-        }
+        updateMoveFromStamina();
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
         move2RequiresTarget = true;
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        super.usePreBattleAction();
+        updateMoveFromStamina();
     }
 
     @Override
@@ -62,11 +64,7 @@ public class Haunter extends AbstractPokemonAlly
         atb(new AbstractGameAction() {
             @Override
             public void update() {
-                if (allyCard.currentStamina == 1) {
-                    addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE);
-                } else {
-                    addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
-                }
+                updateMoveFromStamina();
                 if (Haunter.this.nextMove == MOVE_2) {
                     setMoveShortcut(MOVE_2);
                     createIntent();
@@ -74,6 +72,14 @@ public class Haunter extends AbstractPokemonAlly
                 this.isDone = true;
             }
         });
+    }
+
+    public void updateMoveFromStamina() {
+        if (allyCard.currentStamina == 1) {
+            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE);
+        } else {
+            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
+        }
     }
 
 }
