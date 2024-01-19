@@ -82,7 +82,9 @@ public class PokemonTeamViewScreen extends CustomScreen {
     @Override
     public void close() {
 		genericScreenOverlayReset();
-		AbstractDungeon.overlayMenu.hideBlackScreen();
+		if (AbstractDungeon.previousScreen != AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
+			AbstractDungeon.overlayMenu.hideBlackScreen();
+		}
 		AbstractDungeon.overlayMenu.cancelButton.hide();
     }
 
