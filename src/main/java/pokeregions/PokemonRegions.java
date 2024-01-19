@@ -361,6 +361,7 @@ public class PokemonRegions implements
                 .bonusCondition(CinnabarGym::canSpawn)
                 .dungeonID(Kanto.ID)
                 .create());
+        BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

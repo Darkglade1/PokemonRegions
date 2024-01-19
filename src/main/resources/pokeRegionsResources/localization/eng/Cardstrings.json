@@ -359,6 +359,18 @@
       " cards."
     ]
   },
+  "${ModID}:Pikachu": {
+    "NAME": "Pikachu",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Spark[]",
+      "[#FFA500]Thunder[] [#FFA500]Shock[]",
+      "You gain [E] next turn.",
+      "Deal ",
+      " damage. Apply ",
+      " Weak and Vulnerable."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

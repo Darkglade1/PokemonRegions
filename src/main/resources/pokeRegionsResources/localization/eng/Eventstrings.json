@@ -221,5 +221,19 @@
       "Upgrade a card.",
       "[Leave]"
     ]
+  },
+  "${ModID}:Yellow": {
+    "NAME": "Memorial to Yellow",
+    "DESCRIPTIONS": [
+      "In the middle of the clearing, you spot a stone statue of a long-haired trainer with several #yPokemon statues surrounding them. Despite only being an imitation frozen in time, you can sense the #yfiery determination hidden within the figure's #yblazing eyes. You wonder what great deed this figure accomplished, to have a statue of themselves placed here. NL Looking around, you notice several #yPokemon gathering in the clearing, seemingly drawn towards the statue and its stony companions. Perhaps you could coax one of them to join you on your journey?",
+      "With a few #ynudges and #ysoft words, you are able to get one of the nearby #yPokemon to follow you. As you exit the clearing, you glance back, wondering if someday you would do something #ygrand enough to have a statue of your own somewhere.",
+      "You decide that you don't need any more #ycompanions on your journey."
+    ],
+    "OPTIONS": [
+      "[Befriend] ",
+      "Obtain ",
+      ".",
+      "[Leave]"
+    ]
   }
 }
