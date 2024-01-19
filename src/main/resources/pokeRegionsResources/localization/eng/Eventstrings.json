@@ -204,5 +204,22 @@
       ".",
       "[Leave]"
     ]
+  },
+  "${ModID}:CinnabarGym": {
+    "NAME": "Cinnabar Gym",
+    "DESCRIPTIONS": [
+      "In the gym's secret #ylaboratory, you find an old, dusty videotape. After fiddling with the nearby #yelectronics, you manage to get the tape to play on a nearby TV. NL \"The project . . . it is almost complete.\" A haggard-looking old man appears on the grainy screen. His brows are creased with stress. \"But the closer I am to completion, the further I want to step away from it all. Is finishing my research truly the right thing to do?\" NL The screen flickers, distorting. When it snaps back, you see - ",
+      "\"No . . . there is no glory to be had in completing a weapon of destruction. Not for the likes of #rTeam #rRocket.\" NL The man musters a faint #ysmile. \"I hope Misty, Brock, and Erika will #gforgive me. What a foolish Gym Leader I've been.\" NL The screens cuts out. You felt inspired by the researcher's display of courage. NL You wonder where he is now.",
+      "\"It's too late to stop. The project will be finished whether I am here or not.\" NL The man smiles #psorrowfully. \"I can only hope that I will be able to mitigate the damage caused by the greatest #yPokemon of all . . . #pMewtwo.\" NL The screens cuts out. You wonder what happened to that man, in the end."
+    ],
+    "OPTIONS": [
+      "[The man defecting] ",
+      "[The man continuing] ",
+      "Lose ",
+      ".",
+      "Obtain ",
+      "Upgrade a card.",
+      "[Leave]"
+    ]
   }
 }

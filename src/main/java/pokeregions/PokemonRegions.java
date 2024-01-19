@@ -357,6 +357,10 @@ public class PokemonRegions implements
                 .bonusCondition(TeamRocket::canSpawn)
                 .dungeonID(Kanto.ID)
                 .create());
+        BaseMod.addEvent(new AddEventParams.Builder(CinnabarGym.ID, CinnabarGym.class)
+                .bonusCondition(CinnabarGym::canSpawn)
+                .dungeonID(Kanto.ID)
+                .create());
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

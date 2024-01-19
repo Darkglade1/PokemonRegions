@@ -63,6 +63,10 @@
     "NAME": "Fired Up!",
     "DESCRIPTIONS": ["Deals #b", "% more damage with attacks."]
   },
+  "${ModID}:Courage": {
+    "NAME": "Courage",
+    "DESCRIPTIONS": ["Deals #b", "% more damage with its next attack."]
+  },
   "${ModID}:MindOverMatter": {
     "NAME": "Mind Over Matter",
     "DESCRIPTIONS": ["At the end of every other round, triggers a #yFuture #ySight, then increases the damage of subsequent #yFuture #ySights by #b", ". NL Current #yFuture #ySight values: ", " damage."]

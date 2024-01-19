@@ -337,7 +337,7 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Rollout[]",
-      "[#FFA500]Protect[]",
+      "[#FFA500]Shell[] [#FFA500]Spin[]",
       "Deal ",
       " damage. Double this move's base damage until switched out.",
       "You gain ",
@@ -374,6 +374,13 @@
   "${ModID}:FightAsOne": {
     "NAME": "Fight as One",
     "DESCRIPTION": "Deal !D! damage. NL Your currently active *Pokemon immediately takes a turn."
+  },
+  "${ModID}:MomentOfCourage": {
+    "NAME": "Moment of Courage",
+    "DESCRIPTION": "Gain !B! Block. NL Your currently active *Pokemon deals ",
+    "EXTENDED_DESCRIPTION": [
+      "% more damage with its next attack."
+    ]
   },
   "${ModID}:Riches": {
     "NAME": "Riches",
