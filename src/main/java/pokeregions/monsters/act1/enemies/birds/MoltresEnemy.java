@@ -75,7 +75,7 @@ public class MoltresEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("Zinnia");
+        CustomDungeon.playTempMusicInstantly("Lysandre");
         for (AbstractMonster mo :Wiz.getEnemies()) {
             if (mo instanceof ZapdosEnemy) {
                 zapdos = (ZapdosEnemy) mo;
