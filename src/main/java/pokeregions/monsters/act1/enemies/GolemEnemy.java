@@ -48,8 +48,8 @@ public class GolemEnemy extends AbstractPokemonMonster
     public final int STR = calcAscensionSpecialSmall(3);
     public final int BLOCK = 6;
     public final int DEBUFF = calcAscensionSpecial(1);
-    public final int DAMAGE_REDUCTION = 50;
-    public final int DAMAGE_INCREASE = 100;
+    public final int DAMAGE_REDUCTION = 33;
+    public final int DAMAGE_INCREASE = 50;
 
     public static final String POWER_ID = makeID("TypeAdvantage");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

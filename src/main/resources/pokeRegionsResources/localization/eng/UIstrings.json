@@ -18,17 +18,10 @@
       ".",
       "Your #gPokemon intends to use a #yBuff.",
       "Your #gPokemon intends to #yDefend.",
-      "#yClick to activate any number of times: #ytransfer up to #b",
-      " #yBlock from you to this #yAlly.",
-      "Coordination",
-      "I have no Block to transfer!",
       "Your #gPokemon intends to deal #b",
-      " damage to ALL other characters (including you)",
-      ".",
-      " times.",
       " damage to ALL enemies",
       "Your #gPokemon intends to use #ymysterious #ymagic.",
-      "Your #gPokemon intends to do something . . . #ystrange."
+      "Your #gPokemon intends to do something #yunknown."
     ]
   },
   "${ModID}:MassAttackIntent": {

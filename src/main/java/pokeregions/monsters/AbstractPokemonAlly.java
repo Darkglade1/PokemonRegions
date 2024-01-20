@@ -34,7 +34,6 @@ import static pokeregions.util.Wiz.*;
 public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("AllyStrings"));
     private static final String[] TEXT = uiStrings.TEXT;
-    public boolean massAttackHitsPlayer = false;
 
     public ArrayList<AllyMove> allyMoves = new ArrayList<>();
     public SwitchPokemonMove switchMove;
@@ -179,7 +178,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 this.isDone = true;
             }
         });
-        if(info != null && target != null && info.base > -1) {
+        if (info != null && target != null && info.base > -1) {
             info.applyPowers(this, target);
         }
     }
@@ -249,43 +248,29 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         if (this.nextMove >= 0) {
             DamageInfo info = new DamageInfo(this, moves.get(this.nextMove).baseDamage, DamageInfo.DamageType.NORMAL);
             if (target != adp()) {
-                if(info.base > -1) {
+                if (info.base > -1) {
                     Color color = new Color(0.0F, 1.0F, 0.0F, 0.5F);
                     ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentColor", color);
                     if (this.intent == IntentEnums.MASS_ATTACK) {
-                        if (massAttackHitsPlayer) {
-                            info.applyPowers(this, adp());
-                            if (additionalMultiplier > 0) {
-                                info.output = (int)(info.output * additionalMultiplier);
-                            }
-                            ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
-                            PowerTip intentTip = (PowerTip)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
-                            if (moves.get(this.nextMove).multiplier > 0) {
-                                intentTip.body = TEXT[13] + info.output + TEXT[14] + " " + FontHelper.colorString(String.valueOf(moves.get(this.nextMove).multiplier), "b") + TEXT[16];
-                            } else {
-                                intentTip.body = TEXT[13] + info.output + TEXT[14] + TEXT[15];
-                            }
+                        // Apply powers against self since that should be good enough to calc massattack damage with only self damage mods
+                        info.applyPowers(this, this);
+                        if (additionalMultiplier > 0) {
+                            info.output = (int) (info.output * additionalMultiplier);
+                        }
+                        ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
+                        PowerTip intentTip = ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
+                        if (moves.get(this.nextMove).multiplier > 0) {
+                            intentTip.body = TEXT[9] + info.output + TEXT[10] + " " + FontHelper.colorString(String.valueOf(moves.get(this.nextMove).multiplier), "b") + TEXT[4];
                         } else {
-                            // Apply powers against self since that should be good enough to calc massattack damage with only self damage mods
-                            info.applyPowers(this, this);
-                            if (additionalMultiplier > 0) {
-                                info.output = (int)(info.output * additionalMultiplier);
-                            }
-                            ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
-                            PowerTip intentTip = (PowerTip)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
-                            if (moves.get(this.nextMove).multiplier > 0) {
-                                intentTip.body = TEXT[13] + info.output + TEXT[17] + " " + FontHelper.colorString(String.valueOf(moves.get(this.nextMove).multiplier), "b") + TEXT[16];
-                            } else {
-                                intentTip.body = TEXT[13] + info.output + TEXT[17] + TEXT[15];
-                            }
+                            intentTip.body = TEXT[9] + info.output + TEXT[10] + TEXT[6];
                         }
                     } else {
                         info.applyPowers(this, target);
                         if (additionalMultiplier > 0) {
-                            info.output = (int)(info.output * additionalMultiplier);
+                            info.output = (int) (info.output * additionalMultiplier);
                         }
                         ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
-                        PowerTip intentTip = (PowerTip)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
+                        PowerTip intentTip = ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
                         Texture attackImg;
                         if (moves.get(this.nextMove).multiplier > 0) {
                             intentTip.body = TEXT[0] + FontHelper.colorString(target.name, "y") + TEXT[1] + info.output + TEXT[3] + moves.get(this.nextMove).multiplier + TEXT[4];
@@ -299,7 +284,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                 } else {
                     Color color = new Color(1.0F, 1.0F, 1.0F, 0.5F);
                     ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentColor", color);
-                    PowerTip intentTip = (PowerTip)ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
+                    PowerTip intentTip = ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
                     if (this.intent == AbstractMonster.Intent.DEBUFF || this.intent == AbstractMonster.Intent.STRONG_DEBUFF) {
                         intentTip.body = TEXT[5] + FontHelper.colorString(target.name, "y") + TEXT[6];
                     }
@@ -310,10 +295,10 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                         intentTip.body = TEXT[8];
                     }
                     if (this.intent == AbstractMonster.Intent.MAGIC) {
-                        intentTip.body = TEXT[18];
+                        intentTip.body = TEXT[11];
                     }
                     if (this.intent == Intent.UNKNOWN) {
-                        intentTip.body = TEXT[19];
+                        intentTip.body = TEXT[12];
                     }
                 }
             } else {
@@ -370,7 +355,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     @Override
-    public void getMove(int num) {}
+    public void getMove(int num) {
+    }
 
     @Override
     public void applyPowers() {
