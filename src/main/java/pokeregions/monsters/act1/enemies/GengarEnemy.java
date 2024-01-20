@@ -1,5 +1,6 @@
 package pokeregions.monsters.act1.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
@@ -50,6 +51,12 @@ public class GengarEnemy extends AbstractPokemonMonster
     protected void setUpMisc() {
         super.setUpMisc();
         this.type = EnemyType.ELITE;
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("LavenderTown");
     }
 
     @Override
