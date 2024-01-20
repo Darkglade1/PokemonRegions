@@ -1,6 +1,5 @@
 package pokeregions.patches;
 
-import pokeregions.monsters.AbstractPokemonAlly;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -8,6 +7,7 @@ import com.megacrit.cardcrawl.random.Random;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
+import pokeregions.monsters.AbstractPokemonAlly;
 
 public class RandomHitNotAllies {
     @SpirePatch(
