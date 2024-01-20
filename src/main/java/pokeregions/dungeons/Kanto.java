@@ -21,9 +21,10 @@ public class Kanto extends AbstractPokemonRegionDungeon {
 
     public Kanto() {
         super(NAME, ID, "images/ui/event/panel.png", false, 3, 12, 10);
-        this.addTempMusic("LavenderTown", PokemonRegions.makeMusicPath("LavenderTown.ogg"));
+        //this.addTempMusic("LavenderTown", PokemonRegions.makeMusicPath("LavenderTown.ogg"));
         this.addTempMusic("Zinnia", PokemonRegions.makeMusicPath("Zinnia.ogg"));
         this.addTempMusic("Lysandre", PokemonRegions.makeMusicPath("Lysandre.ogg"));
+        this.addTempMusic("HauntedHouse", PokemonRegions.makeMusicPath("HauntedHouse.ogg"));
         this.onEnterEvent(ProfessorOak.class);
     }
 

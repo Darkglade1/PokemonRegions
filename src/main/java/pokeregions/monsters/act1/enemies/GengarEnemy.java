@@ -1,14 +1,6 @@
 package pokeregions.monsters.act1.enemies;
 
-import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
-import pokeregions.BetterSpriterAnimation;
-import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Gengar;
-import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.NastyPlot;
-import pokeregions.util.Details;
-import pokeregions.util.TexLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -17,6 +9,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
+import pokeregions.BetterSpriterAnimation;
+import pokeregions.PokemonRegions;
+import pokeregions.cards.pokemonAllyCards.Gengar;
+import pokeregions.monsters.AbstractPokemonMonster;
+import pokeregions.powers.NastyPlot;
+import pokeregions.util.Details;
+import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -51,12 +50,6 @@ public class GengarEnemy extends AbstractPokemonMonster
     protected void setUpMisc() {
         super.setUpMisc();
         this.type = EnemyType.ELITE;
-    }
-
-    @Override
-    public void usePreBattleAction() {
-        super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("LavenderTown");
     }
 
     @Override

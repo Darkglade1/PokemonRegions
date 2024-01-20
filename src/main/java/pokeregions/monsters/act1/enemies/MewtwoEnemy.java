@@ -82,7 +82,7 @@ public class MewtwoEnemy extends AbstractPokemonMonster
         super.usePreBattleAction();
         power = new MindOverMatter(this, FUTURE_SIGHT_BASE_DAMAGE, FUTURE_SIGH_DAMAGE_INCREASE);
         applyToTarget(this, this, power);
-        CustomDungeon.playTempMusicInstantly("Zinnia");
+        CustomDungeon.playTempMusicInstantly("HauntedHouse");
     }
 
     @Override
