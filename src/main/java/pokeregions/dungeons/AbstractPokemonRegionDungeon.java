@@ -1,6 +1,8 @@
 package pokeregions.dungeons;
 
 import actlikeit.dungeons.CustomDungeon;
+import pokeregions.PokemonRegions;
+import pokeregions.monsters.act1.enemies.MewtwoEnemy;
 import pokeregions.scenes.PokemonScene;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,5 +40,21 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
     @Override
     protected void initializeEventList() {
         // Events are added via BaseMod in receivePostInitialize()
+    }
+
+    // Play different BGM depending on the boss
+    public void setMusic() {
+        if (bossKey != null) {
+            if (bossKey.equals(EncounterIDs.LEGENDARY_BIRDS)) {
+                this.setMainMusic(PokemonRegions.makeMusicPath("OceanicMuseum.ogg"));
+            } else if (bossKey.equals(MewtwoEnemy.ID)) {
+                this.setMainMusic(PokemonRegions.makeMusicPath("OldaleTown.ogg"));
+            } else {
+                this.setMainMusic(PokemonRegions.makeMusicPath("Littleroot.ogg"));
+            }
+            // For act 2, the first boss should play oceanic, the second should play oldale
+            // For act 3, the first boss should play oldale, the second should play little root
+            // this way if someone plays through all 3 acts the first time a different bgm will be guarenteed on each act
+        }
     }
 }
