@@ -3,8 +3,8 @@
     "TEXT": [
       "Kanto",
       "Act 1",
-      "You see tall grass in the distance.",
-      "Gotta go catch them all."
+      "To the side, you see a strange, white-colored device with a #ygold ornament. Something about the device #ybeckons you to touch it.",
+      "Begin a new journey."
     ]
   },
   "${ModID}:ModMenu": {
