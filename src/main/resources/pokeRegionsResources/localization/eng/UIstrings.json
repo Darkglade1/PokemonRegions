@@ -7,6 +7,15 @@
       "Gotta go catch them all."
     ]
   },
+  "${ModID}:ModMenu": {
+    "TEXT": [
+      "Pokemon Regions",
+      "Darkglade",
+      "An alternate Act mod themed after Pokemon.",
+      "Disable the use of your Pokemon outside the Pokemon Acts.",
+      "Disable the detailed intents above Pokemon enemies."
+    ]
+  },
   "${ModID}:AllyStrings": {
     "TEXT": [
       "Your #gPokemon intends to #yAttack ",

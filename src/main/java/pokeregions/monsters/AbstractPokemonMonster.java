@@ -2,32 +2,27 @@ package pokeregions.monsters;
 
 import basemod.abstracts.CustomMonster;
 import basemod.helpers.CardPowerTip;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.brashmonkey.spriter.Animation;
+import com.brashmonkey.spriter.Player;
+import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.powers.InvisibleBarricadePower;
 import pokeregions.util.Details;
 import pokeregions.util.PokeballMove;
-import pokeregions.vfx.VFXActionButItCanFizzle;
-import pokeregions.vfx.WaitEffect;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.brashmonkey.spriter.Animation;
-import com.brashmonkey.spriter.Player;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static pokeregions.PokemonRegions.makeID;
-import static pokeregions.util.Wiz.*;
+import static pokeregions.util.Wiz.applyToTarget;
+import static pokeregions.util.Wiz.atb;
 
 public abstract class AbstractPokemonMonster extends CustomMonster {
 
@@ -253,7 +248,9 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     }
 
     protected void postGetMove() {
-        setDetailedIntents();
+        if (!PokemonRegions.disableDetailedIntentsConfig) {
+            setDetailedIntents();
+        }
     }
 
     protected void setDetailedIntents() {
@@ -307,94 +304,6 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         //UNUSED
         public void mainlineKeyChanged(com.brashmonkey.spriter.Mainline.Key var1, com.brashmonkey.spriter.Mainline.Key var2){
         }
-    }
-
-    protected void animationAction(String animation, String sound, AbstractCreature enemy, AbstractCreature owner) {
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (owner.isDeadOrEscaped()) {
-                    isDone = true;
-                    return;
-                }
-                if (enemy == null) {
-                    runAnim(animation);
-                    playSound(sound);
-                } else if (!enemy.isDeadOrEscaped()) {
-                    runAnim(animation);
-                    playSound(sound);
-                }
-                this.isDone = true;
-            }
-        });
-    }
-
-    protected void animationAction(String animation, String sound, float volume, AbstractCreature enemy, AbstractCreature owner) {
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (owner.isDeadOrEscaped()) {
-                    isDone = true;
-                    return;
-                }
-                if (enemy == null) {
-                    runAnim(animation);
-                    playSound(sound, volume);
-                } else if (!enemy.isDeadOrEscaped()) {
-                    runAnim(animation);
-                    playSound(sound, volume);
-                }
-                this.isDone = true;
-            }
-        });
-    }
-
-    protected void animationAction(String animation, String sound, AbstractCreature owner) {
-        animationAction(animation, sound, null, owner);
-    }
-
-    protected void animationAction(String animation, String sound, float volume, AbstractCreature owner) {
-        animationAction(animation, sound, volume, null, owner);
-    }
-
-    public static void playSound(String sound, float volume) {
-        if (sound != null) {
-            CardCrawlGame.sound.playV(makeID(sound), volume);
-        }
-    }
-
-    public static void playSound(String sound) {
-        playSound(sound, 1.0f);
-    }
-
-    public void waitAnimation() {
-        waitAnimation(0.5f, null);
-    }
-
-    public void waitAnimation(float duration) {
-        waitAnimation(duration, null);
-    }
-
-    protected void waitAnimation(AbstractCreature enemy) {
-        waitAnimation(0.5f, enemy);
-    }
-
-    public void waitAnimation(float time, AbstractCreature enemy) {
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (AbstractPokemonMonster.this.isDeadOrEscaped()) {
-                    isDone = true;
-                    return;
-                }
-                if (enemy == null) {
-                    att(new VFXActionButItCanFizzle(AbstractPokemonMonster.this, new WaitEffect(), time));
-                } else if (!enemy.isDeadOrEscaped()) {
-                    att(new VFXActionButItCanFizzle(AbstractPokemonMonster.this, new WaitEffect(), time));
-                }
-                this.isDone = true;
-            }
-        });
     }
 
 }

@@ -3,7 +3,7 @@
     "NAME": "Pokeball Belt",
     "FLAVOR": "Watch out for the tall grass.",
     "DESCRIPTIONS": [
-      "You have #b", " #yPokeballs. NL You can attempt to catch #yPokemon during combat by #yclicking the #yThrow #yPokeball button next to a #yPokemon's intent. NL Captured #yPokemon are obtained at the end of combat."
+      "You have #b", " #yPokeballs. NL You can attempt to catch wild #yPokemon during combat by #yclicking the #yThrow #yPokeball button next to a wild #yPokemon's intent. NL Captured #yPokemon are obtained at the end of combat."
     ]
   },
   "${ModID}:RainbowBadge": {

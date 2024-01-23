@@ -7,7 +7,9 @@ import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import pokeregions.CustomIntent.MassAttackIntent;
 import pokeregions.cards.AbstractEasyCard;
 import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
@@ -46,6 +48,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.*;
 
 import static pokeregions.util.Wiz.adp;
@@ -69,6 +73,12 @@ public class PokemonRegions implements
     }
 
     public static SpireConfig pokemonRegionConfig;
+
+    public static final String DISABLE_POKEMON_OUTSIDE_CONFIG = "disablePokemonOutsideConfig";
+    public static boolean disablePokemonOutsideConfig = false;
+
+    public static final String DISABLE_DETAILED_INTENTS_CONFIG = "disableDetailedIntentsConfig";
+    public static boolean disableDetailedIntentsConfig = false;
     private static Logger logger = LogManager.getLogger(PokemonRegions.class.getName());
 
     public static class Enums {
@@ -187,6 +197,7 @@ public class PokemonRegions implements
             logger.error("PokemonRegionMod SpireConfig initialization failed:");
             e.printStackTrace();
         }
+        loadConfig();
     }
 
     public static String makePath(String resourcePath) {
@@ -255,6 +266,39 @@ public class PokemonRegions implements
         WOUND_TEXTURE = TexLoader.getTexture(WOUND);
         FROZEN_TEXTURE = TexLoader.getTexture(FROZEN);
         PAIN_TEXTURE = TexLoader.getTexture(PAIN);
+
+        // Load the Mod Badge
+        Texture badgeTexture = TexLoader.getTexture(makeUIPath("Badge.png"));
+
+        // Create the Mod Menu
+        ModPanel settingsPanel = new ModPanel();
+
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ModMenu"));
+        String[] modMenuText = uiStrings.TEXT;
+        BaseMod.registerModBadge(badgeTexture, modMenuText[0], modMenuText[1], modMenuText[2], settingsPanel);
+
+        // Create the on/off button:
+        ModLabeledToggleButton disablePokemonOutside = new ModLabeledToggleButton(modMenuText[3],
+                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                disablePokemonOutsideConfig,
+                settingsPanel,
+                (label) -> {},
+                (button) -> {
+                    disablePokemonOutsideConfig = button.enabled;
+                    saveData();
+                });
+        settingsPanel.addUIElement(disablePokemonOutside);
+
+        ModLabeledToggleButton disableDetailedIntents = new ModLabeledToggleButton(modMenuText[4],
+                350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                disableDetailedIntentsConfig,
+                settingsPanel,
+                (label) -> {},
+                (button) -> {
+                    disableDetailedIntentsConfig = button.enabled;
+                    saveData();
+                });
+        settingsPanel.addUIElement(disableDetailedIntents);
 
         CustomIntent.add(new MassAttackIntent());
         BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
@@ -455,5 +499,20 @@ public class PokemonRegions implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         intents.clear();
+    }
+
+    public static void saveData() {
+        try {
+            pokemonRegionConfig.setBool(DISABLE_POKEMON_OUTSIDE_CONFIG, disablePokemonOutsideConfig);
+            pokemonRegionConfig.setBool(DISABLE_DETAILED_INTENTS_CONFIG, disableDetailedIntentsConfig);
+            pokemonRegionConfig.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void loadConfig(){
+        disablePokemonOutsideConfig = pokemonRegionConfig.getBool(DISABLE_POKEMON_OUTSIDE_CONFIG);
+        disableDetailedIntentsConfig = pokemonRegionConfig.getBool(DISABLE_DETAILED_INTENTS_CONFIG);
     }
 }

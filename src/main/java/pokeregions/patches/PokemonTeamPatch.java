@@ -1,7 +1,10 @@
 package pokeregions.patches;
 
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import pokeregions.PokemonRegions;
 import pokeregions.actions.UsePreBattleActionAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.dungeons.AbstractPokemonRegionDungeon;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.ui.PokemonTeamButton;
 import pokeregions.util.Tags;
@@ -46,7 +49,7 @@ public class PokemonTeamPatch {
             } else if (starter != null && starter.currentStamina > 0){
                 pokemon = starter.getAssociatedPokemon(AbstractPokemonAlly.X_POSITION, AbstractPokemonAlly.Y_POSITION);
             }
-            if (pokemon != null) {
+            if (pokemon != null && (CardCrawlGame.dungeon instanceof AbstractPokemonRegionDungeon || !PokemonRegions.disablePokemonOutsideConfig)) {
                 PlayerSpireFields.activePokemon.set(adp(), pokemon);
                 atb(new SpawnMonsterAction(pokemon, false));
                 atb(new UsePreBattleActionAction(pokemon));
