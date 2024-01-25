@@ -34,6 +34,7 @@ public class PokemonReward extends CustomReward {
         CardGroup pokemonTeam = PlayerSpireFields.pokemonTeam.get(adp());
         pokemonTeam.addToTop(card);
         UnlockTracker.markCardAsSeen(card.cardID);
+        PlayerSpireFields.totalPokemonCaught.set(adp(), PlayerSpireFields.totalPokemonCaught.get(adp()) + 1);
         if (pokemonTeam.size() > PokemonTeamButton.MAX_TEAM_SIZE) {
             ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
             for (TopPanelItem item : topPanelItems) {

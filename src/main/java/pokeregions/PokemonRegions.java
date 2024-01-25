@@ -20,6 +20,7 @@ import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
+import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
 import pokeregions.ui.PokemonTeamButton;
@@ -302,6 +303,7 @@ public class PokemonRegions implements
 
         CustomIntent.add(new MassAttackIntent());
         BaseMod.addSaveField(PokemonTeamButton.ID, new PokemonTeamButton());
+        BaseMod.addSaveField(makeID("pokemonCaught"), new PlayerSpireFields());
         BaseMod.registerCustomReward(
                 PokemonRewardEnum.POKEMON_REWARD,
                 (rewardSave) -> { // this handles what to do when this type is loaded.
