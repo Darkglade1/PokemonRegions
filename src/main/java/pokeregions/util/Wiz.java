@@ -228,6 +228,10 @@ public class Wiz {
         CardCrawlGame.sound.play(makeID(a.name()));
     }
 
+    public static void playAudio(ProAudio a, float volume) {
+        CardCrawlGame.sound.playV(makeID(a.name()), volume);
+    }
+
     public static void intoDrawMo(AbstractCard c, int i) {
         atb(new MakeTempCardInDrawPileAction(c, i, true, true));
     }

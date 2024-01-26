@@ -1,5 +1,6 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.badlogic.gdx.graphics.Color;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -9,7 +10,9 @@ import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.vfx.WaterGunEffect;
+import pokeregions.util.ProAudio;
+import pokeregions.util.Wiz;
+import pokeregions.vfx.ThrowEffect;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
 import static pokeregions.util.Wiz.*;
@@ -44,8 +47,16 @@ public class Squirtle extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 runAnim("Ranged");
-                atb(new VFXAction(new WaterGunEffect(target, this.hb.cX, this.hb.cY), 0.5f));
-                dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+                float duration = 0.5f;
+                atb(new VFXAction(ThrowEffect.throwEffect("WaterBlob.png", 1.0f, this.hb, target.hb, Color.BLUE.cpy(), duration), duration));
+                atb(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        Wiz.playAudio(ProAudio.LOUD_SPLASH, 2.0f);
+                        this.isDone = true;
+                    }
+                });
+                dmg(target, info, AbstractGameAction.AttackEffect.NONE);
                 break;
             }
             case MOVE_2: {

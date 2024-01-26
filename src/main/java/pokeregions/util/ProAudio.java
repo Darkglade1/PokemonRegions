@@ -7,6 +7,7 @@ public enum ProAudio {
     Then, you can use playAudio(ProAudio.BOING) from Wiz to play it.
     */
     EARTHQUAKE,
-    BURROW
+    BURROW,
+    LOUD_SPLASH
 
 }
