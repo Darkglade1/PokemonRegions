@@ -1,9 +1,11 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.badlogic.gdx.graphics.Color;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.vfx.ColoredThrowDaggerEffect;
 import pokeregions.vfx.WaitEffect;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -51,7 +53,8 @@ public class Cloyster extends AbstractPokemonAlly
                 runAnim("Spear");
                 atb(new VFXAction(new WaitEffect(), 0.2f));
                 for (int i = 0; i < multiplier; i++) {
-                    dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+                    atb(new VFXAction(new ColoredThrowDaggerEffect(target.hb.cX, target.hb.cY, Color.CYAN.cpy())));
+                    dmg(target, info, AbstractGameAction.AttackEffect.NONE);
                 }
                 break;
             }

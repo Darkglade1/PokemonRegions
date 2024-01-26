@@ -1,14 +1,7 @@
 package pokeregions.monsters.act1.enemies;
 
 import basemod.ReflectionHacks;
-import pokeregions.BetterSpriterAnimation;
-import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Cloyster;
-import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
-import pokeregions.util.Details;
-import pokeregions.vfx.WaitEffect;
+import com.badlogic.gdx.graphics.Color;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -24,6 +17,15 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
+import pokeregions.BetterSpriterAnimation;
+import pokeregions.PokemonRegions;
+import pokeregions.cards.pokemonAllyCards.Cloyster;
+import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.AbstractPokemonMonster;
+import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.util.Details;
+import pokeregions.vfx.ColoredThrowDaggerEffect;
+import pokeregions.vfx.WaitEffect;
 
 import java.util.ArrayList;
 
@@ -132,7 +134,8 @@ public class CloysterEnemy extends AbstractPokemonMonster
                 runAnim("Spear");
                 atb(new VFXAction(new WaitEffect(), 0.2f));
                 for (int i = 0; i < multiplier; i++) {
-                    dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+                    atb(new VFXAction(new ColoredThrowDaggerEffect(adp().hb.cX, adp().hb.cY, Color.CYAN.cpy(), true)));
+                    dmg(adp(), info, AbstractGameAction.AttackEffect.NONE);
                 }
                 break;
             }
