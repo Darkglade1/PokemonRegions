@@ -60,7 +60,7 @@ public class Squirtle extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                //runAnim("Ranged");
+                runAnim("Defense");
                 block(adp(), pokeregions.cards.pokemonAllyCards.Squirtle.MOVE_2_BLOCK);
                 break;
             }
