@@ -1,21 +1,27 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.WebEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.vfx.AllyWebEffect;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
-import static pokeregions.util.Wiz.applyToTarget;
-import static pokeregions.util.Wiz.dmg;
+import static pokeregions.util.Wiz.*;
 
 public class Caterpie extends AbstractPokemonAlly
 {
@@ -47,6 +53,8 @@ public class Caterpie extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
+                atb(new SFXAction("ATTACK_MAGIC_FAST_3", MathUtils.random(0.88F, 0.92F), true));
+                atb(new VFXAction(new AllyWebEffect(target, this.hb.cX - 70.0F * Settings.scale, this.hb.cY + 10.0F * Settings.scale), 1.0f));
                 applyToTarget(target, this, new StrengthPower(target, -pokeregions.cards.pokemonAllyCards.Caterpie.MOVE_1_EFFECT));
                 if (!target.hasPower(ArtifactPower.POWER_ID)) {
                     applyToTarget(target, this, new GainStrengthPower(target, pokeregions.cards.pokemonAllyCards.Caterpie.MOVE_1_EFFECT));

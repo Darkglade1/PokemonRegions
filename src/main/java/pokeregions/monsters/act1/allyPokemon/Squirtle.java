@@ -1,5 +1,8 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.badlogic.gdx.math.Vector2;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.core.Settings;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
@@ -8,6 +11,8 @@ import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import pokeregions.vfx.ShootWaterVfx;
+import pokeregions.vfx.WaterGunEffect;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
 import static pokeregions.util.Wiz.*;
@@ -42,6 +47,7 @@ public class Squirtle extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 runAnim("Ranged");
+                atb(new VFXAction(new WaterGunEffect(target, this.hb.cX, this.hb.cY), 0.5f));
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 break;
             }
