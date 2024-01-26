@@ -1,10 +1,14 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.powers.ToxicPower;
+import pokeregions.vfx.SporeDustEffect;
 import pokeregions.vfx.WaitEffect;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -53,6 +57,16 @@ public class Bulbasaur extends AbstractPokemonAlly
             }
             case MOVE_2: {
                 runAnim("Debuff");
+                float x = target.hb.cX;
+                float y= target.hb.cY + (target.hb.height * 0.5f * Settings.scale);
+                atb(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        for (int i = 0; i < 5; i++) { AbstractDungeon.effectsQueue.add(new SporeDustEffect(x, y)); }
+                        this.isDone = true;
+                    }
+                });
+                atb(new VFXAction(new WaitEffect(), 1.0f));
                 applyToTarget(target, this, new ToxicPower(target,  pokeregions.cards.pokemonAllyCards.Bulbasaur.MOVE_2_TOXIC));
                 applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.Bulbasaur.MOVE_2_WEAK, false));
                 break;

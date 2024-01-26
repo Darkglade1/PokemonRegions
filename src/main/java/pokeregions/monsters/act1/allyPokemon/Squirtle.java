@@ -1,17 +1,14 @@
 package pokeregions.monsters.act1.allyPokemon;
 
-import com.badlogic.gdx.math.Vector2;
+import com.brashmonkey.spriter.Player;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
-import com.brashmonkey.spriter.Player;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import pokeregions.vfx.ShootWaterVfx;
 import pokeregions.vfx.WaterGunEffect;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
