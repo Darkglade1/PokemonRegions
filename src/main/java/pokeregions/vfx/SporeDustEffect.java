@@ -27,7 +27,7 @@ public class SporeDustEffect extends AbstractGameEffect {
             int num = MathUtils.random(4, 8);
             this.count -= num;
             for (int i = 0; i < num; i++) {
-                AbstractDungeon.effectsQueue.add(new FallingDustEffect(this.x, this.y));
+                AbstractDungeon.effectsQueue.add(new ShortFallingDustEffect(this.x, this.y));
                 if (MathUtils.randomBoolean(0.8F))
                     AbstractDungeon.effectsQueue.add(new CeilingDustCloudEffect(this.x, this.y));
             }

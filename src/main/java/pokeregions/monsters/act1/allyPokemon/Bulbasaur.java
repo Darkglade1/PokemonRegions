@@ -1,5 +1,7 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -57,6 +59,7 @@ public class Bulbasaur extends AbstractPokemonAlly
             }
             case MOVE_2: {
                 runAnim("Debuff");
+                atb(new SFXAction("ATTACK_MAGIC_FAST_3", MathUtils.random(0.88F, 0.92F), true));
                 float x = target.hb.cX;
                 float y= target.hb.cY + (target.hb.height * 0.5f * Settings.scale);
                 atb(new AbstractGameAction() {
