@@ -1,5 +1,6 @@
 package pokeregions.vfx;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
@@ -27,9 +28,9 @@ public class SporeDustEffect extends AbstractGameEffect {
             int num = MathUtils.random(4, 8);
             this.count -= num;
             for (int i = 0; i < num; i++) {
-                AbstractDungeon.effectsQueue.add(new ShortFallingDustEffect(this.x, this.y));
+                AbstractDungeon.effectsQueue.add(new ShortFallingDustEffect(this.x, this.y, Color.PURPLE.cpy()));
                 if (MathUtils.randomBoolean(0.8F))
-                    AbstractDungeon.effectsQueue.add(new CeilingDustCloudEffect(this.x, this.y));
+                    AbstractDungeon.effectsQueue.add(new ColoredDustCloudEffect(this.x, this.y, Color.PURPLE.cpy()));
             }
             if (this.count <= 0)
                 this.isDone = true;
