@@ -1,22 +1,24 @@
 package pokeregions.util;
 
-import pokeregions.PokemonRegions;
-import pokeregions.monsters.AbstractPokemonAlly;
+import basemod.abstracts.CustomMultiPageFtue;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.FtueTip;
+import pokeregions.PokemonRegions;
+import pokeregions.monsters.AbstractPokemonAlly;
 
 import java.io.IOException;
 
-public class PokemonTutorial extends FtueTip {
+import static pokeregions.PokemonRegions.makeUIPath;
 
-    public PokemonTutorial(String label, String text, float x, float y, FtueTip.TipType type) {
-        super(label, text, x, y, type);
+public class PokemonTutorial extends CustomMultiPageFtue {
+
+    public PokemonTutorial(Texture[] images, String[] messages) {
+        super(images, messages);
     }
 
     @SpirePatch(
@@ -26,14 +28,18 @@ public class PokemonTutorial extends FtueTip {
     public static class ShowAllyTutorialPatch {
         public static final String ID = PokemonRegions.makeID("PokemonTutorial");
         public static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(ID);
-        public static final String[] LABEL = tutorialStrings.LABEL;
         public static final String[] TEXT = tutorialStrings.TEXT;
 
         public static void Postfix(DrawCardAction __instance) {
             if (__instance.isDone && !PokemonRegions.pokemonRegionConfig.getBool("Pokemon Combat Tutorial Seen")) {
                 for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                     if (mo instanceof AbstractPokemonAlly) {
-                        AbstractDungeon.ftue = new PokemonTutorial(LABEL[0], TEXT[0], Settings.WIDTH / 2.0f - (500.0f * Settings.scale), Settings.HEIGHT / 2.0f, TipType.COMBAT);
+                        Texture tip1 = TexLoader.getTexture(makeUIPath("PokemonAllyTutorial.png"));
+                        Texture tip2 = TexLoader.getTexture(makeUIPath("PokemonAllyTutorial2.png"));
+                        Texture[] images = new Texture[2];
+                        images[0] = tip1;
+                        images[1] = tip2;
+                        AbstractDungeon.ftue = new PokemonTutorial(images, TEXT);
                         PokemonRegions.pokemonRegionConfig.setBool("Pokemon Combat Tutorial Seen", true);
                         try { PokemonRegions.pokemonRegionConfig.save(); } catch (IOException e) { e.printStackTrace(); }
                         break;
