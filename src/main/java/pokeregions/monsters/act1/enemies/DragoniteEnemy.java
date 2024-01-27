@@ -39,7 +39,7 @@ public class DragoniteEnemy extends AbstractPokemonMonster
     private static final byte OUTRAGE = 1;
     private static final byte STUNNED = 2;
 
-    public final int OUTRAGE_BASE_DAMAGE = calcAscensionDamage(15);
+    public final int OUTRAGE_BASE_DAMAGE = calcAscensionDamage(13);
     public final int OUTRAGE_DAMAGE_INCREASE = calcAscensionSpecial(5);
     public final int STR = calcAscensionSpecialSmall(5);
     public final int OUTRAGE_BASE_TURNS = 2;

@@ -58,7 +58,7 @@ public class MoltresEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Moltres/Moltres.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(100));
-        addMove(INCINERATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(7));
+        addMove(INCINERATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(6));
         addMove(HEAT_WAVE, Intent.ATTACK, calcAscensionDamage(5), 2);
         status = new Burn();
         if (AbstractDungeon.ascensionLevel >= 19) {

@@ -47,9 +47,9 @@ public class MewtwoEnemy extends AbstractPokemonMonster
     public final int FUTURE_SIGHT_BASE_DAMAGE = 10;
     public final int FUTURE_SIGH_DAMAGE_INCREASE = 5;
     public final int STR = 3;
-    public final int METALLICIZE = 4;
+    public final int METALLICIZE = 5;
     public final int BLOCK = 8;
-    public final int HEAL = 10;
+    public final int HEAL = 15;
     public final int STATUS = 1;
 
     private MindOverMatter power;
@@ -68,7 +68,7 @@ public class MewtwoEnemy extends AbstractPokemonMonster
         setHp(calcAscensionTankiness(260));
         addMove(CALM_MIND, Intent.DEFEND_BUFF);
         addMove(RECOVER, Intent.BUFF);
-        addMove(CONFUSION, Intent.ATTACK_DEBUFF, calcAscensionDamage(6));
+        addMove(CONFUSION, Intent.ATTACK_DEBUFF, calcAscensionDamage(8));
     }
 
     @Override

@@ -64,8 +64,8 @@ public class ZapdosEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Zapdos/Zapdos.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(100));
-        addMove(DISCHARGE, Intent.ATTACK_DEBUFF, calcAscensionDamage(6));
-        addMove(DRILL_PECK, Intent.ATTACK, calcAscensionDamage(10));
+        addMove(DISCHARGE, Intent.ATTACK_DEBUFF, calcAscensionDamage(5));
+        addMove(DRILL_PECK, Intent.ATTACK, calcAscensionDamage(9));
         addMove(CHARGE, Intent.BUFF);
     }
 
