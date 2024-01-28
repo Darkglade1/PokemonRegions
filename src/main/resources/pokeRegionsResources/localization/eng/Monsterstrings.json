@@ -221,5 +221,21 @@
     "NAME": "Kyogre",
     "DIALOG": [
     ]
+  },
+  "${ModID}:DeoxysEnemy": {
+    "MOVES": [
+      "Power Up Punch",
+      "Expose Weakness",
+      "Psycho Boost",
+      "Cosmic Power",
+      "Iron Defense",
+      "Heavy Slam",
+      "Swift",
+      "Nasty Plot",
+      "Extreme Speed"
+    ],
+    "NAME": "Deoxys",
+    "DIALOG": [
+    ]
   }
 }

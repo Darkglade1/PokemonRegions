@@ -40,6 +40,7 @@ import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
+import pokeregions.monsters.act3.enemies.DeoxysEnemy;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -323,6 +324,7 @@ public class PokemonRegions implements
                 });
         BaseMod.addCustomScreen(new PokemonTeamViewScreen());
 
+        // Act 1
         Kanto kanto = new Kanto();
         kanto.addAct(Exordium.ID);
 
@@ -417,6 +419,9 @@ public class PokemonRegions implements
                 .dungeonID(Kanto.ID)
                 .create());
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
+
+        // Act 3
+        BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

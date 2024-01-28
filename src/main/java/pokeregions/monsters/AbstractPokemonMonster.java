@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.powers.InvisibleBarricadePower;
+import pokeregions.powers.VisibleBarricadePower;
 import pokeregions.util.Details;
 import pokeregions.util.PokeballMove;
 
@@ -59,7 +60,11 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         if (!(this instanceof AbstractPokemonAlly) && isCatchable) {
             pokeballMove = new PokeballMove(this);
             pokeballMove.setX(this.intentHb.cX - ((32.0f - 80.0f) * Settings.scale));
-            pokeballMove.setY(this.intentHb.y);
+            if (this instanceof AbstractMultiIntentMonster) {
+                pokeballMove.setY(this.intentHb.y - (80.0f * Settings.scale));
+            } else {
+                pokeballMove.setY(this.intentHb.y);
+            }
         }
     }
 
@@ -70,7 +75,9 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         if (firstMove) {
             firstMove = false;
         }
-        atb(new RemoveAllBlockAction(this, this));
+        if (!this.hasPower(VisibleBarricadePower.POWER_ID)) {
+            atb(new RemoveAllBlockAction(this, this));
+        }
     }
 
     protected void setUpMisc() {
