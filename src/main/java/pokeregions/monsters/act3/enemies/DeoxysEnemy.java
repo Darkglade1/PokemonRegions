@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
+import pokeregions.cards.pokemonAllyCards.act3.Deoxys;
 import pokeregions.monsters.AbstractMultiIntentMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.IronDefense;
@@ -119,16 +119,19 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
                     case ATTACK:
                         if (owner instanceof DeoxysEnemy) {
                             ((DeoxysEnemy) owner).changeForm(Form.ATTACK);
+                            ((DeoxysEnemy) owner).runAnim("Attack");
                         }
                         break;
                     case SKILL:
                         if (owner instanceof DeoxysEnemy) {
                             ((DeoxysEnemy) owner).changeForm(Form.DEFENSE);
+                            ((DeoxysEnemy) owner).runAnim("Defense");
                         }
                         break;
                     case POWER:
                         if (owner instanceof DeoxysEnemy) {
                             ((DeoxysEnemy) owner).changeForm(Form.SPEED);
+                            ((DeoxysEnemy) owner).runAnim("Speed");
                         }
                         break;
                 }
@@ -357,7 +360,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Deoxys();
     }
 
 }

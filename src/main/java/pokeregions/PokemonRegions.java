@@ -421,6 +421,8 @@ public class PokemonRegions implements
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
 
         // Act 3
+
+        // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);
     }
 
