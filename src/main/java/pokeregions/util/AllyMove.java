@@ -116,6 +116,8 @@ public class AllyMove extends ClickableUIElement {
     @Override
     protected void onClick() {
         if(!AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard && canUseMove()){
+            InputHelper.justClickedLeft = false;
+            CInputActionSet.select.unpress();
             CardCrawlGame.sound.play("UI_CLICK_1");
             this.doMove();
         }
