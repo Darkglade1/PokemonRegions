@@ -33,7 +33,7 @@ public class Flareon extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK;
         move2Intent = Intent.BUFF;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Flareon.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Flareon.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_2;
         move1RequiresTarget = true;
@@ -46,12 +46,12 @@ public class Flareon extends AbstractPokemonAlly
             case MOVE_1: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
-                makeInHand(new Burn(), pokeregions.cards.pokemonAllyCards.Flareon.MOVE_1_BURN);
+                makeInHand(new Burn(), pokeregions.cards.pokemonAllyCards.act1.Flareon.MOVE_1_BURN);
                 break;
             }
             case MOVE_2: {
-                atb(new DrawCardAction(pokeregions.cards.pokemonAllyCards.Flareon.MOVE_2_DRAW));
-                atb(new ExhaustAction(pokeregions.cards.pokemonAllyCards.Flareon.MOVE_2_EXHAUST, false));
+                atb(new DrawCardAction(pokeregions.cards.pokemonAllyCards.act1.Flareon.MOVE_2_DRAW));
+                atb(new ExhaustAction(pokeregions.cards.pokemonAllyCards.act1.Flareon.MOVE_2_EXHAUST, false));
                 break;
             }
         }

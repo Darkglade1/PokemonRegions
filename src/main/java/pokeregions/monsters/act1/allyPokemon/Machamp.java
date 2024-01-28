@@ -30,7 +30,7 @@ public class Machamp extends AbstractPokemonAlly
         move1Intent = Intent.BUFF;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Machamp.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Machamp.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
         move2RequiresTarget = true;
     }
@@ -40,8 +40,8 @@ public class Machamp extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(adp(), this, new StrengthPower(adp(), pokeregions.cards.pokemonAllyCards.Machamp.MOVE_1_STR));
-                applyToTarget(adp(), this, new LoseStrengthPower(adp(), pokeregions.cards.pokemonAllyCards.Machamp.MOVE_1_STR));
+                applyToTarget(adp(), this, new StrengthPower(adp(), pokeregions.cards.pokemonAllyCards.act1.Machamp.MOVE_1_STR));
+                applyToTarget(adp(), this, new LoseStrengthPower(adp(), pokeregions.cards.pokemonAllyCards.act1.Machamp.MOVE_1_STR));
                 break;
             }
             case MOVE_2: {

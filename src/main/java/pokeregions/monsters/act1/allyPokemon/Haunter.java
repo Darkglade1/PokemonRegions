@@ -48,8 +48,8 @@ public class Haunter extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
-                applyToTarget(target, this, new Burn(target, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_1_DEBUFF));
+                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.act1.Haunter.MOVE_1_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
+                applyToTarget(target, this, new Burn(target, pokeregions.cards.pokemonAllyCards.act1.Haunter.MOVE_1_DEBUFF));
                 break;
             }
             case MOVE_2: {
@@ -76,9 +76,9 @@ public class Haunter extends AbstractPokemonAlly
 
     public void updateMoveFromStamina() {
         if (allyCard.currentStamina == 1) {
-            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE);
+            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Haunter.MOVE_2_DAMAGE);
         } else {
-            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
+            addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Haunter.MOVE_2_DAMAGE, allyCard.currentStamina);
         }
     }
 

@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Dugtrio;
+import pokeregions.cards.pokemonAllyCards.act1.Dugtrio;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.SandVeil;
 import pokeregions.util.Details;

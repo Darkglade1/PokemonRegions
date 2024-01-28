@@ -3,7 +3,7 @@ package pokeregions.events.act1;
 import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Magikarp;
+import pokeregions.cards.pokemonAllyCards.act1.Magikarp;
 import pokeregions.util.PokemonReward;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Shame;

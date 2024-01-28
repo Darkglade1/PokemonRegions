@@ -30,7 +30,7 @@ public class Gengar extends AbstractPokemonAlly
         move1Intent = Intent.BUFF;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Gengar.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Gengar.MOVE_2_DAMAGE);
         defaultMove = MOVE_2;
         move2RequiresTarget = true;
     }
@@ -40,7 +40,7 @@ public class Gengar extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                atb(new BetterDrawPileToHandAction(pokeregions.cards.pokemonAllyCards.Gengar.MOVE_1_CARDS));
+                atb(new BetterDrawPileToHandAction(pokeregions.cards.pokemonAllyCards.act1.Gengar.MOVE_1_CARDS));
                 break;
             }
             case MOVE_2: {

@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Rhyhorn;
+import pokeregions.cards.pokemonAllyCards.act1.Rhyhorn;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.BetterPlatedArmor;
 import pokeregions.powers.RockHead;

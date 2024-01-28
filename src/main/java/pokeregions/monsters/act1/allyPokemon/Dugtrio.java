@@ -44,7 +44,7 @@ public class Dugtrio extends AbstractPokemonAlly
         move1Intent = Intent.BUFF;
         move2Intent = IntentEnums.MASS_ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Dugtrio.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Dugtrio.MOVE_2_DAMAGE);
         defaultMove = MOVE_2;
     }
 
@@ -56,7 +56,7 @@ public class Dugtrio extends AbstractPokemonAlly
                 runAnim("Excavate");
                 Wiz.playAudio(ProAudio.BURROW);
                 atb(new VFXAction(new WaitEffect(), 1.0f));
-                atb(new BetterDiscardPileToHandAction(pokeregions.cards.pokemonAllyCards.Dugtrio.CARDS));
+                atb(new BetterDiscardPileToHandAction(pokeregions.cards.pokemonAllyCards.act1.Dugtrio.CARDS));
                 break;
             }
             case MOVE_2: {
@@ -65,7 +65,7 @@ public class Dugtrio extends AbstractPokemonAlly
                 atb(new VFXAction(new WaitEffect(), 0.3f));
                 atb(new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
                 for (AbstractMonster mo : Wiz.getEnemies()) {
-                    applyToTarget(mo, this, new VulnerablePower(mo, pokeregions.cards.pokemonAllyCards.Dugtrio.DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
+                    applyToTarget(mo, this, new VulnerablePower(mo, pokeregions.cards.pokemonAllyCards.act1.Dugtrio.DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 }
                 break;
             }

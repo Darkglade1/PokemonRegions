@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Machamp;
+import pokeregions.cards.pokemonAllyCards.act1.Machamp;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.NoGuard;
 import pokeregions.util.Details;

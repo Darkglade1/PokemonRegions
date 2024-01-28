@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Vulpix;
+import pokeregions.cards.pokemonAllyCards.act1.Vulpix;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.Burn;
 import pokeregions.util.Details;

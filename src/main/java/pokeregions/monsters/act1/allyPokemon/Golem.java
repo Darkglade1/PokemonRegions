@@ -36,7 +36,7 @@ public class Golem extends AbstractPokemonAlly
         move1Intent = Intent.DEFEND;
         move2Intent = IntentEnums.MASS_ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Golem.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Golem.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
     }
 
@@ -45,7 +45,7 @@ public class Golem extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                block(adp(), pokeregions.cards.pokemonAllyCards.Golem.MOVE_1_BLOCK);
+                block(adp(), pokeregions.cards.pokemonAllyCards.act1.Golem.MOVE_1_BLOCK);
                 break;
             }
             case MOVE_2: {

@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Gastly;
+import pokeregions.cards.pokemonAllyCards.act1.Gastly;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.MonsterIntangiblePower;
 import pokeregions.util.Details;

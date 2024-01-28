@@ -42,7 +42,7 @@ public class Mewtwo extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                atb(new ChannelAction(new MewtwoDark(pokeregions.cards.pokemonAllyCards.Mewtwo.MOVE_1_INCREASE)));
+                atb(new ChannelAction(new MewtwoDark(pokeregions.cards.pokemonAllyCards.act1.Mewtwo.MOVE_1_INCREASE)));
                 break;
             }
             case MOVE_2: {
@@ -53,7 +53,7 @@ public class Mewtwo extends AbstractPokemonAlly
                         this.isDone = true;
                     }
                 });
-                for (int i = 0; i < pokeregions.cards.pokemonAllyCards.Mewtwo.MOVE_2_EFFECT - 1; i++) {
+                for (int i = 0; i < pokeregions.cards.pokemonAllyCards.act1.Mewtwo.MOVE_2_EFFECT - 1; i++) {
                     atb(new AnimateOrbAction(1));
                     atb(new EvokeWithoutRemovingOrbAction(1));
                 }

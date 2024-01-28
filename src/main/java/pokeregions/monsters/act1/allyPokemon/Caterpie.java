@@ -7,13 +7,11 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.WebEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
@@ -42,7 +40,7 @@ public class Caterpie extends AbstractPokemonAlly
         move1Intent = Intent.DEBUFF;
         move2Intent = Intent.ATTACK_DEBUFF;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Caterpie.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Caterpie.MOVE_2_DAMAGE);
         defaultMove = MOVE_2;
         move1RequiresTarget = true;
         move2RequiresTarget = true;
@@ -55,16 +53,16 @@ public class Caterpie extends AbstractPokemonAlly
             case MOVE_1: {
                 atb(new SFXAction("ATTACK_MAGIC_FAST_3", MathUtils.random(0.88F, 0.92F), true));
                 atb(new VFXAction(new AllyWebEffect(target, this.hb.cX - 70.0F * Settings.scale, this.hb.cY + 10.0F * Settings.scale), 1.0f));
-                applyToTarget(target, this, new StrengthPower(target, -pokeregions.cards.pokemonAllyCards.Caterpie.MOVE_1_EFFECT));
+                applyToTarget(target, this, new StrengthPower(target, -pokeregions.cards.pokemonAllyCards.act1.Caterpie.MOVE_1_EFFECT));
                 if (!target.hasPower(ArtifactPower.POWER_ID)) {
-                    applyToTarget(target, this, new GainStrengthPower(target, pokeregions.cards.pokemonAllyCards.Caterpie.MOVE_1_EFFECT));
+                    applyToTarget(target, this, new GainStrengthPower(target, pokeregions.cards.pokemonAllyCards.act1.Caterpie.MOVE_1_EFFECT));
                 }
                 break;
             }
             case MOVE_2: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.POISON);
-                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.Caterpie.MOVE_2_WEAK, false));
+                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.act1.Caterpie.MOVE_2_WEAK, false));
                 break;
             }
         }

@@ -4,7 +4,7 @@ import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Moltres;
+import pokeregions.cards.pokemonAllyCards.act1.Moltres;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;

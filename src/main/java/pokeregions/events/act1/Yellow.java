@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.*;
+import pokeregions.cards.pokemonAllyCards.act1.*;
 import pokeregions.util.PokemonReward;
 
 import java.util.ArrayList;

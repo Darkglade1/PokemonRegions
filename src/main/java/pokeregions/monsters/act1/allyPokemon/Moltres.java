@@ -29,7 +29,7 @@ public class Moltres extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK_DEBUFF;
         move2Intent = Intent.BUFF;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Moltres.MOVE_1_DAMAGE, pokeregions.cards.pokemonAllyCards.Moltres.MOVE_1_HITS);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Moltres.MOVE_1_DAMAGE, pokeregions.cards.pokemonAllyCards.act1.Moltres.MOVE_1_HITS);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_2;
         move1RequiresTarget = true;
@@ -45,12 +45,12 @@ public class Moltres extends AbstractPokemonAlly
                     dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
                 }
                 for (int i = 0; i < multiplier; i++) {
-                    applyToTarget(target, this, new Burn(target,  pokeregions.cards.pokemonAllyCards.Moltres.MOVE_1_BURN));
+                    applyToTarget(target, this, new Burn(target,  pokeregions.cards.pokemonAllyCards.act1.Moltres.MOVE_1_BURN));
                 }
                 break;
             }
             case MOVE_2: {
-                atb(new ExhaustDrawPileAction(pokeregions.cards.pokemonAllyCards.Moltres.MOVE_2_EXHAUST, true));
+                atb(new ExhaustDrawPileAction(pokeregions.cards.pokemonAllyCards.act1.Moltres.MOVE_2_EXHAUST, true));
                 break;
             }
         }

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Caterpie;
+import pokeregions.cards.pokemonAllyCards.act1.Caterpie;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 

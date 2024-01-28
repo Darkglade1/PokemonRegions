@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Gengar;
+import pokeregions.cards.pokemonAllyCards.act1.Gengar;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.NastyPlot;
 import pokeregions.util.Details;

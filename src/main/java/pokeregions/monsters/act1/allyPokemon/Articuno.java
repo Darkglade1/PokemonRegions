@@ -38,12 +38,12 @@ public class Articuno extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                block(adp(), pokeregions.cards.pokemonAllyCards.Articuno.MOVE_1_METAL);
-                applyToTarget(adp(), this, new MetallicizePower(adp(), pokeregions.cards.pokemonAllyCards.Articuno.MOVE_1_METAL));
+                block(adp(), pokeregions.cards.pokemonAllyCards.act1.Articuno.MOVE_1_METAL);
+                applyToTarget(adp(), this, new MetallicizePower(adp(), pokeregions.cards.pokemonAllyCards.act1.Articuno.MOVE_1_METAL));
                 break;
             }
             case MOVE_2: {
-                atb(new ScryAction(pokeregions.cards.pokemonAllyCards.Articuno.MOVE_2_SCRY));
+                atb(new ScryAction(pokeregions.cards.pokemonAllyCards.act1.Articuno.MOVE_2_SCRY));
                 break;
             }
         }

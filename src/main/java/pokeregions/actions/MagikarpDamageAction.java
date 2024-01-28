@@ -1,7 +1,7 @@
 package pokeregions.actions;
 
 import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.cards.pokemonAllyCards.Gyarados;
+import pokeregions.cards.pokemonAllyCards.act1.Gyarados;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.act1.allyPokemon.Magikarp;
 import pokeregions.patches.PlayerSpireFields;

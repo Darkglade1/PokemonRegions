@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Rattata;
+import pokeregions.cards.pokemonAllyCards.act1.Rattata;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 import com.brashmonkey.spriter.Player;

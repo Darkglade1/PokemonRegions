@@ -37,7 +37,7 @@ public class Gyarados extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK_BUFF;
         move2Intent = Intent.DEBUFF;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Gyarados.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Gyarados.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
@@ -49,7 +49,7 @@ public class Gyarados extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 useFastAttackAnimation();
-                atb(new GyaradosWaterfallAction(target, info, pokeregions.cards.pokemonAllyCards.Gyarados.MOVE_1_STAMINA_HEAL, allyCard));
+                atb(new GyaradosWaterfallAction(target, info, pokeregions.cards.pokemonAllyCards.act1.Gyarados.MOVE_1_STAMINA_HEAL, allyCard));
                 break;
             }
             case MOVE_2: {
@@ -61,8 +61,8 @@ public class Gyarados extends AbstractPokemonAlly
                 }
 
                 for (AbstractMonster mo : Wiz.getEnemies()) {
-                    applyToTarget(mo, this, new WeakPower(mo, pokeregions.cards.pokemonAllyCards.Gyarados.MOVE_2_DEBUFF, false));
-                    applyToTarget(mo, this, new VulnerablePower(mo, pokeregions.cards.pokemonAllyCards.Gyarados.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
+                    applyToTarget(mo, this, new WeakPower(mo, pokeregions.cards.pokemonAllyCards.act1.Gyarados.MOVE_2_DEBUFF, false));
+                    applyToTarget(mo, this, new VulnerablePower(mo, pokeregions.cards.pokemonAllyCards.act1.Gyarados.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 }
                 break;
             }

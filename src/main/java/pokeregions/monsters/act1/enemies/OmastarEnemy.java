@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import pokeregions.BetterSpriterAnimation;
-import pokeregions.cards.pokemonAllyCards.Omastar;
+import pokeregions.cards.pokemonAllyCards.act1.Omastar;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 

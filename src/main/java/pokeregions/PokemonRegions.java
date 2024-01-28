@@ -135,6 +135,9 @@ public class PokemonRegions implements
     public static final String DRAW_DOWN = makeUIPath("DrawDown.png");
     public static Texture DRAW_DOWN_TEXTURE;
 
+    public static final String REGEN = makeUIPath("Regen.png");
+    public static Texture REGEN_TEXTURE;
+
     public static final String HEAL = makeUIPath("Heal.png");
     public static Texture HEAL_TEXTURE;
 
@@ -258,6 +261,7 @@ public class PokemonRegions implements
         CONSTRICTED_TEXTURE = TexLoader.getTexture(CONSTRICTED);
         INTANGIBLE_TEXTURE = TexLoader.getTexture(INTANGIBLE);
         DRAW_DOWN_TEXTURE = TexLoader.getTexture(DRAW_DOWN);
+        REGEN_TEXTURE = TexLoader.getTexture(REGEN);
 
         HEAL_TEXTURE = TexLoader.getTexture(HEAL);
         BLOCK_TEXTURE = TexLoader.getTexture(BLOCK);

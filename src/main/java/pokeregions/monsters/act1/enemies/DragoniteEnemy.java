@@ -4,7 +4,7 @@ import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Dragonite;
+import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.Outrage;
 import pokeregions.util.Details;

@@ -210,5 +210,16 @@
     "NAME": "Victreebel",
     "DIALOG": [
     ]
+  },
+  "${ModID}:KyogreEnemy": {
+    "MOVES": [
+      "Hydro Pump",
+      "Origin Pulse",
+      "Aqua Ring",
+      "Life Dew"
+    ],
+    "NAME": "Kyogre",
+    "DIALOG": [
+    ]
   }
 }

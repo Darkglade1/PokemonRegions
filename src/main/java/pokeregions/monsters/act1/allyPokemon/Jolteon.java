@@ -42,11 +42,11 @@ public class Jolteon extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(adp(), this, new DexterityPower(adp(),  pokeregions.cards.pokemonAllyCards.Jolteon.MOVE_1_DEX));
+                applyToTarget(adp(), this, new DexterityPower(adp(),  pokeregions.cards.pokemonAllyCards.act1.Jolteon.MOVE_1_DEX));
                 break;
             }
             case MOVE_2: {
-                applyToTarget(adp(), this, new EnergizedPower(adp(),  pokeregions.cards.pokemonAllyCards.Jolteon.MOVE_2_ENERGY));
+                applyToTarget(adp(), this, new EnergizedPower(adp(),  pokeregions.cards.pokemonAllyCards.act1.Jolteon.MOVE_2_ENERGY));
                 break;
             }
         }

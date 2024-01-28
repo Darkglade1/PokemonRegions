@@ -29,7 +29,7 @@ public class Dragonite extends AbstractPokemonAlly
         move1Intent = Intent.BUFF;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Dragonite.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Dragonite.MOVE_2_DAMAGE);
         defaultMove = MOVE_2;
         move2RequiresTarget = true;
     }
@@ -39,13 +39,13 @@ public class Dragonite extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(adp(), this, new StrengthPower(adp(), pokeregions.cards.pokemonAllyCards.Dragonite.MOVE_1_BUFF));
+                applyToTarget(adp(), this, new StrengthPower(adp(), pokeregions.cards.pokemonAllyCards.act1.Dragonite.MOVE_1_BUFF));
                 break;
             }
             case MOVE_2: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                int newDamage = moves.get(MOVE_2).baseDamage += pokeregions.cards.pokemonAllyCards.Dragonite.MOVE_2_DAMAGE_INCREASE;
+                int newDamage = moves.get(MOVE_2).baseDamage += pokeregions.cards.pokemonAllyCards.act1.Dragonite.MOVE_2_DAMAGE_INCREASE;
                 addMove(MOVE_2, Intent.ATTACK, newDamage);
                 break;
             }

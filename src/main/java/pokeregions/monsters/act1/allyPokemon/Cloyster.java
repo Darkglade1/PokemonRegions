@@ -36,7 +36,7 @@ public class Cloyster extends AbstractPokemonAlly
         move1Intent = Intent.BUFF;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Cloyster.MOVE_2_DAMAGE, pokeregions.cards.pokemonAllyCards.Cloyster.MOVE_2_HITS);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Cloyster.MOVE_2_DAMAGE, pokeregions.cards.pokemonAllyCards.act1.Cloyster.MOVE_2_HITS);
         defaultMove = MOVE_2;
         move2RequiresTarget = true;
     }
