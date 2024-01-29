@@ -33,5 +33,12 @@
       "damp"
     ],
     "DESCRIPTION": "#yDamp cards #yRetain and #yExhaust. After being #yRetained for 2 turns, #yDamp is removed from the card."
+  },
+  {
+    "PROPER_NAME": "Scorched",
+    "NAMES": [
+      "scorched"
+    ],
+    "DESCRIPTION": "#yScorched cards are #yEthereal. Whenever you play a #yScorched card, take #b2 damage."
   }
 ]

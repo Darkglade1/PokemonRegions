@@ -41,6 +41,7 @@ import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
 import pokeregions.monsters.act3.enemies.DeoxysEnemy;
+import pokeregions.monsters.act3.enemies.GroudonEnemy;
 import pokeregions.monsters.act3.enemies.KyogreEnemy;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
@@ -425,6 +426,7 @@ public class PokemonRegions implements
 
         // Bosses
         BaseMod.addMonster(KyogreEnemy.ID, (BaseMod.GetMonster) KyogreEnemy::new);
+        BaseMod.addMonster(GroudonEnemy.ID, (BaseMod.GetMonster) GroudonEnemy::new);
 
         // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);

@@ -98,5 +98,9 @@
   "${ModID}:IronDefense": {
     "NAME": "Iron Defense",
     "DESCRIPTIONS": ["Deals bonus damage equal to the amount of #yBlock this creature has."]
+  },
+  "${ModID}:HarshSunlight": {
+    "NAME": "Harsh Sunlight",
+    "DESCRIPTIONS": ["The first card you draw each turn becomes #yScorched.", "The first #b", " cards you draw each turn become #yScorched."]
   }
 }

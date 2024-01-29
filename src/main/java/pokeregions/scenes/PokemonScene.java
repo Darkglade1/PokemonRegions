@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
 import pokeregions.monsters.act3.enemies.DeoxysEnemy;
+import pokeregions.monsters.act3.enemies.GroudonEnemy;
 import pokeregions.monsters.act3.enemies.KyogreEnemy;
 
 public class PokemonScene extends AbstractScene {
@@ -85,6 +86,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Bridge");
                 } else if (mo instanceof DeoxysEnemy) {
                     this.bg = this.atlas.findRegion("mod/Cosmic");
+                } else if (mo instanceof GroudonEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Desert");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

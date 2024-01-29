@@ -237,5 +237,15 @@
     "NAME": "Deoxys",
     "DIALOG": [
     ]
+  },
+  "${ModID}:GroudonEnemy": {
+    "MOVES": [
+      "Swords Dance",
+      "Precipice Blades",
+      "Scorching Sands"
+    ],
+    "NAME": "Groudon",
+    "DIALOG": [
+    ]
   }
 }

@@ -40,9 +40,9 @@ public class KyogreEnemy extends AbstractPokemonMonster
     private static final byte AQUA_RING = 2;
     private static final byte LIFE_DEW = 3;
 
-    public final int REGEN = calcAscensionSpecial(10);
+    public final int REGEN = 10;
     public final int BLOCK = 25;
-    public final int DEBUFF = calcAscensionSpecial(2);
+    public final int DEBUFF = 2;
     public final int DRAW_DOWN = 1;
     public final int LIFE_DEW_COOLDOWN = 3;
     private int cooldown = LIFE_DEW_COOLDOWN;
@@ -100,7 +100,9 @@ public class KyogreEnemy extends AbstractPokemonMonster
                 break;
             }
             case LIFE_DEW: {
-                //applyToTarget(this, this, new HeavyRain(this, 1));
+                if (AbstractDungeon.ascensionLevel >= 19) {
+                    applyToTarget(this, this, new HeavyRain(this, 1));
+                }
                 applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
                 break;
             }
@@ -153,8 +155,10 @@ public class KyogreEnemy extends AbstractPokemonMonster
                 break;
             }
             case LIFE_DEW: {
-//                Details powerDetail2 = new Details(this, 1, texture);
-//                details.add(powerDetail2);
+                if (AbstractDungeon.ascensionLevel >= 19) {
+                    Details powerDetail2 = new Details(this, 1, texture);
+                    details.add(powerDetail2);
+                }
                 Details powerDetail = new Details(this, REGEN, REGEN_TEXTURE);
                 details.add(powerDetail);
                 break;

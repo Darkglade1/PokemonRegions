@@ -141,5 +141,10 @@
     "TEXT": [
       "pokeregions:Damp. NL "
     ]
+  },
+  "${ModID}:ScorchedMod": {
+    "TEXT": [
+      "pokeregions:Scorched. NL "
+    ]
   }
 }
