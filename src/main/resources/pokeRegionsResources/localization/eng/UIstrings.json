@@ -131,5 +131,15 @@
     "TEXT": [
       "Choose a Pokemon to Transform into."
     ]
+  },
+  "${ModID}:WaterLoggedMod": {
+    "TEXT": [
+      "pokeregions:Waterlogged. NL "
+    ]
+  },
+  "${ModID}:DampMod": {
+    "TEXT": [
+      "pokeregions:Damp. NL "
+    ]
   }
 }

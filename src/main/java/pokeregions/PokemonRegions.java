@@ -41,6 +41,7 @@ import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
 import pokeregions.monsters.act3.enemies.DeoxysEnemy;
+import pokeregions.monsters.act3.enemies.KyogreEnemy;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -421,6 +422,9 @@ public class PokemonRegions implements
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
 
         // Act 3
+
+        // Bosses
+        BaseMod.addMonster(KyogreEnemy.ID, (BaseMod.GetMonster) KyogreEnemy::new);
 
         // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);

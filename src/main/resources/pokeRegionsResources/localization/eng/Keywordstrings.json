@@ -19,5 +19,19 @@
       "burn"
     ],
     "DESCRIPTION": "#yBurned creatures receive increased damage from attacks."
+  },
+  {
+    "PROPER_NAME": "Waterlogged",
+    "NAMES": [
+      "waterlogged"
+    ],
+    "DESCRIPTION": "#yWaterlogged cards are #yUnplayable and #yRetain. After being #yRetained, #yWaterlogged cards become #yDamp."
+  },
+  {
+    "PROPER_NAME": "Damp",
+    "NAMES": [
+      "damp"
+    ],
+    "DESCRIPTION": "#yDamp cards #yRetain and #yExhaust. After being #yRetained for 2 turns, #yDamp is removed from the card."
   }
 ]

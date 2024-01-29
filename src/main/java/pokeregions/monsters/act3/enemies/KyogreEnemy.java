@@ -4,7 +4,6 @@ import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,15 +12,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.DrawReductionPower;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.Outrage;
+import pokeregions.powers.HeavyRain;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
-import pokeregions.util.Wiz;
 
 import java.util.ArrayList;
 
@@ -52,14 +52,14 @@ public class KyogreEnemy extends AbstractPokemonMonster
     }
 
     public KyogreEnemy(final float x, final float y) {
-        super(NAME, ID, 140, 0.0F, 0, 250.0f, 240.0f, null, x, y);
+        super(NAME, ID, 140, 0.0F, 0, 300.0f, 240.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Kyogre/Kyogre.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
         setHp(calcAscensionTankiness(550));
         addMove(HYDRO_PUMP, Intent.ATTACK_DEBUFF, calcAscensionDamage(25));
         addMove(ORIGIN_PULSE, Intent.ATTACK, calcAscensionDamage(32));
         addMove(AQUA_RING, Intent.DEFEND_DEBUFF);
-        addMove(AQUA_RING, Intent.BUFF);
+        addMove(LIFE_DEW, Intent.BUFF);
     }
 
     @Override
@@ -71,7 +71,8 @@ public class KyogreEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("Zinnia");
+        applyToTarget(this, this, new HeavyRain(this, 1));
+        CustomDungeon.playTempMusicInstantly("HauntedHouse");
     }
 
     @Override
@@ -94,12 +95,12 @@ public class KyogreEnemy extends AbstractPokemonMonster
                 break;
             }
             case AQUA_RING: {
-                block(adp(), BLOCK);
+                block(this, BLOCK);
                 applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
                 break;
             }
             case LIFE_DEW: {
-                // gain more heavy rain
+                //applyToTarget(this, this, new HeavyRain(this, 1));
                 applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
                 break;
             }
@@ -136,7 +137,7 @@ public class KyogreEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makeUIPath("Enrage.png");
+        String textureString = makePowerPath("HeavyRain32.png");
         Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case HYDRO_PUMP: {
@@ -152,6 +153,8 @@ public class KyogreEnemy extends AbstractPokemonMonster
                 break;
             }
             case LIFE_DEW: {
+//                Details powerDetail2 = new Details(this, 1, texture);
+//                details.add(powerDetail2);
                 Details powerDetail = new Details(this, REGEN, REGEN_TEXTURE);
                 details.add(powerDetail);
                 break;

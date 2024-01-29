@@ -87,6 +87,10 @@
     "NAME": "Taunt",
     "DESCRIPTIONS": ["This turn, #ycards that target must select this creature."]
   },
+  "${ModID}:HeavyRain": {
+    "NAME": "Heavy Rain",
+    "DESCRIPTIONS": ["The first card you draw each turn becomes #yWaterlogged.", "The first #b", " cards you draw each turn become #yWaterlogged."]
+  },
   "${ModID}:Adapt": {
     "NAME": "Adaptability",
     "DESCRIPTIONS": ["This creature's intent changes based on the #yType of the last card played this combat. NL #yAttack - Will only use its #b1st intent. NL #ySkill - Will only use its #b2nd intent. NL #yPower - Will only use its #b3rd intent."]
