@@ -12,22 +12,20 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-public class HarshSunlightEffect extends AbstractGameEffect {
+public class SunBeamEffect extends AbstractGameEffect {
     private float x;
     private float y;
-    private static final float DUR = 2.0F;
     private static TextureAtlas.AtlasRegion img;
-    private boolean playedSfx = false;
     float RotationMod;
 
-    public HarshSunlightEffect() {
+    public SunBeamEffect() {
         if (img == null) {
             img = ImageMaster.vfxAtlas.findRegion("combat/laserThick");
         }
 
-        this.RotationMod = (float)MathUtils.random(-165, -55);
-        this.x = 950.0F;
-        this.y = AbstractDungeon.floorY + 600.0F;
+        this.RotationMod = (float)MathUtils.random(-115, -15);
+        this.x = 100.0F * Settings.scale;
+        this.y = AbstractDungeon.floorY + (375.0F * Settings.scale);
         this.x *= Settings.scale;
         this.y *= Settings.scale;
         this.color = (new Color(CardHelper.getColor(MathUtils.random(230, 255), MathUtils.random(187, 195), MathUtils.random(12, 20)))).cpy();

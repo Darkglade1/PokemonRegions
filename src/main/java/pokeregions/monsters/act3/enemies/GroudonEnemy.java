@@ -24,8 +24,8 @@ import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
-import pokeregions.vfx.HarshSunHaloEffect;
-import pokeregions.vfx.HarshSunlightEffect;
+import pokeregions.vfx.SunEffect;
+import pokeregions.vfx.SunBeamEffect;
 
 import java.util.ArrayList;
 
@@ -186,7 +186,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
         onFinalBossVictoryLogic();
     }
 
-    boolean lightningCycle = false;
+    boolean sunRayCycle = false;
     float particleTimer = 0.0f;
     float secondParticleTimer = 0.0F;
     AbstractGameEffect sun;
@@ -194,21 +194,21 @@ public class GroudonEnemy extends AbstractPokemonMonster
     public void update() {
         super.update();
         this.particleTimer -= Gdx.graphics.getDeltaTime();
-        if (this.lightningCycle) {
+        if (this.sunRayCycle) {
             this.secondParticleTimer -= Gdx.graphics.getDeltaTime();
             if (this.secondParticleTimer < 0.0F) {
-                AbstractDungeon.effectsQueue.add(new HarshSunlightEffect());
+                AbstractDungeon.effectsQueue.add(new SunBeamEffect());
                 this.secondParticleTimer = MathUtils.random(2.0F, 3.5F);
             }
         }
 
         if (this.particleTimer < 0.0F) {
             this.particleTimer = 0.3F;
-            if (!this.lightningCycle) {
-                this.sun = new HarshSunHaloEffect();
+            if (!this.sunRayCycle) {
+                this.sun = new SunEffect();
                 AbstractDungeon.effectsQueue.add(this.sun);
                 this.secondParticleTimer = MathUtils.random(1.0F, 1.5F);
-                this.lightningCycle = true;
+                this.sunRayCycle = true;
             }
         }
     }

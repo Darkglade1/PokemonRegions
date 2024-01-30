@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-public class HarshSunHaloEffect extends AbstractGameEffect {
+public class SunEffect extends AbstractGameEffect {
     private float effectDuration;
     private float x;
     private float y;
@@ -19,13 +19,13 @@ public class HarshSunHaloEffect extends AbstractGameEffect {
     private float tY;
     private Texture img;
 
-    public HarshSunHaloEffect() {
+    public SunEffect() {
         this.img = ImageMaster.ORB_LIGHTNING;
         this.effectDuration = 0.6F;
         this.duration = this.effectDuration;
         this.startingDuration = this.effectDuration;
-        this.x = 950.0F;
-        this.y = AbstractDungeon.floorY + 600.0F;
+        this.x = 100.0F * Settings.scale;
+        this.y = AbstractDungeon.floorY + (375.0F * Settings.scale);
         this.x *= Settings.scale;
         this.y *= Settings.scale;
         this.sX = this.x;
