@@ -20,7 +20,9 @@ import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.HeavyRain;
+import pokeregions.scenes.PokemonScene;
 import pokeregions.util.Details;
+import pokeregions.util.ProAudio;
 import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
@@ -172,6 +174,9 @@ public class KyogreEnemy extends AbstractPokemonMonster
         super.die(triggerRelics);
         onBossVictoryLogic();
         onFinalBossVictoryLogic();
+        if (PokemonScene.rainSoundId != 0L) {
+            CardCrawlGame.sound.stop(makeID(ProAudio.RAIN.name()), PokemonScene.rainSoundId);
+        }
     }
 
     @Override

@@ -69,7 +69,8 @@ public class PokemonRegions implements
         AddAudioSubscriber,
         PostInitializeSubscriber,
         StartGameSubscriber,
-        PostBattleSubscriber {
+        PostBattleSubscriber,
+        PostUpdateSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -523,6 +524,12 @@ public class PokemonRegions implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         intents.clear();
+    }
+
+    public static float time = 0f;
+    @Override
+    public void receivePostUpdate() {
+        time += Gdx.graphics.getRawDeltaTime();
     }
 
     public static void saveData() {
