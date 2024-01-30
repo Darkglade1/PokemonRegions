@@ -3,6 +3,8 @@ package pokeregions.monsters.act3.enemies;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import basemod.helpers.CardModifierManager;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +16,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.cardMods.ScorchedMod;
@@ -21,6 +24,8 @@ import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
+import pokeregions.vfx.HarshSunHaloEffect;
+import pokeregions.vfx.HarshSunlightEffect;
 
 import java.util.ArrayList;
 
@@ -179,6 +184,33 @@ public class GroudonEnemy extends AbstractPokemonMonster
         super.die(triggerRelics);
         onBossVictoryLogic();
         onFinalBossVictoryLogic();
+    }
+
+    boolean lightningCycle = false;
+    float particleTimer = 0.0f;
+    float secondParticleTimer = 0.0F;
+    AbstractGameEffect sun;
+    @Override
+    public void update() {
+        super.update();
+        this.particleTimer -= Gdx.graphics.getDeltaTime();
+        if (this.lightningCycle) {
+            this.secondParticleTimer -= Gdx.graphics.getDeltaTime();
+            if (this.secondParticleTimer < 0.0F) {
+                AbstractDungeon.effectsQueue.add(new HarshSunlightEffect());
+                this.secondParticleTimer = MathUtils.random(2.0F, 3.5F);
+            }
+        }
+
+        if (this.particleTimer < 0.0F) {
+            this.particleTimer = 0.3F;
+            if (!this.lightningCycle) {
+                this.sun = new HarshSunHaloEffect();
+                AbstractDungeon.effectsQueue.add(this.sun);
+                this.secondParticleTimer = MathUtils.random(1.0F, 1.5F);
+                this.lightningCycle = true;
+            }
+        }
     }
 
     @Override
