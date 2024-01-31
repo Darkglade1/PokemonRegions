@@ -43,6 +43,7 @@ import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
 import pokeregions.monsters.act3.enemies.DeoxysEnemy;
 import pokeregions.monsters.act3.enemies.GroudonEnemy;
 import pokeregions.monsters.act3.enemies.KyogreEnemy;
+import pokeregions.monsters.act3.enemies.SalamenceEnemy;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -431,6 +432,7 @@ public class PokemonRegions implements
 
         // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);
+        BaseMod.addMonster(SalamenceEnemy.ID, (BaseMod.GetMonster) SalamenceEnemy::new);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

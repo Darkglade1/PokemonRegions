@@ -102,5 +102,9 @@
   "${ModID}:HarshSunlight": {
     "NAME": "Harsh Sunlight",
     "DESCRIPTIONS": ["The first card you draw each turn becomes #yScorched.", "The first #b", " cards you draw each turn become #yScorched."]
+  },
+  "${ModID}:Moxie": {
+    "NAME": "Moxie",
+    "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, it gains #b", " #yStrength."]
   }
 }

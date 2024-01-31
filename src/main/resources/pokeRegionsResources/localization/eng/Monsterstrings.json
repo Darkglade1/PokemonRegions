@@ -247,5 +247,15 @@
     "NAME": "Groudon",
     "DIALOG": [
     ]
+  },
+  "${ModID}:SalamenceEnemy": {
+    "MOVES": [
+      "Dragon Rush",
+      "Dragon Claw",
+      "Dragon Breath"
+    ],
+    "NAME": "Salamence",
+    "DIALOG": [
+    ]
   }
 }

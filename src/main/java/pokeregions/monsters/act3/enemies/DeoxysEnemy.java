@@ -67,7 +67,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     public final int PLOT = calcAscensionSpecialSmall(3);
     public final int DAZES = calcAscensionSpecial(2);
     public final int EXTREME_SPEED_DAMAGE = calcAscensionDamage(20);
-    private int numExtremeSpeedHits = 1;
+    private int numExtremeSpeedHits = 2;
 
     private Form currentForm = Form.ATTACK;
     private int attackFormIntent = 1;
@@ -87,16 +87,16 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
         super(NAME, ID, 140, 0.0F, 0, 250.0f, 210.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Deoxys/Deoxys.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.25f);
-        setHp(calcAscensionTankiness(300));
+        setHp(calcAscensionTankiness(350));
         addMove(POWER_UP_PUNCH, Intent.ATTACK_BUFF, calcAscensionDamage(8));
         addMove(EXPOSE_WEAKNESS, Intent.ATTACK_DEBUFF, calcAscensionDamage(14));
-        addMove(PSYCHO_BOOST, Intent.ATTACK_BUFF, calcAscensionDamage(10), 3);
+        addMove(PSYCHO_BOOST, Intent.ATTACK_BUFF, calcAscensionDamage(13), 3);
         addMove(COSMIC_POWER, Intent.DEFEND);
         addMove(IRON_DEFENSE, Intent.DEFEND_BUFF);
         addMove(HEAVY_SLAM, Intent.ATTACK_DEFEND, calcAscensionDamage(16));
         addMove(SWIFT, Intent.ATTACK_DEBUFF, calcAscensionDamage(10));
         addMove(NASTY_PLOT, Intent.BUFF);
-        addMove(EXTREME_SPEED, Intent.ATTACK_DEBUFF, EXTREME_SPEED_DAMAGE);
+        addMove(EXTREME_SPEED, Intent.ATTACK_DEBUFF, EXTREME_SPEED_DAMAGE, numExtremeSpeedHits);
     }
 
     public enum Form {
