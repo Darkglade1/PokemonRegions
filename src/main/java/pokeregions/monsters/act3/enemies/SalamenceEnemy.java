@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act1.Cloyster;
+import pokeregions.cards.pokemonAllyCards.act3.Salamence;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
@@ -163,7 +163,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Cloyster();
+        return new Salamence();
     }
 
 }

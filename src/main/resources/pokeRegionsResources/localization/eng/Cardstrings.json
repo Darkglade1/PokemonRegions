@@ -395,6 +395,18 @@
       " Block and enter Calm."
     ]
   },
+  "${ModID}:Salamence": {
+    "NAME": "Salamence",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Dragon[] [#FFA500]Rush[]",
+      "[#FFA500]Sharpen[]",
+      "Deal ",
+      " damage. If the enemy is Vulnerable, deals double damage.",
+      "You gain ",
+      " Vigor."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
