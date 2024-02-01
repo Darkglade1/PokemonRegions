@@ -395,6 +395,19 @@
       " Block and enter Calm."
     ]
   },
+  "${ModID}:Groudon": {
+    "NAME": "Groudon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Scorching[] [#FFA500]Sands[]",
+      "[#FFA500]Precipice[] [#FFA500]Blades[]",
+      "Exhaust up to ",
+      " cards in your draw pile. Apply pokeregions:Burn equal to their combined costs.",
+      "Deal ",
+      " damage ",
+      " times."
+    ]
+  },
   "${ModID}:Salamence": {
     "NAME": "Salamence",
     "DESCRIPTION": "",

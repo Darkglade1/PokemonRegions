@@ -20,12 +20,12 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.cardMods.ScorchedMod;
-import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
+import pokeregions.cards.pokemonAllyCards.act3.Groudon;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
-import pokeregions.vfx.SunEffect;
 import pokeregions.vfx.SunBeamEffect;
+import pokeregions.vfx.SunEffect;
 
 import java.util.ArrayList;
 
@@ -215,7 +215,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Groudon();
     }
 
 }
