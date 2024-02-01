@@ -91,6 +91,10 @@
     "NAME": "Heavy Rain",
     "DESCRIPTIONS": ["The first card you draw each turn becomes #yWaterlogged.", "The first #b", " cards you draw each turn become #yWaterlogged."]
   },
+  "${ModID}:Drowning": {
+    "NAME": "Drowning",
+    "DESCRIPTIONS": ["Whenever you play a card, loses #b", " HP."]
+  },
   "${ModID}:Adapt": {
     "NAME": "Adaptability",
     "DESCRIPTIONS": ["This creature's intent changes based on the #yType of the last card played this combat. NL #yAttack - Will only use its #b1st intent. NL #ySkill - Will only use its #b2nd intent. NL #yPower - Will only use its #b3rd intent."]

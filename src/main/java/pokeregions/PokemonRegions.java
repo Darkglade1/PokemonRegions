@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -34,6 +35,7 @@ import pokeregions.CustomIntent.MassAttackIntent;
 import pokeregions.cards.AbstractEasyCard;
 import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
 import pokeregions.dungeons.EncounterIDs;
+import pokeregions.dungeons.Hoenn;
 import pokeregions.dungeons.Kanto;
 import pokeregions.events.act1.*;
 import pokeregions.monsters.act1.enemies.*;
@@ -425,10 +427,12 @@ public class PokemonRegions implements
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
 
         // Act 3
+        Hoenn hoenn = new Hoenn();
+        hoenn.addAct(TheBeyond.ID);
 
         // Bosses
-        BaseMod.addMonster(KyogreEnemy.ID, (BaseMod.GetMonster) KyogreEnemy::new);
-        BaseMod.addMonster(GroudonEnemy.ID, (BaseMod.GetMonster) GroudonEnemy::new);
+        hoenn.addBoss(KyogreEnemy.ID, (BaseMod.GetMonster) KyogreEnemy::new, makeMonsterPath("Kyogre/KyogreMap.png"), makeMonsterPath("Kyogre/KyogreMapOutline.png"));
+        hoenn.addBoss(GroudonEnemy.ID, (BaseMod.GetMonster) GroudonEnemy::new, makeMonsterPath("Groudon/GroudonMap.png"), makeMonsterPath("Groudon/GroudonMapOutline.png"));
 
         // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);

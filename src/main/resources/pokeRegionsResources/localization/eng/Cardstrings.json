@@ -169,7 +169,7 @@
       "[#FFA500]Bulk[] [#FFA500]Up[]",
       "[#FFA500]Dynamic[] [#FFA500]Punch[]",
       "You gain ",
-      " *Temporary Strength next turn.",
+      " *Temporary Strength.",
       "Deal ",
       " damage."
     ]
@@ -369,6 +369,18 @@
       "Deal ",
       " damage. Apply ",
       " Weak and Vulnerable."
+    ]
+  },
+  "${ModID}:Kyogre": {
+    "NAME": "Kyogre",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Life[] [#FFA500]Dew[]",
+      "[#FFA500]Drag[] [#FFA500]Under[]",
+      "You heal ",
+      " HP.",
+      "Apply ",
+      " pokeregions:Drowning."
     ]
   },
   "${ModID}:Deoxys": {

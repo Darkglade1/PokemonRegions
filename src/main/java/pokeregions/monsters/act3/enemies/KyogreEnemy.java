@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
+import pokeregions.cards.pokemonAllyCards.act3.Kyogre;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.HeavyRain;
 import pokeregions.scenes.PokemonScene;
@@ -181,7 +181,7 @@ public class KyogreEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Kyogre();
     }
 
 }

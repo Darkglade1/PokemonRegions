@@ -35,6 +35,13 @@
     "DESCRIPTION": "#yDamp cards #yRetain and #yExhaust. After being #yRetained for 2 turns, #yDamp is removed from the card."
   },
   {
+    "PROPER_NAME": "Drowning",
+    "NAMES": [
+      "drowning"
+    ],
+    "DESCRIPTION": "Whenever you play a card, the afflicted creature loses HP."
+  },
+  {
     "PROPER_NAME": "Scorched",
     "NAMES": [
       "scorched"
