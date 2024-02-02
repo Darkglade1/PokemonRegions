@@ -1,5 +1,7 @@
 package pokeregions.patches;
 
+import basemod.helpers.CardModifierManager;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CardModifierPatches;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,7 +22,7 @@ public class MagicGuardPatch {
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(AbstractCard.class.getName()) && m.getMethodName().equals("use")) {
                         m.replace("{" +
-                                "if(!(" + MagicGuardPatch.class.getName() + ".NegateCardPlay(c, monster))) {" +
+                                "if(!(" + MagicGuardPatch.class.getName() + ".NegateCardPlay())) {" +
                                 "$proceed($$);" +
                                 "}" +
                                 "}");
@@ -30,7 +32,25 @@ public class MagicGuardPatch {
         }
     }
 
-    public static boolean NegateCardPlay(AbstractCard c, AbstractMonster m) {
+    @SpirePatch(clz = CardModifierPatches.CardModifierOnUseCard.class, method = "Insert")
+    public static class NegateUseCardMod {
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                @Override
+                public void edit(MethodCall m) throws CannotCompileException {
+                    if (m.getClassName().equals(CardModifierManager.class.getName()) && m.getMethodName().equals("onUseCard")) {
+                        m.replace("{" +
+                                "if(!(" + MagicGuardPatch.class.getName() + ".NegateCardPlay())) {" +
+                                "$proceed($$);" +
+                                "}" +
+                                "}");
+                    }
+                }
+            };
+        }
+    }
+
+    public static boolean NegateCardPlay() {
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
             for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (monster.hasPower(AlakazamEnemy.POWER_ID)) {
