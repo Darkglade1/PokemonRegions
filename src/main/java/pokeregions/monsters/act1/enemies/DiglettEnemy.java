@@ -1,6 +1,8 @@
 package pokeregions.monsters.act1.enemies;
 
 import basemod.ReflectionHacks;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.Diglett;
@@ -118,6 +120,12 @@ public class DiglettEnemy extends AbstractPokemonMonster
             setMoveShortcut(DIG, MOVES[DIG]);
         }
         super.postGetMove();
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        super.damage(info);
+        AbstractDungeon.onModifyPower();
     }
 
     protected void setDetailedIntents() {
