@@ -21,10 +21,7 @@ import pokeregions.PokemonRegions;
 import pokeregions.actions.SwitchPokemonAction;
 import pokeregions.actions.UpdateStaminaOnCardAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.util.AllyMove;
-import pokeregions.util.SwitchPokemonMove;
-import pokeregions.util.TargetArrow;
-import pokeregions.util.TexLoader;
+import pokeregions.util.*;
 
 import java.util.ArrayList;
 
@@ -80,7 +77,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         atb(new AbstractGameAction() {
             @Override
             public void update() {
-                AbstractPokemonAlly.this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.aiRng);
+                setSmartTarget();
                 this.isDone = true;
             }
         });
@@ -405,5 +402,27 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     public void onSwitchIn() {
 
+    }
+    public void setSmartTarget() {
+        ArrayList<AbstractMonster> moList = Wiz.getEnemies();
+        moList.removeIf(m -> m.currentBlock > 0);
+        if (moList.size() > 0) {
+            target = findLowestHPTarget(moList);
+        } else {
+            target = findLowestHPTarget(Wiz.getEnemies());
+        }
+    }
+
+    public AbstractMonster findLowestHPTarget(ArrayList<AbstractMonster> moList) {
+        if (moList.size() == 0) {
+            return null;
+        }
+        AbstractMonster lowestHP = moList.get(0);
+        for (AbstractMonster mo : moList) {
+            if (mo.currentHealth < lowestHP.currentHealth) {
+                lowestHP = mo;
+            }
+        }
+        return lowestHP;
     }
 }
