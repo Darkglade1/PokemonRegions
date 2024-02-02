@@ -81,7 +81,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
                 ((AbstractAllyPokemonCard) card).currentStamina = s.misc;
                 ((AbstractAllyPokemonCard) card).initializeDescriptionFromMoves();
             }
-            pokemonTeam.addToBottom(card);
+            pokemonTeam.addToTop(card);
         }
         ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
         for (TopPanelItem item : topPanelItems) {
