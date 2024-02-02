@@ -2,15 +2,6 @@ package pokeregions.monsters;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
-import pokeregions.CustomIntent.IntentEnums;
-import pokeregions.PokemonRegions;
-import pokeregions.actions.SwitchPokemonAction;
-import pokeregions.actions.UpdateStaminaOnCardAction;
-import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.util.AllyMove;
-import pokeregions.util.SwitchPokemonMove;
-import pokeregions.util.TargetArrow;
-import pokeregions.util.TexLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -24,6 +15,16 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.RunicDome;
+import pokeregions.CustomIntent.IntentEnums;
+import pokeregions.PokemonRegions;
+import pokeregions.actions.SwitchPokemonAction;
+import pokeregions.actions.UpdateStaminaOnCardAction;
+import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.util.AllyMove;
+import pokeregions.util.SwitchPokemonMove;
+import pokeregions.util.TargetArrow;
+import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -328,6 +329,13 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             switchMove.render(sb);
         }
         super.render(sb);
+        // hack so allies don't get domed
+        if (adp().hasRelic(RunicDome.ID)) {
+            ReflectionHacks.privateMethod(AbstractMonster.class, "renderIntentVfxBehind", sb.getClass()).invoke(this, sb);
+            ReflectionHacks.privateMethod(AbstractMonster.class, "renderIntent", sb.getClass()).invoke(this, sb);
+            ReflectionHacks.privateMethod(AbstractMonster.class, "renderIntentVfxAfter", sb.getClass()).invoke(this, sb);
+            ReflectionHacks.privateMethod(AbstractMonster.class, "renderDamageRange", sb.getClass()).invoke(this, sb);
+        }
 
         alpha += Gdx.graphics.getDeltaTime() * alphaSpeed / 4;
         if (alpha > 0.7f) {
