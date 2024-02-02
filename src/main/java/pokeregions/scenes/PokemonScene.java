@@ -19,10 +19,7 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
-import pokeregions.monsters.act3.enemies.DeoxysEnemy;
-import pokeregions.monsters.act3.enemies.GroudonEnemy;
-import pokeregions.monsters.act3.enemies.KyogreEnemy;
-import pokeregions.monsters.act3.enemies.SalamenceEnemy;
+import pokeregions.monsters.act3.enemies.*;
 import pokeregions.util.ProAudio;
 import pokeregions.util.Wiz;
 
@@ -102,6 +99,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Desert");
                 } else if (mo instanceof SalamenceEnemy) {
                     this.bg = this.atlas.findRegion("mod/Volcano");
+                } else if (mo instanceof SlakingEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Courtyard");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

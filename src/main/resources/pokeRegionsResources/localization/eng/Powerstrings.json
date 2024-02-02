@@ -110,5 +110,9 @@
   "${ModID}:Moxie": {
     "NAME": "Moxie",
     "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, it gains #b", " #yStrength."]
+  },
+  "${ModID}:Laziness": {
+    "NAME": "Laziness",
+    "DESCRIPTIONS": ["#ySleeping for #b", " more turn(s). Taking damage will wake this creature up early. Upon waking up, becomes more #raggressive for every turn it was #yasleep."]
   }
 }

@@ -257,5 +257,17 @@
     "NAME": "Salamence",
     "DIALOG": [
     ]
+  },
+  "${ModID}:SlakingEnemy": {
+    "MOVES": [
+      "Zzzzzzzz",
+      "Slacking Off",
+      "Giga Impact",
+      "Hammer Arm",
+      "Groggy . . ."
+    ],
+    "NAME": "Slaking",
+    "DIALOG": [
+    ]
   }
 }
