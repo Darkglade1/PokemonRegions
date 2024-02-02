@@ -10,13 +10,13 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import static pokeregions.PokemonRegions.makeID;
 
-public class ExhaustDrawPileAction extends AbstractGameAction {
+public class ShuffleDiscardPileBackAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private final float startingDuration;
     private final boolean anyNumber;
 
-    public ExhaustDrawPileAction(int numCards, boolean anyNumber) {
+    public ShuffleDiscardPileBackAction(int numCards, boolean anyNumber) {
         this.amount = numCards;
         this.actionType = ActionType.CARD_MANIPULATION;
         this.startingDuration = Settings.ACTION_DUR_FAST;
@@ -26,17 +26,15 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startingDuration) {
-            if (AbstractDungeon.player.drawPile.isEmpty()) {
+            if (AbstractDungeon.player.discardPile.isEmpty()) {
                 this.isDone = true;
                 return;
             }
             CardGroup tmpGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (int i = 0; i < AbstractDungeon.player.drawPile.size(); i++) {
-                tmpGroup.addToTop(AbstractDungeon.player.drawPile.group
-                        .get(AbstractDungeon.player.drawPile.size() - i - 1));
+            for (int i = 0; i < AbstractDungeon.player.discardPile.size(); i++) {
+                tmpGroup.addToTop(AbstractDungeon.player.discardPile.group
+                        .get(AbstractDungeon.player.discardPile.size() - i - 1));
             }
-            tmpGroup.sortAlphabetically(true);
-            tmpGroup.sortByRarityPlusStatusCardType(false);
             if (!this.anyNumber) {
                 AbstractDungeon.gridSelectScreen.open(tmpGroup, this.amount, TEXT[0], false, false, this.anyNumber, false);
             } else {
@@ -45,7 +43,7 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
 
         } else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                AbstractDungeon.player.drawPile.moveToExhaustPile(c);
+                AbstractDungeon.player.discardPile.moveToDeck(c, true);
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
         }
@@ -53,7 +51,7 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ExhaustDrawPile"));
+        uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ShuffleDiscardPileBackAction"));
         TEXT = uiStrings.TEXT;
     }
 }
