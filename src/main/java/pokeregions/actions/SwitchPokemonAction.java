@@ -1,8 +1,10 @@
 package pokeregions.actions;
 
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.patches.PlayerSpireFields;
+import pokeregions.powers.AbstractEasyPower;
 import pokeregions.relics.OnPokemonSwitchRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
@@ -72,6 +74,11 @@ public class SwitchPokemonAction extends AbstractGameAction {
                         for (AbstractRelic relic : adp().relics) {
                             if (relic instanceof OnPokemonSwitchRelic) {
                                 ((OnPokemonSwitchRelic) relic).onPokemonSwitch(pokemon);
+                            }
+                        }
+                        for (AbstractPower power : adp().powers) {
+                            if (power instanceof AbstractEasyPower) {
+                                ((AbstractEasyPower) power).onPokemonSwitch(pokemon);
                             }
                         }
                         pokemon.onSwitchIn();

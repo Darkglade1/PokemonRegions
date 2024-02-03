@@ -433,6 +433,19 @@
       " damage."
     ]
   },
+  "${ModID}:Breloom": {
+    "NAME": "Breloom",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Swords[] [#FFA500]Dance[]",
+      "[#FFA500]Bullet[] [#FFA500]Seed[]",
+      "Your *Pokemon deal ",
+      "% more damage this combat.",
+      "Deal ",
+      " damage ",
+      " times."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

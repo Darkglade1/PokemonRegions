@@ -1,5 +1,6 @@
 package pokeregions.powers;
 
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.PokemonRegions;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -58,5 +59,9 @@ public abstract class AbstractEasyPower extends AbstractPower {
             c = redColor2;
             FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale, c);
         }
+    }
+
+    public void onPokemonSwitch(AbstractMonster pokemon) {
+
     }
 }

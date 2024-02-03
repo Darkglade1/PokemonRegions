@@ -118,5 +118,9 @@
   "${ModID}:Sleepy": {
     "NAME": "Sleepy",
     "DESCRIPTIONS": ["At the start of your turn, lose #b", " [E] then reduce the [E] loss by #b1."]
+  },
+  "${ModID}:SwordsDance": {
+    "NAME": "Swords Dance",
+    "DESCRIPTIONS": ["Your #yPokemon deal #b", "% more damage this combat."]
   }
 }

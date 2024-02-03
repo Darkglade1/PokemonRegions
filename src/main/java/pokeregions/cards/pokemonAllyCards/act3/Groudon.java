@@ -12,8 +12,8 @@ import static pokeregions.PokemonRegions.makeID;
 public class Groudon extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Groudon.class.getSimpleName());
     public static final int MOVE_1_EXHAUST = 2;
-    public static final int MOVE_2_DAMAGE = 5;
-    public static final int MOVE_2_HITS = 4;
+    public static final int MOVE_2_DAMAGE = 7;
+    public static final int MOVE_2_HITS = 3;
 
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
