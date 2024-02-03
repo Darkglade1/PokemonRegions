@@ -40,7 +40,8 @@ public class GroudonExhaustDrawPileAction extends AbstractGameAction {
                 tmpGroup.addToTop(AbstractDungeon.player.drawPile.group
                         .get(AbstractDungeon.player.drawPile.size() - i - 1));
             }
-
+            tmpGroup.sortAlphabetically(true);
+            tmpGroup.sortByRarityPlusStatusCardType(false);
             if (!this.anyNumber) {
                 AbstractDungeon.gridSelectScreen.open(tmpGroup, this.amount, TEXT[0], false, false, this.anyNumber, false);
             } else {
