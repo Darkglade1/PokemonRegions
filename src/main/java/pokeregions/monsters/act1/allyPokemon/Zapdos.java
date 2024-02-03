@@ -63,7 +63,7 @@ public class Zapdos extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                atb(new ShuffleDiscardPileBackAction(pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_2_EFFECT, true));
+                atb(new ShuffleDiscardPileBackAction(pokeregions.cards.pokemonAllyCards.act1.Zapdos.MOVE_2_EFFECT, true));
                 break;
             }
         }

@@ -48,7 +48,7 @@ public class Squirtle extends AbstractPokemonAlly
             case MOVE_1: {
                 runAnim("Ranged");
                 float duration = 0.5f;
-                atb(new VFXAction(ThrowEffect.throwEffect("WaterBlob.png", 1.0f, this.hb, target.hb, Color.BLUE.cpy(), duration), duration));
+                atb(new VFXAction(ThrowEffect.throwEffect("WaterBlob.png", 1.0f, this.hb, target.hb, Color.BLUE.cpy(), duration, true), duration));
                 atb(new AbstractGameAction() {
                     @Override
                     public void update() {

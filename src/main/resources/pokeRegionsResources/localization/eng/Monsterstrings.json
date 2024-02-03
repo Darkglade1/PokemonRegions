@@ -269,5 +269,15 @@
     "NAME": "Slaking",
     "DIALOG": [
     ]
+  },
+  "${ModID}:BreloomEnemy": {
+    "MOVES": [
+      "Spore",
+      "Swords Dance",
+      "Bullet Seed"
+    ],
+    "NAME": "Breloom",
+    "DIALOG": [
+    ]
   }
 }

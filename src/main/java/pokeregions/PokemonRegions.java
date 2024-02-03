@@ -437,6 +437,7 @@ public class PokemonRegions implements
 
         // Normal encounters
         BaseMod.addMonster(SlakingEnemy.ID, (BaseMod.GetMonster) SlakingEnemy::new);
+        BaseMod.addMonster(BreloomEnemy.ID, (BaseMod.GetMonster) BreloomEnemy::new);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

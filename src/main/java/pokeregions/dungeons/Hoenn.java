@@ -96,14 +96,14 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Spire Growth", 1.0F)); // Gardevoir
+        monsters.add(new MonsterInfo("Spire Growth", 1.0F)); // Breloom
         monsters.add(new MonsterInfo("Transient", 1.0F)); // Slaking
         monsters.add(new MonsterInfo("4 Shapes", 1.0F)); // 2 Trapinch and Flygon
         monsters.add(new MonsterInfo("Maw", 1.0F)); // Metagross
         monsters.add(new MonsterInfo("Sphere and 2 Shapes", 1.0F)); // Solrock and Lunatone
         monsters.add(new MonsterInfo("Jaw Worm Horde", 1.0F)); // 3 Masquerain
         monsters.add(new MonsterInfo("3 Darklings", 1.0F)); // Aron and Aggron
-        monsters.add(new MonsterInfo("Writhing Mass", 1.0F)); // Breloom
+        monsters.add(new MonsterInfo("Writhing Mass", 1.0F)); // Gardevoir
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);

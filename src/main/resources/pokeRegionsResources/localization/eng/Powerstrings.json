@@ -114,5 +114,9 @@
   "${ModID}:Laziness": {
     "NAME": "Laziness",
     "DESCRIPTIONS": ["#ySleeping for #b", " more turn(s). Taking damage will wake this creature up early. Upon waking up, becomes more #raggressive for every turn it was #yasleep."]
+  },
+  "${ModID}:Sleepy": {
+    "NAME": "Sleepy",
+    "DESCRIPTIONS": ["At the start of your turn, lose #b", " [E] then reduce the [E] loss by #b1."]
   }
 }
