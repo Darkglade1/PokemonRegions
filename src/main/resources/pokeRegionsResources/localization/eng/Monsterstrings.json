@@ -279,5 +279,14 @@
     "NAME": "Breloom",
     "DIALOG": [
     ]
+  },
+  "${ModID}:AronEnemy": {
+    "MOVES": [
+      "Nibble",
+      "Metal Burst"
+    ],
+    "NAME": "Aron",
+    "DIALOG": [
+    ]
   }
 }

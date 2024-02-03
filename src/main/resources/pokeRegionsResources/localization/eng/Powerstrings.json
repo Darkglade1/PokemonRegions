@@ -122,5 +122,9 @@
   "${ModID}:SwordsDance": {
     "NAME": "Swords Dance",
     "DESCRIPTIONS": ["Your #yPokemon deal #b", "% more damage this combat."]
+  },
+  "${ModID}:IronEater": {
+    "NAME": "Iron Eater",
+    "DESCRIPTIONS": ["Whenever this creature's attack is #yblocked, it gains #yBlock equal to the #yblocked damage. NL If this creature has leftover #yBlock at the start of its turn, it gains #b", " #yThorns."]
   }
 }

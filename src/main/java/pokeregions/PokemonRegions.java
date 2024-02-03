@@ -139,6 +139,9 @@ public class PokemonRegions implements
     public static final String DRAW_DOWN = makeUIPath("DrawDown.png");
     public static Texture DRAW_DOWN_TEXTURE;
 
+    public static final String THORNS = makeUIPath("Thorns.png");
+    public static Texture THORNS_TEXTURE;
+
     public static final String REGEN = makeUIPath("Regen.png");
     public static Texture REGEN_TEXTURE;
 
@@ -265,6 +268,7 @@ public class PokemonRegions implements
         CONSTRICTED_TEXTURE = TexLoader.getTexture(CONSTRICTED);
         INTANGIBLE_TEXTURE = TexLoader.getTexture(INTANGIBLE);
         DRAW_DOWN_TEXTURE = TexLoader.getTexture(DRAW_DOWN);
+        THORNS_TEXTURE = TexLoader.getTexture(THORNS);
         REGEN_TEXTURE = TexLoader.getTexture(REGEN);
 
         HEAL_TEXTURE = TexLoader.getTexture(HEAL);
@@ -438,6 +442,12 @@ public class PokemonRegions implements
         // Normal encounters
         BaseMod.addMonster(SlakingEnemy.ID, (BaseMod.GetMonster) SlakingEnemy::new);
         BaseMod.addMonster(BreloomEnemy.ID, (BaseMod.GetMonster) BreloomEnemy::new);
+        BaseMod.addMonster(EncounterIDs.ARONS_3, "3 Arons", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AronEnemy(-450.0F, 0.0F),
+                        new AronEnemy(-150.0F, 0.0F),
+                        new AronEnemy(150.0F, 0.0F)
+                }));
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

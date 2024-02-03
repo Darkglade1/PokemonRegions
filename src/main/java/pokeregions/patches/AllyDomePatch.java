@@ -18,10 +18,8 @@ public class AllyDomePatch {
                     if (m.getMethodName().equals("hasRelic")) {
                         m.replace("{" +
                                 "if(this instanceof " + AbstractPokemonAlly.class.getName() + ") {" +
-                                "System.out.println(3);" +
                                 "$_ = false;" +
                                 "} else { " +
-                                "System.out.println(4);" +
                                 "$_ = $proceed($$);" +
                                 "}" +
                                 "}");
