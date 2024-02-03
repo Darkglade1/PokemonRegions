@@ -446,6 +446,19 @@
       " times."
     ]
   },
+  "${ModID}:Aron": {
+    "NAME": "Aron",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Clean[] [#FFA500]Steel[]",
+      "[#FFA500]Metal[] [#FFA500]Burst[]",
+      "You gain ",
+      " Artifact.",
+      "You gain ",
+      " Block and ",
+      " Thorns."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
