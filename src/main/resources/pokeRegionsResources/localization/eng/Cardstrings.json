@@ -244,7 +244,8 @@
       "[#FFA500]U-turn[]",
       "Deal ",
       " damage to ALL enemies for each enemy in combat.",
-      "Put a card from your discard pile on top of your draw pile."
+      "Shuffle up to ",
+      " cards from your discard pile into your draw pile."
     ]
   },
   "${ModID}:Moltres": {

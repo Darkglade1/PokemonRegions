@@ -122,6 +122,11 @@
       "Choose cards to exhaust."
     ]
   },
+  "${ModID}:ShuffleDiscardPileBackAction": {
+    "TEXT": [
+      "Choose cards to shuffle back."
+    ]
+  },
   "${ModID}:PokeballMove": {
     "TEXT": [
       "Throw a Pokeball at ",

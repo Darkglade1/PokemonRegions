@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
+import com.megacrit.cardcrawl.relics.RunicDome;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.powers.InvisibleBarricadePower;
@@ -22,8 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static pokeregions.util.Wiz.applyToTarget;
-import static pokeregions.util.Wiz.atb;
+import static pokeregions.util.Wiz.*;
 
 public abstract class AbstractPokemonMonster extends CustomMonster {
 
@@ -255,7 +255,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
     }
 
     protected void postGetMove() {
-        if (!PokemonRegions.disableDetailedIntentsConfig) {
+        if (!PokemonRegions.disableDetailedIntentsConfig && !adp().hasRelic(RunicDome.ID)) {
             setDetailedIntents();
         }
     }

@@ -1,23 +1,22 @@
 package pokeregions.monsters.act1.allyPokemon;
 
 import basemod.ReflectionHacks;
-import pokeregions.BetterSpriterAnimation;
-import pokeregions.CustomIntent.IntentEnums;
-import pokeregions.PokemonRegions;
-import pokeregions.actions.AllyDamageAllEnemiesAction;
-import pokeregions.actions.ZapdosMassAttackAction;
-import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import pokeregions.BetterSpriterAnimation;
+import pokeregions.CustomIntent.IntentEnums;
+import pokeregions.PokemonRegions;
+import pokeregions.actions.AllyDamageAllEnemiesAction;
+import pokeregions.actions.ShuffleDiscardPileBackAction;
+import pokeregions.actions.ZapdosMassAttackAction;
+import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.util.Wiz;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
-import static pokeregions.util.Wiz.adp;
 import static pokeregions.util.Wiz.atb;
 
 public class Zapdos extends AbstractPokemonAlly
@@ -64,7 +63,7 @@ public class Zapdos extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                atb(new DiscardPileToTopOfDeckAction(adp()));
+                atb(new ShuffleDiscardPileBackAction(pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_2_EFFECT, true));
                 break;
             }
         }
