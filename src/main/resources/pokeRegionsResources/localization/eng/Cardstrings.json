@@ -472,6 +472,19 @@
       " Thorns."
     ]
   },
+  "${ModID}:Tropius": {
+    "NAME": "Tropius",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Synthesis[]",
+      "[#FFA500]Solar[] [#FFA500]Beam[]",
+      "You gain ",
+      " [E] next turn.",
+      "Deal ",
+      " damage. Apply ",
+      " Weak."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

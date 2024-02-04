@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act3.Aggron;
+import pokeregions.cards.pokemonAllyCards.act3.Tropius;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.NastyPlot;
@@ -151,7 +151,7 @@ public class TropiusEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Aggron();
+        return new Tropius();
     }
 
     boolean sunRayCycle = false;
