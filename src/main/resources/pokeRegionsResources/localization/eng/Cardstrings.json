@@ -459,6 +459,18 @@
       " Thorns."
     ]
   },
+  "${ModID}:Aggron": {
+    "NAME": "Aggron",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Body[] [#FFA500]Slam[]",
+      "[#FFA500]Metal[] [#FFA500]Burst[]",
+      "Deal damage equal to your Block.",
+      "You gain ",
+      " Block and ",
+      " Thorns."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
