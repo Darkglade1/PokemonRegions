@@ -318,5 +318,15 @@
     "NAME": "Trapinch",
     "DIALOG": [
     ]
+  },
+  "${ModID}:FlygonEnemy": {
+    "MOVES": [
+      "Guardian Spirit",
+      "Matron's Strike",
+      "Frustration"
+    ],
+    "NAME": "Flygon",
+    "DIALOG": [
+    ]
   }
 }

@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
-import pokeregions.events.ProfessorOak;
-import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act3.enemies.*;
 
 import java.util.ArrayList;
@@ -98,11 +96,11 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(BreloomEnemy.ID, 1.0F));
         monsters.add(new MonsterInfo(SlakingEnemy.ID, 1.0F));
         monsters.add(new MonsterInfo(EncounterIDs.AGGRON_AND_ARONS, 1.0F));
-        monsters.add(new MonsterInfo("Maw", 1.0F)); // Metagross
-        monsters.add(new MonsterInfo("Sphere and 2 Shapes", 1.0F)); // Solrock and Lunatone
-        monsters.add(new MonsterInfo("Jaw Worm Horde", 1.0F)); // 3 Masquerain
-        monsters.add(new MonsterInfo("3 Darklings", 1.0F)); // 2 Trapinch and Flygon
-        monsters.add(new MonsterInfo("Writhing Mass", 1.0F)); // Gardevoir
+        //monsters.add(new MonsterInfo("Maw", 1.0F)); // Metagross
+        //monsters.add(new MonsterInfo("Sphere and 2 Shapes", 1.0F)); // Solrock and Lunatone
+        //monsters.add(new MonsterInfo("Jaw Worm Horde", 1.0F)); // 3 Masquerain
+        monsters.add(new MonsterInfo(EncounterIDs.FLYGON_AND_TRAPINCHES, 1.0F));
+        //monsters.add(new MonsterInfo("Writhing Mass", 1.0F)); // Gardevoir
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);
@@ -113,7 +111,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(DeoxysEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(SalamenceEnemy.ID, 2.0F));
-        monsters.add(new MonsterInfo("Reptomancer", 2.0F));
+        //monsters.add(new MonsterInfo("Reptomancer", 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, true);
     }
@@ -122,11 +120,11 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
     protected ArrayList<String> generateExclusions() {
         ArrayList<String> retVal = new ArrayList<>();
         String previous = monsterList.get(monsterList.size() - 1);
-        if (previous.equals(EncounterIDs.RATS_2) || previous.equals(VulpixEnemy.ID)) {
-            retVal.add(EncounterIDs.FOX_AND_RAT);
+        if (previous.equals(EncounterIDs.TRAPINCHES_3)) {
+            retVal.add(EncounterIDs.FLYGON_AND_TRAPINCHES);
         }
-        if (previous.equals(EncounterIDs.DIGLETTS_2) || previous.equals(RhyhornEnemy.ID)) {
-            retVal.add(EncounterIDs.RHYHORN_AND_DIGLETT);
+        if (previous.equals(EncounterIDs.ARONS_3)) {
+            retVal.add(EncounterIDs.AGGRON_AND_ARONS);
         }
         return retVal;
     }

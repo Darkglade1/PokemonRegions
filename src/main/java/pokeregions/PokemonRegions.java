@@ -465,6 +465,12 @@ public class PokemonRegions implements
                         new TrapinchEnemy(-150.0F, 0.0F, false),
                         new TrapinchEnemy(150.0F, 0.0F, false)
                 }));
+        BaseMod.addMonster(EncounterIDs.FLYGON_AND_TRAPINCHES, "Flygon and Trapinches", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new TrapinchEnemy(-450.0F, 0.0F, true),
+                        new TrapinchEnemy(-150.0F, 0.0F, true),
+                        new FlygonEnemy(150.0F, 100.0F)
+                }));
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
