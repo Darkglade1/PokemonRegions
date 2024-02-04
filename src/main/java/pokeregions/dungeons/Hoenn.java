@@ -85,7 +85,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("3 Darklings", 2.0F)); // 3 Trapinch
+        monsters.add(new MonsterInfo(EncounterIDs.TRAPINCHES_3, 2.0F));
         monsters.add(new MonsterInfo(TropiusEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(EncounterIDs.ARONS_3, 2.0F));
         MonsterInfo.normalizeWeights(monsters);

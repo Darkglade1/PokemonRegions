@@ -308,5 +308,15 @@
     "NAME": "Tropius",
     "DIALOG": [
     ]
+  },
+  "${ModID}:TrapinchEnemy": {
+    "MOVES": [
+      "Crippling Bite",
+      "Crunch",
+      "Trap Prey"
+    ],
+    "NAME": "Trapinch",
+    "DIALOG": [
+    ]
   }
 }

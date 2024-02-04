@@ -121,6 +121,9 @@ public class PokemonRegions implements
     public static final String STRENGTH = makeUIPath("Strength.png");
     public static Texture STRENGTH_TEXTURE;
 
+    public static final String DEXTERITY = makeUIPath("Dexterity.png");
+    public static Texture DEXTERITY_TEXTURE;
+
     public static final String PLATED_ARMOR = makeUIPath("PlatedArmor.png");
     public static Texture PLATED_ARMOR_TEXTURE;
 
@@ -262,6 +265,7 @@ public class PokemonRegions implements
         FRAIL_TEXTURE = TexLoader.getTexture(FRAIL);
         VULNERABLE_TEXTURE = TexLoader.getTexture(VULNERABLE);
         STRENGTH_TEXTURE = TexLoader.getTexture(STRENGTH);
+        DEXTERITY_TEXTURE = TexLoader.getTexture(DEXTERITY);
         PLATED_ARMOR_TEXTURE = TexLoader.getTexture(PLATED_ARMOR);
         METALLICIZE_TEXTURE = TexLoader.getTexture(METALLICIZE);
         BURN_DEBUFF_TEXTURE = TexLoader.getTexture(BURN_DEBUFF);
@@ -455,6 +459,12 @@ public class PokemonRegions implements
                         new AggronEnemy(150.0F, 0.0F)
                 }));
         BaseMod.addMonster(TropiusEnemy.ID, (BaseMod.GetMonster) TropiusEnemy::new);
+        BaseMod.addMonster(EncounterIDs.TRAPINCHES_3, "3 Trapinches", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new TrapinchEnemy(-450.0F, 0.0F, false),
+                        new TrapinchEnemy(-150.0F, 0.0F, false),
+                        new TrapinchEnemy(150.0F, 0.0F, false)
+                }));
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
