@@ -100,7 +100,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(BreloomEnemy.ID, 1.0F));
         monsters.add(new MonsterInfo(SlakingEnemy.ID, 1.0F));
-        monsters.add(new MonsterInfo("4 Shapes", 1.0F)); // 2 Aron and Aggron
+        monsters.add(new MonsterInfo(EncounterIDs.AGGRON_AND_ARONS, 1.0F));
         monsters.add(new MonsterInfo("Maw", 1.0F)); // Metagross
         monsters.add(new MonsterInfo("Sphere and 2 Shapes", 1.0F)); // Solrock and Lunatone
         monsters.add(new MonsterInfo("Jaw Worm Horde", 1.0F)); // 3 Masquerain

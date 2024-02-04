@@ -448,6 +448,12 @@ public class PokemonRegions implements
                         new AronEnemy(-150.0F, 0.0F),
                         new AronEnemy(150.0F, 0.0F)
                 }));
+        BaseMod.addMonster(EncounterIDs.AGGRON_AND_ARONS, "Aggron and Arons", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AronEnemy(-450.0F, 0.0F),
+                        new AronEnemy(-150.0F, 0.0F),
+                        new AggronEnemy(150.0F, 0.0F)
+                }));
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

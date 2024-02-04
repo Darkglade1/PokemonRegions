@@ -288,5 +288,15 @@
     "NAME": "Aron",
     "DIALOG": [
     ]
+  },
+  "${ModID}:AggronEnemy": {
+    "MOVES": [
+      "Iron Tail",
+      "Metal Burst",
+      "Metal Sound"
+    ],
+    "NAME": "Aggron",
+    "DIALOG": [
+    ]
   }
 }
