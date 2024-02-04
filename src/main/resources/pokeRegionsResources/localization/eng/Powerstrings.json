@@ -126,5 +126,9 @@
   "${ModID}:IronEater": {
     "NAME": "Iron Eater",
     "DESCRIPTIONS": ["Whenever this creature's attack is #yblocked, it gains #yBlock equal to the #yblocked damage. NL If this creature has leftover #yBlock at the start of its turn, it gains #b", " #yThorns."]
+  },
+  "${ModID}:SolarPower": {
+    "NAME": "Solar Power",
+    "DESCRIPTIONS": ["Deals #b", "% more damage each turn. Loses #b", "% of its HP each turn."]
   }
 }

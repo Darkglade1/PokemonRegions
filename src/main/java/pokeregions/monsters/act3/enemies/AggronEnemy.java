@@ -145,7 +145,7 @@ public class AggronEnemy extends AbstractPokemonMonster
                 break;
             }
             case METAL_SOUND: {
-                Details statusDetail = new Details(this, STATUS, WOUND_TEXTURE);
+                Details statusDetail = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DRAW_PILE);
                 details.add(statusDetail);
                 Details powerDetail = new Details(this, DEBUFF, WEAK_TEXTURE);
                 details.add(powerDetail);

@@ -414,10 +414,11 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Dragon[] [#FFA500]Rush[]",
-      "[#FFA500]Sharpen[]",
+      "[#FFA500]Hone[] [#FFA500]Claws[]",
       "Deal ",
       " damage. If the enemy is Vulnerable, deals double damage.",
       "You gain ",
+      " Strength and ",
       " Vigor."
     ]
   },

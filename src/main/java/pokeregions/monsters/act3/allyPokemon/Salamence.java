@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import pokeregions.BetterSpriterAnimation;
@@ -48,7 +49,8 @@ public class Salamence extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                applyToTarget(adp(), this, new VigorPower(adp(), pokeregions.cards.pokemonAllyCards.act3.Salamence.MOVE_2_BUFF));
+                applyToTarget(adp(), this, new StrengthPower(adp(), pokeregions.cards.pokemonAllyCards.act3.Salamence.MOVE_2_BUFF));
+                applyToTarget(adp(), this, new VigorPower(adp(), pokeregions.cards.pokemonAllyCards.act3.Salamence.MOVE_2_VIGOR));
                 break;
             }
         }

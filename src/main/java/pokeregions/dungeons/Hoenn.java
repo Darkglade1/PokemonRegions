@@ -10,10 +10,7 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
 import pokeregions.events.ProfessorOak;
 import pokeregions.monsters.act1.enemies.*;
-import pokeregions.monsters.act3.enemies.BreloomEnemy;
-import pokeregions.monsters.act3.enemies.DeoxysEnemy;
-import pokeregions.monsters.act3.enemies.SalamenceEnemy;
-import pokeregions.monsters.act3.enemies.SlakingEnemy;
+import pokeregions.monsters.act3.enemies.*;
 
 import java.util.ArrayList;
 
@@ -89,7 +86,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo("3 Darklings", 2.0F)); // 3 Trapinch
-        monsters.add(new MonsterInfo("Orb Walker", 2.0F)); // Tropius
+        monsters.add(new MonsterInfo(TropiusEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(EncounterIDs.ARONS_3, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);

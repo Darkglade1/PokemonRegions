@@ -454,6 +454,7 @@ public class PokemonRegions implements
                         new AronEnemy(-150.0F, 0.0F),
                         new AggronEnemy(150.0F, 0.0F)
                 }));
+        BaseMod.addMonster(TropiusEnemy.ID, (BaseMod.GetMonster) TropiusEnemy::new);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

@@ -298,5 +298,15 @@
     "NAME": "Aggron",
     "DIALOG": [
     ]
+  },
+  "${ModID}:TropiusEnemy": {
+    "MOVES": [
+      "Sunny Day",
+      "Solar Beam",
+      "Seed Bomb"
+    ],
+    "NAME": "Tropius",
+    "DIALOG": [
+    ]
   }
 }
