@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act3.Aron;
+import pokeregions.cards.pokemonAllyCards.act3.Trapinch;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 
@@ -141,7 +141,7 @@ public class TrapinchEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Aron();
+        return new Trapinch();
     }
 
 }

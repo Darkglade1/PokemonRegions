@@ -485,6 +485,31 @@
       " Weak."
     ]
   },
+  "${ModID}:Trapinch": {
+    "NAME": "Trapinch",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Mud[] [#FFA500]Sport[]",
+      "[#FFA500]Crunch[]",
+      "Draw ",
+      " cards. Retain your hand next turn.",
+      "Deal ",
+      " damage. Apply ",
+      " Vulnerable."
+    ]
+  },
+  "${ModID}:Flygon": {
+    "NAME": "Flygon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Earth[] [#FFA500]Power[]",
+      "[#FFA500]Fissure[]",
+      "Deal ",
+      " damage. Apply pokeregions:Slow for ",
+      " turns.",
+      "If the enemy’s current HP is less than your current HP, set their HP to 0."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

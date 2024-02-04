@@ -47,5 +47,12 @@
       "scorched"
     ],
     "DESCRIPTION": "#yScorched cards are #yEthereal. Whenever you play a #yScorched card, take #b2 damage."
+  },
+  {
+    "PROPER_NAME": "Slow",
+    "NAMES": [
+      "slow"
+    ],
+    "DESCRIPTION": "#ySlowed creatures take more damage from attacks for each card played in a turn."
   }
 ]

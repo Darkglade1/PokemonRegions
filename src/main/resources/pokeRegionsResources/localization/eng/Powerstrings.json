@@ -130,5 +130,9 @@
   "${ModID}:SolarPower": {
     "NAME": "Solar Power",
     "DESCRIPTIONS": ["Deals #b", "% more damage each turn. Loses #b", "% of its HP each turn."]
+  },
+  "${ModID}:Slow": {
+    "NAME": "Slow",
+    "DESCRIPTIONS": ["Whenever you play a card, receives #b10% more damage from attacks this turn. Lasts #b", " more turn(s). NL (Receives #b", "% more damage this turn)."]
   }
 }
