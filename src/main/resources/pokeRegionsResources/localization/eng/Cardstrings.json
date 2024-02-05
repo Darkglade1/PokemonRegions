@@ -11,6 +11,19 @@
       " damage to ALL enemies."
     ]
   },
+  "${ModID}:Charizard": {
+    "NAME": "Charizard",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Metal[] [#FFA500]Claw[]",
+      "[#FFA500]Flamethrower[]",
+      "Deal ",
+      " damage.",
+      "Deal ",
+      " damage and apply ",
+      " pokeregions:Burn to ALL enemies."
+    ]
+  },
   "${ModID}:Bulbasaur": {
     "NAME": "Bulbasaur",
     "DESCRIPTION": "",
@@ -24,6 +37,19 @@
       " Weak."
     ]
   },
+  "${ModID}:Venusaur": {
+    "NAME": "Venusaur",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Take[] [#FFA500]Down[]",
+      "[#FFA500]Poison[] [#FFA500]Powder[]",
+      "Deal ",
+      " damage.",
+      "Apply ",
+      " pokeregions:Toxic and ",
+      " Weak and Vulnerable."
+    ]
+  },
   "${ModID}:Squirtle": {
     "NAME": "Squirtle",
     "DESCRIPTION": "",
@@ -34,6 +60,19 @@
       " damage.",
       "You gain ",
       " Block."
+    ]
+  },
+  "${ModID}:Blastoise": {
+    "NAME": "Blastoise",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Aqua[] [#FFA500]Jet[]",
+      "[#FFA500]Defense[] [#FFA500]Curl[]",
+      "Deal ",
+      " damage.",
+      "You gain ",
+      " Block and ",
+      " *Metallicize."
     ]
   },
   "${ModID}:Diglett": {
