@@ -134,5 +134,9 @@
   "${ModID}:Slow": {
     "NAME": "Slow",
     "DESCRIPTIONS": ["Whenever you play a card, receives #b10% more damage from attacks this turn. Lasts #b", " more turn(s). NL (Receives #b", "% more damage this turn)."]
+  },
+  "${ModID}:DragonLord": {
+    "NAME": "Dragon Lord",
+    "DESCRIPTIONS": ["At end of round, ALL other enemies gain #b", " #yStrength. NL Whenever another enemy is defeated, transfer their #yStrength to this creature."]
   }
 }

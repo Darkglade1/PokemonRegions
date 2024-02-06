@@ -20,6 +20,9 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
 import pokeregions.monsters.act3.enemies.*;
+import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
+import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
+import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
 import pokeregions.util.ProAudio;
 import pokeregions.util.Wiz;
 
@@ -109,6 +112,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 } else if (mo instanceof TrapinchEnemy || mo instanceof FlygonEnemy) {
                     this.bg = this.atlas.findRegion("mod/Desert");
+                } else if (mo instanceof SalamenceR || mo instanceof RayquazaEnemy || mo instanceof FlygonR) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

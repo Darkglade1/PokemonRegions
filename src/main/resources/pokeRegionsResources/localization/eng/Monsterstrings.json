@@ -328,5 +328,15 @@
     "NAME": "Flygon",
     "DIALOG": [
     ]
+  },
+  "${ModID}:RayquazaEnemy": {
+    "MOVES": [
+      "Hurricane",
+      "Dragon Pulse",
+      "Dragon Breath"
+    ],
+    "NAME": "Rayquaza",
+    "DIALOG": [
+    ]
   }
 }

@@ -44,6 +44,9 @@ import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
 import pokeregions.monsters.act3.enemies.*;
+import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
+import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
+import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -439,6 +442,12 @@ public class PokemonRegions implements
         // Bosses
         hoenn.addBoss(KyogreEnemy.ID, (BaseMod.GetMonster) KyogreEnemy::new, makeMonsterPath("Kyogre/KyogreMap.png"), makeMonsterPath("Kyogre/KyogreMapOutline.png"));
         hoenn.addBoss(GroudonEnemy.ID, (BaseMod.GetMonster) GroudonEnemy::new, makeMonsterPath("Groudon/GroudonMap.png"), makeMonsterPath("Groudon/GroudonMapOutline.png"));
+        hoenn.addBoss(RayquazaEnemy.ID, "Rayquaza, Dragon Lord", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SalamenceR(-450.0F, 0.0F),
+                        new RayquazaEnemy(-150.0F, 150.0F),
+                        new FlygonR(150.0F, 150.0F)
+                }), makeMonsterPath("Rayquaza/RayquazaMap.png"), makeMonsterPath("Rayquaza/RayquazaMapOutline.png"));
 
         // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);
