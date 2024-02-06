@@ -88,9 +88,9 @@ public class DampMod extends AbstractCardModifier {
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
         if (turns == 1) {
-            sb.draw(DAMP2_TEXTURE_REGION, card.hb.cX - (float) DAMP2_TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY - (float) DAMP2_TEXTURE_REGION.getRegionHeight() / 2, (float) DAMP2_TEXTURE_REGION.getRegionWidth() / 2, (float) DAMP2_TEXTURE_REGION.getRegionHeight() / 2, DAMP2_TEXTURE_REGION.getRegionWidth(), DAMP2_TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
+            sb.draw(DAMP2_TEXTURE_REGION, card.hb.cX - (float) DAMP2_TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY - (float) DAMP2_TEXTURE_REGION.getRegionHeight() / 2 + (75.0f * card.drawScale * Settings.scale), (float) DAMP2_TEXTURE_REGION.getRegionWidth() / 2, (float) DAMP2_TEXTURE_REGION.getRegionHeight() / 2, DAMP2_TEXTURE_REGION.getRegionWidth(), DAMP2_TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
         } else {
-            sb.draw(DAMP1_TEXTURE_REGION, card.hb.cX - (float) DAMP1_TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY - (float) DAMP1_TEXTURE_REGION.getRegionHeight() / 2, (float) DAMP1_TEXTURE_REGION.getRegionWidth() / 2, (float) DAMP1_TEXTURE_REGION.getRegionHeight() / 2, DAMP1_TEXTURE_REGION.getRegionWidth(), DAMP1_TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
+            sb.draw(DAMP1_TEXTURE_REGION, card.hb.cX - (float) DAMP1_TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY - (float) DAMP1_TEXTURE_REGION.getRegionHeight() / 2 + (75.0f * card.drawScale * Settings.scale), (float) DAMP1_TEXTURE_REGION.getRegionWidth() / 2, (float) DAMP1_TEXTURE_REGION.getRegionHeight() / 2, DAMP1_TEXTURE_REGION.getRegionWidth(), DAMP1_TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
         }
     }
 }

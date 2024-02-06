@@ -76,6 +76,6 @@ public class WaterLoggedMod extends AbstractCardModifier {
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        sb.draw(WATER_LOGGED_TEXTURE_REGION, card.hb.cX - (float) WATER_LOGGED_TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY - (float) WATER_LOGGED_TEXTURE_REGION.getRegionHeight() / 2, (float) WATER_LOGGED_TEXTURE_REGION.getRegionWidth() / 2, (float) WATER_LOGGED_TEXTURE_REGION.getRegionHeight() / 2, WATER_LOGGED_TEXTURE_REGION.getRegionWidth(), WATER_LOGGED_TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
+        sb.draw(WATER_LOGGED_TEXTURE_REGION, card.hb.cX - (float) WATER_LOGGED_TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY - (float) WATER_LOGGED_TEXTURE_REGION.getRegionHeight() / 2 + (75.0f * card.drawScale * Settings.scale), (float) WATER_LOGGED_TEXTURE_REGION.getRegionWidth() / 2, (float) WATER_LOGGED_TEXTURE_REGION.getRegionHeight() / 2, WATER_LOGGED_TEXTURE_REGION.getRegionWidth(), WATER_LOGGED_TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
     }
 }
