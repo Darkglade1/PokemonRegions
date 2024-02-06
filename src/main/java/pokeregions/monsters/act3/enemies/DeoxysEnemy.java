@@ -87,7 +87,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
         super(NAME, ID, 140, 0.0F, 0, 250.0f, 210.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Deoxys/Deoxys.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.25f);
-        setHp(calcAscensionTankiness(350));
+        setHp(calcAscensionTankiness(400));
         addMove(POWER_UP_PUNCH, Intent.ATTACK_BUFF, calcAscensionDamage(8));
         addMove(EXPOSE_WEAKNESS, Intent.ATTACK_DEBUFF, calcAscensionDamage(14));
         addMove(PSYCHO_BOOST, Intent.ATTACK_BUFF, calcAscensionDamage(13), 3);

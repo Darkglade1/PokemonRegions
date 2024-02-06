@@ -20,6 +20,7 @@ import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Kyogre;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.HeavyRain;
+import pokeregions.powers.NastyPlot;
 import pokeregions.scenes.PokemonScene;
 import pokeregions.util.Details;
 import pokeregions.util.ProAudio;
@@ -42,9 +43,10 @@ public class KyogreEnemy extends AbstractPokemonMonster
     private static final byte AQUA_RING = 2;
     private static final byte LIFE_DEW = 3;
 
-    public final int REGEN = 10;
-    public final int BLOCK = 25;
-    public final int DEBUFF = 2;
+    public final int REGEN = calcAscensionSpecial(10);
+    public final int BLOCK = 30;
+    public final int DEBUFF = 3;
+    public final int BUFF = calcAscensionSpecial(2);
     public final int DRAW_DOWN = 1;
     public final int LIFE_DEW_COOLDOWN = 3;
     private int cooldown = LIFE_DEW_COOLDOWN;
@@ -57,9 +59,9 @@ public class KyogreEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 300.0f, 240.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Kyogre/Kyogre.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
-        setHp(calcAscensionTankiness(550));
-        addMove(HYDRO_PUMP, Intent.ATTACK_DEBUFF, calcAscensionDamage(25));
-        addMove(ORIGIN_PULSE, Intent.ATTACK, calcAscensionDamage(32));
+        setHp(calcAscensionTankiness(600));
+        addMove(HYDRO_PUMP, Intent.ATTACK_DEBUFF, calcAscensionDamage(28));
+        addMove(ORIGIN_PULSE, Intent.ATTACK, calcAscensionDamage(36));
         addMove(AQUA_RING, Intent.DEFEND_DEBUFF);
         addMove(LIFE_DEW, Intent.BUFF);
     }
@@ -102,10 +104,8 @@ public class KyogreEnemy extends AbstractPokemonMonster
                 break;
             }
             case LIFE_DEW: {
-                if (AbstractDungeon.ascensionLevel >= 19) {
-                    applyToTarget(this, this, new HeavyRain(this, 1));
-                }
                 applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
+                applyToTarget(this, this, new NastyPlot(this, BUFF));
                 break;
             }
         }
@@ -141,7 +141,7 @@ public class KyogreEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makePowerPath("HeavyRain32.png");
+        String textureString = makeUIPath("Nasty.png");
         Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case HYDRO_PUMP: {
@@ -157,12 +157,10 @@ public class KyogreEnemy extends AbstractPokemonMonster
                 break;
             }
             case LIFE_DEW: {
-                if (AbstractDungeon.ascensionLevel >= 19) {
-                    Details powerDetail2 = new Details(this, 1, texture);
-                    details.add(powerDetail2);
-                }
                 Details powerDetail = new Details(this, REGEN, REGEN_TEXTURE);
                 details.add(powerDetail);
+                Details powerDetail2 = new Details(this, BUFF, texture);
+                details.add(powerDetail2);
                 break;
             }
         }

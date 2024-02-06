@@ -43,7 +43,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
     private static final byte BLADES = 1;
     private static final byte SCORCH = 2;
 
-    public final int STR = 4;
+    public final int STR = 6;
     public final int DEBUFF = 2;
     public final int SUN = 1;
 
@@ -62,7 +62,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
         setHp(calcAscensionTankiness(500));
         addMove(SWORDS, Intent.BUFF);
-        addMove(BLADES, Intent.ATTACK, calcAscensionDamage(10), 2);
+        addMove(BLADES, Intent.ATTACK, calcAscensionDamage(13), 2);
         addMove(SCORCH, Intent.STRONG_DEBUFF);
     }
 

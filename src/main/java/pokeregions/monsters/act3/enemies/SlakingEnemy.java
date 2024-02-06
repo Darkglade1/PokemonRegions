@@ -57,7 +57,7 @@ public class SlakingEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 230.0f, 200.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Slaking/Slaking.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
-        setHp(calcAscensionTankiness(400));
+        setHp(calcAscensionTankiness(450));
         addMove(SLEEPING, Intent.SLEEP);
         addMove(SLACK_OFF, Intent.UNKNOWN);
         addMove(HAMMER_ARM, Intent.ATTACK, calcAscensionDamage(19));

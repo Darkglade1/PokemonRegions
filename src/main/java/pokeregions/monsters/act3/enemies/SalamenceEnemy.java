@@ -61,8 +61,8 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Salamence/Salamence.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(300));
-        addMove(DRAGON_RUSH, Intent.ATTACK, calcAscensionDamage(9), 2);
-        addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(25));
+        addMove(DRAGON_RUSH, Intent.ATTACK, calcAscensionDamage(12), 2);
+        addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(30));
         addMove(DRAGON_BREATH, Intent.DEBUFF);
         if (AbstractDungeon.ascensionLevel >= 18) {
             status.upgrade();
@@ -121,7 +121,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
                 break;
             }
             case DRAGON_BREATH: {
-                intoDiscardMo(status.makeStatEquivalentCopy(), STATUS);
+                intoDrawMo(status.makeStatEquivalentCopy(), STATUS);
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
                 applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
                 break;
@@ -149,7 +149,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
         switch (move.nextMove) {
             case DRAGON_BREATH: {
-                Details statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DISCARD_PILE);
+                Details statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DRAW_PILE);
                 details.add(statusDetail);
                 Details vulnerableDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(vulnerableDetail);

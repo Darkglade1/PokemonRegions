@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.events.beyond.*;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -471,6 +472,14 @@ public class PokemonRegions implements
                         new TrapinchEnemy(-150.0F, 0.0F, true),
                         new FlygonEnemy(150.0F, 100.0F)
                 }));
+
+        // Events
+        BaseMod.addEvent(Falling.ID, Falling.class, Hoenn.ID);
+        BaseMod.addEvent(MindBloom.ID, MindBloom.class, Hoenn.ID);
+        BaseMod.addEvent(SensoryStone.ID, SensoryStone.class, Hoenn.ID);
+        BaseMod.addEvent(WindingHalls.ID, WindingHalls.class, Hoenn.ID);
+        BaseMod.addEvent(MoaiHead.ID, MoaiHead.class, Hoenn.ID);
+        BaseMod.addEvent(TombRedMask.ID, TombRedMask.class, Hoenn.ID);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
