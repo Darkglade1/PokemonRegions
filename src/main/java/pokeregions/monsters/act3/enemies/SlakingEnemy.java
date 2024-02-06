@@ -36,8 +36,8 @@ public class SlakingEnemy extends AbstractPokemonMonster
     private static final byte GROGGY = 4;
 
     public final int STR = 3;
-    public final int TEMP_HP = calcAscensionSpecial(30);
-    public final int TEMP_HP_GAIN = 10;
+    public final int TEMP_HP = calcAscensionSpecial(40);
+    public final int TEMP_HP_GAIN = 15;
     public int GIGA_IMPACT_COOLDOWN = 4;
     public final int GIGA_IMPACT_DAMAGE_INCREASE = calcAscensionSpecial(5);
     public final int MAX_SLEEP = 3;
@@ -60,8 +60,8 @@ public class SlakingEnemy extends AbstractPokemonMonster
         setHp(calcAscensionTankiness(450));
         addMove(SLEEPING, Intent.SLEEP);
         addMove(SLACK_OFF, Intent.UNKNOWN);
-        addMove(HAMMER_ARM, Intent.ATTACK, calcAscensionDamage(19));
-        addMove(GIGA_IMPACT, Intent.ATTACK, calcAscensionDamage(30));
+        addMove(HAMMER_ARM, Intent.ATTACK, calcAscensionDamage(25));
+        addMove(GIGA_IMPACT, Intent.ATTACK, calcAscensionDamage(36));
         addMove(GROGGY, Intent.STUN);
     }
 

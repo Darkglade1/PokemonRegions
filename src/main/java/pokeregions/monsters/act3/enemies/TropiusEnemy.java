@@ -48,7 +48,7 @@ public class TropiusEnemy extends AbstractPokemonMonster
     private static final byte SOLAR_BEAM = 1;
     private static final byte SEED_BOMB = 2;
 
-    public final int BUFF = calcAscensionSpecial(2);
+    public final int BUFF = calcAscensionSpecialSmall(3);
     public final int HP_LOSS_PERCENT = 5;
     public final int STATUS = calcAscensionSpecial(2);
 
