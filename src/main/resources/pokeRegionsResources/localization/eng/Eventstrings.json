@@ -9,9 +9,38 @@
     ],
     "OPTIONS": [
       "[Continue] ",
-      "Receive Pokeballs ",
-      "Choose a Starter Pokemon",
+      "Receive Pokeballs.",
+      "Choose a Starter Pokemon.",
       "[Leave]"
+    ]
+  },
+  "${ModID}:ProfessorBirch": {
+    "NAME": "Professor Birch",
+    "DESCRIPTIONS": [
+      "Oh, a new arrival?",
+      "Here, let me scrounge up some Pokeballs for you.",
+      "It's gotten more dangerous lately; I'd feel better if you took one of these #gevolved #gstarters with you.",
+      "Good luck out there.",
+      "Oh, it's you! I've heard about you from my colleagues.",
+      "Let's see . . . you've caught #b",
+      " #gPokemon. ",
+      "That's impressive!",
+      "You're making decent progress.",
+      "That's a little on the low end.",
+      "In any case, here are some spare Pokeballs for you.",
+      "I also have some extra supplies. Unless you'd like a stipend instead?"
+    ],
+    "OPTIONS": [
+      "[Continue] ",
+      "Receive Pokeballs.",
+      "Choose a Starter Pokemon.",
+      "[Leave]",
+      "[Receive supplies] ",
+      "Gain ",
+      " Max HP.",
+      "[Receive stipend] ",
+      "Gain ",
+      " Gold."
     ]
   },
   "${ModID}:CeladonGym": {

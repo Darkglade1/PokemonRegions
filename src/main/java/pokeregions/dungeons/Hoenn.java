@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
+import pokeregions.events.ProfessorBirch;
 import pokeregions.monsters.act3.enemies.*;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
 
     public Hoenn() {
         super(NAME, ID, "images/ui/event/panel.png", false, 2, 12, 10);
-        // this.onEnterEvent(ProfessorOak.class);
+        this.onEnterEvent(ProfessorBirch.class);
     }
 
     public Hoenn(CustomDungeon cd, AbstractPlayer p, ArrayList<String> emptyList) {
