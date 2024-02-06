@@ -1,34 +1,7 @@
 {
-  "${ModID}:ProfessorOak": {
-    "NAME": "Professor Oak",
+  "${ModID}:ProfessorOptions": {
+    "NAME": "",
     "DESCRIPTIONS": [
-      "Oh, a new trainer about to start their journey?",
-      "You may be starting later than others, but better late than never! Here's some Pokeballs to get you started.",
-      "Now choose a companion to begin your journey with.",
-      "I hope you make many fond memories together."
-    ],
-    "OPTIONS": [
-      "[Continue] ",
-      "Receive Pokeballs.",
-      "Choose a Starter Pokemon.",
-      "[Leave]"
-    ]
-  },
-  "${ModID}:ProfessorBirch": {
-    "NAME": "Professor Birch",
-    "DESCRIPTIONS": [
-      "Oh, a new arrival?",
-      "Here, let me scrounge up some Pokeballs for you.",
-      "It's gotten more dangerous lately; I'd feel better if you took one of these #gevolved #gstarters with you.",
-      "Good luck out there.",
-      "Oh, it's you! I've heard about you from my colleagues.",
-      "Let's see . . . you've caught #b",
-      " #gPokemon. ",
-      "That's impressive!",
-      "You're making decent progress.",
-      "That's a little on the low end.",
-      "In any case, here are some spare Pokeballs for you.",
-      "I also have some extra supplies. Unless you'd like a stipend instead?"
     ],
     "OPTIONS": [
       "[Continue] ",
@@ -41,6 +14,44 @@
       "[Receive stipend] ",
       "Gain ",
       " Gold."
+    ]
+  },
+  "${ModID}:ProfessorOak": {
+    "NAME": "Professor Oak",
+    "DESCRIPTIONS": [
+      "Oh, a new trainer about to start their journey?",
+      "You may be starting later than others, but better late than never! Here's some Pokeballs to get you started.",
+      "Now choose a companion to begin your journey with.",
+      "I hope you make many fond memories together.",
+      "Oh, it's you! You've been making a name for yourself out there.",
+      "Let's see . . . you've caught #b",
+      " Pokemon. ",
+      "That's amazing!",
+      "You're doing good work.",
+      "I hope you'll put in a little more effort.",
+      "I have some extra Pokeballs lying around - take them.",
+      "Would you like some supplies or a stipend?"
+    ],
+    "OPTIONS": [
+    ]
+  },
+  "${ModID}:ProfessorBirch": {
+    "NAME": "Professor Birch",
+    "DESCRIPTIONS": [
+      "Oh, a new arrival?",
+      "Here, let me scrounge up some Pokeballs for you.",
+      "It's gotten more dangerous lately; I'd feel better if you took one of these #gevolved starters with you.",
+      "Good luck out there.",
+      "Oh, it's you! I've heard about you from my colleagues.",
+      "Let's see . . . you've caught #b",
+      " Pokemon. ",
+      "That's impressive!",
+      "You're making decent progress.",
+      "That's a little on the low end.",
+      "In any case, here are some spare Pokeballs for you.",
+      "I also have some extra supplies. Unless you'd like a stipend instead?"
+    ],
+    "OPTIONS": [
     ]
   },
   "${ModID}:CeladonGym": {
