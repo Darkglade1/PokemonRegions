@@ -41,7 +41,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
     private static final byte DRAGON_CLAW = 1;
     private static final byte DRAGON_BREATH = 2;
 
-    public final int STR = 3;
+    public final int STR = 2;
     public final int DEBUFF = 1;
     public final int STATUS = calcAscensionSpecial(1);
 
@@ -50,7 +50,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
     public static final String POWER_NAME = powerStrings.NAME;
     public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private boolean triggeredPower = false;
-    private AbstractCard status = new Burn();
+    private final AbstractCard status = new Burn();
 
     public SalamenceEnemy() {
         this(0.0f, 0.0f);
@@ -121,7 +121,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
                 break;
             }
             case DRAGON_BREATH: {
-                intoDrawMo(status.makeStatEquivalentCopy(), STATUS);
+                intoDiscardMo(status.makeStatEquivalentCopy(), STATUS);
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
                 applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
                 break;
@@ -149,7 +149,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
         switch (move.nextMove) {
             case DRAGON_BREATH: {
-                Details statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DRAW_PILE);
+                Details statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DISCARD_PILE);
                 details.add(statusDetail);
                 Details vulnerableDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(vulnerableDetail);

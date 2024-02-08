@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Aggron extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Aggron.class.getSimpleName());
-    public static final int MOVE_2_BLOCK = 9;
+    public static final int MOVE_2_BLOCK = 13;
     public static final int MOVE_2_BUFF = 3;
 
     public static final int MOVE_1_STAMINA_COST = 1;
