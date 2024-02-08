@@ -49,7 +49,7 @@ public class SwitchPokemonMove extends ClickableUIElement {
     @Override
     protected void onHover() {
         TipHelper.renderGenericTip(this.x, this.y - 15f * Settings.scale, this.ID, TEXT[0]);
-        if (this.hitbox.justHovered && canSwitch()) {
+        if (this.hitbox.justHovered && !AbstractDungeon.isScreenUp && canSwitch()) {
             CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
         }
     }
@@ -65,7 +65,7 @@ public class SwitchPokemonMove extends ClickableUIElement {
             atb(new TalkAction(true, TEXT[1], 0.8F, 0.8F));
             return;
         }
-        if(!AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard){
+        if(!AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard && !AbstractDungeon.isScreenUp){
             CardCrawlGame.sound.play("UI_CLICK_1");
             this.doMove();
         }
@@ -85,7 +85,7 @@ public class SwitchPokemonMove extends ClickableUIElement {
 
     @Override
     public void render(SpriteBatch sb) {
-        if(AbstractDungeon.actionManager.turnHasEnded || !canSwitch()){
+        if(AbstractDungeon.actionManager.turnHasEnded || AbstractDungeon.isScreenUp || !canSwitch()){
             super.render(sb, Color.GRAY);
         } else if (this.hitbox.hovered) {
             super.render(sb, Color.GOLD);
