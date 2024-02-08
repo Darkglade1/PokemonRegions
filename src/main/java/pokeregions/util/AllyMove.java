@@ -103,7 +103,7 @@ public class AllyMove extends ClickableUIElement {
         }
         TipHelper.renderGenericTip(this.x, this.y - 15f * Settings.scale, this.ID, descrption);
 
-        if (this.hitbox.justHovered && canUseMove()) {
+        if (this.hitbox.justHovered && !AbstractDungeon.isScreenUp && canUseMove()) {
             CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
         }
     }
@@ -115,7 +115,7 @@ public class AllyMove extends ClickableUIElement {
 
     @Override
     protected void onClick() {
-        if(!AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard && canUseMove()){
+        if(!AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard && canUseMove() && !AbstractDungeon.isScreenUp){
             InputHelper.justClickedLeft = false;
             CInputActionSet.select.unpress();
             CardCrawlGame.sound.play("UI_CLICK_1");
@@ -135,7 +135,7 @@ public class AllyMove extends ClickableUIElement {
 
     @Override
     public void render(SpriteBatch sb) {
-        if(AbstractDungeon.actionManager.turnHasEnded || !canUseMove()){
+        if(AbstractDungeon.actionManager.turnHasEnded || AbstractDungeon.isScreenUp || !canUseMove()){
             super.render(sb, Color.GRAY);
         } else if (this.hitbox.hovered) {
             super.render(sb, Color.GOLD);
