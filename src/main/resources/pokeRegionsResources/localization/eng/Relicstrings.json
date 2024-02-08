@@ -19,5 +19,12 @@
     "DESCRIPTIONS": [
       "Your #yPokemon deal #b", "% more damage with their attacks."
     ]
+  },
+  "${ModID}:QuickClaw": {
+    "NAME": "Quick Claw",
+    "FLAVOR": "A light, sharp claw that improves the holder's swiftness.",
+    "DESCRIPTIONS": [
+      "The first time you gain #yBlock each combat, gain an additional #b", " #yBlock."
+    ]
   }
 }

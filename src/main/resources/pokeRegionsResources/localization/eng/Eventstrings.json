@@ -275,5 +275,26 @@
       ".",
       "[Leave]"
     ]
+  },
+  "${ModID}:PokemonTrainerSchool": {
+    "NAME": "Pokemon Trainers' School",
+    "DESCRIPTIONS": [
+      "A nearby poster catches your attention - it states that a #yrenowned school was holding an event and inviting all to attend. Curious, you decide to check it out. NL Inside the school, you find yourself being quickly greeted by a teacher. \"Hello! Are you here to attend the lessons or to have a mock battle?\" NL You realize that you forgot to check what the #yevent was actually about as you @scramble@ for an answer.",
+      "You answer that you wish to attend a lesson. The teacher leads you to a classroom filled with people of all ages. Inside, a woman with brown hair is explaining something called the \"type chart\". NL \"So just remember that #yRock beats #yFire, and that #yGround also beats #yFire, but not in quite the same way #yRock does - \" NL You feel that you have learned . . . #ysomething, from the lesson. Probably.",
+      "You answer that you wish to participate in a mock battle. The teacher leads you to a battle ground filled with people of all ages and their #yPokemon. Soon, you get partnered with someone and the two of you begin battling. After some back and forth, your #yPokemon emerges victorious. NL \"Congratulations on winning!\" The teacher hands you a small claw. \"Here, take this as a prize.\" NL You accept the claw. It makes you feel strangely lighter."
+    ],
+    "OPTIONS": [
+      "[Attend lesson] ",
+      "[Mock battle] ",
+      "Choose 1 of ",
+      " cards to add to your deck.",
+      "A non-Starter Pokemon loses ",
+      " Stamina.",
+      "Obtain a special Relic.",
+      "[Leave]",
+      "[Locked] Requires: non-Starter Pokemon with enough Stamina",
+      "Choose a card to add to your deck.",
+      "Choose a Pokemon to lose Stamina."
+    ]
   }
 }
