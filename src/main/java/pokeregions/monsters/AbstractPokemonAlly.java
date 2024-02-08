@@ -411,6 +411,14 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         } else {
             target = findLowestHPTarget(Wiz.getEnemies());
         }
+        if (target == null) {
+            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
+                if (!mo.isDead && mo != this) {
+                    target = mo;
+                    break;
+                }
+            }
+        }
     }
 
     public AbstractMonster findLowestHPTarget(ArrayList<AbstractMonster> moList) {
