@@ -46,6 +46,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public boolean move2RequiresTarget = false;
     public int move1StaminaCost;
     public int move2StaminaCost;
+    public boolean noStaminaCostForTurn = false;
     public static final float X_POSITION = -700.0f;
     public static final float Y_POSITION = 0.0f;
     private float arrowTime = 0.0f;
@@ -182,18 +183,23 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public void postTurn() {
-        int staminaChange = 0;
-        switch (this.nextMove) {
-            case MOVE_1: {
-                staminaChange = -move1StaminaCost;
-                break;
-            }
-            case MOVE_2: {
-                staminaChange = -move2StaminaCost;
-                break;
-            }
+        int staminaChange;
+        if (this.nextMove == MOVE_1) {
+            staminaChange = -move1StaminaCost;
+        } else {
+            staminaChange = -move2StaminaCost;
         }
-        atb(new UpdateStaminaOnCardAction(allyCard, staminaChange));
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (noStaminaCostForTurn) {
+                    noStaminaCostForTurn = false;
+                } else {
+                    att(new UpdateStaminaOnCardAction(allyCard, staminaChange));
+                }
+                this.isDone = true;
+            }
+        });
         atb(new AbstractGameAction() {
             @Override
             public void update() {

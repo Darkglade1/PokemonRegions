@@ -26,10 +26,16 @@ public class AllyStartOfTurnRetarget {
                 atb(new AbstractGameAction() {
                     @Override
                     public void update() {
-                        activePokemon.setSmartTarget();
-                        if (activePokemon.target != null) {
-                            AbstractDungeon.onModifyPower();
-                        }
+                        atb(new AbstractGameAction() {
+                            @Override
+                            public void update() {
+                                activePokemon.setSmartTarget();
+                                if (activePokemon.target != null) {
+                                    AbstractDungeon.onModifyPower();
+                                }
+                                this.isDone = true;
+                            }
+                        });
                         this.isDone = true;
                     }
                 });

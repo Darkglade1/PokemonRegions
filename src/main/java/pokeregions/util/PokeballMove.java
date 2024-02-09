@@ -45,12 +45,12 @@ public class PokeballMove extends ClickableUIElement {
     private final AbstractPokemonMonster owner;
     public String captureChanceMessage = "";
     public Color textColor;
+    private final int hpThreshold;
 
     public PokeballMove(AbstractPokemonMonster owner) {
         super(TexLoader.getTexture(makeUIPath("CatchPokemonButton.png")), 0, 0, 76.0f, 64.0f);
         this.ID = TEXT[0] + owner.name;
         this.owner = owner;
-        int hpThreshold;
         switch (owner.type) {
             case ELITE:
                 hpThreshold = (int)(ELITE_ONE_HUNDRED_CHANCE_THRESHOLD * owner.maxHealth);
@@ -143,7 +143,10 @@ public class PokeballMove extends ClickableUIElement {
         }
     }
 
-    public static int calculateCaptureChance(AbstractMonster mo) {
+    private int calculateCaptureChance(AbstractMonster mo) {
+        if (mo.currentHealth <= hpThreshold) {
+            return 100;
+        }
         float ZERO_CHANCE_THRESHOLD;
         float FIFTY_CHANCE_THRESHOLD;
         float ONE_HUNDRED_CHANCE_THRESHOLD;
