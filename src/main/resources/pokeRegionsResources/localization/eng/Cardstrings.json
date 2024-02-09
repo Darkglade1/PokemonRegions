@@ -562,6 +562,19 @@
       " cards. You gain Dexterity equal to their combined costs."
     ]
   },
+  "${ModID}:Gardevoir": {
+    "NAME": "Gardevoir",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Light[] [#FFA500]Screen[]",
+      "[#FFA500]Moonblast[]",
+      "You receive 33% less damage from attacks for ",
+      " turns.",
+      "Deal ",
+      " damage. Enemy loses ",
+      " Strength this turn."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

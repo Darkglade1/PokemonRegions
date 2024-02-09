@@ -101,7 +101,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
         //monsters.add(new MonsterInfo("Sphere and 2 Shapes", 1.0F)); // Solrock and Lunatone
         //monsters.add(new MonsterInfo("Jaw Worm Horde", 1.0F)); // 3 Masquerain
         monsters.add(new MonsterInfo(EncounterIDs.FLYGON_AND_TRAPINCHES, 1.0F));
-        //monsters.add(new MonsterInfo("Writhing Mass", 1.0F)); // Gardevoir
+        monsters.add(new MonsterInfo(GardevoirEnemy.ID, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);
