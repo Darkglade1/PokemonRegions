@@ -1,8 +1,6 @@
 package pokeregions.actions;
 
-import pokeregions.cards.AbstractAllyPokemonCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,17 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import pokeregions.monsters.AbstractPokemonAlly;
 
-import static pokeregions.util.Wiz.att;
-
 public class GyaradosWaterfallAction extends AbstractGameAction {
-    private final int staminaAmt;
     private final DamageInfo info;
     private final AbstractPokemonAlly pokemon;
 
-    public GyaradosWaterfallAction(AbstractCreature target, DamageInfo info, int staminaAmt, AbstractPokemonAlly pokemon) {
+    public GyaradosWaterfallAction(AbstractCreature target, DamageInfo info, AbstractPokemonAlly pokemon) {
         this.info = info;
         this.setValues(target, info);
-        this.staminaAmt = staminaAmt;
         this.pokemon = pokemon;
         this.actionType = ActionType.DAMAGE;
         this.duration = Settings.ACTION_DUR_FASTER;
