@@ -71,7 +71,7 @@ public class PokeballMove extends ClickableUIElement {
                 return;
             }
         }
-        atb(new PokeballMoveAction(owner));
+        atb(new PokeballMoveAction(owner, this));
     }
 
     public String getID(){
@@ -143,7 +143,7 @@ public class PokeballMove extends ClickableUIElement {
         }
     }
 
-    private int calculateCaptureChance(AbstractMonster mo) {
+    public int calculateCaptureChance(AbstractMonster mo) {
         if (mo.currentHealth <= hpThreshold) {
             return 100;
         }

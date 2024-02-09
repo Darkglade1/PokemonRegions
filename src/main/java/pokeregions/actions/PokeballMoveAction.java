@@ -27,11 +27,13 @@ public class PokeballMoveAction extends AbstractGameAction {
     private static final String[] TEXT = uiStrings.TEXT;
 
     AbstractPokemonMonster target;
+    PokeballMove pokeball;
 
-    public PokeballMoveAction(AbstractPokemonMonster target) {
+    public PokeballMoveAction(AbstractPokemonMonster target, PokeballMove pokeball) {
         this.actionType = ActionType.SPECIAL;
         this.duration = Settings.ACTION_DUR_FAST;
         this.target = target;
+        this.pokeball = pokeball;
     }
 
     public void update() {
@@ -44,7 +46,7 @@ public class PokeballMoveAction extends AbstractGameAction {
             }
         }
         int roll = AbstractDungeon.miscRng.random(1, 100);
-        int chance = PokeballMove.calculateCaptureChance(target);
+        int chance = pokeball.calculateCaptureChance(target);
         if (roll <= chance || Settings.isDebug) {
             target.captured = true;
             target.currentBlock = 0;
