@@ -138,5 +138,9 @@
   "${ModID}:DragonLord": {
     "NAME": "Dragon Lord",
     "DESCRIPTIONS": ["At end of round, ALL other enemies gain #b", " #yStrength. NL Whenever another enemy is defeated, transfer their #yStrength to this creature."]
+  },
+  "${ModID}:Sync": {
+    "NAME": "Synchronize",
+    "DESCRIPTIONS": ["Whenever you play an #yAttack, gains #b", " #yStrength this turn. NL Whenever you play a #ySkill, gains #b", " #yBlock."]
   }
 }

@@ -9,6 +9,7 @@ public enum ProAudio {
     EARTHQUAKE,
     BURROW,
     LOUD_SPLASH,
-    RAIN
+    RAIN,
+    MAGIC_BLAST
 
 }

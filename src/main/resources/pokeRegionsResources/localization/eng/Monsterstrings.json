@@ -338,5 +338,16 @@
     "NAME": "Rayquaza",
     "DIALOG": [
     ]
+  },
+  "${ModID}:GardevoirEnemy": {
+    "MOVES": [
+      "Charm",
+      "Nasty Plot",
+      "Moonblast",
+      "Hyper Voice"
+    ],
+    "NAME": "Gardevoir",
+    "DIALOG": [
+    ]
   }
 }

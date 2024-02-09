@@ -153,6 +153,9 @@ public class PokemonRegions implements
     public static final String REGEN = makeUIPath("Regen.png");
     public static Texture REGEN_TEXTURE;
 
+    public static final String NASTY_PLOT = makeUIPath("Nasty.png");
+    public static Texture NASTY_PLOT_TEXTURE;
+
     public static final String HEAL = makeUIPath("Heal.png");
     public static Texture HEAL_TEXTURE;
 
@@ -279,6 +282,7 @@ public class PokemonRegions implements
         DRAW_DOWN_TEXTURE = TexLoader.getTexture(DRAW_DOWN);
         THORNS_TEXTURE = TexLoader.getTexture(THORNS);
         REGEN_TEXTURE = TexLoader.getTexture(REGEN);
+        NASTY_PLOT_TEXTURE = TexLoader.getTexture(NASTY_PLOT);
 
         HEAL_TEXTURE = TexLoader.getTexture(HEAL);
         BLOCK_TEXTURE = TexLoader.getTexture(BLOCK);
@@ -482,6 +486,7 @@ public class PokemonRegions implements
                         new TrapinchEnemy(-150.0F, 0.0F, true),
                         new FlygonEnemy(150.0F, 100.0F)
                 }));
+        BaseMod.addMonster(GardevoirEnemy.ID, (BaseMod.GetMonster) GardevoirEnemy::new);
 
         // Events
         BaseMod.addEvent(PokemonTrainerSchool.ID, PokemonTrainerSchool.class, Hoenn.ID);
