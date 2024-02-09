@@ -218,8 +218,7 @@
       "[#FFA500]Waterfall[]",
       "[#FFA500]Roar[]",
       "Deal ",
-      " damage. If this defeats an enemy, restores ",
-      " *Stamina.",
+      " damage. If this defeats an enemy, does not consume *Stamina.",
       "Apply ",
       " Weak and Vulnerable to ALL enemies."
     ]
