@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.MetallicizePower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act3.Salamence;
+import pokeregions.cards.pokemonAllyCards.act3.Registeel;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.BinaryBody;
 import pokeregions.powers.MonsterNextTurnBlockPower;
@@ -123,7 +123,7 @@ public class RegisteelEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Salamence();
+        return new Registeel();
     }
 
 }

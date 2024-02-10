@@ -586,6 +586,43 @@
       "Trigger the effect of *Wish."
     ]
   },
+  "${ModID}:Registeel": {
+    "NAME": "Registeel",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Protect[]",
+      "[#FFA500]Metal[] [#FFA500]Coating[]",
+      "You gain ",
+      " Block.",
+      "You gain ",
+      " *Plated *Armor."
+    ]
+  },
+  "${ModID}:Regice": {
+    "NAME": "Regice",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Protect[]",
+      "[#FFA500]Icy[] [#FFA500]Wind[]",
+      "You gain ",
+      " Block.",
+      "Apply ",
+      " Weak and Vulnerable."
+    ]
+  },
+  "${ModID}:Regirock": {
+    "NAME": "Regirock",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Protect[]",
+      "[#FFA500]Rock[] [#FFA500]Slide[]",
+      "You gain ",
+      " Block.",
+      "Deal ",
+      " damage to ALL enemies ",
+      " times."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

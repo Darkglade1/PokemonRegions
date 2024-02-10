@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.Frozen;
-import pokeregions.cards.pokemonAllyCards.act3.Salamence;
+import pokeregions.cards.pokemonAllyCards.act3.Regice;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.BinaryBody;
 import pokeregions.util.Details;
@@ -124,7 +124,7 @@ public class RegiceEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Salamence();
+        return new Regice();
     }
 
 }
