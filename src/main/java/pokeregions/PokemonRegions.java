@@ -458,6 +458,12 @@ public class PokemonRegions implements
         // Elites
         BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);
         BaseMod.addMonster(SalamenceEnemy.ID, (BaseMod.GetMonster) SalamenceEnemy::new);
+        BaseMod.addMonster(EncounterIDs.LEGENDARY_GIANTS, "Legendary Giants", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new RegisteelEnemy(-450.0F, 0.0F),
+                        new RegiceEnemy(-150.0F, 0.0F),
+                        new RegirockEnemy(150.0F, 0.0F)
+                }));
 
         // Normal encounters
         BaseMod.addMonster(SlakingEnemy.ID, (BaseMod.GetMonster) SlakingEnemy::new);

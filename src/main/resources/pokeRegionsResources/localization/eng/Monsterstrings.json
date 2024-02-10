@@ -349,5 +349,32 @@
     "NAME": "Gardevoir",
     "DIALOG": [
     ]
+  },
+  "${ModID}:RegisteelEnemy": {
+    "MOVES": [
+      "Slam",
+      "Wide Guard"
+    ],
+    "NAME": "Registeel",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RegiceEnemy": {
+    "MOVES": [
+      "Slam",
+      "Icy Wind"
+    ],
+    "NAME": "Regice",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RegirockEnemy": {
+    "MOVES": [
+      "Slam",
+      "Ancient Power"
+    ],
+    "NAME": "Regirock",
+    "DIALOG": [
+    ]
   }
 }

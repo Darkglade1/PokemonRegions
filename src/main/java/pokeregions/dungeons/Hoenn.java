@@ -112,7 +112,7 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(DeoxysEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(SalamenceEnemy.ID, 2.0F));
-        //monsters.add(new MonsterInfo("Reptomancer", 2.0F));
+        monsters.add(new MonsterInfo(EncounterIDs.LEGENDARY_GIANTS, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, true);
     }
