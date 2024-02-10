@@ -40,6 +40,7 @@ import pokeregions.dungeons.Hoenn;
 import pokeregions.dungeons.Kanto;
 import pokeregions.events.act1.*;
 import pokeregions.events.act3.PokemonTrainerSchool;
+import pokeregions.events.act3.WishUponAStar;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
@@ -490,7 +491,7 @@ public class PokemonRegions implements
 
         // Events
         BaseMod.addEvent(PokemonTrainerSchool.ID, PokemonTrainerSchool.class, Hoenn.ID);
-        BaseMod.addEvent(MindBloom.ID, MindBloom.class, Hoenn.ID);
+        BaseMod.addEvent(WishUponAStar.ID, WishUponAStar.class, Hoenn.ID);
         BaseMod.addEvent(SensoryStone.ID, SensoryStone.class, Hoenn.ID);
         BaseMod.addEvent(WindingHalls.ID, WindingHalls.class, Hoenn.ID);
         BaseMod.addEvent(MoaiHead.ID, MoaiHead.class, Hoenn.ID);

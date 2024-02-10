@@ -296,5 +296,28 @@
       "Choose a card to add to your deck.",
       "Choose a Pokemon to lose Stamina."
     ]
+  },
+  "${ModID}:WishUponAStar": {
+    "NAME": "Wish Upon a Star",
+    "DESCRIPTIONS": [
+      "You see a #yshining #ycomet fall down from the sky, landing nearby. As you approach its landing spot, you catch sight of a small, white #yPokemon floating in the air. It glances around then floats up towards you, tilting its head inquisitively. It seems quite interested in the #yfood in your bag. NL \"Jirachi, the #yWish #yPokemon. Reputed to have the power to grant wishes.\" Your Pokedex piped up with that helpful information. Seeing the empty wish tags on its body, you wonder . . .",
+      "You consider your wish carefully . . .",
+      "You make a wish. The wish tag #ylights up, strange letters inscribing themselves onto it. The #ylight grows stronger and stronger, before finally expanding outwards in a wave that enveloped you - NL You blink. You could tell that your wish had been #ygranted. But at what #rcost . . . ?",
+      "You open your bag, offering up the food inside. #yJirachi happily munches down, floating upward with a contented look. You can feel your stomach #pgrowl at the sight of giving away food, but you manage to perservere. NL After finishing its meal, #yJirachi floats itself down to your shoulder, giving you an encouraging look. Looks like you had a new #gcompanion for the road ahead."
+    ],
+    "OPTIONS": [
+      "[Make a wish] ",
+      "[Offer it food] ",
+      "Obtain a Wish.",
+      "Bear the consequences.",
+      "Lose ",
+      " Max HP.",
+      "Obtain ",
+      ".",
+      "[Leave]",
+      "[Wish for Power] ",
+      "[Wish for Wealth] ",
+      "[Wish for Knowledge] "
+    ]
   }
 }

@@ -26,5 +26,26 @@
     "DESCRIPTIONS": [
       "The first time you gain #yBlock each combat, gain an additional #b", " #yBlock."
     ]
+  },
+  "${ModID}:DeathWish": {
+    "NAME": "Death Wish",
+    "FLAVOR": "He wished for power, but not for the longevity to abuse it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b", " #yStrength and lose #b", " #yDexterity."
+    ]
+  },
+  "${ModID}:GlitteringWish": {
+    "NAME": "Glittering Wish",
+    "FLAVOR": "She wished for gold, but not for the strength to carry it.",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #b", " gold. At the start of combat, lose #b", " #yStrength."
+    ]
+  },
+  "${ModID}:CunningWish": {
+    "NAME": "Cunning Wish",
+    "FLAVOR": "He wished for knowledge, but not for the will to apply it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, draw #b", "  cards and lose [E] ."
+    ]
   }
 }

@@ -574,6 +574,18 @@
       " Strength this turn."
     ]
   },
+  "${ModID}:Jirachi": {
+    "NAME": "Jirachi",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Doom[] [#FFA500]Desire[]",
+      "[#FFA500]Wish[]",
+      "At the end of ",
+      " turns, deal ",
+      " damage to ALL enemies.",
+      "Trigger the effect of *Wish."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
