@@ -41,7 +41,7 @@ public class Gastly extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 atb(new LoseHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_HP_COST));
-                atb(new UpdateStaminaOnCardAction(allyCard, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
+                atb(new UpdateStaminaOnCardAction(this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
                 atb(new HealAction(this, this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
                 break;
             }

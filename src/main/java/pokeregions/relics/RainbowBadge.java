@@ -22,7 +22,7 @@ public class RainbowBadge extends AbstractEasyRelic implements OnPokemonSwitchRe
     public void onPokemonSwitch(AbstractPokemonAlly pokemonAlly) {
         if (pokemonAlly.allyCard.currentStamina < pokemonAlly.allyCard.maxStamina && this.counter > 0) {
             this.counter = 0;
-            atb(new UpdateStaminaOnCardAction(pokemonAlly.allyCard, STAMINA));
+            atb(new UpdateStaminaOnCardAction(pokemonAlly, STAMINA));
             atb(new HealAction(pokemonAlly, pokemonAlly, STAMINA));
             atb(new RelicAboveCreatureAction(adp(), this));
         }

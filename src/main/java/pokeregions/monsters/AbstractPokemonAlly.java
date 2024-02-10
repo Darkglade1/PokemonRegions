@@ -189,17 +189,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         } else {
             staminaChange = -move2StaminaCost;
         }
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (noStaminaCostForTurn) {
-                    noStaminaCostForTurn = false;
-                } else {
-                    att(new UpdateStaminaOnCardAction(allyCard, staminaChange));
-                }
-                this.isDone = true;
-            }
-        });
+        atb(new UpdateStaminaOnCardAction(this, staminaChange));
         atb(new AbstractGameAction() {
             @Override
             public void update() {
