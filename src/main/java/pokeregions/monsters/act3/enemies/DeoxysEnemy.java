@@ -1,7 +1,6 @@
 package pokeregions.monsters.act3.enemies;
 
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -30,7 +29,6 @@ import pokeregions.powers.NastyPlot;
 import pokeregions.powers.VisibleBarricadePower;
 import pokeregions.util.AdditionalIntent;
 import pokeregions.util.Details;
-import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -302,8 +300,6 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makeUIPath("Nasty.png");
-        Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case POWER_UP_PUNCH:
             case PSYCHO_BOOST: {
@@ -339,7 +335,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
                 break;
             }
             case NASTY_PLOT: {
-                Details powerDetail = new Details(this, PLOT, texture);
+                Details powerDetail = new Details(this, PLOT, NASTY_PLOT_TEXTURE);
                 details.add(powerDetail);
                 break;
             }

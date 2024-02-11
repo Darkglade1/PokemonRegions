@@ -44,8 +44,7 @@ public class KyogreEnemy extends AbstractPokemonMonster
     private static final byte LIFE_DEW = 3;
 
     public final int REGEN = calcAscensionSpecial(10);
-    public final int BLOCK = 30;
-    public final int DEBUFF = 3;
+    public final int BLOCK = 20;
     public final int BUFF = calcAscensionSpecial(2);
     public final int DRAW_DOWN = 1;
     public final int LIFE_DEW_COOLDOWN = 3;
@@ -100,11 +99,11 @@ public class KyogreEnemy extends AbstractPokemonMonster
             }
             case AQUA_RING: {
                 block(this, BLOCK);
-                applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
+                applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
                 break;
             }
             case LIFE_DEW: {
-                applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
+                applyToTarget(this, this, new HeavyRain(this, 1));
                 applyToTarget(this, this, new NastyPlot(this, BUFF));
                 break;
             }
@@ -141,7 +140,7 @@ public class KyogreEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makeUIPath("Nasty.png");
+        String textureString = makePowerPath("HeavyRain32.png");
         Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case HYDRO_PUMP: {
@@ -152,14 +151,14 @@ public class KyogreEnemy extends AbstractPokemonMonster
             case AQUA_RING: {
                 Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
-                Details powerDetail = new Details(this, DEBUFF, FRAIL_TEXTURE);
+                Details powerDetail = new Details(this, REGEN, REGEN_TEXTURE);
                 details.add(powerDetail);
                 break;
             }
             case LIFE_DEW: {
-                Details powerDetail = new Details(this, REGEN, REGEN_TEXTURE);
+                Details powerDetail = new Details(this, 1, texture);
                 details.add(powerDetail);
-                Details powerDetail2 = new Details(this, BUFF, texture);
+                Details powerDetail2 = new Details(this, BUFF, NASTY_PLOT_TEXTURE);
                 details.add(powerDetail2);
                 break;
             }

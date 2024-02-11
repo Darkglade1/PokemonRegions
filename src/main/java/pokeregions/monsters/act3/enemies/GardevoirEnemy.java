@@ -50,8 +50,8 @@ public class GardevoirEnemy extends AbstractPokemonMonster
     private static final byte MOONBLAST = 2;
     private static final byte HYPER_VOICE = 3;
 
-    public final int POWER_STR = 3;
-    public final int POWER_BLOCK = 8;
+    public final int POWER_STR = calcAscensionSpecial(2);
+    public final int POWER_BLOCK = 5;
     public final int DEBUFF = 2;
     public final int STATUS = calcAscensionSpecial(2);
     public final int BUFF = calcAscensionSpecialSmall(3);

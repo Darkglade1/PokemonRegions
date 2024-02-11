@@ -135,10 +135,10 @@ public class RayquazaEnemy extends AbstractPokemonMonster
         if (firstMove || (minion1.isDeadOrEscaped() && minion2.isDeadOrEscaped())) {
             setMoveShortcut(HURRICANE, MOVES[HURRICANE]);
         } else if(minion1.isDeadOrEscaped() || minion2.isDeadOrEscaped()) {
-            if (this.lastMove(HURRICANE)) {
-                setMoveShortcut(DRAGON_BREATH, MOVES[DRAGON_BREATH]);
-            } else {
+            if (this.lastMove(DRAGON_BREATH)) {
                 setMoveShortcut(HURRICANE, MOVES[HURRICANE]);
+            } else {
+                setMoveShortcut(DRAGON_BREATH, MOVES[DRAGON_BREATH]);
             }
         } else {
             if (this.lastMove(HURRICANE)) {

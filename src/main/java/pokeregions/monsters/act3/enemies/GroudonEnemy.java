@@ -2,8 +2,8 @@ package pokeregions.monsters.act3.enemies;
 
 import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
-import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -15,15 +15,17 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.cardMods.ScorchedMod;
 import pokeregions.cards.pokemonAllyCards.act3.Groudon;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.powers.HarshSunlight;
 import pokeregions.util.Details;
+import pokeregions.util.TexLoader;
 import pokeregions.vfx.SunBeamEffect;
 import pokeregions.vfx.SunEffect;
 
@@ -45,12 +47,6 @@ public class GroudonEnemy extends AbstractPokemonMonster
 
     public final int STR = 6;
     public final int DEBUFF = 2;
-    public final int SUN = 1;
-
-    public static final String POWER_ID = makeID("HarshSunlight");
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String POWER_NAME = powerStrings.NAME;
-    public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public GroudonEnemy() {
         this(0.0f, 0.0f);
@@ -75,32 +71,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, SUN) {
-            private int cardsAffected = 0;
-
-            @Override
-            public void onCardDraw(AbstractCard card) {
-                if (cardsAffected < amount) {
-                    CardModifierManager.addModifier(card, new ScorchedMod());
-                    card.flash();
-                    cardsAffected++;
-                }
-            }
-
-            @Override
-            public void atEndOfRound() {
-                cardsAffected = 0;
-            }
-
-            @Override
-            public void updateDescription() {
-                if (amount == 1) {
-                    description = POWER_DESCRIPTIONS[0];
-                } else {
-                    description = POWER_DESCRIPTIONS[1] + amount + POWER_DESCRIPTIONS[2];
-                }
-            }
-        });
+        applyToTarget(this, this, new HarshSunlight(this, 1));
         CustomDungeon.playTempMusicInstantly("Lysandre");
     }
 
@@ -124,8 +95,8 @@ public class GroudonEnemy extends AbstractPokemonMonster
                 break;
             }
             case SCORCH: {
+                applyToTarget(this, this, new HarshSunlight(this, 1));
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
-                applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
                 if (AbstractDungeon.ascensionLevel >= 19) {
                     applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
                 }
@@ -158,6 +129,8 @@ public class GroudonEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        String textureString = makePowerPath("HarshSunlight32.png");
+        Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case SWORDS: {
                 Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
@@ -165,10 +138,10 @@ public class GroudonEnemy extends AbstractPokemonMonster
                 break;
             }
             case SCORCH: {
+                Details powerDetail2 = new Details(this, 1, texture);
+                details.add(powerDetail2);
                 Details powerDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(powerDetail);
-                Details powerDetail2 = new Details(this, DEBUFF, WEAK_TEXTURE);
-                details.add(powerDetail2);
                 if (AbstractDungeon.ascensionLevel >= 19) {
                     Details powerDetail3 = new Details(this, DEBUFF, FRAIL_TEXTURE);
                     details.add(powerDetail3);
