@@ -499,8 +499,11 @@ public class PokemonRegions implements
         // Events
         BaseMod.addEvent(PokemonTrainerSchool.ID, PokemonTrainerSchool.class, Hoenn.ID);
         BaseMod.addEvent(WishUponAStar.ID, WishUponAStar.class, Hoenn.ID);
-        BaseMod.addEvent(BumpInTheRoad.ID, BumpInTheRoad.class, Hoenn.ID);
-        BaseMod.addEvent(WindingHalls.ID, WindingHalls.class, Hoenn.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(BumpInTheRoad.ID, BumpInTheRoad.class)
+                .bonusCondition(BumpInTheRoad::canSpawn)
+                .dungeonID(Hoenn.ID)
+                .create());
+        BaseMod.addEvent(FeatherCarnival.ID, FeatherCarnival.class, Hoenn.ID);
         BaseMod.addEvent(MoaiHead.ID, MoaiHead.class, Hoenn.ID);
         BaseMod.addEvent(TombRedMask.ID, TombRedMask.class, Hoenn.ID);
     }

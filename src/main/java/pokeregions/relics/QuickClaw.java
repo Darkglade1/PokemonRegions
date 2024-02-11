@@ -9,7 +9,7 @@ import static pokeregions.util.Wiz.atb;
 
 public class QuickClaw extends AbstractEasyRelic {
     public static final String ID = makeID(QuickClaw.class.getSimpleName());
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 8;
 
     public QuickClaw() {
         super(ID, RelicTier.SPECIAL, LandingSound.FLAT);

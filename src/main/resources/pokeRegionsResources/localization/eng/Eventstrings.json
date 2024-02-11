@@ -338,5 +338,24 @@
       "Remove a card.",
       "[Leave]"
     ]
+  },
+  "${ModID}:FeatherCarnival": {
+    "NAME": "Feather Carnival",
+    "DESCRIPTIONS": [
+      "You find yourself in the midst of a #yfair, laughter and chirping filling the air as dozens of Flying-type #yPokemon fill the #bskies overhead. NL A nearby vendor beckons to you. \"Ho there, stranger! Wanna give my game a try? First attempt's free!\" NL You eye the vendor's stall, seeing that it was some kind of #yshooting game. Perhaps it wouldn't hurt to give it a try.",
+      "You pick up the plastic gun, eyeing the targets at the far end. With careful precision, you #rnail the plastic cups with pinpoint shots. NL \"Woah, looks like we got a real sharpshooter over here!\" the vendor exclaimed. NL You nod in satisfaction. You feel that this game has #yimproved your skills."
+    ],
+    "OPTIONS": [
+      "[Play once] ",
+      "[Play a few times] ",
+      "[Play multiple times] ",
+      "Upgrade a random card.",
+      "Lose ",
+      " Gold.",
+      "Upgrade ",
+      " random cards.",
+      "[Locked] Requires: Gold",
+      "[Leave]"
+    ]
   }
 }
