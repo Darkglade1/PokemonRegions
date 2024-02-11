@@ -40,7 +40,7 @@ public class Slaking extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                atb(new UpdateStaminaOnCardAction(allyCard, pokeregions.cards.pokemonAllyCards.act3.Slaking.MOVE_1_EFFECT));
+                atb(new UpdateStaminaOnCardAction(this, pokeregions.cards.pokemonAllyCards.act3.Slaking.MOVE_1_EFFECT));
                 atb(new HealAction(this, this, pokeregions.cards.pokemonAllyCards.act3.Slaking.MOVE_1_EFFECT));
                 break;
             }

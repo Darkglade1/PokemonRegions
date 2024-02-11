@@ -319,5 +319,24 @@
       "[Wish for Wealth] ",
       "[Wish for Knowledge] "
     ]
+  },
+  "${ModID}:BumpInTheRoad": {
+    "NAME": "Bump in the Road",
+    "DESCRIPTIONS": [
+      "As you're walking along a narrow path, you suddenly #rbump into something and stumble backwards. You frown, blinking, as you stare at the #phazy distortion in front of you. Was something . . . there? How irritating.",
+      "With a forceful swing, you send the invisible presence @flying@ into the distance - at least, you #ythink you sent them flying. It was hard to tell, what with them being invisible and all. NL At the very least, the path was unblocked now.",
+      "Taking some food out of your bag, you toss it off into the distance. You some sense motion as the invisible presence moves off to the side, following the trail of food. NL Although it was #punfortunate to lose some #ysupplies, at least the path was unblocked now.",
+      "Alas, getting around an invisible bump in the road was beyond your capabilities, so you'll just have to take the long way around."
+    ],
+    "OPTIONS": [
+      "[Knock it aside forcefully] ",
+      "[Lure it away skillfully] ",
+      "[Take the long way around] ",
+      "Lose ",
+      ".",
+      "Upgrade a card.",
+      "Remove a card.",
+      "[Leave]"
+    ]
   }
 }
