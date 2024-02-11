@@ -41,7 +41,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
     private static final byte DRAGON_CLAW = 1;
     private static final byte DRAGON_BREATH = 2;
 
-    public final int STR = 2;
+    public final int STR = 3;
     public final int DEBUFF = 1;
     public final int STATUS = calcAscensionSpecial(1);
 

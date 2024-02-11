@@ -12,8 +12,8 @@ import static pokeregions.PokemonRegions.makeID;
 public class Weedle extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Weedle.class.getSimpleName());
     public static final int MOVE_1_EFFECT = 6;
-    public static final int MOVE_2_DAMAGE = 7;
-    public static final int MOVE_2_TOXIC = 2;
+    public static final int MOVE_2_DAMAGE = 6;
+    public static final int MOVE_2_TOXIC = 3;
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 5;
