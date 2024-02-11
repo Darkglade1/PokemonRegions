@@ -1,6 +1,7 @@
 package pokeregions.monsters.act3.enemies;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -29,6 +30,7 @@ import pokeregions.powers.NastyPlot;
 import pokeregions.powers.VisibleBarricadePower;
 import pokeregions.util.AdditionalIntent;
 import pokeregions.util.Details;
+import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -300,6 +302,10 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        String textureString = makeUIPath("Barricade.png");
+        Texture texture1 = TexLoader.getTexture(textureString);
+        String textureString2 = makePowerPath("IronDefense32.png");
+        Texture texture2 = TexLoader.getTexture(textureString2);
         switch (move.nextMove) {
             case POWER_UP_PUNCH:
             case PSYCHO_BOOST: {
@@ -315,11 +321,15 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
             case COSMIC_POWER: {
                 Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
+                Details powerDetail = new Details(this, 1, texture1);
+                details.add(powerDetail);
                 break;
             }
             case IRON_DEFENSE: {
                 Details blockDetail = new Details(this, BIG_BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
+                Details powerDetail = new Details(this, 1, texture2);
+                details.add(powerDetail);
                 break;
             }
             case HEAVY_SLAM: {

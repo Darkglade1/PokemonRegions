@@ -14,7 +14,6 @@ public class IronDefense extends AbstractUnremovablePower  {
 
     public IronDefense(AbstractCreature owner) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, 0);
-        this.loadRegion("noPain");
     }
 
     @Override
