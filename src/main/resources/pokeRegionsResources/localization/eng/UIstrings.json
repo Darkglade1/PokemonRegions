@@ -167,5 +167,11 @@
     "TEXT": [
       "pokeregions:Scorched. NL "
     ]
+  },
+  "${ModID}:EnhancedDigOption": {
+    "TEXT": [
+      "Enhanced Dig",
+      "Dig up a Relic. It will be Uncommon or Rare.",
+    ]
   }
 }

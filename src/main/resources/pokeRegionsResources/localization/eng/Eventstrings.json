@@ -357,5 +357,24 @@
       "[Locked] Requires: Gold",
       "[Leave]"
     ]
+  },
+  "${ModID}:LavaridgeGym": {
+    "NAME": "Lavaridge Gym",
+    "DESCRIPTIONS": [
+      "As you walk by a wide, rectangular building, you notice a #rred-haired woman filling in numerous holes dotted all around the building. NL \"Hey! Wanna help me out here? The last challenger decided to be a #pnuisance and tear up the ground with excessive use of Dig!\" NL You pause, considering the woman's request. You didn't know what you would #ggain from helping her, but perhaps not every choice needed to have an obvious gain involved.",
+      "You tell the woman that you would help her. NL \"Great! Grab a shovel and start shoveling.\" NL After a couple hours of #pback-breaking work under the #rsweltering sun, the two of you finally finish filling in every last hole. The woman smiles, patting you on the back as she hands you a water bottle. \"Thanks for the help! You can keep the shovel - looks like you got pretty good at swinging it around!\" NL You stare at the shovel in your hands - it looked to be of #yhigh #yquality. Maybe you could dig up something useful with it later. NL As you leave, you notice that you feel a bit #rclumsy from exhaustion.",
+      "You tell the woman that unfortunately, you didn't have time to help her. NL The woman shrugged. \"Ah, well, it was worth a shot.\" NL You continue on your way, paying her no further mind.",
+      "As you walk by a wide, rectangular building, you notice a #rred-haired woman filling in numerous holes dotted all around the building. NL \"Hey! Wanna help me out here? The last challenger decided to be a #pnuisance and tear up the ground with excessive use of Dig!\" The woman paused, scrutinizing you. \"You even have your own shovel already, don't you? Come on, I'll make it worth your while!\" NL You stop to consider the woman's request.",
+      "You tell the woman that you would help her. NL \"Great! Get over here and start shoveling.\" NL After a couple hours of work, the two of you finally finish filling in every last hole. The woman smiles, patting you on the back as she hands you a water bottle. \"Thanks for the help! Here's a little #ytrinket as thanks.\" NL You take the offered #yrelic. Perhaps it would come in handy later."
+    ],
+    "OPTIONS": [
+      "[Help] ",
+      "[Decline] ",
+      "Obtain a special Relic.",
+      "Become Cursed - ",
+      ".",
+      "[Leave]",
+      "Obtain a Relic."
+    ]
   }
 }

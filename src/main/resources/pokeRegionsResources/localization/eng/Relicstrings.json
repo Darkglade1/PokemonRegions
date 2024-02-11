@@ -47,5 +47,12 @@
     "DESCRIPTIONS": [
       "At the start of combat, draw #b", "  cards and lose [E] ."
     ]
+  },
+  "${ModID}:EnhancedShovel": {
+    "NAME": "High Quality Shovel",
+    "FLAVOR": "You wonder who keeps leaving all that loot buried underground.",
+    "DESCRIPTIONS": [
+      "You can now #yDig for Relics at Rest Sites. The relic will always be Uncommon or Rare."
+    ]
   }
 }

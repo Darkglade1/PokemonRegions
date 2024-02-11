@@ -40,6 +40,7 @@ import pokeregions.dungeons.Hoenn;
 import pokeregions.dungeons.Kanto;
 import pokeregions.events.act1.*;
 import pokeregions.events.act3.BumpInTheRoad;
+import pokeregions.events.act3.LavaridgeGym;
 import pokeregions.events.act3.PokemonTrainerSchool;
 import pokeregions.events.act3.WishUponAStar;
 import pokeregions.monsters.act1.enemies.*;
@@ -504,8 +505,7 @@ public class PokemonRegions implements
                 .dungeonID(Hoenn.ID)
                 .create());
         BaseMod.addEvent(FeatherCarnival.ID, FeatherCarnival.class, Hoenn.ID);
-        BaseMod.addEvent(MoaiHead.ID, MoaiHead.class, Hoenn.ID);
-        BaseMod.addEvent(TombRedMask.ID, TombRedMask.class, Hoenn.ID);
+        BaseMod.addEvent(LavaridgeGym.ID, LavaridgeGym.class, Hoenn.ID);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
