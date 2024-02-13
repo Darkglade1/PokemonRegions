@@ -5,8 +5,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act1.enemies.DiglettEnemy;
+import pokeregions.util.Wiz;
 
 import static pokeregions.util.Wiz.adp;
 import static pokeregions.util.Wiz.atb;
@@ -23,22 +26,25 @@ public class AllyStartOfTurnRetarget {
         if (AbstractDungeon.getCurrRoom() != null) {
             AbstractPokemonAlly activePokemon = PlayerSpireFields.activePokemon.get(adp());
             if (activePokemon != null) {
-                atb(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        atb(new AbstractGameAction() {
-                            @Override
-                            public void update() {
-                                activePokemon.setSmartTarget();
-                                if (activePokemon.target != null) {
-                                    AbstractDungeon.onModifyPower();
-                                }
-                                this.isDone = true;
-                            }
-                        });
-                        this.isDone = true;
+                boolean isDiglett = false;
+                for (AbstractMonster mo : Wiz.getEnemies()) {
+                    if (mo instanceof DiglettEnemy) {
+                        isDiglett = true;
+                        break;
                     }
-                });
+                }
+                if (isDiglett) {
+                    atb(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            activePokemon.setSmartTarget();
+                            if (activePokemon.target != null) {
+                                AbstractDungeon.onModifyPower();
+                            }
+                            this.isDone = true;
+                        }
+                    });
+                }
             }
         }
     }
