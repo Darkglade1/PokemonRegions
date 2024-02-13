@@ -150,9 +150,5 @@
   "${ModID}:DoomDesire": {
     "NAME": "Doom Desire",
     "DESCRIPTIONS": ["In #b", " turn(s), deals #b", " damage to ALL enemies."]
-  },
-  "${ModID}:BinaryBody": {
-    "NAME": "Binary Body",
-    "DESCRIPTIONS": ["Whenever #yyou attack this creature, it switches between attacking and non-attacking intents. NL Non-attacking intents become #rstronger when used consecutively."]
   }
 }
