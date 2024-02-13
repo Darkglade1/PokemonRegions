@@ -14,9 +14,9 @@ public class Moltres extends AbstractAllyPokemonCard {
     public static final int MOVE_1_DAMAGE = 4;
     public static final int MOVE_1_BURN = 1;
     public static final int MOVE_1_HITS = 3;
-    public static final int MOVE_2_EXHAUST = 2;
+    public static final int MOVE_2_EXHAUST = 4;
     public static final int MOVE_1_STAMINA_COST = 2;
-    public static final int MOVE_2_STAMINA_COST = 0;
+    public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 5;
 
     public Moltres() {
