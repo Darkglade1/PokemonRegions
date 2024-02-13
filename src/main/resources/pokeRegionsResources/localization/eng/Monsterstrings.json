@@ -353,7 +353,8 @@
   "${ModID}:RegisteelEnemy": {
     "MOVES": [
       "Slam",
-      "Wide Guard"
+      "Wide Guard",
+      "Protect"
     ],
     "NAME": "Registeel",
     "DIALOG": [
@@ -362,7 +363,8 @@
   "${ModID}:RegiceEnemy": {
     "MOVES": [
       "Slam",
-      "Icy Wind"
+      "Icy Wind",
+      "Freeze-Dry"
     ],
     "NAME": "Regice",
     "DIALOG": [
@@ -371,7 +373,8 @@
   "${ModID}:RegirockEnemy": {
     "MOVES": [
       "Slam",
-      "Ancient Power"
+      "Ancient Power",
+      "Entomb"
     ],
     "NAME": "Regirock",
     "DIALOG": [

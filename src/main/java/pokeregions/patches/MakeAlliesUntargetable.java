@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import javassist.CtBehavior;
 import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.monsters.act1.enemies.VictreebelEnemy;
+import pokeregions.powers.Taunt;
 import pokeregions.util.Wiz;
 
 @SpirePatch(
@@ -23,7 +23,7 @@ public class MakeAlliesUntargetable {
         }
         AbstractMonster tauntingMonster = null;
         for (AbstractMonster mo : Wiz.getEnemies()) {
-            if (mo.hasPower(VictreebelEnemy.POWER_ID)) {
+            if (mo.hasPower(Taunt.POWER_ID)) {
                 tauntingMonster = mo;
                 break;
             }

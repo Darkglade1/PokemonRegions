@@ -4,20 +4,17 @@ import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.powers.Taunt;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
 import pokeregions.util.Wiz;
@@ -40,11 +37,6 @@ public class VictreebelEnemy extends AbstractPokemonMonster
 
     public final int BLOCK = 13;
     public final int DEBUFF = calcAscensionSpecial(1);
-
-    public static final String POWER_ID = makeID("Taunt");
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String POWER_NAME = powerStrings.NAME;
-    public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public VictreebelEnemy() {
         this(0.0f, 0.0f, true);
@@ -78,23 +70,7 @@ public class VictreebelEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case RAGE_POWDER: {
                 block(this, BLOCK);
-                applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0) {
-                    private boolean justApplied = true;
-                    @Override
-                    public void atEndOfRound() {
-                        if (justApplied) {
-                            justApplied = false;
-                        } else {
-                            makePowerRemovable(this);
-                            atb(new RemoveSpecificPowerAction(owner, owner, this));
-                        }
-                    }
-
-                    @Override
-                    public void updateDescription() {
-                        description = POWER_DESCRIPTIONS[0];
-                    }
-                });
+                applyToTarget(this, this, new Taunt(this));
                 break;
             }
             case RAZOR_LEAF: {

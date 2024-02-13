@@ -3,22 +3,19 @@ package pokeregions.monsters.act3.enemies;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Flygon;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.powers.Taunt;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
 import pokeregions.util.Wiz;
@@ -41,11 +38,6 @@ public class FlygonEnemy extends AbstractPokemonMonster
 
     public final int BLOCK = 11;
     public final int STR = calcAscensionSpecial(2);
-
-    public static final String POWER_ID = makeID("Taunt");
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String POWER_NAME = powerStrings.NAME;
-    public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public FlygonEnemy() {
         this(0.0f, 0.0f);
@@ -73,23 +65,7 @@ public class FlygonEnemy extends AbstractPokemonMonster
                 for (AbstractMonster mo : Wiz.getEnemies()) {
                     block(mo, BLOCK);
                 }
-                applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0) {
-                    private boolean justApplied = true;
-                    @Override
-                    public void atEndOfRound() {
-                        if (justApplied) {
-                            justApplied = false;
-                        } else {
-                            makePowerRemovable(this);
-                            atb(new RemoveSpecificPowerAction(owner, owner, this));
-                        }
-                    }
-
-                    @Override
-                    public void updateDescription() {
-                        description = POWER_DESCRIPTIONS[0];
-                    }
-                });
+                applyToTarget(this, this, new Taunt(this));
                 break;
             }
             case MATRONS_STRIKE: {

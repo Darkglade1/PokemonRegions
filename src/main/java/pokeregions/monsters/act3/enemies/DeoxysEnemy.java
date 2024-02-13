@@ -61,7 +61,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
 
     public final int BLOCK = 12;
     public final int BIG_BLOCK = 30;
-    public final int METALICIZE = calcAscensionSpecialSmall(10);
+    public final int METALICIZE = calcAscensionSpecial(20);
 
     public final int SLIMES = calcAscensionSpecial(2);
     public final int PLOT = calcAscensionSpecialSmall(3);
@@ -189,7 +189,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
             case HEAVY_SLAM: {
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                block(this, BLOCK);
+                block(this, BIG_BLOCK);
                 applyToTarget(this, this, new MetallicizePower(this, METALICIZE));
                 break;
             }
@@ -333,7 +333,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
                 break;
             }
             case HEAVY_SLAM: {
-                Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
+                Details blockDetail = new Details(this, BIG_BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
                 Details powerDetail = new Details(this, METALICIZE, METALLICIZE_TEXTURE);
                 details.add(powerDetail);

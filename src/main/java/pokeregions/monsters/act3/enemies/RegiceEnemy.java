@@ -1,6 +1,7 @@
 package pokeregions.monsters.act3.enemies;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,8 +17,10 @@ import pokeregions.PokemonRegions;
 import pokeregions.cards.Frozen;
 import pokeregions.cards.pokemonAllyCards.act3.Regice;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.BinaryBody;
+import pokeregions.powers.Taunt;
 import pokeregions.util.Details;
+import pokeregions.util.TexLoader;
+import pokeregions.util.Wiz;
 
 import java.util.ArrayList;
 
@@ -33,14 +36,10 @@ public class RegiceEnemy extends AbstractPokemonMonster
 
     private static final byte SLAM = 0;
     private static final byte ICY_WIND = 1;
+    private static final byte FREEZE_DRY = 2;
 
-    public final int BASE_DEBUFF = 1;
-    public final int BASE_STATUS = calcAscensionSpecial(2);
-    public final int DEBUFF_INCREASE = 1;
-    public final int STATUS_INCREASE = 1;
-
-    private int debuff = BASE_DEBUFF;
-    private int status = BASE_STATUS;
+    public final int DEBUFF = 2;
+    public final int STATUS = calcAscensionSpecial(3);
 
     public RegiceEnemy() {
         this(0.0f, 0.0f);
@@ -51,20 +50,15 @@ public class RegiceEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Regice/Regice.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(120));
-        addMove(SLAM, Intent.ATTACK, calcAscensionDamage(18));
+        addMove(SLAM, Intent.ATTACK, calcAscensionDamage(20));
         addMove(ICY_WIND, Intent.DEBUFF);
+        addMove(FREEZE_DRY, Intent.STRONG_DEBUFF);
     }
 
     @Override
     protected void setUpMisc() {
         super.setUpMisc();
         this.type = EnemyType.ELITE;
-    }
-
-    @Override
-    public void usePreBattleAction() {
-        super.usePreBattleAction();
-        applyToTarget(this, this, new BinaryBody(this));
     }
 
     @Override
@@ -78,16 +72,16 @@ public class RegiceEnemy extends AbstractPokemonMonster
             case SLAM: {
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                debuff = BASE_DEBUFF;
-                status = BASE_STATUS;
                 break;
             }
             case ICY_WIND: {
-                intoDrawMo(new Frozen(), status);
-                applyToTarget(adp(), this, new WeakPower(adp(), debuff, true));
-                applyToTarget(adp(), this, new FrailPower(adp(), debuff, true));
-                debuff += DEBUFF_INCREASE;
-                status += STATUS_INCREASE;
+                applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
+                applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
+                applyToTarget(this, this, new Taunt(this));
+                break;
+            }
+            case FREEZE_DRY: {
+                intoDiscardMo(new Frozen(), STATUS);
                 break;
             }
         }
@@ -98,24 +92,35 @@ public class RegiceEnemy extends AbstractPokemonMonster
     protected void getMove(final int num) {
         if (lastMove(ICY_WIND)) {
             setMoveShortcut(SLAM, MOVES[SLAM]);
+        } else if(lastMove(SLAM)) {
+            setMoveShortcut(FREEZE_DRY, MOVES[FREEZE_DRY]);
         } else {
             setMoveShortcut(ICY_WIND, MOVES[ICY_WIND]);
         }
+        if (Wiz.getEnemies().size() == 1) {
+            setMoveShortcut(SLAM, MOVES[SLAM]);
+        }
         super.postGetMove();
-        createIntent();
     }
 
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        String textureString = makePowerPath("Taunt32.png");
+        Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case ICY_WIND: {
-                Details statusDetail = new Details(this, status, FROZEN_TEXTURE, Details.TargetType.DRAW_PILE);
-                details.add(statusDetail);
-                Details powerDetail = new Details(this, debuff, WEAK_TEXTURE);
+                Details powerDetail = new Details(this, DEBUFF, WEAK_TEXTURE);
                 details.add(powerDetail);
-                Details powerDetail2 = new Details(this, debuff, FRAIL_TEXTURE);
+                Details powerDetail2 = new Details(this, DEBUFF, FRAIL_TEXTURE);
                 details.add(powerDetail2);
+                Details powerDetails = new Details(this, 1, texture);
+                details.add(powerDetails);
+                break;
+            }
+            case FREEZE_DRY: {
+                Details statusDetail = new Details(this, STATUS, FROZEN_TEXTURE, Details.TargetType.DISCARD_PILE);
+                details.add(statusDetail);
                 break;
             }
         }

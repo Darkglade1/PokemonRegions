@@ -1,6 +1,7 @@
 package pokeregions.monsters.act3.enemies;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,9 +15,10 @@ import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Registeel;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.BinaryBody;
 import pokeregions.powers.MonsterNextTurnBlockPower;
+import pokeregions.powers.Taunt;
 import pokeregions.util.Details;
+import pokeregions.util.TexLoader;
 import pokeregions.util.Wiz;
 
 import java.util.ArrayList;
@@ -33,14 +35,11 @@ public class RegisteelEnemy extends AbstractPokemonMonster
 
     private static final byte SLAM = 0;
     private static final byte WIDE_GUARD = 1;
+    private static final byte PROTECT = 2;
 
-    public final int BASE_BLOCK = 12;
-    public final int BASE_METALLICIZE = calcAscensionSpecialSmall(3);
-    public final int BLOCK_INCREASE = 6;
-    public final int METALLCIZE_INCREASE = 1;
-
-    private int block = BASE_BLOCK;
-    private int metallicize = BASE_METALLICIZE;
+    public final int BIG_BLOCK = 16;
+    public final int SMALL_BLOCK = 8;
+    public final int METALLICIZE = calcAscensionSpecialSmall(3);
 
     public RegisteelEnemy() {
         this(0.0f, 0.0f);
@@ -51,8 +50,9 @@ public class RegisteelEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Registeel/Registeel.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(120));
-        addMove(SLAM, Intent.ATTACK, calcAscensionDamage(18));
-        addMove(WIDE_GUARD, Intent.DEFEND_BUFF);
+        addMove(SLAM, Intent.ATTACK, calcAscensionDamage(20));
+        addMove(WIDE_GUARD, Intent.DEFEND);
+        addMove(PROTECT, Intent.DEFEND_BUFF);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class RegisteelEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        applyToTarget(this, this, new BinaryBody(this));
+        applyToTarget(this, this, new Taunt(this, false));
     }
 
     @Override
@@ -78,17 +78,20 @@ public class RegisteelEnemy extends AbstractPokemonMonster
             case SLAM: {
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                block = BASE_BLOCK;
-                metallicize = BASE_METALLICIZE;
                 break;
             }
             case WIDE_GUARD: {
                 for (AbstractMonster mo : Wiz.getEnemies()) {
-                    applyToTarget(mo, this, new MonsterNextTurnBlockPower(mo, block));
-                    applyToTarget(mo, this, new MetallicizePower(mo, metallicize));
+                    applyToTarget(mo, this, new MonsterNextTurnBlockPower(mo, BIG_BLOCK));
                 }
-                block += BLOCK_INCREASE;
-                metallicize += METALLCIZE_INCREASE;
+                applyToTarget(this, this, new Taunt(this));
+                break;
+            }
+            case PROTECT: {
+                for (AbstractMonster mo : Wiz.getEnemies()) {
+                    applyToTarget(mo, this, new MonsterNextTurnBlockPower(mo, SMALL_BLOCK));
+                    applyToTarget(mo, this, new MetallicizePower(mo, METALLICIZE));
+                }
                 break;
             }
         }
@@ -97,23 +100,36 @@ public class RegisteelEnemy extends AbstractPokemonMonster
 
     @Override
     protected void getMove(final int num) {
-        if (lastMove(WIDE_GUARD)) {
-            setMoveShortcut(SLAM, MOVES[SLAM]);
-        } else {
+        if (lastMove(SLAM)) {
+            setMoveShortcut(PROTECT, MOVES[PROTECT]);
+        } else if(lastMove(PROTECT)){
             setMoveShortcut(WIDE_GUARD, MOVES[WIDE_GUARD]);
+        } else {
+            setMoveShortcut(SLAM, MOVES[SLAM]);
+        }
+        if (Wiz.getEnemies().size() == 1) {
+            setMoveShortcut(SLAM, MOVES[SLAM]);
         }
         super.postGetMove();
-        createIntent();
     }
 
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        String textureString = makePowerPath("Taunt32.png");
+        Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case WIDE_GUARD: {
-                Details blockDetail = new Details(this, block, BLOCK_TEXTURE, Details.TargetType.ALL_ENEMIES);
+                Details blockDetail = new Details(this, BIG_BLOCK, BLOCK_TEXTURE, Details.TargetType.ALL_ENEMIES);
                 details.add(blockDetail);
-                Details powerDetail = new Details(this, metallicize, METALLICIZE_TEXTURE, Details.TargetType.ALL_ENEMIES);
+                Details powerDetails = new Details(this, 1, texture);
+                details.add(powerDetails);
+                break;
+            }
+            case PROTECT: {
+                Details blockDetail = new Details(this, SMALL_BLOCK, BLOCK_TEXTURE, Details.TargetType.ALL_ENEMIES);
+                details.add(blockDetail);
+                Details powerDetail = new Details(this, METALLICIZE, METALLICIZE_TEXTURE, Details.TargetType.ALL_ENEMIES);
                 details.add(powerDetail);
                 break;
             }
