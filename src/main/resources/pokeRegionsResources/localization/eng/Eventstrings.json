@@ -396,5 +396,23 @@
       "Obtain ",
       "."
     ]
+  },
+  "${ModID}:Mossdeep": {
+    "NAME": "Mossdeep Space Center",
+    "DESCRIPTIONS": [
+      "The air is filled with the smell of ozone, gas, and . . . the sound of #rpanicked yelling. Stopping a nearby passerby, you ask them what's going on. NL \"Team Magma sent a letter saying they were gonna come steal our #yrocket fuel! We don't know what to do!\" NL The person resumes panicking. You wonder if there wasn't some sort of #yorganization they were supposed to contact at times like this.",
+      "With all the #pcommotion going on, it was trivially easy to take some #yrocket fuel for yourself. As repayment, you decide to leave a tip for the #ypolice so that they could come and do their jobs.",
+      "You find the person in charge and inform them that you were willing to help stand guard. The official thanks you for your help, and you find a nice spot to stand around until the #rattack. NL After several hours, #rTeam #rMagma finally showed up. Luckily, someone had the forethought to inform the police ahead of time, so driving the #pcriminals back wasn't particularly difficult. You felt like you had learned . . . something, from this #yincident."
+    ],
+    "OPTIONS": [
+      "[Take some fuel] ",
+      "[Offer to stand guard] ",
+      "Give a card in your deck +",
+      " damage and Ethereal.",
+      "Lose ",
+      " max HP.",
+      "Obtain a Rare card.",
+      "[Leave]"
+    ]
   }
 }

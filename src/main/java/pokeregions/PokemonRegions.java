@@ -503,6 +503,7 @@ public class PokemonRegions implements
         BaseMod.addEvent(FeatherCarnival.ID, FeatherCarnival.class, Hoenn.ID);
         BaseMod.addEvent(LavaridgeGym.ID, LavaridgeGym.class, Hoenn.ID);
         BaseMod.addEvent(WeatherInstitute.ID, WeatherInstitute.class, Hoenn.ID);
+        BaseMod.addEvent(Mossdeep.ID, Mossdeep.class, Hoenn.ID);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
