@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.events.beyond.*;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -39,10 +38,7 @@ import pokeregions.dungeons.EncounterIDs;
 import pokeregions.dungeons.Hoenn;
 import pokeregions.dungeons.Kanto;
 import pokeregions.events.act1.*;
-import pokeregions.events.act3.BumpInTheRoad;
-import pokeregions.events.act3.LavaridgeGym;
-import pokeregions.events.act3.PokemonTrainerSchool;
-import pokeregions.events.act3.WishUponAStar;
+import pokeregions.events.act3.*;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
@@ -506,6 +502,7 @@ public class PokemonRegions implements
                 .create());
         BaseMod.addEvent(FeatherCarnival.ID, FeatherCarnival.class, Hoenn.ID);
         BaseMod.addEvent(LavaridgeGym.ID, LavaridgeGym.class, Hoenn.ID);
+        BaseMod.addEvent(WeatherInstitute.ID, WeatherInstitute.class, Hoenn.ID);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

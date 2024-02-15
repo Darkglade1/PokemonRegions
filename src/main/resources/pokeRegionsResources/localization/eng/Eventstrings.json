@@ -376,5 +376,25 @@
       "[Leave]",
       "Obtain a Relic."
     ]
+  },
+  "${ModID}:WeatherInstitute": {
+    "NAME": "Weather Institute",
+    "DESCRIPTIONS": [
+      "As you pass by a strange-looking building with strangely-shaped devices mounted on its roof, you notice the shuffle of suspicious figures loitering around it. Curious, you sneak closer and hear the shouts and scuffle of an #raltercation inside. NL \"This is #bTeam #bAqua! Hand over all your data on weather and ancient #yPokemon, and no one gets hurt!\" NL Hearing the frightened mutters of the researchers inside, you consider your options.",
+      "You wait patiently for the #pcriminals to let their guards down. Although you notice that the researchers are having an unpleasant time while you wait, you know better than to let your #yemotions cloud your judgment. NL You wait for the grunts to distract themselves with the research, then you @strike@ like a flash of #ylightning! NL The #pcriminals fall like dominoes, and the scientists offer you their thanks. You felt like you learned something from your patient #yambush.",
+      "You rush in, unwilling to let the #pcriminals have their way for even a moment longer. The grunts and their #yPokemon batter you with their fists and spouts of water, but you endure and take them all down. NL The scientists are immensely grateful for your quick response and offer you an ancient #yrelic as thanks."
+    ],
+    "OPTIONS": [
+      "[Wait for an opening] ",
+      "[Rush in recklessly] ",
+      "Give a card in your deck +",
+      " Block and Retain.",
+      "Lose ",
+      " HP.",
+      "Choose 1 of 3 Relics to obtain.",
+      "[Leave]",
+      "Obtain ",
+      "."
+    ]
   }
 }
