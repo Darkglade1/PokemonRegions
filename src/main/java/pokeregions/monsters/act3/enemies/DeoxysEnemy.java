@@ -1,17 +1,14 @@
 package pokeregions.monsters.act3.enemies;
 
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,18 +16,14 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Deoxys;
 import pokeregions.monsters.AbstractMultiIntentMonster;
 import pokeregions.powers.AbstractLambdaPower;
-import pokeregions.powers.IronDefense;
 import pokeregions.powers.NastyPlot;
-import pokeregions.powers.VisibleBarricadePower;
 import pokeregions.util.AdditionalIntent;
 import pokeregions.util.Details;
-import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -59,20 +52,18 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     public final int STR = calcAscensionSpecialSmall(3);
     public final int DEBUFF = 2;
 
-    public final int BLOCK = 12;
+    public final int BLOCK = 20;
     public final int BIG_BLOCK = 30;
-    public final int METALICIZE = calcAscensionSpecial(20);
+    public final int METALICIZE = calcAscensionSpecialSmall(10);
 
     public final int SLIMES = calcAscensionSpecial(2);
-    public final int PLOT = calcAscensionSpecialSmall(3);
+    public final int PLOT = calcAscensionSpecial(2);
     public final int DAZES = calcAscensionSpecial(2);
-    public final int EXTREME_SPEED_DAMAGE = calcAscensionDamage(20);
-    private int numExtremeSpeedHits = 2;
+    public final int HEAVY_SLAM_BASE_DAMAGE = calcAscensionDamage(35);
+    public final int HEAVY_SLAM_DAMAGE_INCREASE = calcAscensionDamage(15);
 
     private Form currentForm = Form.ATTACK;
-    private int attackFormIntent = 1;
-    private int defenseFormIntent = 1;
-    private int speedFormIntent = 1;
+    private int turnCount = 1;
 
     public static final String POWER_ID = makeID("Adapt");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -89,14 +80,14 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.25f);
         setHp(calcAscensionTankiness(400));
         addMove(POWER_UP_PUNCH, Intent.ATTACK_BUFF, calcAscensionDamage(8));
-        addMove(EXPOSE_WEAKNESS, Intent.ATTACK_DEBUFF, calcAscensionDamage(14));
-        addMove(PSYCHO_BOOST, Intent.ATTACK_BUFF, calcAscensionDamage(13), 3);
-        addMove(COSMIC_POWER, Intent.DEFEND);
-        addMove(IRON_DEFENSE, Intent.DEFEND_BUFF);
-        addMove(HEAVY_SLAM, Intent.ATTACK_DEFEND, calcAscensionDamage(16));
+        //addMove(EXPOSE_WEAKNESS, Intent.ATTACK_DEBUFF, calcAscensionDamage(14));
+        addMove(PSYCHO_BOOST, Intent.ATTACK, calcAscensionDamage(14), 3);
+        addMove(COSMIC_POWER, Intent.DEFEND_BUFF);
+        //addMove(IRON_DEFENSE, Intent.DEFEND_BUFF);
+        addMove(HEAVY_SLAM, Intent.ATTACK_DEFEND, HEAVY_SLAM_BASE_DAMAGE);
         addMove(SWIFT, Intent.ATTACK_DEBUFF, calcAscensionDamage(10));
         addMove(NASTY_PLOT, Intent.BUFF);
-        addMove(EXTREME_SPEED, Intent.ATTACK_DEBUFF, EXTREME_SPEED_DAMAGE, numExtremeSpeedHits);
+        addMove(EXTREME_SPEED, Intent.ATTACK_DEBUFF, calcAscensionDamage(18), 2);
     }
 
     public enum Form {
@@ -156,14 +147,6 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 applyToTarget(this, this, new StrengthPower(this, STR));
-                attackFormIntent++;
-                break;
-            }
-            case EXPOSE_WEAKNESS: {
-                useFastAttackAnimation();
-                dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
-                attackFormIntent++;
                 break;
             }
             case PSYCHO_BOOST: {
@@ -171,51 +154,43 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
                 for (int i = 0; i < multiplier; i++) {
                     dmg(adp(), info, AbstractGameAction.AttackEffect.POISON);
                 }
-                applyToTarget(this, this, new StrengthPower(this, STR));
                 break;
             }
             case COSMIC_POWER: {
                 block(this, BLOCK);
-                applyToTarget(this, this, new VisibleBarricadePower(this));
-                defenseFormIntent++;
-                break;
-            }
-            case IRON_DEFENSE: {
-                block(this, BIG_BLOCK);
-                applyToTarget(this, this, new IronDefense(this));
-                defenseFormIntent++;
+                applyToTarget(this, this, new MetallicizePower(this, METALICIZE));
                 break;
             }
             case HEAVY_SLAM: {
                 useFastAttackAnimation();
-                dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                 block(this, BIG_BLOCK);
-                applyToTarget(this, this, new MetallicizePower(this, METALICIZE));
+                dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+                int newDamage = moves.get(HEAVY_SLAM).baseDamage += HEAVY_SLAM_DAMAGE_INCREASE;
+                addMove(HEAVY_SLAM, Intent.ATTACK_DEFEND, newDamage);
                 break;
             }
             case SWIFT: {
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 intoDiscardMo(new Slimed(), SLIMES);
-                speedFormIntent++;
                 break;
             }
             case NASTY_PLOT: {
                 applyToTarget(this, this, new NastyPlot(this, PLOT));
-                speedFormIntent++;
                 break;
             }
             case EXTREME_SPEED: {
                 useFastAttackAnimation();
-                dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                for (int i = 0; i < multiplier - 1; i++) {
+                for (int i = 0; i < multiplier; i++) {
                     dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                 }
                 intoDrawMo(new Dazed(), DAZES);
-                numExtremeSpeedHits++;
-                addMove(EXTREME_SPEED, Intent.ATTACK_DEBUFF, EXTREME_SPEED_DAMAGE, numExtremeSpeedHits);
                 break;
             }
+        }
+        turnCount++;
+        if (turnCount > 3) {
+            turnCount = 1;
         }
         atb(new RollMoveAction(this));
     }
@@ -255,32 +230,32 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     }
 
     private byte getAttackFormMove() {
-        if (this.attackFormIntent == 1) {
-            return POWER_UP_PUNCH;
-        } else if (this.attackFormIntent == 2) {
-            return EXPOSE_WEAKNESS;
-        } else {
+        if (turnCount == 3) {
             return PSYCHO_BOOST;
+        } else if (turnCount == 2) {
+            return PSYCHO_BOOST;
+        } else {
+            return POWER_UP_PUNCH;
         }
     }
 
     private byte getDefenseFormMove() {
-        if (this.defenseFormIntent == 1) {
+        if (turnCount == 3) {
+            return HEAVY_SLAM;
+        } else if (turnCount == 2) {
             return COSMIC_POWER;
-        } else if (this.defenseFormIntent == 2) {
-            return IRON_DEFENSE;
         } else {
             return HEAVY_SLAM;
         }
     }
 
     private byte getSpeedFormMove() {
-        if (this.speedFormIntent == 1) {
-            return SWIFT;
-        } else if (this.speedFormIntent == 2) {
+        if (turnCount == 3) {
+            return EXTREME_SPEED;
+        } else if (turnCount == 2) {
             return NASTY_PLOT;
         } else {
-            return EXTREME_SPEED;
+            return SWIFT;
         }
     }
 
@@ -302,41 +277,22 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makeUIPath("Barricade.png");
-        Texture texture1 = TexLoader.getTexture(textureString);
-        String textureString2 = makePowerPath("IronDefense32.png");
-        Texture texture2 = TexLoader.getTexture(textureString2);
         switch (move.nextMove) {
-            case POWER_UP_PUNCH:
-            case PSYCHO_BOOST: {
+            case POWER_UP_PUNCH: {
                 Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
-                details.add(powerDetail);
-                break;
-            }
-            case EXPOSE_WEAKNESS: {
-                Details powerDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(powerDetail);
                 break;
             }
             case COSMIC_POWER: {
                 Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
-                Details powerDetail = new Details(this, 1, texture1);
-                details.add(powerDetail);
-                break;
-            }
-            case IRON_DEFENSE: {
-                Details blockDetail = new Details(this, BIG_BLOCK, BLOCK_TEXTURE);
-                details.add(blockDetail);
-                Details powerDetail = new Details(this, 1, texture2);
+                Details powerDetail = new Details(this, METALICIZE, METALLICIZE_TEXTURE);
                 details.add(powerDetail);
                 break;
             }
             case HEAVY_SLAM: {
                 Details blockDetail = new Details(this, BIG_BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
-                Details powerDetail = new Details(this, METALICIZE, METALLICIZE_TEXTURE);
-                details.add(powerDetail);
                 break;
             }
             case SWIFT: {
@@ -356,12 +312,6 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
             }
         }
         PokemonRegions.intents.put(this, details);
-    }
-
-    @Override
-    public void damage(DamageInfo info) {
-        super.damage(info);
-        AbstractDungeon.onModifyPower();
     }
 
     @Override
