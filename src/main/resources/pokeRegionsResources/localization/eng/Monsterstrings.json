@@ -379,5 +379,25 @@
     "NAME": "Regirock",
     "DIALOG": [
     ]
+  },
+  "${ModID}:EspeonAnnie": {
+    "MOVES": [
+      "Confusion",
+      "Helping Hand",
+      "Psychic"
+    ],
+    "NAME": "Espeon",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:AriadosOakley": {
+    "MOVES": [
+      "Infestation",
+      "Sticky Web",
+      "Cross Poison"
+    ],
+    "NAME": "Ariados",
+    "DIALOG": [
+    ]
   }
 }

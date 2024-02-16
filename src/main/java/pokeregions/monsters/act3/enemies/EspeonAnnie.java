@@ -1,4 +1,4 @@
-package pokeregions.monsters.act1.enemies;
+package pokeregions.monsters.act3.enemies;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
@@ -6,21 +6,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.DivinityStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act1.Alakazam;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.MagicGuard;
 import pokeregions.util.Details;
+import pokeregions.util.Wiz;
 import pokeregions.vfx.FlexibleDivinityParticleEffect;
 import pokeregions.vfx.FlexibleStanceAuraEffect;
 
@@ -29,35 +28,40 @@ import java.util.ArrayList;
 import static pokeregions.PokemonRegions.*;
 import static pokeregions.util.Wiz.*;
 
-public class AlakazamEnemy extends AbstractPokemonMonster
+public class EspeonAnnie extends AbstractPokemonMonster
 {
-    public static final String ID = makeID(AlakazamEnemy.class.getSimpleName());
+    public static final String ID = makeID(EspeonAnnie.class.getSimpleName());
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
 
-    private static final byte KINESIS = 0;
-    private static final byte FOCUS = 1;
-    private static final byte FOCUS_BLAST = 2;
+    private static final byte CONFUSION = 0;
+    private static final byte HELPING_HAND = 1;
+    private static final byte PSYCHIC = 2;
 
-    public final int STATUS = calcAscensionSpecial(2);
+    public final int STR = calcAscensionSpecialSmall(3);
+    public final int STATUS = 1;
 
     private float particleTimer;
     private float particleTimer2;
 
-    public AlakazamEnemy() {
-        this(0.0f, 0.0f);
+    public EspeonAnnie() {
+        this(0.0f, 0.0f, false);
     }
 
-    public AlakazamEnemy(final float x, final float y) {
-        super(NAME, ID, 140, 0.0F, 0, 180.0f, 180.0f, null, x, y);
-        this.animation = new BetterSpriterAnimation(makeMonsterPath("Alakazam/Alakazam.scml"));
-        ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.15f);
-        this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(45), calcAscensionTankiness(50));
-        addMove(KINESIS, Intent.ATTACK_DEBUFF, calcAscensionDamage(8));
-        addMove(FOCUS, Intent.UNKNOWN);
-        addMove(FOCUS_BLAST, Intent.ATTACK, calcAscensionDamage(24));
+    public EspeonAnnie(final float x, final float y) {
+        this(x, y, false);
+    }
+
+    public EspeonAnnie(final float x, final float y, boolean isCatchable) {
+        super(NAME, ID, 140, 0.0F, 0, 150.0f, 110.0f, null, x, y);
+        this.animation = new BetterSpriterAnimation(makeMonsterPath("Espeon/Espeon.scml"));
+        this.type = EnemyType.ELITE;
+        this.isCatchable = isCatchable;
+        setHp(calcAscensionTankiness(100), calcAscensionTankiness(108));
+        addMove(CONFUSION, Intent.ATTACK_DEBUFF, calcAscensionDamage(9));
+        addMove(HELPING_HAND, Intent.BUFF);
+        addMove(PSYCHIC, Intent.ATTACK, calcAscensionDamage(23));
     }
 
     @Override
@@ -74,18 +78,24 @@ public class AlakazamEnemy extends AbstractPokemonMonster
         }
 
         switch (this.nextMove) {
-            case KINESIS: {
+            case CONFUSION: {
                 useFastAttackAnimation();
-                dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-                intoDiscardMo(new Dazed(), STATUS);
+                dmg(adp(), info, AbstractGameAction.AttackEffect.POISON);
+                intoDrawMo(new VoidCard(), STATUS);
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    intoDiscardMo(new VoidCard(), STATUS);
+                }
                 break;
             }
-            case FOCUS: {
+            case HELPING_HAND: {
+                for (AbstractMonster mo : Wiz.getEnemies()) {
+                    applyToTarget(mo, this, new StrengthPower(mo, STR));
+                }
                 break;
             }
-            case FOCUS_BLAST: {
+            case PSYCHIC: {
                 useFastAttackAnimation();
-                dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+                dmg(adp(), info, AbstractGameAction.AttackEffect.POISON);
                 break;
             }
         }
@@ -94,12 +104,12 @@ public class AlakazamEnemy extends AbstractPokemonMonster
 
     @Override
     protected void getMove(final int num) {
-        if (lastMove(KINESIS)) {
-            setMoveShortcut(FOCUS, MOVES[FOCUS]);
-        } else if (lastMove(FOCUS)) {
-            setMoveShortcut(FOCUS_BLAST, MOVES[FOCUS_BLAST]);
+        if (lastMove(CONFUSION)) {
+            setMoveShortcut(HELPING_HAND, MOVES[HELPING_HAND]);
+        } else if (lastMove(HELPING_HAND)){
+            setMoveShortcut(PSYCHIC, MOVES[PSYCHIC]);
         } else {
-            setMoveShortcut(KINESIS, MOVES[KINESIS]);
+            setMoveShortcut(CONFUSION, MOVES[CONFUSION]);
         }
         super.postGetMove();
     }
@@ -108,9 +118,18 @@ public class AlakazamEnemy extends AbstractPokemonMonster
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
         switch (move.nextMove) {
-            case KINESIS: {
-                Details statusDetails = new Details(this, STATUS, DAZED_TEXTURE, Details.TargetType.DISCARD_PILE);
-                details.add(statusDetails);
+            case CONFUSION: {
+                Details statusDetail = new Details(this, STATUS, VOID_TEXTURE, Details.TargetType.DRAW_PILE);
+                details.add(statusDetail);
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    Details statusDetail2 = new Details(this, STATUS, VOID_TEXTURE, Details.TargetType.DISCARD_PILE);
+                    details.add(statusDetail2);
+                }
+                break;
+            }
+            case HELPING_HAND: {
+                Details powerDetails = new Details(this, STR, STRENGTH_TEXTURE, Details.TargetType.ALL_ENEMIES);
+                details.add(powerDetails);
                 break;
             }
         }
@@ -132,11 +151,6 @@ public class AlakazamEnemy extends AbstractPokemonMonster
                 AbstractDungeon.effectsQueue.add(new FlexibleStanceAuraEffect(DivinityStance.STANCE_ID, this));
             }
         }
-    }
-
-    @Override
-    public AbstractCard getAssociatedPokemonCard() {
-        return new Alakazam();
     }
 
 }

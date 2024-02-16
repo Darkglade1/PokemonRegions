@@ -58,7 +58,7 @@ public class Altomare extends PhasedEvent {
                     transitionKey("Leave");
                 }));
 
-        registerPhase("Fight", new CombatPhase(EncounterIDs.TEAM_ROCKET)
+        registerPhase("Fight", new CombatPhase(EncounterIDs.ANNIE_AND_OAKLEY)
                 .addRewards(true, (room)-> {
                     room.addGoldToRewards(GOLD);
                 })

@@ -493,6 +493,13 @@ public class PokemonRegions implements
                 }));
         BaseMod.addMonster(GardevoirEnemy.ID, (BaseMod.GetMonster) GardevoirEnemy::new);
 
+        // Event encounter
+        BaseMod.addMonster(EncounterIDs.ANNIE_AND_OAKLEY, "Annie and Oakley", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AriadosOakley(-200.0F, 0.0F),
+                        new EspeonAnnie(50.0F, 0.0F),
+                }));
+
         // Events
         BaseMod.addEvent(PokemonTrainerSchool.ID, PokemonTrainerSchool.class, Hoenn.ID);
         BaseMod.addEvent(WishUponAStar.ID, WishUponAStar.class, Hoenn.ID);
