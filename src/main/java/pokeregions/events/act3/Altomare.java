@@ -10,13 +10,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act1.Flareon;
-import pokeregions.cards.pokemonAllyCards.act1.Jolteon;
+import pokeregions.cards.pokemonAllyCards.act3.Latias;
+import pokeregions.cards.pokemonAllyCards.act3.Latios;
 import pokeregions.dungeons.EncounterIDs;
-import pokeregions.patches.PlayerSpireFields;
 import pokeregions.util.PokemonReward;
 
 import java.util.function.Consumer;
@@ -37,8 +35,8 @@ public class Altomare extends PhasedEvent {
     public Altomare() {
         super(ID, title, PokemonRegions.makeEventPath("Bianca.png"));
         this.noCardsInRewards = true;
-        latias = CardLibrary.getCard(Jolteon.ID).makeCopy();
-        latios = CardLibrary.getCard(Flareon.ID).makeCopy();
+        latias = CardLibrary.getCard(Latias.ID).makeCopy();
+        latios = CardLibrary.getCard(Latios.ID).makeCopy();
 
         registerPhase(0, new TextPhase(DESCRIPTIONS[0]).
                 addOption(OPTIONS[0], (i)->{

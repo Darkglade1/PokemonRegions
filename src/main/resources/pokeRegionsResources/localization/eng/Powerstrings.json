@@ -150,5 +150,13 @@
   "${ModID}:DoomDesire": {
     "NAME": "Doom Desire",
     "DESCRIPTIONS": ["In #b", " turn(s), deals #b", " damage to ALL enemies."]
+  },
+  "${ModID}:MistBall": {
+    "NAME": "Mist Ball",
+    "DESCRIPTIONS": ["Deals #b", "% less damage with attacks. Lasts for #b", " more turn(s)."]
+  },
+  "${ModID}:LusterPurge": {
+    "NAME": "Luster Purge",
+    "DESCRIPTIONS": ["Receives #b", "% more damage from attacks. Lasts for #b", " more turn(s)."]
   }
 }

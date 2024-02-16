@@ -623,6 +623,34 @@
       " times."
     ]
   },
+  "${ModID}:Latias": {
+    "NAME": "Latias",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Safeguard[]",
+      "[#FFA500]Mist[] [#FFA500]Ball[]",
+      "You gain ",
+      " Block. Scry ",
+      ".",
+      "Deal ",
+      " damage. Enemy deals ",
+      "% less damage with attacks for 1 turn."
+    ]
+  },
+  "${ModID}:Latios": {
+    "NAME": "Latios",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Luster[] [#FFA500]Purge[]",
+      "[#FFA500]Draco[] [#FFA500]Meteor[]",
+      "Deal ",
+      " damage. Enemy receives ",
+      "% more damage from attacks for 1 turn.",
+      "Deal ",
+      " damage and apply ",
+      " Weak and Vulnerable to ALL enemies."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
