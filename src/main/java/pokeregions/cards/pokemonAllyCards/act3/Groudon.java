@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Groudon extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Groudon.class.getSimpleName());
-    public static final int MOVE_1_EXHAUST = 2;
+    public static final int MOVE_1_EXHAUST = 3;
     public static final int MOVE_2_DAMAGE = 8;
     public static final int MOVE_2_HITS = 3;
 

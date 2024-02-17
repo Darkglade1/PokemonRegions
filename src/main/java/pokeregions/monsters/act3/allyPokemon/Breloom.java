@@ -3,6 +3,7 @@ package pokeregions.monsters.act3.allyPokemon;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -52,7 +53,15 @@ public class Breloom extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(adp(), this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, adp(), pokeregions.cards.pokemonAllyCards.act3.Breloom.MOVE_1_EFFECT, "painfulStabs") {
+                applyToTarget(adp(), this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, adp(), pokeregions.cards.pokemonAllyCards.act3.Breloom.MOVE_1_EFFECT, "painfulStabs", 99) {
+                    @Override
+                    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+                        if (type == DamageInfo.DamageType.NORMAL) {
+                            return damage * (1 + ((float)amount / 100));
+                        } else {
+                            return damage;
+                        }
+                    }
                     @Override
                     public void onPokemonSwitch(AbstractMonster pokemon) {
                         pokemon.addPower(new FiredUp(pokemon, amount));

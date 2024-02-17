@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Breloom extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Breloom.class.getSimpleName());
-    public static final int MOVE_1_EFFECT = 30;
+    public static final int MOVE_1_EFFECT = 25;
     public static final int MOVE_2_DAMAGE = 4;
     public static final int MOVE_2_HITS = 4;
 

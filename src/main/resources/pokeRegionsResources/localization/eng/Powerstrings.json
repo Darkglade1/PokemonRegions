@@ -121,7 +121,7 @@
   },
   "${ModID}:SwordsDance": {
     "NAME": "Swords Dance",
-    "DESCRIPTIONS": ["Your #yPokemon deal #b", "% more damage this combat."]
+    "DESCRIPTIONS": ["You and your #yPokemon deal #b", "% more damage this combat."]
   },
   "${ModID}:IronEater": {
     "NAME": "Iron Eater",
