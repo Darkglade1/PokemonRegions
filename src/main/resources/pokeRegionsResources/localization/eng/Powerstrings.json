@@ -158,5 +158,17 @@
   "${ModID}:LusterPurge": {
     "NAME": "Luster Purge",
     "DESCRIPTIONS": ["Receives #b", "% more damage from attacks. Lasts for #b", " more turn(s)."]
+  },
+  "${ModID}:Emerald": {
+    "NAME": "Emerald of the End",
+    "DESCRIPTIONS": ["At end of round, the lowest HP enemy gains #b", " #yStrength and loses #b", " HP."]
+  },
+  "${ModID}:Sapphire": {
+    "NAME": "Sapphire of the Drowned",
+    "DESCRIPTIONS": ["At the end of your turn, you take #b", " damage for each card remaining in your hand."]
+  },
+  "${ModID}:Ruby": {
+    "NAME": "Ruby of the Departed",
+    "DESCRIPTIONS": ["Whenever a card is #yExhausted, you take #b", " damage."]
   }
 }

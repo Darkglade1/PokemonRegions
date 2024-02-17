@@ -456,5 +456,19 @@
       " Pokeballs.",
       "[Leave]"
     ]
+  },
+  "${ModID}:AncientRuins": {
+    "NAME": "Ancient Ruins",
+    "DESCRIPTIONS": [
+      "As you delve into the depths of this ancient ruin, you feel your #ytreasure senses tingle. Sure enough, on the lowest level of this ruin, you spy a room full of @shiny@ #yjewels and ancient #yrelics! NL As your hand reaches out to claim your prize, a sudden premonition halts your hand. Was taking treasure from this ancient place truly a good idea? Surely these trinkets weren't #pcursed or anything, right?",
+      "You give in to your desires, swiping the shiny #yjewel on the center pedestal as well as one of the nearby #yrelics. Alas, you couldn't carry all this loot out with you, but at least that meant there would be plenty of leftover treasure for the next dungeon delver that came along. NL As you head outside, you feel a much #rstronger premonition. Someone was . . . #pdispleased by your actions. NL Hopefully, you would never meet this someone.",
+      "You withdraw your hand. Something told you that stealing long-forgotten #ytreasure might be a bad idea."
+    ],
+    "OPTIONS": [
+      "[Take some treasure] ",
+      "Obtain a Relic.",
+      "The Act boss becomes enhanced.",
+      "[Leave]"
+    ]
   }
 }

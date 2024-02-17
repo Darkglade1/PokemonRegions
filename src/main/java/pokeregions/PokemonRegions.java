@@ -516,6 +516,10 @@ public class PokemonRegions implements
                 .bonusCondition(Pokemart::canSpawn)
                 .dungeonID(Hoenn.ID)
                 .create());
+        BaseMod.addEvent(new AddEventParams.Builder(AncientRuins.ID, AncientRuins.class)
+                .bonusCondition(AncientRuins::canSpawn)
+                .dungeonID(Hoenn.ID)
+                .create());
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

@@ -54,5 +54,26 @@
     "DESCRIPTIONS": [
       "You can now #yDig for Relics at Rest Sites. The relic will always be Uncommon or Rare."
     ]
+  },
+  "${ModID}:Emerald": {
+    "NAME": "Emerald of the End",
+    "FLAVOR": "Life is fleeting, ephemeral, and all too often cut short.",
+    "DESCRIPTIONS": [
+      "#yRayquaza will be #yenhanced when you encounter it."
+    ]
+  },
+  "${ModID}:Sapphire": {
+    "NAME": "Sapphire of the Drowned",
+    "FLAVOR": "Underneath the waves, you can still hear the screams of the drowned.",
+    "DESCRIPTIONS": [
+      "#yKyogre will be #yenhanced when you encounter it."
+    ]
+  },
+  "${ModID}:Ruby": {
+    "NAME": "Ruby of the Departed",
+    "FLAVOR": "Ghosts cling to the living so that they too will be drawn into the abyss.",
+    "DESCRIPTIONS": [
+      "#yGroudon will be #yenhanced when you encounter it."
+    ]
   }
 }
