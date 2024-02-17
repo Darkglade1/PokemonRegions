@@ -437,5 +437,24 @@
       ".",
       "[Leave]"
     ]
+  },
+  "${ModID}:Pokemart": {
+    "NAME": "Poke Mart",
+    "DESCRIPTIONS": [
+      "You look around the store, seeing a wide variety of items on display. A banner pinned to the wall #yproudly proclaimed \"All your item needs fulfilled!\" - you suspect that with such a large stock, such a claim might not be an exaggeration after all. NL You pause between two aisles. One offered potions for sale. The other offered extra #yPokeballs. Which one should you buy with your limited #yfunds?",
+      "Potions were always an #yinvaluable asset in battle. Even if people sometimes gave you strange looks for using them on yourself instead of on your #yPokemon.",
+      "Extra #yPokeballs were always useful. The right #yPokemon could turn the tide of any battle around.",
+      "You decide to save your #ymoney. Maybe there would be better things to buy later."
+    ],
+    "OPTIONS": [
+      "[Potions] ",
+      "[Pokeballs] ",
+      "Lose ",
+      " Gold.",
+      "Obtain ",
+      " Potions.",
+      " Pokeballs.",
+      "[Leave]"
+    ]
   }
 }

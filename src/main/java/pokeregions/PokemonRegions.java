@@ -512,6 +512,10 @@ public class PokemonRegions implements
         BaseMod.addEvent(WeatherInstitute.ID, WeatherInstitute.class, Hoenn.ID);
         BaseMod.addEvent(Mossdeep.ID, Mossdeep.class, Hoenn.ID);
         BaseMod.addEvent(Altomare.ID, Altomare.class, Hoenn.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(Pokemart.ID, Pokemart.class)
+                .bonusCondition(Pokemart::canSpawn)
+                .dungeonID(Hoenn.ID)
+                .create());
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
