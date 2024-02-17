@@ -61,8 +61,8 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Salamence/Salamence.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
         setHp(calcAscensionTankiness(300));
-        addMove(DRAGON_RUSH, Intent.ATTACK, calcAscensionDamage(12), 2);
-        addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(30));
+        addMove(DRAGON_RUSH, Intent.ATTACK, calcAscensionDamage(13), 2);
+        addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(33));
         addMove(DRAGON_BREATH, Intent.DEBUFF);
         if (AbstractDungeon.ascensionLevel >= 18) {
             status.upgrade();
