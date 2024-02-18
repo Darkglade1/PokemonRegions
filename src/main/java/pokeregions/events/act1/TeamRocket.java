@@ -68,7 +68,7 @@ public class TeamRocket extends PhasedEvent {
     public static boolean canSpawn() {
         for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
             if (!card.hasTag(Tags.STARTER_POKEMON)) {
-                return AbstractDungeon.floorNum > 6;
+                return AbstractDungeon.floorNum >= 5;
             }
         }
         return false;
