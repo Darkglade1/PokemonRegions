@@ -170,5 +170,9 @@
   "${ModID}:Ruby": {
     "NAME": "Ruby of the Departed",
     "DESCRIPTIONS": ["Whenever a card is #yExhausted, you take #b", " damage."]
+  },
+  "${ModID}:Analytic": {
+    "NAME": "Analytic",
+    "DESCRIPTIONS": ["Whenever your #yBlock is greater than or equal to this creature's attack damage, #yimmediately changes to a non-attacking intent."]
   }
 }

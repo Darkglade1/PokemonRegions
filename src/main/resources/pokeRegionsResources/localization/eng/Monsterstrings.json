@@ -399,5 +399,16 @@
     "NAME": "Ariados",
     "DIALOG": [
     ]
+  },
+  "${ModID}:MetagrossEnemy": {
+    "MOVES": [
+      "Meteor Mash",
+      "Hone Claws",
+      "Preparing to Explode",
+      "Explosion"
+    ],
+    "NAME": "Metagross",
+    "DIALOG": [
+    ]
   }
 }

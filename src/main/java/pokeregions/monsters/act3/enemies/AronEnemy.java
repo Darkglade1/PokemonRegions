@@ -40,7 +40,7 @@ public class AronEnemy extends AbstractPokemonMonster
     public final int BLOCK = 10;
     public final int MOVE_THORNS = 1;
     public final int POWER_THORNS = calcAscensionSpecial(2);
-    public final int INITIAL_ARTIFACT = calcAscensionSpecial(1);
+    public final int INITIAL_ARTIFACT = 1;
 
     public static final String POWER_ID = makeID("IronEater");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

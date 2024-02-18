@@ -492,6 +492,7 @@ public class PokemonRegions implements
                         new FlygonEnemy(150.0F, 100.0F)
                 }));
         BaseMod.addMonster(GardevoirEnemy.ID, (BaseMod.GetMonster) GardevoirEnemy::new);
+        BaseMod.addMonster(MetagrossEnemy.ID, (BaseMod.GetMonster) MetagrossEnemy::new);
 
         // Event encounter
         BaseMod.addMonster(EncounterIDs.ANNIE_AND_OAKLEY, "Annie and Oakley", () -> new MonsterGroup(

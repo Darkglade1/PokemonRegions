@@ -41,7 +41,7 @@ public class AggronEnemy extends AbstractPokemonMonster
     public final int BLOCK = 14;
     public final int MOVE_THORNS = 1;
     public final int POWER_THORNS = calcAscensionSpecial(2);
-    public final int INITIAL_ARTIFACT = calcAscensionSpecial(2);
+    public final int INITIAL_ARTIFACT = 2;
     public final int STATUS = 2;
     public final int DEBUFF = calcAscensionSpecial(1);
 

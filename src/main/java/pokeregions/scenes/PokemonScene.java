@@ -118,6 +118,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Holy");
                 } else if (mo instanceof RegisteelEnemy || mo instanceof RegiceEnemy || mo instanceof RegirockEnemy) {
                     this.bg = this.atlas.findRegion("mod/Ruins");
+                } else if (mo instanceof MetagrossEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

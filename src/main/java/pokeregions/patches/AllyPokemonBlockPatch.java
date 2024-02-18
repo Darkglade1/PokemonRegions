@@ -1,11 +1,11 @@
 package pokeregions.patches;
 
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import pokeregions.monsters.AbstractPokemonAlly;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.act3.allyPokemon.Aggron;
 
 import static pokeregions.util.Wiz.adp;
