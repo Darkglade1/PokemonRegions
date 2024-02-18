@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act3.Breloom;
+import pokeregions.cards.pokemonAllyCards.act3.Solrock;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.NastyPlot;
@@ -183,7 +183,7 @@ public class SolrockEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Breloom();
+        return new Solrock();
     }
 
 }

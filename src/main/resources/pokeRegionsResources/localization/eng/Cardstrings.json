@@ -663,6 +663,30 @@
       " cards."
     ]
   },
+  "${ModID}:Solrock": {
+    "NAME": "Solrock",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Heat[] [#FFA500]Wave[]",
+      "[#FFA500]Morning[] [#FFA500]Sun[]",
+      "Apply ",
+      " pokeregions:Burn to ALL enemies.",
+      "You gain ",
+      " *Temporary *HP."
+    ]
+  },
+  "${ModID}:Lunatone": {
+    "NAME": "Lunatone",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Magic[] [#FFA500]Room[]",
+      "[#FFA500]Moonlight[]",
+      "Swap your Strength and Dexterity, then gain ",
+      " of each.",
+      "You gain ",
+      " *Temporary *HP."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
