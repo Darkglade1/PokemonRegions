@@ -174,5 +174,13 @@
   "${ModID}:Analytic": {
     "NAME": "Analytic",
     "DESCRIPTIONS": ["Whenever your #yBlock is greater than or equal to this creature's attack damage, #yimmediately changes to a non-attacking intent."]
+  },
+  "${ModID}:SunAdvent": {
+    "NAME": "Sun's Advent",
+    "DESCRIPTIONS": ["When #yLunatone is defeated, this creature becomes greatly #yenhanced.", "At end of round, gains #b", " #yStrength."]
+  },
+  "${ModID}:MoonAdvent": {
+    "NAME": "Moon's Advent",
+    "DESCRIPTIONS": ["When #ySolrock is defeated, this creature becomes greatly #yenhanced.", "At end of round, gains #b", " #yStrength."]
   }
 }

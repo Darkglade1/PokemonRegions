@@ -493,6 +493,11 @@ public class PokemonRegions implements
                 }));
         BaseMod.addMonster(GardevoirEnemy.ID, (BaseMod.GetMonster) GardevoirEnemy::new);
         BaseMod.addMonster(MetagrossEnemy.ID, (BaseMod.GetMonster) MetagrossEnemy::new);
+        BaseMod.addMonster(EncounterIDs.SOLROCK_AND_LUNATONE, "Solrock and Lunatone", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SolrockEnemy(-200.0F, 0.0F),
+                        new LunatoneEnemy(50.0F, 0.0F),
+                }));
 
         // Event encounter
         BaseMod.addMonster(EncounterIDs.ANNIE_AND_OAKLEY, "Annie and Oakley", () -> new MonsterGroup(

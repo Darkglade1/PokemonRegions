@@ -410,5 +410,27 @@
     "NAME": "Metagross",
     "DIALOG": [
     ]
+  },
+  "${ModID}:SolrockEnemy": {
+    "MOVES": [
+      "Calm Mind",
+      "Power Gem",
+      "Heat Wave",
+      "Morning Sun's Fury"
+    ],
+    "NAME": "Solrock",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:LunatoneEnemy": {
+    "MOVES": [
+      "Calm Mind",
+      "Power Gem",
+      "Dream Eater",
+      "Evening Moonlight's Venom"
+    ],
+    "NAME": "Lunatone",
+    "DIALOG": [
+    ]
   }
 }

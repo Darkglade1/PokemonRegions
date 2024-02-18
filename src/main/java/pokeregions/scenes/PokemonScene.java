@@ -120,6 +120,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Ruins");
                 } else if (mo instanceof MetagrossEnemy) {
                     this.bg = this.atlas.findRegion("mod/Holy");
+                } else if (mo instanceof SolrockEnemy || mo instanceof LunatoneEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Cave");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }
