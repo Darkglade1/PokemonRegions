@@ -46,7 +46,7 @@ public class BreloomEnemy extends AbstractPokemonMonster
     private static final byte SWORDS_DANCE = 1;
     private static final byte BULLET_SEED = 2;
 
-    public final int STR = calcAscensionSpecial(4);
+    public final int STR = calcAscensionSpecialSmall(3);
     public final int DEBUFF = 3;
 
     public static final String POWER_ID = makeID("Sleepy");
