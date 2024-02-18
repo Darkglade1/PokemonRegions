@@ -44,7 +44,7 @@ public class Breloom extends AbstractPokemonAlly
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
         addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act3.Breloom.MOVE_2_DAMAGE, pokeregions.cards.pokemonAllyCards.act3.Breloom.MOVE_2_HITS);
-        defaultMove = MOVE_1;
+        defaultMove = MOVE_2;
         move2RequiresTarget = true;
     }
 
