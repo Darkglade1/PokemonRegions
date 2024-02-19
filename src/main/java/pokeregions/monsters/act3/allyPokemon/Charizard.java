@@ -51,14 +51,12 @@ public class Charizard extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                useFastAttackAnimation();
-                //runAnim("Melee");
+                runAnim("Melee");
                 dmg(target, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
                 break;
             }
             case MOVE_2: {
-                useFastAttackAnimation();
-                //runAnim("Ranged");
+                runAnim("Ranged");
                 ArrayList<AbstractMonster> enemies = Wiz.getEnemies();
                 for (int i = 0; i < enemies.size(); i++) {
                     AbstractMonster mo = enemies.get(i);
