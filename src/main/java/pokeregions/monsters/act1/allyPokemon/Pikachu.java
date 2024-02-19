@@ -37,7 +37,7 @@ public class Pikachu extends AbstractPokemonAlly
         move1Intent = Intent.BUFF;
         move2Intent = Intent.ATTACK_DEBUFF;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Pikachu.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Pikachu.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
         move2RequiresTarget = true;
     }
@@ -55,8 +55,8 @@ public class Pikachu extends AbstractPokemonAlly
                 atb(new VFXAction(new LightningEffect(target.drawX, target.drawY), 0.0f));
                 atb(new SFXAction("ORB_LIGHTNING_EVOKE"));
                 dmg(target, info);
-                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.Pikachu.MOVE_2_DEBUFF, false));
-                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.Pikachu.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
+                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.act1.Pikachu.MOVE_2_DEBUFF, false));
+                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.act1.Pikachu.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 break;
             }
         }

@@ -4,7 +4,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
@@ -40,7 +39,7 @@ public class Bulbasaur extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK;
         move2Intent = Intent.DEBUFF;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Bulbasaur.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Bulbasaur.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
@@ -70,8 +69,8 @@ public class Bulbasaur extends AbstractPokemonAlly
                     }
                 });
                 atb(new VFXAction(new WaitEffect(), 1.0f));
-                applyToTarget(target, this, new ToxicPower(target,  pokeregions.cards.pokemonAllyCards.Bulbasaur.MOVE_2_TOXIC));
-                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.Bulbasaur.MOVE_2_WEAK, false));
+                applyToTarget(target, this, new ToxicPower(target,  pokeregions.cards.pokemonAllyCards.act1.Bulbasaur.MOVE_2_TOXIC));
+                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.act1.Bulbasaur.MOVE_2_WEAK, false));
                 break;
             }
         }

@@ -31,7 +31,7 @@ public class Magikarp extends AbstractPokemonAlly
         move1Intent = Intent.UNKNOWN;
         move2Intent = Intent.ATTACK;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Magikarp.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Magikarp.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
         move2RequiresTarget = true;
     }

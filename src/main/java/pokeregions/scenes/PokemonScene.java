@@ -1,5 +1,8 @@
 package pokeregions.scenes;
 
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.utils.GdxRuntimeException;
+import pokeregions.PokemonRegions;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
@@ -16,9 +19,20 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
+import pokeregions.monsters.act3.enemies.*;
+import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
+import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
+import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
+import pokeregions.util.ProAudio;
+import pokeregions.util.Wiz;
+
+import static pokeregions.PokemonRegions.makeID;
+import static pokeregions.PokemonRegions.makeVfxPath;
 
 public class PokemonScene extends AbstractScene {
     private TextureAtlas.AtlasRegion bg;
+    public static ShaderProgram shader = null;
+    public static long rainSoundId = 0L;
 
     public PokemonScene() {
         super("pokeRegionsResources/images/scenes/atlas.atlas");
@@ -79,6 +93,35 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Bridge");
                 } else if (mo instanceof AlakazamEnemy) {
                     this.bg = this.atlas.findRegion("mod/Holy");
+                } else if (mo instanceof KyogreEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Bridge");
+                    rainSoundId = CardCrawlGame.sound.playAndLoop(makeID(ProAudio.RAIN.name()));
+                } else if (mo instanceof DeoxysEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Cosmic");
+                } else if (mo instanceof GroudonEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Desert");
+                } else if (mo instanceof SalamenceEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Volcano");
+                } else if (mo instanceof SlakingEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Courtyard");
+                } else if (mo instanceof BreloomEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Forest");
+                } else if (mo instanceof AronEnemy || mo instanceof AggronEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Cave");
+                } else if (mo instanceof TropiusEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Forest");
+                } else if (mo instanceof TrapinchEnemy || mo instanceof FlygonEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Desert");
+                } else if (mo instanceof SalamenceR || mo instanceof RayquazaEnemy || mo instanceof FlygonR) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
+                } else if (mo instanceof GardevoirEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
+                } else if (mo instanceof RegisteelEnemy || mo instanceof RegiceEnemy || mo instanceof RegirockEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Ruins");
+                } else if (mo instanceof MetagrossEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
+                } else if (mo instanceof SolrockEnemy || mo instanceof LunatoneEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Cave");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }
@@ -93,9 +136,30 @@ public class PokemonScene extends AbstractScene {
 
     @Override
     public void renderCombatRoomBg(SpriteBatch sb) {
+        if (isKyogre()) {
+            initShader();
+            sb.setShader(shader);
+            shader.setUniformf("u_time", getTime());
+        }
+
         sb.setColor(Color.WHITE.cpy());
         this.renderAtlasRegionIf(sb, bg, true);
         sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE_MINUS_SRC_ALPHA);
+
+        sb.setShader(null);
+    }
+
+    public static boolean isKyogre() {
+        for (AbstractMonster mo : Wiz.getEnemies()) {
+            if (mo instanceof KyogreEnemy) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static float getTime() {
+        return PokemonRegions.time % 25f; //weird things happen as the timer gets higher for the rain
     }
 
     @Override
@@ -113,5 +177,23 @@ public class PokemonScene extends AbstractScene {
         sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE_MINUS_SRC_ALPHA);
         sb.setColor(Color.WHITE);
         this.renderAtlasRegionIf(sb, this.campfireKindling, true);
+    }
+
+    public static void initShader() {
+        if (shader == null) {
+            try {
+                shader = new ShaderProgram(Gdx.files.internal(makeVfxPath("rain/vertex.vs")),
+                                           Gdx.files.internal(makeVfxPath("rain/fragment.fs")));
+                if (!shader.isCompiled()) {
+                    System.err.println(shader.getLog());
+                }
+                if (!shader.getLog().isEmpty()) {
+                    System.out.println(shader.getLog());
+                }
+            } catch (GdxRuntimeException e) {
+                System.out.println("ERROR: Rain shader:");
+                e.printStackTrace();
+            }
+        }
     }
 }

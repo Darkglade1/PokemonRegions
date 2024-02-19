@@ -31,7 +31,7 @@ public class Alakazam extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK_DEBUFF;
         move2Intent = Intent.BUFF;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Alakazam.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Alakazam.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
@@ -44,12 +44,12 @@ public class Alakazam extends AbstractPokemonAlly
             case MOVE_1: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.POISON);
-                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.Alakazam.MOVE_1_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
+                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.act1.Alakazam.MOVE_1_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 break;
             }
             case MOVE_2: {
-                atb(new ScryAction(pokeregions.cards.pokemonAllyCards.Alakazam.MOVE_2_SCRY));
-                atb(new DrawCardAction(adp(), pokeregions.cards.pokemonAllyCards.Alakazam.MOVE_2_DRAW));
+                atb(new ScryAction(pokeregions.cards.pokemonAllyCards.act1.Alakazam.MOVE_2_SCRY));
+                atb(new DrawCardAction(adp(), pokeregions.cards.pokemonAllyCards.act1.Alakazam.MOVE_2_DRAW));
                 break;
             }
         }

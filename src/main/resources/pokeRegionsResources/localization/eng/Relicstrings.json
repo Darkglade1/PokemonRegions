@@ -19,5 +19,61 @@
     "DESCRIPTIONS": [
       "Your #yPokemon deal #b", "% more damage with their attacks."
     ]
+  },
+  "${ModID}:QuickClaw": {
+    "NAME": "Quick Claw",
+    "FLAVOR": "A light, sharp claw that improves the holder's swiftness.",
+    "DESCRIPTIONS": [
+      "The first time you gain #yBlock each combat, gain an additional #b", " #yBlock."
+    ]
+  },
+  "${ModID}:DeathWish": {
+    "NAME": "Death Wish",
+    "FLAVOR": "He wished for power, but not for the longevity to abuse it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b", " #yStrength and lose #b", " #yDexterity."
+    ]
+  },
+  "${ModID}:GlitteringWish": {
+    "NAME": "Glittering Wish",
+    "FLAVOR": "She wished for gold, but not for the strength to carry it.",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #b", " gold. At the start of combat, lose #b", " #yStrength."
+    ]
+  },
+  "${ModID}:CunningWish": {
+    "NAME": "Cunning Wish",
+    "FLAVOR": "He wished for knowledge, but not for the will to apply it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, draw #b", "  cards and lose [E] ."
+    ]
+  },
+  "${ModID}:EnhancedShovel": {
+    "NAME": "High Quality Shovel",
+    "FLAVOR": "You wonder who keeps leaving all that loot buried underground.",
+    "DESCRIPTIONS": [
+      "You can now #yDig for Relics at Rest Sites. The relic will always be Uncommon or Rare."
+    ]
+  },
+  "${ModID}:Emerald": {
+    "NAME": "Emerald of the End",
+    "FLAVOR": "Life is fleeting, ephemeral, and all too often cut short.",
+    "DESCRIPTIONS": [
+      "#yRayquaza will be #yenhanced when you encounter it."
+    ]
+  },
+  "${ModID}:Sapphire": {
+    "NAME": "Sapphire of the Drowned",
+    "FLAVOR": "Underneath the waves, you can still hear the screams of the drowned.",
+    "DESCRIPTIONS": [
+      "#yKyogre will be #yenhanced when you encounter it."
+    ]
+  },
+  "${ModID}:Ruby": {
+    "NAME": "Ruby of the Departed",
+    "FLAVOR": "Ghosts cling to the living so that they too will be drawn into the abyss.",
+    "DESCRIPTIONS": [
+      "#yGroudon will be #yenhanced when you encounter it."
+    ]
   }
 }

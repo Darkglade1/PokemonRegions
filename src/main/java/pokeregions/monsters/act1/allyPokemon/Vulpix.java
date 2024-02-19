@@ -31,8 +31,8 @@ public class Vulpix extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK_DEBUFF;
         move2Intent = Intent.ATTACK;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Vulpix.MOVE_1_DAMAGE);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Vulpix.MOVE_2_DAMAGE, pokeregions.cards.pokemonAllyCards.Vulpix.MOVE_2_HITS);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Vulpix.MOVE_1_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Vulpix.MOVE_2_DAMAGE, pokeregions.cards.pokemonAllyCards.act1.Vulpix.MOVE_2_HITS);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
         move2RequiresTarget = true;
@@ -45,7 +45,7 @@ public class Vulpix extends AbstractPokemonAlly
             case MOVE_1: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
-                applyToTarget(target, this, new Burn(target,  pokeregions.cards.pokemonAllyCards.Vulpix.MOVE_1_BURN));
+                applyToTarget(target, this, new Burn(target,  pokeregions.cards.pokemonAllyCards.act1.Vulpix.MOVE_1_BURN));
                 break;
             }
             case MOVE_2: {

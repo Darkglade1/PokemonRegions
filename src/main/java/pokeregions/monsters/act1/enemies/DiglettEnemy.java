@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Diglett;
+import pokeregions.cards.pokemonAllyCards.act1.Diglett;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.SandVeil;
 import pokeregions.util.Details;
@@ -54,7 +54,7 @@ public class DiglettEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Diglett/Diglett.scml"));
         this.type = EnemyType.NORMAL;
         this.attackFirst = attackFirst;
-        setHp(calcAscensionTankiness(30), calcAscensionTankiness(35));
+        setHp(calcAscensionTankiness(28), calcAscensionTankiness(33));
         addMove(DIG, Intent.DEFEND_BUFF);
         addMove(SLASH, Intent.ATTACK, calcAscensionDamage(5));
 

@@ -34,7 +34,7 @@ public class Arbok extends AbstractPokemonAlly
         move1Intent = Intent.DEBUFF;
         move2Intent = Intent.ATTACK_DEBUFF;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.Arbok.MOVE_2_DAMAGE);
+        addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Arbok.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
         move2RequiresTarget = true;
@@ -45,13 +45,13 @@ public class Arbok extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                applyToTarget(target, this, new ToxicPower(target,  pokeregions.cards.pokemonAllyCards.Arbok.MOVE_1_TOXIC));
+                applyToTarget(target, this, new ToxicPower(target,  pokeregions.cards.pokemonAllyCards.act1.Arbok.MOVE_1_TOXIC));
                 break;
             }
             case MOVE_2: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.POISON);
-                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.Arbok.MOVE_2_WEAK, false));
+                applyToTarget(target, this, new WeakPower(target, pokeregions.cards.pokemonAllyCards.act1.Arbok.MOVE_2_WEAK, false));
                 break;
             }
         }

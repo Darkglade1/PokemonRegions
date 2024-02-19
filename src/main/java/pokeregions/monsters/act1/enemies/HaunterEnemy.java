@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Haunter;
+import pokeregions.cards.pokemonAllyCards.act1.Haunter;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

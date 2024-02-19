@@ -2,7 +2,6 @@ package pokeregions.cards;
 
 import basemod.abstracts.CustomCard;
 import pokeregions.PokemonRegions;
-import pokeregions.util.CardArtRoller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
@@ -424,10 +423,6 @@ public abstract class AbstractEasyCard extends CustomCard {
     }
 
     public String cardArtCopy() {
-        return null;
-    }
-
-    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
         return null;
     }
 

@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Rhyhorn;
+import pokeregions.cards.pokemonAllyCards.act1.Rhyhorn;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.BetterPlatedArmor;
 import pokeregions.powers.RockHead;
@@ -34,8 +34,8 @@ public class RhyhornEnemy extends AbstractPokemonMonster
     private static final byte ENDURE = 2;
 
     public final int PLATED_ARMOR = 5;
-    public final int ATTACK_BLOCK = 7;
-    public final int DEFEND_BLOCK = 5;
+    public final int ATTACK_BLOCK = 6;
+    public final int DEFEND_BLOCK = 4;
 
     public RhyhornEnemy() {
         this(0.0f, 0.0f);
@@ -45,7 +45,7 @@ public class RhyhornEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 130.0f, 100.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Rhyhorn/Rhyhorn.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(52), calcAscensionTankiness(56));
+        setHp(calcAscensionTankiness(48), calcAscensionTankiness(52));
         addMove(HORN_ATTACK, Intent.ATTACK_DEFEND, calcAscensionDamage(5));
         addMove(DRILL_RUN, Intent.ATTACK, calcAscensionDamage(10));
         addMove(ENDURE, Intent.DEFEND_BUFF);

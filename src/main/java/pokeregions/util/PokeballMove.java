@@ -1,16 +1,11 @@
 package pokeregions.util;
 
 import basemod.ClickableUIElement;
-import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.relics.AbstractEasyRelic;
-import pokeregions.relics.PokeballBelt;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.SuicideAction;
-import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,7 +15,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
+import pokeregions.actions.PokeballMoveAction;
+import pokeregions.monsters.AbstractPokemonMonster;
+import pokeregions.relics.PokeballBelt;
 
 import static pokeregions.PokemonRegions.makeID;
 import static pokeregions.PokemonRegions.makeUIPath;
@@ -69,26 +66,12 @@ public class PokeballMove extends ClickableUIElement {
     }
 
     private void doMove() {
-        atb(new LoseEnergyAction(1));
-        AbstractRelic pokeBallBelt = adp().getRelic(PokeballBelt.ID);
-        if (pokeBallBelt != null) {
-            pokeBallBelt.counter--;
-            if (pokeBallBelt instanceof AbstractEasyRelic) {
-                ((AbstractEasyRelic) pokeBallBelt).fixDescription();
+        for (AbstractGameAction action : AbstractDungeon.actionManager.actions) {
+            if (action instanceof PokeballMoveAction) {
+                return;
             }
         }
-        int roll = AbstractDungeon.miscRng.random(1, 100);
-        int chance = calculateCaptureChance(owner);
-        if (roll <= chance || Settings.isDebug) {
-            owner.captured = true;
-            owner.currentBlock = 0;
-            atb(new SuicideAction(owner));
-            AbstractCard pokemonCard = owner.getAssociatedPokemonCard();
-            AbstractDungeon.getCurrRoom().rewards.add(new PokemonReward(pokemonCard.cardID));
-            AbstractDungeon.effectList.add(new BlockedWordEffect(owner, owner.hb.cX, owner.hb.cY, TEXT[5]));
-        } else {
-            AbstractDungeon.effectList.add(new BlockedWordEffect(owner, owner.hb.cX, owner.hb.cY, TEXT[6]));
-        }
+        atb(new PokeballMoveAction(owner, this));
     }
 
     public String getID(){
@@ -160,7 +143,7 @@ public class PokeballMove extends ClickableUIElement {
         }
     }
 
-    private int calculateCaptureChance(AbstractMonster mo) {
+    public int calculateCaptureChance(AbstractMonster mo) {
         if (mo.currentHealth <= hpThreshold) {
             return 100;
         }

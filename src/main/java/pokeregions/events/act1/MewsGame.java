@@ -1,7 +1,7 @@
 package pokeregions.events.act1;
 
 import pokeregions.cards.mewsGameCards.*;
-import pokeregions.cards.pokemonAllyCards.Mew;
+import pokeregions.cards.pokemonAllyCards.act1.Mew;
 import pokeregions.util.PokemonReward;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

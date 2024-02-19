@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Dugtrio;
+import pokeregions.cards.pokemonAllyCards.act1.Dugtrio;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.SandVeil;
 import pokeregions.util.Details;

@@ -65,7 +65,7 @@ public class Wiz {
 
     public static ArrayList<AbstractMonster> getEnemies() {
         ArrayList<AbstractMonster> monsters = new ArrayList<>();
-        if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().monsters == null) {
+        if (AbstractDungeon.currMapNode == null || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().monsters == null) {
             return monsters;
         }
         monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);

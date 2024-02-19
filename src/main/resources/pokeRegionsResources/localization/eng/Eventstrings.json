@@ -1,17 +1,57 @@
 {
+  "${ModID}:ProfessorOptions": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+    ],
+    "OPTIONS": [
+      "[Continue] ",
+      "Receive Pokeballs.",
+      "Choose a Starter Pokemon.",
+      "[Leave]",
+      "[Receive supplies] ",
+      "Gain ",
+      " Max HP.",
+      "[Receive stipend] ",
+      "Gain ",
+      " Gold."
+    ]
+  },
   "${ModID}:ProfessorOak": {
     "NAME": "Professor Oak",
     "DESCRIPTIONS": [
       "Oh, a new trainer about to start their journey?",
       "You may be starting later than others, but better late than never! Here's some Pokeballs to get you started.",
       "Now choose a companion to begin your journey with.",
-      "I hope you make many fond memories together."
+      "I hope you make many fond memories together.",
+      "Oh, it's you! You've been making a name for yourself out there.",
+      "Let's see . . . you've caught #b",
+      " Pokemon. ",
+      "That's amazing!",
+      "You're doing good work.",
+      "I hope you'll put in a little more effort.",
+      "I have some extra Pokeballs lying around - take them.",
+      "Would you like some supplies or a stipend?"
     ],
     "OPTIONS": [
-      "[Continue] ",
-      "Receive Pokeballs ",
-      "Choose a Starter Pokemon",
-      "[Leave]"
+    ]
+  },
+  "${ModID}:ProfessorBirch": {
+    "NAME": "Professor Birch",
+    "DESCRIPTIONS": [
+      "Oh, a new arrival?",
+      "Here, let me scrounge up some Pokeballs for you.",
+      "It's gotten more dangerous lately; I'd feel better if you took one of these #gevolved starters with you.",
+      "Good luck out there.",
+      "Oh, it's you! I've heard about you from my colleagues.",
+      "Let's see . . . you've caught #b",
+      " Pokemon. ",
+      "That's impressive!",
+      "You're making decent progress.",
+      "That's a little on the low end.",
+      "In any case, here are some spare Pokeballs for you.",
+      "I also have some extra supplies. Unless you'd like a stipend instead?"
+    ],
+    "OPTIONS": [
     ]
   },
   "${ModID}:CeladonGym": {
@@ -233,6 +273,201 @@
       "[Befriend] ",
       "Obtain ",
       ".",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:PokemonTrainerSchool": {
+    "NAME": "Pokemon Trainers' School",
+    "DESCRIPTIONS": [
+      "A nearby poster catches your attention - it states that a #yrenowned school was holding an event and inviting all to attend. Curious, you decide to check it out. NL Inside the school, you find yourself being quickly greeted by a teacher. \"Hello! Are you here to attend the lessons or to have a mock battle?\" NL You realize that you forgot to check what the #yevent was actually about as you @scramble@ for an answer.",
+      "You answer that you wish to attend a lesson. The teacher leads you to a classroom filled with people of all ages. Inside, a woman with brown hair is explaining something called the \"type chart\". NL \"So just remember that #yRock beats #yFire, and that #yGround also beats #yFire, but not in quite the same way #yRock does - \" NL You feel that you have learned . . . #ysomething, from the lesson. Probably.",
+      "You answer that you wish to participate in a mock battle. The teacher leads you to a battle ground filled with people of all ages and their #yPokemon. Soon, you get partnered with someone and the two of you begin battling. After some back and forth, your #yPokemon emerges victorious. NL \"Congratulations on winning!\" The teacher hands you a small claw. \"Here, take this as a prize.\" NL You accept the claw. It makes you feel strangely lighter."
+    ],
+    "OPTIONS": [
+      "[Attend lesson] ",
+      "[Mock battle] ",
+      "Choose 1 of ",
+      " cards to add to your deck.",
+      "A non-Starter Pokemon loses ",
+      " Stamina.",
+      "Obtain a special Relic.",
+      "[Leave]",
+      "[Locked] Requires: non-Starter Pokemon with enough Stamina",
+      "Choose a card to add to your deck.",
+      "Choose a Pokemon to lose Stamina."
+    ]
+  },
+  "${ModID}:WishUponAStar": {
+    "NAME": "Wish Upon a Star",
+    "DESCRIPTIONS": [
+      "You see a #yshining #ycomet fall down from the sky, landing nearby. As you approach its landing spot, you catch sight of a small, white #yPokemon floating in the air. It glances around then floats up towards you, tilting its head inquisitively. It seems quite interested in the #yfood in your bag. NL \"Jirachi, the #yWish #yPokemon. Reputed to have the power to grant wishes.\" Your Pokedex piped up with that helpful information. Seeing the empty wish tags on its body, you wonder . . .",
+      "You consider your wish carefully . . .",
+      "You make a wish. The wish tag #ylights up, strange letters inscribing themselves onto it. The #ylight grows stronger and stronger, before finally expanding outwards in a wave that enveloped you - NL You blink. You could tell that your wish had been #ygranted. But at what #rcost . . . ?",
+      "You open your bag, offering up the food inside. #yJirachi happily munches down, floating upward with a contented look. You can feel your stomach #pgrowl at the sight of giving away food, but you manage to perservere. NL After finishing its meal, #yJirachi floats itself down to your shoulder, giving you an encouraging look. Looks like you had a new #gcompanion for the road ahead."
+    ],
+    "OPTIONS": [
+      "[Make a wish] ",
+      "[Offer it food] ",
+      "Obtain a Wish.",
+      "Bear the consequences.",
+      "Lose ",
+      " Max HP.",
+      "Obtain ",
+      ".",
+      "[Leave]",
+      "[Wish for Power] ",
+      "[Wish for Wealth] ",
+      "[Wish for Knowledge] "
+    ]
+  },
+  "${ModID}:BumpInTheRoad": {
+    "NAME": "Bump in the Road",
+    "DESCRIPTIONS": [
+      "As you're walking along a narrow path, you suddenly #rbump into something and stumble backwards. You frown, blinking, as you stare at the #phazy distortion in front of you. Was something . . . there? How irritating.",
+      "With a forceful swing, you send the invisible presence @flying@ into the distance - at least, you #ythink you sent them flying. It was hard to tell, what with them being invisible and all. NL At the very least, the path was unblocked now.",
+      "Taking some food out of your bag, you toss it off into the distance. You some sense motion as the invisible presence moves off to the side, following the trail of food. NL Although it was #punfortunate to lose some #ysupplies, at least the path was unblocked now.",
+      "Alas, getting around an invisible bump in the road was beyond your capabilities, so you'll just have to take the long way around."
+    ],
+    "OPTIONS": [
+      "[Knock it aside forcefully] ",
+      "[Lure it away skillfully] ",
+      "[Take the long way around] ",
+      "Lose ",
+      ".",
+      "Upgrade a card.",
+      "Remove a card.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:FeatherCarnival": {
+    "NAME": "Feather Carnival",
+    "DESCRIPTIONS": [
+      "You find yourself in the midst of a #yfair, laughter and chirping filling the air as dozens of Flying-type #yPokemon fill the #bskies overhead. NL A nearby vendor beckons to you. \"Ho there, stranger! Wanna give my game a try? First attempt's free!\" NL You eye the vendor's stall, seeing that it was some kind of #yshooting game. Perhaps it wouldn't hurt to give it a try.",
+      "You pick up the plastic gun, eyeing the targets at the far end. With careful precision, you #rnail the plastic cups with pinpoint shots. NL \"Woah, looks like we got a real sharpshooter over here!\" the vendor exclaimed. NL You nod in satisfaction. You feel that this game has #yimproved your skills."
+    ],
+    "OPTIONS": [
+      "[Play once] ",
+      "[Play a few times] ",
+      "[Play multiple times] ",
+      "Upgrade a random card.",
+      "Lose ",
+      " Gold.",
+      "Upgrade ",
+      " random cards.",
+      "[Locked] Requires: Gold",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:LavaridgeGym": {
+    "NAME": "Lavaridge Gym",
+    "DESCRIPTIONS": [
+      "As you walk by a wide, rectangular building, you notice a #rred-haired woman filling in numerous holes dotted all around the building. NL \"Hey! Wanna help me out here? The last challenger decided to be a #pnuisance and tear up the ground with excessive use of Dig!\" NL You pause, considering the woman's request. You didn't know what you would #ggain from helping her, but perhaps not every choice needed to have an obvious gain involved.",
+      "You tell the woman that you would help her. NL \"Great! Grab a shovel and start shoveling.\" NL After a couple hours of #pback-breaking work under the #rsweltering sun, the two of you finally finish filling in every last hole. The woman smiles, patting you on the back as she hands you a water bottle. \"Thanks for the help! You can keep the shovel - looks like you got pretty good at swinging it around!\" NL You stare at the shovel in your hands - it looked to be of #yhigh #yquality. Maybe you could dig up something useful with it later. NL As you leave, you notice that you feel a bit #rclumsy from exhaustion.",
+      "You tell the woman that unfortunately, you didn't have time to help her. NL The woman shrugged. \"Ah, well, it was worth a shot.\" NL You continue on your way, paying her no further mind.",
+      "As you walk by a wide, rectangular building, you notice a #rred-haired woman filling in numerous holes dotted all around the building. NL \"Hey! Wanna help me out here? The last challenger decided to be a #pnuisance and tear up the ground with excessive use of Dig!\" The woman paused, scrutinizing you. \"You even have your own shovel already, don't you? Come on, I'll make it worth your while!\" NL You stop to consider the woman's request.",
+      "You tell the woman that you would help her. NL \"Great! Get over here and start shoveling.\" NL After a couple hours of work, the two of you finally finish filling in every last hole. The woman smiles, patting you on the back as she hands you a water bottle. \"Thanks for the help! Here's a little #ytrinket as thanks.\" NL You take the offered #yrelic. Perhaps it would come in handy later."
+    ],
+    "OPTIONS": [
+      "[Help] ",
+      "[Decline] ",
+      "Obtain a special Relic.",
+      "Become Cursed - ",
+      ".",
+      "[Leave]",
+      "Obtain a Relic."
+    ]
+  },
+  "${ModID}:WeatherInstitute": {
+    "NAME": "Weather Institute",
+    "DESCRIPTIONS": [
+      "As you pass by a strange-looking building with strangely-shaped devices mounted on its roof, you notice the shuffle of suspicious figures loitering around it. Curious, you sneak closer and hear the shouts and scuffle of an #raltercation inside. NL \"This is #bTeam #bAqua! Hand over all your data on weather and ancient #yPokemon, and no one gets hurt!\" NL Hearing the frightened mutters of the researchers inside, you consider your options.",
+      "You wait patiently for the #pcriminals to let their guards down. Although you notice that the researchers are having an unpleasant time while you wait, you know better than to let your #yemotions cloud your judgment. NL You wait for the grunts to distract themselves with the research, then you @strike@ like a flash of #ylightning! NL The #pcriminals fall like dominoes, and the scientists offer you their thanks. You felt like you learned something from your patient #yambush.",
+      "You rush in, unwilling to let the #pcriminals have their way for even a moment longer. The grunts and their #yPokemon batter you with their fists and spouts of water, but you endure and take them all down. NL The scientists are immensely grateful for your quick response and offer you an ancient #yrelic as thanks."
+    ],
+    "OPTIONS": [
+      "[Wait for an opening] ",
+      "[Rush in recklessly] ",
+      "Give a card in your deck +",
+      " Block and Retain.",
+      "Lose ",
+      " HP.",
+      "Choose 1 of 3 Relics to obtain.",
+      "[Leave]",
+      "Obtain ",
+      "."
+    ]
+  },
+  "${ModID}:Mossdeep": {
+    "NAME": "Mossdeep Space Center",
+    "DESCRIPTIONS": [
+      "The air is filled with the smell of ozone, gas, and . . . the sound of #rpanicked yelling. Stopping a nearby passerby, you ask them what's going on. NL \"Team Magma sent a letter saying they were gonna come steal our #yrocket fuel! We don't know what to do!\" NL The person resumes panicking. You wonder if there wasn't some sort of #yorganization they were supposed to contact at times like this.",
+      "With all the #pcommotion going on, it was trivially easy to take some #yrocket fuel for yourself. As repayment, you decide to leave a tip for the #ypolice so that they could come and do their jobs.",
+      "You find the person in charge and inform them that you were willing to help stand guard. The official thanks you for your help, and you find a nice spot to stand around until the #rattack. NL After several hours, #rTeam #rMagma finally showed up. Luckily, someone had the forethought to inform the police ahead of time, so driving the #pcriminals back wasn't particularly difficult. You felt like you had learned . . . something, from this #yincident."
+    ],
+    "OPTIONS": [
+      "[Take some fuel] ",
+      "[Offer to stand guard] ",
+      "Give a card in your deck +",
+      " damage and Ethereal.",
+      "Lose ",
+      " max HP.",
+      "Obtain a Rare card.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:Altomare": {
+    "NAME": "Altomare",
+    "DESCRIPTIONS": [
+      "\"Excuse me, would you be willing to be a modal for my painting?\" NL You pause, startled by the young girl's sudden request. However, you detect only an earnest #ydesire in her eyes, so you decide to humor her. NL The girl smiled. \"Thank you. Please, have a seat right there.\" She returned to her canvas, ~sweeping~ across it with long, flowing strokes while you sat there by the riverbank, listening to the ebb and flow of the #bwaves. You decide that this wasn't such a bad way to spend an afternoon. NL \"I have a couple of shy #yfriends.\" The girl speaks up without looking away from her painting. \"I think it would be good for them to expand their horizons and travel the world. Would you like to meet them?\"",
+      "You agree to meet them. The girl seems #ypleased as she packs up her canvas and tools. \"Follow me. My friends are waiting in a secret location.\" NL As you follow her to this secret location, you suddenly hear a loud commotion nearby. The girl's eyes widen in shock. \"Someone's after them! Quick, we need to help!\"",
+      "You signed up for a meet-and-greet, not for an altercation with criminals! With a heavy heart, you convey your intentions to the girl. NL \"It's okay; I was asking too much of you.\" Her face stiffened as a loud crash rang out nearby. \"I need to go. I hope they're alright.\" NL The girl rushes off, and you watch her go. You hope things turn out #yfavorably for her and her friends.",
+      "You fend off the criminal attackers and send them fleeing. The girl rushes towards her #yPokemon friends and hugs them tightly. \"Oh, thank goodness you're alright!\" NL The two #yPokemon chirp and nudge the girl #yaffectionately in response. She turns to face you with a smile. \"Well, after your brave display of #yheroism, I feel confident in trusting you with my friends' safety.\" She nods towards them. \"Who would you like to accompany you? I'm sure they'll be helpful on your journey!\"",
+      "You make your selection. #yLatias hovers forward and gives you a soft #ysmile. You sense that she's eager to travel the world and see what it has to offer.",
+      "You make your selection. #yLatios hovers forward and gives you a #yrespectful nod. You sense that he's eager to improve himself by experiencing what the world has to offer.",
+      "You decline the offer. You didn't feel like staying in this city for much longer. NL \"Oh, that's too bad.\" The girl's brush stops. She picks up the #ypainting and shows it to you. \"Well? How is it?\" NL You have to admit that it was a pretty #yfaithful rendition of yourself. NL \"Here, you can keep it as thanks for indulging me.\" NL You accept the #ypainting, waved goodbye to the girl, and proceeded onward with your journey."
+    ],
+    "OPTIONS": [
+      "[Agree to meet them] Encounter some trouble along the way.",
+      "[Decline the offer] ",
+      "Duplicate a card.",
+      "[Run in and help] ",
+      "Fight off the attackers.",
+      "Save the girl's friends.",
+      "Obtain ",
+      ".",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:Pokemart": {
+    "NAME": "Poke Mart",
+    "DESCRIPTIONS": [
+      "You look around the store, seeing a wide variety of items on display. A banner pinned to the wall #yproudly proclaimed \"All your item needs fulfilled!\" - you suspect that with such a large stock, such a claim might not be an exaggeration after all. NL You pause between two aisles. One offered potions for sale. The other offered extra #yPokeballs. Which one should you buy with your limited #yfunds?",
+      "Potions were always an #yinvaluable asset in battle. Even if people sometimes gave you strange looks for using them on yourself instead of on your #yPokemon.",
+      "Extra #yPokeballs were always useful. The right #yPokemon could turn the tide of any battle around.",
+      "You decide to save your #ymoney. Maybe there would be better things to buy later."
+    ],
+    "OPTIONS": [
+      "[Potions] ",
+      "[Pokeballs] ",
+      "Lose ",
+      " Gold.",
+      "Obtain ",
+      " Potions.",
+      " Pokeballs.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:AncientRuins": {
+    "NAME": "Ancient Ruins",
+    "DESCRIPTIONS": [
+      "As you delve into the depths of this ancient ruin, you feel your #ytreasure senses tingle. Sure enough, on the lowest level of this ruin, you spy a room full of @shiny@ #yjewels and ancient #yrelics! NL As your hand reaches out to claim your prize, a sudden premonition halts your hand. Was taking treasure from this ancient place truly a good idea? Surely these trinkets weren't #pcursed or anything, right?",
+      "You give in to your desires, swiping the shiny #yjewel on the center pedestal as well as one of the nearby #yrelics. Alas, you couldn't carry all this loot out with you, but at least that meant there would be plenty of leftover treasure for the next dungeon delver that came along. NL As you head outside, you feel a much #rstronger premonition. Someone was . . . #pdispleased by your actions. NL Hopefully, you would never meet this someone.",
+      "You withdraw your hand. Something told you that stealing long-forgotten #ytreasure might be a bad idea."
+    ],
+    "OPTIONS": [
+      "[Take some treasure] ",
+      "Obtain a Relic.",
+      "The Act boss becomes enhanced.",
       "[Leave]"
     ]
   }

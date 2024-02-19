@@ -12,5 +12,12 @@ public class EncounterIDs {
     public static final String BUG_SWARM = PokemonRegions.makeID("Bug_Swarm");
     public static final String OMASTAR_2 = PokemonRegions.makeID("2_Omastars");
     public static final String TEAM_ROCKET = PokemonRegions.makeID("Team_Rocket");
+    public static final String ARONS_3 = PokemonRegions.makeID("3_Arons");
+    public static final String AGGRON_AND_ARONS = PokemonRegions.makeID("Aggron_and_Arons");
+    public static final String TRAPINCHES_3 = PokemonRegions.makeID("3_Trapinches");
+    public static final String FLYGON_AND_TRAPINCHES = PokemonRegions.makeID("Flygon_and_Trapinches");
+    public static final String LEGENDARY_GIANTS = PokemonRegions.makeID("Legendary_Giants");
+    public static final String ANNIE_AND_OAKLEY = PokemonRegions.makeID("Annie_and_Oakley");
+    public static final String SOLROCK_AND_LUNATONE = PokemonRegions.makeID("Solrock_and_Lunatone");
 
 }

@@ -30,7 +30,7 @@ public class Rhyhorn extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK_DEFEND;
         move2Intent = Intent.DEFEND;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Rhyhorn.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Rhyhorn.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
@@ -43,11 +43,11 @@ public class Rhyhorn extends AbstractPokemonAlly
             case MOVE_1: {
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-                block(adp(), pokeregions.cards.pokemonAllyCards.Rhyhorn.MOVE_1_BLOCK);
+                block(adp(), pokeregions.cards.pokemonAllyCards.act1.Rhyhorn.MOVE_1_BLOCK);
                 break;
             }
             case MOVE_2: {
-                block(adp(), pokeregions.cards.pokemonAllyCards.Rhyhorn.MOVE_2_BLOCK);
+                block(adp(), pokeregions.cards.pokemonAllyCards.act1.Rhyhorn.MOVE_2_BLOCK);
                 break;
             }
         }

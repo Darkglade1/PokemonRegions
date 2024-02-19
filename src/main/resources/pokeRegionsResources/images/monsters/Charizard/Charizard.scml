@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="Idle">
+        <file id="0" name="Idle/0.png" width="233" height="158" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Idle/1.png" width="250" height="158" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Idle/2.png" width="246" height="158" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Idle/3.png" width="244" height="158" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="Idle/4.png" width="232" height="158" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="Idle/5.png" width="224" height="158" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="Idle/6.png" width="240" height="158" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <folder id="1" name="Ranged">
+        <file id="0" name="Ranged/0.png" width="216" height="180" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Ranged/1.png" width="201" height="193" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Ranged/2.png" width="198" height="190" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Ranged/3.png" width="180" height="198" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="Ranged/4.png" width="191" height="182" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="Ranged/5.png" width="215" height="198" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="Ranged/6.png" width="244" height="198" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="Ranged/7.png" width="275" height="206" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <folder id="2" name="Melee">
+        <file id="0" name="Melee/0.png" width="212" height="198" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Melee/1.png" width="220" height="190" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Melee/2.png" width="200" height="186" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Melee/3.png" width="197" height="184" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="Melee/4.png" width="223" height="184" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="Melee/5.png" width="247" height="181" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="Melee/6.png" width="274" height="178" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="Charizard">
+        <animation id="0" name="Idle" length="1050" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="149">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="299">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="450">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="4" time="599">
+                    <object_ref id="0" timeline="4" key="0" z_index="0"/>
+                </key>
+                <key id="5" time="749">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                </key>
+                <key id="6" time="899">
+                    <object_ref id="0" timeline="6" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="0">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-100" y="158" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="1">
+                <key id="0" time="149" spin="0">
+                    <object folder="0" file="1" x="-112" y="158" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="2">
+                <key id="0" time="299" spin="0">
+                    <object folder="0" file="2" x="-108" y="158" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="3">
+                <key id="0" time="450" spin="0">
+                    <object folder="0" file="3" x="-111" y="158" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="4">
+                <key id="0" time="599" spin="0">
+                    <object folder="0" file="4" x="-99" y="158" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="5">
+                <key id="0" time="749" spin="0">
+                    <object folder="0" file="5" x="-95" y="158" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="6">
+                <key id="0" time="899" spin="0">
+                    <object folder="0" file="6" x="-104" y="158" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="Ranged" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="151">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="297">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="449">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="4" time="598">
+                    <object_ref id="0" timeline="4" key="0" z_index="0"/>
+                </key>
+                <key id="5" time="747">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="0_000">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-74" y="176"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="1_000">
+                <key id="0" time="151" spin="0">
+                    <object folder="1" file="1" x="-72" y="176"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="2_000">
+                <key id="0" time="297" spin="0">
+                    <object folder="1" file="2" x="-72" y="176"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="5_000">
+                <key id="0" time="449" spin="0">
+                    <object folder="1" file="5" x="-75" y="176"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="6_000">
+                <key id="0" time="598" spin="0">
+                    <object folder="1" file="6" x="-111" y="176"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="7">
+                <key id="0" time="747" spin="0">
+                    <object folder="1" file="7" x="-134" y="176"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="Melee" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="150">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="299">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="450">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="4" time="599">
+                    <object_ref id="0" timeline="4" key="0" z_index="0"/>
+                </key>
+                <key id="5" time="749">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                </key>
+                <key id="6" time="901">
+                    <object_ref id="0" timeline="6" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="0_001">
+                <key id="0" spin="0">
+                    <object folder="2" file="0" x="-72" y="196"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="1_001">
+                <key id="0" time="150" spin="0">
+                    <object folder="2" file="1" x="-80" y="188"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="2_001">
+                <key id="0" time="299" spin="0">
+                    <object folder="2" file="2" x="-64" y="184"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="3_000">
+                <key id="0" time="450" spin="0">
+                    <object folder="2" file="3" x="-62" y="182"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="4_000">
+                <key id="0" time="599" spin="0">
+                    <object folder="2" file="4" x="-82" y="182"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="5_001">
+                <key id="0" time="749" spin="0">
+                    <object folder="2" file="5" x="-110" y="179"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="6_001">
+                <key id="0" time="901" spin="0">
+                    <object folder="2" file="6" x="-131" y="176"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

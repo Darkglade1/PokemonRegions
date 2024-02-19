@@ -3,6 +3,8 @@ package pokeregions.dungeons;
 import actlikeit.dungeons.CustomDungeon;
 import pokeregions.PokemonRegions;
 import pokeregions.monsters.act1.enemies.MewtwoEnemy;
+import pokeregions.monsters.act3.enemies.GroudonEnemy;
+import pokeregions.monsters.act3.enemies.KyogreEnemy;
 import pokeregions.scenes.PokemonScene;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,9 +47,9 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
     // Play different BGM depending on the boss
     public void setMusic() {
         if (bossKey != null) {
-            if (bossKey.equals(EncounterIDs.LEGENDARY_BIRDS)) {
+            if (bossKey.equals(EncounterIDs.LEGENDARY_BIRDS) || bossKey.equals(KyogreEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OceanicMuseum.ogg"));
-            } else if (bossKey.equals(MewtwoEnemy.ID)) {
+            } else if (bossKey.equals(MewtwoEnemy.ID) || bossKey.equals(GroudonEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OldaleTown.ogg"));
             } else {
                 this.setMainMusic(PokemonRegions.makeMusicPath("Littleroot.ogg"));

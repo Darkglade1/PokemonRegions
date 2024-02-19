@@ -7,6 +7,22 @@
       "Begin a new journey."
     ]
   },
+  "${ModID}:Johto": {
+    "TEXT": [
+      "Johto",
+      "Act 2",
+      "This land was strange yet comforting in its own way. It was a welcome change of pace from the #pstagnant air of the #ySpire.",
+      "Continue your journey."
+    ]
+  },
+  "${ModID}:Hoenn": {
+    "TEXT": [
+      "Hoenn",
+      "Act 3",
+      "Although your travels grew more #rdangerous, you felt reassured by the presence of the #gcompanions by your side..",
+      "Continue your journey."
+    ]
+  },
   "${ModID}:ModMenu": {
     "TEXT": [
       "Pokemon Regions",
@@ -135,6 +151,27 @@
   "${ModID}:MewTransformAction": {
     "TEXT": [
       "Choose a Pokemon to Transform into."
+    ]
+  },
+  "${ModID}:WaterLoggedMod": {
+    "TEXT": [
+      "pokeregions:Waterlogged. NL "
+    ]
+  },
+  "${ModID}:DampMod": {
+    "TEXT": [
+      "pokeregions:Damp. NL "
+    ]
+  },
+  "${ModID}:ScorchedMod": {
+    "TEXT": [
+      "pokeregions:Scorched. NL "
+    ]
+  },
+  "${ModID}:EnhancedDigOption": {
+    "TEXT": [
+      "Enhanced Dig",
+      "Dig up a Relic. It will be Uncommon or Rare.",
     ]
   }
 }

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Weedle;
+import pokeregions.cards.pokemonAllyCards.act1.Weedle;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 

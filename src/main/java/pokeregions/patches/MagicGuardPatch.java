@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
-import pokeregions.monsters.act1.enemies.AlakazamEnemy;
+import pokeregions.powers.MagicGuard;
 
 public class MagicGuardPatch {
     @SpirePatch(clz = AbstractPlayer.class, method = "useCard")
@@ -53,8 +53,8 @@ public class MagicGuardPatch {
     public static boolean NegateCardPlay() {
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().monsters != null) {
             for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (monster.hasPower(AlakazamEnemy.POWER_ID)) {
-                    AbstractPower power = monster.getPower(AlakazamEnemy.POWER_ID);
+                if (monster.hasPower(MagicGuard.POWER_ID)) {
+                    AbstractPower power = monster.getPower(MagicGuard.POWER_ID);
                     return power.amount >= 1;
                 }
             }

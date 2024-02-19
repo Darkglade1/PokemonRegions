@@ -4,7 +4,7 @@ import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Arbok;
+import pokeregions.cards.pokemonAllyCards.act1.Arbok;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 import com.brashmonkey.spriter.Player;

@@ -1,7 +1,7 @@
 package pokeregions.actions;
 
 import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.cards.pokemonAllyCards.Mew;
+import pokeregions.cards.pokemonAllyCards.act1.Mew;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.OnPokemonSwitchRelic;

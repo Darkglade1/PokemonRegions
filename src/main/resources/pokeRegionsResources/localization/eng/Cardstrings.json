@@ -11,6 +11,19 @@
       " damage to ALL enemies."
     ]
   },
+  "${ModID}:Charizard": {
+    "NAME": "Charizard",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Metal[] [#FFA500]Claw[]",
+      "[#FFA500]Flamethrower[]",
+      "Deal ",
+      " damage.",
+      "Deal ",
+      " damage and apply ",
+      " pokeregions:Burn to ALL enemies."
+    ]
+  },
   "${ModID}:Bulbasaur": {
     "NAME": "Bulbasaur",
     "DESCRIPTION": "",
@@ -24,6 +37,19 @@
       " Weak."
     ]
   },
+  "${ModID}:Venusaur": {
+    "NAME": "Venusaur",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Take[] [#FFA500]Down[]",
+      "[#FFA500]Poison[] [#FFA500]Powder[]",
+      "Deal ",
+      " damage.",
+      "Apply ",
+      " pokeregions:Toxic and ",
+      " Weak and Vulnerable."
+    ]
+  },
   "${ModID}:Squirtle": {
     "NAME": "Squirtle",
     "DESCRIPTION": "",
@@ -34,6 +60,19 @@
       " damage.",
       "You gain ",
       " Block."
+    ]
+  },
+  "${ModID}:Blastoise": {
+    "NAME": "Blastoise",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Aqua[] [#FFA500]Jet[]",
+      "[#FFA500]Defense[] [#FFA500]Curl[]",
+      "Deal ",
+      " damage.",
+      "You gain ",
+      " Block and ",
+      " *Metallicize."
     ]
   },
   "${ModID}:Diglett": {
@@ -169,7 +208,7 @@
       "[#FFA500]Bulk[] [#FFA500]Up[]",
       "[#FFA500]Dynamic[] [#FFA500]Punch[]",
       "You gain ",
-      " *Temporary Strength next turn.",
+      " *Temporary Strength.",
       "Deal ",
       " damage."
     ]
@@ -369,6 +408,283 @@
       "Deal ",
       " damage. Apply ",
       " Weak and Vulnerable."
+    ]
+  },
+  "${ModID}:Kyogre": {
+    "NAME": "Kyogre",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Life[] [#FFA500]Dew[]",
+      "[#FFA500]Drag[] [#FFA500]Under[]",
+      "You heal ",
+      " HP.",
+      "Apply ",
+      " pokeregions:Drowning."
+    ]
+  },
+  "${ModID}:Deoxys": {
+    "NAME": "Deoxys",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Psych[] [#FFA500]Up[]",
+      "[#FFA500]Calm[] [#FFA500]Mind[]",
+      "At the start of your next turn, enter Wrath and draw ",
+      " cards.",
+      "You gain ",
+      " Block and enter Calm."
+    ]
+  },
+  "${ModID}:Groudon": {
+    "NAME": "Groudon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Scorching[] [#FFA500]Sands[]",
+      "[#FFA500]Precipice[] [#FFA500]Blades[]",
+      "Exhaust up to ",
+      " cards in your draw pile. Apply pokeregions:Burn equal to their combined costs.",
+      "Deal ",
+      " damage ",
+      " times."
+    ]
+  },
+  "${ModID}:Salamence": {
+    "NAME": "Salamence",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Dragon[] [#FFA500]Rush[]",
+      "[#FFA500]Hone[] [#FFA500]Claws[]",
+      "Deal ",
+      " damage. If the enemy is Vulnerable, deals double damage.",
+      "You gain ",
+      " Strength and ",
+      " Vigor."
+    ]
+  },
+  "${ModID}:Slaking": {
+    "NAME": "Slaking",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Slack[] [#FFA500]Off[]",
+      "[#FFA500]Giga[] [#FFA500]Impact[]",
+      "Restores ",
+      " *Stamina.",
+      "Deal ",
+      " damage."
+    ]
+  },
+  "${ModID}:Breloom": {
+    "NAME": "Breloom",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Swords[] [#FFA500]Dance[]",
+      "[#FFA500]Bullet[] [#FFA500]Seed[]",
+      "You and your *Pokemon deal ",
+      "% more damage this combat.",
+      "Deal ",
+      " damage ",
+      " times."
+    ]
+  },
+  "${ModID}:Aron": {
+    "NAME": "Aron",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Clean[] [#FFA500]Steel[]",
+      "[#FFA500]Metal[] [#FFA500]Burst[]",
+      "You gain ",
+      " Artifact.",
+      "You gain ",
+      " Block and ",
+      " Thorns."
+    ]
+  },
+  "${ModID}:Aggron": {
+    "NAME": "Aggron",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Body[] [#FFA500]Slam[]",
+      "[#FFA500]Metal[] [#FFA500]Burst[]",
+      "Deal damage equal to your Block.",
+      "You gain ",
+      " Block and ",
+      " Thorns."
+    ]
+  },
+  "${ModID}:Tropius": {
+    "NAME": "Tropius",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Synthesis[]",
+      "[#FFA500]Solar[] [#FFA500]Beam[]",
+      "You gain ",
+      " [E] next turn.",
+      "Deal ",
+      " damage. Apply ",
+      " Weak."
+    ]
+  },
+  "${ModID}:Trapinch": {
+    "NAME": "Trapinch",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Mud[] [#FFA500]Sport[]",
+      "[#FFA500]Crunch[]",
+      "Draw ",
+      " cards. Retain your hand next turn.",
+      "Deal ",
+      " damage. Apply ",
+      " Vulnerable."
+    ]
+  },
+  "${ModID}:Flygon": {
+    "NAME": "Flygon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Earth[] [#FFA500]Power[]",
+      "[#FFA500]Fissure[]",
+      "Deal ",
+      " damage. Apply pokeregions:Slow for ",
+      " turns.",
+      "If the enemy’s current HP is less than your current HP, set their HP to 0."
+    ]
+  },
+  "${ModID}:Rayquaza": {
+    "NAME": "Rayquaza",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Extreme[] [#FFA500]Speed[]",
+      "[#FFA500]Fly[]",
+      "Deal ",
+      " damage. Apply pokeregions:Slow for ",
+      " turns.",
+      "Draw ",
+      " cards. You gain Dexterity equal to their combined costs."
+    ]
+  },
+  "${ModID}:Gardevoir": {
+    "NAME": "Gardevoir",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Light[] [#FFA500]Screen[]",
+      "[#FFA500]Moonblast[]",
+      "You receive 33% less damage from attacks for ",
+      " turns.",
+      "Deal ",
+      " damage. Enemy loses ",
+      " Strength this turn."
+    ]
+  },
+  "${ModID}:Jirachi": {
+    "NAME": "Jirachi",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Doom[] [#FFA500]Desire[]",
+      "[#FFA500]Wish[]",
+      "At the end of ",
+      " turns, deal ",
+      " damage to ALL enemies.",
+      "Trigger the effect of *Wish."
+    ]
+  },
+  "${ModID}:Registeel": {
+    "NAME": "Registeel",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Protect[]",
+      "[#FFA500]Metal[] [#FFA500]Coating[]",
+      "You gain ",
+      " Block.",
+      "You gain ",
+      " *Plated *Armor."
+    ]
+  },
+  "${ModID}:Regice": {
+    "NAME": "Regice",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Protect[]",
+      "[#FFA500]Icy[] [#FFA500]Wind[]",
+      "You gain ",
+      " Block.",
+      "Apply ",
+      " Weak and Vulnerable."
+    ]
+  },
+  "${ModID}:Regirock": {
+    "NAME": "Regirock",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Protect[]",
+      "[#FFA500]Rock[] [#FFA500]Slide[]",
+      "You gain ",
+      " Block.",
+      "Deal ",
+      " damage to ALL enemies ",
+      " times."
+    ]
+  },
+  "${ModID}:Latias": {
+    "NAME": "Latias",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Safeguard[]",
+      "[#FFA500]Mist[] [#FFA500]Ball[]",
+      "You gain ",
+      " Block. Scry ",
+      ".",
+      "Deal ",
+      " damage. Enemy deals ",
+      "% less damage with attacks for 1 turn."
+    ]
+  },
+  "${ModID}:Latios": {
+    "NAME": "Latios",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Luster[] [#FFA500]Purge[]",
+      "[#FFA500]Draco[] [#FFA500]Meteor[]",
+      "Deal ",
+      " damage. Enemy receives ",
+      "% more damage from attacks for 1 turn.",
+      "Deal ",
+      " damage and apply ",
+      " Weak and Vulnerable to ALL enemies."
+    ]
+  },
+  "${ModID}:Metagross": {
+    "NAME": "Metagross",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Meteor[] [#FFA500]Mash[]",
+      "[#FFA500]Magnet[] [#FFA500]Rise[]",
+      "Deal ",
+      " damage. Deal damage again for each debuff on the enemy.",
+      "Draw ",
+      " cards."
+    ]
+  },
+  "${ModID}:Solrock": {
+    "NAME": "Solrock",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Heat[] [#FFA500]Wave[]",
+      "[#FFA500]Morning[] [#FFA500]Sun[]",
+      "Apply ",
+      " pokeregions:Burn to ALL enemies.",
+      "You gain ",
+      " *Temporary *HP."
+    ]
+  },
+  "${ModID}:Lunatone": {
+    "NAME": "Lunatone",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Magic[] [#FFA500]Room[]",
+      "[#FFA500]Moonlight[]",
+      "Swap your Strength and Dexterity, then gain ",
+      " of each.",
+      "You gain ",
+      " *Temporary *HP."
     ]
   },
   "${ModID}:StaminaKeyword": {

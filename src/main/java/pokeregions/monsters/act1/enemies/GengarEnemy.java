@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Gengar;
+import pokeregions.cards.pokemonAllyCards.act1.Gengar;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.NastyPlot;
 import pokeregions.util.Details;
@@ -88,11 +88,9 @@ public class GengarEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makeUIPath("Nasty.png");
-        Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case NASTY_PLOT: {
-                Details powerDetail = new Details(this, BUFF_AMT, texture);
+                Details powerDetail = new Details(this, BUFF_AMT, NASTY_PLOT_TEXTURE);
                 details.add(powerDetail);
                 break;
             }

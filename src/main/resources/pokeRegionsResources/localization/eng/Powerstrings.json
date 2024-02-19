@@ -85,6 +85,102 @@
   },
   "${ModID}:Taunt": {
     "NAME": "Taunt",
-    "DESCRIPTIONS": ["This turn, #ycards that target must select this creature."]
+    "DESCRIPTIONS": ["This turn, #ycards that target #ymust select this creature."]
+  },
+  "${ModID}:HeavyRain": {
+    "NAME": "Heavy Rain",
+    "DESCRIPTIONS": ["The first card you draw each turn becomes #yWaterlogged.", "The first #b", " cards you draw each turn become #yWaterlogged."]
+  },
+  "${ModID}:Drowning": {
+    "NAME": "Drowning",
+    "DESCRIPTIONS": ["Whenever you play a card, loses #b", " HP."]
+  },
+  "${ModID}:Adapt": {
+    "NAME": "Adaptability",
+    "DESCRIPTIONS": ["This creature's intent changes based on the #yType of the last card played this combat. NL #yAttack - Will only use its #b1st intent. NL #ySkill - Will only use its #b2nd intent. NL #yPower - Will only use its #b3rd intent."]
+  },
+  "${ModID}:IronDefense": {
+    "NAME": "Iron Defense",
+    "DESCRIPTIONS": ["Deals bonus damage equal to the amount of #yBlock this creature has."]
+  },
+  "${ModID}:HarshSunlight": {
+    "NAME": "Harsh Sunlight",
+    "DESCRIPTIONS": ["The first card you draw each turn becomes #yScorched.", "The first #b", " cards you draw each turn become #yScorched."]
+  },
+  "${ModID}:Moxie": {
+    "NAME": "Moxie",
+    "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, it gains #b", " #yStrength."]
+  },
+  "${ModID}:Laziness": {
+    "NAME": "Laziness",
+    "DESCRIPTIONS": ["#ySleeping for #b", " more turn(s). Taking damage will wake this creature up early. Upon waking up, becomes more #raggressive for every turn it was #yasleep."]
+  },
+  "${ModID}:Sleepy": {
+    "NAME": "Sleepy",
+    "DESCRIPTIONS": ["At the start of your turn, lose #b", " [E] then reduce the [E] loss by #b1."]
+  },
+  "${ModID}:SwordsDance": {
+    "NAME": "Swords Dance",
+    "DESCRIPTIONS": ["You and your #yPokemon deal #b", "% more damage this combat."]
+  },
+  "${ModID}:IronEater": {
+    "NAME": "Iron Eater",
+    "DESCRIPTIONS": ["Whenever this creature's attack is #yblocked, it gains #yBlock equal to the #yblocked damage. NL If this creature has leftover #yBlock at the start of its turn, it gains #b", " #yThorns."]
+  },
+  "${ModID}:SolarPower": {
+    "NAME": "Solar Power",
+    "DESCRIPTIONS": ["Deals #b", "% more damage each turn. Loses #b", "% of its HP each turn."]
+  },
+  "${ModID}:Slow": {
+    "NAME": "Slow",
+    "DESCRIPTIONS": ["Whenever you play a card, receives #b10% more damage from attacks this turn. Lasts #b", " more turn(s). NL (Receives #b", "% more damage this turn)."]
+  },
+  "${ModID}:DragonLord": {
+    "NAME": "Dragon Lord",
+    "DESCRIPTIONS": ["At end of round, ALL other enemies gain #b", " #yStrength. NL Whenever another enemy is defeated, transfer their #yStrength to this creature."]
+  },
+  "${ModID}:Sync": {
+    "NAME": "Synchronize",
+    "DESCRIPTIONS": ["Whenever you play an #yAttack, gains #b", " #yStrength this turn. NL Whenever you play a #ySkill, gains #b", " #yBlock."]
+  },
+  "${ModID}:Fortitude": {
+    "NAME": "Fortitude",
+    "DESCRIPTIONS": ["Receives #b33% less damage from attacks. Lasts for #b", " more turn(s)."]
+  },
+  "${ModID}:DoomDesire": {
+    "NAME": "Doom Desire",
+    "DESCRIPTIONS": ["In #b", " turn(s), deals #b", " damage to ALL enemies."]
+  },
+  "${ModID}:MistBall": {
+    "NAME": "Mist Ball",
+    "DESCRIPTIONS": ["Deals #b", "% less damage with attacks. Lasts for #b", " more turn(s)."]
+  },
+  "${ModID}:LusterPurge": {
+    "NAME": "Luster Purge",
+    "DESCRIPTIONS": ["Receives #b", "% more damage from attacks. Lasts for #b", " more turn(s)."]
+  },
+  "${ModID}:Emerald": {
+    "NAME": "Emerald of the End",
+    "DESCRIPTIONS": ["At end of round, the lowest HP enemy gains #b", " #yStrength and loses #b", " HP."]
+  },
+  "${ModID}:Sapphire": {
+    "NAME": "Sapphire of the Drowned",
+    "DESCRIPTIONS": ["At the end of your turn, you take #b", " damage for each card remaining in your hand."]
+  },
+  "${ModID}:Ruby": {
+    "NAME": "Ruby of the Departed",
+    "DESCRIPTIONS": ["Whenever a card is #yExhausted, you take #b", " damage."]
+  },
+  "${ModID}:Analytic": {
+    "NAME": "Analytic",
+    "DESCRIPTIONS": ["Whenever your #yBlock is greater than or equal to this creature's attack damage, #yimmediately changes to a non-attacking intent."]
+  },
+  "${ModID}:SunAdvent": {
+    "NAME": "Sun's Advent",
+    "DESCRIPTIONS": ["When #yLunatone is defeated, this creature becomes greatly #yenhanced.", "At end of round, gains #b", " #yStrength."]
+  },
+  "${ModID}:MoonAdvent": {
+    "NAME": "Moon's Advent",
+    "DESCRIPTIONS": ["When #ySolrock is defeated, this creature becomes greatly #yenhanced.", "At end of round, gains #b", " #yStrength."]
   }
 }

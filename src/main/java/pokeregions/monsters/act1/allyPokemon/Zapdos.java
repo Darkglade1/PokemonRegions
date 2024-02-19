@@ -37,9 +37,9 @@ public class Zapdos extends AbstractPokemonAlly
         move2Intent = Intent.BUFF;
         int numEnemies = Wiz.getEnemies().size();
         if (numEnemies > 1) {
-            addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE, numEnemies);
+            addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Zapdos.MOVE_1_DAMAGE, numEnemies);
         } else {
-            addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE);
+            addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Zapdos.MOVE_1_DAMAGE);
         }
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_2;
@@ -63,7 +63,7 @@ public class Zapdos extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                atb(new ShuffleDiscardPileBackAction(pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_2_EFFECT, true));
+                atb(new ShuffleDiscardPileBackAction(pokeregions.cards.pokemonAllyCards.act1.Zapdos.MOVE_2_EFFECT, true));
                 break;
             }
         }
@@ -75,14 +75,14 @@ public class Zapdos extends AbstractPokemonAlly
         if (allyCard.currentStamina >= move1StaminaCost) {
             int numEnemies = Wiz.getEnemies().size();
             if (numEnemies == 1) {
-                addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE);
+                addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Zapdos.MOVE_1_DAMAGE);
                 if (this.nextMove == MOVE_1) {
                     setMoveShortcut(MOVE_1);
                     ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", -1);
                     ReflectionHacks.setPrivate(this, AbstractMonster.class, "isMultiDmg", false);
                 }
             } else {
-                addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Zapdos.MOVE_1_DAMAGE, numEnemies);
+                addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Zapdos.MOVE_1_DAMAGE, numEnemies);
                 if (this.nextMove == MOVE_1) {
                     setMoveShortcut(MOVE_1);
                     ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentMultiAmt", numEnemies);

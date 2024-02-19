@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -34,12 +35,18 @@ import pokeregions.CustomIntent.MassAttackIntent;
 import pokeregions.cards.AbstractEasyCard;
 import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
 import pokeregions.dungeons.EncounterIDs;
+import pokeregions.dungeons.Hoenn;
 import pokeregions.dungeons.Kanto;
 import pokeregions.events.act1.*;
+import pokeregions.events.act3.*;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
+import pokeregions.monsters.act3.enemies.*;
+import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
+import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
+import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -66,7 +73,8 @@ public class PokemonRegions implements
         AddAudioSubscriber,
         PostInitializeSubscriber,
         StartGameSubscriber,
-        PostBattleSubscriber {
+        PostBattleSubscriber,
+        PostUpdateSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -117,6 +125,9 @@ public class PokemonRegions implements
     public static final String STRENGTH = makeUIPath("Strength.png");
     public static Texture STRENGTH_TEXTURE;
 
+    public static final String DEXTERITY = makeUIPath("Dexterity.png");
+    public static Texture DEXTERITY_TEXTURE;
+
     public static final String PLATED_ARMOR = makeUIPath("PlatedArmor.png");
     public static Texture PLATED_ARMOR_TEXTURE;
 
@@ -134,6 +145,15 @@ public class PokemonRegions implements
 
     public static final String DRAW_DOWN = makeUIPath("DrawDown.png");
     public static Texture DRAW_DOWN_TEXTURE;
+
+    public static final String THORNS = makeUIPath("Thorns.png");
+    public static Texture THORNS_TEXTURE;
+
+    public static final String REGEN = makeUIPath("Regen.png");
+    public static Texture REGEN_TEXTURE;
+
+    public static final String NASTY_PLOT = makeUIPath("Nasty.png");
+    public static Texture NASTY_PLOT_TEXTURE;
 
     public static final String HEAL = makeUIPath("Heal.png");
     public static Texture HEAL_TEXTURE;
@@ -252,12 +272,16 @@ public class PokemonRegions implements
         FRAIL_TEXTURE = TexLoader.getTexture(FRAIL);
         VULNERABLE_TEXTURE = TexLoader.getTexture(VULNERABLE);
         STRENGTH_TEXTURE = TexLoader.getTexture(STRENGTH);
+        DEXTERITY_TEXTURE = TexLoader.getTexture(DEXTERITY);
         PLATED_ARMOR_TEXTURE = TexLoader.getTexture(PLATED_ARMOR);
         METALLICIZE_TEXTURE = TexLoader.getTexture(METALLICIZE);
         BURN_DEBUFF_TEXTURE = TexLoader.getTexture(BURN_DEBUFF);
         CONSTRICTED_TEXTURE = TexLoader.getTexture(CONSTRICTED);
         INTANGIBLE_TEXTURE = TexLoader.getTexture(INTANGIBLE);
         DRAW_DOWN_TEXTURE = TexLoader.getTexture(DRAW_DOWN);
+        THORNS_TEXTURE = TexLoader.getTexture(THORNS);
+        REGEN_TEXTURE = TexLoader.getTexture(REGEN);
+        NASTY_PLOT_TEXTURE = TexLoader.getTexture(NASTY_PLOT);
 
         HEAL_TEXTURE = TexLoader.getTexture(HEAL);
         BLOCK_TEXTURE = TexLoader.getTexture(BLOCK);
@@ -319,6 +343,7 @@ public class PokemonRegions implements
                 });
         BaseMod.addCustomScreen(new PokemonTeamViewScreen());
 
+        // Act 1
         Kanto kanto = new Kanto();
         kanto.addAct(Exordium.ID);
 
@@ -413,6 +438,94 @@ public class PokemonRegions implements
                 .dungeonID(Kanto.ID)
                 .create());
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
+
+        // Act 3
+        Hoenn hoenn = new Hoenn();
+        hoenn.addAct(TheBeyond.ID);
+
+        // Bosses
+        hoenn.addBoss(KyogreEnemy.ID, (BaseMod.GetMonster) KyogreEnemy::new, makeMonsterPath("Kyogre/KyogreMap.png"), makeMonsterPath("Kyogre/KyogreMapOutline.png"));
+        hoenn.addBoss(GroudonEnemy.ID, (BaseMod.GetMonster) GroudonEnemy::new, makeMonsterPath("Groudon/GroudonMap.png"), makeMonsterPath("Groudon/GroudonMapOutline.png"));
+        hoenn.addBoss(RayquazaEnemy.ID, "Rayquaza, Dragon Lord", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SalamenceR(-450.0F, 0.0F),
+                        new RayquazaEnemy(-150.0F, 150.0F),
+                        new FlygonR(150.0F, 150.0F)
+                }), makeMonsterPath("Rayquaza/RayquazaMap.png"), makeMonsterPath("Rayquaza/RayquazaMapOutline.png"));
+
+        // Elites
+        BaseMod.addMonster(DeoxysEnemy.ID, (BaseMod.GetMonster) DeoxysEnemy::new);
+        BaseMod.addMonster(SalamenceEnemy.ID, (BaseMod.GetMonster) SalamenceEnemy::new);
+        BaseMod.addMonster(EncounterIDs.LEGENDARY_GIANTS, "Legendary Giants", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new RegisteelEnemy(-450.0F, 0.0F),
+                        new RegiceEnemy(-150.0F, 0.0F),
+                        new RegirockEnemy(150.0F, 0.0F)
+                }));
+
+        // Normal encounters
+        BaseMod.addMonster(SlakingEnemy.ID, (BaseMod.GetMonster) SlakingEnemy::new);
+        BaseMod.addMonster(BreloomEnemy.ID, (BaseMod.GetMonster) BreloomEnemy::new);
+        BaseMod.addMonster(EncounterIDs.ARONS_3, "3 Arons", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AronEnemy(-450.0F, 0.0F),
+                        new AronEnemy(-150.0F, 0.0F),
+                        new AronEnemy(150.0F, 0.0F)
+                }));
+        BaseMod.addMonster(EncounterIDs.AGGRON_AND_ARONS, "Aggron and Arons", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AronEnemy(-450.0F, 0.0F),
+                        new AronEnemy(-150.0F, 0.0F),
+                        new AggronEnemy(150.0F, 0.0F)
+                }));
+        BaseMod.addMonster(TropiusEnemy.ID, (BaseMod.GetMonster) TropiusEnemy::new);
+        BaseMod.addMonster(EncounterIDs.TRAPINCHES_3, "3 Trapinches", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new TrapinchEnemy(-450.0F, 0.0F, false),
+                        new TrapinchEnemy(-150.0F, 0.0F, false),
+                        new TrapinchEnemy(150.0F, 0.0F, false)
+                }));
+        BaseMod.addMonster(EncounterIDs.FLYGON_AND_TRAPINCHES, "Flygon and Trapinches", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new TrapinchEnemy(-450.0F, 0.0F, true),
+                        new TrapinchEnemy(-150.0F, 0.0F, true),
+                        new FlygonEnemy(150.0F, 100.0F)
+                }));
+        BaseMod.addMonster(GardevoirEnemy.ID, (BaseMod.GetMonster) GardevoirEnemy::new);
+        BaseMod.addMonster(MetagrossEnemy.ID, (BaseMod.GetMonster) MetagrossEnemy::new);
+        BaseMod.addMonster(EncounterIDs.SOLROCK_AND_LUNATONE, "Solrock and Lunatone", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SolrockEnemy(-200.0F, 0.0F),
+                        new LunatoneEnemy(50.0F, 0.0F),
+                }));
+
+        // Event encounter
+        BaseMod.addMonster(EncounterIDs.ANNIE_AND_OAKLEY, "Annie and Oakley", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AriadosOakley(-200.0F, 0.0F),
+                        new EspeonAnnie(50.0F, 0.0F),
+                }));
+
+        // Events
+        BaseMod.addEvent(PokemonTrainerSchool.ID, PokemonTrainerSchool.class, Hoenn.ID);
+        BaseMod.addEvent(WishUponAStar.ID, WishUponAStar.class, Hoenn.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(BumpInTheRoad.ID, BumpInTheRoad.class)
+                .bonusCondition(BumpInTheRoad::canSpawn)
+                .dungeonID(Hoenn.ID)
+                .create());
+        BaseMod.addEvent(FeatherCarnival.ID, FeatherCarnival.class, Hoenn.ID);
+        BaseMod.addEvent(LavaridgeGym.ID, LavaridgeGym.class, Hoenn.ID);
+        BaseMod.addEvent(WeatherInstitute.ID, WeatherInstitute.class, Hoenn.ID);
+        BaseMod.addEvent(Mossdeep.ID, Mossdeep.class, Hoenn.ID);
+        BaseMod.addEvent(Altomare.ID, Altomare.class, Hoenn.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(Pokemart.ID, Pokemart.class)
+                .bonusCondition(Pokemart::canSpawn)
+                .dungeonID(Hoenn.ID)
+                .create());
+        BaseMod.addEvent(new AddEventParams.Builder(AncientRuins.ID, AncientRuins.class)
+                .bonusCondition(AncientRuins::canSpawn)
+                .dungeonID(Hoenn.ID)
+                .create());
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {
@@ -506,6 +619,12 @@ public class PokemonRegions implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         intents.clear();
+    }
+
+    public static float time = 0f;
+    @Override
+    public void receivePostUpdate() {
+        time += Gdx.graphics.getRawDeltaTime();
     }
 
     public static void saveData() {

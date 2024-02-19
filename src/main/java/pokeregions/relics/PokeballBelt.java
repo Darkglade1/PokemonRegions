@@ -2,6 +2,8 @@ package pokeregions.relics;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.actions.HealPokemonCampfireOption;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.ui.PokemonTeamButton;
@@ -28,6 +30,21 @@ public class PokeballBelt extends AbstractEasyRelic implements CustomSavable<Str
     public void onEquip() {
         PokemonTeamButton pokemonTeam = new PokemonTeamButton();
         BaseMod.addTopPanelItem(pokemonTeam);
+    }
+
+    public void increment(int amount) {
+        if (this.counter < 0) {
+            this.counter = 0;
+        }
+        this.counter += amount;
+        this.flash();
+        fixDescription();
+    }
+
+    @Override
+    public void setCounter(int counter) {
+        super.setCounter(counter);
+        fixDescription();
     }
 
     @Override

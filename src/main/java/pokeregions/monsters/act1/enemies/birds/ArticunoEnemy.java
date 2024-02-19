@@ -4,7 +4,7 @@ import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.Frozen;
-import pokeregions.cards.pokemonAllyCards.Articuno;
+import pokeregions.cards.pokemonAllyCards.act1.Articuno;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.MonsterNextTurnBlockPower;

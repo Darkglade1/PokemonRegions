@@ -3,7 +3,7 @@ package pokeregions.monsters.act1.enemies;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Vulpix;
+import pokeregions.cards.pokemonAllyCards.act1.Vulpix;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.Burn;
 import pokeregions.util.Details;
@@ -44,7 +44,7 @@ public class VulpixEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 150.0f, 100.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Vulpix/Vulpix.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(62), calcAscensionTankiness(66));
+        setHp(calcAscensionTankiness(60), calcAscensionTankiness(64));
         addMove(WISP, Intent.DEBUFF);
         addMove(FIRE_SPIN, Intent.ATTACK_DEBUFF, calcAscensionDamage(6));
         addMove(FLAME_CHARGE, Intent.ATTACK, calcAscensionDamage(5), 2);

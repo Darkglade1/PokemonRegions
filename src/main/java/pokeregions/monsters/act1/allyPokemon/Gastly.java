@@ -40,14 +40,14 @@ public class Gastly extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                atb(new LoseHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.Gastly.MOVE_1_HP_COST));
-                atb(new UpdateStaminaOnCardAction(this, pokeregions.cards.pokemonAllyCards.Gastly.MOVE_1_STAMINA));
-                atb(new HealAction(this, this, pokeregions.cards.pokemonAllyCards.Gastly.MOVE_1_STAMINA));
+                atb(new LoseHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_HP_COST));
+                atb(new UpdateStaminaOnCardAction(this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
+                atb(new HealAction(this, this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
                 break;
             }
             case MOVE_2: {
-                atb(new LoseHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.Gastly.MOVE_2_HP_COST));
-                applyToTarget(adp(), this, new IntangiblePlayerPower(adp(), pokeregions.cards.pokemonAllyCards.Gastly.MOVE_2_INTANGIBLE));
+                atb(new LoseHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_2_HP_COST));
+                applyToTarget(adp(), this, new IntangiblePlayerPower(adp(), pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_2_INTANGIBLE));
                 break;
             }
         }

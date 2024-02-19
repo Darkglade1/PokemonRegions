@@ -6,23 +6,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.DivinityStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.Alakazam;
+import pokeregions.cards.pokemonAllyCards.act1.Alakazam;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.powers.MagicGuard;
 import pokeregions.util.Details;
 import pokeregions.vfx.FlexibleDivinityParticleEffect;
 import pokeregions.vfx.FlexibleStanceAuraEffect;
@@ -48,11 +45,6 @@ public class AlakazamEnemy extends AbstractPokemonMonster
     private float particleTimer;
     private float particleTimer2;
 
-    public static final String POWER_ID = makeID("MagicGuard");
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String POWER_NAME = powerStrings.NAME;
-    public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
     public AlakazamEnemy() {
         this(0.0f, 0.0f);
     }
@@ -71,25 +63,7 @@ public class AlakazamEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 1) {
-            @Override
-            public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-                if (this.amount >= 1) {
-                    flash();
-                    this.amount = 0;
-                }
-            }
-
-            @Override
-            public void atEndOfRound() {
-                amount = 1;
-            }
-
-            @Override
-            public void updateDescription() {
-                description = POWER_DESCRIPTIONS[0];
-            }
-        });
+        applyToTarget(this, this, new MagicGuard(this));
     }
 
     @Override
@@ -146,7 +120,7 @@ public class AlakazamEnemy extends AbstractPokemonMonster
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        if (this.hasPower(POWER_ID) && this.getPower(POWER_ID).amount >= 1) {
+        if (this.hasPower(MagicGuard.POWER_ID) && this.getPower(MagicGuard.POWER_ID).amount >= 1) {
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = 0.04F;

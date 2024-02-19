@@ -35,7 +35,7 @@ public class Squirtle extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK;
         move2Intent = Intent.DEFEND;
-        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.Squirtle.MOVE_1_DAMAGE);
+        addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Squirtle.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
@@ -48,7 +48,7 @@ public class Squirtle extends AbstractPokemonAlly
             case MOVE_1: {
                 runAnim("Ranged");
                 float duration = 0.5f;
-                atb(new VFXAction(ThrowEffect.throwEffect("WaterBlob.png", 1.0f, this.hb, target.hb, Color.BLUE.cpy(), duration), duration));
+                atb(new VFXAction(ThrowEffect.throwEffect("WaterBlob.png", 1.0f, this.hb, target.hb, Color.BLUE.cpy(), duration, true), duration));
                 atb(new AbstractGameAction() {
                     @Override
                     public void update() {
@@ -61,7 +61,7 @@ public class Squirtle extends AbstractPokemonAlly
             }
             case MOVE_2: {
                 runAnim("Defense");
-                block(adp(), pokeregions.cards.pokemonAllyCards.Squirtle.MOVE_2_BLOCK);
+                block(adp(), pokeregions.cards.pokemonAllyCards.act1.Squirtle.MOVE_2_BLOCK);
                 break;
             }
         }

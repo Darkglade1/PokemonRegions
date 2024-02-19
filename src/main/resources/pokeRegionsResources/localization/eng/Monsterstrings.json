@@ -210,5 +210,227 @@
     "NAME": "Victreebel",
     "DIALOG": [
     ]
+  },
+  "${ModID}:KyogreEnemy": {
+    "MOVES": [
+      "Hydro Pump",
+      "Origin Pulse",
+      "Aqua Ring",
+      "Life Dew"
+    ],
+    "NAME": "Kyogre",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:DeoxysEnemy": {
+    "MOVES": [
+      "Power Up Punch",
+      "Expose Weakness",
+      "Psycho Boost",
+      "Cosmic Power",
+      "Iron Defense",
+      "Heavy Slam",
+      "Swift",
+      "Nasty Plot",
+      "Extreme Speed"
+    ],
+    "NAME": "Deoxys",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:GroudonEnemy": {
+    "MOVES": [
+      "Swords Dance",
+      "Precipice Blades",
+      "Scorching Sands"
+    ],
+    "NAME": "Groudon",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SalamenceEnemy": {
+    "MOVES": [
+      "Dragon Rush",
+      "Dragon Claw",
+      "Dragon Breath"
+    ],
+    "NAME": "Salamence",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SlakingEnemy": {
+    "MOVES": [
+      "Zzzzzzzz",
+      "Slacking Off",
+      "Giga Impact",
+      "Hammer Arm",
+      "Groggy . . ."
+    ],
+    "NAME": "Slaking",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:BreloomEnemy": {
+    "MOVES": [
+      "Spore",
+      "Swords Dance",
+      "Bullet Seed"
+    ],
+    "NAME": "Breloom",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:AronEnemy": {
+    "MOVES": [
+      "Nibble",
+      "Metal Burst"
+    ],
+    "NAME": "Aron",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:AggronEnemy": {
+    "MOVES": [
+      "Iron Tail",
+      "Metal Burst",
+      "Metal Sound"
+    ],
+    "NAME": "Aggron",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:TropiusEnemy": {
+    "MOVES": [
+      "Sunny Day",
+      "Solar Beam",
+      "Seed Bomb"
+    ],
+    "NAME": "Tropius",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:TrapinchEnemy": {
+    "MOVES": [
+      "Crippling Bite",
+      "Crunch",
+      "Trap Prey"
+    ],
+    "NAME": "Trapinch",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:FlygonEnemy": {
+    "MOVES": [
+      "Guardian Spirit",
+      "Matron's Strike",
+      "Frustration"
+    ],
+    "NAME": "Flygon",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RayquazaEnemy": {
+    "MOVES": [
+      "Hurricane",
+      "Dragon Pulse",
+      "Dragon Breath"
+    ],
+    "NAME": "Rayquaza",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:GardevoirEnemy": {
+    "MOVES": [
+      "Charm",
+      "Nasty Plot",
+      "Moonblast",
+      "Hyper Voice"
+    ],
+    "NAME": "Gardevoir",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RegisteelEnemy": {
+    "MOVES": [
+      "Slam",
+      "Wide Guard",
+      "Protect"
+    ],
+    "NAME": "Registeel",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RegiceEnemy": {
+    "MOVES": [
+      "Slam",
+      "Icy Wind",
+      "Freeze-Dry"
+    ],
+    "NAME": "Regice",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RegirockEnemy": {
+    "MOVES": [
+      "Slam",
+      "Ancient Power",
+      "Entomb"
+    ],
+    "NAME": "Regirock",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:EspeonAnnie": {
+    "MOVES": [
+      "Confusion",
+      "Helping Hand",
+      "Psychic"
+    ],
+    "NAME": "Espeon",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:AriadosOakley": {
+    "MOVES": [
+      "Infestation",
+      "Sticky Web",
+      "Cross Poison"
+    ],
+    "NAME": "Ariados",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:MetagrossEnemy": {
+    "MOVES": [
+      "Meteor Mash",
+      "Hone Claws",
+      "Preparing to Explode",
+      "Explosion"
+    ],
+    "NAME": "Metagross",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SolrockEnemy": {
+    "MOVES": [
+      "Calm Mind",
+      "Power Gem",
+      "Heat Wave",
+      "Morning Sun's Fury"
+    ],
+    "NAME": "Solrock",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:LunatoneEnemy": {
+    "MOVES": [
+      "Calm Mind",
+      "Power Gem",
+      "Dream Eater",
+      "Evening Moonlight's Venom"
+    ],
+    "NAME": "Lunatone",
+    "DIALOG": [
+    ]
   }
 }
