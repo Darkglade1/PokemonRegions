@@ -53,14 +53,11 @@ public class Venusaur extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                //runAnim("Whip");
-                //atb(new VFXAction(new WaitEffect(), 0.2f));
                 useFastAttackAnimation();
                 dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 break;
             }
             case MOVE_2: {
-                //runAnim("Debuff");
                 useFastAttackAnimation();
                 atb(new SFXAction("ATTACK_MAGIC_FAST_3", MathUtils.random(0.88F, 0.92F), true));
                 float x = target.hb.cX;

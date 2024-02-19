@@ -47,8 +47,7 @@ public class Blastoise extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                //runAnim("Ranged");
-                useFastAttackAnimation();
+                runAnim("Ranged");
                 float duration = 0.5f;
                 atb(new VFXAction(ThrowEffect.throwEffect("WaterBlob.png", 1.0f, this.hb, target.hb, Color.BLUE.cpy(), duration, true), duration));
                 atb(new AbstractGameAction() {
@@ -62,7 +61,6 @@ public class Blastoise extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                //runAnim("Defense");
                 block(adp(), pokeregions.cards.pokemonAllyCards.act3.Blastoise.MOVE_2_BLOCK);
                 applyToTarget(adp(), this, new MetallicizePower(adp(), pokeregions.cards.pokemonAllyCards.act3.Blastoise.MOVE_2_BUFF));
                 break;
