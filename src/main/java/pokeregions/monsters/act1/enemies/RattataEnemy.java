@@ -43,7 +43,7 @@ public class RattataEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 130.0f, 100.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Rattata/Rattata.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(34), calcAscensionTankiness(38));
+        setHp(calcAscensionTankiness(32), calcAscensionTankiness(36));
         addMove(BITE, Intent.ATTACK, calcAscensionDamage(6));
         addMove(WORK, Intent.ATTACK_BUFF, 3);
 

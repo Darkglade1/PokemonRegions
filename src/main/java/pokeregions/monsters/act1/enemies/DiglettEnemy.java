@@ -54,7 +54,7 @@ public class DiglettEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Diglett/Diglett.scml"));
         this.type = EnemyType.NORMAL;
         this.attackFirst = attackFirst;
-        setHp(calcAscensionTankiness(30), calcAscensionTankiness(35));
+        setHp(calcAscensionTankiness(28), calcAscensionTankiness(33));
         addMove(DIG, Intent.DEFEND_BUFF);
         addMove(SLASH, Intent.ATTACK, calcAscensionDamage(5));
 
