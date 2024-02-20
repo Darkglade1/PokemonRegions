@@ -741,5 +741,9 @@
       "You take !M! damage at the end of next round.",
       "You take !M! damage at the end of 2 rounds from now."
     ]
+  },
+  "${ModID}:TimeLapse": {
+    "NAME": "Time Lapse",
+    "DESCRIPTION": ""
   }
 }

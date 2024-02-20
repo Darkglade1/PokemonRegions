@@ -76,7 +76,9 @@ public abstract class AbstractMultiIntentMonster extends AbstractPokemonMonster 
         AdditionalIntent additionalIntent = new AdditionalIntent(this, info, position);
         additionalIntents.add(additionalIntent);
         additionalMoves.add(info);
-        moveHistory.add(next);
+        if (moveHistory != null) {
+            moveHistory.add(next);
+        }
     }
 
     protected boolean lastMove(byte move, ArrayList<Byte> moveHistory) {

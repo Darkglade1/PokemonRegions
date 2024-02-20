@@ -19,11 +19,14 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.stances.DivinityStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
+import pokeregions.cards.TimeLapse;
 import pokeregions.cards.pokemonAllyCards.act3.Groudon;
+import pokeregions.monsters.AbstractMultiIntentMonster;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.BorrowedTime;
 import pokeregions.powers.NastyPlot;
 import pokeregions.powers.SuspendedInTime;
+import pokeregions.util.AdditionalIntent;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
 import pokeregions.vfx.FlexibleDivinityParticleEffect;
@@ -34,7 +37,7 @@ import java.util.ArrayList;
 import static pokeregions.PokemonRegions.*;
 import static pokeregions.util.Wiz.*;
 
-public class DialgaEnemy extends AbstractPokemonMonster
+public class DialgaEnemy extends AbstractMultiIntentMonster
 {
     public static final String ID = makeID(DialgaEnemy.class.getSimpleName());
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
@@ -102,7 +105,7 @@ public class DialgaEnemy extends AbstractPokemonMonster
             case DISTORT: {
                 useFastAttackAnimation();
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-                intoDrawMo(new Dazed(), STATUS);
+                intoDiscardMo(new TimeLapse(), STATUS);
                 break;
             }
         }
@@ -113,12 +116,34 @@ public class DialgaEnemy extends AbstractPokemonMonster
     protected void getMove(final int num) {
         if (this.lastMove(ANCIENT_POWER)) {
             setMoveShortcut(ROAR, MOVES[ROAR]);
+            setAdditionalMoveShortcut(DISTORT, null, 1);
         } else if (this.lastMove(ROAR)) {
             setMoveShortcut(DISTORT, MOVES[DISTORT]);
+            setAdditionalMoveShortcut(ANCIENT_POWER, null, 1);
         } else {
             setMoveShortcut(ANCIENT_POWER, MOVES[ANCIENT_POWER]);
+            setAdditionalMoveShortcut(ROAR, null, 1);
+        }
+        for (AdditionalIntent additionalIntent : additionalIntents) {
+            additionalIntent.transparent = true;
+            additionalIntent.usePrimaryIntentsColor = false;
         }
         super.postGetMove();
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        for (int i = 0; i < additionalIntents.size(); i++) {
+            AdditionalIntent additionalIntent = additionalIntents.get(i);
+            EnemyMoveInfo additionalMove = null;
+            if (i < additionalMoves.size()) {
+                additionalMove = additionalMoves.get(i);
+            }
+            if (additionalMove != null) {
+                applyPowersToAdditionalIntent(additionalMove, additionalIntent);
+            }
+        }
     }
 
     protected void setDetailedIntents() {
@@ -139,7 +164,9 @@ public class DialgaEnemy extends AbstractPokemonMonster
                 break;
             }
             case DISTORT: {
-                Details statusDetail = new Details(this, STATUS, DAZED_TEXTURE, Details.TargetType.DRAW_PILE);
+                String textureString = makeUIPath("TimeLapse.png");
+                Texture texture = TexLoader.getTexture(textureString);
+                Details statusDetail = new Details(this, STATUS, texture, Details.TargetType.DISCARD_PILE);
                 details.add(statusDetail);
                 break;
             }
