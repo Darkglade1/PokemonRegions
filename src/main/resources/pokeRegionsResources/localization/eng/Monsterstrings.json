@@ -432,5 +432,15 @@
     "NAME": "Lunatone",
     "DIALOG": [
     ]
+  },
+  "${ModID}:DialgaEnemy": {
+    "MOVES": [
+      "Ancient Power",
+      "Roar of TIme",
+      "Distort Time"
+    ],
+    "NAME": "Dialga",
+    "DIALOG": [
+    ]
   }
 }

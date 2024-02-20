@@ -47,6 +47,7 @@ import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
 import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
+import pokeregions.monsters.act4.DialgaEnemy;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -526,6 +527,9 @@ public class PokemonRegions implements
                 .bonusCondition(AncientRuins::canSpawn)
                 .dungeonID(Hoenn.ID)
                 .create());
+
+        // Act 4
+        BaseMod.addMonster(DialgaEnemy.ID, (BaseMod.GetMonster) DialgaEnemy::new);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

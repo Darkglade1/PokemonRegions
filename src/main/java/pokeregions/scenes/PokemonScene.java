@@ -23,6 +23,7 @@ import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
 import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
+import pokeregions.monsters.act4.DialgaEnemy;
 import pokeregions.util.ProAudio;
 import pokeregions.util.Wiz;
 
@@ -122,6 +123,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Holy");
                 } else if (mo instanceof SolrockEnemy || mo instanceof LunatoneEnemy) {
                     this.bg = this.atlas.findRegion("mod/Cave");
+                } else if (mo instanceof DialgaEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Cosmic");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

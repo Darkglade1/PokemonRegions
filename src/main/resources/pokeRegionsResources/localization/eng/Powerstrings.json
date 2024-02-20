@@ -182,5 +182,9 @@
   "${ModID}:MoonAdvent": {
     "NAME": "Moon's Advent",
     "DESCRIPTIONS": ["When #ySolrock is defeated, this creature becomes greatly #yenhanced.", "At end of round, gains #b", " #yStrength."]
+  },
+  "${ModID}:SuspendedInTime": {
+    "NAME": "Suspended in Time",
+    "DESCRIPTIONS": ["Every other card you play is #ysuspended and played at the start of next turn instead. NL You can see a preview of this creature's next intent."]
   }
 }
