@@ -186,5 +186,9 @@
   "${ModID}:SuspendedInTime": {
     "NAME": "Suspended in Time",
     "DESCRIPTIONS": ["Every other card you play is #ysuspended and played at the start of next turn instead. NL You can see a preview of this creature's next intent."]
+  },
+  "${ModID}:BorrowedTime": {
+    "NAME": "Borrowed Time",
+    "DESCRIPTIONS": ["This turn, ALL incoming unblocked damage and HP loss is #yNegated and converted to #ghealing instead."]
   }
 }

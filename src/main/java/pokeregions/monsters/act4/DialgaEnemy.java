@@ -20,6 +20,7 @@ import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Groudon;
 import pokeregions.monsters.AbstractPokemonMonster;
+import pokeregions.powers.BorrowedTime;
 import pokeregions.powers.NastyPlot;
 import pokeregions.powers.SuspendedInTime;
 import pokeregions.util.Details;
@@ -43,7 +44,7 @@ public class DialgaEnemy extends AbstractPokemonMonster
     private static final byte ROAR = 1;
     private static final byte DISTORT = 2;
 
-    public final int BLOCK = calcAscensionSpecial(50);
+    public final int BLOCK = 50;
     public final int BUFF = calcAscensionSpecialSmall(3);
     public final int STATUS = calcAscensionSpecial(3);
 
@@ -87,6 +88,9 @@ public class DialgaEnemy extends AbstractPokemonMonster
             case ANCIENT_POWER: {
                 block(this, BLOCK);
                 applyToTarget(this, this, new NastyPlot(this, BUFF));
+                if (AbstractDungeon.ascensionLevel >= 19) {
+                    applyToTarget(this, this, new BorrowedTime(this));
+                }
                 break;
             }
             case ROAR: {
@@ -119,14 +123,18 @@ public class DialgaEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makePowerPath("HarshSunlight32.png");
-        Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case ANCIENT_POWER: {
                 Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
                 details.add(blockDetail);
                 Details powerDetail = new Details(this, BUFF, NASTY_PLOT_TEXTURE);
                 details.add(powerDetail);
+                if (AbstractDungeon.ascensionLevel >= 19) {
+                    String textureString = makePowerPath("BorrowedTime32.png");
+                    Texture texture = TexLoader.getTexture(textureString);
+                    Details powerDetail2 = new Details(this, 1, texture);
+                    details.add(powerDetail2);
+                }
                 break;
             }
             case DISTORT: {
