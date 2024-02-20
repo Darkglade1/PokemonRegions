@@ -7,28 +7,27 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.stances.DivinityStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.TimeLapse;
 import pokeregions.cards.pokemonAllyCards.act3.Groudon;
 import pokeregions.monsters.AbstractMultiIntentMonster;
-import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.BorrowedTime;
 import pokeregions.powers.NastyPlot;
 import pokeregions.powers.SuspendedInTime;
 import pokeregions.util.AdditionalIntent;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
+import pokeregions.vfx.ColoredLaserBeamEffect;
 import pokeregions.vfx.FlexibleDivinityParticleEffect;
 import pokeregions.vfx.FlexibleStanceAuraEffect;
 
@@ -98,7 +97,7 @@ public class DialgaEnemy extends AbstractMultiIntentMonster
                 break;
             }
             case ROAR: {
-                useFastAttackAnimation();
+                atb(new VFXAction(new ColoredLaserBeamEffect(this.hb.cX, this.hb.cY + 60.0F * Settings.scale, Color.SKY.cpy()), 1.5F));
                 dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                 break;
             }
