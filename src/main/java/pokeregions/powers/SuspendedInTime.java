@@ -3,7 +3,6 @@ package pokeregions.powers;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -18,9 +17,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.BobEffect;
-import javassist.CtBehavior;
 import pokeregions.PokemonRegions;
-import pokeregions.actions.InterruptCardAction;
 import pokeregions.patches.SuspendedInTimePatch;
 import pokeregions.util.Wiz;
 
@@ -108,15 +105,11 @@ public class SuspendedInTime extends AbstractUnremovablePower {
         if (!renderQueue.isEmpty()) {
             AbstractCard card = renderQueue.group.get(0);
             card.dontTriggerOnUseCard = false;
-            if (!SuspendedCardFields.interruptedField.get(card)) {
-                SuspendedInTime.CardInfo info = SuspendedInTimePatch.GetCard(playingCards, card);
-                if (info != null && info.target != null) {
-                    Wiz.atb(new NewQueueCardAction(card, info.target, false, true));
-                } else {
-                    Wiz.atb(new NewQueueCardAction(card, true, false, true));
-                }
+            SuspendedInTime.CardInfo info = SuspendedInTimePatch.GetCard(playingCards, card);
+            if (info != null && info.target != null) {
+                Wiz.atb(new NewQueueCardAction(card, info.target, false, true));
             } else {
-                Wiz.atb(new InterruptCardAction(card));
+                Wiz.atb(new NewQueueCardAction(card, true, false, true));
             }
         }
     }
@@ -170,7 +163,6 @@ public class SuspendedInTime extends AbstractUnremovablePower {
     @SpirePatch2(clz = AbstractCard.class, method = SpirePatch.CLASS)
     public static class SuspendedCardFields {
         public static SpireField<Boolean> suspendedField = new SpireField<>(() -> false);
-        public static SpireField<Boolean> interruptedField = new SpireField<>(() -> false);
     }
 
     @SpirePatch2(clz = UseCardAction.class, method = SpirePatch.CLASS)
@@ -185,7 +177,6 @@ public class SuspendedInTime extends AbstractUnremovablePower {
             if (SuspendedCardFields.suspendedField.get(card)) {
                 SuspendedActionField.suspendedField.set(__instance, true);
                 SuspendedCardFields.suspendedField.set(card, false);
-                SuspendedCardFields.interruptedField.set(card, false);
             }
         }
     }
@@ -205,7 +196,7 @@ public class SuspendedInTime extends AbstractUnremovablePower {
     @SpirePatch2(clz = UseCardAction.class, method = "update")
     public static class DoNextCard {
         @SpirePostfixPatch
-        public static void doNextProjectedCard(AbstractCard ___targetCard) {
+        public static void doNextSuspendedCard(AbstractCard ___targetCard) {
             SuspendedInTime power = getSuspendPower();
             if (power != null) {
                 power.renderQueue.removeCard(___targetCard);
@@ -224,38 +215,4 @@ public class SuspendedInTime extends AbstractUnremovablePower {
             }
         }
     }
-
-    @SpirePatch2(clz = GameActionManager.class, method = "getNextAction")
-    public static class DontYeetSuspendedCards {
-        @SpireInsertPatch(locator = Locator.class)
-        public static SpireReturn<?> addCardsBack(GameActionManager __instance) {
-            AbstractCard c = __instance.cardQueue.get(0).card;
-            if (c != null && SuspendedCardFields.suspendedField.get(c)) {
-                Wiz.atb(new InterruptCardAction(c));
-                return SpireReturn.Return();
-            }
-            return SpireReturn.Continue();
-        }
-
-        public static class Locator extends SpireInsertLocator {
-            @Override
-            public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher m = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "limbo");
-                return LineFinder.findAllInOrder(ctBehavior, m);
-            }
-        }
-    }
-
-//    @SpirePatch2(clz = GameActionManager.class, method = "callEndTurnEarlySequence")
-//    public static class InterruptCardsPlz {
-//        @SpirePostfixPatch
-//        public static void setField() {
-//            SuspendedInTime power = getSuspendPower();
-//            if (power != null) {
-//                for (AbstractCard card : power.renderQueue.group) {
-//                    SuspendedCardFields.interruptedField.set(card, true);
-//                }
-//            }
-//        }
-//    }
 }
