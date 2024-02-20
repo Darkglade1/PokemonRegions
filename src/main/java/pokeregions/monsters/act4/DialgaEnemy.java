@@ -2,6 +2,7 @@ package pokeregions.monsters.act4;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
@@ -153,12 +154,12 @@ public class DialgaEnemy extends AbstractPokemonMonster
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = 0.04F;
-                AbstractDungeon.effectsQueue.add(new FlexibleDivinityParticleEffect(this));
+                AbstractDungeon.effectsQueue.add(new FlexibleDivinityParticleEffect(this, Color.SKY.cpy()));
             }
             this.particleTimer2 -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer2 < 0.0F) {
                 this.particleTimer2 = MathUtils.random(0.45F, 0.55F);
-                AbstractDungeon.effectsQueue.add(new FlexibleStanceAuraEffect(DivinityStance.STANCE_ID, this));
+                AbstractDungeon.effectsQueue.add(new FlexibleStanceAuraEffect(Color.SKY.cpy(), this));
             }
         }
     }
