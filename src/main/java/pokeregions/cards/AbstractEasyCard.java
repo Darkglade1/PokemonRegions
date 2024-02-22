@@ -373,12 +373,16 @@ public abstract class AbstractEasyCard extends CustomCard {
     };
 
     public AbstractCard makeStatEquivalentCopy() {
-        AbstractEasyCard c = (AbstractEasyCard)super.makeStatEquivalentCopy();
-        c.baseSecondDamage = c.secondDamage = baseSecondDamage;
-        c.baseSecondBlock = c.secondBlock = baseSecondBlock;
-        c.baseSecondMagic = c.secondMagic = baseSecondMagic;
-        c.baseThirdMagic = c.thirdMagic = baseThirdMagic;
-        return c;
+        AbstractCard card = super.makeStatEquivalentCopy();
+        if (card instanceof AbstractEasyCard) {
+            AbstractEasyCard c = (AbstractEasyCard)card;
+            c.baseSecondDamage = c.secondDamage = baseSecondDamage;
+            c.baseSecondBlock = c.secondBlock = baseSecondBlock;
+            c.baseSecondMagic = c.secondMagic = baseSecondMagic;
+            c.baseThirdMagic = c.thirdMagic = baseThirdMagic;
+            return c;
+        }
+        return card;
     }
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
