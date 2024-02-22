@@ -75,6 +75,14 @@ public class AronEnemy extends AbstractPokemonMonster
             }
 
             @Override
+            public void onSpecificTrigger() {
+                if (owner.currentBlock > 0) {
+                    this.flash();
+                    applyToTarget(owner, owner, new ThornsPower(owner, amount));
+                }
+            }
+
+            @Override
             public void updateDescription() {
                 description = POWER_DESCRIPTIONS[0] + amount + POWER_DESCRIPTIONS[1];
             }
@@ -86,12 +94,6 @@ public class AronEnemy extends AbstractPokemonMonster
         super.takeTurn();
         if(info.base > -1) {
             info.applyPowers(this, adp());
-        }
-
-        AbstractPower power = this.getPower(POWER_ID);
-        if (power != null && this.currentBlock > 0) {
-            power.flash();
-            applyToTarget(this, this, new ThornsPower(this, POWER_THORNS));
         }
 
         switch (this.nextMove) {
