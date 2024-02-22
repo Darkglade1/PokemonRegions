@@ -11,9 +11,13 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.relics.RunicDome;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
+import pokeregions.monsters.act3.enemies.AggronEnemy;
+import pokeregions.monsters.act3.enemies.AronEnemy;
 import pokeregions.powers.InvisibleBarricadePower;
 import pokeregions.powers.VisibleBarricadePower;
 import pokeregions.util.Details;
@@ -75,8 +79,14 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
         if (firstMove) {
             firstMove = false;
         }
+        if (this instanceof AronEnemy || this instanceof AggronEnemy) {
+            AbstractPower power = this.getPower(AronEnemy.POWER_ID);
+            if (power != null && this.currentBlock > 0) {
+                power.onSpecificTrigger();
+            }
+        }
         if (!this.hasPower(VisibleBarricadePower.POWER_ID)) {
-            atb(new RemoveAllBlockAction(this, this));
+            this.loseBlock();
         }
     }
 
