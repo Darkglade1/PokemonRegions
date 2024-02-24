@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.TimeLapse;
-import pokeregions.cards.pokemonAllyCards.act3.Groudon;
+import pokeregions.cards.pokemonAllyCards.act4.Dialga;
 import pokeregions.monsters.AbstractMultiIntentMonster;
 import pokeregions.powers.BorrowedTime;
 import pokeregions.powers.NastyPlot;
@@ -192,7 +192,7 @@ public class DialgaEnemy extends AbstractMultiIntentMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Groudon();
+        return new Dialga();
     }
 
 }

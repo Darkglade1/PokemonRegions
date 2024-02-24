@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.stances.DivinityStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act3.Groudon;
+import pokeregions.cards.pokemonAllyCards.act4.Palkia;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
@@ -238,7 +238,7 @@ public class PalkiaEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Groudon();
+        return new Palkia();
     }
 
 }

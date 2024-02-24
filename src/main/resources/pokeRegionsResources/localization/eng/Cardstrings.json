@@ -687,6 +687,27 @@
       " *Temporary *HP."
     ]
   },
+  "${ModID}:Dialga": {
+    "NAME": "Dialga",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Rewind[]",
+      "[#FFA500]Fast-forward[]",
+      "The next time you would die this combat, heal to ",
+      "% of your Max HP instead.",
+      "Draw cards until your hand is full."
+    ]
+  },
+  "${ModID}:Palkia": {
+    "NAME": "Palkia",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Spatial[] [#FFA500]Counter[]",
+      "[#FFA500]Dimension[] [#FFA500]Traversal[]",
+      "Prevent all damage this turn. Any prevented damage is reflected to ALL enemies.",
+      "Put a card from your exhaust pile into your hand."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

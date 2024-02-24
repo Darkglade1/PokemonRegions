@@ -191,8 +191,16 @@
     "NAME": "Borrowed Time",
     "DESCRIPTIONS": ["This turn, ALL incoming unblocked damage and HP loss is #yNegated and converted to #ghealing instead."]
   },
+  "${ModID}:Rewind": {
+    "NAME": "Rewind",
+    "DESCRIPTIONS": ["The next time you would die this combat, heal to #b", "% of your Max HP instead."]
+  },
   "${ModID}:AdriftInSpace": {
     "NAME": "Adrift in Space",
     "DESCRIPTIONS": ["Every other card you play is #yexhausted. All cards played are shuffled back into the draw pile."]
+  },
+  "${ModID}:SpatialCounter": {
+    "NAME": "Spatial Counter",
+    "DESCRIPTIONS": ["Prevent all damage this turn. Any prevented damage is reflected to ALL enemies."]
   }
 }
