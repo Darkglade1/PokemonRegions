@@ -73,8 +73,8 @@ public class PalkiaEnemy extends AbstractPokemonMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
         setHp(calcAscensionTankiness(800));
         addMove(SCARY_FACE, Intent.STRONG_DEBUFF);
-        addMove(WATER_PULSE, Intent.ATTACK_DEBUFF, calcAscensionDamage(28));
-        addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(15), 3);
+        addMove(WATER_PULSE, Intent.ATTACK_DEBUFF, calcAscensionDamage(32));
+        addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(16), 3);
         addMove(SPACIAL_REND, Intent.ATTACK_DEBUFF, calcAscensionDamage(50));
     }
 
@@ -117,7 +117,7 @@ public class PalkiaEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case SCARY_FACE: {
                 applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
-                intoDiscardMo(new VoidCard(), VOIDS);
+                intoDrawMo(new VoidCard(), VOIDS);
                 break;
             }
             case WATER_PULSE: {
@@ -186,7 +186,7 @@ public class PalkiaEnemy extends AbstractPokemonMonster
                 cardsToShuffle.add(card);
             }
         }
-        int newDamage = this.moves.get(SPACIAL_REND).baseDamage += cardsToShuffle.size();
+        int newDamage = this.moves.get(SPACIAL_REND).baseDamage += (cardsToShuffle.size() * 2);
         addMove(SPACIAL_REND, Intent.ATTACK_DEBUFF, newDamage);
         for (AbstractCard card : cardsToShuffle) {
             card.unfadeOut();
@@ -201,7 +201,7 @@ public class PalkiaEnemy extends AbstractPokemonMonster
             case SCARY_FACE: {
                 Details powerDetail = new Details(this, DEBUFF, WEAK_TEXTURE);
                 details.add(powerDetail);
-                Details statusDetail = new Details(this, VOIDS, VOID_TEXTURE, Details.TargetType.DISCARD_PILE);
+                Details statusDetail = new Details(this, VOIDS, VOID_TEXTURE, Details.TargetType.DRAW_PILE);
                 details.add(statusDetail);
                 break;
             }

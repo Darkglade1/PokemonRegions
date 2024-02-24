@@ -1,5 +1,6 @@
 package pokeregions.monsters.act4;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -86,6 +87,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("LavenderTown");
         applyToTarget(this, this, new LostInDistortion(this, HP_THRESHOLD));
     }
 

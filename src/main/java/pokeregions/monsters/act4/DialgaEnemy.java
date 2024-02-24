@@ -62,7 +62,7 @@ public class DialgaEnemy extends AbstractMultiIntentMonster
         super(NAME, ID, 140, 0.0F, 0, 300.0f, 320.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Dialga/Dialga.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
-        setHp(calcAscensionTankiness(700));
+        setHp(calcAscensionTankiness(800));
         addMove(ANCIENT_POWER, Intent.DEFEND_BUFF);
         addMove(ROAR, Intent.ATTACK, calcAscensionDamage(50));
         addMove(DISTORT, Intent.ATTACK_DEBUFF, calcAscensionDamage(30));
