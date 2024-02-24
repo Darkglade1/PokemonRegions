@@ -202,5 +202,13 @@
   "${ModID}:SpatialCounter": {
     "NAME": "Spatial Counter",
     "DESCRIPTIONS": ["Prevent all damage this turn. Any prevented damage is reflected to ALL enemies."]
+  },
+  "${ModID}:LostInDistortion": {
+    "NAME": "Lost in Distortion",
+    "DESCRIPTIONS": ["After losing #b", " more HP, becomes immune to further damage and escapes into the #yDistortion #yWorld at end of round."]
+  },
+  "${ModID}:DistortionWorld": {
+    "NAME": "The Distortion World",
+    "DESCRIPTIONS": ["#yImmune to damage. NL When both #yLeylines #yof #yDistortion are destroyed, exit the #yDistortion #yWorld at end of round."]
   }
 }

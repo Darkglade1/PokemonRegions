@@ -24,6 +24,7 @@ import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
 import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
 import pokeregions.monsters.act4.DialgaEnemy;
+import pokeregions.monsters.act4.GiratinaEnemy;
 import pokeregions.monsters.act4.PalkiaEnemy;
 import pokeregions.util.ProAudio;
 import pokeregions.util.Wiz;
@@ -127,6 +128,8 @@ public class PokemonScene extends AbstractScene {
                 } else if (mo instanceof DialgaEnemy) {
                     this.bg = this.atlas.findRegion("mod/Cosmic");
                 } else if (mo instanceof PalkiaEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Cosmic");
+                } else if (mo instanceof GiratinaEnemy) {
                     this.bg = this.atlas.findRegion("mod/Cosmic");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");

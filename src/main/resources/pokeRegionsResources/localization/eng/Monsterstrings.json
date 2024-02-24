@@ -453,5 +453,24 @@
     "NAME": "Palkia",
     "DIALOG": [
     ]
+  },
+  "${ModID}:GiratinaEnemy": {
+    "MOVES": [
+      "Hex",
+      "Shadow Claw",
+      "Nasty Plot",
+      "Shadow Force",
+      "Poltergeist"
+    ],
+    "NAME": "Giratina",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:DistortionLeyline": {
+    "MOVES": [
+    ],
+    "NAME": "Leyline of Distortion",
+    "DIALOG": [
+    ]
   }
 }
