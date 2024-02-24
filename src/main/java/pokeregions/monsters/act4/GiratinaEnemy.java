@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViceCrushEffect;
 import pokeregions.BetterSpriterAnimation;
@@ -98,6 +99,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case HEX: {
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
+                applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
                 intoDrawMo(new Wound(), STATUS);
                 break;
             }
@@ -188,6 +190,8 @@ public class GiratinaEnemy extends AbstractPokemonMonster
             case HEX: {
                 Details powerDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(powerDetail);
+                Details powerDetail2 = new Details(this, DEBUFF, WEAK_TEXTURE);
+                details.add(powerDetail2);
                 Details statusDetail = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DRAW_PILE);
                 details.add(statusDetail);
                 break;

@@ -19,8 +19,16 @@
     "TEXT": [
       "Hoenn",
       "Act 3",
-      "Although your travels grew more #rdangerous, you felt reassured by the presence of the #gcompanions by your side..",
+      "Although your travels grew more #rdangerous, you felt reassured by the presence of the #gcompanions by your side.",
       "Continue your journey."
+    ]
+  },
+  "${ModID}:SpearPillar": {
+    "TEXT": [
+      "Spear Pillar",
+      "Spear Pillar",
+      "Across the land, #pdistortions and #prifts in reality @rip@ across the landscape, causing chaos and sowing mayhem everywhere.",
+      "Investigate the distortions."
     ]
   },
   "${ModID}:ModMenu": {
@@ -172,7 +180,7 @@
   "${ModID}:EnhancedDigOption": {
     "TEXT": [
       "Enhanced Dig",
-      "Dig up a Relic. It will be Uncommon or Rare.",
+      "Dig up a Relic. It will be Uncommon or Rare."
     ]
   }
 }

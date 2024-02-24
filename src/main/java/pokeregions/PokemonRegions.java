@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -37,6 +38,7 @@ import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
 import pokeregions.dungeons.EncounterIDs;
 import pokeregions.dungeons.Hoenn;
 import pokeregions.dungeons.Kanto;
+import pokeregions.dungeons.SpearPillar;
 import pokeregions.events.act1.*;
 import pokeregions.events.act3.*;
 import pokeregions.monsters.act1.enemies.*;
@@ -531,9 +533,11 @@ public class PokemonRegions implements
                 .create());
 
         // Act 4
+        SpearPillar spearPillar = new SpearPillar();
+        spearPillar.addAct(TheEnding.ID);
         BaseMod.addMonster(DialgaEnemy.ID, (BaseMod.GetMonster) DialgaEnemy::new);
         BaseMod.addMonster(PalkiaEnemy.ID, (BaseMod.GetMonster) PalkiaEnemy::new);
-        BaseMod.addMonster(GiratinaEnemy.ID, (BaseMod.GetMonster) GiratinaEnemy::new);
+        spearPillar.addBoss(GiratinaEnemy.ID, (BaseMod.GetMonster) GiratinaEnemy::new, makeMonsterPath("Giratina/GiratinaMap.png"), makeMonsterPath("Giratina/GiratinaMapOutline.png"));
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

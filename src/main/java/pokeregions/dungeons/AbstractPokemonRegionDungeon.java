@@ -5,6 +5,7 @@ import pokeregions.PokemonRegions;
 import pokeregions.monsters.act1.enemies.MewtwoEnemy;
 import pokeregions.monsters.act3.enemies.GroudonEnemy;
 import pokeregions.monsters.act3.enemies.KyogreEnemy;
+import pokeregions.monsters.act4.GiratinaEnemy;
 import pokeregions.scenes.PokemonScene;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -51,12 +52,11 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OceanicMuseum.ogg"));
             } else if (bossKey.equals(MewtwoEnemy.ID) || bossKey.equals(GroudonEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OldaleTown.ogg"));
+            } else if (bossKey.equals(GiratinaEnemy.ID)){
+                this.setMainMusic(PokemonRegions.makeMusicPath("LavenderTown.ogg"));
             } else {
                 this.setMainMusic(PokemonRegions.makeMusicPath("Littleroot.ogg"));
             }
-            // For act 2, the first boss should play oceanic, the second should play oldale
-            // For act 3, the first boss should play oldale, the second should play little root
-            // this way if someone plays through all 3 acts the first time a different bgm will be guarenteed on each act
         }
     }
 }
