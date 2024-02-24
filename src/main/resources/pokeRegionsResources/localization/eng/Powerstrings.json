@@ -190,5 +190,9 @@
   "${ModID}:BorrowedTime": {
     "NAME": "Borrowed Time",
     "DESCRIPTIONS": ["This turn, ALL incoming unblocked damage and HP loss is #yNegated and converted to #ghealing instead."]
+  },
+  "${ModID}:AdriftInSpace": {
+    "NAME": "Adrift in Space",
+    "DESCRIPTIONS": ["Every other card you play is #yexhausted. All cards played are shuffled back into the draw pile."]
   }
 }

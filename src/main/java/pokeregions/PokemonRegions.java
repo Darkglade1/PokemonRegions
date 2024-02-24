@@ -48,6 +48,7 @@ import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
 import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
 import pokeregions.monsters.act4.DialgaEnemy;
+import pokeregions.monsters.act4.PalkiaEnemy;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.relics.AbstractEasyRelic;
 import pokeregions.relics.PokeballBelt;
@@ -530,6 +531,7 @@ public class PokemonRegions implements
 
         // Act 4
         BaseMod.addMonster(DialgaEnemy.ID, (BaseMod.GetMonster) DialgaEnemy::new);
+        BaseMod.addMonster(PalkiaEnemy.ID, (BaseMod.GetMonster) PalkiaEnemy::new);
     }
 
     private AbstractMonster[] generateBugSwarmGroup() {

@@ -442,5 +442,16 @@
     "NAME": "Dialga",
     "DIALOG": [
     ]
+  },
+  "${ModID}:PalkiaEnemy": {
+    "MOVES": [
+      "Scary Face",
+      "Water Pulse",
+      "Dragon Claw",
+      "Spacial Rend"
+    ],
+    "NAME": "Palkia",
+    "DIALOG": [
+    ]
   }
 }

@@ -10,6 +10,8 @@ public enum ProAudio {
     BURROW,
     LOUD_SPLASH,
     RAIN,
-    MAGIC_BLAST
+    MAGIC_BLAST,
+    SPATIAL_START,
+    SPATIAL_HIT
 
 }

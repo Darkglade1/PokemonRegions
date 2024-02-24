@@ -114,7 +114,8 @@
       "Dies",
       "Heals to half HP",
       "Removes negative Strength",
-      "Summons minions"
+      "Summons minions",
+      "Exhumes all non-exhausting or Status cards"
     ]
   },
   "${ModID}:ExhaustDrawPile": {
