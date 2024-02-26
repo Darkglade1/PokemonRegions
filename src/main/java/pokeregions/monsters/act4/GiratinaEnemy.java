@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
@@ -50,6 +51,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
     public final int STATUS = calcAscensionSpecial(2);
     public final int BUFF = calcAscensionSpecialSmall(5);
     public final int DEBUFF = 1;
+    public final int STR = 1;
     public final int POLTERGEIST_HITS = 5;
     public boolean inDistortionWorld = false;
 
@@ -75,7 +77,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
         addMove(SHADOW_CLAW, Intent.ATTACK, calcAscensionDamage(33));
         addMove(NASTY_PLOT, Intent.BUFF);
         addMove(SHADOW_FORCE, Intent.ATTACK_DEBUFF, calcAscensionDamage(40));
-        addMove(POLTERGEIST, Intent.ATTACK, calcAscensionDamage(10), POLTERGEIST_HITS);
+        addMove(POLTERGEIST, Intent.ATTACK_BUFF, calcAscensionDamage(10), POLTERGEIST_HITS);
     }
 
     @Override
@@ -130,6 +132,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
                 for (int i = 0; i < multiplier; i++) {
                     dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
                 }
+                applyToTarget(this, this, new StrengthPower(this, STR));
                 break;
             }
         }
@@ -205,6 +208,11 @@ public class GiratinaEnemy extends AbstractPokemonMonster
             }
             case SHADOW_FORCE: {
                 Details powerDetail = new Details(this, 1, texture);
+                details.add(powerDetail);
+                break;
+            }
+            case POLTERGEIST: {
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
                 details.add(powerDetail);
                 break;
             }

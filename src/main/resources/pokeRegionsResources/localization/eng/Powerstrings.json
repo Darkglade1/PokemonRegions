@@ -205,10 +205,10 @@
   },
   "${ModID}:LostInDistortion": {
     "NAME": "Lost in Distortion",
-    "DESCRIPTIONS": ["After losing #b", " more HP, becomes immune to further damage and escapes into the #yDistortion #yWorld at end of round."]
+    "DESCRIPTIONS": ["After losing #b", " more HP, becomes immune to further damage, escapes into the #yDistortion #yWorld at end of round, and uses a #rpowerful attack next turn."]
   },
   "${ModID}:DistortionWorld": {
     "NAME": "The Distortion World",
-    "DESCRIPTIONS": ["#yImmune to damage. NL When both #yLeylines #yof #yDistortion are destroyed, exit the #yDistortion #yWorld at end of round."]
+    "DESCRIPTIONS": ["#yImmune to damage. NL When both #yLeylines #yof #yDistortion are destroyed, exit the #yDistortion #yWorld at end of round and uses a #ynon-attacking move next turn."]
   }
 }

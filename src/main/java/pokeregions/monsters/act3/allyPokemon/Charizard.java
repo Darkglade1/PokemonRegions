@@ -5,8 +5,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.CustomIntent.IntentEnums;
@@ -71,6 +73,7 @@ public class Charizard extends AbstractPokemonAlly
                 atb(new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
                 for (AbstractMonster mo : Wiz.getEnemies()) {
                     applyToTarget(mo, this, new Burn(mo, pokeregions.cards.pokemonAllyCards.act3.Charizard.MOVE_2_DEBUFF));
+                    applyToTarget(mo, this, new VulnerablePower(mo, pokeregions.cards.pokemonAllyCards.act3.Charizard.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 }
                 break;
             }

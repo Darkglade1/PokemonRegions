@@ -21,7 +21,7 @@
       " damage.",
       "Deal ",
       " damage and apply ",
-      " pokeregions:Burn to ALL enemies."
+      " pokeregions:Burn and Vulnerable to ALL enemies."
     ]
   },
   "${ModID}:Bulbasaur": {
