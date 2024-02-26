@@ -1,0 +1,8 @@
+{
+  "${ModID}:SpaceTimeChampion": {
+    "NAME": "Space-Time Champion",
+    "DESCRIPTIONS": [
+      "Resolved the incident at Spear Pillar."
+    ]
+  }
+}

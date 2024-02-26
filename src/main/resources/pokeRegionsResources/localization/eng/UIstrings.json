@@ -31,6 +31,13 @@
       "Investigate the distortions."
     ]
   },
+  "${ModID}:PokemonVictory": {
+    "TEXT": [
+      "Have my children . . . been subdued at last?",
+      "Well done . . . Chosen One . . .",
+      "Now . . . I can finally rest . . ."
+    ]
+  },
   "${ModID}:ModMenu": {
     "TEXT": [
       "Pokemon Regions",

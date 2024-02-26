@@ -46,6 +46,11 @@ public class SuspendedInTime extends AbstractUnremovablePower {
     }
 
     @Override
+    public void playApplyPowerSfx() {
+        CardCrawlGame.sound.play("POWER_TIME_WARP", 0.05F);
+    }
+
+    @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

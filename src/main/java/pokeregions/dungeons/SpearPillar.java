@@ -13,10 +13,12 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
 import pokeregions.monsters.act4.DialgaEnemy;
 import pokeregions.monsters.act4.PalkiaEnemy;
+import pokeregions.relics.PokeballBelt;
 
 import java.util.ArrayList;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
+import static pokeregions.util.Wiz.adp;
 
 public class SpearPillar extends AbstractPokemonRegionDungeon {
 
@@ -59,6 +61,21 @@ public class SpearPillar extends AbstractPokemonRegionDungeon {
     }
 
     @Override
+    public boolean canSpawn() {
+        return adp().hasRelic(PokeballBelt.ID);
+    }
+
+    @Override
+    public void Ending() {
+        CardCrawlGame.music.fadeOutBGM();
+        MapRoomNode node = new MapRoomNode(3, 4);
+        node.room = new PokemonVictoryRoom();
+        AbstractDungeon.nextRoom = node;
+        AbstractDungeon.closeCurrentScreen();
+        AbstractDungeon.nextRoomTransitionStart();
+    }
+
+    @Override
     public String getBodyText() {
         return TEXT[2];
     }
@@ -70,9 +87,6 @@ public class SpearPillar extends AbstractPokemonRegionDungeon {
 
     @Override
     protected void makeMap() {
-        ArrayList<MonsterRoomCreator> row1 = new ArrayList<>();
-        ArrayList<MonsterRoomCreator> row2 = new ArrayList<>();
-
         MonsterRoom dialgaRoom = new MonsterRoomCreator(makeMonsterPath("Dialga/DialgaMap.png"), makeMonsterPath("Dialga/DialgaMapOutline.png"), DialgaEnemy.ID).get();
         MonsterRoom palkiaRoom = new MonsterRoomCreator(makeMonsterPath("Palkia/PalkiaMap.png"), makeMonsterPath("Palkia/PalkiaMapOutline.png"), PalkiaEnemy.ID).get();
 

@@ -1,6 +1,7 @@
 package pokeregions.monsters.act4;
 
 import actlikeit.dungeons.CustomDungeon;
+import actlikeit.savefields.CustomScore;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.ScoreBonusStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
@@ -184,6 +186,18 @@ public class GiratinaEnemy extends AbstractPokemonMonster
             }
         }
         super.postGetMove();
+    }
+
+    @Override
+    public void die() {
+        CardCrawlGame.stopClock = true;
+        ScoreBonusStrings sbs = CardCrawlGame.languagePack.getScoreString(PokemonRegions.makeID("SpaceTimeChampion"));
+        CustomScore.add(PokemonRegions.makeID("SpaceTimeChampion"), sbs.NAME, sbs.DESCRIPTIONS[0], 200, false);
+        this.onBossVictoryLogic();
+        CardCrawlGame.music.silenceTempBgmInstantly();
+        CardCrawlGame.music.playTempBgmInstantly("STS_EndingStinger_v1.ogg", false);
+        this.onFinalBossVictoryLogic();
+        super.die();
     }
 
     protected void setDetailedIntents() {
