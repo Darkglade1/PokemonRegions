@@ -7,11 +7,9 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.cutscenes.NeowEye;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -19,11 +17,11 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.screens.VictoryScreen;
 import com.megacrit.cardcrawl.ui.DialogWord;
 import com.megacrit.cardcrawl.ui.SpeechWord;
 import pokeregions.PokemonRegions;
+import pokeregions.vfx.CustomEye;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -34,7 +32,7 @@ public class PokemonVictoryScreen {
 
     private Color bgColor;
     private Color eyeColor;
-    protected NeowEye[] eyes;
+    protected CustomEye[] eyes;
     protected int currentDialog = 0;
     private int clickCount = 0;
     protected static final UIStrings uiStrings;
@@ -76,17 +74,13 @@ public class PokemonVictoryScreen {
         this.currentDialog = 0;
         this.clickCount = 0;
 
-        this.eyes = new NeowEye[] {
-                new NeowEye(0),
-                new NeowEye(0),
-                new NeowEye(1),
-                new NeowEye(1),
-                new NeowEye(2),
-                new NeowEye(2)
+        this.eyes = new CustomEye[] {
+                new CustomEye(0),
+                new CustomEye(0)
         };
 
         this.bgColor = new Color(320149504);
-        this.eyeColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
+        this.eyeColor = new Color(0.0F, 1.0F, 0.0F, 0.0F);
     }
 
     public void update() {
@@ -292,7 +286,7 @@ public class PokemonVictoryScreen {
     private void exit() {
         GameCursor.hidden = false;
         AbstractDungeon.screen = AbstractDungeon.CurrentScreen.VICTORY;
-        AbstractDungeon.victoryScreen = new VictoryScreen((MonsterGroup)null);
+        AbstractDungeon.victoryScreen = new VictoryScreen(null);
     }
 
     public void render(SpriteBatch sb) {
