@@ -26,8 +26,11 @@ import pokeregions.monsters.act3.enemies.rayquaza.SalamenceR;
 import pokeregions.monsters.act4.DialgaEnemy;
 import pokeregions.monsters.act4.GiratinaEnemy;
 import pokeregions.monsters.act4.PalkiaEnemy;
+import pokeregions.powers.DistortionWorld;
 import pokeregions.util.ProAudio;
 import pokeregions.util.Wiz;
+
+import java.nio.charset.StandardCharsets;
 
 import static pokeregions.PokemonRegions.makeID;
 import static pokeregions.PokemonRegions.makeVfxPath;
@@ -35,6 +38,7 @@ import static pokeregions.PokemonRegions.makeVfxPath;
 public class PokemonScene extends AbstractScene {
     private TextureAtlas.AtlasRegion bg;
     public static ShaderProgram shader = null;
+    public static ShaderProgram distortShader = null;
     public static long rainSoundId = 0L;
 
     public PokemonScene() {
@@ -149,8 +153,11 @@ public class PokemonScene extends AbstractScene {
             initShader();
             sb.setShader(shader);
             shader.setUniformf("u_time", getTime());
+        } else if (isGiratinaDistort()) {
+            initDistortShader();
+            sb.setShader(distortShader);
+            distortShader.setUniformf("u_time", getTime());
         }
-
         sb.setColor(Color.WHITE.cpy());
         this.renderAtlasRegionIf(sb, bg, true);
         sb.setBlendFunction(Gdx.gl20.GL_SRC_ALPHA, Gdx.gl20.GL_ONE_MINUS_SRC_ALPHA);
@@ -162,6 +169,17 @@ public class PokemonScene extends AbstractScene {
         for (AbstractMonster mo : Wiz.getEnemies()) {
             if (mo instanceof KyogreEnemy) {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isGiratinaDistort() {
+        for (AbstractMonster mo : Wiz.getEnemies()) {
+            if (mo instanceof GiratinaEnemy) {
+                if (mo.hasPower(DistortionWorld.POWER_ID)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -201,6 +219,24 @@ public class PokemonScene extends AbstractScene {
                 }
             } catch (GdxRuntimeException e) {
                 System.out.println("ERROR: Rain shader:");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void initDistortShader() {
+        if (distortShader == null) {
+            try {
+                distortShader = new ShaderProgram(SpriteBatch.createDefaultShader().getVertexShaderSource(),
+                        Gdx.files.internal(makeVfxPath("distort.frag")).readString(String.valueOf(StandardCharsets.UTF_8)));
+                if (!distortShader.isCompiled()) {
+                    System.err.println(distortShader.getLog());
+                }
+                if (!distortShader.getLog().isEmpty()) {
+                    System.out.println(distortShader.getLog());
+                }
+            } catch (GdxRuntimeException e) {
+                System.out.println("ERROR: Distort shader:");
                 e.printStackTrace();
             }
         }
