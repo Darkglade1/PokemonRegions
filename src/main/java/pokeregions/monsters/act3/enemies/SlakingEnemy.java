@@ -1,5 +1,6 @@
 package pokeregions.monsters.act3.enemies;
 
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -11,15 +12,19 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
+import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Slaking;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.util.Details;
 
-import static pokeregions.PokemonRegions.makeID;
-import static pokeregions.PokemonRegions.makeMonsterPath;
+import java.util.ArrayList;
+
+import static pokeregions.PokemonRegions.*;
 import static pokeregions.util.Wiz.*;
 
 public class SlakingEnemy extends AbstractPokemonMonster
@@ -155,6 +160,19 @@ public class SlakingEnemy extends AbstractPokemonMonster
             setMoveShortcut(SLACK_OFF, MOVES[SLACK_OFF]);
         }
         super.postGetMove();
+    }
+
+    protected void setDetailedIntents() {
+        ArrayList<Details> details = new ArrayList<>();
+        EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
+        switch (move.nextMove) {
+            case SLEEPING: {
+                Details powerDetail = new Details(this, TEMP_HP_GAIN, HEAL_TEXTURE);
+                details.add(powerDetail);
+                break;
+            }
+        }
+        PokemonRegions.intents.put(this, details);
     }
 
     @Override
