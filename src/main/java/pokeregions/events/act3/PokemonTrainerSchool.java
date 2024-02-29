@@ -39,7 +39,7 @@ public class PokemonTrainerSchool extends PhasedEvent {
 
     public PokemonTrainerSchool() {
         super(ID, title, PokemonRegions.makeEventPath("PokemonTrainerSchool.png"));
-        if (adp().hasRelic(RainbowBadge.ID)) {
+        if (adp().hasRelic(QuickClaw.ID)) {
             relic = RelicLibrary.getRelic(Circlet.ID).makeCopy();
         } else {
             relic = RelicLibrary.getRelic(QuickClaw.ID).makeCopy();
