@@ -357,6 +357,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     @Override
     public void getMove(int num) {
+        setMoveShortcut(defaultMove);
     }
 
     @Override
