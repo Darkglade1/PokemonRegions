@@ -1,11 +1,16 @@
 package pokeregions.cards.cardMods;
 
+import basemod.BaseMod;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import pokeregions.PokemonRegions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static pokeregions.util.Wiz.atb;
 
@@ -47,6 +52,14 @@ public class WaterLoggedMod extends AbstractCardModifier {
         if (!alreadyRetain) {
             card.selfRetain = false;
         }
+    }
+
+    @Override
+    public List<TooltipInfo> additionalTooltips(AbstractCard card) {
+        ArrayList<TooltipInfo> info = new ArrayList<>();
+        TooltipInfo tip = new TooltipInfo(BaseMod.getKeywordProper("pokeregions:damp"),  BaseMod.getKeywordDescription("pokeregions:damp"));
+        info.add(tip);
+        return info;
     }
 
     @Override
