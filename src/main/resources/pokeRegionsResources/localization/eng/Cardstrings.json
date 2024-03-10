@@ -130,10 +130,12 @@
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Dream[] [#FFA500]Eater[]",
       "[#FFA500]Poltergeist[]",
+      "Draw ",
+      " cards and exhaust them. ",
+      "You gain ",
+      " *Temporary *HP.",
       "You lose ",
       " HP. ",
-      "Restores ",
-      " *Stamina.",
       "You gain ",
       " Intangible."
     ]

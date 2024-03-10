@@ -1,15 +1,17 @@
 package pokeregions.monsters.act1.allyPokemon;
 
-import pokeregions.BetterSpriterAnimation;
-import pokeregions.PokemonRegions;
-import pokeregions.actions.UpdateStaminaOnCardAction;
-import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.monsters.AbstractPokemonAlly;
-import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import pokeregions.BetterSpriterAnimation;
+import pokeregions.PokemonRegions;
+import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.monsters.AbstractPokemonAlly;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
 import static pokeregions.util.Wiz.*;
@@ -40,9 +42,16 @@ public class Gastly extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                atb(new LoseHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_HP_COST));
-                atb(new UpdateStaminaOnCardAction(this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
-                atb(new HealAction(this, this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_STAMINA));
+                atb(new DrawCardAction(pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_DRAW, new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        for (AbstractCard c : DrawCardAction.drawnCards) {
+                            adp().hand.moveToExhaustPile(c);
+                        }
+                        this.isDone = true;
+                    }
+                }));
+                atb(new AddTemporaryHPAction(adp(), this, pokeregions.cards.pokemonAllyCards.act1.Gastly.MOVE_1_EFFECT));
                 break;
             }
             case MOVE_2: {
