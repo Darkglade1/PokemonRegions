@@ -1,6 +1,7 @@
 package pokeregions.util;
 
 import basemod.ReflectionHacks;
+import com.megacrit.cardcrawl.vfx.BobEffect;
 import pokeregions.PokemonRegions;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -52,6 +53,7 @@ public class Details {
 
     float scaleWidth = 1.0F * Settings.scale;
     float scaleHeight = Settings.scale;
+    BobEffect bob;
 
     private final float Y_OFFSET = 46.0f;
 
@@ -64,6 +66,7 @@ public class Details {
         this.amount = amount;
         this.icon = icon;
         this.target = target;
+        bob = ReflectionHacks.getPrivate(monster, AbstractMonster.class, "bobEffect");
     }
 
     public Details(AbstractMonster monster, String description) {
@@ -75,8 +78,8 @@ public class Details {
     public void renderDetails(SpriteBatch sb, int position) {
         Color color = ReflectionHacks.getPrivate(monster, AbstractMonster.class, "intentColor");
         sb.setColor(color);
-        float textY = monster.intentHb.cY + (Y_OFFSET * scaleHeight * position);
-        float iconY = monster.intentHb.cY - 16.0F + (Y_OFFSET * scaleHeight * position);
+        float textY = monster.intentHb.cY + (Y_OFFSET * scaleHeight * position) + bob.y;
+        float iconY = monster.intentHb.cY - 16.0F + (Y_OFFSET * scaleHeight * position) + bob.y;
         if (!overrideWithDescription) {
             if (target == TargetType.SIMPLE) {
                 FontHelper.renderFontCentered(sb, FontHelper.topPanelInfoFont, Integer.toString(amount), monster.intentHb.cX - (22.0f * scaleWidth), textY, color);
