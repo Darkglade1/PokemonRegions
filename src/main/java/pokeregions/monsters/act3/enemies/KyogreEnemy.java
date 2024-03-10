@@ -1,19 +1,21 @@
 package pokeregions.monsters.act3.enemies;
 
 import actlikeit.dungeons.CustomDungeon;
+import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
-import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
@@ -174,6 +176,12 @@ public class KyogreEnemy extends AbstractPokemonMonster
         if (PokemonScene.rainSoundId != 0L) {
             CardCrawlGame.sound.stop(makeID(ProAudio.RAIN.name()), PokemonScene.rainSoundId);
         }
+    }
+
+    @Override
+    public void renderTip(SpriteBatch sb) {
+        super.renderTip(sb);
+        tips.add(new PowerTip(BaseMod.getKeywordProper("pokeregions:drowning"), BaseMod.getKeywordDescription("pokeregions:drowning")));
     }
 
     @Override
