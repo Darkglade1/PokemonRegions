@@ -36,7 +36,12 @@ public class PokeballMoveAction extends AbstractGameAction {
         this.pokeball = pokeball;
     }
 
+    @Override
     public void update() {
+        if (target.captured) {
+            isDone = true;
+            return;
+        }
         AbstractDungeon.player.loseEnergy(1);
         AbstractRelic pokeBallBelt = adp().getRelic(PokeballBelt.ID);
         if (pokeBallBelt != null) {
