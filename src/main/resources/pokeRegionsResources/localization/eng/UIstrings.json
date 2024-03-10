@@ -189,5 +189,10 @@
       "Enhanced Dig",
       "Dig up a Relic. It will be Uncommon or Rare."
     ]
+  },
+  "${ModID}:TauntNotice": {
+    "TEXT": [
+      "I must target the enemy with Taunt!"
+    ]
   }
 }
