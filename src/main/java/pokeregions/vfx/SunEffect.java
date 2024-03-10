@@ -25,9 +25,7 @@ public class SunEffect extends AbstractGameEffect {
         this.duration = this.effectDuration;
         this.startingDuration = this.effectDuration;
         this.x = 100.0F * Settings.scale;
-        this.y = AbstractDungeon.floorY + (375.0F * Settings.scale);
-        this.x *= Settings.scale;
-        this.y *= Settings.scale;
+        this.y = AbstractDungeon.floorY + (450.0F * Settings.yScale);
         this.sX = this.x;
         this.sY = this.y;
         this.tX = this.x;
