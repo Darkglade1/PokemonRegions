@@ -80,7 +80,7 @@ public class PokeballMove extends ClickableUIElement {
 
     @Override
     protected void onHover() {
-        TipHelper.renderGenericTip(this.x, this.y - 15f * Settings.scale, this.ID, this.moveDescription);
+        TipHelper.renderGenericTip(this.x - 30f * Settings.scale, this.y - 15f * Settings.scale, this.ID, this.moveDescription);
         if (this.hitbox.justHovered && canUseMoveString().equals("") && !AbstractDungeon.actionManager.turnHasEnded && !adp().inSingleTargetMode && !adp().isDraggingCard) {
             CardCrawlGame.sound.playV("UI_HOVER", 0.75F);
             int chance = calculateCaptureChance(owner);
