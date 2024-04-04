@@ -35,6 +35,7 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
         this.move1Name = cardStrings.EXTENDED_DESCRIPTION[0];
         this.move2Name = cardStrings.EXTENDED_DESCRIPTION[1];
         TypeOverridePatch.TypeOverrideField.typeOverride.set(this, TYPE);
+        this.tags.add(CardTags.HEALING); // Hopefully this stops people from randomly generating these.
     }
 
     @Override
