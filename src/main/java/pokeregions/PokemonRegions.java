@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pokeregions.CustomIntent.MassAttackIntent;
@@ -95,6 +96,8 @@ public class PokemonRegions implements
     public static final String DISABLE_DETAILED_INTENTS_CONFIG = "disableDetailedIntentsConfig";
     public static boolean disableDetailedIntentsConfig = false;
     private static Logger logger = LogManager.getLogger(PokemonRegions.class.getName());
+
+    public static boolean releasingPokemon;
 
     public static class Enums {
         @SpireEnum(name = "Pokedex")
@@ -615,6 +618,7 @@ public class PokemonRegions implements
 
     @Override
     public void receiveStartGame() {
+        releasingPokemon = false;
         if (!adp().hasRelic(PokeballBelt.ID)) {
             ArrayList<TopPanelItem> itemsToRemove = new ArrayList<>();
             ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
@@ -638,6 +642,15 @@ public class PokemonRegions implements
     @Override
     public void receivePostUpdate() {
         time += Gdx.graphics.getRawDeltaTime();
+        // Need to slap this here instead of in PokemonTeamButton's update so it still works if the button is not on screen and being updated.
+        if (releasingPokemon && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            releasingPokemon = false;
+            AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+            AbstractDungeon.effectList.add(new PurgeCardEffect(c));
+            PlayerSpireFields.pokemonTeam.get(adp()).removeCard(c);
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+        }
     }
 
     public static void saveData() {

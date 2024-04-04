@@ -36,12 +36,7 @@ public class PokemonReward extends CustomReward {
         UnlockTracker.markCardAsSeen(card.cardID);
         PlayerSpireFields.totalPokemonCaught.set(adp(), PlayerSpireFields.totalPokemonCaught.get(adp()) + 1);
         if (pokemonTeam.size() > PokemonTeamButton.MAX_TEAM_SIZE) {
-            ArrayList<TopPanelItem> topPanelItems = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
-            for (TopPanelItem item : topPanelItems) {
-                if (item instanceof PokemonTeamButton) {
-                    ((PokemonTeamButton) item).releaseExcessPokemon();
-                }
-            }
+            PokemonTeamButton.releaseExcessPokemon();
         }
         return true;
     }

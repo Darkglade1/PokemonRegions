@@ -7,6 +7,7 @@ import basemod.TopPanelItem;
 import basemod.abstracts.CustomSavable;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.util.Tags;
@@ -103,20 +104,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
         }
     }
 
-    @Override
-    public void update() {
-        super.update();
-        if (this.releasingPokemon && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-            this.releasingPokemon = false;
-            AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            AbstractDungeon.effectList.add(new PurgeCardEffect(c));
-            PlayerSpireFields.pokemonTeam.get(adp()).removeCard(c);
-            AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-        }
-    }
-
-    public void releaseExcessPokemon() {
+    public static void releaseExcessPokemon() {
         CardGroup releaseablePokemon =  new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
             if (!card.hasTag(Tags.STARTER_POKEMON)) {
@@ -124,7 +112,7 @@ public class PokemonTeamButton extends TopPanelItem implements CustomSavable<Lis
             }
         }
         if (releaseablePokemon.size() > 0) {
-            this.releasingPokemon = true;
+            PokemonRegions.releasingPokemon = true;
             if (AbstractDungeon.isScreenUp) {
                 AbstractDungeon.dynamicBanner.hide();
                 AbstractDungeon.overlayMenu.cancelButton.hide();
