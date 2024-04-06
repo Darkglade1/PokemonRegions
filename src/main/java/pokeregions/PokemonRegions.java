@@ -46,6 +46,7 @@ import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
+import pokeregions.monsters.act2.enemies.HoOhEnemy;
 import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
@@ -446,6 +447,10 @@ public class PokemonRegions implements
                 .dungeonID(Kanto.ID)
                 .create());
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
+
+        // Act 2
+        BaseMod.addMonster(HoOhEnemy.ID, (BaseMod.GetMonster) HoOhEnemy::new);
+
 
         // Act 3
         Hoenn hoenn = new Hoenn();

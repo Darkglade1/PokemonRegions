@@ -472,5 +472,23 @@
     "NAME": "Leyline of Distortion",
     "DIALOG": [
     ]
+  },
+  "${ModID}:HoOhEnemy": {
+    "MOVES": [
+      "Sacred Fire",
+      "Overheat",
+      "Shed Feathers",
+      "Regenerate"
+    ],
+    "NAME": "Ho-Oh",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:PhoenixFeather": {
+    "MOVES": [
+    ],
+    "NAME": "Phoenix Feather",
+    "DIALOG": [
+    ]
   }
 }
