@@ -53,7 +53,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
     public final int STATUS = calcAscensionSpecial(2);
     public final int BUFF = calcAscensionSpecialSmall(5);
     public final int DEBUFF = 1;
-    public final int STR = 1;
+    public final int STR = calcAscensionSpecial(1);
     public final int POLTERGEIST_HITS = 5;
     public boolean inDistortionWorld = false;
 
@@ -192,7 +192,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
     public void die() {
         CardCrawlGame.stopClock = true;
         ScoreBonusStrings sbs = CardCrawlGame.languagePack.getScoreString(PokemonRegions.makeID("SpaceTimeChampion"));
-        CustomScore.add(PokemonRegions.makeID("SpaceTimeChampion"), sbs.NAME, sbs.DESCRIPTIONS[0], 200, false);
+        CustomScore.add(PokemonRegions.makeID("SpaceTimeChampion"), sbs.NAME, sbs.DESCRIPTIONS[0], 300, false);
         this.onBossVictoryLogic();
         CardCrawlGame.music.silenceTempBgmInstantly();
         CardCrawlGame.music.playTempBgmInstantly("STS_EndingStinger_v1.ogg", false);
