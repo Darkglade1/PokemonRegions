@@ -47,6 +47,7 @@ import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
 import pokeregions.monsters.act2.enemies.HoOhEnemy;
+import pokeregions.monsters.act2.enemies.LugiaEnemy;
 import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
@@ -450,7 +451,7 @@ public class PokemonRegions implements
 
         // Act 2
         BaseMod.addMonster(HoOhEnemy.ID, (BaseMod.GetMonster) HoOhEnemy::new);
-
+        BaseMod.addMonster(LugiaEnemy.ID, (BaseMod.GetMonster) LugiaEnemy::new);
 
         // Act 3
         Hoenn hoenn = new Hoenn();

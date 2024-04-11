@@ -214,5 +214,9 @@
   "${ModID}:PhoenixDown": {
     "NAME": "Phoenix Down",
     "DESCRIPTIONS": ["Whenever this creature loses #b", " HP, it spawns a #yFeather."]
+  },
+  "${ModID}:Shadow": {
+    "NAME": "Harbinger of Shadow",
+    "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yShadow-Cursed."]
   }
 }

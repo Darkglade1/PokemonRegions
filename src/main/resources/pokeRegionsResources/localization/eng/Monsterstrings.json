@@ -489,5 +489,15 @@
     "NAME": "Phoenix Feather",
     "DIALOG": [
     ]
+  },
+  "${ModID}:LugiaEnemy": {
+    "MOVES": [
+      "Shadow Rush",
+      "Shadow Blast",
+      "Shadow Sky"
+    ],
+    "NAME": "Shadow Lugia",
+    "DIALOG": [
+    ]
   }
 }

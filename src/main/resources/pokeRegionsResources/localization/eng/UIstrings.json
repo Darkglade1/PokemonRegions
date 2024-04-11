@@ -194,5 +194,10 @@
     "TEXT": [
       "I must target the enemy with Taunt!"
     ]
+  },
+  "${ModID}:ShadowCurseMod": {
+    "TEXT": [
+      "pokeregions:Shadow-Cursed. NL "
+    ]
   }
 }

@@ -54,5 +54,12 @@
       "slow"
     ],
     "DESCRIPTION": "#ySlowed creatures take more damage from attacks for each card played in a turn."
+  },
+  {
+    "PROPER_NAME": "Shadow-Cursed",
+    "NAMES": [
+      "shadow-cursed"
+    ],
+    "DESCRIPTION": "#yShadow-Cursed cards are #yEthereal. They deal #b50% less damage but gain #b50% more #yBlock."
   }
 ]

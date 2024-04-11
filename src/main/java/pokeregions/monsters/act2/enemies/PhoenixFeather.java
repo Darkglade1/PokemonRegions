@@ -51,6 +51,13 @@ public class PhoenixFeather extends AbstractPokemonMonster
     }
 
     @Override
+    public void usePreBattleAction() {
+        super.usePreBattleAction();
+        rollMove();
+        createIntent();
+    }
+
+    @Override
     public void takeTurn() {
         super.takeTurn();
         if(info.base > -1) {
