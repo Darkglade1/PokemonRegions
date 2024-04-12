@@ -68,7 +68,7 @@ public class LugiaEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 250.0f, 290.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Lugia/Lugia.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.2f);
-        setHp(calcAscensionTankiness(400));
+        setHp(calcAscensionTankiness(430));
         addMove(SHADOW_RUSH, Intent.ATTACK, calcAscensionDamage(26));
         addMove(SHADOW_BLAST, Intent.ATTACK_DEBUFF, calcAscensionDamage(14));
         addMove(SHADOW_SKY, Intent.STRONG_DEBUFF);

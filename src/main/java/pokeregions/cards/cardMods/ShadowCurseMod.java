@@ -1,16 +1,14 @@
 package pokeregions.cards.cardMods;
 
 import basemod.abstracts.AbstractCardModifier;
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.core.Settings;
 import pokeregions.PokemonRegions;
-import pokeregions.vfx.CardBurningEffect;
-
-import java.util.ArrayList;
-import java.util.Iterator;
+import pokeregions.util.TexLoader;
 
 public class ShadowCurseMod extends AbstractCardModifier {
 
@@ -18,8 +16,9 @@ public class ShadowCurseMod extends AbstractCardModifier {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
     private final float BLOCK_MOD = 1.5F;
     private final float DAMAGE_MOD = 0.5F;
-    private ArrayList<AbstractGameEffect> flameEffect = new ArrayList<>();
-    private float fireTimer;
+    public static final String STRING = PokemonRegions.makeMonsterPath("Lugia/ShadowCursed.png");
+    private static final Texture TEXTURE = TexLoader.getTexture(STRING);
+    private static final TextureRegion TEXTURE_REGION = new TextureRegion(TEXTURE);
 
     @Override
     public AbstractCardModifier makeCopy() {
@@ -35,7 +34,6 @@ public class ShadowCurseMod extends AbstractCardModifier {
         if (card.baseDamage >= 0) {
             card.baseDamage = (int)((float)card.baseDamage * DAMAGE_MOD);
         }
-        flameEffect.add(new CardBurningEffect(card));
     }
 
     @Override
@@ -49,27 +47,7 @@ public class ShadowCurseMod extends AbstractCardModifier {
     }
 
     @Override
-    public void onUpdate(AbstractCard card) {
-        this.fireTimer -= Gdx.graphics.getDeltaTime();
-        if (this.fireTimer < 0.0F) {
-            this.fireTimer = 0.05F;
-            flameEffect.add(new CardBurningEffect(card));
-        }
-
-        Iterator<AbstractGameEffect> i = this.flameEffect.iterator();
-        while(i.hasNext()) {
-            AbstractGameEffect fires = i.next();
-            fires.update();
-            if (fires.isDone) {
-                i.remove();
-            }
-        }
-    }
-
-    @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        for (AbstractGameEffect effect : flameEffect) {
-            effect.render(sb);
-        }
+        sb.draw(TEXTURE_REGION, card.hb.cX - (float) TEXTURE_REGION.getRegionWidth() / 2, card.hb.cY + (card.hb.height / 2) - (float) TEXTURE_REGION.getRegionHeight() / 2, (float) TEXTURE_REGION.getRegionWidth() / 2, (float) TEXTURE_REGION.getRegionHeight() / 2, TEXTURE_REGION.getRegionWidth(), TEXTURE_REGION.getRegionHeight(), Settings.scale * card.drawScale, Settings.scale * card.drawScale, 0.0f);
     }
 }
