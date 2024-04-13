@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
 import pokeregions.monsters.act2.enemies.HoOhEnemy;
 import pokeregions.monsters.act2.enemies.LugiaEnemy;
+import pokeregions.monsters.act2.enemies.ScizorEnemy;
 import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
@@ -141,6 +142,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Volcano");
                 } else if (mo instanceof LugiaEnemy) {
                     this.bg = this.atlas.findRegion("mod/Cosmic");
+                } else if (mo instanceof ScizorEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Arena");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

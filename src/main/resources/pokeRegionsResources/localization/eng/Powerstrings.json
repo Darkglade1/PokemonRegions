@@ -218,5 +218,9 @@
   "${ModID}:Shadow": {
     "NAME": "Harbinger of Shadow",
     "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yShadow-Cursed."]
+  },
+  "${ModID}:Technician": {
+    "NAME": "Technician",
+    "DESCRIPTIONS": ["The first time you play #b", " card(s) each turn, this creature takes its turn. If this effect was triggered, this creature skips its normal turn for the round."]
   }
 }

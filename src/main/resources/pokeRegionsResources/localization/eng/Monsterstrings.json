@@ -499,5 +499,15 @@
     "NAME": "Shadow Lugia",
     "DIALOG": [
     ]
+  },
+  "${ModID}:ScizorEnemy": {
+    "MOVES": [
+      "Bullet Punch",
+      "Swords Dance",
+      "Agility"
+    ],
+    "NAME": "Scizor",
+    "DIALOG": [
+    ]
   }
 }

@@ -85,7 +85,7 @@ public abstract class AbstractPokemonMonster extends CustomMonster {
                 power.onSpecificTrigger();
             }
         }
-        if (!this.hasPower(VisibleBarricadePower.POWER_ID)) {
+        if (!this.hasPower(VisibleBarricadePower.POWER_ID) && AbstractDungeon.actionManager.turnHasEnded) {
             this.loseBlock();
         }
     }
