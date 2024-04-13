@@ -710,6 +710,43 @@
       "Put a card from your exhaust pile into your hand."
     ]
   },
+  "${ModID}:HoOh": {
+    "NAME": "Ho-Oh",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Regenerate[]",
+      "[#FFA500]Sacred[] [#FFA500]Fire[]",
+      "You gain ",
+      " *Regen.",
+      "Deal ",
+      " damage. Enemy loses Strength this turn equal to unblocked damage dealt."
+    ]
+  },
+  "${ModID}:Lugia": {
+    "NAME": "Shadow Lugia",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Shadow[] [#FFA500]Rush[]",
+      "[#FFA500]Shadow[] [#FFA500]Sky[]",
+      "Deal ",
+      " damage. Affected twice by damage modifiers.",
+      "Enemy loses ",
+      " Strength."
+    ]
+  },
+  "${ModID}:Scizor": {
+    "NAME": "Scizor",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]U-Turn[]",
+      "[#FFA500]Bullet[] [#FFA500]Punch[]",
+      "Deal ",
+      " damage. The next *Pokemon to switch in deals ",
+      "% more damage with its next attack.",
+      "Deal ",
+      " damage twice. For each Attack played this turn, increase number of hits by 1."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

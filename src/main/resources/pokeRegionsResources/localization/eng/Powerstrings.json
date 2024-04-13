@@ -222,5 +222,9 @@
   "${ModID}:Technician": {
     "NAME": "Technician",
     "DESCRIPTIONS": ["The first time you play #b", " card(s) each turn, this creature takes its turn. If this effect was triggered, this creature skips its normal turn for the round."]
+  },
+  "${ModID}:UTurn": {
+    "NAME": "U-Turn",
+    "DESCRIPTIONS": ["The next #yPokemon to switch-in deals #b", "% more damage with its next attack."]
   }
 }

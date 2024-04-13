@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.UsePreBattleActionAction;
-import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
+import pokeregions.cards.pokemonAllyCards.act2.HoOh;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.Burn;
@@ -220,7 +220,7 @@ public class HoOhEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new HoOh();
     }
 
 }

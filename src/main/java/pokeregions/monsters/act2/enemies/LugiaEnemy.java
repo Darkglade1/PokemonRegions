@@ -21,11 +21,10 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.stances.DivinityStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.cardMods.ShadowCurseMod;
-import pokeregions.cards.pokemonAllyCards.act1.Dragonite;
+import pokeregions.cards.pokemonAllyCards.act2.Lugia;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
@@ -216,7 +215,7 @@ public class LugiaEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Dragonite();
+        return new Lugia();
     }
 
 }
