@@ -85,10 +85,10 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Spheric Guardian", 2.0F));
-        monsters.add(new MonsterInfo("Chosen", 2.0F));
-        monsters.add(new MonsterInfo("Shell Parasite", 2.0F));
-        monsters.add(new MonsterInfo("3 Byrds", 2.0F));
+        monsters.add(new MonsterInfo("Spheric Guardian", 2.0F)); // Kingdra
+        monsters.add(new MonsterInfo("Chosen", 2.0F)); // Azumaril
+        //monsters.add(new MonsterInfo("Shell Parasite", 2.0F));
+        monsters.add(new MonsterInfo("3 Byrds", 2.0F)); // 3 Swinubs
         monsters.add(new MonsterInfo(EncounterIDs.SLUGMA_2, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
@@ -97,14 +97,14 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F));
-        monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F));
-        monsters.add(new MonsterInfo("Snake Plant", 6.0F));
-        monsters.add(new MonsterInfo("Snecko", 4.0F));
-        monsters.add(new MonsterInfo("Centurion and Healer", 6.0F));
+        monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F)); // Azumaril and Lanturn
+        monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Mantine
+        monsters.add(new MonsterInfo("Snake Plant", 6.0F)); // Quagsire
+        monsters.add(new MonsterInfo("Snecko", 4.0F)); // Steelix
+        monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // 2 Skarmory
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));
-        monsters.add(new MonsterInfo("3 Cultists", 3.0F));
-        monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
+        monsters.add(new MonsterInfo("3 Cultists", 3.0F)); // 2 Swinubs and Piloswine
+        //monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);
