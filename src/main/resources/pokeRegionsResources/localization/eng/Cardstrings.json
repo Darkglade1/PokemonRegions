@@ -747,6 +747,19 @@
       " damage twice. For each Attack played this turn, increase number of hits by 1."
     ]
   },
+  "${ModID}:Slugma": {
+    "NAME": "Slugma",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Lava[] [#FFA500]Plume[]",
+      "[#FFA500]Flame[] [#FFA500]Body[]",
+      "Apply ",
+      " pokeregions:Burn.",
+      "You gain ",
+      " Block. Add ",
+      " Burn to your hand."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

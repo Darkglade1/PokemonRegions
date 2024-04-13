@@ -53,6 +53,7 @@ import pokeregions.monsters.act2.allyPokemon.Scizor;
 import pokeregions.monsters.act2.enemies.HoOhEnemy;
 import pokeregions.monsters.act2.enemies.LugiaEnemy;
 import pokeregions.monsters.act2.enemies.ScizorEnemy;
+import pokeregions.monsters.act2.enemies.SlugmaEnemy;
 import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
@@ -458,10 +459,20 @@ public class PokemonRegions implements
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
 
         // Act 2
+
+        // Bosses
         BaseMod.addMonster(HoOhEnemy.ID, (BaseMod.GetMonster) HoOhEnemy::new);
         BaseMod.addMonster(LugiaEnemy.ID, (BaseMod.GetMonster) LugiaEnemy::new);
 
+        // Elites
         BaseMod.addMonster(ScizorEnemy.ID, (BaseMod.GetMonster) ScizorEnemy::new);
+
+        // Normal encounters
+        BaseMod.addMonster(EncounterIDs.SLUGMA_2, "2 Slugmas", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SlugmaEnemy(-200.0F, 0.0F),
+                        new SlugmaEnemy(50.0F, 0.0F),
+                }));
 
         // Act 3
         Hoenn hoenn = new Hoenn();

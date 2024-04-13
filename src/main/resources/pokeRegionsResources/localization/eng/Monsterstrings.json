@@ -509,5 +509,15 @@
     "NAME": "Scizor",
     "DIALOG": [
     ]
+  },
+  "${ModID}:SlugmaEnemy": {
+    "MOVES": [
+      "Harden",
+      "Rock Throw",
+      "Lava Plume"
+    ],
+    "NAME": "Slugma",
+    "DIALOG": [
+    ]
   }
 }

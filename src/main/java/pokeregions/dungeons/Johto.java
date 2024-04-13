@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
 import pokeregions.events.ProfessorOak;
 import pokeregions.monsters.act1.enemies.*;
+import pokeregions.monsters.act2.enemies.ScizorEnemy;
 
 import java.util.ArrayList;
 
@@ -83,19 +84,19 @@ public class Johto extends AbstractPokemonRegionDungeon {
 
     @Override
     protected void generateWeakEnemies(int count) {
-        ArrayList<MonsterInfo> monsters = new ArrayList();
+        ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo("Spheric Guardian", 2.0F));
         monsters.add(new MonsterInfo("Chosen", 2.0F));
         monsters.add(new MonsterInfo("Shell Parasite", 2.0F));
         monsters.add(new MonsterInfo("3 Byrds", 2.0F));
-        monsters.add(new MonsterInfo("2 Thieves", 2.0F));
+        monsters.add(new MonsterInfo(EncounterIDs.SLUGMA_2, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
     }
 
     @Override
     protected void generateStrongEnemies(int count) {
-        ArrayList<MonsterInfo> monsters = new ArrayList();
+        ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F));
         monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F));
         monsters.add(new MonsterInfo("Snake Plant", 6.0F));
@@ -111,17 +112,17 @@ public class Johto extends AbstractPokemonRegionDungeon {
 
     @Override
     protected void generateElites(int count) {
-        ArrayList<MonsterInfo> monsters = new ArrayList();
+        ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo("Gremlin Leader", 1.0F));
         monsters.add(new MonsterInfo("Slavers", 1.0F));
-        monsters.add(new MonsterInfo("Book of Stabbing", 1.0F));
+        monsters.add(new MonsterInfo(ScizorEnemy.ID, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, true);
     }
 
     @Override
     protected ArrayList<String> generateExclusions() {
-        ArrayList<String> retVal = new ArrayList();
+        ArrayList<String> retVal = new ArrayList<>();
         switch ((String)monsterList.get(monsterList.size() - 1)) {
             case "Spheric Guardian":
                 retVal.add("Sentry and Sphere");
