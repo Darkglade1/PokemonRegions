@@ -760,6 +760,20 @@
       " Burn to your hand."
     ]
   },
+  "${ModID}:Magcargo": {
+    "NAME": "Magcargo",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Inferno[]",
+      "[#FFA500]Flame[] [#FFA500]Body[]",
+      "Deal ",
+      " damage ",
+      " times. Deals 0 damage to enemies without pokeregions:Burn. ",
+      "You gain ",
+      " Block. Add ",
+      " Burns to your hand."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

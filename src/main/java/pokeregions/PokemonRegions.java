@@ -50,10 +50,7 @@ import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
 import pokeregions.monsters.act2.allyPokemon.Scizor;
-import pokeregions.monsters.act2.enemies.HoOhEnemy;
-import pokeregions.monsters.act2.enemies.LugiaEnemy;
-import pokeregions.monsters.act2.enemies.ScizorEnemy;
-import pokeregions.monsters.act2.enemies.SlugmaEnemy;
+import pokeregions.monsters.act2.enemies.*;
 import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
 import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
@@ -472,6 +469,11 @@ public class PokemonRegions implements
                 new AbstractMonster[]{
                         new SlugmaEnemy(-200.0F, 0.0F),
                         new SlugmaEnemy(50.0F, 0.0F),
+                }));
+        BaseMod.addMonster(EncounterIDs.MAGCARGO_AND_SLUGMA, "Magcargo and Slugma", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SlugmaEnemy(-200.0F, 0.0F),
+                        new MagcargoEnemy(50.0F, 0.0F),
                 }));
 
         // Act 3

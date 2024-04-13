@@ -248,7 +248,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                     if (this.intent == IntentEnums.MASS_ATTACK) {
                         // Apply powers against self since that should be good enough to calc massattack damage with only self damage mods
                         info.applyPowers(this, this);
-                        if (additionalMultiplier > 0) {
+                        if (additionalMultiplier >= 0) {
                             info.output = (int) (info.output * additionalMultiplier);
                         }
                         ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
@@ -260,7 +260,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                         }
                     } else {
                         info.applyPowers(this, target);
-                        if (additionalMultiplier > 0) {
+                        if (additionalMultiplier >= 0) {
                             info.output = (int) (info.output * additionalMultiplier);
                         }
                         ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);

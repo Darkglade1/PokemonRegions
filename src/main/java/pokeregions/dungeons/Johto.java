@@ -102,7 +102,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo("Snake Plant", 6.0F));
         monsters.add(new MonsterInfo("Snecko", 4.0F));
         monsters.add(new MonsterInfo("Centurion and Healer", 6.0F));
-        monsters.add(new MonsterInfo("Cultist and Chosen", 3.0F));
+        monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));
         monsters.add(new MonsterInfo("3 Cultists", 3.0F));
         monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
         MonsterInfo.normalizeWeights(monsters);

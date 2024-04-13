@@ -519,5 +519,16 @@
     "NAME": "Slugma",
     "DIALOG": [
     ]
+  },
+  "${ModID}:MagcargoEnemy": {
+    "MOVES": [
+      "Harden",
+      "Rock Throw",
+      "Lava Plume",
+      "Smog"
+    ],
+    "NAME": "Magcargo",
+    "DIALOG": [
+    ]
   }
 }
