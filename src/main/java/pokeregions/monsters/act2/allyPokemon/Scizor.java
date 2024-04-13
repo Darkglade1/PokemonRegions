@@ -82,7 +82,6 @@ public class Scizor extends AbstractPokemonAlly
                 for (int i = 0; i < multiplier; i++) {
                     dmg(target, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
                 }
-                addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act2.Scizor.MOVE_2_DAMAGE, 2);
                 break;
             }
         }
@@ -96,7 +95,7 @@ public class Scizor extends AbstractPokemonAlly
     }
 
     public void updateMoveFromCardsPlayed() {
-        if (this.nextMove == MOVE_2 && allyCard.currentStamina >= move1StaminaCost) {
+        if (this.nextMove == MOVE_2 && allyCard.currentStamina >= move2StaminaCost) {
             int totalAttacks = 2;
             for (AbstractCard card : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
                 if (card.type == AbstractCard.CardType.ATTACK) {

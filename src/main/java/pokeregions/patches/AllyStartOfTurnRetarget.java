@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.act1.enemies.DiglettEnemy;
+import pokeregions.monsters.act2.allyPokemon.Scizor;
 import pokeregions.util.Wiz;
 
 import static pokeregions.util.Wiz.adp;
@@ -20,6 +21,7 @@ import static pokeregions.util.Wiz.atb;
 
 )
 // A patch to let allies target again at start of turn
+// Also Scizor is piggybacking here
 public class AllyStartOfTurnRetarget {
     @SpireInsertPatch(locator = Locator.class)
     public static void Retarget(GameActionManager instance) {
@@ -44,6 +46,9 @@ public class AllyStartOfTurnRetarget {
                             this.isDone = true;
                         }
                     });
+                }
+                if (activePokemon instanceof Scizor) {
+                    AbstractDungeon.onModifyPower();
                 }
             }
         }
