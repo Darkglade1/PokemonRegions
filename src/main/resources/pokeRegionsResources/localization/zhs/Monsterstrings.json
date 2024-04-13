@@ -1,0 +1,476 @@
+{
+  "pokeRegions:DiglettEnemy": {
+    "MOVES": [
+      "挖洞",
+      "劈开"
+    ],
+    "NAME": "地鼠",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DugtrioEnemy": {
+    "MOVES": [
+      "挖洞",
+      "乱抓"
+    ],
+    "NAME": "三地鼠",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:CloysterEnemy": {
+    "MOVES": [
+      "破壳",
+      "贝壳刃",
+      "冰锥"
+    ],
+    "NAME": "刺甲贝",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DragoniteEnemy": {
+    "MOVES": [
+      "龙之舞",
+      "逆鳞",
+      "眩晕"
+    ],
+    "NAME": "快龙",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GastlyEnemy": {
+    "MOVES": [
+      "舌舔",
+      "突袭",
+      "幽灵派对"
+    ],
+    "NAME": "鬼斯",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:HaunterEnemy": {
+    "MOVES": [
+      "诅咒",
+      "怨恨",
+      "黑夜魔影"
+    ],
+    "NAME": "鬼斯通",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GengarEnemy": {
+    "MOVES": [
+      "诡计",
+      "暗影球"
+    ],
+    "NAME": "耿鬼",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ArbokEnemy": {
+    "MOVES": [
+      "紧束",
+      "咬碎",
+      "大蛇瞪眼"
+    ],
+    "NAME": "阿柏怪",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:VulpixEnemy": {
+    "MOVES": [
+      "鬼火",
+      "火焰漩涡",
+      "蓄能焰袭"
+    ],
+    "NAME": "六尾",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GolemEnemy": {
+    "MOVES": [
+      "岩石打磨",
+      "击落",
+      "地震"
+    ],
+    "NAME": "隆隆岩",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MachampEnemy": {
+    "MOVES": [
+      "健美",
+      "十字劈",
+      "鬼面"
+    ],
+    "NAME": "怪力",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RattataEnemy": {
+    "MOVES": [
+      "咬住",
+      "自我激励"
+    ],
+    "NAME": "小拉达",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RhyhornEnemy": {
+    "MOVES": [
+      "角撞",
+      "直冲钻",
+      "挺住"
+    ],
+    "NAME": "独角犀牛",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MoltresEnemy": {
+    "MOVES": [
+      "烧尽",
+      "热风"
+    ],
+    "NAME": "火焰鸟",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ZapdosEnemy": {
+    "MOVES": [
+      "放电",
+      "啄钻",
+      "充电"
+    ],
+    "NAME": "闪电鸟",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ArticunoEnemy": {
+    "MOVES": [
+      "细雪",
+      "雪景",
+      "冰砾"
+    ],
+    "NAME": "急冻鸟",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MewtwoEnemy": {
+    "MOVES": [
+      "冥想",
+      "自我再生",
+      "念力"
+    ],
+    "NAME": "超梦",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:CaterpieEnemy": {
+    "MOVES": [
+      "吐丝",
+      "虫咬"
+    ],
+    "NAME": "绿毛虫",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:WeedleEnemy": {
+    "MOVES": [
+      "毒针",
+      "虫咬"
+    ],
+    "NAME": "独角虫",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:OmastarEnemy": {
+    "MOVES": [
+      "滚动",
+      "眩晕"
+    ],
+    "NAME": "多刺菊石兽",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AlakazamEnemy": {
+    "MOVES": [
+      "折弯汤匙",
+      "气息",
+      "真气弹"
+    ],
+    "NAME": "胡地",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:VictreebelEnemy": {
+    "MOVES": [
+      "愤怒粉",
+      "飞叶快刀",
+      "麻痹粉"
+    ],
+    "NAME": "大食花",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:KyogreEnemy": {
+    "MOVES": [
+      "水炮",
+      "根源波动",
+      "水流环",
+      "生命水滴"
+    ],
+    "NAME": "盖欧卡",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DeoxysEnemy": {
+    "MOVES": [
+      "增强拳",
+      "弱点暴露",
+      "精神突进",
+      "宇宙力量",
+      "铁壁",
+      "重磅冲撞",
+      "高速星星",
+      "诡计",
+      "神速"
+    ],
+    "NAME": "代欧奇希斯",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GroudonEnemy": {
+    "MOVES": [
+      "剑舞",
+      "断崖之剑",
+      "热沙大地"
+    ],
+    "NAME": "固拉多",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SalamenceEnemy": {
+    "MOVES": [
+      "龙之俯冲",
+      "龙爪",
+      "龙息"
+    ],
+    "NAME": "暴飞龙",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SlakingEnemy": {
+    "MOVES": [
+      "Zzzzzzzz",
+      "松懈",
+      "终极冲击",
+      "臂锤",
+      "昏昏沉沉 . . ."
+    ],
+    "NAME": "请假王",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:BreloomEnemy": {
+    "MOVES": [
+      "蘑菇孢子",
+      "剑舞",
+      "种子机关枪"
+    ],
+    "NAME": "斗笠菇",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AronEnemy": {
+    "MOVES": [
+      "咬",
+      "金属爆炸"
+    ],
+    "NAME": "可可多拉",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AggronEnemy": {
+    "MOVES": [
+      "铁尾",
+      "金属爆炸",
+      "金属音"
+    ],
+    "NAME": "波士可多拉",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:TropiusEnemy": {
+    "MOVES": [
+      "大晴天",
+      "日光束",
+      "种子炸弹"
+    ],
+    "NAME": "热带龙",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:TrapinchEnemy": {
+    "MOVES": [
+      "凶猛咬合",
+      "咬碎",
+      "诱捕"
+    ],
+    "NAME": "大颚蚁",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:FlygonEnemy": {
+    "MOVES": [
+      "广域守护",
+      "庄严打击",
+      "迁怒"
+    ],
+    "NAME": "沙漠蜻蜓",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RayquazaEnemy": {
+    "MOVES": [
+      "暴风",
+      "龙之波动",
+      "龙息"
+    ],
+    "NAME": "烈空坐",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GardevoirEnemy": {
+    "MOVES": [
+      "撒娇",
+      "诡计",
+      "月亮之力",
+      "巨声"
+    ],
+    "NAME": "沙奈朵",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RegisteelEnemy": {
+    "MOVES": [
+      "摔打",
+      "广域防守",
+      "守住"
+    ],
+    "NAME": "雷吉斯奇鲁",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RegiceEnemy": {
+    "MOVES": [
+      "摔打",
+      "冰冻之风",
+      "冰冻干燥"
+    ],
+    "NAME": "雷吉艾斯",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RegirockEnemy": {
+    "MOVES": [
+      "摔打",
+      "原始之力",
+      "埋葬"
+    ],
+    "NAME": "雷吉洛克",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:EspeonAnnie": {
+    "MOVES": [
+      "念力",
+      "帮助",
+      "精神力"
+    ],
+    "NAME": "太阳伊布",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AriadosOakley": {
+    "MOVES": [
+      "死缠烂打",
+      "黏黏网",
+      "十字毒刃"
+    ],
+    "NAME": "阿利多斯",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MetagrossEnemy": {
+    "MOVES": [
+      "彗星拳",
+      "磨爪",
+      "准备大爆炸",
+      "大爆炸"
+    ],
+    "NAME": "巨金怪",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SolrockEnemy": {
+    "MOVES": [
+      "冥想",
+      "力量宝石",
+      "热风",
+      "晨曦之怒"
+    ],
+    "NAME": "太阳岩",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:LunatoneEnemy": {
+    "MOVES": [
+      "冥想",
+      "力量宝石",
+      "食梦",
+      "暗月之怒"
+    ],
+    "NAME": "月亮岩",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DialgaEnemy": {
+    "MOVES": [
+      "原始之力",
+      "时光咆哮",
+      "扭曲时间"
+    ],
+    "NAME": "帝牙卢卡",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:PalkiaEnemy": {
+    "MOVES": [
+      "鬼面",
+      "水之波动",
+      "龙爪",
+      "亚空裂斩"
+    ],
+    "NAME": "帕路奇亚",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GiratinaEnemy": {
+    "MOVES": [
+      "祸不单行",
+      "暗影爪",
+      "诡计",
+      "暗影潜袭",
+      "灵骚"
+    ],
+    "NAME": "骑拉帝纳",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DistortionLeyline": {
+    "MOVES": [
+    ],
+    "NAME": "畸变之痕",
+    "DIALOG": [
+    ]
+  }
+}

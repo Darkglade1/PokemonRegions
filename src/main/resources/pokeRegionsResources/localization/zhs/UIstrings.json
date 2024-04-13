@@ -1,0 +1,198 @@
+{
+  "pokeRegions:Kanto": {
+    "TEXT": [
+      "关都",
+      "第一幕",
+      "你看到一侧有一个奇特的白色装置，上面镶嵌着一枚 #y金色 的装饰。 它深深地 #y吸引 了你，令你不由自主地去触摸。",
+      "开始一场新的旅程。"
+    ]
+  },
+  "pokeRegions:Johto": {
+    "TEXT": [
+      "城都",
+      "第二幕",
+      "这片土地独有的陌生而舒适的感觉吸引了你。 相比 #y尖塔 那 #p停滞 的空气，这里更让人心胸愉悦。",
+      "继续你的旅程。"
+    ]
+  },
+  "pokeRegions:Hoenn": {
+    "TEXT": [
+      "丰源",
+      "第三幕",
+      "虽然你的旅程变得更加 #r危险 ，但你身边的 #g伙伴们 令你感到安心。",
+      "继续你的旅程。"
+    ]
+  },
+  "pokeRegions:SpearPillar": {
+    "TEXT": [
+      "尖石柱",
+      "尖石柱",
+      "在这片大地上，现实不断地 #p扭曲 和 @撕裂@ ，四处蔓延，引发混乱和灾难。",
+      "调查这些扭曲"
+    ]
+  },
+  "pokeRegions:PokemonVictory": {
+    "TEXT": [
+      "我的孩子们……最终被制服了吗？",
+      "干得好……被选中的人……",
+      "现在……我终于可以休息了……"
+    ]
+  },
+  "pokeRegions:ModMenu": {
+    "TEXT": [
+      "宝可梦地区",
+      "黑暗林地",
+      "一个以精灵宝可梦为主题的备用Act模组。",
+      "在宝可梦主题地图以外禁用宝可梦行动。",
+      "禁用宝可梦敌人的详细意图。"
+    ]
+  },
+  "pokeRegions:AllyStrings": {
+    "TEXT": [
+      "你的 #g宝可梦 准备 #y攻击 ",
+      " 造成 #b",
+      " 点伤害。",
+      " 点伤害 #b",
+      " 次。",
+      "你的 #g宝可梦 准备给予 ",
+      " 一个 #y负面效果 。",
+      "你的 #g宝可梦 准备 #y增益 。",
+      "你的 #g宝可梦 准备 #y防御 。",
+      "你的 #g宝可梦 准备对所有敌人造成 #b",
+      " 点伤害 。",
+      "你的 #g宝可梦 准备使用 #y神秘的魔法 。",
+      "你的 #g宝可梦 准备做一些 #y未知的事情。"
+    ]
+  },
+  "pokeRegions:MassAttackIntent": {
+    "TEXT": [
+      "群体攻击",
+      "这名敌人准备对所有其他角色造成 #b", " 点伤害 ", "。", " 次。"
+    ]
+  },
+  "pokeRegions:PokemonType": {
+    "TEXT": [
+      "宝可梦"
+    ]
+  },
+  "pokeRegions:PokemonTeamButton": {
+    "TEXT": [
+      "你的队伍",
+      "查看你队伍中的宝可梦。",
+      "你的队伍已经满了，选择放生一只非初始宝可梦。"
+    ]
+  },
+  "pokeRegions:PokemonTeamViewScreen": {
+    "TEXT": [
+      "你的宝可梦 (最大 ",
+      ")",
+      "返回"
+    ]
+  },
+  "pokeRegions:StaminaCost": {
+    "TEXT": [
+      "消耗 ",
+      " 耐力。"
+    ]
+  },
+  "pokeRegions:SwitchPokemon": {
+    "TEXT": [
+      "交换你正在战斗的宝可梦。",
+      "我没有可以交换的宝可梦。",
+      "选择一只宝可梦上场。",
+      "交换宝可梦",
+      "取消"
+    ]
+  },
+  "pokeRegions:HealPokemonCampfire": {
+    "TEXT": [
+      "和你的宝可梦一同休息。",
+      "恢复你最大生命的 ",
+      "% (",
+      ")",
+      "\n恢复 你所有宝可梦的耐力 ",
+      "% 。",
+      "无法休息(咖啡杯)"
+    ]
+  },
+  "pokeRegions:IntentStrings": {
+    "TEXT": [
+      "你",
+      "自己",
+      "所有敌人",
+      "随机敌人",
+      "吸血",
+      "所有随从",
+      "偷取最稀有的卡牌",
+      "清除减益效果",
+      "向牌组添加寄生",
+      "死亡",
+      "恢复至一半生命",
+      "移除负面力量",
+      "召唤随从",
+      "将所有非耗尽或状态卡牌置入弃牌堆"
+    ]
+  },
+  "pokeRegions:ExhaustDrawPile": {
+    "TEXT": [
+      "选择一张牌消耗。"
+    ]
+  },
+  "pokeRegions:ShuffleDiscardPileBackAction": {
+    "TEXT": [
+      "选择一张牌洗入。"
+    ]
+  },
+  "pokeRegions:PokeballMove": {
+    "TEXT": [
+      "扔出精灵球",
+      "花费 [E] 使用 #y精灵球 并尝试捕捉这只 #y宝可梦 。 NL 捕捉率为 #b100% ————当这只 #y宝可梦 的生命低于 #b",
+      "没有可以捕捉的宝可梦。",
+      "我没有精灵球了。",
+      "能量不足。",
+      "成功",
+      "失败",
+      "捕捉率： ",
+      "%",
+      " 。"
+    ]
+  },
+  "pokeRegions:PokemonHealthBar": {
+    "TEXT": [
+      " STA",
+      "已倒下",
+      "已捕捉！"
+    ]
+  },
+  "pokeRegions:MewTransformAction": {
+    "TEXT": [
+      "选择一只将要变身的宝可梦。"
+    ]
+  },
+  "pokeRegions:WaterLoggedMod": {
+    "TEXT": [
+      "pokeregions:浸水 。 NL "
+    ]
+  },
+  "pokeRegions:DampMod": {
+    "TEXT": [
+      "pokeregions:潮湿 。 NL "
+    ]
+  },
+  "pokeRegions:ScorchedMod": {
+    "TEXT": [
+      "pokeregions:烧焦 。 NL "
+    ]
+  },
+  "pokeRegions:EnhancedDigOption": {
+    "TEXT": [
+      "强化挖掘",
+      "挖掘一个遗物，它是罕见或稀有的。"
+    ]
+  },
+  "pokeRegions:TauntNotice": {
+    "TEXT": [
+      "我必须以嘲讽敌人为目标！"
+    ]
+  }
+}

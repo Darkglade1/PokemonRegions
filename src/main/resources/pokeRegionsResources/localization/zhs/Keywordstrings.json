@@ -1,0 +1,66 @@
+[
+  {
+    "PROPER_NAME": "剧毒",
+    "NAMES": [
+      "toxic",
+      "剧毒"
+    ],
+    "DESCRIPTION": "拥有 #y剧毒 的生物在回合结束时会失去生命。"
+  },
+  {
+    "PROPER_NAME": "耐力",
+    "NAMES": [
+      "stamina",
+      "耐力"
+    ],
+    "DESCRIPTION": "你的 #y宝可梦 拥有一定数量的 #y耐力 。括号中的数字代表每个招式的 #y耐力 消耗。#y耐力 用尽的 #y宝可梦 将无法继续战斗。 NL #y耐力 可以通过篝火恢复，也可以通过进入新的一幕来恢复。"
+  },
+  {
+    "PROPER_NAME": "烧伤",
+    "NAMES": [
+      "burn",
+      "烧伤"
+    ],
+    "DESCRIPTION": "拥有 #y烧伤 的生物受到攻击时增加受到的伤害。"
+  },
+  {
+    "PROPER_NAME": "浸水",
+    "NAMES": [
+      "waterlogged",
+      "浸水"
+    ],
+    "DESCRIPTION": "#y浸水 的牌 #y无法被打出 且 #y保留 。在 #y保留 后， #y浸水 的牌会变得 #y潮湿 。"
+  },
+  {
+    "PROPER_NAME": "潮湿",
+    "NAMES": [
+      "damp",
+      "潮湿"
+    ],
+    "DESCRIPTION": "#y潮湿 的牌获得 #y保留 和 #y消耗 。在 #y保留 两个回合后， #y潮湿 效果会被移除。"
+  },
+  {
+    "PROPER_NAME": "束缚",
+    "NAMES": [
+      "drowning",
+      "束缚"
+    ],
+    "DESCRIPTION": "每当你打出一张牌，受影响的生物会失去生命。"
+  },
+  {
+    "PROPER_NAME": "烧焦",
+    "NAMES": [
+      "scorched",
+      "烧焦"
+    ],
+    "DESCRIPTION": "#y烧焦 的牌获得 #y虚无 ，每当你打出一张 #y烧焦 的牌，受到 #b2 点伤害。"
+  },
+  {
+    "PROPER_NAME": "缓慢",
+    "NAMES": [
+      "slow",
+      "缓慢"
+    ],
+    "DESCRIPTION": "在一个回合内， 每打出一张牌，拥有 #y缓慢 的生物会受到更多的伤害。"
+  }
+]
