@@ -1,0 +1,772 @@
+{
+  "pokeRegions:Charmander": {
+    "NAME": "小火龙",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]抓[]",
+      "[#FFA500]火花[]",
+      "造成 ",
+      " 点伤害。",
+      "对所有敌人造成 ",
+      " 点伤害。"
+    ]
+  },
+  "pokeRegions:Charizard": {
+    "NAME": "喷火龙",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]金属爪[]",
+      "[#FFA500]喷射火焰[]",
+      "造成 ",
+      " 点伤害。",
+      "对所有敌人造成 ",
+      " 点伤害并给予 ",
+      " 层 pokeregions:烧伤 和 易伤 。"
+    ]
+  },
+  "pokeRegions:Bulbasaur": {
+    "NAME": "妙蛙种子",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]藤鞭[]",
+      "[#FFA500]毒粉[]",
+      "造成 ",
+      " 点伤害。",
+      "给予 ",
+      " 层 pokeregions:剧毒 和 ",
+      " 层 虚弱 。"
+    ]
+  },
+  "pokeRegions:Venusaur": {
+    "NAME": "妙蛙草",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]猛撞[]",
+      "[#FFA500]毒粉[]",
+      "造成 ",
+      " 点伤害。",
+      "给予 ",
+      " 层 pokeregions:剧毒 和 ",
+      " 层 虚弱 及 易伤 。"
+    ]
+  },
+  "pokeRegions:Squirtle": {
+    "NAME": "杰尼龟",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]水枪[]",
+      "[#FFA500]变圆[]",
+      "造成 ",
+      " 点伤害。",
+      "你获得 ",
+      " 点 格挡 。"
+    ]
+  },
+  "pokeRegions:Blastoise": {
+    "NAME": "水箭龟",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]水流喷射[]",
+      "[#FFA500]变圆[]",
+      "造成 ",
+      " 点伤害。",
+      "你获得 ",
+      " 点 格挡 和 ",
+      " 层 *金属化 。"
+    ]
+  },
+  "pokeRegions:Diglett": {
+    "NAME": "地鼠",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]挖洞[]",
+      "[#FFA500]危险回避[]",
+      "下一回合可以使用 [#FFA500]危险回避[] 。",
+      "造成 ",
+      " 点伤害。"
+    ]
+  },
+  "pokeRegions:Dugtrio": {
+    "NAME": "三地鼠",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]挖掘[]",
+      "[#FFA500]震级[]",
+      "将弃牌堆中的 ",
+      " 张牌放入手中。",
+      "对所有敌人造成 ",
+      " 点伤害并给予 ",
+      " 层 易伤 。"
+    ]
+  },
+  "pokeRegions:Cloyster": {
+    "NAME": "刺甲贝",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]缩入壳中[]",
+      "[#FFA500]冰锥[]",
+      "你获得 *壁垒 。",
+      "造成 ",
+      " 点伤害 ",
+      " 次。"
+    ]
+  },
+  "pokeRegions:Dragonite": {
+    "NAME": "快龙",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]龙之舞[]",
+      "[#FFA500]逆鳞[]",
+      "你获得 ",
+      " 点 力量 。",
+      "造成 ",
+      " 点伤害。提升本招式的伤害 ",
+      " 点直到替换出场。"
+    ]
+  },
+  "pokeRegions:Gastly": {
+    "NAME": "鬼斯",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]食梦[]",
+      "[#FFA500]灵骚[]",
+      "抽 ",
+      " 张牌并将其 消耗 。",
+      "你获得 ",
+      " 点 *临时生命 。",
+      "你失去 ",
+      " 点生命。 ",
+      "你获得 ",
+      " 层 无实体 。"
+    ]
+  },
+  "pokeRegions:Haunter": {
+    "NAME": "鬼斯通",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]鬼火[]",
+      "[#FFA500]黑夜魔影[]",
+      "给予 ",
+      " 层 易伤 和 pokeregions:烧伤 。",
+      "根据 *耐力值 造成 ",
+      " 点对应次数的伤害。"
+    ]
+  },
+  "pokeRegions:Gengar": {
+    "NAME": "耿鬼",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]阴谋[]",
+      "[#FFA500]暗影球[]",
+      "将抽牌堆中的 ",
+      " 张牌放入手中。",
+      "造成 ",
+      " 点伤害。"
+    ]
+  },
+  "pokeRegions:Arbok": {
+    "NAME": "阿柏怪",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]剧毒[]",
+      "[#FFA500]突袭[]",
+      "给予 ",
+      " 层 pokeregions:剧毒 。",
+      "造成 ",
+      " 点伤害并给予 ",
+      " 层 虚弱 。"
+    ]
+  },
+  "pokeRegions:Vulpix": {
+    "NAME": "六尾",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]火焰漩涡[]",
+      "[#FFA500]蓄能焰袭[]",
+      "造成 ",
+      " 点伤害并给予 ",
+      " 层 pokeregions:烧伤 。",
+      "造成  ",
+      " 点伤害 ",
+      " 次。"
+    ]
+  },
+  "pokeRegions:Golem": {
+    "NAME": "隆隆岩",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]岩石打磨[]",
+      "[#FFA500]地震[]",
+      "你获得 ",
+      " 点 格挡 。",
+      "对所有敌人造成 ",
+      " 点伤害。"
+    ]
+  },
+  "pokeRegions:Machamp": {
+    "NAME": "怪力",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]健美[]",
+      "[#FFA500]爆裂拳[]",
+      "你获得 ",
+      " 点 *临时 力量 。",
+      "造成 ",
+      " 点伤害。"
+    ]
+  },
+  "pokeRegions:Rattata": {
+    "NAME": "小拉达",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]居合斩[]",
+      "[#FFA500]影子分身[]",
+      "造成 ",
+      " 点伤害并抽 ",
+      " 张牌。",
+      "你获得 ",
+      " 点 格挡 并抽 ",
+      " 张牌。"
+    ]
+  },
+  "pokeRegions:Rhyhorn": {
+    "NAME": "独角犀牛",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]重踏[]",
+      "[#FFA500]挺住[]",
+      "造成 ",
+      " 点伤害。 ",
+      "你获得 ",
+      " 点 格挡 。"
+    ]
+  },
+  "pokeRegions:Magikarp": {
+    "NAME": "鲤鱼王",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]水溅跃[]",
+      "[#FFA500]撞击[]",
+      "什么也不做。",
+      "造成 ",
+      " 点伤害。如果 斩杀 ，鲤鱼王进化为 *暴鲤龙 。"
+    ]
+  },
+  "pokeRegions:Gyarados": {
+    "NAME": "暴鲤龙",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]攀瀑[]",
+      "[#FFA500]战吼[]",
+      "造成 ",
+      " 点伤害。如果杀死了任意敌人，不消耗 *耐力值 。",
+      "给予所有敌人 ",
+      " 层 虚弱 和 易伤 。"
+    ]
+  },
+  "pokeRegions:Articuno": {
+    "NAME": "急冻鸟",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]雪景[]",
+      "[#FFA500]预知未来[]",
+      "你获得 ",
+      " 点 格挡 和 *金属化 。",
+      "预知 ",
+      " 。"
+    ]
+  },
+  "pokeRegions:Zapdos": {
+    "NAME": "闪电鸟",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]闪电链[]",
+      "[#FFA500]急速折返[]",
+      "每有一名敌人，对所有敌人造成 ",
+      " 点伤害。",
+      "将弃牌堆中的最多 ",
+      " 张牌放入抽牌堆顶。"
+    ]
+  },
+  "pokeRegions:Moltres": {
+    "NAME": "火焰鸟",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]热风[]",
+      "[#FFA500]烧尽[]",
+      "造成 ",
+      " 点伤害并给予 ",
+      " 层 pokeregions:烧伤 ",
+      " 次。",
+      "消耗抽牌堆中最多 ",
+      " 张牌。"
+    ]
+  },
+  "pokeRegions:Jolteon": {
+    "NAME": "雷伊布",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]高速移动[]",
+      "[#FFA500]充电[]",
+      "你获得 ",
+      " 点 敏捷 。",
+      " [E] 下一回合。"
+    ]
+  },
+  "pokeRegions:Flareon": {
+    "NAME": "火伊布",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]闪焰冲锋[]",
+      "[#FFA500]燃焰火花[]",
+      "造成 ",
+      " 点伤害。将 ",
+      " 张烧伤加入手中。",
+      "抽 ",
+      " 张牌。 消耗 ",
+      " 张牌。"
+    ]
+  },
+  "pokeRegions:Mew": {
+    "NAME": "梦幻",
+    "DESCRIPTION": "上场时，选择另外一只持有的 *宝可梦 。 *梦幻 变身成为选择的 *宝可梦 。",
+    "EXTENDED_DESCRIPTION": [
+      "",
+      ""
+    ]
+  },
+  "pokeRegions:Mewtwo": {
+    "NAME": "超梦",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]辅助力量[]",
+      "[#FFA500]广域战力[]",
+      "生成 一个 黑暗 充能球。它的增长速度增加 ",
+      "% 。",
+      "激发 你最右侧的充能球 ",
+      " 次。"
+    ]
+  },
+  "pokeRegions:Caterpie": {
+    "NAME": "绿毛虫",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]吐丝[]",
+      "[#FFA500]虫咬[]",
+      "本回合敌人失去 ",
+      " 点 力量 。",
+      "造成 ",
+      " 点伤害。给予 ",
+      " 层 虚弱 。"
+    ]
+  },
+  "pokeRegions:Weedle": {
+    "NAME": "独角虫",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]吐丝[]",
+      "[#FFA500]毒针[]",
+      "本回合敌人失去 ",
+      " 点 力量 。",
+      "造成 ",
+      " 点伤害。给予 ",
+      " 层 pokeregions:剧毒 。"
+    ]
+  },
+  "pokeRegions:Omastar": {
+    "NAME": "多刺菊石兽",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]滚动[]",
+      "[#FFA500]甲壳旋转[]",
+      "造成 ",
+      " 点伤害。在被替换前翻倍本招式的基础伤害。",
+      "你获得 ",
+      " 点 格挡 并抽 ",
+      " 张牌。"
+    ]
+  },
+  "pokeRegions:Alakazam": {
+    "NAME": "胡地",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]精神力[]",
+      "[#FFA500]冥想[]",
+      "造成 ",
+      " 点伤害。给予 ",
+      " 层 易伤 。",
+      "预知 ",
+      " 。抽 ",
+      " 张牌 。"
+    ]
+  },
+  "pokeRegions:Pikachu": {
+    "NAME": "皮卡丘",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]电光[]",
+      "[#FFA500]电击[]",
+      "在下一回合获得 [E] 。",
+      "造成 ",
+      " 点伤害。给予 ",
+      " 层 虚弱 和 易伤 。"
+    ]
+  },
+  "pokeRegions:Kyogre": {
+    "NAME": "盖欧卡",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]生命水滴[]",
+      "[#FFA500]拖入水中[]",
+      "你恢复 ",
+      " 点生命。",
+      "给予 ",
+      " 层 pokeregions:束缚 。"
+    ]
+  },
+  "pokeRegions:Deoxys": {
+    "NAME": "代欧奇希斯",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]自我暗示[]",
+      "[#FFA500]冥想[]",
+      "在你的下一个回合，进入 愤怒 并抽 ",
+      " 张牌。",
+      "你获得 ",
+      " 点 格挡 并进入 平静 。"
+    ]
+  },
+  "pokeRegions:Groudon": {
+    "NAME": "固拉多",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]热沙大地[]",
+      "[#FFA500]断崖之剑[]",
+      "消耗抽牌堆中最多 ",
+      " 张牌。根据其耗能总和给予对应层数的 pokeregions:烧伤 。",
+      "造成  ",
+      " 点伤害 ",
+      " 次。"
+    ]
+  },
+  "pokeRegions:Salamence": {
+    "NAME": "暴飞龙",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]龙之俯冲[]",
+      "[#FFA500]磨爪[]",
+      "造成 ",
+      " 点伤害。如果敌人拥有 易伤 ，造成双倍伤害。",
+      "你获得 ",
+      " 点 力量 和 ",
+      " 层 活力 。"
+    ]
+  },
+  "pokeRegions:Slaking": {
+    "NAME": "请假王",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]偷懒[]",
+      "[#FFA500]终极冲击[]",
+      " 恢复 ",
+      " 点 *耐力 。",
+      "造成 ",
+      " 点伤害。"
+    ]
+  },
+  "pokeRegions:Breloom": {
+    "NAME": "斗笠菇",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]剑舞[]",
+      "[#FFA500]种子机关枪[]",
+      "在本场战斗中令你和你的 *宝可梦 额外造成 ",
+      "% 的伤害。",
+      "造成  ",
+      " 点伤害 ",
+      " 次。"
+    ]
+  },
+  "pokeRegions:Aron": {
+    "NAME": "可可多拉",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]清洁铠甲[]",
+      "[#FFA500]金属爆炸[]",
+      "你获得 ",
+      " 层 人工制品 。",
+      "你获得 ",
+      " 点 格挡 和 ",
+      " 层 荆棘 。"
+    ]
+  },
+  "pokeRegions:Aggron": {
+    "NAME": "波士可多拉",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]泰山压顶[]",
+      "[#FFA500]金属爆炸[]",
+      "根据你的 格挡 造成对应的伤害。",
+      "你获得 ",
+      " 点 格挡 和 ",
+      " 层 荆棘 。"
+    ]
+  },
+  "pokeRegions:Tropius": {
+    "NAME": "热带龙",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]光合作用[]",
+      "[#FFA500]日光束[]",
+      "下一回合你获得 ",
+      " [E] 。",
+      "造成 ",
+      " 点伤害。给予 ",
+      " 层 虚弱 。"
+    ]
+  },
+  "pokeRegions:Trapinch": {
+    "NAME": "大颚蚁",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]玩泥巴[]",
+      "[#FFA500]咬碎[]",
+      "抽 ",
+      " 张牌，保留你的手牌到下一回合。",
+      "造成 ",
+      " 点伤害。给予 ",
+      " 层 易伤 。"
+    ]
+  },
+  "pokeRegions:Flygon": {
+    "NAME": "沙漠蜻蜓",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]大地之力[]",
+      "[#FFA500]地裂[]",
+      "造成 ",
+      " 点伤害。给予 pokeregions:缓慢 持续 ",
+      " 回合。",
+      "如果敌人的当前生命小于你，将他们的生命变为0."
+    ]
+  },
+  "pokeRegions:Rayquaza": {
+    "NAME": "烈空坐",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]神速[]",
+      "[#FFA500]飞翔[]",
+      "造成 ",
+      " 点伤害。给予 pokeregions:缓慢 持续 ",
+      " 回合 。",
+      "抽 ",
+      " 张牌。根据其总耗能获得对应的 敏捷 。"
+    ]
+  },
+  "pokeRegions:Gardevoir": {
+    "NAME": "沙奈朵",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]光墙[]",
+      "[#FFA500]月亮之力[]",
+      "你受到的攻击伤害减少 33% 持续 ",
+      " 回合。",
+      "造成 ",
+      " 点伤害。敌人本回合失去 ",
+      " 点 力量 。"
+    ]
+  },
+  "pokeRegions:Jirachi": {
+    "NAME": "基拉祈",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]破灭之愿[]",
+      "[#FFA500]祈愿[]",
+      "持续 ",
+      " 个回合结束时，对所有敌人造成 ",
+      " 点伤害。",
+      "将效果切换为 *许愿 。"
+    ]
+  },
+  "pokeRegions:Registeel": {
+    "NAME": "雷吉斯奇鲁",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]守住[]",
+      "[#FFA500]金属膜[]",
+      "你获得 ",
+      " 点 格挡 。",
+      "你获得 ",
+      " 层 *多层护甲 。"
+    ]
+  },
+  "pokeRegions:Regice": {
+    "NAME": "雷吉艾斯",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]守住[]",
+      "[#FFA500]冰冻之风[]",
+      "你获得 ",
+      " 点 格挡 。",
+      "给予 ",
+      " 层 虚弱 和 易伤 。"
+    ]
+  },
+  "pokeRegions:Regirock": {
+    "NAME": "雷吉洛克",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]守住[]",
+      "[#FFA500]岩崩[]",
+      "你获得 ",
+      " 点 格挡 。",
+      "对所有敌人造成 ",
+      " 点伤害 ",
+      " 次。"
+    ]
+  },
+  "pokeRegions:Latias": {
+    "NAME": "拉帝亚斯",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]神秘守护[]",
+      "[#FFA500]薄雾球[]",
+      "你获得 ",
+      " 点 格挡 。 预知 ",
+      " 。",
+      "造成 ",
+      " 点伤害。 1回合内敌人造成的伤害减少 ",
+      "%。"
+    ]
+  },
+  "pokeRegions:Latios": {
+    "NAME": "拉帝欧斯",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]洁净光芒[]",
+      "[#FFA500]流星群[]",
+      "造成 ",
+      " 点伤害。 1回合内敌人受到的攻击伤害增加 ",
+      "%。",
+      "对所有敌人造成 ",
+      " 点伤害并给予 ",
+      " 层 虚弱 和 易伤 。"
+    ]
+  },
+  "pokeRegions:Metagross": {
+    "NAME": "巨金怪",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]彗星拳[]",
+      "[#FFA500]电磁漂浮[]",
+      "造成 ",
+      " 点伤害。敌人每有一种负面状态额外造成一次伤害。",
+      "抽 ",
+      " 张牌。"
+    ]
+  },
+  "pokeRegions:Solrock": {
+    "NAME": "太阳岩",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]热风[]",
+      "[#FFA500]晨光[]",
+      "给予所有敌人 ",
+      " 层 pokeregions:烧伤 。",
+      "你获得 ",
+      " 点 *临时生命 。"
+    ]
+  },
+  "pokeRegions:Lunatone": {
+    "NAME": "月石",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]魔法空间[]",
+      "[#FFA500]月光[]",
+      "交换你的 力量 和 敏捷 ，然后再额外获得 ",
+      " 点。",
+      "你获得 ",
+      " 点 *临时生命 。"
+    ]
+  },
+  "pokeRegions:Dialga": {
+    "NAME": "帝牙卢卡",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]时空回溯[]",
+      "[#FFA500]快进[]",
+      "在本场战斗中你下一次死亡时，恢复到你最大生命 ",
+      "% 的生命。",
+      "抽牌直到将手牌抽满。"
+    ]
+  },
+  "pokeRegions:Palkia": {
+    "NAME": "帕路奇亚",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]空间反杀[]",
+      "[#FFA500]次元游行[]",
+      "本回合不会受到任何伤害，所有阻止的伤害都会返还给所有敌人。",
+      "将一张消耗堆中的牌放入手中。"
+    ]
+  },
+  "pokeRegions:StaminaKeyword": {
+    "NAME": "耐力",
+    "DESCRIPTION": "pokeregions:耐力"
+  },
+  "pokeRegions:StarterKeyword": {
+    "NAME": "初始宝可梦",
+    "DESCRIPTION": "如果你的 #y初始宝可梦 在战斗结束时只有 #b0 #y耐力 ，它会恢复 #b1 点 #y耐力 。"
+  },
+  "pokeRegions:Frozen": {
+    "NAME": "冻结",
+    "DESCRIPTION": "消耗 !M! 张牌。"
+  },
+  "pokeRegions:FightAsOne": {
+    "NAME": "齐心协力",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你当前正在战斗的 *宝可梦 立刻行动一个回合。"
+  },
+  "pokeRegions:MomentOfCourage": {
+    "NAME": "鼓起勇气",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 你当前正在战斗的 *宝可梦 下次攻击额外造成 ",
+    "EXTENDED_DESCRIPTION": [
+      "% 的伤害。"
+    ]
+  },
+  "pokeRegions:Riches": {
+    "NAME": "财富",
+    "DESCRIPTION": "匹配时，获得 !M! 金币。"
+  },
+  "pokeRegions:Health": {
+    "NAME": "健康",
+    "DESCRIPTION": "匹配时，恢复 !M! 点生命。"
+  },
+  "pokeRegions:Knowledge": {
+    "NAME": "知识",
+    "DESCRIPTION": "匹配时，获得一张卡牌奖励。"
+  },
+  "pokeRegions:Theft": {
+    "NAME": "盗窃",
+    "DESCRIPTION": "匹配时，失去 !M! 金币。"
+  },
+  "pokeRegions:Harm": {
+    "NAME": "伤害",
+    "DESCRIPTION": "匹配时，失去 !M! 点生命。"
+  },
+  "pokeRegions:Prank": {
+    "NAME": "恶作剧",
+    "DESCRIPTION": "匹配时，在牌组中加入一张 *笨拙 。"
+  },
+  "pokeRegions:FutureSight": {
+    "NAME": "预知未来",
+    "DESCRIPTION": "你将受到 !M! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "你将在下一回合结束时受到 !M! 点伤害。",
+      "你将在下下个回合结束时受到 !M! 点伤害。"
+    ]
+  },
+  "pokeRegions:TimeLapse": {
+    "NAME": "时间流逝",
+    "DESCRIPTION": ""
+  }
+}

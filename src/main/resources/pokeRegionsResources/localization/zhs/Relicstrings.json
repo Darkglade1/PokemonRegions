@@ -1,0 +1,79 @@
+{
+  "pokeRegions:PokeballBelt": {
+    "NAME": "精灵球腰带",
+    "FLAVOR": "小心高草。",
+    "DESCRIPTIONS": [
+      "你拥有 #b", " 个 #y精灵球 。 NL 现在你可以通过按 #野生宝可梦 旁边的 #扔精灵球 按钮来 #y捕捉 它们。 NL 被捕获的 #y宝可梦 会在战斗奖励中获得。"
+    ]
+  },
+  "pokeRegions:RainbowBadge": {
+    "NAME": "彩虹徽章",
+    "FLAVOR": "它看上去宛如上千道彩虹般流转。",
+    "DESCRIPTIONS": [
+      "每场战斗你第一次因为 #y耐力 不足而更换 #y宝可梦 时，上场的 #y宝可梦 恢复 #b", " 点 #ypokeregions:耐力 。"
+    ]
+  },
+  "pokeRegions:ThunderBadge": {
+    "NAME": "橙色徽章",
+    "FLAVOR": "你感受到了它上面雷暴般无休止的愤怒。",
+    "DESCRIPTIONS": [
+      "你的 #y宝可梦 攻击额外造成 #b", "% 的伤害。"
+    ]
+  },
+  "pokeRegions:QuickClaw": {
+    "NAME": "先制之爪",
+    "FLAVOR": "又轻又尖锐的爪子。携带后，有时能比对手先一步行动。",
+    "DESCRIPTIONS": [
+      "每场战斗你第一次获得 #y格挡 时，额外获得 #b", " 点 #y格挡 。"
+    ]
+  },
+  "pokeRegions:DeathWish": {
+    "NAME": "死亡之愿",
+    "FLAVOR": "他渴望权力，却不能够长久滥用。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b", " 点 #y力量 并失去 #b", " 点 #y敏捷 。"
+    ]
+  },
+  "pokeRegions:GlitteringWish": {
+    "NAME": "闪耀之愿",
+    "FLAVOR": "她渴望黄金，却未没有能承受它所需的力量。",
+    "DESCRIPTIONS": [
+      "拾起时，获得 #b", " 金币。在每场战斗开始时，失去 #b", " 点 #y力量 。"
+    ]
+  },
+  "pokeRegions:CunningWish": {
+    "NAME": "狡诈之愿",
+    "FLAVOR": "他渴望知识，却没有付诸实际的意愿。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，抽 #b", "  张牌并失去 [E] 。"
+    ]
+  },
+  "pokeRegions:EnhancedShovel": {
+    "NAME": "高品质铲子",
+    "FLAVOR": "你很好奇到底是谁一直把战利品全部埋藏在地下。",
+    "DESCRIPTIONS": [
+      "你现在可以在火堆 #y挖掘 遗物，这些遗物始终是罕见或稀有的。"
+    ]
+  },
+  "pokeRegions:Emerald": {
+    "NAME": "终息之绿",
+    "FLAVOR": "生命短暂，转瞬即逝，常常过早终结。",
+    "DESCRIPTIONS": [
+      "当你遭遇 #y烈空坐 时，它将被 #y强化 。"
+    ]
+  },
+  "pokeRegions:Sapphire": {
+    "NAME": "沉溺之蓝",
+    "FLAVOR": "在波涛之下，你仍能听见那些溺水者的呼喊。",
+    "DESCRIPTIONS": [
+      "当你遭遇 #y盖欧卡 时，它将被 #y强化 。"
+    ]
+  },
+  "pokeRegions:Ruby": {
+    "NAME": "归葬之红",
+    "FLAVOR": "幽灵依附于生者，以便让他们也被吸入深渊。",
+    "DESCRIPTIONS": [
+      "当你遭遇 #y固拉多 时，它将被 #y强化 。"
+    ]
+  }
+}
