@@ -774,6 +774,19 @@
       " Burns to your hand."
     ]
   },
+  "${ModID}:Steelix": {
+    "NAME": "Steelix",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Iron[] [#FFA500]Tail[]",
+      "[#FFA500]Autotomize[]",
+      "Deal ",
+      " damage. Increased by ",
+      "% of your Block.",
+      "You draw ",
+      " extra card each turn."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

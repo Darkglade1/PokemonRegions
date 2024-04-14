@@ -1,7 +1,6 @@
 package pokeregions.monsters.act2.enemies;
 
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,11 +15,10 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act2.Scizor;
+import pokeregions.cards.pokemonAllyCards.act2.Steelix;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
-import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -241,7 +239,7 @@ public class SteelixEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Scizor();
+        return new Steelix();
     }
 
 }
