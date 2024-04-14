@@ -230,5 +230,9 @@
   "${ModID}:FlameBody": {
     "NAME": "Flame Body",
     "DESCRIPTIONS": ["When this creature is attacked while it has #yBlock, apply #b", " #yBurn to the attacker."]
+  },
+  "${ModID}:SheerForce": {
+    "NAME": "Sheer Force",
+    "DESCRIPTIONS": ["When this creature receives unblocked attack damage while intending to attack, it deals #b", "% more damage with its next attack, but the attack's #ysecondary #yeffects are disabled. Can only trigger once per turn."]
   }
 }

@@ -11,6 +11,7 @@ import pokeregions.PokemonRegions;
 import pokeregions.events.ProfessorOak;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act2.enemies.ScizorEnemy;
+import pokeregions.monsters.act2.enemies.SteelixEnemy;
 
 import java.util.ArrayList;
 
@@ -97,10 +98,10 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F)); // Azumaril and Lanturn
-        monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Mantine
+        monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F)); // Azumaril and Mantine
+        monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Lanturn
         monsters.add(new MonsterInfo("Snake Plant", 6.0F)); // Quagsire
-        monsters.add(new MonsterInfo("Snecko", 4.0F)); // Steelix
+        monsters.add(new MonsterInfo("Snecko", 4.0F));
         monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // 2 Skarmory
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));
         monsters.add(new MonsterInfo("3 Cultists", 3.0F)); // 2 Swinubs and Piloswine
@@ -113,8 +114,8 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateElites(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Gremlin Leader", 1.0F));
-        monsters.add(new MonsterInfo("Slavers", 1.0F));
+        monsters.add(new MonsterInfo(SteelixEnemy.ID, 1.0F));
+        monsters.add(new MonsterInfo("Slavers", 1.0F)); // Tyranitar Squad
         monsters.add(new MonsterInfo(ScizorEnemy.ID, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, true);

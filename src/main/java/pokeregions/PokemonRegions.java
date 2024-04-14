@@ -463,6 +463,7 @@ public class PokemonRegions implements
 
         // Elites
         BaseMod.addMonster(ScizorEnemy.ID, (BaseMod.GetMonster) ScizorEnemy::new);
+        BaseMod.addMonster(SteelixEnemy.ID, (BaseMod.GetMonster) SteelixEnemy::new);
 
         // Normal encounters
         BaseMod.addMonster(EncounterIDs.SLUGMA_2, "2 Slugmas", () -> new MonsterGroup(

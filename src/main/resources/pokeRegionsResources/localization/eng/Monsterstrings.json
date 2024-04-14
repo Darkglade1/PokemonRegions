@@ -530,5 +530,16 @@
     "NAME": "Magcargo",
     "DIALOG": [
     ]
+  },
+  "${ModID}:SteelixEnemy": {
+    "MOVES": [
+      "Double Edge",
+      "Heavy Slam",
+      "Iron Tail",
+      "Autotomize"
+    ],
+    "NAME": "Steelix",
+    "DIALOG": [
+    ]
   }
 }
