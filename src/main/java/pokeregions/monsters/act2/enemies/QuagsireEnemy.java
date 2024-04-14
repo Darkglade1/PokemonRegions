@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.stances.CalmStance;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act2.Magcargo;
+import pokeregions.cards.pokemonAllyCards.act2.Quagsire;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
@@ -179,7 +179,7 @@ public class QuagsireEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Magcargo();
+        return new Quagsire();
     }
 
 }

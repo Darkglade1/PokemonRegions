@@ -787,6 +787,18 @@
       " extra card each turn."
     ]
   },
+  "${ModID}:Quagsire": {
+    "NAME": "Quagsire",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Ignore[]",
+      "[#FFA500]Scald[]",
+      "Prevent the next time you would lose HP.",
+      "Deal ",
+      " damage and apply ",
+      " Weak and pokeregions:Burn to ALL enemies."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
