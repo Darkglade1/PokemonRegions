@@ -234,5 +234,9 @@
   "${ModID}:SheerForce": {
     "NAME": "Sheer Force",
     "DESCRIPTIONS": ["When this creature receives unblocked attack damage while intending to attack, it deals #b", "% more damage with its next attack, but the attack's #ysecondary #yeffects are disabled. Can only trigger once per turn."]
+  },
+  "${ModID}:Unaware": {
+    "NAME": "Unaware",
+    "DESCRIPTIONS": ["#yNegate every #b", "rd instance of unblocked attack damage dealt to this creature."]
   }
 }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
 import pokeregions.events.ProfessorOak;
 import pokeregions.monsters.act1.enemies.*;
+import pokeregions.monsters.act2.enemies.QuagsireEnemy;
 import pokeregions.monsters.act2.enemies.ScizorEnemy;
 import pokeregions.monsters.act2.enemies.SteelixEnemy;
 
@@ -100,7 +101,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F)); // Azumaril and Mantine
         monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Lanturn
-        monsters.add(new MonsterInfo("Snake Plant", 6.0F)); // Quagsire
+        monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
         monsters.add(new MonsterInfo("Snecko", 4.0F));
         monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // 2 Skarmory
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));

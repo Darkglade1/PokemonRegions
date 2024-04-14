@@ -476,6 +476,7 @@ public class PokemonRegions implements
                         new SlugmaEnemy(-200.0F, 0.0F),
                         new MagcargoEnemy(50.0F, 0.0F),
                 }));
+        BaseMod.addMonster(QuagsireEnemy.ID, (BaseMod.GetMonster) QuagsireEnemy::new);
 
         // Act 3
         Hoenn hoenn = new Hoenn();

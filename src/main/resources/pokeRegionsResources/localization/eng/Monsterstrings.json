@@ -541,5 +541,14 @@
     "NAME": "Steelix",
     "DIALOG": [
     ]
+  },
+  "${ModID}:QuagsireEnemy": {
+    "MOVES": [
+      "Scald",
+      "Quicksand"
+    ],
+    "NAME": "Quagsire",
+    "DIALOG": [
+    ]
   }
 }
