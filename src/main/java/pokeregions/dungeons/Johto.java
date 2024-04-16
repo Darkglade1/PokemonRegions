@@ -102,8 +102,8 @@ public class Johto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F)); // Azumaril and Mantine
         monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Lanturn
         monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
-        monsters.add(new MonsterInfo("Snecko", 4.0F));
-        monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // 2 Skarmory
+        monsters.add(new MonsterInfo("Snecko", 4.0F)); // Skarmory
+        monsters.add(new MonsterInfo("Centurion and Healer", 6.0F));
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));
         monsters.add(new MonsterInfo("3 Cultists", 3.0F)); // 2 Swinubs and Piloswine
         //monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
@@ -116,7 +116,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
     protected void generateElites(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(SteelixEnemy.ID, 1.0F));
-        monsters.add(new MonsterInfo("Slavers", 1.0F)); // Tyranitar Squad
+        monsters.add(new MonsterInfo(EncounterIDs.TYRANITAR_GROUP, 1.0F));
         monsters.add(new MonsterInfo(ScizorEnemy.ID, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, true);

@@ -464,6 +464,12 @@ public class PokemonRegions implements
         // Elites
         BaseMod.addMonster(ScizorEnemy.ID, (BaseMod.GetMonster) ScizorEnemy::new);
         BaseMod.addMonster(SteelixEnemy.ID, (BaseMod.GetMonster) SteelixEnemy::new);
+        BaseMod.addMonster(EncounterIDs.TYRANITAR_GROUP, "Tyranitar Group", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new TyranitarEnemy(-450.0F, 0.0F),
+                        new PupitarEnemy(-150.0F, 0.0F, false),
+                        new PupitarEnemy(150.0F, 0.0F, true)
+                }));
 
         // Normal encounters
         BaseMod.addMonster(EncounterIDs.SLUGMA_2, "2 Slugmas", () -> new MonsterGroup(

@@ -15,10 +15,16 @@ public class Taunt extends AbstractUnremovablePower  {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private boolean justApplied;
+    private boolean wearsOff;
 
-    public Taunt(AbstractCreature owner, boolean justApplied) {
+    public Taunt(AbstractCreature owner, boolean justApplied, boolean wearsOff) {
         super(POWER_ID, NAME, PowerType.BUFF, false, owner, 0);
         this.justApplied = justApplied;
+        this.wearsOff = wearsOff;
+    }
+
+    public Taunt(AbstractCreature owner, boolean justApplied) {
+        this(owner, justApplied, true);
     }
 
     public Taunt(AbstractCreature owner) {
@@ -27,6 +33,9 @@ public class Taunt extends AbstractUnremovablePower  {
 
     @Override
     public void atEndOfRound() {
+        if (!wearsOff) {
+            return;
+        }
         if (justApplied) {
             justApplied = false;
         } else {

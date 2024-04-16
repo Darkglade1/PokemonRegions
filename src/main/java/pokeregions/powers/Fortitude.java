@@ -39,7 +39,7 @@ public class Fortitude extends AbstractUnremovablePower {
         if (this.justApplied) {
             this.justApplied = false;
         } else {
-            if (this.amount == 0) {
+            if (this.amount == 1) {
                 makePowerRemovable(this);
                 atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             } else {

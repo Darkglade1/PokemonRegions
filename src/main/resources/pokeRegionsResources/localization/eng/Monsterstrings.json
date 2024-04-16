@@ -550,5 +550,25 @@
     "NAME": "Quagsire",
     "DIALOG": [
     ]
+  },
+  "${ModID}:TyranitarEnemy": {
+    "MOVES": [
+      "Iron Defense",
+      "Stone Edge",
+      "Crunch"
+    ],
+    "NAME": "Tyranitar",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:PupitarEnemy": {
+    "MOVES": [
+      "Dragon Dance",
+      "Smack Down",
+      "Rock Slide"
+    ],
+    "NAME": "Pupitar",
+    "DIALOG": [
+    ]
   }
 }

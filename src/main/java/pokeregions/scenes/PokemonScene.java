@@ -148,6 +148,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Cave");
                 } else if (mo instanceof QuagsireEnemy) {
                     this.bg = this.atlas.findRegion("mod/Island");
+                } else if (mo instanceof TyranitarEnemy || mo instanceof PupitarEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Desert");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

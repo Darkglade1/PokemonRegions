@@ -238,5 +238,9 @@
   "${ModID}:Unaware": {
     "NAME": "Unaware",
     "DESCRIPTIONS": ["#yNegate every #b", "rd instance of unblocked attack damage dealt to this creature."]
+  },
+  "${ModID}:ProtectiveInstincts": {
+    "NAME": "Protective Instincts",
+    "DESCRIPTIONS": ["When another enemy falls below #b", "% HP, this creature gains #yTaunt for the rest of combat."]
   }
 }
