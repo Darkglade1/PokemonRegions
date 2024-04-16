@@ -242,5 +242,9 @@
   "${ModID}:ProtectiveInstincts": {
     "NAME": "Protective Instincts",
     "DESCRIPTIONS": ["When another enemy falls below #b", "% HP, this creature gains #yTaunt for the rest of combat."]
+  },
+  "${ModID}:WaterVeil": {
+    "NAME": "Water Veil",
+    "DESCRIPTIONS": ["At end of round, every enemy without #yArtifact gains #b", " #yArtifact."]
   }
 }

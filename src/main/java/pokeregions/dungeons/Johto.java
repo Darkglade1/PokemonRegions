@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
 import pokeregions.events.ProfessorOak;
 import pokeregions.monsters.act1.enemies.*;
+import pokeregions.monsters.act2.enemies.AzumarillEnemy;
 import pokeregions.monsters.act2.enemies.QuagsireEnemy;
 import pokeregions.monsters.act2.enemies.ScizorEnemy;
 import pokeregions.monsters.act2.enemies.SteelixEnemy;
@@ -88,7 +89,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo("Spheric Guardian", 2.0F)); // Kingdra
-        monsters.add(new MonsterInfo("Chosen", 2.0F)); // Azumaril
+        monsters.add(new MonsterInfo(AzumarillEnemy.ID, 2.0F));
         //monsters.add(new MonsterInfo("Shell Parasite", 2.0F));
         monsters.add(new MonsterInfo("3 Byrds", 2.0F)); // 3 Swinubs
         monsters.add(new MonsterInfo(EncounterIDs.SLUGMA_2, 2.0F));
@@ -99,7 +100,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Chosen and Byrds", 2.0F)); // Azumaril and Mantine
+        monsters.add(new MonsterInfo(EncounterIDs.AZUMARILL_AND_MANTINE, 2.0F));
         monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Lanturn
         monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
         monsters.add(new MonsterInfo("Snecko", 4.0F)); // Skarmory

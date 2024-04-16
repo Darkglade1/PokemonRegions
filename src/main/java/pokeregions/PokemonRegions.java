@@ -477,6 +477,12 @@ public class PokemonRegions implements
                         new MagcargoEnemy(50.0F, 0.0F),
                 }));
         BaseMod.addMonster(QuagsireEnemy.ID, (BaseMod.GetMonster) QuagsireEnemy::new);
+        BaseMod.addMonster(AzumarillEnemy.ID, (BaseMod.GetMonster) AzumarillEnemy::new);
+        BaseMod.addMonster(EncounterIDs.AZUMARILL_AND_MANTINE, "Azumarill and Mantine", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new AzumarillEnemy(-200.0F, 0.0F),
+                        new MantineEnemy(50.0F, 100.0F),
+                }));
 
         // Act 3
         Hoenn hoenn = new Hoenn();

@@ -22,5 +22,6 @@ public class EncounterIDs {
     public static final String SLUGMA_2 = PokemonRegions.makeID("2_Slugmas");
     public static final String MAGCARGO_AND_SLUGMA = PokemonRegions.makeID("Magcargo_and_Slugma");
     public static final String TYRANITAR_GROUP = PokemonRegions.makeID("Tyranitar_Group");
+    public static final String AZUMARILL_AND_MANTINE = PokemonRegions.makeID("Azumarill_and_Mantine");
 
 }

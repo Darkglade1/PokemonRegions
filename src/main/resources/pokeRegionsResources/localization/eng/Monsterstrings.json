@@ -570,5 +570,23 @@
     "NAME": "Pupitar",
     "DIALOG": [
     ]
+  },
+  "${ModID}:AzumarillEnemy": {
+    "MOVES": [
+      "Focus",
+      "Play Rough"
+    ],
+    "NAME": "Azumarill",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:MantineEnemy": {
+    "MOVES": [
+      "Rain Dance",
+      "Air Slash"
+    ],
+    "NAME": "Mantine",
+    "DIALOG": [
+    ]
   }
 }

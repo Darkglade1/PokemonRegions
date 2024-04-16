@@ -827,6 +827,30 @@
       " damage."
     ]
   },
+  "${ModID}:Azumarill": {
+    "NAME": "Azumarill",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Focus[]",
+      "[#FFA500]Play[] [#FFA500]Rough[]",
+      "Deals ",
+      "% more damage with its next attack.",
+      "Deal ",
+      " damage."
+    ]
+  },
+  "${ModID}:Mantine": {
+    "NAME": "Mantine",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Water[] [#FFA500]Veil[]",
+      "[#FFA500]Supersonic[]",
+      "You gain ",
+      " Artifact.",
+      "Apply ",
+      " Weak to ALL enemies."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
