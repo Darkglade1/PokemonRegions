@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act2.Scizor;
+import pokeregions.cards.pokemonAllyCards.act2.Tyranitar;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.Fortitude;
@@ -192,7 +192,7 @@ public class TyranitarEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Scizor();
+        return new Tyranitar();
     }
 
 }

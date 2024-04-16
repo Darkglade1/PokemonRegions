@@ -15,7 +15,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -43,13 +42,10 @@ import pokeregions.dungeons.Kanto;
 import pokeregions.dungeons.SpearPillar;
 import pokeregions.events.act1.*;
 import pokeregions.events.act3.*;
-import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.monsters.act1.allyPokemon.Zapdos;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
 import pokeregions.monsters.act1.enemies.birds.MoltresEnemy;
 import pokeregions.monsters.act1.enemies.birds.ZapdosEnemy;
-import pokeregions.monsters.act2.allyPokemon.Scizor;
 import pokeregions.monsters.act2.enemies.*;
 import pokeregions.monsters.act3.enemies.*;
 import pokeregions.monsters.act3.enemies.rayquaza.FlygonR;
@@ -73,7 +69,6 @@ import java.util.Map;
 import java.util.Properties;
 
 import static pokeregions.util.Wiz.adp;
-import static pokeregions.util.Wiz.atb;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -86,8 +81,7 @@ public class PokemonRegions implements
         PostInitializeSubscriber,
         StartGameSubscriber,
         PostBattleSubscriber,
-        PostUpdateSubscriber,
-        OnCardUseSubscriber {
+        PostUpdateSubscriber {
 
     public static final String modID = "pokeRegions";
 
@@ -687,14 +681,6 @@ public class PokemonRegions implements
             PlayerSpireFields.pokemonTeam.get(adp()).removeCard(c);
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-        }
-    }
-
-    @Override
-    public void receiveCardUsed(AbstractCard abstractCard) {
-        AbstractPokemonAlly activePokemon = PlayerSpireFields.activePokemon.get(adp());
-        if (activePokemon instanceof Scizor) {
-            AbstractDungeon.onModifyPower();
         }
     }
 

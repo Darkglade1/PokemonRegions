@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act2.Slugma;
+import pokeregions.cards.pokemonAllyCards.act2.Pupitar;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 import pokeregions.util.Wiz;
@@ -167,7 +167,7 @@ public class PupitarEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Slugma();
+        return new Pupitar();
     }
 
 }

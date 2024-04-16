@@ -799,6 +799,34 @@
       " Weak and pokeregions:Burn to ALL enemies."
     ]
   },
+  "${ModID}:Tyranitar": {
+    "NAME": "Tyranitar",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Payback[]",
+      "[#FFA500]Stone[] [#FFA500]Edge[]",
+      "Deal ",
+      " damage. Deals double damage if you played ",
+      " or less cards this turn.",
+      "You gain ",
+      " Block. Deal ",
+      " damage."
+    ]
+  },
+  "${ModID}:Pupitar": {
+    "NAME": "Pupitar",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Propulsion[]",
+      "[#FFA500]Stone[] [#FFA500]Edge[]",
+      "Draw ",
+      " cards. Discard ",
+      " card.",
+      "You gain ",
+      " Block. Deal ",
+      " damage."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
