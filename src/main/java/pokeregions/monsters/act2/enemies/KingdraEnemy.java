@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act2.Azumarill;
+import pokeregions.cards.pokemonAllyCards.act2.Kingdra;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.NastyPlot;
@@ -158,7 +157,7 @@ public class KingdraEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Azumarill();
+        return new Kingdra();
     }
 
 }

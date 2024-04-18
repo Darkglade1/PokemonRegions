@@ -7,23 +7,19 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
-import com.megacrit.cardcrawl.cards.status.Slimed;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act2.Azumarill;
+import pokeregions.cards.pokemonAllyCards.act2.Lanturn;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
-import pokeregions.powers.NastyPlot;
 import pokeregions.util.Details;
 
 import java.util.ArrayList;
@@ -132,7 +128,7 @@ public class LanturnEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Azumarill();
+        return new Lanturn();
     }
 
 }

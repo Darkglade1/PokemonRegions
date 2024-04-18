@@ -851,6 +851,29 @@
       " Weak to ALL enemies."
     ]
   },
+  "${ModID}:Kingdra": {
+    "NAME": "Kingdra",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Concentrate[]",
+      "[#FFA500]Surf[]",
+      "You deal double damage with your next played *Attack.",
+      "Deal ",
+      " damage to ALL enemies."
+    ]
+  },
+  "${ModID}:Lanturn": {
+    "NAME": "Lanturn",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Illuminate[]",
+      "[#FFA500]Discharge[]",
+      "Apply ",
+      " Weak and Vulnerable.",
+      "Apply ",
+      " Vulnerable to ALL enemies."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

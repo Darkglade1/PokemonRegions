@@ -250,5 +250,9 @@
   "${ModID}:Sniper": {
     "NAME": "Sniper",
     "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, you gain #b", " #yFrail."]
+  },
+  "${ModID}:Concentrate": {
+    "NAME": "Concentrate",
+    "DESCRIPTIONS": ["Deal #b", "% more damage with your next played #yAttack."]
   }
 }
