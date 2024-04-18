@@ -11,6 +11,19 @@
       " damage to ALL enemies."
     ]
   },
+  "${ModID}:Charmeleon": {
+    "NAME": "Charmeleon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Slash[]",
+      "[#FFA500]Fire[] [#FFA500]Spin[]",
+      "Deal ",
+      " damage.",
+      "Deal ",
+      " damage and apply ",
+      " pokeregions:Burn to ALL enemies."
+    ]
+  },
   "${ModID}:Charizard": {
     "NAME": "Charizard",
     "DESCRIPTION": "",
@@ -37,6 +50,19 @@
       " Weak."
     ]
   },
+  "${ModID}:Ivysaur": {
+    "NAME": "Ivysaur",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Take[] [#FFA500]Down[]",
+      "[#FFA500]Poison[] [#FFA500]Powder[]",
+      "Deal ",
+      " damage.",
+      "Apply ",
+      " pokeregions:Toxic and ",
+      " Weak."
+    ]
+  },
   "${ModID}:Venusaur": {
     "NAME": "Venusaur",
     "DESCRIPTION": "",
@@ -55,6 +81,18 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Water[] [#FFA500]Gun[]",
+      "[#FFA500]Defense[] [#FFA500]Curl[]",
+      "Deal ",
+      " damage.",
+      "You gain ",
+      " Block."
+    ]
+  },
+  "${ModID}:Wartortle": {
+    "NAME": "Wartortle",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Aqua[] [#FFA500]Jet[]",
       "[#FFA500]Defense[] [#FFA500]Curl[]",
       "Deal ",
       " damage.",

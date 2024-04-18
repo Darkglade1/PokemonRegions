@@ -9,6 +9,9 @@ import pokeregions.cards.pokemonAllyCards.act1.Bulbasaur;
 import pokeregions.cards.pokemonAllyCards.act1.Charmander;
 import pokeregions.cards.pokemonAllyCards.act1.Gyarados;
 import pokeregions.cards.pokemonAllyCards.act1.Squirtle;
+import pokeregions.cards.pokemonAllyCards.act2.Charmeleon;
+import pokeregions.cards.pokemonAllyCards.act2.Ivysaur;
+import pokeregions.cards.pokemonAllyCards.act2.Wartortle;
 import pokeregions.cards.pokemonAllyCards.act3.Blastoise;
 import pokeregions.cards.pokemonAllyCards.act3.Charizard;
 import pokeregions.cards.pokemonAllyCards.act3.Venusaur;
@@ -100,13 +103,22 @@ public class PokemonTeamPatch {
                     AbstractAllyPokemonCard starterCard = (AbstractAllyPokemonCard) card;
                     AbstractAllyPokemonCard evolvedStarter = null;
                     cardsToRemove.add(starterCard);
-                    if (card instanceof Charmander && AbstractDungeon.actNum == 3) {
+                    if (card instanceof Charmander && AbstractDungeon.actNum == 2) {
+                        evolvedStarter = new Charmeleon();
+                    }
+                    if (card instanceof Bulbasaur && AbstractDungeon.actNum == 2) {
+                        evolvedStarter = new Ivysaur();
+                    }
+                    if (card instanceof Squirtle && AbstractDungeon.actNum == 2) {
+                        evolvedStarter = new Wartortle();
+                    }
+                    if (card instanceof Charmeleon && AbstractDungeon.actNum == 3) {
                         evolvedStarter = new Charizard();
                     }
-                    if (card instanceof Bulbasaur && AbstractDungeon.actNum == 3) {
+                    if (card instanceof Ivysaur && AbstractDungeon.actNum == 3) {
                         evolvedStarter = new Venusaur();
                     }
-                    if (card instanceof Squirtle && AbstractDungeon.actNum == 3) {
+                    if (card instanceof Wartortle && AbstractDungeon.actNum == 3) {
                         evolvedStarter = new Blastoise();
                     }
                     if (evolvedStarter != null) {
