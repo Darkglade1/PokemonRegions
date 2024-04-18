@@ -10,10 +10,7 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
 import pokeregions.events.ProfessorOak;
 import pokeregions.monsters.act1.enemies.*;
-import pokeregions.monsters.act2.enemies.AzumarillEnemy;
-import pokeregions.monsters.act2.enemies.QuagsireEnemy;
-import pokeregions.monsters.act2.enemies.ScizorEnemy;
-import pokeregions.monsters.act2.enemies.SteelixEnemy;
+import pokeregions.monsters.act2.enemies.*;
 
 import java.util.ArrayList;
 
@@ -88,10 +85,10 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo("Spheric Guardian", 2.0F)); // Kingdra
+        monsters.add(new MonsterInfo(KingdraEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(AzumarillEnemy.ID, 2.0F));
         //monsters.add(new MonsterInfo("Shell Parasite", 2.0F));
-        monsters.add(new MonsterInfo("3 Byrds", 2.0F)); // 3 Swinubs
+        //monsters.add(new MonsterInfo("3 Byrds", 2.0F)); // 3 Swinubs
         monsters.add(new MonsterInfo(EncounterIDs.SLUGMA_2, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
@@ -100,13 +97,13 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo(EncounterIDs.AZUMARILL_AND_MANTINE, 2.0F));
-        monsters.add(new MonsterInfo("Sentry and Sphere", 2.0F)); // Kingdra and Lanturn
+        monsters.add(new MonsterInfo(EncounterIDs.AZUMARILL_AND_MANTINE, 3.0F));
+        monsters.add(new MonsterInfo(EncounterIDs.KINGDRA_AND_LANTURN, 3.0F));
         monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
-        monsters.add(new MonsterInfo("Snecko", 4.0F)); // Skarmory
-        monsters.add(new MonsterInfo("Centurion and Healer", 6.0F));
+        //monsters.add(new MonsterInfo("Snecko", 6.0F)); // Skarmory
+        //monsters.add(new MonsterInfo("Centurion and Healer", 6.0F));
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));
-        monsters.add(new MonsterInfo("3 Cultists", 3.0F)); // 2 Swinubs and Piloswine
+        //monsters.add(new MonsterInfo("3 Cultists", 3.0F)); // 2 Swinubs and Piloswine
         //monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
@@ -126,16 +123,15 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected ArrayList<String> generateExclusions() {
         ArrayList<String> retVal = new ArrayList<>();
-        switch ((String)monsterList.get(monsterList.size() - 1)) {
-            case "Spheric Guardian":
-                retVal.add("Sentry and Sphere");
-                break;
-            case "3 Byrds":
-                retVal.add("Chosen and Byrds");
-                break;
-            case "Chosen":
-                retVal.add("Chosen and Byrds");
-                retVal.add("Cultist and Chosen");
+        String previous = monsterList.get(monsterList.size() - 1);
+        if (previous.equals(KingdraEnemy.ID)) {
+            retVal.add(EncounterIDs.KINGDRA_AND_LANTURN);
+        }
+        if (previous.equals(AzumarillEnemy.ID)) {
+            retVal.add(EncounterIDs.AZUMARILL_AND_MANTINE);
+        }
+        if (previous.equals(EncounterIDs.SLUGMA_2)) {
+            retVal.add(EncounterIDs.MAGCARGO_AND_SLUGMA);
         }
         return retVal;
     }

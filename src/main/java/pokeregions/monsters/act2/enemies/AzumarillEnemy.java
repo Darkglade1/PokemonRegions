@@ -35,7 +35,7 @@ public class AzumarillEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 140.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Azumarill/Azumarill.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(110), calcAscensionTankiness(112));
+        setHp(calcAscensionTankiness(110), calcAscensionTankiness(122));
         addMove(FOCUS, Intent.UNKNOWN);
         addMove(PLAY_ROUGH, Intent.ATTACK, calcAscensionDamage(30));
 

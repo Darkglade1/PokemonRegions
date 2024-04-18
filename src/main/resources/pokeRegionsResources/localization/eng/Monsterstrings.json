@@ -588,5 +588,25 @@
     "NAME": "Mantine",
     "DIALOG": [
     ]
+  },
+  "${ModID}:KingdraEnemy": {
+    "MOVES": [
+      "Water Pulse",
+      "Wave Crash",
+      "Focus Energy"
+    ],
+    "NAME": "Kingdra",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:LanturnEnemy": {
+    "MOVES": [
+      "Eerie Impulse",
+      "Illuminate",
+      "Discharge"
+    ],
+    "NAME": "Lanturn",
+    "DIALOG": [
+    ]
   }
 }

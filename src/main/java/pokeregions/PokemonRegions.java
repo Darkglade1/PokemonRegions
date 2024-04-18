@@ -483,6 +483,12 @@ public class PokemonRegions implements
                         new AzumarillEnemy(-200.0F, 0.0F),
                         new MantineEnemy(50.0F, 100.0F),
                 }));
+        BaseMod.addMonster(KingdraEnemy.ID, (BaseMod.GetMonster) KingdraEnemy::new);
+        BaseMod.addMonster(EncounterIDs.KINGDRA_AND_LANTURN, "Kingdra and Lanturn", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new KingdraEnemy(-200.0F, 0.0F),
+                        new LanturnEnemy(50.0F, 0.0F),
+                }));
 
         // Act 3
         Hoenn hoenn = new Hoenn();

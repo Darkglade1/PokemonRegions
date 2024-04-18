@@ -246,5 +246,9 @@
   "${ModID}:WaterVeil": {
     "NAME": "Water Veil",
     "DESCRIPTIONS": ["At end of round, every enemy without #yArtifact gains #b", " #yArtifact."]
+  },
+  "${ModID}:Sniper": {
+    "NAME": "Sniper",
+    "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, you gain #b", " #yFrail."]
   }
 }
