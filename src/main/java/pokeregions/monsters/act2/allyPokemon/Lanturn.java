@@ -37,7 +37,7 @@ public class Lanturn extends AbstractPokemonAlly
         addMove(MOVE_1, move1Intent);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
-        move2RequiresTarget = true;
+        move1RequiresTarget = true;
     }
 
     @Override
