@@ -15,6 +15,14 @@
       "继续你的旅程。"
     ]
   },
+  "${ModID}:Johto": {
+    "TEXT": [
+      "Johto",
+      "Act 2",
+      "This land was strange yet comforting in its own way. It was a welcome change of pace from the #pstagnant air of the #ySpire.",
+      "Continue your journey."
+    ]
+  },
   "pokeRegions:Hoenn": {
     "TEXT": [
       "丰源",

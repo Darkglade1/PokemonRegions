@@ -254,5 +254,9 @@
   "${ModID}:Concentrate": {
     "NAME": "Concentrate",
     "DESCRIPTIONS": ["Deal #b", "% more damage with your next played #yAttack."]
+  },
+  "${ModID}:StrongArmor": {
+    "NAME": "Strong Armor",
+    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks this turn. Reapplied every other turn."]
   }
 }

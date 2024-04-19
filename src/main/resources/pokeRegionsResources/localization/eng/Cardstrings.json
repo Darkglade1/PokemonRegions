@@ -912,6 +912,18 @@
       " Vulnerable to ALL enemies."
     ]
   },
+  "${ModID}:Skarmory": {
+    "NAME": "Skarmory",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Reinforce[]",
+      "[#FFA500]Iron[] [#FFA500]Defense[]",
+      "You gain ",
+      " *Metallicize.",
+      "You gain ",
+      " Block."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

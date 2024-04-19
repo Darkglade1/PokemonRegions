@@ -608,5 +608,15 @@
     "NAME": "Lanturn",
     "DIALOG": [
     ]
+  },
+  "${ModID}:SkarmoryEnemy": {
+    "MOVES": [
+      "Spikes",
+      "Metal Claw",
+      "Brave Bird"
+    ],
+    "NAME": "Skarmory",
+    "DIALOG": [
+    ]
   }
 }

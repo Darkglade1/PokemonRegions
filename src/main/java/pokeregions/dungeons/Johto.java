@@ -96,13 +96,13 @@ public class Johto extends AbstractPokemonRegionDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo(EncounterIDs.AZUMARILL_AND_MANTINE, 3.0F));
-        monsters.add(new MonsterInfo(EncounterIDs.KINGDRA_AND_LANTURN, 3.0F));
+        monsters.add(new MonsterInfo(EncounterIDs.AZUMARILL_AND_MANTINE, 4.0F));
+        monsters.add(new MonsterInfo(EncounterIDs.KINGDRA_AND_LANTURN, 4.0F));
         monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
-        //monsters.add(new MonsterInfo("Snecko", 6.0F)); // Skarmory
-        //monsters.add(new MonsterInfo("Centurion and Healer", 6.0F));
-        monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 3.0F));
-        //monsters.add(new MonsterInfo("3 Cultists", 3.0F)); // 2 Swinubs and Piloswine
+        monsters.add(new MonsterInfo(SkarmoryEnemy.ID, 6.0F));
+        //monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // Crobat and Noctowl
+        monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 4.0F));
+        //monsters.add(new MonsterInfo("3 Cultists", 4.0F)); // 2 Swinubs and Piloswine
         //monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());

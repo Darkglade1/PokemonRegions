@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.events.city.*;
+import com.megacrit.cardcrawl.events.shrines.FaceTrader;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -485,6 +487,16 @@ public class PokemonRegions implements
                         new KingdraEnemy(-200.0F, 0.0F),
                         new LanturnEnemy(50.0F, 0.0F),
                 }));
+        BaseMod.addMonster(SkarmoryEnemy.ID, (BaseMod.GetMonster) SkarmoryEnemy::new);
+
+        //Events
+        BaseMod.addEvent(FaceTrader.ID, FaceTrader.class, Johto.ID);
+        BaseMod.addEvent(KnowingSkull.ID, KnowingSkull.class, Johto.ID);
+        BaseMod.addEvent(Beggar.ID, Beggar.class, Johto.ID);
+        BaseMod.addEvent(Addict.ID, Addict.class, Johto.ID);
+        BaseMod.addEvent(TheJoust.ID, TheJoust.class, Johto.ID);
+        BaseMod.addEvent(Nest.ID, Nest.class, Johto.ID);
+        BaseMod.addEvent(ForgottenAltar.ID, ForgottenAltar.class, Johto.ID);
 
         // Act 3
         Hoenn hoenn = new Hoenn();
