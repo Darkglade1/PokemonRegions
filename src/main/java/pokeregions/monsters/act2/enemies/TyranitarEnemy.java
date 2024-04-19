@@ -66,8 +66,8 @@ public class TyranitarEnemy extends AbstractPokemonMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.3f);
         setHp(calcAscensionTankiness(102), calcAscensionTankiness(114));
         addMove(IRON_DEFENSE, Intent.DEFEND_BUFF);
-        addMove(STONE_EDGE, Intent.ATTACK_DEFEND, calcAscensionDamage(12));
-        addMove(CRUNCH, Intent.ATTACK, calcAscensionDamage(20));
+        addMove(STONE_EDGE, Intent.ATTACK_DEFEND, calcAscensionDamage(11));
+        addMove(CRUNCH, Intent.ATTACK, calcAscensionDamage(18));
     }
 
     @Override

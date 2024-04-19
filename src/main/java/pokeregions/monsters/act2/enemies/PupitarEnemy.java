@@ -55,8 +55,8 @@ public class PupitarEnemy extends AbstractPokemonMonster
 
         setHp(calcAscensionTankiness(60), calcAscensionTankiness(68));
         addMove(DANCE, Intent.BUFF);
-        addMove(SMACK_DOWN, Intent.ATTACK_DEBUFF, calcAscensionDamage(10));
-        addMove(ROCK_SLIDE, Intent.ATTACK, calcAscensionDamage(7), 2);
+        addMove(SMACK_DOWN, Intent.ATTACK_DEBUFF, calcAscensionDamage(9));
+        addMove(ROCK_SLIDE, Intent.ATTACK, calcAscensionDamage(6), 2);
 
         Player.PlayerListener listener = new PokemonListener(this);
         ((BetterSpriterAnimation)this.animation).myPlayer.addListener(listener);

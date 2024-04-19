@@ -53,7 +53,7 @@ public class LanturnEnemy extends AbstractPokemonMonster
         this.type = EnemyType.NORMAL;
         setHp(calcAscensionTankiness(75), calcAscensionTankiness(84));
         addMove(EERIE_IMPULSE, Intent.STRONG_DEBUFF);
-        addMove(ILLUMINATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(9));
+        addMove(ILLUMINATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(12));
         addMove(DISCHARGE, Intent.DEBUFF);
 
         Player.PlayerListener listener = new PokemonListener(this);

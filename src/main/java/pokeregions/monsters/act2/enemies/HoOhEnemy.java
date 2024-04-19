@@ -64,8 +64,8 @@ public class HoOhEnemy extends AbstractPokemonMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.speed = 10;
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
         setHp(calcAscensionTankiness(300));
-        addMove(SACRED_FIRE, Intent.ATTACK_DEBUFF, calcAscensionDamage(16));
-        addMove(OVERHEAT, Intent.ATTACK_DEBUFF, calcAscensionDamage(6), 3);
+        addMove(SACRED_FIRE, Intent.ATTACK_DEBUFF, calcAscensionDamage(18));
+        addMove(OVERHEAT, Intent.ATTACK_DEBUFF, calcAscensionDamage(7), 3);
         addMove(REGENERATE, Intent.BUFF);
     }
 
@@ -78,6 +78,7 @@ public class HoOhEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0, "combust") {
             @Override
             public int onAttacked(DamageInfo info, int damageAmount) {

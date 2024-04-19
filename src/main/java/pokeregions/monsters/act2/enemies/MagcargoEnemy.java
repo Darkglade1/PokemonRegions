@@ -65,8 +65,8 @@ public class MagcargoEnemy extends AbstractPokemonMonster
         this.type = EnemyType.NORMAL;
         setHp(calcAscensionTankiness(84), calcAscensionTankiness(92));
         addMove(HARDEN, Intent.DEFEND_DEBUFF);
-        addMove(ROCK_THROW, Intent.ATTACK_DEFEND, calcAscensionDamage(12));
-        addMove(LAVA_PLUME, Intent.ATTACK, calcAscensionDamage(7), 2);
+        addMove(ROCK_THROW, Intent.ATTACK_DEFEND, calcAscensionDamage(11));
+        addMove(LAVA_PLUME, Intent.ATTACK, calcAscensionDamage(6), 2);
         addMove(SMOG, Intent.STRONG_DEBUFF);
 
         Player.PlayerListener listener = new PokemonListener(this);
