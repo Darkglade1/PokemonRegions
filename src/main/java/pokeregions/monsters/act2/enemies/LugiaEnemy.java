@@ -111,7 +111,7 @@ public class LugiaEnemy extends AbstractPokemonMonster
                 description = POWER_DESCRIPTIONS[0] + POWER_NUM_TRIGGERS + POWER_DESCRIPTIONS[1];
             }
         });
-        CustomDungeon.playTempMusicInstantly("Zinnia");
+        CustomDungeon.playTempMusicInstantly("HauntedHouse");
     }
 
     @Override

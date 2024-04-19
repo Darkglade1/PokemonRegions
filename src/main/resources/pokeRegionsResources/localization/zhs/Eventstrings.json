@@ -470,5 +470,24 @@
       "这一幕的Boss被加强。",
       "[离开]"
     ]
+  },
+  "${ModID}:ProfessorElm": {
+    "NAME": "Professor Elm",
+    "DESCRIPTIONS": [
+      ". . . A visitor? Sorry, I was distracted.",
+      "You want . . . Pokeballs, right? I'm sure I have some left . . .",
+      "You should take one of these #gevolved starters with you . . . it'll be safer.",
+      "Now . . . what was I doing again?",
+      "You . . . I think I heard Oak mention you before . . .",
+      "Let's see . . . you've caught #b",
+      " Pokemon. ",
+      "That's pretty good . . .",
+      "Seems average . . .",
+      "Maybe you should throw more Pokeballs . . .",
+      "Anyway . . . you can have some of these Pokeballs lying around . . .",
+      "There's also some extra supplies . . . unless you'd like some money instead?"
+    ],
+    "OPTIONS": [
+    ]
   }
 }

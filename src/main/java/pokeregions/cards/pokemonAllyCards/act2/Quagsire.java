@@ -15,7 +15,7 @@ public class Quagsire extends AbstractAllyPokemonCard {
     public static final int MOVE_2_EFFECT = 1;
     public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 6;
+    public static final int MAX_STAMINA = 5;
 
     public Quagsire() {
         super(ID, CardRarity.UNCOMMON);

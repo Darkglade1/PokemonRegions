@@ -3,6 +3,7 @@ package pokeregions.dungeons;
 import actlikeit.dungeons.CustomDungeon;
 import pokeregions.PokemonRegions;
 import pokeregions.monsters.act1.enemies.MewtwoEnemy;
+import pokeregions.monsters.act2.enemies.LugiaEnemy;
 import pokeregions.monsters.act3.enemies.GroudonEnemy;
 import pokeregions.monsters.act3.enemies.KyogreEnemy;
 import pokeregions.monsters.act4.GiratinaEnemy;
@@ -50,7 +51,7 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
         if (bossKey != null) {
             if (bossKey.equals(EncounterIDs.LEGENDARY_BIRDS) || bossKey.equals(KyogreEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OceanicMuseum.ogg"));
-            } else if (bossKey.equals(MewtwoEnemy.ID) || bossKey.equals(GroudonEnemy.ID)) {
+            } else if (bossKey.equals(MewtwoEnemy.ID) || bossKey.equals(GroudonEnemy.ID) || bossKey.equals(LugiaEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OldaleTown.ogg"));
             } else if (bossKey.equals(GiratinaEnemy.ID)){
                 this.setMainMusic(PokemonRegions.makeMusicPath("LavenderTown.ogg"));

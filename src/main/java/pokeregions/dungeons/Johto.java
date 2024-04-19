@@ -8,8 +8,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import pokeregions.PokemonRegions;
-import pokeregions.events.ProfessorOak;
-import pokeregions.monsters.act1.enemies.*;
+import pokeregions.events.ProfessorElm;
 import pokeregions.monsters.act2.enemies.*;
 
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
 
     public Johto() {
         super(NAME, ID, "images/ui/event/panel.png", false, 2, 12, 10);
-        //this.onEnterEvent(ProfessorOak.class);
+        this.onEnterEvent(ProfessorElm.class);
     }
 
     public Johto(CustomDungeon cd, AbstractPlayer p, ArrayList<String> emptyList) {

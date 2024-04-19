@@ -18,10 +18,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.Exordium;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.dungeons.TheEnding;
+import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -36,10 +33,7 @@ import org.apache.logging.log4j.Logger;
 import pokeregions.CustomIntent.MassAttackIntent;
 import pokeregions.cards.AbstractEasyCard;
 import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
-import pokeregions.dungeons.EncounterIDs;
-import pokeregions.dungeons.Hoenn;
-import pokeregions.dungeons.Kanto;
-import pokeregions.dungeons.SpearPillar;
+import pokeregions.dungeons.*;
 import pokeregions.events.act1.*;
 import pokeregions.events.act3.*;
 import pokeregions.monsters.act1.enemies.*;
@@ -450,10 +444,12 @@ public class PokemonRegions implements
         BaseMod.addEvent(Yellow.ID, Yellow.class, Kanto.ID);
 
         // Act 2
+        Johto johto = new Johto();
+        johto.addAct(TheCity.ID);
 
         // Bosses
-        BaseMod.addMonster(HoOhEnemy.ID, (BaseMod.GetMonster) HoOhEnemy::new);
-        BaseMod.addMonster(LugiaEnemy.ID, (BaseMod.GetMonster) LugiaEnemy::new);
+        johto.addBoss(LugiaEnemy.ID, (BaseMod.GetMonster) LugiaEnemy::new, makeMonsterPath("Lugia/LugiaMap.png"), makeMonsterPath("Lugia/LugiaMapOutline.png"));
+        johto.addBoss(HoOhEnemy.ID, (BaseMod.GetMonster) HoOhEnemy::new, makeMonsterPath("HoOh/HoOhMap.png"), makeMonsterPath("HoOh/HoOhMapOutline.png"));
 
         // Elites
         BaseMod.addMonster(ScizorEnemy.ID, (BaseMod.GetMonster) ScizorEnemy::new);
