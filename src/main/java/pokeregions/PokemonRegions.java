@@ -37,6 +37,7 @@ import pokeregions.cards.AbstractEasyCard;
 import pokeregions.cards.cardvars.AbstractEasyDynamicVariable;
 import pokeregions.dungeons.*;
 import pokeregions.events.act1.*;
+import pokeregions.events.act2.OlivineLighthouse;
 import pokeregions.events.act3.*;
 import pokeregions.monsters.act1.enemies.*;
 import pokeregions.monsters.act1.enemies.birds.ArticunoEnemy;
@@ -490,7 +491,7 @@ public class PokemonRegions implements
         BaseMod.addMonster(SkarmoryEnemy.ID, (BaseMod.GetMonster) SkarmoryEnemy::new);
 
         //Events
-        BaseMod.addEvent(FaceTrader.ID, FaceTrader.class, Johto.ID);
+        BaseMod.addEvent(OlivineLighthouse.ID, OlivineLighthouse.class, Johto.ID);
         BaseMod.addEvent(KnowingSkull.ID, KnowingSkull.class, Johto.ID);
         BaseMod.addEvent(Beggar.ID, Beggar.class, Johto.ID);
         BaseMod.addEvent(Addict.ID, Addict.class, Johto.ID);

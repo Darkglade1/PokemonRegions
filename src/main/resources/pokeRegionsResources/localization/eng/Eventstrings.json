@@ -489,5 +489,21 @@
       "The Act boss becomes enhanced.",
       "[Leave]"
     ]
+  },
+  "${ModID}:OlivineLighthouse": {
+    "NAME": "Olivine Lighthouse",
+    "DESCRIPTIONS": [
+      "In front of you, a lighthouse shines faintly with a muted #ylight. You decide that the view from the top would greatly aid you in surveying the layout of the nearby land, so you proceed to climb the stairwell to the top. As you reach the beacon room, you find that a sickly-looking #yPokemon is the source of the #ylight you saw. NL \"If you wanted to challenge me, I'm afraid you'll have to wait.\" A woman sits next to the #yPokemon, tending to it. She looks at you, pausing. \"I see you have some #gmedicine with you. Would you mind trading for it?\"",
+      "You hand over the medicine. In exchange, the woman hands you a #yPokeball. NL \"Thank you for that.\" The woman immediately begins applying the medicine to the #yPokemon. \"I hope my friend will serve you well.\" NL You spend some time taking in the view from above, making sure to stay out of the woman's way. After you've had your fill, you leave and continue your travels.",
+      "\"You don't wish to trade? I suppose I can't blame you for declining such an abrupt request.\" The woman sighs. \"I hope my apprentice will be back from Cianwood City soon . . .\" NL You decide to leave the woman to her musings."
+    ],
+    "OPTIONS": [
+      "[Trade] ",
+      "[Decline] ",
+      "Lose ",
+      ".",
+      "Obtain ",
+      "[Leave]"
+    ]
   }
 }
