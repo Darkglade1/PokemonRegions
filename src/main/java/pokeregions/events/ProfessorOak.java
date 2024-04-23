@@ -20,14 +20,18 @@ public class ProfessorOak extends AbstractProfessorEvent {
         starter1 = new BetterSpriterAnimation(makeMonsterPath("Bulbasaur/Bulbasaur.scml"));
         starter2 = new BetterSpriterAnimation(makeMonsterPath("Squirtle/Squirtle.scml"));
         starter3 = new BetterSpriterAnimation(makeMonsterPath("Charmander/Charmander.scml"));
-        starter1Card = new Bulbasaur();
-        starter2Card = new Squirtle();
-        starter3Card = new Charmander();
         if (!hasStarter) {
             this.talk(DESCRIPTIONS[0]);
         } else {
             this.talk(DESCRIPTIONS[4]);
         }
+    }
+
+    @Override
+    protected void initializeStarterCards() {
+        starter1Card = new Bulbasaur();
+        starter2Card = new Squirtle();
+        starter3Card = new Charmander();
     }
 
 }

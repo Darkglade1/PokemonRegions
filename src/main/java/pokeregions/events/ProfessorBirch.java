@@ -20,14 +20,18 @@ public class ProfessorBirch extends AbstractProfessorEvent {
         starter1 = new BetterSpriterAnimation(makeMonsterPath("Venusaur/Venusaur.scml"));
         starter2 = new BetterSpriterAnimation(makeMonsterPath("Blastoise/Blastoise.scml"));
         starter3 = new BetterSpriterAnimation(makeMonsterPath("Charizard/Charizard.scml"));
-        starter1Card = new Venusaur();
-        starter2Card = new Blastoise();
-        starter3Card = new Charizard();
         if (!hasStarter) {
             this.talk(DESCRIPTIONS[0]);
         } else {
             this.talk(DESCRIPTIONS[4]);
         }
+    }
+
+    @Override
+    protected void initializeStarterCards() {
+        starter1Card = new Venusaur();
+        starter2Card = new Blastoise();
+        starter3Card = new Charizard();
     }
 
 }

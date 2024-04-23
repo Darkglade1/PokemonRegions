@@ -64,6 +64,11 @@ public class AbstractProfessorEvent extends AbstractEvent {
         AbstractDungeon.topLevelEffects.add(new LevelTransitionTextOverlayEffect(AbstractDungeon.name, AbstractDungeon.levelNum, true));
     }
 
+    // This REME guy making me do jank code placements so his mods don't crash
+    protected void initializeStarterCards() {
+
+    }
+
     @Override
     public void update() {
         super.update();
@@ -85,6 +90,7 @@ public class AbstractProfessorEvent extends AbstractEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        initializeStarterCards();
         if (!hasStarter) {
             switch (buttonPressed) {
                 case 0:
