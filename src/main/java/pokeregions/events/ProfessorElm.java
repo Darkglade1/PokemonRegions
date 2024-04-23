@@ -20,14 +20,18 @@ public class ProfessorElm extends AbstractProfessorEvent {
         starter1 = new BetterSpriterAnimation(makeMonsterPath("Ivysaur/Ivysaur.scml"));
         starter2 = new BetterSpriterAnimation(makeMonsterPath("Wartortle/Wartortle.scml"));
         starter3 = new BetterSpriterAnimation(makeMonsterPath("Charmeleon/Charmeleon.scml"));
-        starter1Card = new Ivysaur();
-        starter2Card = new Wartortle();
-        starter3Card = new Charmeleon();
         if (!hasStarter) {
             this.talk(DESCRIPTIONS[0]);
         } else {
             this.talk(DESCRIPTIONS[4]);
         }
+    }
+
+    @Override
+    protected void initializeStarterCards() {
+        starter1Card = new Ivysaur();
+        starter2Card = new Wartortle();
+        starter3Card = new Charmeleon();
     }
 
 }

@@ -51,9 +51,9 @@ public class LanturnEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 160.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Lanturn/Lanturn.scml"));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(75), calcAscensionTankiness(84));
+        setHp(calcAscensionTankiness(65), calcAscensionTankiness(74));
         addMove(EERIE_IMPULSE, Intent.STRONG_DEBUFF);
-        addMove(ILLUMINATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(12));
+        addMove(ILLUMINATE, Intent.ATTACK_DEBUFF, calcAscensionDamage(10));
         addMove(DISCHARGE, Intent.DEBUFF);
 
         Player.PlayerListener listener = new PokemonListener(this);

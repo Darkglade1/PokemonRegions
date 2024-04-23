@@ -3,8 +3,8 @@ package pokeregions.monsters.act2.enemies;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
@@ -27,7 +27,7 @@ public class PhoenixFeather extends AbstractPokemonMonster
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final byte NOTHING = 0;
     public static final byte BUFF = 1;
-    public final int HEAL = 15;
+    public final int HEAL = calcAscensionSpecial(15);
     private final AbstractMonster summoner;
 
     public PhoenixFeather() {
@@ -55,6 +55,9 @@ public class PhoenixFeather extends AbstractPokemonMonster
         super.usePreBattleAction();
         rollMove();
         createIntent();
+        if (summoner.isDeadOrEscaped()) {
+            atb(new SuicideAction(this));
+        }
     }
 
     @Override
@@ -77,7 +80,7 @@ public class PhoenixFeather extends AbstractPokemonMonster
 
     @Override
     protected void getMove(final int num) {
-        if (firstMove && AbstractDungeon.ascensionLevel < 19) {
+        if (firstMove) {
             this.setMove(NOTHING, Intent.NONE);
         } else {
             setMoveShortcut(BUFF);

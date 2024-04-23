@@ -38,10 +38,10 @@ public class SteelixEnemy extends AbstractPokemonMonster
     private static final byte AUTOTOMIZE = 3;
 
     public final int STR = calcAscensionSpecialSmall(5);
-    public final int BLOCK = calcAscensionSpecial(10);
+    public final int BLOCK = 10;
     public final int DEBUFF = 2;
     public final int SELF_DEBUFF = 1;
-    public final int POWER_BUFF = 34;
+    public final int POWER_BUFF;
     public final int METALLICIZE = 15;
     private boolean powerTriggered = false;
     public static final int AUTOTOMIZE_COOLDOWN = 3;
@@ -65,6 +65,11 @@ public class SteelixEnemy extends AbstractPokemonMonster
         addMove(HEAVY_SLAM, Intent.ATTACK_DEBUFF, calcAscensionDamage(18));
         addMove(IRON_TAIL, Intent.ATTACK_BUFF, calcAscensionDamage(12));
         addMove(AUTOTOMIZE, Intent.DEFEND_BUFF);
+        if (AbstractDungeon.ascensionLevel >= 18) {
+            POWER_BUFF = 50;
+        } else {
+            POWER_BUFF = 34;
+        }
     }
 
     @Override
@@ -167,33 +172,21 @@ public class SteelixEnemy extends AbstractPokemonMonster
 
     @Override
     protected void getMove(final int num) {
-        if (AbstractDungeon.ascensionLevel >= 18) {
-            if (lastMove(HEAVY_SLAM)) {
-                setMoveShortcut(IRON_TAIL, MOVES[IRON_TAIL]);
-            } else if (lastMove(IRON_TAIL)) {
-                setMoveShortcut(DOUBLE_EDGE, MOVES[DOUBLE_EDGE]);
-            } else if (lastMove(DOUBLE_EDGE)) {
-                setMoveShortcut(AUTOTOMIZE, MOVES[AUTOTOMIZE]);
-            } else {
-                setMoveShortcut(HEAVY_SLAM, MOVES[HEAVY_SLAM]);
-            }
+        if (cooldown <= 0) {
+            setMoveShortcut(AUTOTOMIZE, MOVES[AUTOTOMIZE]);
         } else {
-            if (cooldown <= 0) {
-                setMoveShortcut(AUTOTOMIZE, MOVES[AUTOTOMIZE]);
-            } else {
-                ArrayList<Byte> possibilities = new ArrayList<>();
-                if (!this.lastMove(HEAVY_SLAM) && !this.lastMoveBefore(HEAVY_SLAM)) {
-                    possibilities.add(HEAVY_SLAM);
-                }
-                if (!this.lastMove(IRON_TAIL) && !this.lastMoveBefore(IRON_TAIL)) {
-                    possibilities.add(IRON_TAIL);
-                }
-                if (!this.lastMove(DOUBLE_EDGE) && !this.lastMoveBefore(DOUBLE_EDGE)) {
-                    possibilities.add(DOUBLE_EDGE);
-                }
-                byte move = possibilities.get(AbstractDungeon.monsterRng.random(possibilities.size() - 1));
-                setMoveShortcut(move, MOVES[move]);
+            ArrayList<Byte> possibilities = new ArrayList<>();
+            if (!this.lastMove(HEAVY_SLAM) && !this.lastMoveBefore(HEAVY_SLAM)) {
+                possibilities.add(HEAVY_SLAM);
             }
+            if (!this.lastMove(IRON_TAIL) && !this.lastMoveBefore(IRON_TAIL)) {
+                possibilities.add(IRON_TAIL);
+            }
+            if (!this.lastMove(DOUBLE_EDGE) && !this.lastMoveBefore(DOUBLE_EDGE)) {
+                possibilities.add(DOUBLE_EDGE);
+            }
+            byte move = possibilities.get(AbstractDungeon.monsterRng.random(possibilities.size() - 1));
+            setMoveShortcut(move, MOVES[move]);
         }
         super.postGetMove();
     }

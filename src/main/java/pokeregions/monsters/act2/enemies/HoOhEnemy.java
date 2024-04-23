@@ -43,7 +43,7 @@ public class HoOhEnemy extends AbstractPokemonMonster
     private static final byte REGENERATE = 2;
 
     public final int BURN_DEBUFF = calcAscensionSpecial(2);
-    public final int STATUS = calcAscensionSpecial(2);
+    public final int STATUS = 2;
     public final int REGEN = calcAscensionSpecialSmall(10);
     public final int POWER_TRIGGER = 30;
 
@@ -86,7 +86,7 @@ public class HoOhEnemy extends AbstractPokemonMonster
                     int total = damageAmount + this.amount;
                     int numSpawn = total / POWER_TRIGGER;
                     int remainder = total % POWER_TRIGGER;
-                    if (numSpawn > 0 && !owner.isDeadOrEscaped()) {
+                    if (numSpawn > 0) {
                         flash();
                         summonFeathers(numSpawn);
                     }
