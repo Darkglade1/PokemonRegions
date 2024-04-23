@@ -12,12 +12,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
@@ -56,7 +56,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 300.0f, 280.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Groudon/Groudon.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
-        setHp(calcAscensionTankiness(500));
+        setHp(calcAscensionTankiness(600));
         addMove(SWORDS, Intent.BUFF);
         addMove(BLADES, Intent.ATTACK, calcAscensionDamage(13), 2);
         addMove(SCORCH, Intent.STRONG_DEBUFF);
@@ -97,6 +97,7 @@ public class GroudonEnemy extends AbstractPokemonMonster
             case SCORCH: {
                 applyToTarget(this, this, new HarshSunlight(this, 1));
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
+                applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
                 if (AbstractDungeon.ascensionLevel >= 19) {
                     applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
                 }
@@ -142,6 +143,8 @@ public class GroudonEnemy extends AbstractPokemonMonster
                 details.add(powerDetail2);
                 Details powerDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(powerDetail);
+                Details powerDetail4 = new Details(this, DEBUFF, WEAK_TEXTURE);
+                details.add(powerDetail4);
                 if (AbstractDungeon.ascensionLevel >= 19) {
                     Details powerDetail3 = new Details(this, DEBUFF, FRAIL_TEXTURE);
                     details.add(powerDetail3);

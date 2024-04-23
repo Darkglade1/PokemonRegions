@@ -47,7 +47,7 @@ public class KyogreEnemy extends AbstractPokemonMonster
 
     public final int REGEN = calcAscensionSpecial(10);
     public final int BLOCK = 20;
-    public final int BUFF = calcAscensionSpecial(2);
+    public final int BUFF = calcAscensionSpecialSmall(3);
     public final int DRAW_DOWN = 1;
     public final int LIFE_DEW_COOLDOWN = 3;
     private int cooldown = LIFE_DEW_COOLDOWN;
@@ -60,10 +60,10 @@ public class KyogreEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 300.0f, 240.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Kyogre/Kyogre.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
-        setHp(calcAscensionTankiness(600));
+        setHp(calcAscensionTankiness(700));
         addMove(HYDRO_PUMP, Intent.ATTACK_DEBUFF, calcAscensionDamage(28));
         addMove(ORIGIN_PULSE, Intent.ATTACK, calcAscensionDamage(36));
-        addMove(AQUA_RING, Intent.DEFEND_DEBUFF);
+        addMove(AQUA_RING, Intent.DEFEND_BUFF);
         addMove(LIFE_DEW, Intent.BUFF);
     }
 
