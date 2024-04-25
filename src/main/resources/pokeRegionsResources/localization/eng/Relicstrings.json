@@ -75,5 +75,12 @@
     "DESCRIPTIONS": [
       "#yGroudon will be #yenhanced when you encounter it."
     ]
+  },
+  "${ModID}:DragonFang": {
+    "NAME": "Dragon Fang",
+    "FLAVOR": "You wonder how big a dragon must grow to have a fang this big.",
+    "DESCRIPTIONS": [
+      "At the start of combat, apply #b", " #ypokeregions:Burn to ALL enemies."
+    ]
   }
 }

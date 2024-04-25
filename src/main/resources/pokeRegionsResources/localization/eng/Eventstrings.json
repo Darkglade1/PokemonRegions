@@ -505,5 +505,23 @@
       "Obtain ",
       "[Leave]"
     ]
+  },
+  "${ModID}:BlackthornGym": {
+    "NAME": "Blackthorn Gym",
+    "DESCRIPTIONS": [
+      "Out of the corner of your eye, you see a group of suspicious-looking figures creeping away from an #yornate-looking building. Looking more closely, you recognize them as members of the infamous group of #pcriminals, Team Rocket! NL You decide to do your civil duty by beating them up and sending them flying away. As they sail away, you notice some kind of #yfang dropped on the ground.",
+      "You decide to keep the fang as a reward for your vigilante justice. As you put it into your bag, you accidentally #rscratch yourself with its sharp point! #rOuch!",
+      "You decide to return it to its rightful owners. You head inside the building and see a blue-haired woman looking around frantically. As her eyes hone in on you and the fang in your hands, you quickly explain what happened. NL \"Is that so? Thank you for stopping those criminals.\" The woman takes the fang from you with a smile. \"Here, take this as thanks.\" NL She hands you a pouch of #ymoney. Looks like #ggood deeds do pay off."
+    ],
+    "OPTIONS": [
+      "[Keep it] ",
+      "[Return it] ",
+      "Obtain a special Relic.",
+      "Become Cursed - ",
+      ".",
+      "Gain ",
+      " Gold.",
+      "[Leave]"
+    ]
   }
 }
