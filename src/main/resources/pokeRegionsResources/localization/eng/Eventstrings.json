@@ -540,5 +540,21 @@
       "Remove a card.",
       "[Leave]"
     ]
+  },
+  "${ModID}:MarineLab": {
+    "NAME": "MarineLab",
+    "DESCRIPTIONS": [
+      "You spy a small building next to the cliffside, overlooking the ocean. A sign on the building says \"Help wanted inside!\" NL You decide to heed the sign and go indoors. Inside, you spot tables filled with lab equipment and what seems to be numerous #yPokemon eggs. NL \"Are you a trainer? Thank goodness!\" A haggard-looking woman greets you. \"We recovered all these eggs from some #rpoachers, but now we need to find good homes for them . . . would you like to take one?\"",
+      "You accept a #yPokemon egg. It feels warm to the touch. NL \"Take good care of it!\" NL You assure the woman that you will as you turn and leave to continue your journey.",
+      "\"Oh, you want to help with my research? That would be quite helpful as well! Since I'm located so close to the ocean, all I see are marine #yPokemon, so getting to run tests on some other types of #yPokemon would be very helpful . . .\" NL You and your #yPokemon help the woman with some tests. You feel that the experiments have #ychanged you a little. For better or worse, you can't quite tell."
+    ],
+    "OPTIONS": [
+      "[Take an egg] ",
+      "[Offer to help with research] ",
+      "Obtain a special Relic.",
+      "Transform ",
+      " cards.",
+      "[Leave]"
+    ]
   }
 }

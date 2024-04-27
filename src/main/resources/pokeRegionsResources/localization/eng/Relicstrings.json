@@ -82,5 +82,12 @@
     "DESCRIPTIONS": [
       "At the start of combat, apply #b", " #ypokeregions:Burn to ALL enemies."
     ]
+  },
+  "${ModID}:PokemonEgg": {
+    "NAME": "Pokemon Egg",
+    "FLAVOR": "You can faintly feel the stirrings of something inside . . . ",
+    "DESCRIPTIONS": [
+      "Can be hatched after visiting #b", " #yCampfires. #b"
+    ]
   }
 }

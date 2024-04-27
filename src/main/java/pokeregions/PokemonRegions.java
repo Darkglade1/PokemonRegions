@@ -39,6 +39,7 @@ import pokeregions.dungeons.*;
 import pokeregions.events.act1.*;
 import pokeregions.events.act2.BlackthornGym;
 import pokeregions.events.act2.BurnedTower;
+import pokeregions.events.act2.MarineLab;
 import pokeregions.events.act2.OlivineLighthouse;
 import pokeregions.events.act3.*;
 import pokeregions.monsters.act1.enemies.*;
@@ -499,7 +500,7 @@ public class PokemonRegions implements
                 .create());
         BaseMod.addEvent(BlackthornGym.ID, BlackthornGym.class, Johto.ID);
         BaseMod.addEvent(BurnedTower.ID, BurnedTower.class, Johto.ID);
-        BaseMod.addEvent(Addict.ID, Addict.class, Johto.ID);
+        BaseMod.addEvent(MarineLab.ID, MarineLab.class, Johto.ID);
         BaseMod.addEvent(TheJoust.ID, TheJoust.class, Johto.ID);
         BaseMod.addEvent(Nest.ID, Nest.class, Johto.ID);
         BaseMod.addEvent(ForgottenAltar.ID, ForgottenAltar.class, Johto.ID);

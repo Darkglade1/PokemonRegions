@@ -199,5 +199,11 @@
     "TEXT": [
       "pokeregions:Shadow-Cursed. NL "
     ]
+  },
+  "${ModID}:HatchEggOption": {
+    "TEXT": [
+      "Hatch the Pokemon Egg",
+      "Obtain the Pokemon inside the Egg."
+    ]
   }
 }
