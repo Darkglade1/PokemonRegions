@@ -556,5 +556,22 @@
       " cards.",
       "[Leave]"
     ]
+  },
+  "${ModID}:RadioTower": {
+    "NAME": "News from the Radio Tower",
+    "DESCRIPTIONS": [
+      "You hear the sound of #yradio crackling in the distance. NL \"Ahem! Attention! The #yPokemon Research Foundation is offering - \" NL You briefly pause to listen to the broadcast. The general summary is that the foundation is willing to pay trainers to bring a variety of #yPokemon to them for research purposes. You consider if you should take them up on that.",
+      "You bring one of your #yPokemon to the foundation, and the receptionist hands you the #ymoney. You feel a pang of #psadness as you leave one of your companions behind . . . but it was all for the greater good.",
+      "You decide to ignore the broadcast's offer. You weren't willing to part with your companions right now."
+    ],
+    "OPTIONS": [
+      "[Take the offer] ",
+      "[Ignore it] ",
+      "Lose ",
+      ".",
+      "Gain ",
+      " Gold.",
+      "[Leave]"
+    ]
   }
 }
