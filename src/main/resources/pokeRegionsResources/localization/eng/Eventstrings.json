@@ -523,5 +523,22 @@
       " Gold.",
       "[Leave]"
     ]
+  },
+  "${ModID}:BurnedTower": {
+    "NAME": "Burned Tower",
+    "DESCRIPTIONS": [
+      "You stare up at the #yruins of an old building. The local legends indicate that a great tragedy had happened here long ago - you can feel the lingering #presentment and #pcurses of those that had died. You have no doubt that you could find something worthwhile in the ruins . . . but perhaps it would be more respectful to offer a prayer to the #pdeceased instead.",
+      "You trudge through the derelict insides, finding a shiny #ytrinket left behind in the wreckage. As you turn to leave, you find yourself #pambushed by several #pGastlies! As you escape, you still feel their #glaughter and #psorrow echoing in your ears . . .",
+      "You offer up a #yprayer for those who lost their lives in the tragedy. As you bow your head, you feel a sense of calm descend over you."
+    ],
+    "OPTIONS": [
+      "[Search for treasure] ",
+      "[Offer a prayer] ",
+      "Obtain a rare Relic.",
+      "Become Cursed - ",
+      ".",
+      "Remove a card.",
+      "[Leave]"
+    ]
   }
 }
