@@ -74,7 +74,7 @@ public class RaikouEnemy extends AbstractPokemonMonster
     }
 
     public RaikouEnemy(final float x, final float y) {
-        super(NAME, ID, 140, 0.0F, 0, 250.0f, 290.0f, null, x, y);
+        super(NAME, ID, 140, 0.0F, 0, 230.0f, 200.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Raikou/Raikou.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.2f);
         setHp(calcAscensionTankiness(430));
@@ -93,7 +93,7 @@ public class RaikouEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_NUM_TRIGGERS, "mastery") {
+        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_NUM_TRIGGERS, "storm") {
             @Override
             public void onUseCard(AbstractCard card, UseCardAction action) {
                 if (this.amount > 0) {
@@ -103,9 +103,7 @@ public class RaikouEnemy extends AbstractPokemonMonster
                     atb(new AbstractGameAction() {
                         @Override
                         public void update() {
-                            if (!CardModifierManager.hasModifier(card, ChargedMod.ID)) {
-                                CardModifierManager.addModifier(card, mod.makeCopy());
-                            }
+                            CardModifierManager.addModifier(card, mod.makeCopy());
                             this.isDone = true;
                         }
                     });

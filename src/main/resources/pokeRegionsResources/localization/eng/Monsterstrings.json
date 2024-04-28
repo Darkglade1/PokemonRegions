@@ -618,5 +618,16 @@
     "NAME": "Skarmory",
     "DIALOG": [
     ]
+  },
+  "${ModID}:RaikouEnemy": {
+    "MOVES": [
+      "Thunder",
+      "Zap Cannon",
+      "Electroweb",
+      "Charge"
+    ],
+    "NAME": "Raikou",
+    "DIALOG": [
+    ]
   }
 }

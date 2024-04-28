@@ -20,17 +20,19 @@ public class Voltage extends AbstractUnremovablePower  {
 
     public Voltage(AbstractCreature owner, int amount) {
         super(POWER_ID, NAME, PowerType.DEBUFF, false, owner, amount);
-        this.loadRegion("storm");
+        this.loadRegion("mastery");
     }
 
     @Override
     public void onInitialApplication() {
+        this.flash();
         atb(new DamageAction(adp(), new DamageInfo(adp(), amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
+        this.flash();
         atb(new DamageAction(adp(), new DamageInfo(adp(), amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
     }
 

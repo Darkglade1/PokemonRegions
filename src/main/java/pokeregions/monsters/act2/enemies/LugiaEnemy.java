@@ -2,12 +2,9 @@ package pokeregions.monsters.act2.enemies;
 
 import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
-import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
@@ -18,9 +15,8 @@ import com.megacrit.cardcrawl.powers.*;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act2.Lugia;
-import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.powers.ClosedOffHeart;
 import pokeregions.util.Details;
 
 import java.util.ArrayList;
@@ -73,42 +69,7 @@ public class LugiaEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        atb(new AddTemporaryHPAction(this, this, TEMP_HP));
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, DAMAGE_REDUCTION, "corruption", 99) {
-
-            private int count = 0;
-            private int calculateDamageTakenAmount(int damage) {
-                if (TempHPField.tempHp.get(this) > 0) {
-                    return (int)(damage * (1 - ((float)amount / 100)));
-                } else {
-                    return damage;
-                }
-            }
-
-            @Override
-            public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-                if (info.type == DamageInfo.DamageType.NORMAL && !(info.owner instanceof AbstractPokemonAlly)) {
-                    return calculateDamageTakenAmount(damageAmount);
-                } else {
-                    return damageAmount;
-                }
-            }
-
-            @Override
-            public void atEndOfRound() {
-                count++;
-                if (count >= TEMP_HP_TURNS) {
-                    flash();
-                    atb(new AddTemporaryHPAction(owner, owner, TEMP_HP));
-                    count = 0;
-                }
-            }
-
-            @Override
-            public void updateDescription() {
-                description = POWER_DESCRIPTIONS[0] + amount + POWER_DESCRIPTIONS[1] + TEMP_HP_TURNS + POWER_DESCRIPTIONS[2] + TEMP_HP + POWER_DESCRIPTIONS[3];
-            }
-        });
+        applyToTarget(this, this, new ClosedOffHeart(this, DAMAGE_REDUCTION, TEMP_HP_TURNS, TEMP_HP));
         CustomDungeon.playTempMusicInstantly("HauntedHouse");
     }
 
