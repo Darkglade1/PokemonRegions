@@ -215,9 +215,9 @@
     "NAME": "Phoenix Down",
     "DESCRIPTIONS": ["Whenever this creature loses #b", " HP, it spawns a #yFeather."]
   },
-  "${ModID}:Shadow": {
-    "NAME": "Harbinger of Shadow",
-    "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yShadow-Cursed."]
+  "${ModID}:ClosedHeart": {
+    "NAME": "Closed-Off Heart",
+    "DESCRIPTIONS": ["While this creature has #yTemporary HP, receives #b", "% less attack damage from #yyou. (Your #yPokemon still deal full damage). NL Every #b", " turns, gains #b", " #yTemporary HP."]
   },
   "${ModID}:Technician": {
     "NAME": "Technician",
@@ -258,5 +258,13 @@
   "${ModID}:StrongArmor": {
     "NAME": "Strong Armor",
     "DESCRIPTIONS": ["Receives #b", "% less damage from attacks this turn. Reapplied every other turn."]
+  },
+  "${ModID}:Voltage": {
+    "NAME": "Voltage",
+    "DESCRIPTIONS": ["Whenever you gain #yVoltage, take damage equal to your #yVoltage."]
+  },
+  "${ModID}:EletricTerrain": {
+    "NAME": "Electric Terrain",
+    "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yCharged and are shuffled back into your draw pile."]
   }
 }

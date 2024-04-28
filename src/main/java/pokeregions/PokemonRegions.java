@@ -453,6 +453,7 @@ public class PokemonRegions implements
         // Bosses
         johto.addBoss(HoOhEnemy.ID, (BaseMod.GetMonster) HoOhEnemy::new, makeMonsterPath("HoOh/HoOhMap.png"), makeMonsterPath("HoOh/HoOhMapOutline.png"));
         johto.addBoss(LugiaEnemy.ID, (BaseMod.GetMonster) LugiaEnemy::new, makeMonsterPath("Lugia/LugiaMap.png"), makeMonsterPath("Lugia/LugiaMapOutline.png"));
+        johto.addBoss(RaikouEnemy.ID, (BaseMod.GetMonster) RaikouEnemy::new, makeMonsterPath("Raikou/RaikouMap.png"), makeMonsterPath("Raikou/RaikouMapOutline.png"));
 
         // Elites
         BaseMod.addMonster(ScizorEnemy.ID, (BaseMod.GetMonster) ScizorEnemy::new);

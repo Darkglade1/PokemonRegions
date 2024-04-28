@@ -156,6 +156,8 @@ public class PokemonScene extends AbstractScene {
                     this.bg = this.atlas.findRegion("mod/Bridge");
                 } else if (mo instanceof SkarmoryEnemy) {
                     this.bg = this.atlas.findRegion("mod/Ruins");
+                } else if (mo instanceof RaikouEnemy) {
+                    this.bg = this.atlas.findRegion("mod/Holy");
                 } else {
                     this.bg = this.atlas.findRegion("mod/Forest");
                 }

@@ -1,21 +1,15 @@
 package pokeregions.monsters.act2.enemies;
 
 import actlikeit.dungeons.CustomDungeon;
-import basemod.BaseMod;
 import basemod.ReflectionHacks;
-import basemod.helpers.CardModifierManager;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
+import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,13 +17,11 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.cardMods.ShadowCurseMod;
 import pokeregions.cards.pokemonAllyCards.act2.Lugia;
+import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
-import pokeregions.vfx.FlexibleDivinityParticleEffect;
-import pokeregions.vfx.FlexibleStanceAuraEffect;
 
 import java.util.ArrayList;
 
@@ -49,12 +41,11 @@ public class LugiaEnemy extends AbstractPokemonMonster
 
     public final int DEBUFF = 1;
     public final int STRONG_DEBUFF = calcAscensionSpecial(2);
-    public final int POWER_NUM_TRIGGERS = 2;
+    public final int DAMAGE_REDUCTION = calcAscensionSpecial(50);
+    public final int TEMP_HP = 40;
+    public final int TEMP_HP_TURNS = 4;
 
-    private float particleTimer;
-    private float particleTimer2;
-
-    public static final String POWER_ID = makeID("Shadow");
+    public static final String POWER_ID = makeID("ClosedHeart");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String POWER_NAME = powerStrings.NAME;
     public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -67,9 +58,9 @@ public class LugiaEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 250.0f, 290.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Lugia/Lugia.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.2f);
-        setHp(calcAscensionTankiness(430));
-        addMove(SHADOW_RUSH, Intent.ATTACK, calcAscensionDamage(28));
-        addMove(SHADOW_BLAST, Intent.ATTACK_DEBUFF, calcAscensionDamage(16));
+        setHp(calcAscensionTankiness(240));
+        addMove(SHADOW_RUSH, Intent.ATTACK, calcAscensionDamage(26));
+        addMove(SHADOW_BLAST, Intent.ATTACK_DEBUFF, calcAscensionDamage(15));
         addMove(SHADOW_SKY, Intent.STRONG_DEBUFF);
     }
 
@@ -82,33 +73,40 @@ public class LugiaEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_NUM_TRIGGERS, "corruption") {
+        atb(new AddTemporaryHPAction(this, this, TEMP_HP));
+        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, DAMAGE_REDUCTION, "corruption", 99) {
+
+            private int count = 0;
+            private int calculateDamageTakenAmount(int damage) {
+                if (TempHPField.tempHp.get(this) > 0) {
+                    return (int)(damage * (1 - ((float)amount / 100)));
+                } else {
+                    return damage;
+                }
+            }
+
             @Override
-            public void onUseCard(AbstractCard card, UseCardAction action) {
-                if (this.amount > 0) {
-                    this.flash();
-                    this.amount--;
-                    ShadowCurseMod mod = new ShadowCurseMod();
-                    atb(new AbstractGameAction() {
-                        @Override
-                        public void update() {
-                            if (!CardModifierManager.hasModifier(card, ShadowCurseMod.ID)) {
-                                CardModifierManager.addModifier(card, mod.makeCopy());
-                            }
-                            this.isDone = true;
-                        }
-                    });
+            public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+                if (info.type == DamageInfo.DamageType.NORMAL && !(info.owner instanceof AbstractPokemonAlly)) {
+                    return calculateDamageTakenAmount(damageAmount);
+                } else {
+                    return damageAmount;
                 }
             }
 
             @Override
             public void atEndOfRound() {
-                this.amount = POWER_NUM_TRIGGERS;
+                count++;
+                if (count >= TEMP_HP_TURNS) {
+                    flash();
+                    atb(new AddTemporaryHPAction(owner, owner, TEMP_HP));
+                    count = 0;
+                }
             }
 
             @Override
             public void updateDescription() {
-                description = POWER_DESCRIPTIONS[0] + POWER_NUM_TRIGGERS + POWER_DESCRIPTIONS[1];
+                description = POWER_DESCRIPTIONS[0] + amount + POWER_DESCRIPTIONS[1] + TEMP_HP_TURNS + POWER_DESCRIPTIONS[2] + TEMP_HP + POWER_DESCRIPTIONS[3];
             }
         });
         CustomDungeon.playTempMusicInstantly("HauntedHouse");
@@ -188,29 +186,6 @@ public class LugiaEnemy extends AbstractPokemonMonster
     public void die(boolean triggerRelics) {
         super.die(triggerRelics);
         onBossVictoryLogic();
-    }
-
-    @Override
-    public void render(SpriteBatch sb) {
-        super.render(sb);
-        if (this.hasPower(POWER_ID) && this.getPower(POWER_ID).amount > 0) {
-            this.particleTimer -= Gdx.graphics.getDeltaTime();
-            if (this.particleTimer < 0.0F) {
-                this.particleTimer = 0.04F;
-                AbstractDungeon.effectsQueue.add(new FlexibleDivinityParticleEffect(this, Color.DARK_GRAY.cpy()));
-            }
-            this.particleTimer2 -= Gdx.graphics.getDeltaTime();
-            if (this.particleTimer2 < 0.0F) {
-                this.particleTimer2 = MathUtils.random(0.45F, 0.55F);
-                AbstractDungeon.effectsQueue.add(new FlexibleStanceAuraEffect(Color.DARK_GRAY.cpy(), this));
-            }
-        }
-    }
-
-    @Override
-    public void renderTip(SpriteBatch sb) {
-        super.renderTip(sb);
-        tips.add(new PowerTip(BaseMod.getKeywordProper("pokeregions:shadow-cursed"), BaseMod.getKeywordDescription("pokeregions:shadow-cursed")));
     }
 
     @Override

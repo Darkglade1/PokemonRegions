@@ -130,7 +130,8 @@
       "Heals to half HP",
       "Removes negative Strength",
       "Summons minions",
-      "Exhumes all non-exhausting or Status cards into discard"
+      "Exhumes all non-exhausting or Status cards into discard",
+      "Gains Strength equal to number of Charged cards in play"
     ]
   },
   "${ModID}:ExhaustDrawPile": {
@@ -195,9 +196,9 @@
       "I must target the enemy with Taunt!"
     ]
   },
-  "${ModID}:ShadowCurseMod": {
+  "${ModID}:ChargedMod": {
     "TEXT": [
-      "pokeregions:Shadow-Cursed. NL "
+      "pokeregions:Charged. NL "
     ]
   },
   "${ModID}:HatchEggOption": {
