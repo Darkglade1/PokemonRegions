@@ -266,5 +266,9 @@
   "${ModID}:ElectricTerrain": {
     "NAME": "Electric Terrain",
     "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yCharged and are shuffled back into your draw pile."]
+  },
+  "${ModID}:Electroweb": {
+    "NAME": "Electroweb",
+    "DESCRIPTIONS": ["At the start of your turn, gain "]
   }
 }

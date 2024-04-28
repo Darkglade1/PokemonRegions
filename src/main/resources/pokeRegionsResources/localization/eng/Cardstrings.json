@@ -935,6 +935,17 @@
       " card. It gains Retain this combat."
     ]
   },
+  "${ModID}:Raikou": {
+    "NAME": "Raikou",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Thunder[]",
+      "[#FFA500]Electroweb[]",
+      "Channel ",
+      " Lightning. It deals triple damage.",
+      "Gain [E] at the start of your turn."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
