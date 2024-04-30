@@ -23,11 +23,11 @@ public class DarkCave extends PhasedEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String title = eventStrings.NAME;
-    private static final float HP_LOSS_PERCENTAGE = 0.20F;
-    private static final float HP_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.25F;
+    private static final float HP_LOSS_PERCENTAGE = 0.25F;
+    private static final float HP_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.30F;
     private final int hpLoss;
-    private static final float MAX_HP_LOSS_PERCENTAGE = 0.08F;
-    private static final float MAX_HP_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.10F;
+    private static final float MAX_HP_LOSS_PERCENTAGE = 0.10F;
+    private static final float MAX_HP_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.12F;
     private final int maxHPLoss;
     private int NUM_UPGRADE = 2;
     private int NUM_REMOVE = 2;
