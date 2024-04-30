@@ -573,5 +573,23 @@
       " Gold.",
       "[Leave]"
     ]
+  },
+  "${ModID}:AzaleaGym": {
+    "NAME": "Azalea Gym",
+    "DESCRIPTIONS": [
+      "The inside of this gym contained an entire indoor #gforest, an aesthetic you certainly haven't seen before. NL \"Welcome! Are you here to challenge the gym leader? Or would you like to spectate a match?\" NL The receptionist greeted you. You considered your options . . .",
+      "You decide to challenge the gym leader. As you make your way to the battlefield, you notice the #gforest around you grow #ythicker. NL \"Welcome, challenger! I am Bugsy, this gym's leader! I hope you're prepared!\" NL As the match begins, you find yourself quickly overwhelmed by your opponent's cunning tactics, hiding themselves in the trees before launching an ambush with surprising ferocity. NL After a long, hard-fought battle, you barely manage to win. As the gym leader congratulated you, you feel that you had learned how to inspire the same ferocity in your own #yPokemon.",
+      "You decide to spectate one of the ongoing matches. As you watch the battle, you take note of how both trainers were making use of the surrounding terrain to their advantage, taking cover to avoid attacks and hiding in foliage to conceal their approach. You feel that you can apply the same tactic to some of your own skills."
+    ],
+    "OPTIONS": [
+      "[Challenge] ",
+      "[Spectate] ",
+      "Lose ",
+      " HP.",
+      "Obtain ",
+      ".",
+      "Upgrade a card.",
+      "[Leave]"
+    ]
   }
 }

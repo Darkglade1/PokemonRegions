@@ -270,5 +270,9 @@
   "${ModID}:Electroweb": {
     "NAME": "Electroweb",
     "DESCRIPTIONS": ["At the start of your turn, gain "]
+  },
+  "${ModID}:SicEm": {
+    "NAME": "Sic 'Em",
+    "DESCRIPTIONS": ["Receives #b", "% more damage from your #yPokemon."]
   }
 }

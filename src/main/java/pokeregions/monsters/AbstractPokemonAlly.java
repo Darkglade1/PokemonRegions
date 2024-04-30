@@ -21,6 +21,7 @@ import pokeregions.PokemonRegions;
 import pokeregions.actions.SwitchPokemonAction;
 import pokeregions.actions.UpdateStaminaOnCardAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.cards.SicEm;
 import pokeregions.util.*;
 
 import java.util.ArrayList;
@@ -179,6 +180,10 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         });
         if (info != null && target != null && info.base > -1) {
             info.applyPowers(this, target);
+            if (target.hasPower(SicEm.POWER_ID)) {
+                int amount = target.getPower(SicEm.POWER_ID).amount;
+                info.output = (int) (info.output * (1 + ((float)amount / 100)));
+            }
         }
     }
 
@@ -262,6 +267,10 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                         info.applyPowers(this, target);
                         if (additionalMultiplier >= 0) {
                             info.output = (int) (info.output * additionalMultiplier);
+                        }
+                        if (target.hasPower(SicEm.POWER_ID)) {
+                            int amount = target.getPower(SicEm.POWER_ID).amount;
+                            info.output = (int) (info.output * (1 + ((float)amount / 100)));
                         }
                         ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
                         PowerTip intentTip = ReflectionHacks.getPrivate(this, AbstractMonster.class, "intentTip");
@@ -384,6 +393,10 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         for (int i = 0; i < AbstractDungeon.getMonsters().monsters.size(); i++) {
             AbstractMonster mo = AbstractDungeon.getMonsters().monsters.get(i);
             info.applyPowers(this, mo);
+            if (mo.hasPower(SicEm.POWER_ID)) {
+                int amount = mo.getPower(SicEm.POWER_ID).amount;
+                info.output = (int) (info.output * (1 + ((float)amount / 100)));
+            }
             damageArray[i] = info.output;
         }
         return damageArray;

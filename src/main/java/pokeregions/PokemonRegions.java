@@ -19,8 +19,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.events.city.*;
-import com.megacrit.cardcrawl.events.shrines.FaceTrader;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -503,9 +501,11 @@ public class PokemonRegions implements
                 .bonusCondition(RadioTower::canSpawn)
                 .dungeonID(Johto.ID)
                 .create());
-
-        BaseMod.addEvent(Nest.ID, Nest.class, Johto.ID);
-        BaseMod.addEvent(ForgottenAltar.ID, ForgottenAltar.class, Johto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(Pokemart.ID, Pokemart.class)
+                .bonusCondition(Pokemart::canSpawn)
+                .dungeonID(Johto.ID)
+                .create());
+        BaseMod.addEvent(AzaleaGym.ID, AzaleaGym.class, Johto.ID);
 
         // Act 3
         Hoenn hoenn = new Hoenn();
@@ -586,10 +586,6 @@ public class PokemonRegions implements
         BaseMod.addEvent(WeatherInstitute.ID, WeatherInstitute.class, Hoenn.ID);
         BaseMod.addEvent(Mossdeep.ID, Mossdeep.class, Hoenn.ID);
         BaseMod.addEvent(Altomare.ID, Altomare.class, Hoenn.ID);
-        BaseMod.addEvent(new AddEventParams.Builder(Pokemart.ID, Pokemart.class)
-                .bonusCondition(Pokemart::canSpawn)
-                .dungeonID(Hoenn.ID)
-                .create());
         BaseMod.addEvent(new AddEventParams.Builder(AncientRuins.ID, AncientRuins.class)
                 .bonusCondition(AncientRuins::canSpawn)
                 .dungeonID(Hoenn.ID)

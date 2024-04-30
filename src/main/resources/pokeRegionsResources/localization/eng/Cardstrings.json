@@ -1004,5 +1004,12 @@
   "${ModID}:TimeLapse": {
     "NAME": "Time Lapse",
     "DESCRIPTION": ""
+  },
+  "${ModID}:SicEm": {
+    "NAME": "Sic 'Em",
+    "DESCRIPTION": "Enemy receives ",
+    "EXTENDED_DESCRIPTION": [
+      "% more damage from your *Pokemon. NL Draw !M! card."
+    ]
   }
 }

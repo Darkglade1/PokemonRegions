@@ -1,4 +1,4 @@
-package pokeregions.events.act3;
+package pokeregions.events.act2;
 
 import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
