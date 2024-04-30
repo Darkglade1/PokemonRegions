@@ -274,5 +274,9 @@
   "${ModID}:SicEm": {
     "NAME": "Sic 'Em",
     "DESCRIPTIONS": ["Receives #b", "% more damage from your #yPokemon."]
+  },
+  "${ModID}:TimeWalk": {
+    "NAME": "Time Walk",
+    "DESCRIPTIONS": ["The next time you end your turn, take an extra turn."]
   }
 }

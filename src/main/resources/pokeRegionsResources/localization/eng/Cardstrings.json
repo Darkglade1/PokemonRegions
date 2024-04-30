@@ -946,6 +946,17 @@
       "Gain [E] at the start of your turn."
     ]
   },
+  "${ModID}:Celebi": {
+    "NAME": "Celebi",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Time[] [#FFA500]Walk[]",
+      "[#FFA500]Magical[] [#FFA500]Leaf[]",
+      "The next time you end your turn, take an extra turn.",
+      "Draw ",
+      " cards. You gain *Temporary *HP equal to their combined costs."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"
