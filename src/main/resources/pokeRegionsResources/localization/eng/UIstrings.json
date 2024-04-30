@@ -130,8 +130,7 @@
       "Heals to half HP",
       "Removes negative Strength",
       "Summons minions",
-      "Exhumes all non-exhausting or Status cards into discard",
-      "Gains Strength equal to number of Charged cards in play"
+      "Exhumes all non-exhausting or Status cards into discard"
     ]
   },
   "${ModID}:ExhaustDrawPile": {

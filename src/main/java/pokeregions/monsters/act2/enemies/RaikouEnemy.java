@@ -58,6 +58,7 @@ public class RaikouEnemy extends AbstractPokemonMonster
     public final int STATUS = calcAscensionSpecial(3);
     public final int DEBUFF = 1;
     public final int BLOCK = 16;
+    public final int STR = calcAscensionSpecialSmall(5);
     public final int POWER_NUM_TRIGGERS = 2;
 
     public final int CHARGE_COOLDOWN = 3;
@@ -80,10 +81,10 @@ public class RaikouEnemy extends AbstractPokemonMonster
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Raikou/Raikou.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.2f);
         setHp(calcAscensionTankiness(430));
-        addMove(THUNDER, Intent.ATTACK, calcAscensionDamage(12), 2);
-        addMove(ZAP_CANNON, Intent.ATTACK_DEBUFF, calcAscensionDamage(26));
+        addMove(THUNDER, Intent.ATTACK, calcAscensionDamage(14), 2);
+        addMove(ZAP_CANNON, Intent.ATTACK_DEBUFF, calcAscensionDamage(28));
         addMove(ELECTROWEB, Intent.DEFEND_DEBUFF);
-        addMove(CHARGE, Intent.BUFF);
+        addMove(CHARGE, Intent.DEFEND_BUFF);
     }
 
     @Override
@@ -156,23 +157,8 @@ public class RaikouEnemy extends AbstractPokemonMonster
                 break;
             }
             case CHARGE: {
-                int numChargedCards = 0;
-                for (AbstractCard card : adp().hand.group) {
-                    if (CardModifierManager.hasModifier(card, ChargedMod.ID)) {
-                        numChargedCards++;
-                    }
-                }
-                for (AbstractCard card : adp().drawPile.group) {
-                    if (CardModifierManager.hasModifier(card, ChargedMod.ID)) {
-                        numChargedCards++;
-                    }
-                }
-                for (AbstractCard card : adp().discardPile.group) {
-                    if (CardModifierManager.hasModifier(card, ChargedMod.ID)) {
-                        numChargedCards++;
-                    }
-                }
-                applyToTarget(this, this, new StrengthPower(this, numChargedCards));
+                block(this, BLOCK);
+                applyToTarget(this, this, new StrengthPower(this, STR));
                 break;
             }
         }
@@ -222,8 +208,10 @@ public class RaikouEnemy extends AbstractPokemonMonster
                 break;
             }
             case CHARGE: {
-                Details detail = new Details(this, Details.CHARGE);
-                details.add(detail);
+                Details blockDetail = new Details(this, BLOCK, BLOCK_TEXTURE);
+                details.add(blockDetail);
+                Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
+                details.add(powerDetail);
                 break;
             }
         }

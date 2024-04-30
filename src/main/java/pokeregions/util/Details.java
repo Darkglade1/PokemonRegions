@@ -32,7 +32,6 @@ public class Details {
     public static final String REMOVE_NEG_STR = TEXT[11];
     public static final String SUMMON = TEXT[12];
     public static final String SPATIAL_REND = TEXT[13];
-    public static final String CHARGE = TEXT[14];
 
     public enum TargetType {
         SIMPLE(""), YOU(Details.YOU), SELF(Details.SELF), ALL_ENEMIES(Details.ALL_ENEMIES), RANDOM_ENEMY(Details.RANDOM_ENEMY), DRAW_PILE(""), DISCARD_PILE(""), ALL_MINIONS(Details.ALL_MINIONS);
