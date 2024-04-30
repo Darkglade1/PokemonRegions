@@ -28,7 +28,7 @@ public class AzaleaGym extends PhasedEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String title = eventStrings.NAME;
     private static final float HP_LOSS_PERCENTAGE = 0.08F;
-    private static final float HP_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.12F;
+    private static final float HP_LOSS_PERCENTAGE_HIGH_ASCENSION = 0.10F;
     private final int hpLoss;
     private final AbstractCard card;
 

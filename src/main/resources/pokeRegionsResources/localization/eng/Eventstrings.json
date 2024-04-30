@@ -591,5 +591,24 @@
       "Upgrade a card.",
       "[Leave]"
     ]
+  },
+  "${ModID}:DarkCave": {
+    "NAME": "Dark Cave",
+    "DESCRIPTIONS": [
+      "Suddenly, the grounds @gives@ @way@ beneath you, sending you hurtling into the #pdarkness below you. You land with a painful #rthud, and as you groggily take in your surroundings, you find yourself in a #pdark cave. NL As you shakily get to your feet, you suddenly see #rglowing #rred #reyes staring at you from within the #pdarkness. You - ",
+      "You stand your ground as a swarm of flying, biting, scratching figures hurtle past you. After a brief moment of intense #rpain, the ordeal is over. As you stumble out of the cave, you feel that you had gotten #ystronger after enduring that trial.",
+      "You turn on your heel and sprint away from that swarm of #rred #reyes. You stumble and trip in the #pdarkness, but with a racing heart, you manage to make it out of the darkness. NL As you catch your breath, heart pounding out of your chest, you feel like you had several years shaved off your lifetime from that #pharrowing experience."
+    ],
+    "OPTIONS": [
+      "[Stand your ground] ",
+      "[Run away in fright] ",
+      "Lose ",
+      " HP.",
+      " Max HP.",
+      "Upgrade ",
+      "Remove ",
+      " cards.",
+      "[Leave]"
+    ]
   }
 }

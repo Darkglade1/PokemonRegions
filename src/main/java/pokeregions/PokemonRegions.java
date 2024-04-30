@@ -506,6 +506,7 @@ public class PokemonRegions implements
                 .dungeonID(Johto.ID)
                 .create());
         BaseMod.addEvent(AzaleaGym.ID, AzaleaGym.class, Johto.ID);
+        BaseMod.addEvent(DarkCave.ID, DarkCave.class, Johto.ID);
 
         // Act 3
         Hoenn hoenn = new Hoenn();
