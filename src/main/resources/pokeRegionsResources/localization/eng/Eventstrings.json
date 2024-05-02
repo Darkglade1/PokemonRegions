@@ -610,5 +610,24 @@
       " cards.",
       "[Leave]"
     ]
+  },
+  "${ModID}:VoiceOfTheForest": {
+    "NAME": "Voice of the Forest",
+    "DESCRIPTIONS": [
+      "You see a small #yPokemon flitting through the #gforest, being pursued by two very #rhostile-looking #yPokemon. NL \"To the left! Don't let it out of your sight!\" NL A loud voice grabs your attention, and you see a #ppoacher following close behind the pursuing #yPokemon.",
+      "You stumble across the poacher's path, stealing his attention. NL \"Who are you? Get out of my way!\" NL You pretend to be a tourist lost in the woods as you ask for directions to the nearest settlement. The poacher grits his teeth as he begrudgingly stops to tell you directions. In the distance, you see his #yPokemon slow, then stop as they look around, having lost sight of their prey without their trainer's instructions. NL \"What? Blast it, where did it go?!\" NL The poacher and his #yPokemon hurry away. As you leave the forest, you suddenly find some extra #gfruit in your bag. Looks like your #ygood #ydeed didn't go unnoticed.",
+      "You call out your #yPokemon and step into the pursuing #yPokemons' path. They don't even slow down as they try to bowl you over, but you manage to endure the #rpain and stand your ground long enough for your #yPokemon to take them down. The poacher, having lost his #yPokemon, quickly retreats into the distance. As you catch your breath, you see the small #yPokemon you helped float down next to you. Its wide eyes meet yours, and you feel it take an #yinterest in you."
+    ],
+    "OPTIONS": [
+      "[Distract the poacher] ",
+      "[Stop the Pokemon] ",
+      "Gain ",
+      " Max HP.",
+      "Lose ",
+      " HP.",
+      "Obtain ",
+      ".",
+      "[Leave]"
+    ]
   }
 }
