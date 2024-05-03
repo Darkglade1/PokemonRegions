@@ -957,6 +957,32 @@
       " cards. You gain *Temporary *HP equal to their combined costs."
     ]
   },
+  "${ModID}:Swinub": {
+    "NAME": "Swinub",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Amnesia[]",
+      "[#FFA500]Thick[] [#FFA500]Fat[]",
+      "You gain ",
+      " Block next turn.",
+      "Draw ",
+      " cards. Exhaust ",
+      " cards."
+    ]
+  },
+  "${ModID}:Piloswine": {
+    "NAME": "Piloswine",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Amnesia[]",
+      "[#FFA500]Snow[] [#FFA500]Cloak[]",
+      "You gain ",
+      " Block next turn.",
+      "You gain ",
+      " Block and ",
+      " *Blur."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

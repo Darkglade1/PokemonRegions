@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.Frozen;
-import pokeregions.cards.pokemonAllyCards.act2.Azumarill;
+import pokeregions.cards.pokemonAllyCards.act2.Swinub;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.util.Details;
 
@@ -41,7 +41,7 @@ public class SwinubEnemy extends AbstractPokemonMonster
         this(0.0f, 0.0f, false);
     }
     public SwinubEnemy(final float x, final float y, boolean attackFirst) {
-        super(NAME, ID, 140, 0.0F, 0, 140.0f, 120.0f, null, x, y);
+        super(NAME, ID, 140, 0.0F, 0, 110.0f, 70.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Swinub/Swinub.scml"));
         int time = ((BetterSpriterAnimation)this.animation).myPlayer.getAnimation().length;
         ((BetterSpriterAnimation)this.animation).myPlayer.setTime((int)(time * Math.random()));
@@ -116,7 +116,7 @@ public class SwinubEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Azumarill();
+        return new Swinub();
     }
 
 }

@@ -16,11 +16,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.Frozen;
-import pokeregions.cards.pokemonAllyCards.act2.Magcargo;
+import pokeregions.cards.pokemonAllyCards.act2.Piloswine;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
@@ -57,7 +58,7 @@ public class PiloswineEnemy extends AbstractPokemonMonster
     }
 
     public PiloswineEnemy(final float x, final float y) {
-        super(NAME, ID, 140, 0.0F, 0, 160.0f, 130.0f, null, x, y);
+        super(NAME, ID, 140, 0.0F, 0, 160.0f, 140.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Piloswine/Piloswine.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.speed = 10;
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.1f);
@@ -79,7 +80,7 @@ public class PiloswineEnemy extends AbstractPokemonMonster
             public void onExhaust(AbstractCard card) {
                 this.flash();
                 applyToTarget(owner, owner, new StrengthPower(owner, amount));
-                applyToTarget(owner, owner, new GainStrengthPower(owner, amount));
+                applyToTarget(owner, owner, new LoseStrengthPower(owner, amount));
             }
 
             @Override
@@ -159,7 +160,7 @@ public class PiloswineEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Magcargo();
+        return new Piloswine();
     }
 
 }
