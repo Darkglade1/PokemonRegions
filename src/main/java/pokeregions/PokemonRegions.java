@@ -488,6 +488,18 @@ public class PokemonRegions implements
                         new LanturnEnemy(50.0F, 0.0F),
                 }));
         BaseMod.addMonster(SkarmoryEnemy.ID, (BaseMod.GetMonster) SkarmoryEnemy::new);
+        BaseMod.addMonster(EncounterIDs.SWINUB_3, "3 Swinubs", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SwinubEnemy(-450.0F, 0.0F, false),
+                        new SwinubEnemy(-150.0F, 0.0F, true),
+                        new SwinubEnemy(150.0F, 0.0F, false)
+                }));
+        BaseMod.addMonster(EncounterIDs.PILOSWINE_AND_SWINUBS, "Piloswine and Swinubs", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new SwinubEnemy(-450.0F, 0.0F, false),
+                        new SwinubEnemy(-150.0F, 0.0F, true),
+                        new PiloswineEnemy(150.0F, 0.0F)
+                }));
 
         //Events
         BaseMod.addEvent(new AddEventParams.Builder(OlivineLighthouse.ID, OlivineLighthouse.class)

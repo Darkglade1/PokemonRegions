@@ -278,5 +278,9 @@
   "${ModID}:TimeWalk": {
     "NAME": "Time Walk",
     "DESCRIPTIONS": ["The next time you end your turn, take an extra turn."]
+  },
+  "${ModID}:ThickFat": {
+    "NAME": "Thick Fat",
+    "DESCRIPTIONS": ["Whenever a card is #yExhausted, gains #b", " #yStrength this turn."]
   }
 }

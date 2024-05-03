@@ -87,7 +87,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(KingdraEnemy.ID, 2.0F));
         monsters.add(new MonsterInfo(AzumarillEnemy.ID, 2.0F));
         //monsters.add(new MonsterInfo("Shell Parasite", 2.0F));
-        //monsters.add(new MonsterInfo("3 Byrds", 2.0F)); // 3 Swinubs
+        monsters.add(new MonsterInfo(EncounterIDs.SWINUB_3, 2.0F));
         monsters.add(new MonsterInfo(EncounterIDs.SLUGMA_2, 2.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
@@ -100,9 +100,9 @@ public class Johto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(EncounterIDs.KINGDRA_AND_LANTURN, 4.0F));
         monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
         monsters.add(new MonsterInfo(SkarmoryEnemy.ID, 6.0F));
-        //monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // Crobat and Noctowl
+        //monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // 2 Crobats
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 4.0F));
-        //monsters.add(new MonsterInfo("3 Cultists", 4.0F)); // 2 Swinubs and Piloswine
+        monsters.add(new MonsterInfo(EncounterIDs.PILOSWINE_AND_SWINUBS, 4.0F));
         //monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
@@ -131,6 +131,9 @@ public class Johto extends AbstractPokemonRegionDungeon {
         }
         if (previous.equals(EncounterIDs.SLUGMA_2)) {
             retVal.add(EncounterIDs.MAGCARGO_AND_SLUGMA);
+        }
+        if (previous.equals(EncounterIDs.SWINUB_3)) {
+            retVal.add(EncounterIDs.PILOSWINE_AND_SWINUBS);
         }
         return retVal;
     }
