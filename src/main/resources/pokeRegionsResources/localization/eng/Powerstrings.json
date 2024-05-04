@@ -286,5 +286,9 @@
   "${ModID}:Infiltrator": {
     "NAME": "Infiltrator",
     "DESCRIPTIONS": ["This creature's attacks ignore #yBlock this turn. Removed when receiving unblocked attack damage."]
+  },
+  "${ModID}:PoisonFang": {
+    "NAME": "Poison Fang",
+    "DESCRIPTIONS": ["Your next #yAttack applies #yToxic equal to unblocked damage dealt."]
   }
 }

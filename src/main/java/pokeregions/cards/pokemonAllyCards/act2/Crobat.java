@@ -9,22 +9,22 @@ import pokeregions.monsters.AbstractPokemonAlly;
 import static pokeregions.PokemonRegions.makeID;
 
 @NoPools
-public class Kingdra extends AbstractAllyPokemonCard {
-    public final static String ID = makeID(Kingdra.class.getSimpleName());
-    public static final int MOVE_1_EFFECT = 100;
-    public static final int MOVE_2_DAMAGE = 11;
+public class Crobat extends AbstractAllyPokemonCard {
+    public final static String ID = makeID(Crobat.class.getSimpleName());
+    public static final int MOVE_2_DAMAGE = 10;
+    public static final int MOVE_2_DRAW = 2;
 
-    public static final int MOVE_1_STAMINA_COST = 1;
+    public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 4;
+    public static final int MAX_STAMINA = 5;
 
-    public Kingdra() {
+    public Crobat() {
         super(ID, CardRarity.UNCOMMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2];
-        this.move2Description = DESCRIPTIONS[3] + MOVE_2_DAMAGE + DESCRIPTIONS[4];
+        this.move2Description = DESCRIPTIONS[3] + MOVE_2_DAMAGE + DESCRIPTIONS[4] + MOVE_2_DRAW + DESCRIPTIONS[5];
         initializeDescriptionFromMoves();
     }
 
@@ -34,6 +34,6 @@ public class Kingdra extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act2.allyPokemon.Kingdra(x, y, this);
+        return new pokeregions.monsters.act2.allyPokemon.Crobat(x, y, this);
     }
 }

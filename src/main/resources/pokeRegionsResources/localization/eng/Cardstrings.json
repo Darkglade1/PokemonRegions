@@ -983,6 +983,18 @@
       " *Blur."
     ]
   },
+  "${ModID}:Crobat": {
+    "NAME": "Crobat",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Poison[] [#FFA500]Fang[]",
+      "[#FFA500]Air[] [#FFA500]Slash[]",
+      "Your next *Attack applies pokeregions:Toxic equal to unblocked damage dealt.",
+      "Deal ",
+      " damage. Draw ",
+      " cards."
+    ]
+  },
   "${ModID}:StaminaKeyword": {
     "NAME": "Stamina",
     "DESCRIPTION": "pokeregions:Stamina"

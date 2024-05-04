@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.PureDamageAction;
+import pokeregions.cards.pokemonAllyCards.act2.Crobat;
 import pokeregions.cards.pokemonAllyCards.act2.Kingdra;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
@@ -42,8 +43,7 @@ public class CrobatEnemy extends AbstractPokemonMonster
 
     public final int BLOCK = 14;
     public final int BUFF = calcAscensionSpecial(2);
-
-    private boolean buffFirst = false;
+    private boolean buffFirst;
 
     public static final String POWER_ID = makeID("Infiltrator");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -55,8 +55,10 @@ public class CrobatEnemy extends AbstractPokemonMonster
     }
 
     public CrobatEnemy(final float x, final float y, boolean buffFirst) {
-        super(NAME, ID, 140, 0.0F, 0, 140.0f, 140.0f, null, x, y);
+        super(NAME, ID, 140, 0.0F, 0, 170.0f, 110.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Crobat/Crobat.scml"));
+        int time = ((BetterSpriterAnimation)this.animation).myPlayer.getAnimation().length;
+        ((BetterSpriterAnimation)this.animation).myPlayer.setTime((int)(time * Math.random()));
         this.type = EnemyType.NORMAL;
         setHp(calcAscensionTankiness(75), calcAscensionTankiness(84));
         addMove(QUICK_GUARD, Intent.DEFEND_BUFF);
@@ -80,6 +82,8 @@ public class CrobatEnemy extends AbstractPokemonMonster
                 block(this, BLOCK);
                 applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0, "accuracy") {
 
+                    boolean justApplied = true;
+
                     @Override
                     public int onAttacked(DamageInfo info, int damageAmount) {
                         if (info.owner != owner && info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0) {
@@ -92,8 +96,12 @@ public class CrobatEnemy extends AbstractPokemonMonster
 
                     @Override
                     public void atEndOfRound() {
-                        makePowerRemovable(this);
-                        atb(new RemoveSpecificPowerAction(owner, owner, this));
+                        if (justApplied) {
+                            justApplied = false;
+                        } else {
+                            makePowerRemovable(this);
+                            atb(new RemoveSpecificPowerAction(owner, owner, this));
+                        }
                     }
 
                     @Override
@@ -153,7 +161,7 @@ public class CrobatEnemy extends AbstractPokemonMonster
     protected void setDetailedIntents() {
         ArrayList<Details> details = new ArrayList<>();
         EnemyMoveInfo move = ReflectionHacks.getPrivate(this, AbstractMonster.class, "move");
-        String textureString = makeUIPath("Enrage.png");
+        String textureString = makePowerPath("Infiltrator32.png");
         Texture texture = TexLoader.getTexture(textureString);
         switch (move.nextMove) {
             case QUICK_GUARD: {
@@ -174,7 +182,7 @@ public class CrobatEnemy extends AbstractPokemonMonster
 
     @Override
     public AbstractCard getAssociatedPokemonCard() {
-        return new Kingdra();
+        return new Crobat();
     }
 
 }

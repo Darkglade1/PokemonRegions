@@ -502,8 +502,8 @@ public class PokemonRegions implements
                 }));
         BaseMod.addMonster(EncounterIDs.CROBAT_2, "2 Crobats", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new CrobatEnemy(-200.0F, 0.0F, true),
-                        new CrobatEnemy(50.0F, 0.0F, false),
+                        new CrobatEnemy(-200.0F, 100.0F, true),
+                        new CrobatEnemy(50.0F, 100.0F, false),
                 }));
 
         //Events

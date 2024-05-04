@@ -59,6 +59,7 @@ public class Charmeleon extends AbstractPokemonAlly
             }
             case MOVE_2: {
                 //runAnim("Ranged");
+                useFastAttackAnimation();
                 ArrayList<AbstractMonster> enemies = Wiz.getEnemies();
                 for (int i = 0; i < enemies.size(); i++) {
                     AbstractMonster mo = enemies.get(i);
