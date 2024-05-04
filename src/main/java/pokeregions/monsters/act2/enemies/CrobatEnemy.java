@@ -19,7 +19,6 @@ import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.PureDamageAction;
 import pokeregions.cards.pokemonAllyCards.act2.Crobat;
-import pokeregions.cards.pokemonAllyCards.act2.Kingdra;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
@@ -60,10 +59,10 @@ public class CrobatEnemy extends AbstractPokemonMonster
         int time = ((BetterSpriterAnimation)this.animation).myPlayer.getAnimation().length;
         ((BetterSpriterAnimation)this.animation).myPlayer.setTime((int)(time * Math.random()));
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(75), calcAscensionTankiness(84));
+        setHp(calcAscensionTankiness(65), calcAscensionTankiness(74));
         addMove(QUICK_GUARD, Intent.DEFEND_BUFF);
-        addMove(AIR_SLASH, Intent.ATTACK, calcAscensionDamage(6), 2);
-        addMove(CROSS_POISON, Intent.ATTACK_BUFF, calcAscensionDamage(10));
+        addMove(AIR_SLASH, Intent.ATTACK, calcAscensionDamage(5), 2);
+        addMove(CROSS_POISON, Intent.ATTACK_BUFF, calcAscensionDamage(8));
         this.buffFirst = buffFirst;
 
         Player.PlayerListener listener = new PokemonListener(this);

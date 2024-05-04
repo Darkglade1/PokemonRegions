@@ -44,7 +44,7 @@ public class PiloswineEnemy extends AbstractPokemonMonster
     private static final byte AMNESIA = 2;
 
     public final int STATUS = calcAscensionSpecial(1);
-    public final int BLOCK = 12;
+    public final int BLOCK = 8;
     public final int STR = 1;
     public final int POWER_STR = calcAscensionSpecial(1);
 
@@ -63,9 +63,9 @@ public class PiloswineEnemy extends AbstractPokemonMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.speed = 10;
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.1f);
         this.type = EnemyType.NORMAL;
-        setHp(calcAscensionTankiness(74), calcAscensionTankiness(82));
+        setHp(calcAscensionTankiness(64), calcAscensionTankiness(72));
         addMove(SPEAR, Intent.ATTACK, 3, 3);
-        addMove(BLIZZARD, Intent.ATTACK_DEBUFF, calcAscensionDamage(12));
+        addMove(BLIZZARD, Intent.ATTACK_DEBUFF, calcAscensionDamage(10));
         addMove(AMNESIA, Intent.DEFEND_BUFF);
 
         Player.PlayerListener listener = new PokemonListener(this);
