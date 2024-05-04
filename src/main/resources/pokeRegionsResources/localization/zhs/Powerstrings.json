@@ -210,5 +210,85 @@
   "pokeRegions:DistortionWorld": {
     "NAME": "反转世界",
     "DESCRIPTIONS": ["#y免疫 伤害。 NL 当所有 #y畸变之痕 被摧毁，在回合结束时离开 #y反转世界 并在下一回合使用一次 #y非攻击 意图。"]
+  },
+  "${ModID}:PhoenixDown": {
+    "NAME": "Phoenix Down",
+    "DESCRIPTIONS": ["Whenever this creature loses #b", " HP, it spawns a #yFeather."]
+  },
+  "${ModID}:ClosedOffHeart": {
+    "NAME": "Closed-Off Heart",
+    "DESCRIPTIONS": ["While this creature has #yTemporary #yHP, #yyou deal #b", "% less damage with attacks. (Your #yPokemon still deal full damage). NL Every #b", " turns, gains #b", " #yTemporary #yHP."]
+  },
+  "${ModID}:Technician": {
+    "NAME": "Technician",
+    "DESCRIPTIONS": ["The first time you play #b", " card(s) each turn, this creature takes its turn. If this effect was triggered, this creature skips its normal turn for the round."]
+  },
+  "${ModID}:UTurn": {
+    "NAME": "U-Turn",
+    "DESCRIPTIONS": ["The next #yPokemon to switch-in deals #b", "% more damage with its next attack."]
+  },
+  "${ModID}:FlameBody": {
+    "NAME": "Flame Body",
+    "DESCRIPTIONS": ["When this creature is attacked while it has #yBlock, apply #b", " #yBurn to the attacker."]
+  },
+  "${ModID}:SheerForce": {
+    "NAME": "Sheer Force",
+    "DESCRIPTIONS": ["When this creature receives unblocked attack damage while intending to attack, it deals #b", "% more damage with its next attack, but the attack's #ysecondary #yeffects are disabled. Can only trigger once per turn."]
+  },
+  "${ModID}:Unaware": {
+    "NAME": "Unaware",
+    "DESCRIPTIONS": ["#yNegate every #b", "rd instance of unblocked attack damage dealt to this creature."]
+  },
+  "${ModID}:ProtectiveInstincts": {
+    "NAME": "Protective Instincts",
+    "DESCRIPTIONS": ["When another enemy falls below #b", "% HP, this creature gains #yTaunt for the rest of combat."]
+  },
+  "${ModID}:WaterVeil": {
+    "NAME": "Water Veil",
+    "DESCRIPTIONS": ["At end of round, every enemy without #yArtifact gains #b", " #yArtifact."]
+  },
+  "${ModID}:Sniper": {
+    "NAME": "Sniper",
+    "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, you gain #b", " #yFrail."]
+  },
+  "${ModID}:Concentrate": {
+    "NAME": "Concentrate",
+    "DESCRIPTIONS": ["Deal #b", "% more damage with your next played #yAttack."]
+  },
+  "${ModID}:StrongArmor": {
+    "NAME": "Strong Armor",
+    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks this turn. Reapplied every other turn."]
+  },
+  "${ModID}:Voltage": {
+    "NAME": "Voltage",
+    "DESCRIPTIONS": ["Whenever you gain #yVoltage, take damage equal to your #yVoltage."]
+  },
+  "${ModID}:ElectricTerrain": {
+    "NAME": "Electric Terrain",
+    "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yCharged and are shuffled back into your draw pile."]
+  },
+  "${ModID}:Electroweb": {
+    "NAME": "Electroweb",
+    "DESCRIPTIONS": ["At the start of your turn, gain "]
+  },
+  "${ModID}:SicEm": {
+    "NAME": "Sic 'Em",
+    "DESCRIPTIONS": ["Receives #b", "% more damage from your #yPokemon."]
+  },
+  "${ModID}:TimeWalk": {
+    "NAME": "Time Walk",
+    "DESCRIPTIONS": ["The next time you end your turn, take an extra turn."]
+  },
+  "${ModID}:ThickFat": {
+    "NAME": "Thick Fat",
+    "DESCRIPTIONS": ["Whenever a card is #yExhausted, gains #b", " #yStrength this turn."]
+  },
+  "${ModID}:Infiltrator": {
+    "NAME": "Infiltrator",
+    "DESCRIPTIONS": ["This creature's attacks ignore #yBlock this turn. Removed when receiving unblocked attack damage."]
+  },
+  "${ModID}:PoisonFang": {
+    "NAME": "Poison Fang",
+    "DESCRIPTIONS": ["Your next #yAttack applies #yToxic equal to unblocked damage dealt."]
   }
 }

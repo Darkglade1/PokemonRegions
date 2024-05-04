@@ -7,14 +7,6 @@
       "开始一场新的旅程。"
     ]
   },
-  "pokeRegions:Johto": {
-    "TEXT": [
-      "城都",
-      "第二幕",
-      "这片土地独有的陌生而舒适的感觉吸引了你。 相比 #y尖塔 那 #p停滞 的空气，这里更让人心胸愉悦。",
-      "继续你的旅程。"
-    ]
-  },
   "${ModID}:Johto": {
     "TEXT": [
       "Johto",
@@ -201,6 +193,17 @@
   "pokeRegions:TauntNotice": {
     "TEXT": [
       "我必须以嘲讽敌人为目标！"
+    ]
+  },
+  "${ModID}:ChargedMod": {
+    "TEXT": [
+      "pokeregions:Charged. NL "
+    ]
+  },
+  "${ModID}:HatchEggOption": {
+    "TEXT": [
+      "Hatch the Pokemon Egg",
+      "Obtain the Pokemon inside the Egg."
     ]
   }
 }

@@ -75,5 +75,19 @@
     "DESCRIPTIONS": [
       "当你遭遇 #y固拉多 时，它将被 #y强化 。"
     ]
+  },
+  "${ModID}:DragonFang": {
+    "NAME": "Dragon Fang",
+    "FLAVOR": "You wonder how big a dragon must grow to have a fang this big.",
+    "DESCRIPTIONS": [
+      "At the start of combat, apply #b", " #ypokeregions:Burn to ALL enemies."
+    ]
+  },
+  "${ModID}:PokemonEgg": {
+    "NAME": "Pokemon Egg",
+    "FLAVOR": "You can faintly feel the stirrings of something inside . . . ",
+    "DESCRIPTIONS": [
+      "Can be hatched after visiting #b", " #yCampfires. #b"
+    ]
   }
 }

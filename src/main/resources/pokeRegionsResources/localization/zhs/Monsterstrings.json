@@ -472,5 +472,191 @@
     "NAME": "畸变之痕",
     "DIALOG": [
     ]
+  },
+  "${ModID}:HoOhEnemy": {
+    "MOVES": [
+      "Sacred Fire",
+      "Overheat",
+      "Regenerate"
+    ],
+    "NAME": "Ho-Oh",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:PhoenixFeather": {
+    "MOVES": [
+    ],
+    "NAME": "Phoenix Feather",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:LugiaEnemy": {
+    "MOVES": [
+      "Shadow Rush",
+      "Shadow Blast",
+      "Shadow Sky"
+    ],
+    "NAME": "Shadow Lugia",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:ScizorEnemy": {
+    "MOVES": [
+      "Bullet Punch",
+      "Swords Dance",
+      "Agility"
+    ],
+    "NAME": "Scizor",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SlugmaEnemy": {
+    "MOVES": [
+      "Harden",
+      "Rock Throw",
+      "Lava Plume"
+    ],
+    "NAME": "Slugma",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:MagcargoEnemy": {
+    "MOVES": [
+      "Harden",
+      "Rock Throw",
+      "Lava Plume",
+      "Smog"
+    ],
+    "NAME": "Magcargo",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SteelixEnemy": {
+    "MOVES": [
+      "Double Edge",
+      "Heavy Slam",
+      "Iron Tail",
+      "Autotomize"
+    ],
+    "NAME": "Steelix",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:QuagsireEnemy": {
+    "MOVES": [
+      "Scald",
+      "Quicksand"
+    ],
+    "NAME": "Quagsire",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:TyranitarEnemy": {
+    "MOVES": [
+      "Iron Defense",
+      "Stone Edge",
+      "Crunch"
+    ],
+    "NAME": "Tyranitar",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:PupitarEnemy": {
+    "MOVES": [
+      "Dragon Dance",
+      "Smack Down",
+      "Rock Slide"
+    ],
+    "NAME": "Pupitar",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:AzumarillEnemy": {
+    "MOVES": [
+      "Focus",
+      "Play Rough"
+    ],
+    "NAME": "Azumarill",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:MantineEnemy": {
+    "MOVES": [
+      "Rain Dance",
+      "Air Slash"
+    ],
+    "NAME": "Mantine",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:KingdraEnemy": {
+    "MOVES": [
+      "Water Pulse",
+      "Wave Crash",
+      "Focus Energy"
+    ],
+    "NAME": "Kingdra",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:LanturnEnemy": {
+    "MOVES": [
+      "Eerie Impulse",
+      "Illuminate",
+      "Discharge"
+    ],
+    "NAME": "Lanturn",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SkarmoryEnemy": {
+    "MOVES": [
+      "Spikes",
+      "Metal Claw",
+      "Brave Bird"
+    ],
+    "NAME": "Skarmory",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:RaikouEnemy": {
+    "MOVES": [
+      "Thunder",
+      "Zap Cannon",
+      "Electroweb",
+      "Charge"
+    ],
+    "NAME": "Raikou",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:SwinubEnemy": {
+    "MOVES": [
+      "Ice Shard",
+      "Icy Wind"
+    ],
+    "NAME": "Swinub",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:PiloswineEnemy": {
+    "MOVES": [
+      "Icicle Spear",
+      "Blizzard",
+      "Amnesia"
+    ],
+    "NAME": "Piloswine",
+    "DIALOG": [
+    ]
+  },
+  "${ModID}:CrobatEnemy": {
+    "MOVES": [
+      "Quick Guard",
+      "Air Slash",
+      "Cross Poison"
+    ],
+    "NAME": "Crobat",
+    "DIALOG": [
+    ]
   }
 }

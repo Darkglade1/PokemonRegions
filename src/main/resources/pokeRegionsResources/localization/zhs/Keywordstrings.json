@@ -62,5 +62,12 @@
       "缓慢"
     ],
     "DESCRIPTION": "在一个回合内， 每打出一张牌，拥有 #y缓慢 的生物会受到更多的伤害。"
+  },
+  {
+    "PROPER_NAME": "Charged",
+    "NAMES": [
+      "charged"
+    ],
+    "DESCRIPTION": "When a #yCharged card is played, you gain #b2 #yVoltage and [E] ."
   }
 ]

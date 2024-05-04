@@ -806,5 +806,259 @@
       "You gain ",
       " Block."
     ]
+  },
+  "${ModID}:HoOh": {
+    "NAME": "Ho-Oh",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Regenerate[]",
+      "[#FFA500]Sacred[] [#FFA500]Fire[]",
+      "You gain ",
+      " *Regen.",
+      "Deal ",
+      " damage. Enemy loses Strength this turn equal to unblocked damage dealt."
+    ]
+  },
+  "${ModID}:Lugia": {
+    "NAME": "Shadow Lugia",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Shadow[] [#FFA500]Rush[]",
+      "[#FFA500]Shadow[] [#FFA500]Sky[]",
+      "Deal ",
+      " damage. Affected twice by damage modifiers.",
+      "Enemy loses ",
+      " Strength."
+    ]
+  },
+  "${ModID}:Scizor": {
+    "NAME": "Scizor",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]U-Turn[]",
+      "[#FFA500]Bullet[] [#FFA500]Punch[]",
+      "Deal ",
+      " damage. The next *Pokemon to switch in deals ",
+      "% more damage with its next attack.",
+      "Deal ",
+      " damage twice. For each Attack played this turn, increase number of hits by 1."
+    ]
+  },
+  "${ModID}:Slugma": {
+    "NAME": "Slugma",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Lava[] [#FFA500]Plume[]",
+      "[#FFA500]Flame[] [#FFA500]Body[]",
+      "Apply ",
+      " pokeregions:Burn.",
+      "You gain ",
+      " Block. Add ",
+      " Burn to your hand."
+    ]
+  },
+  "${ModID}:Magcargo": {
+    "NAME": "Magcargo",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Inferno[]",
+      "[#FFA500]Flame[] [#FFA500]Body[]",
+      "Deal ",
+      " damage ",
+      " times. Deals 0 damage to enemies without pokeregions:Burn. ",
+      "You gain ",
+      " Block. Add ",
+      " Burns to your hand."
+    ]
+  },
+  "${ModID}:Steelix": {
+    "NAME": "Steelix",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Iron[] [#FFA500]Tail[]",
+      "[#FFA500]Autotomize[]",
+      "Deal ",
+      " damage. Increased by ",
+      "% of your Block.",
+      "You draw ",
+      " extra card each turn."
+    ]
+  },
+  "${ModID}:Quagsire": {
+    "NAME": "Quagsire",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Ignore[]",
+      "[#FFA500]Scald[]",
+      "Prevent the next time you would lose HP.",
+      "Deal ",
+      " damage and apply ",
+      " Weak and pokeregions:Burn to ALL enemies."
+    ]
+  },
+  "${ModID}:Tyranitar": {
+    "NAME": "Tyranitar",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Payback[]",
+      "[#FFA500]Stone[] [#FFA500]Edge[]",
+      "Deal ",
+      " damage. Deals double damage if you played ",
+      " or less cards this turn.",
+      "You gain ",
+      " Block. Deal ",
+      " damage."
+    ]
+  },
+  "${ModID}:Pupitar": {
+    "NAME": "Pupitar",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Propulsion[]",
+      "[#FFA500]Stone[] [#FFA500]Edge[]",
+      "Draw ",
+      " cards. Discard ",
+      " card.",
+      "You gain ",
+      " Block. Deal ",
+      " damage."
+    ]
+  },
+  "${ModID}:Azumarill": {
+    "NAME": "Azumarill",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Focus[]",
+      "[#FFA500]Play[] [#FFA500]Rough[]",
+      "Deals ",
+      "% more damage with its next attack.",
+      "Deal ",
+      " damage."
+    ]
+  },
+  "${ModID}:Mantine": {
+    "NAME": "Mantine",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Water[] [#FFA500]Veil[]",
+      "[#FFA500]Supersonic[]",
+      "You gain ",
+      " Artifact.",
+      "Apply ",
+      " Weak to ALL enemies."
+    ]
+  },
+  "${ModID}:Kingdra": {
+    "NAME": "Kingdra",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Concentrate[]",
+      "[#FFA500]Surf[]",
+      "You deal double damage with your next played *Attack.",
+      "Deal ",
+      " damage to ALL enemies."
+    ]
+  },
+  "${ModID}:Lanturn": {
+    "NAME": "Lanturn",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Illuminate[]",
+      "[#FFA500]Discharge[]",
+      "Apply ",
+      " Weak and Vulnerable.",
+      "Apply ",
+      " Vulnerable to ALL enemies."
+    ]
+  },
+  "${ModID}:Skarmory": {
+    "NAME": "Skarmory",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Reinforce[]",
+      "[#FFA500]Iron[] [#FFA500]Defense[]",
+      "You gain ",
+      " *Metallicize.",
+      "You gain ",
+      " Block."
+    ]
+  },
+  "${ModID}:Phanpy": {
+    "NAME": "Phanpy",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Pickup[]",
+      "[#FFA500]Fetch[]",
+      "You obtain a random potion.",
+      "Draw ",
+      " card. It gains Retain this combat."
+    ]
+  },
+  "${ModID}:Raikou": {
+    "NAME": "Raikou",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Thunder[]",
+      "[#FFA500]Electroweb[]",
+      "Channel ",
+      " Lightning. It deals triple damage.",
+      "Gain [E] at the start of your turn."
+    ]
+  },
+  "${ModID}:Celebi": {
+    "NAME": "Celebi",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Time[] [#FFA500]Walk[]",
+      "[#FFA500]Magical[] [#FFA500]Leaf[]",
+      "The next time you end your turn, take an extra turn.",
+      "Draw ",
+      " cards. You gain *Temporary *HP equal to their combined costs."
+    ]
+  },
+  "${ModID}:Swinub": {
+    "NAME": "Swinub",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Amnesia[]",
+      "[#FFA500]Thick[] [#FFA500]Fat[]",
+      "You gain ",
+      " Block next turn.",
+      "Draw ",
+      " cards. Exhaust ",
+      " cards."
+    ]
+  },
+  "${ModID}:Piloswine": {
+    "NAME": "Piloswine",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Amnesia[]",
+      "[#FFA500]Snow[] [#FFA500]Cloak[]",
+      "You gain ",
+      " Block next turn.",
+      "You gain ",
+      " Block and ",
+      " *Blur."
+    ]
+  },
+  "${ModID}:Crobat": {
+    "NAME": "Crobat",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Poison[] [#FFA500]Fang[]",
+      "[#FFA500]Air[] [#FFA500]Slash[]",
+      "Your next *Attack applies pokeregions:Toxic equal to unblocked damage dealt.",
+      "Deal ",
+      " damage. Draw ",
+      " cards."
+    ]
+  },
+  "${ModID}:SicEm": {
+    "NAME": "Sic 'Em",
+    "DESCRIPTION": "Enemy receives ",
+    "EXTENDED_DESCRIPTION": [
+      "% more damage from your *Pokemon. NL Draw !M! card."
+    ]
   }
 }

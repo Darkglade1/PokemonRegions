@@ -489,5 +489,145 @@
     ],
     "OPTIONS": [
     ]
+  },
+  "${ModID}:OlivineLighthouse": {
+    "NAME": "Olivine Lighthouse",
+    "DESCRIPTIONS": [
+      "In front of you, a lighthouse shines faintly with a muted #ylight. You decide that the view from the top would greatly aid you in surveying the layout of the nearby land, so you proceed to climb the stairwell to the top. As you reach the beacon room, you find that a sickly-looking #yPokemon is the source of the #ylight you saw. NL \"If you wanted to challenge me, I'm afraid you'll have to wait.\" A woman sits next to the #yPokemon, tending to it. She looks at you, pausing. \"I see you have some #gmedicine with you. Would you mind trading for it?\"",
+      "You hand over the medicine. In exchange, the woman hands you a #yPokeball. NL \"Thank you for that.\" The woman immediately begins applying the medicine to the #yPokemon. \"I hope my friend will serve you well.\" NL You spend some time taking in the view from above, making sure to stay out of the woman's way. After you've had your fill, you leave and continue your travels.",
+      "\"You don't wish to trade? I suppose I can't blame you for declining such an abrupt request.\" The woman sighs. \"I hope my apprentice will be back from Cianwood City soon . . .\" NL You decide to leave the woman to her musings."
+    ],
+    "OPTIONS": [
+      "[Trade] ",
+      "[Decline] ",
+      "Lose ",
+      ".",
+      "Obtain ",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:BlackthornGym": {
+    "NAME": "Blackthorn Gym",
+    "DESCRIPTIONS": [
+      "Out of the corner of your eye, you see a group of suspicious-looking figures creeping away from an #yornate-looking building. Looking more closely, you recognize them as members of the infamous group of #pcriminals, Team Rocket! NL You decide to do your civil duty by beating them up and sending them flying away. As they sail away, you notice some kind of #yfang dropped on the ground.",
+      "You decide to keep the fang as a reward for your vigilante justice. As you put it into your bag, you accidentally #rscratch yourself with its sharp point! #rOuch!",
+      "You decide to return it to its rightful owners. You head inside the building and see a blue-haired woman looking around frantically. As her eyes hone in on you and the fang in your hands, you quickly explain what happened. NL \"Is that so? Thank you for stopping those criminals.\" The woman takes the fang from you with a smile. \"Here, take this as thanks.\" NL She hands you a pouch of #ymoney. Looks like #ggood deeds do pay off."
+    ],
+    "OPTIONS": [
+      "[Keep it] ",
+      "[Return it] ",
+      "Obtain a special Relic.",
+      "Become Cursed - ",
+      ".",
+      "Gain ",
+      " Gold.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:BurnedTower": {
+    "NAME": "Burned Tower",
+    "DESCRIPTIONS": [
+      "You stare up at the #yruins of an old building. The local legends indicate that a great tragedy had happened here long ago - you can feel the lingering #presentment and #pcurses of those that had died. You have no doubt that you could find something worthwhile in the ruins . . . but perhaps it would be more respectful to offer a prayer to the #pdeceased instead.",
+      "You trudge through the derelict insides, finding a shiny #ytrinket left behind in the wreckage. As you turn to leave, you find yourself #pambushed by several #pGastlies! As you escape, you still feel their #glaughter and #psorrow echoing in your ears . . .",
+      "You offer up a #yprayer for those who lost their lives in the tragedy. As you bow your head, you feel a sense of calm descend over you."
+    ],
+    "OPTIONS": [
+      "[Search for treasure] ",
+      "[Offer a prayer] ",
+      "Obtain a rare Relic.",
+      "Become Cursed - ",
+      ".",
+      "Remove a card.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:MarineLab": {
+    "NAME": "MarineLab",
+    "DESCRIPTIONS": [
+      "You spy a small building next to the cliffside, overlooking the ocean. A sign on the building says \"Help wanted inside!\" NL You decide to heed the sign and go indoors. Inside, you spot tables filled with lab equipment and what seems to be numerous #yPokemon eggs. NL \"Are you a trainer? Thank goodness!\" A haggard-looking woman greets you. \"We recovered all these eggs from some #rpoachers, but now we need to find good homes for them . . . would you like to take one?\"",
+      "You accept a #yPokemon egg. It feels warm to the touch. NL \"Take good care of it!\" NL You assure the woman that you will as you turn and leave to continue your journey.",
+      "\"Oh, you want to help with my research? That would be quite helpful as well! Since I'm located so close to the ocean, all I see are marine #yPokemon, so getting to run tests on some other types of #yPokemon would be very helpful . . .\" NL You and your #yPokemon help the woman with some tests. You feel that the experiments have #ychanged you a little. For better or worse, you can't quite tell."
+    ],
+    "OPTIONS": [
+      "[Take an egg] ",
+      "[Offer to help with research] ",
+      "Obtain a special Relic.",
+      "Transform ",
+      " cards.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:RadioTower": {
+    "NAME": "News from the Radio Tower",
+    "DESCRIPTIONS": [
+      "You hear the sound of #yradio crackling in the distance. NL \"Ahem! Attention! The #yPokemon Research Foundation is offering - \" NL You briefly pause to listen to the broadcast. The general summary is that the foundation is willing to pay trainers to bring a variety of #yPokemon to them for research purposes. You consider if you should take them up on that.",
+      "You bring one of your #yPokemon to the foundation, and the receptionist hands you the #ymoney. You feel a pang of #psadness as you leave one of your companions behind . . . but it was all for the greater good.",
+      "You decide to ignore the broadcast's offer. You weren't willing to part with your companions right now."
+    ],
+    "OPTIONS": [
+      "[Take the offer] ",
+      "[Ignore it] ",
+      "Lose ",
+      ".",
+      "Gain ",
+      " Gold.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:AzaleaGym": {
+    "NAME": "Azalea Gym",
+    "DESCRIPTIONS": [
+      "The inside of this gym contained an entire indoor #gforest, an aesthetic you certainly haven't seen before. NL \"Welcome! Are you here to challenge the gym leader? Or would you like to spectate a match?\" NL The receptionist greeted you. You considered your options . . .",
+      "You decide to challenge the gym leader. As you make your way to the battlefield, you notice the #gforest around you grow #ythicker. NL \"Welcome, challenger! I am Bugsy, this gym's leader! I hope you're prepared!\" NL As the match begins, you find yourself quickly overwhelmed by your opponent's cunning tactics, hiding themselves in the trees before launching an ambush with surprising ferocity. NL After a long, hard-fought battle, you barely manage to win. As the gym leader congratulated you, you feel that you had learned how to inspire the same ferocity in your own #yPokemon.",
+      "You decide to spectate one of the ongoing matches. As you watch the battle, you take note of how both trainers were making use of the surrounding terrain to their advantage, taking cover to avoid attacks and hiding in foliage to conceal their approach. You feel that you can apply the same tactic to some of your own skills."
+    ],
+    "OPTIONS": [
+      "[Challenge] ",
+      "[Spectate] ",
+      "Lose ",
+      " HP.",
+      "Obtain ",
+      ".",
+      "Upgrade a card.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:DarkCave": {
+    "NAME": "Dark Cave",
+    "DESCRIPTIONS": [
+      "Suddenly, the grounds @gives@ @way@ beneath you, sending you hurtling into the #pdarkness below you. You land with a painful #rthud, and as you groggily take in your surroundings, you find yourself in a #pdark cave. NL As you shakily get to your feet, you suddenly see #rglowing #rred #reyes staring at you from within the #pdarkness. You - ",
+      "You stand your ground as a swarm of flying, biting, scratching figures hurtle past you. After a brief moment of intense #rpain, the ordeal is over. As you stumble out of the cave, you feel that you had gotten #ystronger after enduring that trial.",
+      "You turn on your heel and sprint away from that swarm of #rred #reyes. You stumble and trip in the #pdarkness, but with a racing heart, you manage to make it out of the darkness. NL As you catch your breath, heart pounding out of your chest, you feel like you had several years shaved off your lifetime from that #pharrowing experience."
+    ],
+    "OPTIONS": [
+      "[Stand your ground] ",
+      "[Run away in fright] ",
+      "Lose ",
+      " HP.",
+      " Max HP.",
+      "Upgrade ",
+      "Remove ",
+      " cards.",
+      "[Leave]"
+    ]
+  },
+  "${ModID}:VoiceOfTheForest": {
+    "NAME": "Voice of the Forest",
+    "DESCRIPTIONS": [
+      "You see a small #yPokemon flitting through the #gforest, being pursued by two very #rhostile-looking #yPokemon. NL \"To the left! Don't let it out of your sight!\" NL A loud voice grabs your attention, and you see a #ppoacher following close behind the pursuing #yPokemon.",
+      "You stumble across the poacher's path, stealing his attention. NL \"Who are you? Get out of my way!\" NL You pretend to be a tourist lost in the woods as you ask for directions to the nearest settlement. The poacher grits his teeth as he begrudgingly stops to tell you directions. In the distance, you see his #yPokemon slow, then stop as they look around, having lost sight of their prey without their trainer's instructions. NL \"What? Blast it, where did it go?!\" NL The poacher and his #yPokemon hurry away. As you leave the forest, you suddenly find some extra #gfruit in your bag. Looks like your #ygood #ydeed didn't go unnoticed.",
+      "You call out your #yPokemon and step into the pursuing #yPokemons' path. They don't even slow down as they try to bowl you over, but you manage to endure the #rpain and stand your ground long enough for your #yPokemon to take them down. The poacher, having lost his #yPokemon, quickly retreats into the distance. As you catch your breath, you see the small #yPokemon you helped float down next to you. Its wide eyes meet yours, and you feel it take an #yinterest in you."
+    ],
+    "OPTIONS": [
+      "[Distract the poacher] ",
+      "[Stop the Pokemon] ",
+      "Gain ",
+      " Max HP.",
+      "Lose ",
+      " HP.",
+      "Obtain ",
+      ".",
+      "[Leave]"
+    ]
   }
 }

@@ -667,7 +667,6 @@ public class PokemonRegions implements
         BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/" + getLangString() + "/UIstrings.json");
         BaseMod.loadCustomStringsFile(EventStrings.class, modID + "Resources/localization/" + getLangString() + "/Eventstrings.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, modID + "Resources/localization/" + getLangString() + "/Monsterstrings.json");
-        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/" + getLangString() + "/Potionstrings.json");
         BaseMod.loadCustomStringsFile(TutorialStrings.class, modID + "Resources/localization/" + getLangString() + "/Tutorialstrings.json");
         BaseMod.loadCustomStringsFile(ScoreBonusStrings.class, modID + "Resources/localization/" + getLangString() + "/Scorestrings.json");
     }
