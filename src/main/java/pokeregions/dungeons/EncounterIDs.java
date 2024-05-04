@@ -26,5 +26,6 @@ public class EncounterIDs {
     public static final String KINGDRA_AND_LANTURN = PokemonRegions.makeID("Kingdra_and_Lanturn");
     public static final String SWINUB_3 = PokemonRegions.makeID("3_Swinubs");
     public static final String PILOSWINE_AND_SWINUBS = PokemonRegions.makeID("Piloswine_and_Swinubs");
+    public static final String CROBAT_2 = PokemonRegions.makeID("2_Crobats");
 
 }

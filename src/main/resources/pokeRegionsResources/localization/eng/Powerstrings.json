@@ -282,5 +282,9 @@
   "${ModID}:ThickFat": {
     "NAME": "Thick Fat",
     "DESCRIPTIONS": ["Whenever a card is #yExhausted, gains #b", " #yStrength this turn."]
+  },
+  "${ModID}:Infiltrator": {
+    "NAME": "Infiltrator",
+    "DESCRIPTIONS": ["This creature's attacks ignore #yBlock this turn. Removed when receiving unblocked attack damage."]
   }
 }

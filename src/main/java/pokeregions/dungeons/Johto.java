@@ -100,7 +100,7 @@ public class Johto extends AbstractPokemonRegionDungeon {
         monsters.add(new MonsterInfo(EncounterIDs.KINGDRA_AND_LANTURN, 4.0F));
         monsters.add(new MonsterInfo(QuagsireEnemy.ID, 6.0F));
         monsters.add(new MonsterInfo(SkarmoryEnemy.ID, 6.0F));
-        //monsters.add(new MonsterInfo("Centurion and Healer", 6.0F)); // 2 Crobats
+        monsters.add(new MonsterInfo(EncounterIDs.CROBAT_2, 6.0F));
         monsters.add(new MonsterInfo(EncounterIDs.MAGCARGO_AND_SLUGMA, 4.0F));
         monsters.add(new MonsterInfo(EncounterIDs.PILOSWINE_AND_SWINUBS, 4.0F));
         //monsters.add(new MonsterInfo("Shelled Parasite and Fungi", 3.0F));

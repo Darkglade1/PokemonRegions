@@ -648,5 +648,15 @@
     "NAME": "Piloswine",
     "DIALOG": [
     ]
+  },
+  "${ModID}:CrobatEnemy": {
+    "MOVES": [
+      "Quick Guard",
+      "Air Slash",
+      "Cross Poison"
+    ],
+    "NAME": "Crobat",
+    "DIALOG": [
+    ]
   }
 }

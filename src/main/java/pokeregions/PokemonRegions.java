@@ -500,6 +500,11 @@ public class PokemonRegions implements
                         new SwinubEnemy(-150.0F, 0.0F, true),
                         new PiloswineEnemy(150.0F, 0.0F)
                 }));
+        BaseMod.addMonster(EncounterIDs.CROBAT_2, "2 Crobats", () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new CrobatEnemy(-200.0F, 0.0F, true),
+                        new CrobatEnemy(50.0F, 0.0F, false),
+                }));
 
         //Events
         BaseMod.addEvent(new AddEventParams.Builder(OlivineLighthouse.ID, OlivineLighthouse.class)
