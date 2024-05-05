@@ -43,8 +43,8 @@ public class HoOhEnemy extends AbstractPokemonMonster
     private static final byte REGENERATE = 2;
 
     public final int BURN_DEBUFF = calcAscensionSpecial(2);
-    public final int STATUS = 2;
-    public final int REGEN = calcAscensionSpecialSmall(10);
+    public final int STATUS = calcAscensionSpecial(1);
+    public final int REGEN = 10;
     public final int POWER_TRIGGER = 30;
 
     private final ArrayList<PhoenixFeather> featherList = new ArrayList<>();

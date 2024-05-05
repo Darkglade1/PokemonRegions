@@ -38,7 +38,7 @@ public class PhoenixFeather extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 70.0f, 70.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("HoOh/Feather/Feather.scml"));
         this.summoner = summoner;
-        setHp(calcAscensionTankiness(20));
+        setHp(calcAscensionSpecial(10));
         addMove(NOTHING, Intent.NONE);
         addMove(BUFF, Intent.BUFF);
         isCatchable = false;

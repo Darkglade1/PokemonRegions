@@ -22,9 +22,11 @@ public class HeavyRain extends AbstractUnremovablePower  {
     @Override
     public void onCardDraw(AbstractCard card) {
         if (cardsAffected < amount) {
-            CardModifierManager.addModifier(card, new WaterLoggedMod());
-            card.flash();
-            cardsAffected++;
+            if (!CardModifierManager.hasModifier(card, WaterLoggedMod.ID)) {
+                CardModifierManager.addModifier(card, new WaterLoggedMod());
+                card.flash();
+                cardsAffected++;
+            }
         }
     }
 
