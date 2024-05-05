@@ -27,7 +27,7 @@ public class PhoenixFeather extends AbstractPokemonMonster
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final byte NOTHING = 0;
     public static final byte BUFF = 1;
-    public final int HEAL = calcAscensionSpecial(15);
+    public final int HEAL = 15;
     private final AbstractMonster summoner;
 
     public PhoenixFeather() {
