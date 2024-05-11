@@ -770,295 +770,295 @@
     "DESCRIPTION": ""
   },
   "${ModID}:Charmeleon": {
-    "NAME": "Charmeleon",
+    "NAME": "火恐龙",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Slash[]",
-      "[#FFA500]Fire[] [#FFA500]Spin[]",
-      "Deal ",
-      " damage.",
-      "Deal ",
-      " damage and apply ",
-      " pokeregions:Burn to ALL enemies."
+      "[#FFA500]劈开[]",
+      "[#FFA500]火焰漩涡[]",
+      "造成 ",
+      " 点伤害。",
+      "对所有敌人造成 ",
+      " 点伤害并给予 ",
+      " 层 pokeregions:烧伤 。"
     ]
   },
   "${ModID}:Ivysaur": {
-    "NAME": "Ivysaur",
+    "NAME": "妙蛙草",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Take[] [#FFA500]Down[]",
-      "[#FFA500]Poison[] [#FFA500]Powder[]",
-      "Deal ",
-      " damage.",
-      "Apply ",
-      " pokeregions:Toxic and ",
-      " Weak."
+      "[#FFA500]猛撞[]",
+      "[#FFA500]毒粉[]",
+      "造成 ",
+      " 点伤害。",
+      "给予 ",
+      " 层 pokeregions:剧毒 和 ",
+      " 层 虚弱 。"
     ]
   },
   "${ModID}:Wartortle": {
-    "NAME": "Wartortle",
+    "NAME": "卡咪龟",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Aqua[] [#FFA500]Jet[]",
-      "[#FFA500]Defense[] [#FFA500]Curl[]",
-      "Deal ",
-      " damage.",
-      "You gain ",
-      " Block."
+      "[#FFA500]水流喷射[]",
+      "[#FFA500]变圆[]",
+      "造成 ",
+      " 点伤害。",
+      "你获得 ",
+      " 点 格挡 。"
     ]
   },
   "${ModID}:HoOh": {
-    "NAME": "Ho-Oh",
+    "NAME": "凤王",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Regenerate[]",
-      "[#FFA500]Sacred[] [#FFA500]Fire[]",
-      "You gain ",
-      " *Regen.",
-      "Deal ",
-      " damage. Enemy loses Strength this turn equal to unblocked damage dealt."
+      "[#FFA500]再生力[]",
+      "[#FFA500]神圣之火[]",
+      "你获得 ",
+      " 层 *再生 。",
+      "造成 ",
+      " 点伤害。敌人本回合失去等同未被格挡的伤害的 力量 。"
     ]
   },
   "${ModID}:Lugia": {
-    "NAME": "Shadow Lugia",
+    "NAME": "黑暗洛奇亚",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Shadow[] [#FFA500]Rush[]",
-      "[#FFA500]Shadow[] [#FFA500]Sky[]",
-      "Deal ",
-      " damage. Affected twice by damage modifiers.",
-      "Enemy loses ",
-      " Strength."
+      "[#FFA500]黑暗冲锋[]",
+      "[#FFA500]黑暗气象[]",
+      "造成 ",
+      " 点伤害。伤害加成效果生效两次。",
+      "敌人失去 ",
+      " 点 力量 。"
     ]
   },
   "${ModID}:Scizor": {
-    "NAME": "Scizor",
+    "NAME": "巨钳螳螂",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]U-Turn[]",
-      "[#FFA500]Bullet[] [#FFA500]Punch[]",
-      "Deal ",
-      " damage. The next *Pokemon to switch in deals ",
-      "% more damage with its next attack.",
-      "Deal ",
-      " damage twice. For each Attack played this turn, increase number of hits by 1."
+      "[#FFA500]急速折返[]",
+      "[#FFA500]子弹拳[]",
+      "造成 ",
+      " 点伤害。下一次交换上场的 *宝可梦 的下一次攻击额外造成 ",
+      "% 的伤害。",
+      "造成 ",
+      " 点伤害两次。本回合每打出一张攻击牌，攻击次数加一。"
     ]
   },
   "${ModID}:Slugma": {
-    "NAME": "Slugma",
+    "NAME": "熔岩虫",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Lava[] [#FFA500]Plume[]",
-      "[#FFA500]Flame[] [#FFA500]Body[]",
-      "Apply ",
-      " pokeregions:Burn.",
-      "You gain ",
-      " Block. Add ",
-      " Burn to your hand."
+      "[#FFA500]喷烟[]",
+      "[#FFA500]火焰之躯[]",
+      "给予 ",
+      " 层 pokeregions:烧伤 。",
+      "你获得 ",
+      " 点 格挡 。将 ",
+      " 张 *灼伤 加入你的手中。"
     ]
   },
   "${ModID}:Magcargo": {
-    "NAME": "Magcargo",
+    "NAME": "熔岩蜗牛",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Inferno[]",
-      "[#FFA500]Flame[] [#FFA500]Body[]",
-      "Deal ",
-      " damage ",
-      " times. Deals 0 damage to enemies without pokeregions:Burn. ",
-      "You gain ",
-      " Block. Add ",
-      " Burns to your hand."
+      "[#FFA500]炼狱[]",
+      "[#FFA500]火焰之躯[]",
+      "造成 ",
+      " 点伤害 ",
+      " 次。 对没有 pokeregions:烧伤 的敌人造成0点伤害。 ",
+      "你获得 ",
+      " 点 格挡 。将 ",
+      " 张 *灼伤 加入你的手中。"
     ]
   },
   "${ModID}:Steelix": {
-    "NAME": "Steelix",
+    "NAME": "大钢蛇",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Iron[] [#FFA500]Tail[]",
-      "[#FFA500]Autotomize[]",
-      "Deal ",
-      " damage. Increased by ",
-      "% of your Block.",
-      "You draw ",
-      " extra card each turn."
+      "[#FFA500]铁尾[]",
+      "[#FFA500]身体轻量化[]",
+      "造成 ",
+      " 点伤害。额外造成 ",
+      "% 格挡 值的伤害。",
+      "每回合你额外抽 ",
+      " 张牌。"
     ]
   },
   "${ModID}:Quagsire": {
-    "NAME": "Quagsire",
+    "NAME": "沼王",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Ignore[]",
-      "[#FFA500]Scald[]",
-      "Prevent the next time you would lose HP.",
-      "Deal ",
-      " damage and apply ",
-      " Weak and pokeregions:Burn to ALL enemies."
+      "[#FFA500]迟钝[]",
+      "[#FFA500]热水[]",
+      "阻止你下一次受到的生命伤害。",
+      "对所有敌人造成 ",
+      " 点伤害并给予 ",
+      " 层 虚弱 和 pokeregions:烧伤 。"
     ]
   },
   "${ModID}:Tyranitar": {
-    "NAME": "Tyranitar",
+    "NAME": "班基拉斯",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Payback[]",
-      "[#FFA500]Stone[] [#FFA500]Edge[]",
-      "Deal ",
-      " damage. Deals double damage if you played ",
-      " or less cards this turn.",
-      "You gain ",
-      " Block. Deal ",
-      " damage."
+      "[#FFA500]以牙还牙[]",
+      "[#FFA500]尖石攻击[]",
+      "造成 ",
+      " 点伤害。本回合若打出的牌少于 ",
+      " 张则造成双倍伤害。",
+      "你获得 ",
+      " 点 格挡 。造成 ",
+      " 点伤害。"
     ]
   },
   "${ModID}:Pupitar": {
-    "NAME": "Pupitar",
+    "NAME": "沙基拉斯",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Propulsion[]",
-      "[#FFA500]Stone[] [#FFA500]Edge[]",
-      "Draw ",
-      " cards. Discard ",
-      " card.",
-      "You gain ",
-      " Block. Deal ",
-      " damage."
+      "[#FFA500]推进[]",
+      "[#FFA500]尖石攻击[]",
+      "抽 ",
+      " 张牌，丢弃 ",
+      " 张牌。",
+      "你获得 ",
+      " 点 格挡 。造成 ",
+      " 点伤害。"
     ]
   },
   "${ModID}:Azumarill": {
-    "NAME": "Azumarill",
+    "NAME": "玛力露力",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Focus[]",
-      "[#FFA500]Play[] [#FFA500]Rough[]",
-      "Deals ",
-      "% more damage with its next attack.",
-      "Deal ",
-      " damage."
+      "[#FFA500]集中[]",
+      "[#FFA500]嬉闹[]",
+      "下一次攻击额外造成 ",
+      "% 的伤害。",
+      "造成 ",
+      " 点伤害。"
     ]
   },
   "${ModID}:Mantine": {
-    "NAME": "Mantine",
+    "NAME": "巨翅飞鱼",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Water[] [#FFA500]Veil[]",
-      "[#FFA500]Supersonic[]",
-      "You gain ",
-      " Artifact.",
-      "Apply ",
-      " Weak to ALL enemies."
+      "[#FFA500]水幕[]",
+      "[#FFA500]超音波[]",
+      "你获得 ",
+      " 层 人工制品 。",
+      "给予所有敌人 ",
+      " 层 虚弱 。"
     ]
   },
   "${ModID}:Kingdra": {
-    "NAME": "Kingdra",
+    "NAME": "刺龙王",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Concentrate[]",
-      "[#FFA500]Surf[]",
-      "You deal double damage with your next played *Attack.",
-      "Deal ",
-      " damage to ALL enemies."
+      "[#FFA500]聚气[]",
+      "[#FFA500]冲浪[]",
+      "你打出的下一张 *攻击牌 造成双倍伤害。",
+      "对所有敌人造成 ",
+      " 点伤害。"
     ]
   },
   "${ModID}:Lanturn": {
-    "NAME": "Lanturn",
+    "NAME": "电灯怪",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Illuminate[]",
-      "[#FFA500]Discharge[]",
-      "Apply ",
-      " Weak and Vulnerable.",
-      "Apply ",
-      " Vulnerable to ALL enemies."
+      "[#FFA500]发光[]",
+      "[#FFA500]放电[]",
+      "给予 ",
+      " 层 虚弱 和 易伤 。",
+      "给予所有敌人 ",
+      " 层 易伤 。"
     ]
   },
   "${ModID}:Skarmory": {
-    "NAME": "Skarmory",
+    "NAME": "盔甲鸟",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Reinforce[]",
-      "[#FFA500]Iron[] [#FFA500]Defense[]",
-      "You gain ",
-      " *Metallicize.",
-      "You gain ",
-      " Block."
+      "[#FFA500]加固[]",
+      "[#FFA500]铁壁[]",
+      "你获得 ",
+      " 层 *金属化 。",
+      "你获得 ",
+      " 点 格挡 。"
     ]
   },
   "${ModID}:Phanpy": {
-    "NAME": "Phanpy",
+    "NAME": "小小象",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Pickup[]",
-      "[#FFA500]Fetch[]",
-      "You obtain a random potion.",
-      "Draw ",
-      " card. It gains Retain this combat."
+      "[#FFA500]捡拾[]",
+      "[#FFA500]拾取[]",
+      "你获得一瓶随机药水。",
+      "抽 ",
+      " 张牌，其在本场战斗中获得 保留 。"
     ]
   },
   "${ModID}:Raikou": {
-    "NAME": "Raikou",
+    "NAME": "雷公",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Thunder[]",
-      "[#FFA500]Electroweb[]",
-      "Channel ",
-      " Lightning. It deals triple damage.",
-      "Gain [E] at the start of your turn."
+      "[#FFA500]打雷[]",
+      "[#FFA500]电网[]",
+      "生成 ",
+      " 闪电充能球 。它造成三倍伤害。",
+      "你的回合开始时获得 [E] 。"
     ]
   },
   "${ModID}:Celebi": {
-    "NAME": "Celebi",
+    "NAME": "时拉比",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Time[] [#FFA500]Walk[]",
-      "[#FFA500]Magical[] [#FFA500]Leaf[]",
-      "The next time you end your turn, take an extra turn.",
-      "Draw ",
-      " cards. You gain *Temporary *HP equal to their combined costs."
+      "[#FFA500]时间漫游[]",
+      "[#FFA500]魔法叶[]",
+      "你下一次结束回合后，获得一个额外的回合。",
+      "抽 ",
+      " 张牌。根据其耗能总和获得对应的 *临时生命 。"
     ]
   },
   "${ModID}:Swinub": {
-    "NAME": "Swinub",
+    "NAME": "小山猪",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Amnesia[]",
-      "[#FFA500]Thick[] [#FFA500]Fat[]",
-      "You gain ",
-      " Block next turn.",
-      "Draw ",
-      " cards. Exhaust ",
-      " cards."
+      "[#FFA500]瞬间失忆[]",
+      "[#FFA500]厚脂肪[]",
+      "在下一回合你获得 ",
+      " 点 格挡 。",
+      "抽 ",
+      " 张牌。 消耗 ",
+      " 张牌。"
     ]
   },
   "${ModID}:Piloswine": {
-    "NAME": "Piloswine",
+    "NAME": "长毛猪",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Amnesia[]",
-      "[#FFA500]Snow[] [#FFA500]Cloak[]",
-      "You gain ",
-      " Block next turn.",
-      "You gain ",
-      " Block and ",
-      " *Blur."
+      "[#FFA500]瞬间失忆[]",
+      "[#FFA500]雪隐[]",
+      "在下一回合你获得 ",
+      " 点 格挡 。",
+      "你获得 ",
+      " 点 格挡 和 ",
+      " *残影 。"
     ]
   },
   "${ModID}:Crobat": {
-    "NAME": "Crobat",
+    "NAME": "叉字蝠",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Poison[] [#FFA500]Fang[]",
-      "[#FFA500]Air[] [#FFA500]Slash[]",
-      "Your next *Attack applies pokeregions:Toxic equal to unblocked damage dealt.",
-      "Deal ",
-      " damage. Draw ",
-      " cards."
+      "[#FFA500]剧毒牙[]",
+      "[#FFA500]空气斩[]",
+      "你的下一张 *攻击牌 给予等同于未被格挡的伤害的 pokeregions:剧毒 。",
+      "造成 ",
+      " 点伤害。抽 ",
+      " 张牌。"
     ]
   },
   "${ModID}:SicEm": {
     "NAME": "Sic 'Em",
-    "DESCRIPTION": "Enemy receives ",
+    "DESCRIPTION": "目标受到来自你的 *宝可梦 的伤害增加 ",
     "EXTENDED_DESCRIPTION": [
-      "% more damage from your *Pokemon. NL Draw !M! card."
+      "% 。 NL 抽 !M! 张牌。"
     ]
   }
 }

@@ -9,10 +9,10 @@
   },
   "${ModID}:Johto": {
     "TEXT": [
-      "Johto",
-      "Act 2",
-      "This land was strange yet comforting in its own way. It was a welcome change of pace from the #pstagnant air of the #ySpire.",
-      "Continue your journey."
+      "成都",
+      "第二幕",
+      "这片土地虽然陌生，却带给人一种独特的舒适感。它与 #y尖塔 中 #沉寂 的空气完全不一样。",
+      "继续你的旅程。"
     ]
   },
   "pokeRegions:Hoenn": {
@@ -197,13 +197,13 @@
   },
   "${ModID}:ChargedMod": {
     "TEXT": [
-      "pokeregions:Charged. NL "
+      "pokeregions:充能 。 NL "
     ]
   },
   "${ModID}:HatchEggOption": {
     "TEXT": [
-      "Hatch the Pokemon Egg",
-      "Obtain the Pokemon inside the Egg."
+      "孵化宝可梦蛋",
+      "获得蛋中的宝可梦。"
     ]
   }
 }

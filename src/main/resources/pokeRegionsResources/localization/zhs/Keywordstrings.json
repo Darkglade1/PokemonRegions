@@ -13,7 +13,7 @@
       "stamina",
       "耐力"
     ],
-    "DESCRIPTION": "你的 #y宝可梦 拥有一定数量的 #y耐力 。括号中的数字代表每个招式的 #y耐力 消耗。#y耐力 用尽的 #y宝可梦 将无法继续战斗。 NL #y耐力 可以通过篝火恢复，也可以通过进入新的一幕来恢复。"
+    "DESCRIPTION": "你的 #y宝可梦 拥有一定数量的 #y耐力 。括号中的数字代表每个招式的 #y耐力 消耗。 #y耐力 用尽的 #y宝可梦 将无法继续战斗。 NL #y耐力 可以通过篝火恢复，也可以通过进入新的一幕来恢复。"
   },
   {
     "PROPER_NAME": "烧伤",
@@ -64,10 +64,11 @@
     "DESCRIPTION": "在一个回合内， 每打出一张牌，拥有 #y缓慢 的生物会受到更多的伤害。"
   },
   {
-    "PROPER_NAME": "Charged",
+    "PROPER_NAME": "充能",
     "NAMES": [
-      "charged"
+      "charged",
+      "充能"
     ],
-    "DESCRIPTION": "When a #yCharged card is played, you gain #b2 #yVoltage and [E] ."
+    "DESCRIPTION": "每当打出一张 #y充能 的牌，你获得 #b2 层 #y电压 和 [E] 。"
   }
 ]

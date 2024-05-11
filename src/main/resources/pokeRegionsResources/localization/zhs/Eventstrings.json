@@ -472,162 +472,162 @@
     ]
   },
   "${ModID}:ProfessorElm": {
-    "NAME": "Professor Elm",
+    "NAME": "空木博士",
     "DESCRIPTIONS": [
-      ". . . A visitor? Sorry, I was distracted.",
-      "You want . . . Pokeballs, right? I'm sure I have some left . . .",
-      "You should take one of these #gevolved starters with you . . . it'll be safer.",
-      "Now . . . what was I doing again?",
-      "You . . . I think I heard Oak mention you before . . .",
-      "Let's see . . . you've caught #b",
-      " Pokemon. ",
-      "That's pretty good . . .",
-      "Seems average . . .",
-      "Maybe you should throw more Pokeballs . . .",
-      "Anyway . . . you can have some of these Pokeballs lying around . . .",
-      "There's also some extra supplies . . . unless you'd like some money instead?"
+      ". . . 一个访客？抱歉，我分心了。",
+     "你要 . . . 精灵球，对吧？我肯定还剩下一些 . . .",
+     "你应该从这些 #g进化的 初始宝可梦中带走一只，这样更安全。",
+     "现在 . . . 我刚才在做什么来着？",
+     "你 . . . 我想我之前听大木博士提到过你 . . .",
+     "让我们看看 . . . 你已经抓到了 #b",
+      " 只宝可梦。",
+      "这相当不错 . . .",
+     "看起来很普通 . . .",
+      "也许你应该多扔一些精灵球 . . .",
+      "无论如何 . . . 你可以拿走一些随处可见的精灵球 . . .",
+      "还有一些额外的补给品 . . . 除非你想要钱？"
     ],
     "OPTIONS": [
     ]
   },
   "${ModID}:OlivineLighthouse": {
-    "NAME": "Olivine Lighthouse",
+    "NAME": "浅葱灯塔",
     "DESCRIPTIONS": [
-      "In front of you, a lighthouse shines faintly with a muted #ylight. You decide that the view from the top would greatly aid you in surveying the layout of the nearby land, so you proceed to climb the stairwell to the top. As you reach the beacon room, you find that a sickly-looking #yPokemon is the source of the #ylight you saw. NL \"If you wanted to challenge me, I'm afraid you'll have to wait.\" A woman sits next to the #yPokemon, tending to it. She looks at you, pausing. \"I see you have some #gmedicine with you. Would you mind trading for it?\"",
-      "You hand over the medicine. In exchange, the woman hands you a #yPokeball. NL \"Thank you for that.\" The woman immediately begins applying the medicine to the #yPokemon. \"I hope my friend will serve you well.\" NL You spend some time taking in the view from above, making sure to stay out of the woman's way. After you've had your fill, you leave and continue your travels.",
-      "\"You don't wish to trade? I suppose I can't blame you for declining such an abrupt request.\" The woman sighs. \"I hope my apprentice will be back from Cianwood City soon . . .\" NL You decide to leave the woman to her musings."
-    ],
+      "在你面前，一座灯塔散发着微弱的 #y光芒 。塔顶的视野将极大地帮助你勘测附近土地的布局，于是你开始爬楼梯。当你到达灯塔房间时，你发现一只病怏怏的 #y宝可梦 是你所看到的 #y光芒 的来源。 NL \"如果你想挑战我，恐怕你得等一等。\" 一位女子坐在 #y宝可梦 旁边，照顾着它。她看着你，停顿了一下。 \"我看到你有一些 #g药 。你愿意用它来交换吗？\"",
+      "你交出了药。作为交换，女子递给你一个 #y精灵球 。 NL \"谢谢你。\" 女子立即开始给 #y宝可梦 涂抹药膏。 \"希望我的伙伴对你有所帮助。\" NL 你花了一些时间从上面欣赏风景。之后，你离开并继续你的旅程。",
+      "\"你不想交易吗？我想我不能怪你拒绝如此突然的请求。\" 女子叹了口气。 \"我希望我的学徒能尽快从浅葱市回来 . . .\" NL 你决定让女子继续沉思。"
+        ],
     "OPTIONS": [
-      "[Trade] ",
-      "[Decline] ",
-      "Lose ",
-      ".",
-      "Obtain ",
-      "[Leave]"
+      "[交易] ",
+      "[拒绝] ",
+      "失去 ",
+      "。",
+      "获得 ",
+      "[离开]"
     ]
   },
   "${ModID}:BlackthornGym": {
-    "NAME": "Blackthorn Gym",
+    "NAME": "烟墨道馆",
     "DESCRIPTIONS": [
-      "Out of the corner of your eye, you see a group of suspicious-looking figures creeping away from an #yornate-looking building. Looking more closely, you recognize them as members of the infamous group of #pcriminals, Team Rocket! NL You decide to do your civil duty by beating them up and sending them flying away. As they sail away, you notice some kind of #yfang dropped on the ground.",
-      "You decide to keep the fang as a reward for your vigilante justice. As you put it into your bag, you accidentally #rscratch yourself with its sharp point! #rOuch!",
-      "You decide to return it to its rightful owners. You head inside the building and see a blue-haired woman looking around frantically. As her eyes hone in on you and the fang in your hands, you quickly explain what happened. NL \"Is that so? Thank you for stopping those criminals.\" The woman takes the fang from you with a smile. \"Here, take this as thanks.\" NL She hands you a pouch of #ymoney. Looks like #ggood deeds do pay off."
-    ],
+      "在你眼角的余光中，你看到一群可疑人物从一座 #y华丽的 建筑物中鬼鬼祟祟地溜走。仔细一看，你认出他们是臭名昭著的 #p犯罪团伙 火箭队成员！ NL 你决定履行你的公民义务，把他们打败。当他们飞走时，你注意到地上掉落了一颗 #y毒牙 。",
+      "你决定保留这颗毒牙作为你伸张正义的奖励。当你把它放进包里时，你不小心被它的尖端 #r划伤 了！ #r哎哟 ！",
+      "你决定把它还给它的合法主人。你走进大楼，看到一个蓝发女子正在四处张望。当她的目光集中在你和你手中的毒牙上时，你赶紧解释发生了什么事。 NL \"是这样吗？谢谢你制止了那些罪犯。\" 女子微笑着从你手中接过毒牙。 \"喏，拿这个作为谢礼。\" NL 她递给你一袋 #y钱 。看起来 #g做好事 确实有回报。"
+        ],
     "OPTIONS": [
-      "[Keep it] ",
-      "[Return it] ",
-      "Obtain a special Relic.",
-      "Become Cursed - ",
-      ".",
-      "Gain ",
-      " Gold.",
-      "[Leave]"
+      "[带走它] ",
+      "[交还它] ",
+      "获得一个特别的遗物。",
+      "被诅咒 - ",
+      "。",
+      "获得 ",
+      " 金币。",
+      "[离开]"
     ]
   },
   "${ModID}:BurnedTower": {
-    "NAME": "Burned Tower",
+    "NAME": "烧焦塔",
     "DESCRIPTIONS": [
-      "You stare up at the #yruins of an old building. The local legends indicate that a great tragedy had happened here long ago - you can feel the lingering #presentment and #pcurses of those that had died. You have no doubt that you could find something worthwhile in the ruins . . . but perhaps it would be more respectful to offer a prayer to the #pdeceased instead.",
-      "You trudge through the derelict insides, finding a shiny #ytrinket left behind in the wreckage. As you turn to leave, you find yourself #pambushed by several #pGastlies! As you escape, you still feel their #glaughter and #psorrow echoing in your ears . . .",
-      "You offer up a #yprayer for those who lost their lives in the tragedy. As you bow your head, you feel a sense of calm descend over you."
+      "你凝视着 #y废墟 中的一座旧建筑。当地的传说表明很久以前这里发生了一场巨大的悲剧——你可以感受到那些死去的人挥之不去的 #y预感 和 #p诅咒 。你毫不怀疑你可以在废墟中找到有价值的东西 . . . 但也许向 #p死者 祈祷会更尊重。",
+      "你跋涉穿过破旧的内部，在废墟中发现了一个闪亮的 #y小饰品 。当你转身离开时，你发现自己遭到几只 #p鬼斯通 的 #p伏击 ！当你逃脱时，你仍然能感觉到他们的 #g笑声 和 #p悲伤 在你耳边回响 . . .",
+      "你为那些在悲剧中丧生的人们献上 #y祈祷 。当你低下头时，你感到一种平静的感觉降临到你身上。"
     ],
     "OPTIONS": [
-      "[Search for treasure] ",
-      "[Offer a prayer] ",
-      "Obtain a rare Relic.",
-      "Become Cursed - ",
-      ".",
-      "Remove a card.",
-      "[Leave]"
+      "[搜索] ",
+      "[祈祷] ",
+      "获得一个稀有的遗物。",
+      "被诅咒 - ",
+      "。",
+      "移除一张卡牌。",
+      "[离开]"
     ]
   },
   "${ModID}:MarineLab": {
-    "NAME": "MarineLab",
+    "NAME": "海洋实验室",
     "DESCRIPTIONS": [
-      "You spy a small building next to the cliffside, overlooking the ocean. A sign on the building says \"Help wanted inside!\" NL You decide to heed the sign and go indoors. Inside, you spot tables filled with lab equipment and what seems to be numerous #yPokemon eggs. NL \"Are you a trainer? Thank goodness!\" A haggard-looking woman greets you. \"We recovered all these eggs from some #rpoachers, but now we need to find good homes for them . . . would you like to take one?\"",
-      "You accept a #yPokemon egg. It feels warm to the touch. NL \"Take good care of it!\" NL You assure the woman that you will as you turn and leave to continue your journey.",
-      "\"Oh, you want to help with my research? That would be quite helpful as well! Since I'm located so close to the ocean, all I see are marine #yPokemon, so getting to run tests on some other types of #yPokemon would be very helpful . . .\" NL You and your #yPokemon help the woman with some tests. You feel that the experiments have #ychanged you a little. For better or worse, you can't quite tell."
+      "你在悬崖边看到一栋小建筑，可以俯瞰大海。建筑物上的一个标志上写着“里面需要帮助！” NL 你注意到标志并进屋。在里面，你发现桌子摆满了实验室设备，还有许多 #y宝可梦蛋 。 NL \"你是训练家吗？谢天谢地！\"一个憔悴的女人向你问好。\"我们从一些 #r偷猎者 那里找回了所有这些蛋，但现在我们需要为它们找到一个好家园……你想带走一个吗？\"",
+      "你接受了一个 #y宝可梦蛋 。它摸起来很温暖。 NL \"好好照顾它！\" NL 你向女人保证你会这样做，然后转身离开继续你的旅程。",
+      "\"哦，你想帮忙研究吗？那也许会很有帮助！由于我离海洋很近，所以我只看到海洋 #y宝可梦 ，所以我对其他类型的 #y宝可梦 进行测试会很有帮助……\" NL 你和你的 #y宝可梦 帮助女人进行了一些测试。你感觉这些实验让你有了一点 #y改变 。是好是坏，你不太清楚。"
     ],
     "OPTIONS": [
-      "[Take an egg] ",
-      "[Offer to help with research] ",
-      "Obtain a special Relic.",
-      "Transform ",
-      " cards.",
-      "[Leave]"
+      "[带走一颗蛋] ",
+      "[帮忙研究] ",
+      "获得一个特别的遗物。",
+      "变化 ",
+      " 张牌。",
+      "[离开]"
     ]
   },
   "${ModID}:RadioTower": {
-    "NAME": "News from the Radio Tower",
+    "NAME": "播音塔的最新消息",
     "DESCRIPTIONS": [
-      "You hear the sound of #yradio crackling in the distance. NL \"Ahem! Attention! The #yPokemon Research Foundation is offering - \" NL You briefly pause to listen to the broadcast. The general summary is that the foundation is willing to pay trainers to bring a variety of #yPokemon to them for research purposes. You consider if you should take them up on that.",
-      "You bring one of your #yPokemon to the foundation, and the receptionist hands you the #ymoney. You feel a pang of #psadness as you leave one of your companions behind . . . but it was all for the greater good.",
-      "You decide to ignore the broadcast's offer. You weren't willing to part with your companions right now."
-    ],
+      "你听到远处 #y收音机 噼啪作响的声音。 NL \"咳咳！注意！#y宝可梦 研究基金会正在提供 - \" NL 你短暂地停下来收听广播。广播的总体摘要是该基金会愿意花钱让训练家为他们带来各种 #y宝可梦 以进行研究。你考虑是否应该接受他们的提议。",
+      "你将你的一个 #y宝可梦 带到基金会，接待员把 #y钱 交给你。当你把一个同伴留在身后，你感到一阵 #p悲伤 ……但这一切都是为了更大的利益。",
+      "你决定无视广播的提议。你现在不愿意与你的同伴分开。"
+     ],
     "OPTIONS": [
-      "[Take the offer] ",
-      "[Ignore it] ",
-      "Lose ",
-      ".",
-      "Gain ",
-      " Gold.",
-      "[Leave]"
+      "[接受提议] ",
+      "[无视] ",
+      "失去 ",
+      "。",
+      "获得 ",
+      " 金币。",
+      "[离开]"
     ]
   },
   "${ModID}:AzaleaGym": {
-    "NAME": "Azalea Gym",
+    "NAME": "桧皮道馆",
     "DESCRIPTIONS": [
-      "The inside of this gym contained an entire indoor #gforest, an aesthetic you certainly haven't seen before. NL \"Welcome! Are you here to challenge the gym leader? Or would you like to spectate a match?\" NL The receptionist greeted you. You considered your options . . .",
-      "You decide to challenge the gym leader. As you make your way to the battlefield, you notice the #gforest around you grow #ythicker. NL \"Welcome, challenger! I am Bugsy, this gym's leader! I hope you're prepared!\" NL As the match begins, you find yourself quickly overwhelmed by your opponent's cunning tactics, hiding themselves in the trees before launching an ambush with surprising ferocity. NL After a long, hard-fought battle, you barely manage to win. As the gym leader congratulated you, you feel that you had learned how to inspire the same ferocity in your own #yPokemon.",
-      "You decide to spectate one of the ongoing matches. As you watch the battle, you take note of how both trainers were making use of the surrounding terrain to their advantage, taking cover to avoid attacks and hiding in foliage to conceal their approach. You feel that you can apply the same tactic to some of your own skills."
+      "这个体育馆的内部包含了一个完整的室内 #g森林 ，这是一种你以前从未见过的美学。 NL \"欢迎！你是来挑战道馆训练家的吗？还是你想观看比赛？\" NL 接待员向你问好。你考虑了你的选择……",
+      "你决定挑战道馆训练家。当你走向战场时，你注意到你周围的 #g森林 变得 #y更茂密 了。 NL \"欢迎，挑战者！我是阿笔，这个道馆的馆主！我希望你已经做好了准备！\" NL 当比赛开始时，你发现自己很快就被对手的狡猾策略压倒了，他们躲在树林里，然后以惊人的凶猛发动伏击。 NL 经过一场漫长而艰苦的战斗，你勉强赢得了胜利。当道馆馆主向你祝贺时，你感觉自己已经学会了如何在自己的 #y宝可梦 中激发同样的凶猛。",
+      "你决定观看正在进行的一场比赛。当你观看比赛时，你注意到两位训练家如何利用周围的地形来发挥自己的优势，寻找掩护以避开攻击并躲在树叶中以隐藏他们的接近。你觉得自己可以将同样的策略应用到自己的某些技能中。"
     ],
     "OPTIONS": [
-      "[Challenge] ",
-      "[Spectate] ",
-      "Lose ",
-      " HP.",
-      "Obtain ",
-      ".",
-      "Upgrade a card.",
-      "[Leave]"
+      "[挑战] ",
+      "[观赛] ",
+      "失去 ",
+      " 点生命。",
+      "获得 ",
+      "。",
+      "升级一张牌。",
+      "[离开]"
     ]
   },
   "${ModID}:DarkCave": {
-    "NAME": "Dark Cave",
+    "NAME": "黑暗洞穴",
     "DESCRIPTIONS": [
-      "Suddenly, the grounds @gives@ @way@ beneath you, sending you hurtling into the #pdarkness below you. You land with a painful #rthud, and as you groggily take in your surroundings, you find yourself in a #pdark cave. NL As you shakily get to your feet, you suddenly see #rglowing #rred #reyes staring at you from within the #pdarkness. You - ",
-      "You stand your ground as a swarm of flying, biting, scratching figures hurtle past you. After a brief moment of intense #rpain, the ordeal is over. As you stumble out of the cave, you feel that you had gotten #ystronger after enduring that trial.",
-      "You turn on your heel and sprint away from that swarm of #rred #reyes. You stumble and trip in the #pdarkness, but with a racing heart, you manage to make it out of the darkness. NL As you catch your breath, heart pounding out of your chest, you feel like you had several years shaved off your lifetime from that #pharrowing experience."
-    ],
+      "突然，你脚下的地面 @裂开@ ，把你送入你下方的 #p黑暗 中。你痛苦地 #r着陆 ，当你昏昏沉沉地观察周围环境时，你发现自己身处一个 #p黑暗的 洞穴中。 NL 当你摇摇晃晃地站起来时，你突然看到 #r发光的红色眼睛 从 #p黑暗中 盯着你。你 - ",
+      "你站稳脚跟，一群飞行的、咬人的、抓挠的身影从你身边呼啸而过。在经历了短暂的剧烈 #r疼痛 后，磨难结束了。当你跌跌撞撞地走出洞穴时，你觉得自己在忍受了那次考验后变得 #y更强大 了。",
+      "你转身跑开，远离那群 #r红色眼睛 。你在 #p黑暗中 跌跌撞撞，但心跳加速，你设法逃离了黑暗。 NL 当你屏住呼吸时，心脏似乎从胸膛中跳出来，你感觉自己从那次 #p恐怖的 经历中减寿了好几年。"
+      ],
     "OPTIONS": [
-      "[Stand your ground] ",
-      "[Run away in fright] ",
-      "Lose ",
-      " HP.",
-      " Max HP.",
-      "Upgrade ",
-      "Remove ",
-      " cards.",
-      "[Leave]"
+      "[站稳脚跟] ",
+      "[转身逃跑] ",
+      "失去 ",
+      " 点生命。",
+      " 点最大生命。",
+      "升级 ",
+      "移除 ",
+      " 张牌。",
+      "[离开]"
     ]
   },
   "${ModID}:VoiceOfTheForest": {
-    "NAME": "Voice of the Forest",
+    "NAME": "森林之音",
     "DESCRIPTIONS": [
-      "You see a small #yPokemon flitting through the #gforest, being pursued by two very #rhostile-looking #yPokemon. NL \"To the left! Don't let it out of your sight!\" NL A loud voice grabs your attention, and you see a #ppoacher following close behind the pursuing #yPokemon.",
-      "You stumble across the poacher's path, stealing his attention. NL \"Who are you? Get out of my way!\" NL You pretend to be a tourist lost in the woods as you ask for directions to the nearest settlement. The poacher grits his teeth as he begrudgingly stops to tell you directions. In the distance, you see his #yPokemon slow, then stop as they look around, having lost sight of their prey without their trainer's instructions. NL \"What? Blast it, where did it go?!\" NL The poacher and his #yPokemon hurry away. As you leave the forest, you suddenly find some extra #gfruit in your bag. Looks like your #ygood #ydeed didn't go unnoticed.",
-      "You call out your #yPokemon and step into the pursuing #yPokemons' path. They don't even slow down as they try to bowl you over, but you manage to endure the #rpain and stand your ground long enough for your #yPokemon to take them down. The poacher, having lost his #yPokemon, quickly retreats into the distance. As you catch your breath, you see the small #yPokemon you helped float down next to you. Its wide eyes meet yours, and you feel it take an #yinterest in you."
-    ],
+      "你看到一只小 #y宝可梦 在 #g森林 中飞舞，被两只非常 #r有敌意的宝可梦 追赶。 NL \"向左！不要让它离开你的视线！\" NL 一个响亮的声音吸引了你的注意力，你看到一个 #p偷猎者 紧随在追逐的 #y宝可梦 的后面。",
+      "你偶然闯入了偷猎者的道路，吸引了他的注意力。 NL \"你是谁？给我让开！\" NL 你假装是迷路在树林里的游客，询问去最近定居点的方向。偷猎者咬牙切齿地不情不愿地停下来告诉你方向。在远处，你看到他的 #y宝可梦 慢了下来，然后停下来四处张望，因为没有训练家的指示，他们失去了对猎物的视线。 NL \"什么？见鬼，它去哪儿了？！\" NL 偷猎者和他的 #y宝可梦 匆匆离去。当你离开森林时，你突然在包里发现了一些额外的 #g水果 。看来你的 #y善举 没有被人忽视。",
+      "你叫出你的 #y宝可梦 ，并踏入追逐 #y宝可梦 的道路。他们试图把你击倒，但你设法忍受了 #r疼痛 ，并坚持了足够长的时间，让你的 #y宝可梦 将他们击倒。偷猎者失去了他的 #y宝可梦 ，迅速撤退到远处。当你屏住呼吸时，你看到你帮助的小 #y宝可梦 漂浮在你身边。它的大眼睛与你的相遇，你感觉到它对你产生了 #y兴趣 。"
+      ],
     "OPTIONS": [
-      "[Distract the poacher] ",
-      "[Stop the Pokemon] ",
-      "Gain ",
-      " Max HP.",
-      "Lose ",
-      " HP.",
-      "Obtain ",
-      ".",
-      "[Leave]"
+      "[分散偷猎者的注意力] ",
+      "[阻止那些宝可梦] ",
+      "获得 ",
+      " 点最大生命。",
+      "失去 ",
+      " 点生命。",
+      "获得 ",
+      "。",
+      "[离开]"
     ]
   }
 }

@@ -212,83 +212,83 @@
     "DESCRIPTIONS": ["#y免疫 伤害。 NL 当所有 #y畸变之痕 被摧毁，在回合结束时离开 #y反转世界 并在下一回合使用一次 #y非攻击 意图。"]
   },
   "${ModID}:PhoenixDown": {
-    "NAME": "Phoenix Down",
-    "DESCRIPTIONS": ["Whenever this creature loses #b", " HP, it spawns a #yFeather."]
+    "NAME": "羽蜕",
+    "DESCRIPTIONS": ["每当这个生物失去 #b", " 点生命，生成一片 #y不死鸟之羽 。"]
   },
   "${ModID}:ClosedOffHeart": {
-    "NAME": "Closed-Off Heart",
-    "DESCRIPTIONS": ["While this creature has #yTemporary #yHP, #yyou deal #b", "% less damage with attacks. (Your #yPokemon still deal full damage). NL Every #b", " turns, gains #b", " #yTemporary #yHP."]
+    "NAME": "封闭的心",
+    "DESCRIPTIONS": ["每当这个生物拥有 #y临时生命 ， #y你 对其造成的攻击伤害降低 #b", "% 。 (你的 #y宝可梦 不受影响)。 NL 每 #b", " 个回合，获得 #b", " 点 #y临时生命 。"]
   },
   "${ModID}:Technician": {
-    "NAME": "Technician",
-    "DESCRIPTIONS": ["The first time you play #b", " card(s) each turn, this creature takes its turn. If this effect was triggered, this creature skips its normal turn for the round."]
+    "NAME": "技术高手",
+    "DESCRIPTIONS": ["每回合当你第一次打出第 #b", " 张牌时，这个生物行动一次。这个效果触发后，本回合这个生物跳过其正常回合。"]
   },
   "${ModID}:UTurn": {
-    "NAME": "U-Turn",
-    "DESCRIPTIONS": ["The next #yPokemon to switch-in deals #b", "% more damage with its next attack."]
+    "NAME": "急速折返",
+    "DESCRIPTIONS": ["下一只上场的 #y宝可梦 的下一次攻击额外造成 #b", "% 的伤害。"]
   },
   "${ModID}:FlameBody": {
-    "NAME": "Flame Body",
-    "DESCRIPTIONS": ["When this creature is attacked while it has #yBlock, apply #b", " #yBurn to the attacker."]
+    "NAME": "火焰之躯",
+    "DESCRIPTIONS": ["每当这个生物在拥有 #y格挡 时受到攻击，给予进攻者 #b", " 层 #y烧伤 。"]
   },
   "${ModID}:SheerForce": {
-    "NAME": "Sheer Force",
-    "DESCRIPTIONS": ["When this creature receives unblocked attack damage while intending to attack, it deals #b", "% more damage with its next attack, but the attack's #ysecondary #yeffects are disabled. Can only trigger once per turn."]
+    "NAME": "强行",
+    "DESCRIPTIONS": ["当此生物在准备攻击时受到未被格挡的攻击伤害时，它下次攻击时造成 #b", "% 更高的伤害，但攻击的 #y附加效果 会被禁用。每回合只能触发一次。"]
   },
   "${ModID}:Unaware": {
-    "NAME": "Unaware",
-    "DESCRIPTIONS": ["#yNegate every #b", "rd instance of unblocked attack damage dealt to this creature."]
+    "NAME": "纯朴",
+    "DESCRIPTIONS": ["这个生物受到的每第 #b", " 次攻击会无视其附加效果。"]
   },
   "${ModID}:ProtectiveInstincts": {
-    "NAME": "Protective Instincts",
-    "DESCRIPTIONS": ["When another enemy falls below #b", "% HP, this creature gains #yTaunt for the rest of combat."]
+    "NAME": "本能保护",
+    "DESCRIPTIONS": ["当另一个敌人低于 #b", "% 生命值时，该生物在战斗的剩余时间内获得 #y挑衅 。"]
   },
   "${ModID}:WaterVeil": {
-    "NAME": "Water Veil",
-    "DESCRIPTIONS": ["At end of round, every enemy without #yArtifact gains #b", " #yArtifact."]
+    "NAME": "水幕",
+    "DESCRIPTIONS": ["回合结束时，每个没有 #y人工制品 的敌人获得 #b", " 层 #y人工制品 。"]
   },
   "${ModID}:Sniper": {
-    "NAME": "Sniper",
-    "DESCRIPTIONS": ["Whenever you receive unblocked attack damage from this creature, you gain #b", " #yFrail."]
+    "NAME": "狙击手",
+    "DESCRIPTIONS": ["每当你受到此生物的未被格挡的攻击伤害时，你获得 #b", " 层 #y脆弱 。"]
   },
   "${ModID}:Concentrate": {
-    "NAME": "Concentrate",
-    "DESCRIPTIONS": ["Deal #b", "% more damage with your next played #yAttack."]
+    "NAME": "集中",
+    "DESCRIPTIONS": ["你下一次打出的 #y攻击牌 造成 #b", "% 更高的伤害。"]
   },
   "${ModID}:StrongArmor": {
-    "NAME": "Strong Armor",
-    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks this turn. Reapplied every other turn."]
+    "NAME": "坚固盔甲",
+    "DESCRIPTIONS": ["本回合受到的攻击伤害降低 #b", "% 。每隔一回合触发一次。"]
   },
   "${ModID}:Voltage": {
-    "NAME": "Voltage",
-    "DESCRIPTIONS": ["Whenever you gain #yVoltage, take damage equal to your #yVoltage."]
+    "NAME": "电压涡轮",
+    "DESCRIPTIONS": ["每当你获得 #y电压 ，根据其层数受到伤害。"]
   },
   "${ModID}:ElectricTerrain": {
-    "NAME": "Electric Terrain",
-    "DESCRIPTIONS": ["The first #b", " cards you play each turn become #yCharged and are shuffled back into your draw pile."]
+    "NAME": "电气场地",
+    "DESCRIPTIONS": ["你每回合打出的前 #b", " 张牌变为 #y充能 ，然后洗回你的抽牌堆。"]
   },
   "${ModID}:Electroweb": {
-    "NAME": "Electroweb",
-    "DESCRIPTIONS": ["At the start of your turn, gain "]
+    "NAME": "电网",
+    "DESCRIPTIONS": ["在你的回合开始时，获得 "]
   },
   "${ModID}:SicEm": {
     "NAME": "Sic 'Em",
-    "DESCRIPTIONS": ["Receives #b", "% more damage from your #yPokemon."]
+    "DESCRIPTIONS": ["受到来自你的 #y宝可梦 的伤害增加 #b", "% 。"]
   },
   "${ModID}:TimeWalk": {
-    "NAME": "Time Walk",
-    "DESCRIPTIONS": ["The next time you end your turn, take an extra turn."]
+    "NAME": "时间漫步",
+    "DESCRIPTIONS": ["你下一次结束回合时，获得一个额外的回合。"]
   },
   "${ModID}:ThickFat": {
-    "NAME": "Thick Fat",
-    "DESCRIPTIONS": ["Whenever a card is #yExhausted, gains #b", " #yStrength this turn."]
+    "NAME": "厚脂肪",
+    "DESCRIPTIONS": ["每当一张牌被 #y消耗 ，本回合获得 #b", " 点 #y力量 。"]
   },
   "${ModID}:Infiltrator": {
-    "NAME": "Infiltrator",
-    "DESCRIPTIONS": ["This creature's attacks ignore #yBlock this turn. Removed when receiving unblocked attack damage."]
+    "NAME": "穿透",
+    "DESCRIPTIONS": ["本回合此生物的攻击无视 #y格挡 。受到未被格挡的攻击伤害时移除。"]
   },
   "${ModID}:PoisonFang": {
-    "NAME": "Poison Fang",
-    "DESCRIPTIONS": ["Your next #yAttack applies #yToxic equal to unblocked damage dealt."]
+    "NAME": "剧毒牙",
+    "DESCRIPTIONS": ["你的下一张 #y攻击牌 造成未被格挡的伤害时给予等量的 #y剧毒 。"]
   }
 }

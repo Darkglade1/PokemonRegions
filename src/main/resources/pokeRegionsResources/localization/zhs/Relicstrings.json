@@ -3,7 +3,7 @@
     "NAME": "精灵球腰带",
     "FLAVOR": "小心高草。",
     "DESCRIPTIONS": [
-      "你拥有 #b", " 个 #y精灵球 。 NL 现在你可以通过按 #野生宝可梦 旁边的 #扔精灵球 按钮来 #y捕捉 它们。 NL 被捕获的 #y宝可梦 会在战斗奖励中获得。"
+      "你拥有 #b", " 个 #y精灵球 。 NL 现在你可以通过按 #y野生宝可梦 旁边的 #y扔精灵球 按钮来 #y捕捉 它们。 NL 被捕获的 #y宝可梦 会在战斗奖励中获得。"
     ]
   },
   "pokeRegions:RainbowBadge": {
@@ -77,17 +77,17 @@
     ]
   },
   "${ModID}:DragonFang": {
-    "NAME": "Dragon Fang",
-    "FLAVOR": "You wonder how big a dragon must grow to have a fang this big.",
+    "NAME": "龙之牙",
+    "FLAVOR": "你很好奇一条龙要长得多大才能有一颗如此大的牙。",
     "DESCRIPTIONS": [
-      "At the start of combat, apply #b", " #ypokeregions:Burn to ALL enemies."
+      "在战斗开始时，给予所有敌人 #b", " 层 #ypokeregions:烧伤 。"
     ]
   },
   "${ModID}:PokemonEgg": {
-    "NAME": "Pokemon Egg",
-    "FLAVOR": "You can faintly feel the stirrings of something inside . . . ",
+    "NAME": "宝可梦蛋",
+    "FLAVOR": "你隐隐约约能感觉到里面有东西在蠕动……",
     "DESCRIPTIONS": [
-      "Can be hatched after visiting #b", " #yCampfires. #b"
+      "将在进入 #b", " 个 #y火堆 后孵化。 #b"
     ]
   }
 }

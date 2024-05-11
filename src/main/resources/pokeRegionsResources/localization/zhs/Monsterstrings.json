@@ -475,187 +475,187 @@
   },
   "${ModID}:HoOhEnemy": {
     "MOVES": [
-      "Sacred Fire",
-      "Overheat",
-      "Regenerate"
+      "神圣之火",
+      "过热",
+      "再生"
     ],
-    "NAME": "Ho-Oh",
+    "NAME": "凤王",
     "DIALOG": [
     ]
   },
   "${ModID}:PhoenixFeather": {
     "MOVES": [
     ],
-    "NAME": "Phoenix Feather",
+    "NAME": "不死鸟之羽",
     "DIALOG": [
     ]
   },
   "${ModID}:LugiaEnemy": {
     "MOVES": [
-      "Shadow Rush",
-      "Shadow Blast",
-      "Shadow Sky"
+      "暗影突袭",
+      "暗影爆破",
+      "暗影天空"
     ],
-    "NAME": "Shadow Lugia",
+    "NAME": "暗黑洛奇亚",
     "DIALOG": [
     ]
   },
   "${ModID}:ScizorEnemy": {
     "MOVES": [
-      "Bullet Punch",
-      "Swords Dance",
-      "Agility"
+      "子弹拳",
+      "剑舞",
+      "敏捷"
     ],
-    "NAME": "Scizor",
+    "NAME": "巨钳螳螂",
     "DIALOG": [
     ]
   },
   "${ModID}:SlugmaEnemy": {
     "MOVES": [
-      "Harden",
-      "Rock Throw",
-      "Lava Plume"
+      "变硬",
+      "落石",
+      "喷烟"
     ],
-    "NAME": "Slugma",
+    "NAME": "熔岩虫",
     "DIALOG": [
     ]
   },
   "${ModID}:MagcargoEnemy": {
     "MOVES": [
-      "Harden",
-      "Rock Throw",
-      "Lava Plume",
-      "Smog"
+      "变硬",
+      "落石",
+      "喷烟",
+      "浊雾"
     ],
-    "NAME": "Magcargo",
+    "NAME": "熔岩蜗牛",
     "DIALOG": [
     ]
   },
   "${ModID}:SteelixEnemy": {
     "MOVES": [
-      "Double Edge",
-      "Heavy Slam",
-      "Iron Tail",
-      "Autotomize"
+      "舍身冲撞",
+      "重磅冲击",
+      "铁尾",
+      "自动再生"
     ],
-    "NAME": "Steelix",
+    "NAME": "大钢蛇",
     "DIALOG": [
     ]
   },
   "${ModID}:QuagsireEnemy": {
     "MOVES": [
-      "Scald",
-      "Quicksand"
+      "热水",
+      "流沙"
     ],
-    "NAME": "Quagsire",
+    "NAME": "沼王",
     "DIALOG": [
     ]
   },
   "${ModID}:TyranitarEnemy": {
     "MOVES": [
-      "Iron Defense",
-      "Stone Edge",
-      "Crunch"
+      "铁壁",
+      "岩石利刃",
+      "咬碎"
     ],
-    "NAME": "Tyranitar",
+    "NAME": "班基拉斯",
     "DIALOG": [
     ]
   },
   "${ModID}:PupitarEnemy": {
     "MOVES": [
-      "Dragon Dance",
-      "Smack Down",
-      "Rock Slide"
+      "龙之舞",
+      "重压",
+      "岩崩"
     ],
-    "NAME": "Pupitar",
+    "NAME": "沙基拉斯",
     "DIALOG": [
     ]
   },
   "${ModID}:AzumarillEnemy": {
     "MOVES": [
-      "Focus",
-      "Play Rough"
+      "集中",
+      "嬉闹"
     ],
-    "NAME": "Azumarill",
+    "NAME": "玛力露力",
     "DIALOG": [
     ]
   },
   "${ModID}:MantineEnemy": {
     "MOVES": [
-      "Rain Dance",
-      "Air Slash"
+      "求雨",
+      "空气利刃"
     ],
-    "NAME": "Mantine",
+    "NAME": "巨翅飞鱼",
     "DIALOG": [
     ]
   },
   "${ModID}:KingdraEnemy": {
     "MOVES": [
-      "Water Pulse",
-      "Wave Crash",
-      "Focus Energy"
+      "水之波动",
+      "波动冲",
+      "聚气"
     ],
-    "NAME": "Kingdra",
+    "NAME": "刺龙王",
     "DIALOG": [
     ]
   },
   "${ModID}:LanturnEnemy": {
     "MOVES": [
-      "Eerie Impulse",
-      "Illuminate",
-      "Discharge"
+      "怪异电波",
+      "发光",
+      "放电"
     ],
-    "NAME": "Lanturn",
+    "NAME": "电灯怪",
     "DIALOG": [
     ]
   },
   "${ModID}:SkarmoryEnemy": {
     "MOVES": [
-      "Spikes",
-      "Metal Claw",
-      "Brave Bird"
+      "撒菱",
+      "金属爪",
+      "勇鸟猛攻"
     ],
-    "NAME": "Skarmory",
+    "NAME": "盔甲鸟",
     "DIALOG": [
     ]
   },
   "${ModID}:RaikouEnemy": {
     "MOVES": [
-      "Thunder",
-      "Zap Cannon",
-      "Electroweb",
-      "Charge"
+      "十万伏特",
+      "电光一闪",
+      "电网",
+      "充电"
     ],
-    "NAME": "Raikou",
+    "NAME": "雷公",
     "DIALOG": [
     ]
   },
   "${ModID}:SwinubEnemy": {
     "MOVES": [
-      "Ice Shard",
-      "Icy Wind"
+      "冰砾",
+      "冰冻之风"
     ],
-    "NAME": "Swinub",
+    "NAME": "小山猪",
     "DIALOG": [
     ]
   },
   "${ModID}:PiloswineEnemy": {
     "MOVES": [
-      "Icicle Spear",
-      "Blizzard",
-      "Amnesia"
+      "冰锥",
+      "暴风雪",
+      "瞬间失忆"
     ],
-    "NAME": "Piloswine",
+    "NAME": "长毛猪",
     "DIALOG": [
     ]
   },
   "${ModID}:CrobatEnemy": {
     "MOVES": [
-      "Quick Guard",
-      "Air Slash",
-      "Cross Poison"
+      "守住",
+      "空气利刃",
+      "十字毒刃"
     ],
-    "NAME": "Crobat",
+    "NAME": "叉字蝠",
     "DIALOG": [
     ]
   }
