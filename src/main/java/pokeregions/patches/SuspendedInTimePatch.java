@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.VelvetChoker;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -41,6 +42,10 @@ public class SuspendedInTimePatch {
                             power.amount = 0;
                             c.dontTriggerOnUseCard = true;
                             power.addCard(c, m);
+                            if (AbstractDungeon.player.hasRelic(VelvetChoker.ID)) {
+                                // Hack to make suspended cards not count towards velvet choker
+                                AbstractDungeon.player.getRelic(VelvetChoker.ID).counter--;
+                            }
                             return true;
                         } else {
                             power.amount = 1;
