@@ -49,7 +49,7 @@
   },
   "pokeRegions:RetributionMoltres": {
     "NAME": "火焰鸟的审判",
-    "DESCRIPTIONS": ["每当另外一只 #y鸟 被击败，将 #b", " 张 #y烧伤 加入你的弃牌堆。"]
+    "DESCRIPTIONS": ["每当另外一只 #y鸟 被击败，将 #b", " 张 #y烧伤 加入你的弃牌堆。", " 张 #y烧伤+ 加入你的弃牌堆。"]
   },
   "pokeRegions:RetributionZapdos": {
     "NAME": "闪电鸟的审判",
