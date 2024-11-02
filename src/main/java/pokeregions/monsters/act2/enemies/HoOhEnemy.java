@@ -159,11 +159,11 @@ public class HoOhEnemy extends AbstractPokemonMonster
     private float getFeatherXCoord(int index) {
         int result = index % 3;
         if (result == 0) {
-            return -600.0F;
+            return -200.0F;
         } else if (result == 1) {
             return -400.0F;
         } else {
-            return -200.0F;
+            return -600.0F;
         }
     }
 
