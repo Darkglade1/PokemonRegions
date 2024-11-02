@@ -94,7 +94,7 @@ public class MoltresEnemy extends AbstractPokemonMonster
 
             @Override
             public void updateDescription() {
-                description = POWER_DESCRIPTIONS[0] + amount + POWER_DESCRIPTIONS[1];
+                description = POWER_DESCRIPTIONS[0] + amount + (AbstractDungeon.ascensionLevel >= 19 ? POWER_DESCRIPTIONS[2] : POWER_DESCRIPTIONS[1]);
             }
         };
         applyToTarget(this, this, retributionPower);

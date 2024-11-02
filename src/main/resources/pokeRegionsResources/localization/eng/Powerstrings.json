@@ -49,7 +49,7 @@
   },
   "${ModID}:RetributionMoltres": {
     "NAME": "Retribution of Moltres",
-    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, add #b", " #yBurns into your discard pile."]
+    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, add #b", " #yBurns into your discard pile.", " #yupgraded #yBurns into your discard pile."]
   },
   "${ModID}:RetributionZapdos": {
     "NAME": "Retribution of Zapdos",
