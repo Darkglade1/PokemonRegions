@@ -16,7 +16,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Charmeleon extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Charmeleon.class.getSimpleName());
     public static final int MOVE_1_DAMAGE = 8;
-    public static final int MOVE_2_DAMAGE = 10;
+    public static final int MOVE_2_DAMAGE = 12;
     public static final int MOVE_2_DEBUFF = 1;
     public static final int MOVE_1_STAMINA_COST = 0;
     public static final int MOVE_2_STAMINA_COST = 1;

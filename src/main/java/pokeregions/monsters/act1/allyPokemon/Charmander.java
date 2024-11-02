@@ -1,26 +1,20 @@
 package pokeregions.monsters.act1.allyPokemon;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import pokeregions.BetterSpriterAnimation;
-import pokeregions.CustomIntent.IntentEnums;
 import pokeregions.PokemonRegions;
-import pokeregions.actions.AllyDamageAllEnemiesAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.util.Wiz;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
 
-import java.util.ArrayList;
-
 import static pokeregions.PokemonRegions.makeMonsterPath;
-import static pokeregions.util.Wiz.atb;
-import static pokeregions.util.Wiz.dmg;
+import static pokeregions.util.Wiz.*;
 
 public class Charmander extends AbstractPokemonAlly
 {
@@ -39,11 +33,12 @@ public class Charmander extends AbstractPokemonAlly
         setStaminaInfo(allyCard);
 
         move1Intent = Intent.ATTACK;
-        move2Intent = IntentEnums.MASS_ATTACK;
+        move2Intent = Intent.ATTACK_DEBUFF;
         addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act1.Charmander.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act1.Charmander.MOVE_2_DAMAGE);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
+        move2RequiresTarget = true;
     }
 
     @Override
@@ -57,18 +52,9 @@ public class Charmander extends AbstractPokemonAlly
             }
             case MOVE_2: {
                 runAnim("Ranged");
-                ArrayList<AbstractMonster> enemies = Wiz.getEnemies();
-                for (int i = 0; i < enemies.size(); i++) {
-                    AbstractMonster mo = enemies.get(i);
-                    if (mo != this) {
-                        if (i == enemies.size() - 1) {
-                            atb(new VFXAction(new FireballEffect(this.hb.cX, this.hb.cY, mo.hb.cX, mo.hb.cY), 0.5F));
-                        } else {
-                            atb(new VFXAction(new FireballEffect(this.hb.cX, this.hb.cY, mo.hb.cX, mo.hb.cY)));
-                        }
-                    }
-                }
-                atb(new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+                atb(new VFXAction(new FireballEffect(this.hb.cX, this.hb.cY, target.hb.cX, target.hb.cY), 0.5F));
+                dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
+                applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.act1.Charmander.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
                 break;
             }
         }

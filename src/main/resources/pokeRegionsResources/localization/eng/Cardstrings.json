@@ -8,7 +8,8 @@
       "Deal ",
       " damage.",
       "Deal ",
-      " damage to ALL enemies."
+      " damage. Apply ",
+      " Vulnerable."
     ]
   },
   "${ModID}:Charmeleon": {
@@ -20,8 +21,8 @@
       "Deal ",
       " damage.",
       "Deal ",
-      " damage and apply ",
-      " pokeregions:Burn to ALL enemies."
+      " damage. Apply ",
+      " Vulnerable."
     ]
   },
   "${ModID}:Charizard": {
@@ -33,8 +34,8 @@
       "Deal ",
       " damage.",
       "Deal ",
-      " damage and apply ",
-      " pokeregions:Burn and Vulnerable to ALL enemies."
+      " damage. Apply ",
+      " Vulnerable and pokeregions:Burn."
     ]
   },
   "${ModID}:Bulbasaur": {
