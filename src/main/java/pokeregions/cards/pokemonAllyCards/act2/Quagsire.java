@@ -13,7 +13,7 @@ public class Quagsire extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Quagsire.class.getSimpleName());
     public static final int MOVE_2_DAMAGE = 5;
     public static final int MOVE_2_EFFECT = 1;
-    public static final int MOVE_1_STAMINA_COST = 2;
+    public static final int MOVE_1_STAMINA_COST = 3;
     public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 5;
 

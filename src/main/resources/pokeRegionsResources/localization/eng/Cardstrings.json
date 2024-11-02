@@ -143,7 +143,8 @@
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Withdraw[]",
       "[#FFA500]Icicle[] [#FFA500]Spear[]",
-      "You gain *Barricade.",
+      "You gain ",
+      " Block.",
       "Deal ",
       " damage ",
       " times."
