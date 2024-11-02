@@ -33,7 +33,7 @@
   },
   "${ModID}:TypeAdvantage": {
     "NAME": "Imperfect Armor",
-    "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy for 1 turn. Cannot be triggered while #ySturdy is disabled."]
+    "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy for #b1 turn. Cannot be triggered while #ySturdy is disabled."]
   },
   "${ModID}:SuperEffective": {
     "NAME": "Exposed Weakness",
