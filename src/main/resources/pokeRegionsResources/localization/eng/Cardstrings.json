@@ -22,17 +22,18 @@
       " damage.",
       "Deal ",
       " damage. Apply ",
-      " Vulnerable."
+      " Vulnerable and pokeregions:Burn."
     ]
   },
   "${ModID}:Charizard": {
     "NAME": "Charizard",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Metal[] [#FFA500]Claw[]",
+      "[#FFA500]Fire[] [#FFA500]Claw[]",
       "[#FFA500]Flamethrower[]",
       "Deal ",
-      " damage.",
+      " damage. Apply ",
+      " pokeregions:Burn.",
       "Deal ",
       " damage. Apply ",
       " Vulnerable and pokeregions:Burn."
@@ -224,7 +225,7 @@
       "[#FFA500]Fire[] [#FFA500]Spin[]",
       "[#FFA500]Flame[] [#FFA500]Charge[]",
       "Deal ",
-      " damage and apply ",
+      " damage. Apply ",
       " pokeregions:Burn.",
       "Deal ",
       " damage ",

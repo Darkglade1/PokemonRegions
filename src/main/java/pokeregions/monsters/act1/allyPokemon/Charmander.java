@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
+import pokeregions.powers.Burn;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
 import static pokeregions.util.Wiz.*;

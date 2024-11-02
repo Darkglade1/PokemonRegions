@@ -12,6 +12,7 @@ import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.powers.Burn;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
 import static pokeregions.util.Wiz.*;
@@ -58,6 +59,7 @@ public class Charmeleon extends AbstractPokemonAlly
                 atb(new VFXAction(new FireballEffect(this.hb.cX, this.hb.cY, target.hb.cX, target.hb.cY), 0.5F));
                 dmg(target, info, AbstractGameAction.AttackEffect.FIRE);
                 applyToTarget(target, this, new VulnerablePower(target, pokeregions.cards.pokemonAllyCards.act2.Charmeleon.MOVE_2_DEBUFF, AbstractDungeon.actionManager.turnHasEnded));
+                applyToTarget(target, this, new Burn(target, pokeregions.cards.pokemonAllyCards.act2.Charmeleon.MOVE_2_DEBUFF));
                 break;
             }
         }

@@ -33,7 +33,7 @@ public class Charizard extends AbstractPokemonAlly
         this.allyCard = allyCard;
         setStaminaInfo(allyCard);
 
-        move1Intent = Intent.ATTACK;
+        move1Intent = Intent.ATTACK_DEBUFF;
         move2Intent = Intent.ATTACK_DEBUFF;
         addMove(MOVE_1, move1Intent, pokeregions.cards.pokemonAllyCards.act3.Charizard.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent, pokeregions.cards.pokemonAllyCards.act3.Charizard.MOVE_2_DAMAGE);
@@ -49,6 +49,7 @@ public class Charizard extends AbstractPokemonAlly
             case MOVE_1: {
                 runAnim("Melee");
                 dmg(target, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+                applyToTarget(target, this, new Burn(target, pokeregions.cards.pokemonAllyCards.act3.Charizard.MOVE_1_DEBUFF));
                 break;
             }
             case MOVE_2: {
