@@ -17,7 +17,7 @@
   },
   "${ModID}:Outrage": {
     "NAME": "Outrage",
-    "DESCRIPTIONS": ["#yOutrage lasts for #b", " more turn(s). When this creature receives #b", " more unblocked attack damage, increase Outrage's duration by 1. While #yOutraging, this creature will attack with increasing ferocity."]
+    "DESCRIPTIONS": ["#yOutrage lasts for #b", " more turn(s). When this creature receives #b", " more unblocked attack damage, increase Outrage's duration by #b1. While #yOutraging, this creature will attack with increasing ferocity."]
   },
   "${ModID}:NastyPlot": {
     "NAME": "Nasty Plot",
@@ -33,7 +33,7 @@
   },
   "${ModID}:TypeAdvantage": {
     "NAME": "Imperfect Armor",
-    "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy for 1 turn. Cannot be triggered while #ySturdy is disabled."]
+    "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy for #b1 turn. Cannot be triggered while #ySturdy is disabled."]
   },
   "${ModID}:SuperEffective": {
     "NAME": "Exposed Weakness",
@@ -49,7 +49,7 @@
   },
   "${ModID}:RetributionMoltres": {
     "NAME": "Retribution of Moltres",
-    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, shuffle #b", " #yBurns into your discard pile."]
+    "DESCRIPTIONS": ["Whenever one of the other #yBirds is defeated, add #b", " #yBurns into your discard pile.", " #yupgraded #yBurns into your discard pile."]
   },
   "${ModID}:RetributionZapdos": {
     "NAME": "Retribution of Zapdos",
