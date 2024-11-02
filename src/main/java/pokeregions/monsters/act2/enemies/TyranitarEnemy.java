@@ -1,5 +1,6 @@
 package pokeregions.monsters.act2.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -79,6 +80,7 @@ public class TyranitarEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("WildPokemon");
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0, "talk_to_hand") {
             @Override
             public void updateDescription() {

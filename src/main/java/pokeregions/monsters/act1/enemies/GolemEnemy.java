@@ -1,5 +1,6 @@
 package pokeregions.monsters.act1.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
@@ -78,6 +79,7 @@ public class GolemEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("WildPokemon");
         applyToTarget(this, this, new Sturdy(this, DAMAGE_REDUCTION));
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, DAMAGE_INCREASE) {
             private boolean triggered = false;

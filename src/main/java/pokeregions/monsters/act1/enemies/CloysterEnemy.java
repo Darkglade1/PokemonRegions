@@ -1,5 +1,6 @@
 package pokeregions.monsters.act1.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.brashmonkey.spriter.Player;
@@ -80,6 +81,7 @@ public class CloysterEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("WildPokemon");
         applyToTarget(this, this, new MetallicizePower(this, METALLICIZE));
         block(this, METALLICIZE);
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_INITAL_HP_LOSS) {

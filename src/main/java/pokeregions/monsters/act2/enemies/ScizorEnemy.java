@@ -1,5 +1,6 @@
 package pokeregions.monsters.act2.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
@@ -76,6 +77,7 @@ public class ScizorEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("WildPokemon");
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_TRIGGER, "repair") {
 
             private int numCardsToTrigger = POWER_TRIGGER;

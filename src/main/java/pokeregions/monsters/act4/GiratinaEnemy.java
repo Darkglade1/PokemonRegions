@@ -91,7 +91,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("LavenderTown");
+        CustomDungeon.playTempMusicInstantly("Giratina");
         applyToTarget(this, this, new LostInDistortion(this, HP_THRESHOLD));
     }
 

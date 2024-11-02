@@ -1,5 +1,6 @@
 package pokeregions.monsters.act3.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -103,6 +104,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("WildPokemon");
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0, "evolve") {
             @Override
             public void onAfterUseCard(AbstractCard card, UseCardAction action) {

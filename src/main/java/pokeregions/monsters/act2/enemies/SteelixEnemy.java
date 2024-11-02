@@ -1,5 +1,6 @@
 package pokeregions.monsters.act2.enemies;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -81,6 +82,7 @@ public class SteelixEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("WildPokemon");
         block(this, METALLICIZE);
         applyToTarget(this, this, new MetallicizePower(this, METALLICIZE));
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_BUFF, "doubleDamage", 99) {
