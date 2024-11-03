@@ -44,7 +44,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
 
     public final int STR = 3;
     public final int DEBUFF = 1;
-    public final int STATUS = calcAscensionSpecial(1);
+    public final int STATUS = calcAscensionSpecial(2);
 
     public static final String POWER_ID = makeID("Moxie");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -61,7 +61,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 230.0f, 200.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Salamence/Salamence.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.5f);
-        setHp(calcAscensionTankiness(300));
+        setHp(calcAscensionTankiness(330));
         addMove(DRAGON_RUSH, Intent.ATTACK, calcAscensionDamage(13), 2);
         addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(33));
         addMove(DRAGON_BREATH, Intent.DEBUFF);
