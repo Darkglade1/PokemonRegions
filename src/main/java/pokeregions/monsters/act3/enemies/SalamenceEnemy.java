@@ -44,7 +44,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
 
     public final int STR = 3;
     public final int DEBUFF = 1;
-    public final int STATUS = calcAscensionSpecial(2);
+    public final int STATUS = 2;
 
     public static final String POWER_ID = makeID("Moxie");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -65,9 +65,6 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         addMove(DRAGON_RUSH, Intent.ATTACK, calcAscensionDamage(13), 2);
         addMove(DRAGON_CLAW, Intent.ATTACK, calcAscensionDamage(33));
         addMove(DRAGON_BREATH, Intent.DEBUFF);
-        if (AbstractDungeon.ascensionLevel >= 18) {
-            status.upgrade();
-        }
     }
 
     @Override
@@ -123,7 +120,11 @@ public class SalamenceEnemy extends AbstractPokemonMonster
                 break;
             }
             case DRAGON_BREATH: {
-                intoDiscardMo(status.makeStatEquivalentCopy(), STATUS);
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    intoDrawMo(status.makeStatEquivalentCopy(), STATUS);
+                } else {
+                    intoDiscardMo(status.makeStatEquivalentCopy(), STATUS);
+                }
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
                 applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
                 break;
@@ -152,6 +153,9 @@ public class SalamenceEnemy extends AbstractPokemonMonster
         switch (move.nextMove) {
             case DRAGON_BREATH: {
                 Details statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DISCARD_PILE);
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    statusDetail = new Details(this, STATUS, BURN_TEXTURE, Details.TargetType.DRAW_PILE);
+                }
                 details.add(statusDetail);
                 Details vulnerableDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
                 details.add(vulnerableDetail);

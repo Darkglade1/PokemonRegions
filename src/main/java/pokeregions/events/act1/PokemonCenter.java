@@ -2,7 +2,9 @@ package pokeregions.events.act1;
 
 import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import pokeregions.PokemonRegions;
+import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.ui.PokemonTeamButton;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -67,6 +69,16 @@ public class PokemonCenter extends PhasedEvent {
 
     public static boolean canSpawn() {
         int teamSize = PlayerSpireFields.pokemonTeam.get(adp()).size();
+        int teamTotalMaxStamina = 0;
+        int teamTotalCurrentStamina = 0;
+        for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
+            if (card instanceof AbstractAllyPokemonCard) {
+                teamTotalCurrentStamina += ((AbstractAllyPokemonCard) card).currentStamina;
+                teamTotalMaxStamina += ((AbstractAllyPokemonCard) card).maxStamina;
+            }
+        }
+        boolean teamLowOnStamina = teamSize >= 3 && (float)teamTotalCurrentStamina / teamTotalMaxStamina <= 0.5f;
+
         boolean hasPotion = false;
         for (AbstractPotion potion : adp().potions) {
             if (!(potion instanceof PotionSlot)) {
@@ -74,6 +86,6 @@ public class PokemonCenter extends PhasedEvent {
                 break;
             }
         }
-        return hasPotion || teamSize >= 3;
+        return hasPotion || teamLowOnStamina;
     }
 }
