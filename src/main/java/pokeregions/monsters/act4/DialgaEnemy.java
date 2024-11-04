@@ -1,5 +1,6 @@
 package pokeregions.monsters.act4;
 
+import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -77,6 +78,7 @@ public class DialgaEnemy extends AbstractMultiIntentMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CustomDungeon.playTempMusicInstantly("DialgaPalkia");
         applyToTarget(this, this, new SuspendedInTime(this, 0));
     }
 

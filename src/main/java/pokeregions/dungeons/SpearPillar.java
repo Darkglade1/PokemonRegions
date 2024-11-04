@@ -31,6 +31,7 @@ public class SpearPillar extends AbstractPokemonRegionDungeon {
         super(NAME, ID, "images/ui/event/panel.png", false, 2, 12, 10);
         this.addTempMusic("LavenderTown", PokemonRegions.makeMusicPath("LavenderTown.ogg"));
         this.addTempMusic("Giratina", PokemonRegions.makeMusicPath("Giratina.ogg"));
+        this.addTempMusic("DialgaPalkia", PokemonRegions.makeMusicPath("DialgaPalkia.ogg"));
     }
 
     public SpearPillar(CustomDungeon cd, AbstractPlayer p, ArrayList<String> emptyList) {
@@ -113,35 +114,6 @@ public class SpearPillar extends AbstractPokemonRegionDungeon {
         src.addEdge(new MapEdge(src.x, src.y, src.offsetX, src.offsetY, dst.x, dst.y, dst.offsetX, dst.offsetY, false));
     }
 
-    private ArrayList<MapRoomNode> populate(ArrayList<MonsterRoomCreator> possibilities, int index) {
-        ArrayList<MapRoomNode> result = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
-            MapRoomNode mrn = new MapRoomNode(i, index);
-            if (i % 2 == 1) {
-                mrn.room = possibilities.get(0).get();
-                possibilities.remove(0);
-            }
-            result.add(mrn);
-        }
-
-        if (index > 0) {
-            ArrayList<MapRoomNode> mapcontent = map.get(index - 1);
-            for (int i = 0; i < mapcontent.size(); i++) {
-                if (mapcontent.get(i).room != null) {
-                    for (int j = 0; j < result.size(); j++) {
-                        if (result.get(j).room != null) {
-                            if (Math.abs(i - j) < 4) {
-                                this.connectNode(mapcontent.get(i), result.get(j));
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return result;
-    }
-
     @Override
     protected void generateMonsters() {
         monsterList = new ArrayList();
@@ -172,46 +144,6 @@ public class SpearPillar extends AbstractPokemonRegionDungeon {
     @Override
     protected ArrayList<String> generateExclusions() {
         return new ArrayList<>();
-    }
-
-    protected ArrayList<MapRoomNode> tripleNodeArea(AbstractRoom roomOne, AbstractRoom roomTwo, AbstractRoom roomThree, int index) {
-        ArrayList<MapRoomNode> result = new ArrayList<>();
-        MapRoomNode mrn;
-        result.add(new MapRoomNode(0, index));
-        mrn = new MapRoomNode(1, index);
-        mrn.room = roomOne;
-        result.add(mrn);
-        result.add(new MapRoomNode(2, index));
-        mrn = new MapRoomNode(3, index);
-        mrn.room = roomTwo;
-        result.add(mrn);
-        result.add(new MapRoomNode(4, index));
-        mrn = new MapRoomNode(5, index);
-        mrn.room = roomThree;
-        result.add(mrn);
-        result.add(new MapRoomNode(6, index));
-        linkNonMonsterAreas(result);
-        return result;
-    }
-
-    private ArrayList<MapRoomNode> doubleNodeArea(AbstractRoom roomOne, AbstractRoom roomTwo, int index) {
-        ArrayList<MapRoomNode> result = new ArrayList<>();
-        MapRoomNode mrn;
-        result.add(new MapRoomNode(0, index));
-        result.add(new MapRoomNode(1, index));
-        mrn = new MapRoomNode(2, index);
-        mrn.room = roomOne;
-        result.add(mrn);
-        result.add(new MapRoomNode(3, index));
-        mrn = new MapRoomNode(4, index);
-        mrn.room = roomTwo;
-        result.add(mrn);
-        result.add(new MapRoomNode(5, index));
-        result.add(new MapRoomNode(6, index));
-
-        linkNonMonsterAreas(result);
-
-        return result;
     }
 
     private ArrayList<MapRoomNode> singleNodeArea(AbstractRoom room, int index) {
