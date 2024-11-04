@@ -2,12 +2,14 @@ package pokeregions.dungeons;
 
 import actlikeit.dungeons.CustomDungeon;
 import pokeregions.PokemonRegions;
+import pokeregions.monsters.act1.enemies.DragoniteEnemy;
 import pokeregions.monsters.act1.enemies.MewtwoEnemy;
 import pokeregions.monsters.act2.enemies.HoOhEnemy;
 import pokeregions.monsters.act2.enemies.LugiaEnemy;
 import pokeregions.monsters.act2.enemies.RaikouEnemy;
 import pokeregions.monsters.act3.enemies.GroudonEnemy;
 import pokeregions.monsters.act3.enemies.KyogreEnemy;
+import pokeregions.monsters.act3.enemies.rayquaza.RayquazaEnemy;
 import pokeregions.monsters.act4.GiratinaEnemy;
 import pokeregions.scenes.PokemonScene;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -55,9 +57,7 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OceanicMuseum.ogg"));
             } else if (bossKey.equals(MewtwoEnemy.ID) || bossKey.equals(GroudonEnemy.ID) || bossKey.equals(HoOhEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OldaleTown.ogg"));
-            } else if (bossKey.equals(GiratinaEnemy.ID)){
-                this.setMainMusic(PokemonRegions.makeMusicPath("LavenderTown.ogg"));
-            } else {
+            } else if (bossKey.equals(DragoniteEnemy.ID) || bossKey.equals(LugiaEnemy.ID) || bossKey.equals(RayquazaEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("Littleroot.ogg"));
             }
         }

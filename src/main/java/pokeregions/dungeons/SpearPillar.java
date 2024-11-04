@@ -29,7 +29,6 @@ public class SpearPillar extends AbstractPokemonRegionDungeon {
 
     public SpearPillar() {
         super(NAME, ID, "images/ui/event/panel.png", false, 2, 12, 10);
-        this.addTempMusic("LavenderTown", PokemonRegions.makeMusicPath("LavenderTown.ogg"));
         this.addTempMusic("Giratina", PokemonRegions.makeMusicPath("Giratina.ogg"));
         this.addTempMusic("DialgaPalkia", PokemonRegions.makeMusicPath("DialgaPalkia.ogg"));
     }
