@@ -20,7 +20,7 @@ public class Venusaur extends AbstractAllyPokemonCard {
     public static final int MOVE_2_DEBUFF = 1;
     public static final int MOVE_1_STAMINA_COST = 0;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 6;
+    public static final int MAX_STAMINA = 5;
 
     public Venusaur() {
         super(ID, CardRarity.RARE);
