@@ -59,6 +59,8 @@ public class AbstractPokemonRegionDungeon extends CustomDungeon {
                 this.setMainMusic(PokemonRegions.makeMusicPath("OldaleTown.ogg"));
             } else if (bossKey.equals(DragoniteEnemy.ID) || bossKey.equals(LugiaEnemy.ID) || bossKey.equals(RayquazaEnemy.ID)) {
                 this.setMainMusic(PokemonRegions.makeMusicPath("Littleroot.ogg"));
+            } else if (bossKey.equals(GiratinaEnemy.ID)) {
+                this.setMainMusic(PokemonRegions.makeMusicPath("Calm.ogg"));
             }
         }
     }
