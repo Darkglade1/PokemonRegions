@@ -12,7 +12,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Scizor extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Scizor.class.getSimpleName());
     public static final int MOVE_1_DAMAGE = 9;
-    public static final int MOVE_1_EFFECT = 50;
+    public static final int MOVE_1_EFFECT = 100;
     public static final int MOVE_2_DAMAGE = 4;
 
     public static final int MOVE_1_STAMINA_COST = 1;
