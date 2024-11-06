@@ -28,10 +28,6 @@ public class Dugtrio extends AbstractAllyPokemonCard {
         initializeDescriptionFromMoves();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act1.allyPokemon.Dugtrio(x, y, this);

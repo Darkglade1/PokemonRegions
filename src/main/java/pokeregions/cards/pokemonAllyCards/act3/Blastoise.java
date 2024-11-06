@@ -33,10 +33,6 @@ public class Blastoise extends AbstractAllyPokemonCard {
         initializeDescriptionFromMoves();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
-    }
-
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         return getStarterKeyword();

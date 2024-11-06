@@ -29,9 +29,6 @@ public class Trapinch extends AbstractAllyPokemonCard {
         initializeDescriptionFromMoves();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act3.allyPokemon.Trapinch(x, y, this);

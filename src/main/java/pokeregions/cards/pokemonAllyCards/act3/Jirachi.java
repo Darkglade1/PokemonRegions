@@ -30,10 +30,6 @@ public class Jirachi extends AbstractAllyPokemonCard {
         this.cardsToPreview = new Wish();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act3.allyPokemon.Jirachi(x, y, this);

@@ -1,6 +1,8 @@
 package pokeregions.cards;
 
 import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.PokemonRegions;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.patches.TypeOverridePatch;
@@ -87,4 +89,8 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     }
 
     public abstract AbstractPokemonAlly getAssociatedPokemon(float x, float y);
+
+    public void use(AbstractPlayer p, AbstractMonster m) {
+
+    }
 }

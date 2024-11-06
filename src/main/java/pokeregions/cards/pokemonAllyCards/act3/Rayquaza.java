@@ -29,9 +29,6 @@ public class Rayquaza extends AbstractAllyPokemonCard {
         initializeDescriptionFromMoves();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act3.allyPokemon.Rayquaza(x, y, this);

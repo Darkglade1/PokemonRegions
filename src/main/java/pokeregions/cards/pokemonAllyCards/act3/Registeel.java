@@ -28,10 +28,6 @@ public class Registeel extends AbstractAllyPokemonCard {
         initializeDescriptionFromMoves();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act3.allyPokemon.Registeel(x, y, this);

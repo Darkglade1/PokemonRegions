@@ -28,9 +28,6 @@ public class Magikarp extends AbstractAllyPokemonCard {
         this.cardsToPreview = new Gyarados();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act1.allyPokemon.Magikarp(x, y, this);

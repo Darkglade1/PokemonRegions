@@ -38,9 +38,6 @@ public class Bulbasaur extends AbstractAllyPokemonCard {
         return getStarterKeyword();
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new pokeregions.monsters.act1.allyPokemon.Bulbasaur(x, y, this);
