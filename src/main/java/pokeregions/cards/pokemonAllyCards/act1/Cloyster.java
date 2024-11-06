@@ -3,8 +3,7 @@ package pokeregions.cards.pokemonAllyCards.act1;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import pokeregions.monsters.act1.allyPokemon.CloysterAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -30,6 +29,6 @@ public class Cloyster extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Cloyster(x, y, this);
+        return new CloysterAlly(x, y, this);
     }
 }

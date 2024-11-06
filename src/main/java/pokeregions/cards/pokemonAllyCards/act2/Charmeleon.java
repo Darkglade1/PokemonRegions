@@ -2,10 +2,9 @@ package pokeregions.cards.pokemonAllyCards.act2;
 
 import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act2.allyPokemon.CharmeleonAlly;
 import pokeregions.util.Tags;
 
 import java.util.List;
@@ -40,6 +39,6 @@ public class Charmeleon extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act2.allyPokemon.Charmeleon(x, y, this);
+        return new CharmeleonAlly(x, y, this);
     }
 }

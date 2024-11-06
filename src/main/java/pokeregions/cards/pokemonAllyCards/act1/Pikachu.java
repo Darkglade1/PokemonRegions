@@ -1,10 +1,9 @@
 package pokeregions.cards.pokemonAllyCards.act1;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act1.allyPokemon.PikachuAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -30,6 +29,6 @@ public class Pikachu extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Pikachu(x, y, this);
+        return new PikachuAlly(x, y, this);
     }
 }

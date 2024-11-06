@@ -3,8 +3,7 @@ package pokeregions.cards.pokemonAllyCards.act1;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import pokeregions.monsters.act1.allyPokemon.RattataAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -31,6 +30,6 @@ public class Rattata extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Rattata(x, y, this);
+        return new RattataAlly(x, y, this);
     }
 }

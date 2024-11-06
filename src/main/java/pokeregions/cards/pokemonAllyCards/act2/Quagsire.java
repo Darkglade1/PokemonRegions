@@ -1,10 +1,9 @@
 package pokeregions.cards.pokemonAllyCards.act2;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act2.allyPokemon.QuagsireAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -29,6 +28,6 @@ public class Quagsire extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act2.allyPokemon.Quagsire(x, y, this);
+        return new QuagsireAlly(x, y, this);
     }
 }

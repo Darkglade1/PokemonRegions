@@ -3,7 +3,7 @@ package pokeregions.actions;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.cards.pokemonAllyCards.act1.Gyarados;
 import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.monsters.act1.allyPokemon.Magikarp;
+import pokeregions.monsters.act1.allyPokemon.MagikarpAlly;
 import pokeregions.patches.PlayerSpireFields;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
@@ -20,9 +20,9 @@ import static pokeregions.util.Wiz.atb;
 public class MagikarpDamageAction extends AbstractGameAction {
     private final DamageInfo info;
     private final AbstractCard pokemonCard;
-    private Magikarp magikarp;
+    private MagikarpAlly magikarp;
 
-    public MagikarpDamageAction(AbstractCreature target, DamageInfo info, AbstractCard pokemonCard, Magikarp magikarp) {
+    public MagikarpDamageAction(AbstractCreature target, DamageInfo info, AbstractCard pokemonCard, MagikarpAlly magikarp) {
         this.info = info;
         this.setValues(target, info);
         this.actionType = ActionType.DAMAGE;

@@ -6,8 +6,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.monsters.act2.allyPokemon.Steelix;
-import pokeregions.monsters.act3.allyPokemon.Aggron;
+import pokeregions.monsters.act2.allyPokemon.SteelixAlly;
+import pokeregions.monsters.act3.allyPokemon.AggronAlly;
 
 import static pokeregions.util.Wiz.adp;
 
@@ -20,7 +20,7 @@ public class AllyPokemonBlockPatch {
     @SpirePrefixPatch()
     public static SpireReturn<Void> StopPokemonBlock(GainBlockAction instance) {
         AbstractPokemonAlly activePokemon = PlayerSpireFields.activePokemon.get(adp());
-        if (activePokemon instanceof Aggron || activePokemon instanceof Steelix) {
+        if (activePokemon instanceof AggronAlly || activePokemon instanceof SteelixAlly) {
             AbstractDungeon.onModifyPower();
         }
         if (instance.target instanceof AbstractPokemonAlly) {

@@ -3,8 +3,7 @@ package pokeregions.cards.pokemonAllyCards.act1;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import pokeregions.monsters.act1.allyPokemon.GyaradosAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -30,6 +29,6 @@ public class Gyarados extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Gyarados(x, y, this);
+        return new GyaradosAlly(x, y, this);
     }
 }

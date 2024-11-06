@@ -1,10 +1,9 @@
 package pokeregions.cards.pokemonAllyCards.act1;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act1.allyPokemon.AlakazamAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -32,6 +31,6 @@ public class Alakazam extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Alakazam(x, y, this);
+        return new AlakazamAlly(x, y, this);
     }
 }

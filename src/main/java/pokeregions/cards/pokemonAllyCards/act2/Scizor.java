@@ -1,10 +1,9 @@
 package pokeregions.cards.pokemonAllyCards.act2;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act2.allyPokemon.ScizorAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -31,6 +30,6 @@ public class Scizor extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act2.allyPokemon.Scizor(x, y, this);
+        return new ScizorAlly(x, y, this);
     }
 }

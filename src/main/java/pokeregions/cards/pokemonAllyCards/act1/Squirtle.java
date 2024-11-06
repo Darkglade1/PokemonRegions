@@ -4,9 +4,8 @@ import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act1.allyPokemon.SquirtleAlly;
 import pokeregions.util.Tags;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.List;
 
@@ -39,6 +38,6 @@ public class Squirtle extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Squirtle(x, y, this);
+        return new SquirtleAlly(x, y, this);
     }
 }

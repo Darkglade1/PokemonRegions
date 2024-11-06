@@ -5,8 +5,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.monsters.act2.allyPokemon.Scizor;
-import pokeregions.monsters.act2.allyPokemon.Tyranitar;
+import pokeregions.monsters.act2.allyPokemon.ScizorAlly;
+import pokeregions.monsters.act2.allyPokemon.TyranitarAlly;
 
 import static pokeregions.util.Wiz.adp;
 
@@ -19,7 +19,7 @@ public class UseCardActionPatch {
     @SpirePostfixPatch()
     public static void applyPowersForPokemon(UseCardAction instance) {
         AbstractPokemonAlly activePokemon = PlayerSpireFields.activePokemon.get(adp());
-        if (activePokemon instanceof Scizor || activePokemon instanceof Tyranitar) {
+        if (activePokemon instanceof ScizorAlly || activePokemon instanceof TyranitarAlly) {
             AbstractDungeon.onModifyPower();
         }
     }

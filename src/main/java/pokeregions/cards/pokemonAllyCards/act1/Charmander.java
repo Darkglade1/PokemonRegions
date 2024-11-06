@@ -4,9 +4,8 @@ import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act1.allyPokemon.CharmanderAlly;
 import pokeregions.util.Tags;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.List;
 
@@ -40,6 +39,6 @@ public class Charmander extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act1.allyPokemon.Charmander(x, y, this);
+        return new CharmanderAlly(x, y, this);
     }
 }

@@ -1,10 +1,9 @@
 package pokeregions.cards.pokemonAllyCards.act4;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act4.allyPokemon.PalkiaAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -28,6 +27,6 @@ public class Palkia extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act4.allyPokemon.Palkia(x, y, this);
+        return new PalkiaAlly(x, y, this);
     }
 }

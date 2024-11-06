@@ -2,10 +2,9 @@ package pokeregions.cards.pokemonAllyCards.act3;
 
 import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act3.allyPokemon.BlastoiseAlly;
 import pokeregions.util.Tags;
 
 import java.util.List;
@@ -40,6 +39,6 @@ public class Blastoise extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act3.allyPokemon.Blastoise(x, y, this);
+        return new BlastoiseAlly(x, y, this);
     }
 }

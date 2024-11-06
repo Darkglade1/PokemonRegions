@@ -1,10 +1,9 @@
 package pokeregions.cards.pokemonAllyCards.act3;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.monsters.act3.allyPokemon.FlygonAlly;
 
 import static pokeregions.PokemonRegions.makeID;
 
@@ -30,6 +29,6 @@ public class Flygon extends AbstractAllyPokemonCard {
 
     @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
-        return new pokeregions.monsters.act3.allyPokemon.Flygon(x, y, this);
+        return new FlygonAlly(x, y, this);
     }
 }

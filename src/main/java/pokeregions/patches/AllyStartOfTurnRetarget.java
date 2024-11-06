@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.act1.enemies.DiglettEnemy;
-import pokeregions.monsters.act2.allyPokemon.Scizor;
+import pokeregions.monsters.act2.allyPokemon.ScizorAlly;
 import pokeregions.util.Wiz;
 
 import static pokeregions.util.Wiz.adp;
@@ -47,7 +47,7 @@ public class AllyStartOfTurnRetarget {
                         }
                     });
                 }
-                if (activePokemon instanceof Scizor) {
+                if (activePokemon instanceof ScizorAlly) {
                     AbstractDungeon.onModifyPower();
                 }
             }
