@@ -159,6 +159,9 @@ public class PokemonRegions implements
     public static final String NASTY_PLOT = makeUIPath("Nasty.png");
     public static Texture NASTY_PLOT_TEXTURE;
 
+    public static final String ARTIFACT = makeUIPath("Artifact.png");
+    public static Texture ARTIFACT_TEXTURE;
+
     public static final String HEAL = makeUIPath("Heal.png");
     public static Texture HEAL_TEXTURE;
 
@@ -287,6 +290,7 @@ public class PokemonRegions implements
         THORNS_TEXTURE = TexLoader.getTexture(THORNS);
         REGEN_TEXTURE = TexLoader.getTexture(REGEN);
         NASTY_PLOT_TEXTURE = TexLoader.getTexture(NASTY_PLOT);
+        ARTIFACT_TEXTURE = TexLoader.getTexture(ARTIFACT);
 
         HEAL_TEXTURE = TexLoader.getTexture(HEAL);
         BLOCK_TEXTURE = TexLoader.getTexture(BLOCK);

@@ -17,10 +17,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.ScoreBonusStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.NoBlockPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 import com.megacrit.cardcrawl.vfx.combat.ViceCrushEffect;
 import pokeregions.BetterSpriterAnimation;
@@ -49,13 +46,16 @@ public class GiratinaEnemy extends AbstractPokemonMonster
     public static final byte NASTY_PLOT = 2;
     public static final byte SHADOW_FORCE = 3;
     public static final byte POLTERGEIST = 4;
+    public static final byte SHADOW_SNEAK = 5;
 
     public final int STATUS = calcAscensionSpecial(2);
-    public final int BUFF = calcAscensionSpecialSmall(5);
+    public final int BUFF = 5;
+    public final int ARTIFACT = calcAscensionSpecial(1);
     public final int DEBUFF = 1;
     public final int STR = calcAscensionSpecial(1);
     public final int POLTERGEIST_HITS = 5;
     public boolean inDistortionWorld = false;
+    private boolean canUseDebuff = true;
 
     public final int HP_THRESHOLD = 350;
     public DistortionLeyline leyline1;
@@ -77,6 +77,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
         }
         addMove(HEX, Intent.STRONG_DEBUFF);
         addMove(SHADOW_CLAW, Intent.ATTACK, calcAscensionDamage(33));
+        addMove(SHADOW_SNEAK, Intent.ATTACK_DEBUFF, calcAscensionDamage(22));
         addMove(NASTY_PLOT, Intent.BUFF);
         addMove(SHADOW_FORCE, Intent.ATTACK_DEBUFF, calcAscensionDamage(40));
         addMove(POLTERGEIST, Intent.ATTACK_BUFF, calcAscensionDamage(10), POLTERGEIST_HITS);
@@ -107,6 +108,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
                 applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
                 applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
                 intoDrawMo(new Wound(), STATUS);
+                canUseDebuff = false;
                 break;
             }
             case SHADOW_CLAW: {
@@ -114,8 +116,16 @@ public class GiratinaEnemy extends AbstractPokemonMonster
                 dmg(adp(), info, AbstractGameAction.AttackEffect.SLASH_HEAVY);
                 break;
             }
+            case SHADOW_SNEAK: {
+                useFastAttackAnimation();
+                dmg(adp(), info, AbstractGameAction.AttackEffect.POISON);
+                applyToTarget(adp(), this, new VulnerablePower(adp(), DEBUFF, true));
+                applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
+                break;
+            }
             case NASTY_PLOT: {
                 applyToTarget(this, this, new NastyPlot(this, BUFF));
+                applyToTarget(this, this, new ArtifactPower(this, ARTIFACT));
                 break;
             }
             case SHADOW_FORCE: {
@@ -164,6 +174,7 @@ public class GiratinaEnemy extends AbstractPokemonMonster
         atb(new RemoveSpecificPowerAction(this, this, DistortionWorld.POWER_ID));
         inDistortionWorld = false;
         applyToTarget(this, this, new LostInDistortion(this, HP_THRESHOLD));
+        canUseDebuff = true;
         rollMove();
         createIntent();
     }
@@ -177,12 +188,16 @@ public class GiratinaEnemy extends AbstractPokemonMonster
                 setMoveShortcut(POLTERGEIST, MOVES[POLTERGEIST]);
             }
         } else {
-            if (this.lastMove(HEX)) {
+            if (this.lastMove(HEX) || this.lastMove(SHADOW_SNEAK)) {
                 setMoveShortcut(SHADOW_CLAW, MOVES[SHADOW_CLAW]);
             } else if (this.lastMove(SHADOW_CLAW)) {
                 setMoveShortcut(NASTY_PLOT, MOVES[NASTY_PLOT]);
             } else {
-                setMoveShortcut(HEX, MOVES[HEX]);
+                if (canUseDebuff) {
+                    setMoveShortcut(HEX, MOVES[HEX]);
+                } else {
+                    setMoveShortcut(SHADOW_SNEAK, MOVES[SHADOW_SNEAK]);
+                }
             }
         }
         super.postGetMove();
@@ -215,9 +230,18 @@ public class GiratinaEnemy extends AbstractPokemonMonster
                 details.add(statusDetail);
                 break;
             }
+            case SHADOW_SNEAK: {
+                Details powerDetail = new Details(this, DEBUFF, VULNERABLE_TEXTURE);
+                details.add(powerDetail);
+                Details powerDetail2 = new Details(this, DEBUFF, WEAK_TEXTURE);
+                details.add(powerDetail2);
+                break;
+            }
             case NASTY_PLOT: {
                 Details powerDetail = new Details(this, BUFF, NASTY_PLOT_TEXTURE);
                 details.add(powerDetail);
+                Details powerDetail2 = new Details(this, ARTIFACT, ARTIFACT_TEXTURE);
+                details.add(powerDetail2);
                 break;
             }
             case SHADOW_FORCE: {
