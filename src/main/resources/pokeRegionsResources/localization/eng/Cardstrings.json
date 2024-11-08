@@ -658,12 +658,11 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Protect[]",
-      "[#FFA500]Rock[] [#FFA500]Slide[]",
+      "[#FFA500]Rock[] [#FFA500]Barrier[]",
       "You gain ",
       " Block.",
-      "Deal ",
-      " damage to ALL enemies ",
-      " times."
+      "You gain ",
+      " Block next turn."
     ]
   },
   "${ModID}:Latias": {

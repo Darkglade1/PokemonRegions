@@ -1,13 +1,10 @@
 package pokeregions.monsters.act3.allyPokemon;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import pokeregions.BetterSpriterAnimation;
-import pokeregions.CustomIntent.IntentEnums;
 import pokeregions.PokemonRegions;
-import pokeregions.actions.AllyDamageAllEnemiesAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.cards.pokemonAllyCards.act3.Regirock;
 import pokeregions.monsters.AbstractPokemonAlly;
@@ -29,9 +26,9 @@ public class RegirockAlly extends AbstractPokemonAlly
         setStaminaInfo(allyCard);
 
         move1Intent = Intent.DEFEND;
-        move2Intent = IntentEnums.MASS_ATTACK;
+        move2Intent = Intent.DEFEND_BUFF;
         addMove(MOVE_1, move1Intent);
-        addMove(MOVE_2, move2Intent, Regirock.MOVE_2_DAMAGE, Regirock.MOVE_2_HITS);
+        addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
     }
 
@@ -44,10 +41,7 @@ public class RegirockAlly extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                useFastAttackAnimation();
-                for (int i = 0; i < multiplier; i++) {
-                    atb(new AllyDamageAllEnemiesAction(this, calcMassAttack(info), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-                }
+                applyToTarget(adp(), this, new NextTurnBlockPower(adp(), Regirock.MOVE_2_BLOCK));
                 break;
             }
         }
