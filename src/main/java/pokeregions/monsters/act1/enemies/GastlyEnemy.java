@@ -35,7 +35,7 @@ public class GastlyEnemy extends AbstractPokemonMonster
     private static final byte GHOST_PARTY = 2;
 
     public final int DAZED_AMT = calcAscensionSpecial(2);
-    public final int DEBUFF = 1;
+    public final int DEBUFF = calcAscensionSpecial(1);
     public final int INTANGIBLE = 1;
 
     public GastlyEnemy() {
@@ -45,7 +45,7 @@ public class GastlyEnemy extends AbstractPokemonMonster
     public GastlyEnemy(final float x, final float y) {
         super(NAME, ID, 140, 0.0F, 0.0f, 160.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Gastly/Gastly.scml"));
-        setHp(calcAscensionTankiness(38), calcAscensionTankiness(42));
+        setHp(calcAscensionTankiness(36), calcAscensionTankiness(40));
         addMove(LICK, Intent.DEBUFF);
         addMove(SUCKER_PUNCH, Intent.ATTACK_DEBUFF, calcAscensionDamage(6));
         addMove(GHOST_PARTY, Intent.BUFF);

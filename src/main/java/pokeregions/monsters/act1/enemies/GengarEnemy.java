@@ -2,7 +2,6 @@ package pokeregions.monsters.act1.enemies;
 
 import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,7 +15,6 @@ import pokeregions.cards.pokemonAllyCards.act1.Gengar;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.NastyPlot;
 import pokeregions.util.Details;
-import pokeregions.util.TexLoader;
 
 import java.util.ArrayList;
 
@@ -33,7 +31,7 @@ public class GengarEnemy extends AbstractPokemonMonster
     private static final byte NASTY_PLOT = 0;
     private static final byte SHADOW_BALL = 1;
 
-    public final int BUFF_AMT = calcAscensionSpecialSmall(5);
+    public final int BUFF_AMT = calcAscensionSpecial(5);
 
     public GengarEnemy() {
         this(0.0f, 0.0f);
@@ -42,7 +40,7 @@ public class GengarEnemy extends AbstractPokemonMonster
     public GengarEnemy(final float x, final float y) {
         super(NAME, ID, 140, 0.0F, 0.0f, 160.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Gengar/Gengar.scml"));
-        setHp(calcAscensionTankiness(54), calcAscensionTankiness(58));
+        setHp(calcAscensionTankiness(56), calcAscensionTankiness(60));
         addMove(NASTY_PLOT, Intent.BUFF);
         addMove(SHADOW_BALL, Intent.ATTACK, calcAscensionDamage(10));
     }
