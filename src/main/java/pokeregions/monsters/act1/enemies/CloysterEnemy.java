@@ -6,24 +6,18 @@ import com.badlogic.gdx.graphics.Color;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.*;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act1.Cloyster;
-import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.util.Details;
 import pokeregions.vfx.ColoredThrowDaggerEffect;
 import pokeregions.vfx.WaitEffect;
@@ -44,17 +38,10 @@ public class CloysterEnemy extends AbstractPokemonMonster
     private static final byte RAZOR_SHELL = 1;
     private static final byte ICICLE_SPEAR = 2;
 
-    public final int METALLICIZE = 20;
-    public final int METALLICIZE_LOSS = 5;
-    public final int STR = 3;
+    public final int METALLICIZE = 10;
+    public final int STR = calcAscensionSpecialSmall(3);
     public final int DEBUFF = 1;
-    public final int POWER_INITAL_HP_LOSS = 10;
-    public final int HP_LOSS_INCREASE = 5;
-
-    public static final String POWER_ID = makeID("CrackedShell");
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String POWER_NAME = powerStrings.NAME;
-    public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public final int STATUS = calcAscensionSpecial(1);
 
     public CloysterEnemy() {
         this(0.0f, 0.0f);
@@ -63,10 +50,10 @@ public class CloysterEnemy extends AbstractPokemonMonster
     public CloysterEnemy(final float x, final float y) {
         super(NAME, ID, 140, 0.0F, 0, 160.0f, 120.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Cloyster/Cloyster.scml"));
-        setHp(calcAscensionTankiness(80));
+        setHp(calcAscensionTankiness(90));
         addMove(SHELL_SMASH, Intent.BUFF);
-        addMove(RAZOR_SHELL, Intent.ATTACK_DEBUFF, calcAscensionDamage(8));
-        addMove(ICICLE_SPEAR, Intent.ATTACK, calcAscensionDamage(5), 3);
+        addMove(RAZOR_SHELL, Intent.ATTACK_DEBUFF, calcAscensionDamage(9));
+        addMove(ICICLE_SPEAR, Intent.ATTACK, calcAscensionDamage(6), 3);
 
         Player.PlayerListener listener = new PokemonListener(this);
         ((BetterSpriterAnimation)this.animation).myPlayer.addListener(listener);
@@ -84,29 +71,6 @@ public class CloysterEnemy extends AbstractPokemonMonster
         CustomDungeon.playTempMusicInstantly("WildPokemon");
         applyToTarget(this, this, new MetallicizePower(this, METALLICIZE));
         block(this, METALLICIZE);
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, POWER_INITAL_HP_LOSS) {
-            private boolean triggered;
-            @Override
-            public void wasHPLost(DamageInfo info, int damageAmount) {
-                if (info.type == DamageInfo.DamageType.NORMAL && info.owner instanceof AbstractPokemonAlly && damageAmount > 0 && !triggered) {
-                    this.flash();
-                    triggered = true;
-                    atb(new LoseHPAction(CloysterEnemy.this, CloysterEnemy.this, amount, AbstractGameAction.AttackEffect.POISON));
-                    amount += HP_LOSS_INCREASE;
-                    updateDescription();
-                }
-            }
-
-            @Override
-            public void atEndOfRound() {
-                triggered = false;
-            }
-
-            @Override
-            public void updateDescription() {
-                description = POWER_DESCRIPTIONS[0] + amount + POWER_DESCRIPTIONS[1] + HP_LOSS_INCREASE + POWER_DESCRIPTIONS[2];
-            }
-        });
     }
 
     @Override
@@ -119,10 +83,7 @@ public class CloysterEnemy extends AbstractPokemonMonster
         switch (this.nextMove) {
             case SHELL_SMASH: {
                 applyToTarget(this, this, new StrengthPower(this, STR));
-                if (AbstractDungeon.ascensionLevel < 18) {
-                    applyToTarget(this, this, new VulnerablePower(this, 1, true));
-                }
-                atb(new ReducePowerAction(this, this, MetallicizePower.POWER_ID, METALLICIZE_LOSS));
+                applyToTarget(this, this, new VulnerablePower(this, 1, true));
                 break;
             }
             case RAZOR_SHELL: {
@@ -130,6 +91,7 @@ public class CloysterEnemy extends AbstractPokemonMonster
                 dmg(adp(), info, AbstractGameAction.AttackEffect.SLASH_HEAVY);
                 applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
                 applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
+                intoDiscardMo(new Wound(), STATUS);
                 break;
             }
             case ICICLE_SPEAR: {
@@ -164,12 +126,8 @@ public class CloysterEnemy extends AbstractPokemonMonster
             case SHELL_SMASH: {
                 Details powerDetail = new Details(this, STR, STRENGTH_TEXTURE);
                 details.add(powerDetail);
-                if (AbstractDungeon.ascensionLevel < 18) {
-                    Details vulnerableDetail = new Details(this, 1, VULNERABLE_TEXTURE, Details.TargetType.SELF);
-                    details.add(vulnerableDetail);
-                }
-                Details metalDetail = new Details(this, -METALLICIZE_LOSS, METALLICIZE_TEXTURE, Details.TargetType.SELF);
-                details.add(metalDetail);
+                Details vulnerableDetail = new Details(this, 1, VULNERABLE_TEXTURE, Details.TargetType.SELF);
+                details.add(vulnerableDetail);
                 break;
             }
             case RAZOR_SHELL: {
@@ -177,6 +135,8 @@ public class CloysterEnemy extends AbstractPokemonMonster
                 details.add(powerDetail);
                 Details powerDetail2 = new Details(this, DEBUFF, FRAIL_TEXTURE);
                 details.add(powerDetail2);
+                Details statusDetails = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DISCARD_PILE);
+                details.add(statusDetails);
                 break;
             }
         }
