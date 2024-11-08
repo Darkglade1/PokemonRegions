@@ -11,10 +11,6 @@
     "NAME": "沙隐",
     "DESCRIPTIONS": ["这个生物拥有 #y格挡 时，受到的攻击伤害减少 #b", "% 。"]
   },
-  "pokeRegions:CrackedShell": {
-    "NAME": "褪壳",
-    "DESCRIPTIONS": ["当这个生物受到你的 #y宝可梦 未被格挡的攻击伤害时，失去 #b", " 点生命并提高 #b", " 点失去生命的数值。一回合只触发一次。"]
-  },
   "pokeRegions:Outrage": {
     "NAME": "逆鳞",
     "DESCRIPTIONS": ["#y逆鳞 持续 #b", " 回合。当这个生物受到至少 #b", " 点未被格挡的伤害，提高 #y逆鳞 的持续回合数 1 。 在 #y逆鳞 状态下，进攻会更加猛烈。"]

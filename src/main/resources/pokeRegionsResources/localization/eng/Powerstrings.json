@@ -11,10 +11,6 @@
     "NAME": "Sand Veil",
     "DESCRIPTIONS": ["Receives #b", "% less damage from attacks while this creature has #yBlock."]
   },
-  "${ModID}:CrackedShell": {
-    "NAME": "Cracked Shell",
-    "DESCRIPTIONS": ["When this creature receives unblocked attack damage from your #yPokemon, it loses #b", " HP and increases future HP loss by #b", ". Can only trigger once per turn."]
-  },
   "${ModID}:Outrage": {
     "NAME": "Outrage",
     "DESCRIPTIONS": ["#yOutrage lasts for #b", " more turn(s). When this creature receives #b", " more unblocked attack damage, increase #yOutrage's duration by #b1. While #yOutraging, this creature will attack with increasing ferocity."]
