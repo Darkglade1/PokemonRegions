@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Aron extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Aron.class.getSimpleName());
     public static final int MOVE_1_EFFECT = 1;
-    public static final int MOVE_2_BLOCK = 9;
+    public static final int MOVE_2_BLOCK = 10;
     public static final int MOVE_2_BUFF = 2;
 
     public static final int MOVE_1_STAMINA_COST = 1;

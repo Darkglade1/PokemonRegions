@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Kyogre extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Kyogre.class.getSimpleName());
     public static final int MOVE_1_HEAL = 15;
-    public static final int MOVE_2_DEBUFF = 2;
+    public static final int MOVE_2_DEBUFF = 3;
 
     public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;

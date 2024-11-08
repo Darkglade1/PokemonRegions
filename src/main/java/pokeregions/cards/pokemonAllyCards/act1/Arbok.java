@@ -10,12 +10,12 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Arbok extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Arbok.class.getSimpleName());
-    public static final int MOVE_2_DAMAGE = 6;
-    public static final int MOVE_1_TOXIC = 5;
+    public static final int MOVE_2_DAMAGE = 5;
+    public static final int MOVE_1_TOXIC = 8;
     public static final int MOVE_2_WEAK = 2;
-    public static final int MOVE_1_STAMINA_COST = 1;
+    public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;
-    public static final int MAX_STAMINA = 6;
+    public static final int MAX_STAMINA = 5;
 
     public Arbok() {
         super(ID, CardRarity.UNCOMMON);

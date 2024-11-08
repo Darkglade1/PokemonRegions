@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Pikachu extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Pikachu.class.getSimpleName());
-    public static final int MOVE_2_DAMAGE = 6;
+    public static final int MOVE_2_DAMAGE = 5;
     public static final int MOVE_2_DEBUFF = 1;
 
     public static final int MOVE_1_STAMINA_COST = 0;

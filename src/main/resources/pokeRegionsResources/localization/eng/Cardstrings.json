@@ -811,7 +811,7 @@
       " times. Deals 0 damage to enemies without pokeregions:Burn. ",
       "You gain ",
       " Block. Add ",
-      " Burns to your hand."
+      " Burn to your hand."
     ]
   },
   "${ModID}:Steelix": {

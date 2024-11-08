@@ -10,10 +10,10 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Tyranitar extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Tyranitar.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 21;
+    public static final int MOVE_1_DAMAGE = 24;
     public static final int MOVE_1_EFFECT = 3;
-    public static final int MOVE_2_DAMAGE = 8;
-    public static final int MOVE_2_BLOCK = 8;
+    public static final int MOVE_2_DAMAGE = 9;
+    public static final int MOVE_2_BLOCK = 9;
 
     public static final int MOVE_1_STAMINA_COST = 3;
     public static final int MOVE_2_STAMINA_COST = 1;

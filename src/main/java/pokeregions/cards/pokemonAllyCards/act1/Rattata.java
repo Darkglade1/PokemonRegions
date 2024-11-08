@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Rattata extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Rattata.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 8;
+    public static final int MOVE_1_DAMAGE = 9;
     public static final int MOVE_1_DRAW = 1;
     public static final int MOVE_2_BLOCK = 7;
     public static final int MOVE_2_DRAW = 1;

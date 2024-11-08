@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Jirachi extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Jirachi.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 25;
+    public static final int MOVE_1_DAMAGE = 30;
     public static final int MOVE_1_DELAY = 2;
 
     public static final int MOVE_1_STAMINA_COST = 1;

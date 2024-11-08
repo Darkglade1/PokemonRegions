@@ -36,7 +36,7 @@ public class ArbokAlly extends AbstractPokemonAlly
         move2Intent = Intent.ATTACK_DEBUFF;
         addMove(MOVE_1, move1Intent);
         addMove(MOVE_2, move2Intent, Arbok.MOVE_2_DAMAGE);
-        defaultMove = MOVE_1;
+        defaultMove = MOVE_2;
         move1RequiresTarget = true;
         move2RequiresTarget = true;
     }

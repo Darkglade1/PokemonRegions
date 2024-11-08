@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Salamence extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Salamence.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 15;
+    public static final int MOVE_1_DAMAGE = 18;
     public static final int MOVE_2_BUFF = 3;
     public static final int MOVE_2_VIGOR = 3;
 

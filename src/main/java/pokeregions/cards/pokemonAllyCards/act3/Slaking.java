@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Slaking extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Slaking.class.getSimpleName());
     public static final int MOVE_1_EFFECT = 1;
-    public static final int MOVE_2_DAMAGE = 36;
+    public static final int MOVE_2_DAMAGE = 40;
 
     public static final int MOVE_1_STAMINA_COST = 0;
     public static final int MOVE_2_STAMINA_COST = 3;

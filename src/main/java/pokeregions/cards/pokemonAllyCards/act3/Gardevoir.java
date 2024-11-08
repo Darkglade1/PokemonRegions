@@ -11,8 +11,8 @@ import static pokeregions.PokemonRegions.makeID;
 public class Gardevoir extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Gardevoir.class.getSimpleName());
     public static final int MOVE_1_EFFECT = 2;
-    public static final int MOVE_2_DAMAGE = 9;
-    public static final int MOVE_2_EFFECT = 5;
+    public static final int MOVE_2_DAMAGE = 7;
+    public static final int MOVE_2_EFFECT = 7;
 
     public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;
