@@ -21,6 +21,7 @@ import pokeregions.cards.pokemonAllyCards.act3.Flygon;
 import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.monsters.act3.enemies.FlygonEnemy;
 import pokeregions.powers.AbstractLambdaPower;
+import pokeregions.powers.MonsterNextTurnBlockPower;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
 import pokeregions.util.Wiz;
@@ -70,7 +71,7 @@ public class FlygonR extends AbstractPokemonMonster
         switch (this.nextMove) {
             case GUARDIAN_SPIRIT: {
                 for (AbstractMonster mo : Wiz.getEnemies()) {
-                    block(mo, BLOCK);
+                    applyToTarget(mo, this, new MonsterNextTurnBlockPower(mo, BLOCK));
                 }
                 applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0) {
                     private boolean justApplied = true;
