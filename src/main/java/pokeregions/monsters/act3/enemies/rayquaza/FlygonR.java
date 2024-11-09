@@ -55,7 +55,7 @@ public class FlygonR extends AbstractPokemonMonster
         super(NAME, ID, 140, 0.0F, 0, 220.0f, 200.0f, null, x, y);
         this.animation = new BetterSpriterAnimation(makeMonsterPath("Flygon/Flygon.scml"));
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 1.3f);
-        setHp(calcAscensionTankiness(200));
+        setHp(calcAscensionTankiness(250));
         addMove(GUARDIAN_SPIRIT, Intent.DEFEND_BUFF);
         addMove(FRUSTRATION, Intent.ATTACK, calcAscensionDamage(6), 2);
     }

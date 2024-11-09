@@ -539,9 +539,9 @@ public class PokemonRegions implements
         hoenn.addBoss(GroudonEnemy.ID, (BaseMod.GetMonster) GroudonEnemy::new, makeMonsterPath("Groudon/GroudonMap.png"), makeMonsterPath("Groudon/GroudonMapOutline.png"));
         hoenn.addBoss(RayquazaEnemy.ID, "Rayquaza, Dragon Lord", () -> new MonsterGroup(
                 new AbstractMonster[]{
-                        new SalamenceR(-450.0F, 0.0F),
+                        new FlygonR(-450.0F, 150.0F),
                         new RayquazaEnemy(-150.0F, 150.0F),
-                        new FlygonR(150.0F, 150.0F)
+                        new SalamenceR(150.0F, 0.0F)
                 }), makeMonsterPath("Rayquaza/RayquazaMap.png"), makeMonsterPath("Rayquaza/RayquazaMapOutline.png"));
 
         // Elites
