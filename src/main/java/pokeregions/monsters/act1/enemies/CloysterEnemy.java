@@ -38,7 +38,7 @@ public class CloysterEnemy extends AbstractPokemonMonster
     private static final byte RAZOR_SHELL = 1;
     private static final byte ICICLE_SPEAR = 2;
 
-    public final int METALLICIZE = 10;
+    public final int METALLICIZE = calcAscensionTankiness(10);
     public final int STR = calcAscensionSpecialSmall(3);
     public final int DEBUFF = 1;
     public final int STATUS = calcAscensionSpecial(1);

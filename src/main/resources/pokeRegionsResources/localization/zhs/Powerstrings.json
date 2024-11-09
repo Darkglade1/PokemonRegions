@@ -23,17 +23,9 @@
     "NAME": "烧伤",
     "DESCRIPTIONS": ["#y烧伤 的生物受到的攻击伤害增加 #b", " 。"]
   },
-  "pokeRegions:Sturdy": {
-    "NAME": "结实",
-    "DESCRIPTIONS": ["受到的攻击伤害减少 #b", "% 。"]
-  },
-  "pokeRegions:TypeAdvantage": {
-    "NAME": "不完美的盔甲",
-    "DESCRIPTIONS": ["当受到来自你的 #y宝可梦 的攻击后，受到的攻击伤害增加 #b", "% 并且 #y结实 状态无效一回合。 #y结实 状态无效时不会触发。"]
-  },
-  "pokeRegions:SuperEffective": {
-    "NAME": "暴露的弱点",
-    "DESCRIPTIONS": ["受到的攻击伤害增加 #b", "% 并且 #y结实 状态无效。"]
+  "pokeRegions:StealthRock": {
+    "NAME": "隐形岩石",
+    "DESCRIPTIONS": [ "在你的回合结束时，失去 #b", " 点 #y敏捷 。"]
   },
   "pokeRegions:NoGuard": {
     "NAME": "无防守",

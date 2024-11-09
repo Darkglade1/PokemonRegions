@@ -89,7 +89,7 @@
   "${ModID}:GolemEnemy": {
     "MOVES": [
       "Rock Polish",
-      "Smack Down",
+      "Stealth Rock",
       "Earthquake"
     ],
     "NAME": "Golem",

@@ -23,17 +23,9 @@
     "NAME": "Burn",
     "DESCRIPTIONS": ["#yBurned creatures receive #b", " more damage from attacks."]
   },
-  "${ModID}:Sturdy": {
-    "NAME": "Sturdy",
-    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks."]
-  },
-  "${ModID}:TypeAdvantage": {
-    "NAME": "Imperfect Armor",
-    "DESCRIPTIONS": ["After being attacked by your #yPokemon, receives #b", "% more damage from attacks and disables the effect of #ySturdy for #b1 turn. Cannot be triggered while #ySturdy is disabled."]
-  },
-  "${ModID}:SuperEffective": {
-    "NAME": "Exposed Weakness",
-    "DESCRIPTIONS": ["Receives #b", "% more damage from attacks and disables the effect of #ySturdy."]
+  "${ModID}:StealthRock": {
+    "NAME": "Stealth Rock",
+    "DESCRIPTIONS": ["At the end of your turn, lose #b", " #yDexterity."]
   },
   "${ModID}:NoGuard": {
     "NAME": "No Guard",
