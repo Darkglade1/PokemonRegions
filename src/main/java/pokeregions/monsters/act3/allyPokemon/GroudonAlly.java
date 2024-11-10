@@ -1,7 +1,9 @@
 package pokeregions.monsters.act3.allyPokemon;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
@@ -9,10 +11,11 @@ import pokeregions.actions.GroudonExhaustDrawPileAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.cards.pokemonAllyCards.act3.Groudon;
 import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.vfx.PrecipiceBladesEffect;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
-import static pokeregions.util.Wiz.atb;
-import static pokeregions.util.Wiz.dmg;
+import static pokeregions.util.Wiz.*;
+import static pokeregions.util.Wiz.adp;
 
 public class GroudonAlly extends AbstractPokemonAlly
 {
@@ -47,7 +50,14 @@ public class GroudonAlly extends AbstractPokemonAlly
             case MOVE_2: {
                 useFastAttackAnimation();
                 for (int i = 0; i < multiplier; i++) {
-                    dmg(target, info, AbstractGameAction.AttackEffect.SLASH_HEAVY);
+                    if (i == 0) {
+                        atb(new VFXAction(new PrecipiceBladesEffect(target.hb.cX - 60.0F * Settings.scale, target.hb.cY, -500.0f, 45.f), 0.2f));
+                    } else if (i == 1) {
+                        atb(new VFXAction(new PrecipiceBladesEffect(target.hb.cX + 60.0F * Settings.scale, target.hb.cY, 500.0f, -45.f), 0.2f));
+                    } else {
+                        atb(new VFXAction(new PrecipiceBladesEffect(target.hb.cX, target.hb.cY, 0.0f, 0.f), 0.2f));
+                    }
+                    dmg(target, info, AbstractGameAction.AttackEffect.NONE);
                 }
                 break;
             }

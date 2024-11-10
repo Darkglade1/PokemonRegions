@@ -3,9 +3,11 @@ package pokeregions.monsters.act3.enemies;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,6 +21,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.AnimatedSlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.GoldenSlashEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act3.Groudon;
@@ -26,6 +30,7 @@ import pokeregions.monsters.AbstractPokemonMonster;
 import pokeregions.powers.HarshSunlight;
 import pokeregions.util.Details;
 import pokeregions.util.TexLoader;
+import pokeregions.vfx.PrecipiceBladesEffect;
 import pokeregions.vfx.SunBeamEffect;
 import pokeregions.vfx.SunEffect;
 
@@ -90,7 +95,12 @@ public class GroudonEnemy extends AbstractPokemonMonster
             case BLADES: {
                 useFastAttackAnimation();
                 for (int i = 0; i < multiplier; i++) {
-                    dmg(adp(), info, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+                    if (i % 2 == 0) {
+                        atb(new VFXAction(new PrecipiceBladesEffect(adp().hb.cX - 60.0F * Settings.scale, adp().hb.cY, -500.0f, 45.f), 0.2f));
+                    } else {
+                        atb(new VFXAction(new PrecipiceBladesEffect(adp().hb.cX + 60.0F * Settings.scale, adp().hb.cY, 500.0f, -45.f), 0.2f));
+                    }
+                    dmg(adp(), info, AbstractGameAction.AttackEffect.NONE);
                 }
                 break;
             }
