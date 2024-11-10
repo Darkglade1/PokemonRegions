@@ -10,9 +10,9 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Gengar extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Gengar.class.getSimpleName());
-    public static final int MOVE_1_CARDS = 2;
+    public static final int MOVE_1_CARDS = 1;
     public static final int MOVE_2_DAMAGE = 13;
-    public static final int MOVE_1_STAMINA_COST = 1;
+    public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 4;
 
