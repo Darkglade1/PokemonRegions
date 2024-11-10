@@ -2,12 +2,15 @@ package pokeregions.monsters.act1.enemies;
 
 import actlikeit.dungeons.CustomDungeon;
 import basemod.ReflectionHacks;
+import basemod.helpers.VfxBuilder;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -16,6 +19,7 @@ import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act1.Golem;
@@ -28,6 +32,7 @@ import pokeregions.util.Wiz;
 import pokeregions.vfx.WaitEffect;
 
 import java.util.ArrayList;
+import java.util.function.BiFunction;
 
 import static pokeregions.PokemonRegions.*;
 import static pokeregions.util.Wiz.*;
@@ -92,6 +97,47 @@ public class GolemEnemy extends AbstractPokemonMonster
             }
             case STEALTH_ROCK: {
                 useFastAttackAnimation();
+                Texture rock1 = TexLoader.getTexture(makeVfxPath("Rock1.png"));
+                Texture rock2 = TexLoader.getTexture(makeVfxPath("Rock2.png"));
+                Texture rock3 = TexLoader.getTexture(makeVfxPath("Rock3.png"));
+                ArrayList<Texture> rockTextures = new ArrayList<>();
+                rockTextures.add(rock1);
+                rockTextures.add(rock2);
+                rockTextures.add(rock3);
+                float rockDuration = 1.2f;
+                float vfxInternal = 0.3f;
+                int numRocks = 5;
+                float totalDuration = rockDuration + (vfxInternal * numRocks);
+                VfxBuilder builder = new VfxBuilder(rock1, this.hb.cX, this.hb.cY, rockDuration)
+                        .arc(this.hb.cX, this.hb.cY, adp().hb.cX - (100.0f * Settings.scale), adp().hb.cY, 1000.0f * Settings.scale)
+                        .triggerVfxAt(rockDuration, 1, new BiFunction<Float, Float, AbstractGameEffect>() {
+                            @Override
+                            public AbstractGameEffect apply(Float aFloat, Float aFloat2) {
+                                playAudio(ProAudio.ROCK_THUD);
+                                return new VfxBuilder(rock1, adp().hb.cX - (100.0f * Settings.scale), adp().hb.cY, rockDuration).build();
+                            }
+                        });
+                for (int i = 0; i < numRocks; i++) {
+                    Texture chosenRock = rockTextures.get(MathUtils.random(0, 2));
+                    float randX = adp().hb.cX + (MathUtils.random(-250, 250) * Settings.scale);
+                    builder.triggerVfxAt(vfxInternal * (i + 1), 1, new BiFunction<Float, Float, AbstractGameEffect>() {
+                        @Override
+                        public AbstractGameEffect apply(Float aFloat, Float aFloat2) {
+
+                            return new VfxBuilder(chosenRock, GolemEnemy.this.hb.cX, GolemEnemy.this.hb.cY, rockDuration)
+                                    .arc(GolemEnemy.this.hb.cX, GolemEnemy.this.hb.cY, randX, adp().hb.cY, 1000.0f * Settings.scale)
+                                    .triggerVfxAt(rockDuration, 1, new BiFunction<Float, Float, AbstractGameEffect>() {
+                                        @Override
+                                        public AbstractGameEffect apply(Float aFloat, Float aFloat2) {
+                                            playAudio(ProAudio.ROCK_THUD);
+                                            return new VfxBuilder(chosenRock, randX, adp().hb.cY, rockDuration).build();
+                                        }
+                                    }).build();
+                        }
+                    });
+                }
+
+                atb(new VFXAction(builder.build(), totalDuration));
                 applyToTarget(adp(), this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.DEBUFF, false, adp(), DEBUFF) {
 
                     @Override

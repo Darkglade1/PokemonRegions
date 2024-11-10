@@ -12,6 +12,7 @@ public enum ProAudio {
     RAIN,
     MAGIC_BLAST,
     SPATIAL_START,
-    SPATIAL_HIT
+    SPATIAL_HIT,
+    ROCK_THUD
 
 }
