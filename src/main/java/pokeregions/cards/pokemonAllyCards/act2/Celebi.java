@@ -23,6 +23,7 @@ public class Celebi extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2];
         this.move2Description = DESCRIPTIONS[3] + MOVE_2_EFFECT + DESCRIPTIONS[4];
+        move1isLimited = true;
         initializeDescriptionFromMoves();
     }
 

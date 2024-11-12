@@ -34,11 +34,6 @@ public class Charizard extends AbstractAllyPokemonCard {
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        return getStarterKeyword();
-    }
-
-    @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new CharizardAlly(x, y, this);
     }

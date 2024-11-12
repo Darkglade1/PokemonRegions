@@ -2,6 +2,8 @@ package pokeregions.cards;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pokeregions.PokemonRegions;
 import pokeregions.monsters.AbstractPokemonAlly;
@@ -10,10 +12,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import pokeregions.util.Tags;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static pokeregions.PokemonRegions.makeID;
+import static pokeregions.monsters.AbstractPokemonAlly.MOVE_1;
+import static pokeregions.monsters.AbstractPokemonAlly.MOVE_2;
 
 
 public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
@@ -30,6 +36,10 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
     public String move2Name;
     public String move1Description;
     public String move2Description;
+    public boolean move1isLimited = false;
+    public boolean move2isLimited = false;
+    public boolean hasUsedMove1 = false;
+    public boolean hasUsedMove2 = false;
     public boolean overrideWithDescription;
 
     public AbstractAllyPokemonCard(final String cardID, final CardRarity rarity) {
@@ -63,10 +73,48 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
         if (overrideWithDescription) {
             this.rawDescription = cardStrings.DESCRIPTION;
         } else {
-            this.rawDescription = move1Name + " (" + staminaCost1 + ") " + move1Description + " NL " + move2Name + " (" + staminaCost2 + ") " + move2Description;
+            this.rawDescription = getMoveDescription(MOVE_1) + " NL " + getMoveDescription(MOVE_2);
         }
         this.rawDescription += " NL " + currentStamina + "/" + maxStamina + " " + STAMINA_KEYWORD;
         this.initializeDescription();
+    }
+
+    private String getMoveDescription(int move) {
+        String greyColor = "[#808080]";
+        String bracket = "[]";
+        String moveName = "";
+        int staminaCost = 0;
+        String moveDescription = "";
+        boolean moveIsLimited = false;
+        boolean hasUsedMove = false;
+
+        if (move == MOVE_1) {
+            moveName = move1Name;
+            staminaCost = staminaCost1;
+            moveDescription = move1Description;
+            moveIsLimited = move1isLimited;
+            hasUsedMove = hasUsedMove1;
+        }
+        if (move == MOVE_2) {
+            moveName = move2Name;
+            staminaCost = staminaCost2;
+            moveDescription = move2Description;
+            moveIsLimited = move2isLimited;
+            hasUsedMove = hasUsedMove2;
+        }
+
+        String description = moveName + " (" + staminaCost + ") " + moveDescription;
+        if (moveIsLimited) {
+            CardStrings keywordInfo = CardCrawlGame.languagePack.getCardStrings(makeID("LimitedKeyword"));
+            String limited = keywordInfo.NAME + LocalizedStrings.PERIOD;
+            if (hasUsedMove) {
+                limited = greyColor + limited + bracket;
+            } else {
+                limited = "*" + limited;
+            }
+            description += " " + limited;
+        }
+        return description;
     }
 
     public void updateStamina (int newStamina) {
@@ -80,11 +128,19 @@ public abstract class AbstractAllyPokemonCard extends AbstractEasyCard {
         initializeDescriptionFromMoves();
     }
 
-    public ArrayList<TooltipInfo> getStarterKeyword() {
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> info = new ArrayList<>();
-        CardStrings starterInfo = CardCrawlGame.languagePack.getCardStrings(makeID("StarterKeyword"));
-        TooltipInfo tip = new TooltipInfo(starterInfo.NAME, starterInfo.DESCRIPTION);
-        info.add(tip);
+        if (tags.contains(Tags.STARTER_POKEMON)) {
+            CardStrings starterInfo = CardCrawlGame.languagePack.getCardStrings(makeID("StarterKeyword"));
+            TooltipInfo tip = new TooltipInfo(starterInfo.NAME, starterInfo.DESCRIPTION);
+            info.add(tip);
+        }
+        if (move1isLimited || move2isLimited) {
+            CardStrings keywordInfo = CardCrawlGame.languagePack.getCardStrings(makeID("LimitedKeyword"));
+            TooltipInfo tip = new TooltipInfo(keywordInfo.NAME, keywordInfo.DESCRIPTION);
+            info.add(tip);
+        }
         return info;
     }
 

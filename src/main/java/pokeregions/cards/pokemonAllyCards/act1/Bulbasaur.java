@@ -33,11 +33,6 @@ public class Bulbasaur extends AbstractAllyPokemonCard {
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        return getStarterKeyword();
-    }
-
-    @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new BulbasaurAlly(x, y, this);
     }

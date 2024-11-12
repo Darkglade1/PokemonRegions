@@ -24,6 +24,7 @@ public class Jolteon extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2] + MOVE_1_DEX + DESCRIPTIONS[3];
         this.move2Description = DESCRIPTIONS[2] + MOVE_2_ENERGY + DESCRIPTIONS[4];
+        move1isLimited = true;
         initializeDescriptionFromMoves();
     }
 

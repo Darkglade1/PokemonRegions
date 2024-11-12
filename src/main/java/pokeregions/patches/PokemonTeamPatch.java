@@ -81,11 +81,12 @@ public class PokemonTeamPatch {
             for (AbstractCard card : pokemonTeam.group) {
                 if (card instanceof AbstractAllyPokemonCard) {
                     AbstractAllyPokemonCard pokemonCard = (AbstractAllyPokemonCard)card;
+                    pokemonCard.hasUsedMove1 = false;
+                    pokemonCard.hasUsedMove2 = false;
                     if (pokemonCard.hasTag(Tags.STARTER_POKEMON) && pokemonCard.currentStamina <= 0) {
                         pokemonCard.updateStamina(1);
-                        pokemonCard.initializeDescriptionFromMoves();
-                        break;
                     }
+                    pokemonCard.initializeDescriptionFromMoves();
                 }
             }
         }

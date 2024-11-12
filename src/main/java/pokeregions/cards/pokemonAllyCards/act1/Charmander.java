@@ -33,11 +33,6 @@ public class Charmander extends AbstractAllyPokemonCard {
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        return getStarterKeyword();
-    }
-
-    @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new CharmanderAlly(x, y, this);
     }

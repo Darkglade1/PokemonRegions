@@ -25,6 +25,7 @@ public class Gastly extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2] + MOVE_1_DRAW + DESCRIPTIONS[3] + DESCRIPTIONS[4] + MOVE_1_EFFECT + DESCRIPTIONS[5];
         this.move2Description = DESCRIPTIONS[6] + MOVE_2_HP_COST + DESCRIPTIONS[7] + DESCRIPTIONS[8] + MOVE_2_INTANGIBLE + DESCRIPTIONS[9];
+        move2isLimited = true;
         initializeDescriptionFromMoves();
     }
 

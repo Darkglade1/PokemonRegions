@@ -14,7 +14,7 @@ public class Breloom extends AbstractAllyPokemonCard {
     public static final int MOVE_2_DAMAGE = 5;
     public static final int MOVE_2_HITS = 4;
 
-    public static final int MOVE_1_STAMINA_COST = 2;
+    public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 4;
 
@@ -25,6 +25,7 @@ public class Breloom extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2] + MOVE_1_EFFECT + DESCRIPTIONS[3];
         this.move2Description = DESCRIPTIONS[4] + MOVE_2_DAMAGE + DESCRIPTIONS[5] + MOVE_2_HITS + DESCRIPTIONS[6];
+        move1isLimited = true;
         initializeDescriptionFromMoves();
     }
 

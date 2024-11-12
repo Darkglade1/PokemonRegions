@@ -40,6 +40,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     public AbstractMonster target;
     public static final byte MOVE_1 = 0;
     public static final byte MOVE_2 = 1;
+    public static final byte NO_MOVE = 2;
     public byte defaultMove;
     public Intent move1Intent;
     public Intent move2Intent;
@@ -56,14 +57,17 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
+        addMove(NO_MOVE, Intent.NONE);
     }
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY, boolean ignoreBlights) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY, ignoreBlights);
+        addMove(NO_MOVE, Intent.NONE);
     }
 
     public AbstractPokemonAlly(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl);
+        addMove(NO_MOVE, Intent.NONE);
     }
 
     @Override
@@ -84,7 +88,14 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             }
         });
         populateAllyMoves();
-        setDefaultMove();
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                setDefaultMove();
+                createIntent();
+                this.isDone = true;
+            }
+        });
     }
 
     public void populateAllyMoves() {
@@ -158,14 +169,29 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public void setDefaultMove() {
-        atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                setMoveShortcut(defaultMove);
-                createIntent();
-                this.isDone = true;
-            }
-        });
+        boolean move1Available = true;
+        boolean move2Available = true;
+        if (allyCard.move1isLimited && allyCard.hasUsedMove1) {
+            move1Available = false;
+        }
+        if (move1StaminaCost > allyCard.currentStamina) {
+            move1Available = false;
+        }
+        if (allyCard.move2isLimited && allyCard.hasUsedMove2) {
+            move2Available = false;
+        }
+        if (move2StaminaCost > allyCard.currentStamina) {
+            move2Available = false;
+        }
+        if (move1Available && move2Available) {
+            setMoveShortcut(defaultMove);
+        } else if (move1Available) {
+            setMoveShortcut(MOVE_1);
+        } else if (move2Available) {
+            setMoveShortcut(MOVE_2);
+        } else {
+            setMoveShortcut(NO_MOVE);
+        }
     }
 
     @Override
@@ -188,21 +214,24 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public void postTurn() {
-        int staminaChange;
+        int staminaChange = 0;
         if (this.nextMove == MOVE_1) {
+            allyCard.hasUsedMove1 = true;
             staminaChange = -move1StaminaCost;
-        } else {
+        }
+        if (this.nextMove == MOVE_2) {
+            allyCard.hasUsedMove2 = true;
             staminaChange = -move2StaminaCost;
         }
         atb(new UpdateStaminaOnCardAction(this, staminaChange));
         atb(new AbstractGameAction() {
             @Override
             public void update() {
-                if (AbstractPokemonAlly.this.nextMove == MOVE_1 && allyCard.currentStamina < move1StaminaCost) {
-                    setMoveShortcut(defaultMove);
+                if (AbstractPokemonAlly.this.nextMove == MOVE_1 && (allyCard.currentStamina < move1StaminaCost || allyCard.move1isLimited)) {
+                    setDefaultMove();
                 }
-                if (AbstractPokemonAlly.this.nextMove == MOVE_2 && allyCard.currentStamina < move2StaminaCost) {
-                    setMoveShortcut(defaultMove);
+                if (AbstractPokemonAlly.this.nextMove == MOVE_2 && (allyCard.currentStamina < move2StaminaCost || allyCard.move2isLimited)) {
+                    setDefaultMove();
                 }
                 this.isDone = true;
             }
@@ -300,7 +329,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
                     if (this.intent == AbstractMonster.Intent.MAGIC) {
                         intentTip.body = TEXT[11];
                     }
-                    if (this.intent == Intent.UNKNOWN) {
+                    if (this.intent == Intent.UNKNOWN || this.intent == Intent.NONE) {
                         intentTip.body = TEXT[12];
                     }
                 }
@@ -403,10 +432,16 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
     }
 
     public boolean canUseMove1() {
+        if (allyCard.move1isLimited && allyCard.hasUsedMove1) {
+            return false;
+        }
         return allyCard.currentStamina >= this.move1StaminaCost;
     }
 
     public boolean canUseMove2() {
+        if (allyCard.move2isLimited && allyCard.hasUsedMove2) {
+            return false;
+        }
         return allyCard.currentStamina >= this.move2StaminaCost;
     }
 

@@ -23,6 +23,7 @@ public class Quagsire extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2];
         this.move2Description = DESCRIPTIONS[3] + MOVE_2_DAMAGE + DESCRIPTIONS[4] + MOVE_2_EFFECT + DESCRIPTIONS[5];
+        move1isLimited = true;
         initializeDescriptionFromMoves();
     }
 

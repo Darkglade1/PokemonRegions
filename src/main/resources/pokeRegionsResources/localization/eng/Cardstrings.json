@@ -1062,5 +1062,9 @@
     "EXTENDED_DESCRIPTION": [
       "% more damage from your *Pokemon. NL Draw !M! card."
     ]
+  },
+  "${ModID}:LimitedKeyword": {
+    "NAME": "Limited",
+    "DESCRIPTION": "#yLimited moves can only be used once per combat."
   }
 }

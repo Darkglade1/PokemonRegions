@@ -22,6 +22,7 @@ public class Palkia extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2];
         this.move2Description = DESCRIPTIONS[3];
+        move1isLimited = true;
         initializeDescriptionFromMoves();
     }
 

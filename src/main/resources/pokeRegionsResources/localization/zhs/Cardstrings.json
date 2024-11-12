@@ -1062,5 +1062,9 @@
     "EXTENDED_DESCRIPTION": [
       "% 。 NL 抽 !M! 张牌。"
     ]
+  },
+  "${ModID}:LimitedKeyword": {
+    "NAME": "有限的",
+    "DESCRIPTION": "每场战斗中限制动作只能使用一次。"
   }
 }
