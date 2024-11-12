@@ -22,6 +22,7 @@ import pokeregions.actions.SwitchPokemonAction;
 import pokeregions.actions.UpdateStaminaOnCardAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.cards.SicEm;
+import pokeregions.cards.pokemonAllyCards.act1.Mew;
 import pokeregions.util.*;
 
 import java.util.ArrayList;
@@ -222,6 +223,9 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         if (this.nextMove == MOVE_2) {
             allyCard.hasUsedMove2 = true;
             staminaChange = -move2StaminaCost;
+        }
+        if (allyCard instanceof Mew) {
+            ((Mew) allyCard).updateUsedLimitedMoves(this.nextMove);
         }
         atb(new UpdateStaminaOnCardAction(this, staminaChange));
         atb(new AbstractGameAction() {

@@ -5,10 +5,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.UsePreBattleActionAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.cards.pokemonAllyCards.act1.Bulbasaur;
-import pokeregions.cards.pokemonAllyCards.act1.Charmander;
-import pokeregions.cards.pokemonAllyCards.act1.Gyarados;
-import pokeregions.cards.pokemonAllyCards.act1.Squirtle;
+import pokeregions.cards.pokemonAllyCards.act1.*;
 import pokeregions.cards.pokemonAllyCards.act2.Charmeleon;
 import pokeregions.cards.pokemonAllyCards.act2.Ivysaur;
 import pokeregions.cards.pokemonAllyCards.act2.Wartortle;
@@ -83,6 +80,9 @@ public class PokemonTeamPatch {
                     AbstractAllyPokemonCard pokemonCard = (AbstractAllyPokemonCard)card;
                     pokemonCard.hasUsedMove1 = false;
                     pokemonCard.hasUsedMove2 = false;
+                    if (pokemonCard instanceof Mew) {
+                        ((Mew) pokemonCard).resetLimitedTracker();
+                    }
                     if (pokemonCard.hasTag(Tags.STARTER_POKEMON) && pokemonCard.currentStamina <= 0) {
                         pokemonCard.updateStamina(1);
                     }

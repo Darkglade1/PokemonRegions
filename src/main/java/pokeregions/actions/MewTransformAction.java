@@ -1,9 +1,11 @@
 package pokeregions.actions;
 
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.cards.pokemonAllyCards.act1.Mew;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.patches.PlayerSpireFields;
+import pokeregions.powers.AbstractEasyPower;
 import pokeregions.relics.OnPokemonSwitchRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
@@ -57,6 +59,11 @@ public class MewTransformAction extends AbstractGameAction {
                         mewCard.move2Name = pokemon.allyCard.move2Name;
                         mewCard.move1Description = pokemon.allyCard.move1Description;
                         mewCard.move2Description = pokemon.allyCard.move2Description;
+                        mewCard.move1isLimited = pokemon.allyCard.move1isLimited;
+                        mewCard.move2isLimited = pokemon.allyCard.move2isLimited;
+                        if (mewCard instanceof Mew) {
+                            ((Mew) mewCard).setUsedLimitedMoves(pokemon.allyCard);
+                        }
                         pokemon.allyCard = mewCard;
                         pokemon.name = mewCard.name;
                         pokemon.currentHealth = mewCard.currentStamina;
@@ -69,6 +76,11 @@ public class MewTransformAction extends AbstractGameAction {
                         for (AbstractRelic relic : adp().relics) {
                             if (relic instanceof OnPokemonSwitchRelic) {
                                 ((OnPokemonSwitchRelic) relic).onPokemonSwitch(pokemon);
+                            }
+                        }
+                        for (AbstractPower power : adp().powers) {
+                            if (power instanceof AbstractEasyPower) {
+                                ((AbstractEasyPower) power).onPokemonSwitch(pokemon);
                             }
                         }
                     }
