@@ -71,17 +71,19 @@ public class SwitchPokemonAction extends AbstractGameAction {
                         PlayerSpireFields.mostRecentlyUsedPokemonCardID.set(adp(), pokemonCard.cardID);
                         atb(new SpawnMonsterAction(pokemon, false));
                         atb(new UsePreBattleActionAction(pokemon));
-                        for (AbstractRelic relic : adp().relics) {
-                            if (relic instanceof OnPokemonSwitchRelic) {
-                                ((OnPokemonSwitchRelic) relic).onPokemonSwitch(pokemon);
+                        boolean triggerEffects = pokemon.onSwitchIn();
+                        if (triggerEffects) {
+                            for (AbstractRelic relic : adp().relics) {
+                                if (relic instanceof OnPokemonSwitchRelic) {
+                                    ((OnPokemonSwitchRelic) relic).onPokemonSwitch(pokemon);
+                                }
+                            }
+                            for (AbstractPower power : adp().powers) {
+                                if (power instanceof AbstractEasyPower) {
+                                    ((AbstractEasyPower) power).onPokemonSwitch(pokemon);
+                                }
                             }
                         }
-                        for (AbstractPower power : adp().powers) {
-                            if (power instanceof AbstractEasyPower) {
-                                ((AbstractEasyPower) power).onPokemonSwitch(pokemon);
-                            }
-                        }
-                        pokemon.onSwitchIn();
                     }
                 }
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();

@@ -38,7 +38,8 @@ public class MewAlly extends AbstractPokemonAlly
     }
 
     @Override
-    public void onSwitchIn() {
+    public boolean onSwitchIn() {
         atb(new MewTransformAction(allyCard));
+        return false;
     }
 }

@@ -449,8 +449,8 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
         return allyCard.currentStamina >= this.move2StaminaCost;
     }
 
-    public void onSwitchIn() {
-
+    public boolean onSwitchIn() {
+        return true;
     }
     public void setSmartTarget() {
         ArrayList<AbstractMonster> moList = Wiz.getEnemies();
