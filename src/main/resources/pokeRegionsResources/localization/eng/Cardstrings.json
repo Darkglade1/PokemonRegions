@@ -1066,5 +1066,19 @@
   "${ModID}:LimitedKeyword": {
     "NAME": "Limited",
     "DESCRIPTION": "#yLimited moves can only be used once per combat."
+  },
+  "${ModID}:Cyndaquil": {
+    "NAME": "Cyndaquil",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Double[] [#FFA500]Scratch[]",
+      "[#FFA500]Ignite[]",
+      "Deal ",
+      " damage ",
+      " times.",
+      "Apply ",
+      " pokeregions:Burn. Add ",
+      " Burn to your hand."
+    ]
   }
 }
