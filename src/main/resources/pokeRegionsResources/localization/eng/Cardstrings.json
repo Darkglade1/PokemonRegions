@@ -1080,5 +1080,33 @@
       " pokeregions:Burn. Add ",
       " Burn to your hand."
     ]
+  },
+  "${ModID}:Quilava": {
+    "NAME": "Quilava",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Double[] [#FFA500]Scratch[]",
+      "[#FFA500]Ignite[]",
+      "Deal ",
+      " damage ",
+      " times.",
+      "Apply ",
+      " pokeregions:Burn. Add ",
+      " Burn to your hand."
+    ]
+  },
+  "${ModID}:Typhlosion": {
+    "NAME": "Typhlosion",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Double[] [#FFA500]Edge[]",
+      "[#FFA500]Ignite[]",
+      "Deal ",
+      " damage ",
+      " times.",
+      "Apply ",
+      " pokeregions:Burn. Add ",
+      " Burn to your discard pile."
+    ]
   }
 }
