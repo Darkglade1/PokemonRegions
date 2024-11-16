@@ -28,11 +28,6 @@ public class Blastoise extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.WATER;
-    }
-
-    @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new BlastoiseAlly(x, y, this);
     }

@@ -29,11 +29,6 @@ public class Bayleef extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.GRASS;
-    }
-
-    @Override
     public AbstractAllyStarterPokemonCard getNextStage() {
         return new Meganium();
     }

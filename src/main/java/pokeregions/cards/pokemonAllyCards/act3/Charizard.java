@@ -29,11 +29,6 @@ public class Charizard extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.FIRE;
-    }
-
-    @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new CharizardAlly(x, y, this);
     }

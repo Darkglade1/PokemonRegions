@@ -28,11 +28,6 @@ public class Venusaur extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.GRASS;
-    }
-
-    @Override
     public AbstractPokemonAlly getAssociatedPokemon(float x, float y) {
         return new VenusaurAlly(x, y, this);
     }

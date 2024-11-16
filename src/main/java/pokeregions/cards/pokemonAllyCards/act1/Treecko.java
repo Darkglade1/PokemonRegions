@@ -41,11 +41,6 @@ public class Treecko extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.GRASS;
-    }
-
-    @Override
     public AbstractAllyStarterPokemonCard getNextStage() {
         return new Grovyle();
     }

@@ -30,11 +30,6 @@ public class Quilava extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.FIRE;
-    }
-
-    @Override
     public AbstractAllyStarterPokemonCard getNextStage() {
         return new Typhlosion();
     }

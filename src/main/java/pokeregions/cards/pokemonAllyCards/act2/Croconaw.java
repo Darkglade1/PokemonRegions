@@ -29,11 +29,6 @@ public class Croconaw extends AbstractAllyStarterPokemonCard {
     }
 
     @Override
-    public POKEMON_TYPE getType() {
-        return POKEMON_TYPE.WATER;
-    }
-
-    @Override
     public AbstractAllyStarterPokemonCard getNextStage() {
         return new Feraligatr();
     }

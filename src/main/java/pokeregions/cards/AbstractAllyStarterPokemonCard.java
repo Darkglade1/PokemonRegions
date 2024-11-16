@@ -17,12 +17,6 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         tags.add(Tags.STARTER_POKEMON);
     }
 
-    public enum POKEMON_TYPE {
-        GRASS, WATER, FIRE
-    }
-
-    public abstract POKEMON_TYPE getType();
-
     public AbstractAllyStarterPokemonCard getNextStage() {
         return null;
     }
