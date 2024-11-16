@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Lunatone extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Lunatone.class.getSimpleName());
     public static final int MOVE_1_EFFECT = 1;
-    public static final int MOVE_2_EFFECT = 8;
+    public static final int MOVE_2_EFFECT = 9;
 
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 1;
