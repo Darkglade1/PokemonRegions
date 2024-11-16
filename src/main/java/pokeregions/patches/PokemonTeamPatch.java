@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.UsePreBattleActionAction;
 import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.cards.AbstractAllyStarterPokemonCard;
 import pokeregions.cards.pokemonAllyCards.act1.*;
 import pokeregions.cards.pokemonAllyCards.act2.Charmeleon;
 import pokeregions.cards.pokemonAllyCards.act2.Ivysaur;
@@ -100,29 +101,11 @@ public class PokemonTeamPatch {
             ArrayList<AbstractAllyPokemonCard> cardsToRemove = new ArrayList<>();
             ArrayList<AbstractAllyPokemonCard> cardsToAdd = new ArrayList<>();
             for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
-                if (card.hasTag(Tags.STARTER_POKEMON) && card instanceof AbstractAllyPokemonCard) {
-                    AbstractAllyPokemonCard starterCard = (AbstractAllyPokemonCard) card;
-                    AbstractAllyPokemonCard evolvedStarter = null;
-                    cardsToRemove.add(starterCard);
-                    if (card instanceof Charmander && AbstractDungeon.actNum == 2) {
-                        evolvedStarter = new Charmeleon();
-                    }
-                    if (card instanceof Bulbasaur && AbstractDungeon.actNum == 2) {
-                        evolvedStarter = new Ivysaur();
-                    }
-                    if (card instanceof Squirtle && AbstractDungeon.actNum == 2) {
-                        evolvedStarter = new Wartortle();
-                    }
-                    if (card instanceof Charmeleon && AbstractDungeon.actNum == 3) {
-                        evolvedStarter = new Charizard();
-                    }
-                    if (card instanceof Ivysaur && AbstractDungeon.actNum == 3) {
-                        evolvedStarter = new Venusaur();
-                    }
-                    if (card instanceof Wartortle && AbstractDungeon.actNum == 3) {
-                        evolvedStarter = new Blastoise();
-                    }
+                if (card.hasTag(Tags.STARTER_POKEMON) && card instanceof AbstractAllyStarterPokemonCard) {
+                    AbstractAllyStarterPokemonCard starterCard = (AbstractAllyStarterPokemonCard) card;
+                    AbstractAllyStarterPokemonCard evolvedStarter = starterCard.getNextStage();
                     if (evolvedStarter != null) {
+                        cardsToRemove.add(starterCard);
                         evolvedStarter.updateStamina(starterCard.currentStamina);
                         cardsToAdd.add(evolvedStarter);
                     }

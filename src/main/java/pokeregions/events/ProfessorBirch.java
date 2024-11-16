@@ -3,12 +3,9 @@ package pokeregions.events;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
-import pokeregions.cards.pokemonAllyCards.act3.Blastoise;
-import pokeregions.cards.pokemonAllyCards.act3.Charizard;
-import pokeregions.cards.pokemonAllyCards.act3.Venusaur;
+import pokeregions.cards.AbstractAllyStarterPokemonCard;
 
 import static pokeregions.PokemonRegions.makeEventPath;
-import static pokeregions.PokemonRegions.makeMonsterPath;
 
 public class ProfessorBirch extends AbstractProfessorEvent {
 
@@ -17,21 +14,13 @@ public class ProfessorBirch extends AbstractProfessorEvent {
         eventStrings = CardCrawlGame.languagePack.getEventString(ID);
         DESCRIPTIONS = eventStrings.DESCRIPTIONS;
         professor = new BetterSpriterAnimation(makeEventPath("Birch/Birch.scml"));
-        starter1 = new BetterSpriterAnimation(makeMonsterPath("Venusaur/Venusaur.scml"));
-        starter2 = new BetterSpriterAnimation(makeMonsterPath("Blastoise/Blastoise.scml"));
-        starter3 = new BetterSpriterAnimation(makeMonsterPath("Charizard/Charizard.scml"));
+        starterIDs = AbstractAllyStarterPokemonCard.selectStarters(AbstractAllyStarterPokemonCard.getTier3StarterIDsGrass(), AbstractAllyStarterPokemonCard.getTier3StarterIDsWater(), AbstractAllyStarterPokemonCard.getTier3StarterIDsFire());
+        populateStarterAnimations();
         if (!hasStarter) {
             this.talk(DESCRIPTIONS[0]);
         } else {
             this.talk(DESCRIPTIONS[4]);
         }
-    }
-
-    @Override
-    protected void initializeStarterCards() {
-        starter1Card = new Venusaur();
-        starter2Card = new Blastoise();
-        starter3Card = new Charizard();
     }
 
 }

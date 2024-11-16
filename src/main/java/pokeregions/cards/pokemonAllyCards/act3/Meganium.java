@@ -1,15 +1,14 @@
 package pokeregions.cards.pokemonAllyCards.act3;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.cards.AbstractAllyStarterPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
 import pokeregions.monsters.act3.allyPokemon.MeganiumAlly;
-import pokeregions.util.Tags;
 
 import static pokeregions.PokemonRegions.makeID;
 
 @NoPools
-public class Meganium extends AbstractAllyPokemonCard {
+public class Meganium extends AbstractAllyStarterPokemonCard {
     public final static String ID = makeID(Meganium.class.getSimpleName());
     public static final int MOVE_1_DAMAGE = 7;
     public static final int MOVE_2_HP_LOSS = 9;
@@ -21,13 +20,17 @@ public class Meganium extends AbstractAllyPokemonCard {
 
     public Meganium() {
         super(ID, CardRarity.RARE);
-        tags.add(Tags.STARTER_POKEMON);
         this.staminaCost1 = MOVE_1_STAMINA_COST;
         this.staminaCost2 = MOVE_2_STAMINA_COST;
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2] + MOVE_1_DAMAGE + DESCRIPTIONS[3];
         this.move2Description = DESCRIPTIONS[4] + MOVE_2_HP_LOSS + DESCRIPTIONS[5] + MOVE_2_TEMP_HP + DESCRIPTIONS[6] + MOVE_2_HEAL + DESCRIPTIONS[7];
         initializeDescriptionFromMoves();
+    }
+
+    @Override
+    public POKEMON_TYPE getType() {
+        return POKEMON_TYPE.GRASS;
     }
 
     @Override
