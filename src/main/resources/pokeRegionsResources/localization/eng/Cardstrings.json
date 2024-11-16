@@ -1108,5 +1108,40 @@
       " pokeregions:Burn. Add ",
       " Burn to your discard pile."
     ]
+  },
+  "${ModID}:Totodile": {
+    "NAME": "Totodile",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Bite[]",
+      "[#FFA500]Chomp[]",
+      "Deal ",
+      " damage. ",
+      "You gain ",
+      " Block."
+    ]
+  },
+  "${ModID}:Croconaw": {
+    "NAME": "Croconaw",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Bite[]",
+      "[#FFA500]Chomp[]",
+      "Deal ",
+      " damage. ",
+      "You gain ",
+      " Block."
+    ]
+  },
+  "${ModID}:Feraligatr": {
+    "NAME": "Feraligatr",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Bite[]",
+      "[#FFA500]Crunch[]",
+      "Deal ",
+      " damage. ",
+      "You gain Block equal to unblocked damage dealt."
+    ]
   }
 }
