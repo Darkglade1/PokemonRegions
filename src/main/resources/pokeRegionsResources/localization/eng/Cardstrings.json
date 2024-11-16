@@ -1143,5 +1143,45 @@
       " damage. ",
       "You gain Block equal to unblocked damage dealt."
     ]
+  },
+  "${ModID}:Chikorita": {
+    "NAME": "Chikorita",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Vine[] [#FFA500]Whip[]",
+      "[#FFA500]Drain[]",
+      "Deal ",
+      " damage. ",
+      "Enemy loses ",
+      " HP. You gain ",
+      " *Temporary *HP."
+    ]
+  },
+  "${ModID}:Bayleef": {
+    "NAME": "Bayleef",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Vine[] [#FFA500]Whip[]",
+      "[#FFA500]Mega[] [#FFA500]Drain[]",
+      "Deal ",
+      " damage. ",
+      "Enemy loses ",
+      " HP. You gain ",
+      " *Temporary *HP."
+    ]
+  },
+  "${ModID}:Meganium": {
+    "NAME": "Meganium",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Vine[] [#FFA500]Whip[]",
+      "[#FFA500]Giga[] [#FFA500]Drain[]",
+      "Deal ",
+      " damage. ",
+      "Enemy loses ",
+      " HP. You gain ",
+      " *Temporary *HP and heal ",
+      " HP."
+    ]
   }
 }
