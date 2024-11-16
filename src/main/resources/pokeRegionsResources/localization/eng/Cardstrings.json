@@ -1151,7 +1151,7 @@
       "[#FFA500]Vine[] [#FFA500]Whip[]",
       "[#FFA500]Drain[]",
       "Deal ",
-      " damage. ",
+      " damage.",
       "Enemy loses ",
       " HP. You gain ",
       " *Temporary *HP."
@@ -1164,7 +1164,7 @@
       "[#FFA500]Vine[] [#FFA500]Whip[]",
       "[#FFA500]Mega[] [#FFA500]Drain[]",
       "Deal ",
-      " damage. ",
+      " damage.",
       "Enemy loses ",
       " HP. You gain ",
       " *Temporary *HP."
@@ -1177,11 +1177,49 @@
       "[#FFA500]Vine[] [#FFA500]Whip[]",
       "[#FFA500]Giga[] [#FFA500]Drain[]",
       "Deal ",
-      " damage. ",
+      " damage.",
       "Enemy loses ",
       " HP. You gain ",
       " *Temporary *HP and heal ",
       " HP."
+    ]
+  },
+  "${ModID}:Treecko": {
+    "NAME": "Treecko",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Sharp[] [#FFA500]Leaves[]",
+      "[#FFA500]Leafage[]",
+      "Add ",
+      " *Shiv+ with Retain into your hand.",
+      "Deal ",
+      " damage. You gain [E] next turn."
+    ]
+  },
+  "${ModID}:Grovyle": {
+    "NAME": "Grovyle",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Sharp[] [#FFA500]Leaves[]",
+      "[#FFA500]Leaf[] [#FFA500]Blade[]",
+      "Add ",
+      " *Shivs with Retain into your hand.",
+      "Deal ",
+      " damage. You gain [E] and draw ",
+      " card next turn."
+    ]
+  },
+  "${ModID}:Sceptile": {
+    "NAME": "Sceptile",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Sharp[] [#FFA500]Leaves[]",
+      "[#FFA500]Leaf[] [#FFA500]Blade[]",
+      "Add ",
+      " *Shivs+ with Retain into your hand.",
+      "Deal ",
+      " damage. You gain [E] and draw ",
+      " cards next turn."
     ]
   }
 }
