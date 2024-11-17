@@ -49,6 +49,7 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         ArrayList<String> list = new ArrayList<>();
         list.add(Squirtle.ID);
         list.add(Totodile.ID);
+        list.add(Mudkip.ID);
         return list;
     }
 
@@ -56,6 +57,7 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         ArrayList<String> list = new ArrayList<>();
         list.add(Wartortle.ID);
         list.add(Croconaw.ID);
+        list.add(Marshtomp.ID);
         return list;
     }
 
@@ -63,6 +65,7 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         ArrayList<String> list = new ArrayList<>();
         list.add(Blastoise.ID);
         list.add(Feraligatr.ID);
+        list.add(Swampert.ID);
         return list;
     }
 

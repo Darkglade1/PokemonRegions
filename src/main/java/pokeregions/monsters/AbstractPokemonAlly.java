@@ -157,6 +157,7 @@ public abstract class AbstractPokemonAlly extends AbstractPokemonMonster {
             case DEBUFF:
                 return TexLoader.getTexture(makeUIPath("DebuffIcon.png"));
             case DEFEND:
+            case DEFEND_DEBUFF:
                 return TexLoader.getTexture(makeUIPath("BlockIcon.png"));
             case DEFEND_BUFF:
                 return TexLoader.getTexture(makeUIPath("blockBuffIcon.png"));

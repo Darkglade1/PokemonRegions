@@ -1259,5 +1259,44 @@
       "Put ",
       " *Attacks from your draw pile into your hand."
     ]
+  },
+  "${ModID}:Mudkip": {
+    "NAME": "Mudkip",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Mud[] [#FFA500]Shot[]",
+      "[#FFA500]Mud[] [#FFA500]Barrier[]",
+      "Deal ",
+      " damage.",
+      "You gain ",
+      " Block. Apply ",
+      " Weak."
+    ]
+  },
+  "${ModID}:Marshtomp": {
+    "NAME": "Marshtomp",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Mud[] [#FFA500]Shot[]",
+      "[#FFA500]Mud[] [#FFA500]Barrier[]",
+      "Deal ",
+      " damage.",
+      "You gain ",
+      " Block. Apply ",
+      " Weak."
+    ]
+  },
+  "${ModID}:Swampert": {
+    "NAME": "Swampert",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Muddy[] [#FFA500]Water[]",
+      "[#FFA500]Mud[] [#FFA500]Wall[]",
+      "Deal ",
+      " damage.",
+      "You gain ",
+      " Block. Apply ",
+      " Weak."
+    ]
   }
 }
