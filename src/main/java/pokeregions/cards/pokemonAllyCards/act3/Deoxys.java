@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Deoxys extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Deoxys.class.getSimpleName());
-    public static final int MOVE_1_DRAW = 2;
+    public static final int MOVE_1_DRAW = 1;
     public static final int MOVE_2_BLOCK = 9;
 
     public static final int MOVE_1_STAMINA_COST = 1;

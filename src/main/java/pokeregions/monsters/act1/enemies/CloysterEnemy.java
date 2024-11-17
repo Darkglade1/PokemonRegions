@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
@@ -38,10 +39,10 @@ public class CloysterEnemy extends AbstractPokemonMonster
     private static final byte RAZOR_SHELL = 1;
     private static final byte ICICLE_SPEAR = 2;
 
-    public final int METALLICIZE = calcAscensionTankiness(10);
+    public final int METALLICIZE = 10;
     public final int STR = calcAscensionSpecialSmall(3);
     public final int DEBUFF = 1;
-    public final int STATUS = calcAscensionSpecial(1);
+    public final int STATUS = 1;
 
     public CloysterEnemy() {
         this(0.0f, 0.0f);
@@ -91,6 +92,9 @@ public class CloysterEnemy extends AbstractPokemonMonster
                 dmg(adp(), info, AbstractGameAction.AttackEffect.SLASH_HEAVY);
                 applyToTarget(adp(), this, new WeakPower(adp(), DEBUFF, true));
                 applyToTarget(adp(), this, new FrailPower(adp(), DEBUFF, true));
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    intoDrawMo(new Wound(), STATUS);
+                }
                 intoDiscardMo(new Wound(), STATUS);
                 break;
             }
@@ -135,8 +139,12 @@ public class CloysterEnemy extends AbstractPokemonMonster
                 details.add(powerDetail);
                 Details powerDetail2 = new Details(this, DEBUFF, FRAIL_TEXTURE);
                 details.add(powerDetail2);
-                Details statusDetails = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DISCARD_PILE);
-                details.add(statusDetails);
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    Details statusDetails = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DRAW_PILE);
+                    details.add(statusDetails);
+                }
+                Details statusDetails2 = new Details(this, STATUS, WOUND_TEXTURE, Details.TargetType.DISCARD_PILE);
+                details.add(statusDetails2);
                 break;
             }
         }
