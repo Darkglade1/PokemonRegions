@@ -60,7 +60,7 @@ public class PokemonCampfireSleepEffect extends AbstractGameEffect {
             }
 
             AbstractDungeon.player.heal(this.healAmount, false);
-            PokemonTeamButton.teamWideHeal(HealPokemonCampfireOption.STAMINA_HEAL_PERCENT);
+            PokemonTeamButton.teamWideHeal(HealPokemonCampfireOption.STAMINA_HEAL);
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 r.onRest();
             }

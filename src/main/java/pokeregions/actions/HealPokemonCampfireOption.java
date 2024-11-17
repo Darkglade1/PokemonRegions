@@ -18,7 +18,7 @@ public class HealPokemonCampfireOption extends AbstractCampfireOption
     public static final String[] TEXT;
 
     public static final float HEAL_PERCENT = 0.15f;
-    public static final float STAMINA_HEAL_PERCENT = 0.5f;
+    public static final int STAMINA_HEAL = 3;
 
     public HealPokemonCampfireOption() {
         this.label = HealPokemonCampfireOption.TEXT[0];
@@ -29,7 +29,7 @@ public class HealPokemonCampfireOption extends AbstractCampfireOption
         } else {
             this.description = TEXT[1] + (int)(HEAL_PERCENT * 100) + TEXT[2] + healAmt + TEXT[3];
         }
-        this.description += TEXT[4] + STAMINA_HEAL_PERCENT * 100 + TEXT[5];
+        this.description += TEXT[4] + STAMINA_HEAL + TEXT[5];
         this.img = TexLoader.getTexture(makeUIPath("Sleeping.png"));
         this.updateUsability(true);
     }

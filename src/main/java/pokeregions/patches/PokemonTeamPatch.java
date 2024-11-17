@@ -1,29 +1,23 @@
 package pokeregions.patches;
 
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import pokeregions.PokemonRegions;
-import pokeregions.actions.UsePreBattleActionAction;
-import pokeregions.cards.AbstractAllyPokemonCard;
-import pokeregions.cards.AbstractAllyStarterPokemonCard;
-import pokeregions.cards.pokemonAllyCards.act1.*;
-import pokeregions.cards.pokemonAllyCards.act2.Charmeleon;
-import pokeregions.cards.pokemonAllyCards.act2.Ivysaur;
-import pokeregions.cards.pokemonAllyCards.act2.Wartortle;
-import pokeregions.cards.pokemonAllyCards.act3.Blastoise;
-import pokeregions.cards.pokemonAllyCards.act3.Charizard;
-import pokeregions.cards.pokemonAllyCards.act3.Venusaur;
-import pokeregions.dungeons.AbstractPokemonRegionDungeon;
-import pokeregions.monsters.AbstractPokemonAlly;
-import pokeregions.ui.PokemonTeamButton;
-import pokeregions.util.Tags;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import pokeregions.PokemonRegions;
+import pokeregions.actions.UsePreBattleActionAction;
+import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.cards.AbstractAllyStarterPokemonCard;
+import pokeregions.cards.pokemonAllyCards.act1.Mew;
+import pokeregions.dungeons.AbstractPokemonRegionDungeon;
+import pokeregions.monsters.AbstractPokemonAlly;
+import pokeregions.ui.PokemonTeamButton;
+import pokeregions.util.Tags;
 
 import java.util.ArrayList;
 
@@ -97,7 +91,7 @@ public class PokemonTeamPatch {
     public static class DungeonTransitionLogic {
         @SpirePostfixPatch
         public static void Postfix() {
-            PokemonTeamButton.teamWideHeal(0.5f);
+            PokemonTeamButton.teamWideHeal(3);
             ArrayList<AbstractAllyPokemonCard> cardsToRemove = new ArrayList<>();
             ArrayList<AbstractAllyPokemonCard> cardsToAdd = new ArrayList<>();
             for (AbstractCard card : PlayerSpireFields.pokemonTeam.get(adp()).group) {
