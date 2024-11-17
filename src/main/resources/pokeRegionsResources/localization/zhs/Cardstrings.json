@@ -1066,5 +1066,237 @@
   "${ModID}:LimitedKeyword": {
     "NAME": "有限的",
     "DESCRIPTION": "每场战斗中限制动作只能使用一次。"
+  },
+  "${ModID}:Cyndaquil": {
+    "NAME": "火球鼠",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]双刮擦[]",
+      "[#FFA500]点燃[]",
+      "造成  ",
+      " 点伤害 ",
+      " 次。",
+      "给予 ",
+      " 层 pokeregions:烧伤 。 将 ",
+      " 张 *灼伤 加入你的手中。"
+    ]
+  },
+  "${ModID}:Quilava": {
+    "NAME": "火岩鼠",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]双刮擦[]",
+      "[#FFA500]点燃[]",
+      "造成  ",
+      " 点伤害 ",
+      " 次。",
+      "给予 ",
+      " 层 pokeregions:烧伤 。 将 ",
+      " 张 *灼伤 加入你的手中。"
+    ]
+  },
+  "${ModID}:Typhlosion": {
+    "NAME": "火暴兽",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]双刃剑[]",
+      "[#FFA500]点燃[]",
+      "造成  ",
+      " 点伤害 ",
+      " 次。",
+      "给予 ",
+      " 层 pokeregions:烧伤 。 将 ",
+      " 张 *灼伤 放入你的弃牌堆中。"
+    ]
+  },
+  "${ModID}:Totodile": {
+    "NAME": "小锯鳄",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]咬[]",
+      "[#FFA500]咀嚼[]",
+      "造成 ",
+      " 点伤害。 ",
+      "你获得 ",
+      " 点 格挡 。"
+    ]
+  },
+  "${ModID}:Croconaw": {
+    "NAME": "蓝鳄",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]咬[]",
+      "[#FFA500]咀嚼[]",
+      "造成 ",
+      " 点伤害。 ",
+      "你获得 ",
+      " 点 格挡 。"
+    ]
+  },
+  "${ModID}:Feraligatr": {
+    "NAME": "大力鳄",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]咬[]",
+      "[#FFA500]嘎吱嘎吱[]",
+      "造成 ",
+      " 点伤害。 ",
+      "获得与所造成的未被格挡的伤害相等的 格挡 。"
+    ]
+  },
+  "${ModID}:Chikorita": {
+    "NAME": "菊草叶",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]藤鞭[]",
+      "[#FFA500]吸[]",
+      "造成 ",
+      " 点伤害。",
+      "敌人失去 ",
+      " 点生命。你获得 ",
+      " 点 *临时生命 。"
+    ]
+  },
+  "${ModID}:Bayleef": {
+    "NAME": "月桂叶",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]藤鞭[]",
+      "[#FFA500]巨型流失[]",
+      "造成 ",
+      " 点伤害。",
+      "敌人失去 ",
+      " 点生命。你获得 ",
+      " 点 *临时生命 。"
+    ]
+  },
+  "${ModID}:Meganium": {
+    "NAME": "大竺葵",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]藤鞭[]",
+      "[#FFA500]千兆漏极[]",
+      "造成 ",
+      " 点伤害。",
+      "敌人失去 ",
+      " 点生命。你获得 ",
+      " 点 *临时生命 。 你恢复 ",
+      " 点生命。"
+    ]
+  },
+  "${ModID}:Treecko": {
+    "NAME": "木守宫",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]尖叶[]",
+      "[#FFA500]叶状[]",
+      "增加 ",
+      " 张 *小刀+ 到你的手牌。",
+      "造成 ",
+      " 点伤害。在下一回合获得 [E] 。"
+    ]
+  },
+  "${ModID}:Grovyle": {
+    "NAME": "森林蜥蜴",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]尖叶[]",
+      "[#FFA500]叶片[]",
+      "增加 ",
+      " 张 *小刀 到你的手牌。",
+      "造成 ",
+      " 点伤害。在下一回合获得 [E] , 抽 ",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:Sceptile": {
+    "NAME": "蜥蜴王",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]尖叶[]",
+      "[#FFA500]叶片[]",
+      "增加 ",
+      " 张 *小刀+ 到你的手牌。",
+      "造成 ",
+      " 点伤害。在下一回合获得 [E] , 抽 ",
+      " 张牌。"
+    ]
+  },
+  "${ModID}:Torchic": {
+    "NAME": "火稚鸡",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]踢[]",
+      "[#FFA500]耀斑[]",
+      "造成 ",
+      " 点伤害。 ",
+      "随机将你抽牌堆中 ",
+      " 张攻击牌加入你的手牌。"
+    ]
+  },
+  "${ModID}:Combusken": {
+    "NAME": "力壮鸡",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]踢[]",
+      "[#FFA500]耀斑[]",
+      "造成 ",
+      " 点伤害。 ",
+      "随机将你抽牌堆中 ",
+      " 张攻击牌加入你的手牌。"
+    ]
+  },
+  "${ModID}:Blaziken": {
+    "NAME": "火焰鸡",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]低踢[]",
+      "[#FFA500]脾气爆发[]",
+      "造成 ",
+      " 点伤害。 ",
+      "抽 ",
+      " 张牌。",
+      "从抽牌堆中选择 ",
+      " 张攻击牌放入你的手牌。"
+    ]
+  },
+  "${ModID}:Mudkip": {
+    "NAME": "水跃鱼",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]泥弹[]",
+      "[#FFA500]泥障[]",
+      "造成 ",
+      " 点伤害。",
+      "你获得 ",
+      " 点 格挡 。 给予 ",
+      " 层 虚弱 。"
+    ]
+  },
+  "${ModID}:Marshtomp": {
+    "NAME": "沼跃鱼",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]泥弹[]",
+      "[#FFA500]泥障[]",
+      "造成 ",
+      " 点伤害。",
+      "你获得 ",
+      " 点 格挡 。 给予 ",
+      " 层 虚弱 。"
+    ]
+  },
+  "${ModID}:Swampert": {
+    "NAME": "巨沼怪",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]浑水[]",
+      "[#FFA500]泥墙[]",
+      "造成 ",
+      " 点伤害。",
+      "你获得 ",
+      " 点 格挡 。 给予 ",
+      " 层 虚弱 。"
+    ]
   }
 }
