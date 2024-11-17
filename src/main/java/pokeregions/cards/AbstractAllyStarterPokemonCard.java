@@ -70,6 +70,7 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         ArrayList<String> list = new ArrayList<>();
         list.add(Charmander.ID);
         list.add(Cyndaquil.ID);
+        list.add(Torchic.ID);
         return list;
     }
 
@@ -77,6 +78,7 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         ArrayList<String> list = new ArrayList<>();
         list.add(Charmeleon.ID);
         list.add(Quilava.ID);
+        list.add(Combusken.ID);
         return list;
     }
 
@@ -84,6 +86,7 @@ public abstract class AbstractAllyStarterPokemonCard extends AbstractAllyPokemon
         ArrayList<String> list = new ArrayList<>();
         list.add(Charizard.ID);
         list.add(Typhlosion.ID);
+        list.add(Blaziken.ID);
         return list;
     }
 

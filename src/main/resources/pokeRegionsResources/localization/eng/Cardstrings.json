@@ -1221,5 +1221,43 @@
       " damage. You gain [E] and draw ",
       " cards next turn."
     ]
+  },
+  "${ModID}:Torchic": {
+    "NAME": "Torchic",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Kick[]",
+      "[#FFA500]Flare[]",
+      "Deal ",
+      " damage. ",
+      "Put ",
+      " random *Attack from your draw pile into your hand."
+    ]
+  },
+  "${ModID}:Combusken": {
+    "NAME": "Combusken",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Kick[]",
+      "[#FFA500]Flare[]",
+      "Deal ",
+      " damage. ",
+      "Put ",
+      " random *Attacks from your draw pile into your hand."
+    ]
+  },
+  "${ModID}:Blaziken": {
+    "NAME": "Blaziken",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Low[] [#FFA500]Kick[]",
+      "[#FFA500]Temper[] [#FFA500]Flare[]",
+      "Deal ",
+      " damage. ",
+      "Draw ",
+      " card.",
+      "Put ",
+      " *Attacks from your draw pile into your hand."
+    ]
   }
 }
