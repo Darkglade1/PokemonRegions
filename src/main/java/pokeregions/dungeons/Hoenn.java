@@ -22,6 +22,9 @@ public class Hoenn extends AbstractPokemonRegionDungeon {
 
     public Hoenn() {
         super(NAME, ID, "images/ui/event/panel.png", false, 2, 12, 10);
+        this.addTempMusic("RegiTrio", PokemonRegions.makeMusicPath("RegiTrio.ogg"));
+        this.addTempMusic("EliteFour", PokemonRegions.makeMusicPath("EliteFour.ogg"));
+        this.addTempMusic("Deoxys", PokemonRegions.makeMusicPath("Deoxys.ogg"));
         this.onEnterEvent(ProfessorBirch.class);
     }
 

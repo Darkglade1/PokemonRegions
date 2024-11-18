@@ -65,7 +65,7 @@ public class RegisteelEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("WildPokemon");
+        CustomDungeon.playTempMusicInstantly("RegiTrio");
         applyToTarget(this, this, new Taunt(this, false));
     }
 

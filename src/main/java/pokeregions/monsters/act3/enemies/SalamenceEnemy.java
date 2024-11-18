@@ -76,7 +76,7 @@ public class SalamenceEnemy extends AbstractPokemonMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("WildPokemon");
+        CustomDungeon.playTempMusicInstantly("EliteFour");
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, STR, "berserk") {
 
             @Override

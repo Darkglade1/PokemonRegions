@@ -104,7 +104,7 @@ public class DeoxysEnemy extends AbstractMultiIntentMonster
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        CustomDungeon.playTempMusicInstantly("WildPokemon");
+        CustomDungeon.playTempMusicInstantly("Deoxys");
         applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0, "evolve") {
             @Override
             public void onAfterUseCard(AbstractCard card, UseCardAction action) {
