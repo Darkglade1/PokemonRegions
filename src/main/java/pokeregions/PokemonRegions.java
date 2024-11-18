@@ -426,7 +426,10 @@ public class PokemonRegions implements
                 .dungeonID(Kanto.ID)
                 .create());
         BaseMod.addEvent(FuchsiaGym.ID, FuchsiaGym.class, Kanto.ID);
-        BaseMod.addEvent(BerryBush.ID, BerryBush.class, Kanto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(BerryBush.ID, BerryBush.class)
+                .bonusCondition(BerryBush::canSpawn)
+                .dungeonID(Kanto.ID)
+                .create());
         BaseMod.addEvent(SaffronGym.ID, SaffronGym.class, Kanto.ID);
         BaseMod.addEvent(new AddEventParams.Builder(MagikarpSalesman.ID, MagikarpSalesman.class)
                 .bonusCondition(MagikarpSalesman::canSpawn)

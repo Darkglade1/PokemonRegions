@@ -2,7 +2,12 @@ package pokeregions.events.act1;
 
 import basemod.abstracts.events.PhasedEvent;
 import basemod.abstracts.events.phases.TextPhase;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import pokeregions.PokemonRegions;
+import pokeregions.cards.AbstractAllyPokemonCard;
+import pokeregions.patches.PlayerSpireFields;
 import pokeregions.ui.PokemonTeamButton;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -52,5 +57,9 @@ public class BerryBush extends PhasedEvent {
         registerPhase("Yourself", new TextPhase(DESCRIPTIONS[1]).addOption(OPTIONS[6], (t)->this.openMap()));
         registerPhase("Pokemon", new TextPhase(DESCRIPTIONS[2]).addOption(OPTIONS[6], (t)->this.openMap()));
         transitionKey(0);
+    }
+
+    public static boolean canSpawn() {
+        return adp().currentHealth < adp().maxHealth;
     }
 }
