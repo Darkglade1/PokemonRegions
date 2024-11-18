@@ -1231,7 +1231,7 @@
       "Deal ",
       " damage.",
       " Put ",
-      " random *Attack from your draw pile into your hand."
+      " random Attack from your draw pile into your hand."
     ]
   },
   "${ModID}:Combusken": {
@@ -1243,7 +1243,7 @@
       "Deal ",
       " damage.",
       " Put ",
-      " random *Attacks from your draw pile into your hand."
+      " random Attacks from your draw pile into your hand."
     ]
   },
   "${ModID}:Blaziken": {
@@ -1257,7 +1257,7 @@
       " Draw ",
       " card.",
       " Put ",
-      " *Attacks from your draw pile into your hand."
+      " Attacks from your draw pile into your hand."
     ]
   },
   "${ModID}:Mudkip": {
