@@ -1116,8 +1116,8 @@
       "[#FFA500]Bite[]",
       "[#FFA500]Chomp[]",
       "Deal ",
-      " damage. ",
-      "You gain ",
+      " damage.",
+      " You gain ",
       " Block."
     ]
   },
@@ -1128,8 +1128,8 @@
       "[#FFA500]Bite[]",
       "[#FFA500]Chomp[]",
       "Deal ",
-      " damage. ",
-      "You gain ",
+      " damage.",
+      " You gain ",
       " Block."
     ]
   },
@@ -1140,8 +1140,8 @@
       "[#FFA500]Bite[]",
       "[#FFA500]Crunch[]",
       "Deal ",
-      " damage. ",
-      "You gain Block equal to unblocked damage dealt."
+      " damage.",
+      " You gain Block equal to unblocked damage dealt."
     ]
   },
   "${ModID}:Chikorita": {
@@ -1229,8 +1229,8 @@
       "[#FFA500]Kick[]",
       "[#FFA500]Flare[]",
       "Deal ",
-      " damage. ",
-      "Put ",
+      " damage.",
+      " Put ",
       " random *Attack from your draw pile into your hand."
     ]
   },
@@ -1241,8 +1241,8 @@
       "[#FFA500]Kick[]",
       "[#FFA500]Flare[]",
       "Deal ",
-      " damage. ",
-      "Put ",
+      " damage.",
+      " Put ",
       " random *Attacks from your draw pile into your hand."
     ]
   },
@@ -1253,10 +1253,10 @@
       "[#FFA500]Low[] [#FFA500]Kick[]",
       "[#FFA500]Temper[] [#FFA500]Flare[]",
       "Deal ",
-      " damage. ",
-      "Draw ",
+      " damage.",
+      " Draw ",
       " card.",
-      "Put ",
+      " Put ",
       " *Attacks from your draw pile into your hand."
     ]
   },
