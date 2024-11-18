@@ -10,8 +10,8 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Typhlosion extends AbstractAllyStarterPokemonCard {
     public final static String ID = makeID(Typhlosion.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 4;
-    public static final int MOVE_1_HITS = 3;
+    public static final int MOVE_1_DAMAGE = 6;
+    public static final int MOVE_1_HITS = 2;
     public static final int MOVE_2_DEBUFF = 5;
     public static final int MOVE_2_STATUS = 1;
     public static final int MOVE_1_STAMINA_COST = 0;

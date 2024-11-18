@@ -32,7 +32,7 @@ public class CyndaquilAlly extends AbstractPokemonAlly
 
         move1Intent = Intent.ATTACK;
         move2Intent = Intent.DEBUFF;
-        addMove(MOVE_1, move1Intent, Cyndaquil.MOVE_1_DAMAGE, Cyndaquil.MOVE_1_HITS);
+        addMove(MOVE_1, move1Intent, Cyndaquil.MOVE_1_DAMAGE);
         addMove(MOVE_2, move2Intent);
         defaultMove = MOVE_1;
         move1RequiresTarget = true;
@@ -45,13 +45,7 @@ public class CyndaquilAlly extends AbstractPokemonAlly
         switch (this.nextMove) {
             case MOVE_1: {
                 useFastAttackAnimation();
-                for (int i = 0; i < multiplier; i++) {
-                    if (i % 2 == 0) {
-                        dmg(target, info, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-                    } else {
-                        dmg(target, info, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-                    }
-                }
+                dmg(target, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
                 break;
             }
             case MOVE_2: {

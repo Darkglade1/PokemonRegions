@@ -1071,11 +1071,10 @@
     "NAME": "Cyndaquil",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#FFA500]Double[] [#FFA500]Scratch[]",
+      "[#FFA500]Scratch[]",
       "[#FFA500]Ignite[]",
       "Deal ",
-      " damage ",
-      " times.",
+      " damage.",
       "Apply ",
       " pokeregions:Burn. Add ",
       " Burn to your hand."
