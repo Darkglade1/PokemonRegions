@@ -52,7 +52,7 @@
     "NAME": "High Quality Shovel",
     "FLAVOR": "You wonder who keeps leaving all that loot buried underground.",
     "DESCRIPTIONS": [
-      "You can now #yDig for Relics at Rest Sites. The relic will always be Uncommon or Rare."
+      "You can now #yDig for Relics at Rest Sites. The relic will always be Rare. Only usable #b", " times."
     ]
   },
   "${ModID}:Emerald": {

@@ -10,11 +10,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
-import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import pokeregions.relics.EnhancedShovel;
 
-import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.relicRng;
+import static pokeregions.util.Wiz.adp;
 
 public class EnhancedCampfireDigEffect extends AbstractGameEffect {
     private boolean hasDug = false;
@@ -34,9 +35,16 @@ public class EnhancedCampfireDigEffect extends AbstractGameEffect {
             this.hasDug = true;
             CardCrawlGame.sound.play("SHOVEL");
             AbstractDungeon.getCurrRoom().rewards.clear();
-            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(AbstractDungeon.returnRandomRelic(returnRandomEnhancedRelicTier())));
+            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.RARE)));
             AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
             AbstractDungeon.combatRewardScreen.open();
+            AbstractRelic enhancedShovel = adp().getRelic(EnhancedShovel.ID);
+            if (enhancedShovel != null) {
+                enhancedShovel.counter--;
+                if (enhancedShovel.counter <= 0) {
+                    enhancedShovel.usedUp();
+                }
+            }
         }
 
         if (this.duration < 0.0F) {
@@ -45,11 +53,6 @@ public class EnhancedCampfireDigEffect extends AbstractGameEffect {
             AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
         }
 
-    }
-
-    public static AbstractRelic.RelicTier returnRandomEnhancedRelicTier() {
-        int roll = relicRng.random(0, 99);
-        return roll < 66 ? AbstractRelic.RelicTier.UNCOMMON : AbstractRelic.RelicTier.RARE;
     }
 
     private void updateBlackScreenColor() {

@@ -187,7 +187,7 @@
   "${ModID}:EnhancedDigOption": {
     "TEXT": [
       "Enhanced Dig",
-      "Dig up a Relic. It will be Uncommon or Rare."
+      "Dig up a Relic. It will be Rare."
     ]
   },
   "${ModID}:TauntNotice": {
