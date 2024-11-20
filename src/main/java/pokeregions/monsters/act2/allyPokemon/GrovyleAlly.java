@@ -46,8 +46,8 @@ public class GrovyleAlly extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                AbstractCard shiv = Grovyle.getShiv().makeStatEquivalentCopy();
-                makeInHand(shiv, Grovyle.MOVE_1_EFFECT);
+                AbstractCard card = Grovyle.getCard().makeStatEquivalentCopy();
+                makeInHand(card, Grovyle.MOVE_1_EFFECT);
                 break;
             }
             case MOVE_2: {

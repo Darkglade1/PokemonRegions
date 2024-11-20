@@ -1190,7 +1190,7 @@
       "[#FFA500]Sharp[] [#FFA500]Leaves[]",
       "[#FFA500]Leafage[]",
       "Add ",
-      " *Shiv+ with Retain into your hand.",
+      " *Leaf into your hand.",
       "Deal ",
       " damage. You gain [E] next turn."
     ]
@@ -1202,7 +1202,7 @@
       "[#FFA500]Sharp[] [#FFA500]Leaves[]",
       "[#FFA500]Leaf[] [#FFA500]Blade[]",
       "Add ",
-      " *Shivs with Retain into your hand.",
+      " *Leaf+ into your hand.",
       "Deal ",
       " damage. You gain [E] and draw ",
       " card next turn."
@@ -1215,7 +1215,7 @@
       "[#FFA500]Sharp[] [#FFA500]Leaves[]",
       "[#FFA500]Leaf[] [#FFA500]Blade[]",
       "Add ",
-      " *Shivs+ with Retain into your hand.",
+      " *Leaf++ into your hand.",
       "Deal ",
       " damage. You gain [E] and draw ",
       " cards next turn."
@@ -1297,5 +1297,10 @@
       " Block. Apply ",
       " Weak."
     ]
+  },
+  "${ModID}:Leaf": {
+    "NAME": "Leaf",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times."
   }
 }

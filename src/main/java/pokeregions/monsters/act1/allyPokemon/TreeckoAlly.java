@@ -45,8 +45,8 @@ public class TreeckoAlly extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                AbstractCard shiv = Treecko.getShiv().makeStatEquivalentCopy();
-                makeInHand(shiv, Treecko.MOVE_1_EFFECT);
+                AbstractCard card = Treecko.getCard().makeStatEquivalentCopy();
+                makeInHand(card, Treecko.MOVE_1_EFFECT);
                 break;
             }
             case MOVE_2: {

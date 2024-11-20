@@ -45,8 +45,8 @@ public class SceptileAlly extends AbstractPokemonAlly
         super.takeTurn();
         switch (this.nextMove) {
             case MOVE_1: {
-                AbstractCard shiv = Sceptile.getShiv().makeStatEquivalentCopy();
-                makeInHand(shiv, Sceptile.MOVE_1_EFFECT);
+                AbstractCard card = Sceptile.getCard().makeStatEquivalentCopy();
+                makeInHand(card, Sceptile.MOVE_1_EFFECT);
                 break;
             }
             case MOVE_2: {
