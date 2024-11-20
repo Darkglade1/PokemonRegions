@@ -58,6 +58,9 @@ public class JirachiAlly extends AbstractPokemonAlly
                 wishes.add(new BecomeAlmighty());
                 wishes.add(new FameAndFortune());
                 wishes.add(new LiveForever());
+                for (AbstractCard card : wishes) {
+                    card.upgrade();
+                }
                 atb(new ChooseOneAction(wishes));
                 break;
             }

@@ -626,7 +626,7 @@
       "At the end of ",
       " turns, deal ",
       " damage to ALL enemies.",
-      "Trigger the effect of *Wish."
+      "Trigger the effect of *Wish+."
     ]
   },
   "${ModID}:Registeel": {

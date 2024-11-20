@@ -1,6 +1,7 @@
 package pokeregions.cards.pokemonAllyCards.act3;
 
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.purple.Wish;
 import pokeregions.cards.AbstractAllyPokemonCard;
 import pokeregions.monsters.AbstractPokemonAlly;
@@ -27,7 +28,9 @@ public class Jirachi extends AbstractAllyPokemonCard {
         this.move2Description = DESCRIPTIONS[5];
         move2isLimited = true;
         initializeDescriptionFromMoves();
-        this.cardsToPreview = new Wish();
+        AbstractCard card = new Wish();
+        card.upgrade();
+        this.cardsToPreview = card;
     }
 
     @Override
