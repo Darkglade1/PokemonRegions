@@ -1007,7 +1007,7 @@
   },
   "${ModID}:Frozen": {
     "NAME": "Frozen",
-    "DESCRIPTION": "Exhaust !M! card."
+    "DESCRIPTION": "When this card is drawn, reduce its cost by !M! this combat."
   },
   "${ModID}:FightAsOne": {
     "NAME": "Fight as One",
