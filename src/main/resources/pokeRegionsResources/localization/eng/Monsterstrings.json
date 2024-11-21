@@ -478,16 +478,19 @@
     "MOVES": [
       "Sacred Fire",
       "Overheat",
-      "Regenerate"
+      "Summon Spirits"
     ],
     "NAME": "Ho-Oh",
     "DIALOG": [
     ]
   },
-  "${ModID}:PhoenixFeather": {
+  "${ModID}:FlameSpirit": {
     "MOVES": [
+      "Regenerate",
+      "Ember",
+      "Extinguish"
     ],
-    "NAME": "Phoenix Feather",
+    "NAME": "Flame Spirit",
     "DIALOG": [
     ]
   },

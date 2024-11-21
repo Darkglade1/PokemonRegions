@@ -199,10 +199,6 @@
     "NAME": "The Distortion World",
     "DESCRIPTIONS": ["#yImmune to damage. NL When both #yLeylines #yof #yDistortion are destroyed, exit the #yDistortion #yWorld at end of round and uses a #ynon-attacking move next turn."]
   },
-  "${ModID}:PhoenixDown": {
-    "NAME": "Phoenix Down",
-    "DESCRIPTIONS": ["Whenever this creature loses #b", " HP, it spawns a #yFeather."]
-  },
   "${ModID}:ClosedOffHeart": {
     "NAME": "Closed-Off Heart",
     "DESCRIPTIONS": ["While this creature has #yTemporary #yHP, #yyou deal #b", "% less damage with attacks. (Your #yPokemon still deal full damage). NL Every #b", " turns, gains #b", " #yTemporary #yHP."]

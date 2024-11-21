@@ -478,16 +478,19 @@
     "MOVES": [
       "神圣之火",
       "过热",
-      "再生"
+      "召唤灵魂"
     ],
     "NAME": "凤王",
     "DIALOG": [
     ]
   },
-  "${ModID}:PhoenixFeather": {
+  "${ModID}:FlameSpirit": {
     "MOVES": [
+      "再生",
+      "火花",
+      "燃尽"
     ],
-    "NAME": "不死鸟之羽",
+    "NAME": "烈焰精灵",
     "DIALOG": [
     ]
   },

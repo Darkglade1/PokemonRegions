@@ -7,22 +7,18 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import pokeregions.BetterSpriterAnimation;
 import pokeregions.PokemonRegions;
 import pokeregions.actions.UsePreBattleActionAction;
 import pokeregions.cards.pokemonAllyCards.act2.HoOh;
 import pokeregions.monsters.AbstractPokemonMonster;
-import pokeregions.powers.AbstractLambdaPower;
 import pokeregions.powers.Burn;
 import pokeregions.util.Details;
 
@@ -40,19 +36,13 @@ public class HoOhEnemy extends AbstractPokemonMonster
 
     private static final byte SACRED_FIRE = 0;
     private static final byte OVERHEAT = 1;
-    private static final byte REGENERATE = 2;
+    private static final byte SUMMON = 2;
 
     public final int BURN_DEBUFF = calcAscensionSpecial(2);
     public final int STATUS = calcAscensionSpecial(1);
-    public final int REGEN = 10;
-    public final int POWER_TRIGGER = 30;
+    public final int REGEN = calcAscensionSpecial(10);
 
-    private final ArrayList<PhoenixFeather> featherList = new ArrayList<>();
-
-    public static final String POWER_ID = makeID("PhoenixDown");
-    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String POWER_NAME = powerStrings.NAME;
-    public static final String[] POWER_DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private final ArrayList<AbstractMonster> minionList = new ArrayList<>();
 
     public HoOhEnemy() {
         this(100.0f, 0.0f);
@@ -65,8 +55,8 @@ public class HoOhEnemy extends AbstractPokemonMonster
         ((BetterSpriterAnimation)this.animation).myPlayer.setScale(Settings.scale * 2.0f);
         setHp(calcAscensionTankiness(300));
         addMove(SACRED_FIRE, Intent.ATTACK_DEBUFF, calcAscensionDamage(18));
-        addMove(OVERHEAT, Intent.ATTACK_DEBUFF, calcAscensionDamage(7), 3);
-        addMove(REGENERATE, Intent.BUFF);
+        addMove(OVERHEAT, Intent.ATTACK_DEBUFF, calcAscensionDamage(8), 3);
+        addMove(SUMMON, Intent.UNKNOWN);
     }
 
     @Override
@@ -79,27 +69,6 @@ public class HoOhEnemy extends AbstractPokemonMonster
     public void usePreBattleAction() {
         super.usePreBattleAction();
         applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
-        applyToTarget(this, this, new AbstractLambdaPower(POWER_ID, POWER_NAME, AbstractPower.PowerType.BUFF, false, this, 0, "combust") {
-            @Override
-            public int onAttacked(DamageInfo info, int damageAmount) {
-                if (damageAmount > 0) {
-                    int total = damageAmount + this.amount;
-                    int numSpawn = total / POWER_TRIGGER;
-                    int remainder = total % POWER_TRIGGER;
-                    if (numSpawn > 0) {
-                        flash();
-                        summonFeathers(numSpawn);
-                    }
-                    this.amount = remainder;
-                }
-                return damageAmount;
-            }
-
-            @Override
-            public void updateDescription() {
-                description = POWER_DESCRIPTIONS[0] + POWER_TRIGGER + POWER_DESCRIPTIONS[1];
-            }
-        });
         CustomDungeon.playTempMusicInstantly("Lysandre");
     }
 
@@ -125,58 +94,57 @@ public class HoOhEnemy extends AbstractPokemonMonster
                 intoDiscardMo(new com.megacrit.cardcrawl.cards.status.Burn(), STATUS);
                 break;
             }
-            case REGENERATE: {
-                applyToTarget(this, this, new RegenerateMonsterPower(this, REGEN));
+            case SUMMON: {
+                summonMinions(2);
                 break;
             }
         }
         atb(new RollMoveAction(this));
     }
 
-    private void summonFeathers(int amount) {
+    private void summonMinions(int amount) {
         for (int i = 0; i < amount; i++) {
             summon();
         }
     }
 
     private void summon() {
-        for (int i = 0; i < featherList.size(); i++) {
-            PhoenixFeather feather = featherList.get(i);
+        for (int i = 0; i < minionList.size(); i++) {
+            AbstractMonster feather = minionList.get(i);
             if (feather.isDeadOrEscaped()) {
-                feather = new PhoenixFeather(getFeatherXCoord(i), getFeatherYCoord(i), this);
-                featherList.set(i, feather);
+                feather = new FlameSpirit(getMinionXCoord(i), getMinionYCoord(i), this);
+                minionList.set(i, feather);
                 atb(new SpawnMonsterAction(feather, true));
                 atb(new UsePreBattleActionAction(feather));
                 return;
             }
         }
-        PhoenixFeather feather = new PhoenixFeather(getFeatherXCoord(featherList.size()), getFeatherYCoord(featherList.size()), this);
-        featherList.add(feather);
+        FlameSpirit feather = new FlameSpirit(getMinionXCoord(minionList.size()), getMinionYCoord(minionList.size()), this);
+        minionList.add(feather);
         atb(new SpawnMonsterAction(feather, true));
-        atb(new UsePreBattleActionAction(feather));
     }
 
-    private float getFeatherXCoord(int index) {
-        int result = index % 3;
+    private float getMinionXCoord(int index) {
+        int result = index % 2;
         if (result == 0) {
-            return -200.0F;
-        } else if (result == 1) {
-            return -400.0F;
+            return -250.0F;
         } else {
-            return -600.0F;
+            return -500.0F;
         }
     }
 
-    private float getFeatherYCoord(int index) {
-        return (index / 3) * 200.0F;
+    private float getMinionYCoord(int index) {
+        return (index / 2) * 200.0F;
     }
 
     @Override
     protected void getMove(final int num) {
-        if (lastMove(SACRED_FIRE)) {
+        if (firstMove) {
+            setMoveShortcut(SUMMON, MOVES[SUMMON]);
+        } else if (lastMove(SACRED_FIRE)) {
             setMoveShortcut(OVERHEAT, MOVES[OVERHEAT]);
         } else if (lastMove(OVERHEAT)) {
-            setMoveShortcut(REGENERATE, MOVES[REGENERATE]);
+            setMoveShortcut(SUMMON, MOVES[SUMMON]);
         } else {
             setMoveShortcut(SACRED_FIRE, MOVES[SACRED_FIRE]);
         }
@@ -197,8 +165,8 @@ public class HoOhEnemy extends AbstractPokemonMonster
                 details.add(statusDetail);
                 break;
             }
-            case REGENERATE: {
-                Details powerDetail = new Details(this, REGEN, REGEN_TEXTURE);
+            case SUMMON: {
+                Details powerDetail = new Details(this, Details.SUMMON);
                 details.add(powerDetail);
                 break;
             }
@@ -211,7 +179,7 @@ public class HoOhEnemy extends AbstractPokemonMonster
         super.die(triggerRelics);
         onBossVictoryLogic();
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo instanceof PhoenixFeather) {
+            if (mo instanceof FlameSpirit) {
                 if (!mo.isDeadOrEscaped()) {
                     atb(new SuicideAction(mo));
                 }
