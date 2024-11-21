@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Alakazam extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Alakazam.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 7;
+    public static final int MOVE_1_DAMAGE = 6;
     public static final int MOVE_1_DEBUFF = 2;
     public static final int MOVE_2_SCRY = 3;
     public static final int MOVE_2_DRAW = 2;

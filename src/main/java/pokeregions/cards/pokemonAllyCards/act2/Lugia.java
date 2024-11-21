@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Lugia extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Lugia.class.getSimpleName());
     public static final int MOVE_1_DAMAGE = 16;
-    public static final int MOVE_2_EFFECT = 3;
+    public static final int MOVE_2_EFFECT = 4;
 
     public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;

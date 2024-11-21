@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Skarmory extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Skarmory.class.getSimpleName());
-    public static final int MOVE_1_EFFECT = 3;
+    public static final int MOVE_1_EFFECT = 4;
     public static final int MOVE_2_EFFECT = 16;
 
     public static final int MOVE_1_STAMINA_COST = 1;

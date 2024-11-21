@@ -12,7 +12,7 @@ public class Rayquaza extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Rayquaza.class.getSimpleName());
     public static final int MOVE_1_DAMAGE = 20;
     public static final int MOVE_1_DEBUFF = 4;
-    public static final int MOVE_2_EFFECT = 2;
+    public static final int MOVE_2_EFFECT = 3;
 
     public static final int MOVE_1_STAMINA_COST = 2;
     public static final int MOVE_2_STAMINA_COST = 1;

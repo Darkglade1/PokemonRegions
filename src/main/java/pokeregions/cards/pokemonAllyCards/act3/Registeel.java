@@ -11,7 +11,7 @@ import static pokeregions.PokemonRegions.makeID;
 public class Registeel extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Registeel.class.getSimpleName());
     public static final int MOVE_1_BLOCK = 13;
-    public static final int MOVE_2_EFFECT = 7;
+    public static final int MOVE_2_EFFECT = 8;
 
     public static final int MOVE_1_STAMINA_COST = 1;
     public static final int MOVE_2_STAMINA_COST = 2;

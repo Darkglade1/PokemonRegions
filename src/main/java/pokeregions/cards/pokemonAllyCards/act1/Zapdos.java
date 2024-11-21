@@ -10,7 +10,7 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Zapdos extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Zapdos.class.getSimpleName());
-    public static final int MOVE_1_DAMAGE = 7;
+    public static final int MOVE_1_DAMAGE = 8;
     public static final int MOVE_2_EFFECT = 4;
 
     public static final int MOVE_1_STAMINA_COST = 2;
