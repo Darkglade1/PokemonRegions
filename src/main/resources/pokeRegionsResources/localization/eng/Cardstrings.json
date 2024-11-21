@@ -931,10 +931,10 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#FFA500]Pickup[]",
-      "[#FFA500]Fetch[]",
+      "[#FFA500]Forage[]",
       "You obtain a random potion.",
-      "Draw ",
-      " card. It gains Retain this combat."
+      "You gain ",
+      " Max HP."
     ]
   },
   "${ModID}:Raikou": {

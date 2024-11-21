@@ -1,11 +1,6 @@
 package pokeregions.monsters.act2.allyPokemon;
 
-import basemod.cardmods.RetainMod;
-import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -16,6 +11,7 @@ import pokeregions.cards.pokemonAllyCards.act2.Phanpy;
 import pokeregions.monsters.AbstractPokemonAlly;
 
 import static pokeregions.PokemonRegions.makeMonsterPath;
+import static pokeregions.util.Wiz.adp;
 import static pokeregions.util.Wiz.atb;
 
 public class PhanpyAlly extends AbstractPokemonAlly
@@ -48,15 +44,7 @@ public class PhanpyAlly extends AbstractPokemonAlly
                 break;
             }
             case MOVE_2: {
-                atb(new DrawCardAction(Phanpy.MOVE_2_EFFECT, new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        for (AbstractCard c : DrawCardAction.drawnCards) {
-                            CardModifierManager.addModifier(c, new RetainMod());
-                        }
-                        this.isDone = true;
-                    }
-                }));
+                adp().increaseMaxHp(Phanpy.MOVE_2_EFFECT, true);
                 break;
             }
         }

@@ -61,7 +61,7 @@
       "Your #gPokemon intends to deal #b",
       " damage to ALL enemies",
       "Your #gPokemon intends to use #ymysterious #ymagic.",
-      "Your #gPokemon intends to do nothing."
+      "Your #gPokemon intends to do something."
     ]
   },
   "${ModID}:MassAttackIntent": {

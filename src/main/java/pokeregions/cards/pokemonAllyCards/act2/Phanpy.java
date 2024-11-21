@@ -10,10 +10,10 @@ import static pokeregions.PokemonRegions.makeID;
 @NoPools
 public class Phanpy extends AbstractAllyPokemonCard {
     public final static String ID = makeID(Phanpy.class.getSimpleName());
-    public static final int MOVE_2_EFFECT = 1;
+    public static final int MOVE_2_EFFECT = 3;
 
     public static final int MOVE_1_STAMINA_COST = 1;
-    public static final int MOVE_2_STAMINA_COST = 0;
+    public static final int MOVE_2_STAMINA_COST = 1;
     public static final int MAX_STAMINA = 4;
 
     public Phanpy() {
@@ -23,6 +23,7 @@ public class Phanpy extends AbstractAllyPokemonCard {
         this.misc = this.maxStamina = this.currentStamina = MAX_STAMINA;
         this.move1Description = DESCRIPTIONS[2];
         this.move2Description = DESCRIPTIONS[3] + MOVE_2_EFFECT + DESCRIPTIONS[4];
+        move2isLimited = true;
         initializeDescriptionFromMoves();
     }
 
