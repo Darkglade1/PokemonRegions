@@ -1302,5 +1302,16 @@
     "NAME": "叶子",
     "DESCRIPTION": "造成 !D! 点伤害。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M!  次。"
+  },
+  "${ModID}:Blissey": {
+    "NAME": "幸福蛋",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]祈愿[]",
+      "[#FFA500]治愈之铃[]",
+      "下一次交换上场的 *宝可梦 的下一恢复",
+      " 点 *耐力 。",
+      "消除最左边的减益效果。"
+    ]
   }
 }

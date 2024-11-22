@@ -532,6 +532,10 @@ public class PokemonRegions implements
         BaseMod.addEvent(AzaleaGym.ID, AzaleaGym.class, Johto.ID);
         BaseMod.addEvent(DarkCave.ID, DarkCave.class, Johto.ID);
         BaseMod.addEvent(VoiceOfTheForest.ID, VoiceOfTheForest.class, Johto.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(HelpingHand.ID, HelpingHand.class)
+                .bonusCondition(HelpingHand::canSpawn)
+                .dungeonID(Johto.ID)
+                .create());
 
         // Act 3
         Hoenn hoenn = new Hoenn();

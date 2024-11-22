@@ -629,5 +629,22 @@
       ".",
       "[Leave]"
     ]
+  },
+  "${ModID}:HelpingHand": {
+    "NAME": "A Helping Hand",
+    "DESCRIPTIONS": [
+      "You grimace in #rpain as you trek through the woods. Your recent encounter with a particularly #pnasty wild #yPokemon had left you with several injuries. You hope that you can find a place to rest soon. NL NL You tense as you spot the bushes rustle ahead. A pink blob-shaped #yPokemon appears, approaching you with a concerned look on its face. Sensing no hostility from it whatsoever, you allow it to get near, and as it waves its hands at you, you feel your #rpain begin to recede . . .",
+      "You pause and let the #yPokemon perform its work. As soon as the pain recedes to more tolerable levels, you brush past it and move on - you don't want to be stuck in the depths of this forest any longer than necessary. NL NL You hear the sounds of waddling behind you, and you turn to see the #yPokemon chasing after you with a pout on its face. You speed up your pace, but it continues to stubbornly chase after you. NL Even after finding a clearing to camp in, it's still following you. You suspect that it'll be following you for a while.",
+      "You close your eyes and relax as you allow the #yPokemon to perform its work. A #gpleasant sensation overtakes you as many of the aches and pains that had plague you fall away like dust upon the wind. NL NL You open your eyes to see the #yPokemon smiling at you with a weary look. It gives you a nod, then waddles back off into the depths of the forest. You marvel at the idea that you could experience such kindness in the depths of the wilderness."
+    ],
+    "OPTIONS": [
+      "[Accept a little healing] ",
+      "[Accept a thorough healing] ",
+      "Heal ",
+      " HP.",
+      "Obtain ",
+      ".",
+      "[Leave]"
+    ]
   }
 }

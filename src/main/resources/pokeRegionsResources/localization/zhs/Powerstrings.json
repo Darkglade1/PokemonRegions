@@ -274,5 +274,9 @@
   "${ModID}:PoisonFang": {
     "NAME": "剧毒牙",
     "DESCRIPTIONS": ["你的下一张 #y攻击牌 造成未被格挡的伤害时给予等量的 #y剧毒 。"]
+  },
+  "${ModID}:Wish": {
+    "NAME": "祈愿",
+    "DESCRIPTIONS": ["下一次交换上场的 *宝可梦 的下一恢复 #b", " 点 #y耐力 。"]
   }
 }

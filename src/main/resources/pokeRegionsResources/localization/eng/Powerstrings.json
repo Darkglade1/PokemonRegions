@@ -274,5 +274,9 @@
   "${ModID}:PoisonFang": {
     "NAME": "Poison Fang",
     "DESCRIPTIONS": ["Your next #yAttack applies #yToxic equal to unblocked damage dealt."]
+  },
+  "${ModID}:Wish": {
+    "NAME": "Wish",
+    "DESCRIPTIONS": ["The next #yPokemon to switch in gains #b", " #yStamina."]
   }
 }

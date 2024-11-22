@@ -1302,5 +1302,16 @@
     "NAME": "Leaf",
     "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times."
+  },
+  "${ModID}:Blissey": {
+    "NAME": "Blissey",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Wish[]",
+      "[#FFA500]Heal[] [#FFA500]Bell[]",
+      "The next *Pokemon to switch in gains ",
+      " *Stamina.",
+      "Remove your leftmost debuff."
+    ]
   }
 }
