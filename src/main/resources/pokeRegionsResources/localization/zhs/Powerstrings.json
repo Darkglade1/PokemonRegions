@@ -239,10 +239,6 @@
     "NAME": "集中",
     "DESCRIPTIONS": ["你下一次打出的 #y攻击牌 造成 #b", "% 更高的伤害。"]
   },
-  "${ModID}:StrongArmor": {
-    "NAME": "坚固盔甲",
-    "DESCRIPTIONS": ["本回合受到的攻击伤害降低 #b", "% 。每隔一回合触发一次。"]
-  },
   "${ModID}:Voltage": {
     "NAME": "电压涡轮",
     "DESCRIPTIONS": ["每当你获得 #y电压 ，根据其层数受到伤害。"]

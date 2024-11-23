@@ -239,10 +239,6 @@
     "NAME": "Concentrate",
     "DESCRIPTIONS": ["Deal #b", "% more damage with your next played #yAttack."]
   },
-  "${ModID}:StrongArmor": {
-    "NAME": "Strong Armor",
-    "DESCRIPTIONS": ["Receives #b", "% less damage from attacks this turn. Reapplied every other turn."]
-  },
   "${ModID}:Voltage": {
     "NAME": "Voltage",
     "DESCRIPTIONS": ["Whenever you gain #yVoltage, take damage equal to your #yVoltage."]
