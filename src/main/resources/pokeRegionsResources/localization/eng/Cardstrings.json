@@ -1313,5 +1313,17 @@
       " *Stamina.",
       "Remove your leftmost debuff."
     ]
+  },
+  "${ModID}:Vaporeon": {
+    "NAME": "Vaporeon",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#FFA500]Acid[] [#FFA500]Armor[]",
+      "[#FFA500]Chilling[] [#FFA500]Water[]",
+      "You lose ",
+      " HP. ",
+      "You gain ",
+      " Block."
+    ]
   }
 }

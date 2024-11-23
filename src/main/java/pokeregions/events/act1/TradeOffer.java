@@ -5,6 +5,7 @@ import basemod.abstracts.events.phases.TextPhase;
 import pokeregions.PokemonRegions;
 import pokeregions.cards.pokemonAllyCards.act1.Flareon;
 import pokeregions.cards.pokemonAllyCards.act1.Jolteon;
+import pokeregions.cards.pokemonAllyCards.act1.Vaporeon;
 import pokeregions.patches.PlayerSpireFields;
 import pokeregions.util.PokemonReward;
 import pokeregions.util.Tags;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.function.Consumer;
 
 import static pokeregions.PokemonRegions.makeID;
@@ -34,25 +36,33 @@ public class TradeOffer extends PhasedEvent {
         this.noCardsInRewards = true;
         AbstractCard jolteon = CardLibrary.getCard(Jolteon.ID).makeCopy();
         AbstractCard flareon = CardLibrary.getCard(Flareon.ID).makeCopy();
+        AbstractCard vaporeon = CardLibrary.getCard(Vaporeon.ID).makeCopy();
+        ArrayList<AbstractCard> possiblePokemon = new ArrayList<>();
+        possiblePokemon.add(jolteon);
+        possiblePokemon.add(flareon);
+        possiblePokemon.add(vaporeon);
+        Collections.shuffle(possiblePokemon, AbstractDungeon.eventRng.random);
+        AbstractCard option1Pokemon = possiblePokemon.get(0);
+        AbstractCard option2Pokemon = possiblePokemon.get(1);
         AbstractCard tradedPokemon = getRandomNonStarterPokemon();
 
-        TextPhase.OptionInfo jolteonOption = createCardPreviewOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + tradedPokemon.name + OPTIONS[3], "r") + " " + FontHelper.colorString(OPTIONS[4] + jolteon.name + OPTIONS[3], "g"), jolteon, (i)->{
+        TextPhase.OptionInfo option1 = createCardPreviewOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + tradedPokemon.name + OPTIONS[3], "r") + " " + FontHelper.colorString(OPTIONS[4] + option1Pokemon.name + OPTIONS[3], "g"), option1Pokemon, (i)->{
             AbstractDungeon.effectList.add(new PurgeCardEffect(tradedPokemon));
             PlayerSpireFields.pokemonTeam.get(adp()).removeCard(tradedPokemon);
-            AbstractDungeon.getCurrRoom().rewards.add(new PokemonReward(jolteon.cardID));
+            AbstractDungeon.getCurrRoom().rewards.add(new PokemonReward(option1Pokemon.cardID));
             AbstractDungeon.combatRewardScreen.open();
             transitionKey("Trade");
         });
-        TextPhase.OptionInfo flareonOption = createCardPreviewOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + tradedPokemon.name + OPTIONS[3], "r") + " " + FontHelper.colorString(OPTIONS[4] + flareon.name + OPTIONS[3], "g"), flareon, (i)->{
+        TextPhase.OptionInfo option2 = createCardPreviewOption(OPTIONS[0] + FontHelper.colorString(OPTIONS[2] + tradedPokemon.name + OPTIONS[3], "r") + " " + FontHelper.colorString(OPTIONS[4] + option2Pokemon.name + OPTIONS[3], "g"), option2Pokemon, (i)->{
             AbstractDungeon.effectList.add(new PurgeCardEffect(tradedPokemon));
             PlayerSpireFields.pokemonTeam.get(adp()).removeCard(tradedPokemon);
-            AbstractDungeon.getCurrRoom().rewards.add(new PokemonReward(flareon.cardID));
+            AbstractDungeon.getCurrRoom().rewards.add(new PokemonReward(option2Pokemon.cardID));
             AbstractDungeon.combatRewardScreen.open();
             transitionKey("Trade");
         });
         registerPhase(0, new TextPhase(DESCRIPTIONS[0]).
-                addOption(jolteonOption).
-                addOption(flareonOption).
+                addOption(option1).
+                addOption(option2).
                 addOption(OPTIONS[1], (i)->{
                     transitionKey("Decline");
                 }));
