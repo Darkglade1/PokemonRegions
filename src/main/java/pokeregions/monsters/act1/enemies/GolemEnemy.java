@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -109,12 +110,12 @@ public class GolemEnemy extends AbstractPokemonMonster
                 int numRocks = 5;
                 float totalDuration = rockDuration + (vfxInternal * numRocks);
                 VfxBuilder builder = new VfxBuilder(rock1, this.hb.cX, this.hb.cY, rockDuration)
-                        .arc(this.hb.cX, this.hb.cY, adp().hb.cX - (100.0f * Settings.scale), adp().hb.cY, 1000.0f * Settings.scale)
+                        .arc(this.hb.cX, this.hb.cY, adp().hb.cX - (100.0f * Settings.scale), AbstractDungeon.floorY, 1000.0f * Settings.scale)
                         .triggerVfxAt(rockDuration, 1, new BiFunction<Float, Float, AbstractGameEffect>() {
                             @Override
                             public AbstractGameEffect apply(Float aFloat, Float aFloat2) {
                                 playAudio(ProAudio.ROCK_THUD);
-                                return new VfxBuilder(rock1, adp().hb.cX - (100.0f * Settings.scale), adp().hb.cY, rockDuration).build();
+                                return new VfxBuilder(rock1, adp().hb.cX - (100.0f * Settings.scale), AbstractDungeon.floorY, rockDuration).build();
                             }
                         });
                 for (int i = 0; i < numRocks; i++) {
@@ -125,12 +126,12 @@ public class GolemEnemy extends AbstractPokemonMonster
                         public AbstractGameEffect apply(Float aFloat, Float aFloat2) {
 
                             return new VfxBuilder(chosenRock, GolemEnemy.this.hb.cX, GolemEnemy.this.hb.cY, rockDuration)
-                                    .arc(GolemEnemy.this.hb.cX, GolemEnemy.this.hb.cY, randX, adp().hb.cY, 1000.0f * Settings.scale)
+                                    .arc(GolemEnemy.this.hb.cX, GolemEnemy.this.hb.cY, randX, AbstractDungeon.floorY, 1000.0f * Settings.scale)
                                     .triggerVfxAt(rockDuration, 1, new BiFunction<Float, Float, AbstractGameEffect>() {
                                         @Override
                                         public AbstractGameEffect apply(Float aFloat, Float aFloat2) {
                                             playAudio(ProAudio.ROCK_THUD);
-                                            return new VfxBuilder(chosenRock, randX, adp().hb.cY, rockDuration).build();
+                                            return new VfxBuilder(chosenRock, randX, AbstractDungeon.floorY, rockDuration).build();
                                         }
                                     }).build();
                         }
