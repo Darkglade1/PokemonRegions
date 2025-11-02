@@ -1,0 +1,666 @@
+{
+  "pokeRegions:DiglettEnemy": {
+    "MOVES": [
+      "구멍파기",
+      "베어가르기"
+    ],
+    "NAME": "디그다",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DugtrioEnemy": {
+    "MOVES": [
+      "구멍파기",
+      "마구할퀴기"
+    ],
+    "NAME": "닥트리오",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:CloysterEnemy": {
+    "MOVES": [
+      "껍질깨기",
+      "셸블레이드",
+      "고드름침"
+    ],
+    "NAME": "파르셀",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DragoniteEnemy": {
+    "MOVES": [
+      "용의춤",
+      "역린",
+      "기절함"
+    ],
+    "NAME": "망나뇽",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GastlyEnemy": {
+    "MOVES": [
+      "핥기",
+      "기습",
+      "유령 축제"
+    ],
+    "NAME": "고오스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:HaunterEnemy": {
+    "MOVES": [
+      "저주",
+      "원한",
+      "나이트헤드"
+    ],
+    "NAME": "고우스트",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GengarEnemy": {
+    "MOVES": [
+      "나쁜음모",
+      "섀도볼"
+    ],
+    "NAME": "팬텀",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ArbokEnemy": {
+    "MOVES": [
+      "김밥말이",
+      "깨물어부수기",
+      "뱀눈초리"
+    ],
+    "NAME": "아보크",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:VulpixEnemy": {
+    "MOVES": [
+      "도깨비불",
+      "회오리불꽃",
+      "니트로차지"
+    ],
+    "NAME": "식스테일",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GolemEnemy": {
+    "MOVES": [
+      "록커트",
+      "스텔스록",
+      "지진"
+    ],
+    "NAME": "딱구리",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MachampEnemy": {
+    "MOVES": [
+      "벌크업",
+      "크로스촙",
+      "겁나는얼굴"
+    ],
+    "NAME": "근육몬",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RattataEnemy": {
+    "MOVES": [
+      "물기",
+      "분발"
+    ],
+    "NAME": "꼬렛",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RhyhornEnemy": {
+    "MOVES": [
+      "뿔찌르기",
+      "드릴라이너",
+      "버티기"
+    ],
+    "NAME": "뿔카노",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MoltresEnemy": {
+    "MOVES": [
+      "불태우기",
+      "열풍"
+    ],
+    "NAME": "파이어",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ZapdosEnemy": {
+    "MOVES": [
+      "방전",
+      "회전부리",
+      "충전"
+    ],
+    "NAME": "썬더",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ArticunoEnemy": {
+    "MOVES": [
+      "눈싸라기",
+      "설경",
+      "얼음뭉치"
+    ],
+    "NAME": "프리져",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MewtwoEnemy": {
+    "MOVES": [
+      "명상",
+      "HP회복",
+      "염동력"
+    ],
+    "NAME": "뮤츠",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:CaterpieEnemy": {
+    "MOVES": [
+      "실뿜기",
+      "벌레먹기"
+    ],
+    "NAME": "캐터피",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:WeedleEnemy": {
+    "MOVES": [
+      "독침",
+      "벌레먹기"
+    ],
+    "NAME": "뿔충이",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:OmastarEnemy": {
+    "MOVES": [
+      "구르기",
+      "기절함"
+    ],
+    "NAME": "암스타",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AlakazamEnemy": {
+    "MOVES": [
+      "숟가락휘기",
+      "집중",
+      "기합구슬"
+    ],
+    "NAME": "후딘",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:VictreebelEnemy": {
+    "MOVES": [
+      "분노가루",
+      "잎날가르기",
+      "저리가루"
+    ],
+    "NAME": "우츠보트",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:KyogreEnemy": {
+    "MOVES": [
+      "하이드로펌프",
+      "근원의파동",
+      "아쿠아링",
+      "생명의물방울"
+    ],
+    "NAME": "가이오가",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DeoxysEnemy": {
+    "MOVES": [
+      "그로우펀치",
+      "약점 노출",
+      "사이코부스트",
+      "코스믹파워",
+      "철벽",
+      "헤비봄버",
+      "스피드스타",
+      "나쁜음모",
+      "신속"
+    ],
+    "NAME": "테오키스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GroudonEnemy": {
+    "MOVES": [
+      "칼춤",
+      "단애의칼",
+      "열사의대지"
+    ],
+    "NAME": "그란돈",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SalamenceEnemy": {
+    "MOVES": [
+      "드래곤다이브",
+      "드래곤클로",
+      "용의숨결"
+    ],
+    "NAME": "보만다",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SlakingEnemy": {
+    "MOVES": [
+      "Zzzzzzzz",
+      "게으름피우기",
+      "기가임팩트",
+      "암해머",
+      "그로기 상태 . . ."
+    ],
+    "NAME": "게을킹",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:BreloomEnemy": {
+    "MOVES": [
+      "버섯포자",
+      "칼춤",
+      "씨기관총"
+    ],
+    "NAME": "버섯모",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AronEnemy": {
+    "MOVES": [
+      "Nibble",
+      "메탈버스트"
+    ],
+    "NAME": "가보리",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AggronEnemy": {
+    "MOVES": [
+      "아이언테일",
+      "메탈버스트",
+      "금속음"
+    ],
+    "NAME": "보스로라",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:TropiusEnemy": {
+    "MOVES": [
+      "쾌청",
+      "솔라빔",
+      "씨폭탄"
+    ],
+    "NAME": "트로피우스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:TrapinchEnemy": {
+    "MOVES": [
+      "마비 깨물기",
+      "깨물어부수기",
+      "함정파기"
+    ],
+    "NAME": "톱치",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:FlygonEnemy": {
+    "MOVES": [
+      "수호령",
+      "드래곤테일",
+      "화풀이"
+    ],
+    "NAME": "플라이곤",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RayquazaEnemy": {
+    "MOVES": [
+      "폭풍",
+      "용의파동",
+      "용의숨결"
+    ],
+    "NAME": "레쿠쟈",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GardevoirEnemy": {
+    "MOVES": [
+      "애교부리기",
+      "나쁜음모",
+      "문포스",
+      "하이퍼보이스"
+    ],
+    "NAME": "가디안",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RegisteelEnemy": {
+    "MOVES": [
+      "힘껏치기",
+      "와이드가드",
+      "방어"
+    ],
+    "NAME": "레지스틸",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RegiceEnemy": {
+    "MOVES": [
+      "힘껏치기",
+      "얼어붙은바람",
+      "프리즈드라이"
+    ],
+    "NAME": "레지아이스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RegirockEnemy": {
+    "MOVES": [
+      "힘껏치기",
+      "원시의힘",
+      "암석봉인"
+    ],
+    "NAME": "레지락",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:EspeonAnnie": {
+    "MOVES": [
+      "염동력",
+      "도우미",
+      "사이코키네시스"
+    ],
+    "NAME": "에브이",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AriadosOakley": {
+    "MOVES": [
+      "엉겨붙기",
+      "끈적끈적네트",
+      "크로스포이즌"
+    ],
+    "NAME": "아리아도스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MetagrossEnemy": {
+    "MOVES": [
+      "코멧펀치",
+      "손톱갈기",
+      "대폭발 준비중",
+      "대폭발"
+    ],
+    "NAME": "메타그로스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SolrockEnemy": {
+    "MOVES": [
+      "명상",
+      "파워젬",
+      "열풍",
+      "떠오르는 해의 분노"
+    ],
+    "NAME": "솔록",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:LunatoneEnemy": {
+    "MOVES": [
+      "명상",
+      "파워젬",
+      "꿈먹기",
+      "지는 달의 맹독"
+    ],
+    "NAME": "루나톤",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DialgaEnemy": {
+    "MOVES": [
+      "원시의힘",
+      "시간의포효",
+      "시간 왜곡"
+    ],
+    "NAME": "디아루가",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:PalkiaEnemy": {
+    "MOVES": [
+      "겁나는얼굴",
+      "물의파동",
+      "드래곤클로",
+      "공간절단"
+    ],
+    "NAME": "펄기아",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:GiratinaEnemy": {
+    "MOVES": [
+      "병상첨병",
+      "섀도클로",
+      "나쁜음모",
+      "섀도다이브",
+      "폴터가이스트",
+      "야습"
+    ],
+    "NAME": "기라티나",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:DistortionLeyline": {
+    "MOVES": [
+    ],
+    "NAME": "왜곡의 선로",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:HoOhEnemy": {
+    "MOVES": [
+      "성스러운불꽃",
+      "오버히트",
+      "정령 소환"
+    ],
+    "NAME": "칠색조",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:FlameSpirit": {
+    "MOVES": [
+      "재생력",
+      "불꽃세례",
+      "소화"
+    ],
+    "NAME": "화염 정령",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:LugiaEnemy": {
+    "MOVES": [
+      "다크러시",
+      "다크블래스트",
+      "다크웨더"
+    ],
+    "NAME": "다크 루기아",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:ScizorEnemy": {
+    "MOVES": [
+      "불릿펀치",
+      "칼춤",
+      "고속이동"
+    ],
+    "NAME": "핫삼",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SlugmaEnemy": {
+    "MOVES": [
+      "단단해지기",
+      "돌떨구기",
+      "분연"
+    ],
+    "NAME": "마그마그",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MagcargoEnemy": {
+    "MOVES": [
+      "단단해지기",
+      "돌떨구기",
+      "분연",
+      "스모그"
+    ],
+    "NAME": "마그카르고",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SteelixEnemy": {
+    "MOVES": [
+      "이판사판태클",
+      "헤비봄버",
+      "아이언테일",
+      "바디퍼지"
+    ],
+    "NAME": "강철톤",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:QuagsireEnemy": {
+    "MOVES": [
+      "열탕",
+      "오물웨이브"
+    ],
+    "NAME": "누오",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:TyranitarEnemy": {
+    "MOVES": [
+      "철벽",
+      "스톤에지",
+      "깨물어부수기"
+    ],
+    "NAME": "마기라스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:PupitarEnemy": {
+    "MOVES": [
+      "용의춤",
+      "떨어뜨리기",
+      "스톤샤워"
+    ],
+    "NAME": "데기라스",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:AzumarillEnemy": {
+    "MOVES": [
+      "집중",
+      "치근거리기"
+    ],
+    "NAME": "마릴리",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:MantineEnemy": {
+    "MOVES": [
+      "비바라기",
+      "에어슬래시"
+    ],
+    "NAME": "만타인",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:KingdraEnemy": {
+    "MOVES": [
+      "물의파동",
+      "웨이브태클",
+      "기충전"
+    ],
+    "NAME": "킹드라",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:LanturnEnemy": {
+    "MOVES": [
+      "괴전파",
+      "발광",
+      "방전"
+    ],
+    "NAME": "랜턴",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SkarmoryEnemy": {
+    "MOVES": [
+      "압정뿌리기",
+      "메탈클로",
+      "브레이브버드"
+    ],
+    "NAME": "무장조",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:RaikouEnemy": {
+    "MOVES": [
+      "번개",
+      "전자포",
+      "일렉트릭네트",
+      "충전"
+    ],
+    "NAME": "라이코",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:SwinubEnemy": {
+    "MOVES": [
+      "얼음뭉치",
+      "얼어붙은바람"
+    ],
+    "NAME": "꾸꾸리",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:PiloswineEnemy": {
+    "MOVES": [
+      "고드름침",
+      "눈보라",
+      "망각술"
+    ],
+    "NAME": "메꾸리",
+    "DIALOG": [
+    ]
+  },
+  "pokeRegions:CrobatEnemy": {
+    "MOVES": [
+      "패스트가드",
+      "에어슬래시",
+      "크로스포이즌"
+    ],
+    "NAME": "크로뱃",
+    "DIALOG": [
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "pokeRegions:Kanto": {
+    "TEXT": [
+      "관동",
+      "1 막",
+      "옆에 #y금색 장식이 달린 이상한 흰색 장치가 보입니다. 꼭 마치 #y저 #y장치가 당신에게 자신을 만져보라고 손짓하는 듯 합니다.",
+      "여정을 시작한다."
+    ]
+  },
+  "pokeRegions:Johto": {
+    "TEXT": [
+      "성도",
+      "2 막",
+      "이 땅은 그 자체로 낯설었지만 나름대로 위안을 주는 곳이었습니다. #y첨탑의 #p침체된 분위기에서 벗어날 수 있는 반가운 변화였습니다.",
+      "여정을 계속한다."
+    ]
+  },
+  "pokeRegions:Hoenn": {
+    "TEXT": [
+      "호연",
+      "3 막",
+      "여행이 점점 더 #r위험해졌지만, 곁에 있는 #g동반자들 덕분에 안심이 되었습니다.",
+      "여정을 계속한다."
+    ]
+  },
+  "pokeRegions:SpearPillar": {
+    "TEXT": [
+      "창기둥",
+      "창기둥",
+      "땅 전체에 걸쳐 현실의 #p왜곡과 #p균열이 @퍼져나가며@ 혼란을 초래하고 있습니다.",
+      "왜곡을 조사한다."
+    ]
+  },
+  "pokeRegions:PokemonVictory": {
+    "TEXT": [
+      "내 아이들이 . . . 마침내 진정되었나?",
+      "잘했다 . . . 선택받은 자여 . . .",
+      "이제 . . . 나도 편히 쉴 수 있겠구나 . . ."
+    ]
+  },
+  "pokeRegions:ModMenu": {
+    "TEXT": [
+      "포켓몬 지방",
+      "Darkglade",
+      "포켓몬 테마로 구성된 추가적인 모드 막입니다.",
+      "포켓몬 모드 막이 아닌 곳에서 포켓몬 사용 기능 비활성화.",
+      "포켓몬 적들의 자세한 의도 설명 비활성화."
+    ]
+  },
+  "pokeRegions:AllyStrings": {
+    "TEXT": [
+      "당신의 #g포켓몬이 ",
+      " 에게 #b",
+      " 의 피해로 #y공격 하려고 합니다.",
+      " 의 피해로 #b",
+      " 번 공격하려고 합니다.",
+      "당신의 #g포켓몬이 ",
+      " 에게 #y해로운 #y효과를 부여하려고 합니다.",
+      "당신의 #g포켓몬이 #y이로운 #y효과를 사용하려고 합니다.",
+      "당신의 #g포켓몬이 #y수비하려고 합니다.",
+      "당신의 #g포켓몬이 적 전체에게 #b",
+      " 의 피해로 공격하려고 합니다.",
+      "당신의 #g포켓몬이 #y신비한 #y마법을 사용하려고 합니다.",
+      "당신의 #g포켓몬이 무언가를 하려고 합니다."
+    ]
+  },
+  "pokeRegions:MassAttackIntent": {
+    "TEXT": [
+      "광역 공격",
+      "이 적은 다른 모든 캐릭터에게 #b", " 의 피해로 공격합니다. ", ".", " 번 공격 합니다."
+    ]
+  },
+  "pokeRegions:PokemonType": {
+    "TEXT": [
+      "포켓몬"
+    ]
+  },
+  "pokeRegions:PokemonTeamButton": {
+    "TEXT": [
+      "당신의 팀",
+      "현재 당신의 포켓몬 팀을 보여줍니다.",
+      "당신의 팀이 꽉 찼습니다. 스타팅 포켓몬을 제외한 포켓몬을 선택해 풀어주세요."
+    ]
+  },
+  "pokeRegions:PokemonTeamViewScreen": {
+    "TEXT": [
+      "당신의 포켓몬 (최대 ",
+      ")",
+      "돌아가기"
+    ]
+  },
+  "pokeRegions:StaminaCost": {
+    "TEXT": [
+      "스태미나 ",
+      " 소모."
+    ]
+  },
+  "pokeRegions:SwitchPokemon": {
+    "TEXT": [
+      "현재 출격시킨 포켓몬을 다른 포켓몬으로 교체합니다.",
+      "현재 교체할 수 있는 포켓몬이 없어.",
+      "출격시킬 포켓몬을 선택하세요.",
+      "포켓몬 교체",
+      "취소"
+    ]
+  },
+  "pokeRegions:HealPokemonCampfire": {
+    "TEXT": [
+      "포켓몬들과 같이 휴식",
+      "최대 체력의 ",
+      "%를 회복합니다. (",
+      ").",
+      "\n모든 포켓몬의 스태미나를 ",
+      " 회복합니다.",
+      "휴식 불가 (커피 드리퍼)"
+    ]
+  },
+  "pokeRegions:IntentStrings": {
+    "TEXT": [
+      "당신",
+      "자신",
+      "적 전체",
+      "무작위 적",
+      "체력 흡수",
+      "모든 하수인",
+      "등급이 높은 카드 강탈",
+      "해로운 효과 제거",
+      "덱에 기생충 카드 추가",
+      "자살",
+      "체력을 절반까지 회복",
+      "음수가 된 힘을 제거",
+      "하수인 소환",
+      "상태이상 카드와 소멸 효과가 없는 카드를 발굴"
+    ]
+  },
+  "pokeRegions:ExhaustDrawPile": {
+    "TEXT": [
+      "선택한 카드를 소멸시킵니다."
+    ]
+  },
+  "pokeRegions:ShuffleDiscardPileBackAction": {
+    "TEXT": [
+      "선택한 카드를 뽑을 카드 더미에 넣고 섞습니다."
+    ]
+  },
+  "pokeRegions:PokeballMove": {
+    "TEXT": [
+      "몬스터볼을 다음 포켓몬에게 던집니다 : ",
+      "[E] 를 소모하여 #y몬스터볼을 투척해 이 #y포켓몬을 포획합니다. NL 이 #y포켓몬 의 체력이 #b",
+      "포획할 포켓몬이 없어.",
+      "몬스터볼이 없어.",
+      "에너지가 부족해.",
+      "성공!",
+      "실패",
+      "포획 확률: ",
+      "%",
+      " 이하라면, 포획 확률이 #b100% 가 됩니다."
+    ]
+  },
+  "pokeRegions:PokemonHealthBar": {
+    "TEXT": [
+      " 스태미나",
+      "기절함",
+      "포획됨!"
+    ]
+  },
+  "pokeRegions:MewTransformAction": {
+    "TEXT": [
+      "뮤가 변신할 포켓몬을 선택하세요."
+    ]
+  },
+  "pokeRegions:WaterLoggedMod": {
+    "TEXT": [
+      "pokeregions:침수 NL "
+    ]
+  },
+  "pokeRegions:DampMod": {
+    "TEXT": [
+      "pokeregions:습기 NL "
+    ]
+  },
+  "pokeRegions:ScorchedMod": {
+    "TEXT": [
+      "pokeregions:그슬림 NL "
+    ]
+  },
+  "pokeRegions:EnhancedDigOption": {
+    "TEXT": [
+      "진보된 삽질",
+      "유물을 발굴합니다. 항상 희귀 등급 유물을 발굴합니다."
+    ]
+  },
+  "pokeRegions:TauntNotice": {
+    "TEXT": [
+      "도발 효과가 있는 적을 공격해야만 해!"
+    ]
+  },
+  "pokeRegions:ChargedMod": {
+    "TEXT": [
+      "pokeregions:충전됨 NL "
+    ]
+  },
+  "pokeRegions:HatchEggOption": {
+    "TEXT": [
+      "포켓몬 알 부화시키기",
+      "알 속의 포켓몬을 획득."
+    ]
+  }
+}

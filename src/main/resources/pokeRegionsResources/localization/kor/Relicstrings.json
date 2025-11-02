@@ -1,0 +1,93 @@
+{
+  "pokeRegions:PokeballBelt": {
+    "NAME": "몬스터볼 벨트",
+    "FLAVOR": "풀밭들을 조심하세요.",
+    "DESCRIPTIONS": [
+      "현재 #y몬스터볼 을 #b", " 개 보유 중입니다. NL 전투에서 야생 포켓몬의 의도 옆쪽에 위치한 #y몬스터볼 #y투척 버튼을 클릭하면, 야생 #y포켓몬 을 포획할 수 있습니다. NL 포획한 #y포켓몬 은 전투 종료시 획득합니다."
+    ]
+  },
+  "pokeRegions:RainbowBadge": {
+    "NAME": "무지개배지",
+    "FLAVOR": "마치 천 개의 빛나는 무지개처럼 당신의 눈을 눈부시게 합니다.",
+    "DESCRIPTIONS": [
+      "전투에서 처음으로 #y스태미너 가 부족한 포켓몬으로 교체했다면, 교체한 포켓몬의 #ypokeregions:스태미나 가 #b", " 회복됩니다."
+    ]
+  },
+  "pokeRegions:ThunderBadge": {
+    "NAME": "오렌지배지",
+    "FLAVOR": "마치 뇌우의 억제되지 못 하는 분노처럼 손에서 불꽃이 튀깁니다.",
+    "DESCRIPTIONS": [
+      "당신의 #y포켓몬의 공격 피해량이 #b", "% 증가합니다."
+    ]
+  },
+  "pokeRegions:QuickClaw": {
+    "NAME": "선제공격손톱",
+    "FLAVOR": "이 가볍고 날카로운 발톱은 사용자의 민첩성을 향상시킵니다.",
+    "DESCRIPTIONS": [
+      "전투에서 처음으로 #y방어도를 획득하면, #y방어도를 추가로 #b", " 얻습니다."
+    ]
+  },
+  "pokeRegions:DeathWish": {
+    "NAME": "죽음의 소원",
+    "FLAVOR": "그는 권력을 원했지만, 권력을 남용할 만큼 오래 살기를 원하지는 않았습니다.",
+    "DESCRIPTIONS": [
+      "전투 시작시, #y힘 을 #b", " 얻고 #y민첩 을 #b", " 잃습니다."
+    ]
+  },
+  "pokeRegions:GlitteringWish": {
+    "NAME": "반짝이는 소원",
+    "FLAVOR": "그녀는 골드를 원했지만, 그것을 들 수 있는 힘을 원하지는 않았습니다.",
+    "DESCRIPTIONS": [
+      "획득시, 골드를 #b", " 잃습니다. 전투 시작시, #y힘 을 #b", " 잃습니다."
+    ]
+  },
+  "pokeRegions:CunningWish": {
+    "NAME": "잔꾀의 소원",
+    "FLAVOR": "그는 지식을 원했지만, 그걸 어떤 방식으로 배워야 할지를 원하지는 않았습니다.",
+    "DESCRIPTIONS": [
+      "전투 시작시, 카드를 #b", " 장 뽑고 [E] 를 잃습니다."
+    ]
+  },
+  "pokeRegions:EnhancedShovel": {
+    "NAME": "최고급 삽",
+    "FLAVOR": "도대체 누가 계속 그런 전리품들을 지하에 묻어두는건지 궁금하지 않나요?",
+    "DESCRIPTIONS": [
+      "휴식 장소에서 유물을 #y발굴 할 수 있게 됩니다. 항상 희귀 등급 유물을 발견합니다. 이 유물은 #b", " 번만 사용할 수 있습니다."
+    ]
+  },
+  "pokeRegions:Emerald": {
+    "NAME": "종말의 에메랄드",
+    "FLAVOR": "인생은 너무 짧고, 덧없으며, 너무나도 빨리 끝납니다.",
+    "DESCRIPTIONS": [
+      "#y레쿠쟈 를 조우하면, 레쿠쟈가 #y강화 됩니다."
+    ]
+  },
+  "pokeRegions:Sapphire": {
+    "NAME": "익사자의 사파이어",
+    "FLAVOR": "파도 아래에서는 여전히 익사자들의 비명 소리가 들립니다.",
+    "DESCRIPTIONS": [
+      "#y가이오가 를 조우하면, 레쿠쟈가 #y강화 됩니다."
+    ]
+  },
+  "pokeRegions:Ruby": {
+    "NAME": "죽은 자의 루비",
+    "FLAVOR": "유령은 살아있는 자에게 달라붙습니다. 그래야 그들을 심연으로 끌어내릴 수 있거든요.",
+    "DESCRIPTIONS": [
+      "#y그란돈 을 조우하면, 레쿠쟈가 #y강화 됩니다."
+    ]
+  },
+  "pokeRegions:DragonFang": {
+    "NAME": "용의이빨",
+    "FLAVOR": "대체 용의 몸집이 얼마나 커야 이런 이빨이 자라날 수 있는지 궁금하실 겁니다.",
+    "DESCRIPTIONS": [
+      "전투 시작시, 적 전체에게 #ypokeregions:화상 을 #b", " 부여합니다."
+    ]
+  },
+  "pokeRegions:PokemonEgg": {
+    "NAME": "포켓몬 알",
+    "FLAVOR": "내부에서 무언가가 흔들리는 것이 희미하게 느껴집니다 . . . ",
+    "DESCRIPTIONS": [
+      "#y휴식 #y장소 를 #b", " 번 방문하면 이 알을 부화시킬 수 있습니다. #b"
+    ]
+  }
+}
